@@ -21,14 +21,14 @@ repository               : "starstone3/starstone3.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "author.png"
   name             : "Starstone"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : "一个小白，希望可以进步"
+  location         : "火星"
+  employer         : "Nik0"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "pxxhello@gmail.com" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
