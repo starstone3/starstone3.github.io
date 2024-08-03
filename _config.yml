@@ -7,14 +7,14 @@
 # server process.
 
 # Basic Site Settings
-locale                   : "en-US"
-title                    : "Your Name / Site Title"
+locale                   : "zh-CN"
+title                    : "Pang"
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "personal description"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+name                     : &name "Pang"
+description              : &description "一个浙江大学的本科生"
+url                      : https://starstone3.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+repository               : "starstone3/starstone3.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
