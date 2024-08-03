@@ -1,10 +1,11 @@
 ---
-permalink: /friend/
+permalink: /friends/
 title: "友链"
 author_profile: true
 redirect_from: 
   - /fr/
-  - /friend.html
+  - /frineds.html
+
 ---
 
 # 友链
