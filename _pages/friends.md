@@ -1,7 +1,10 @@
 ---
-layout: page
+permalink: /friend/
 title: "友链"
-permalink: /friends/
+author_profile: true
+redirect_from: 
+  - /fr/
+  - /friend.html
 ---
 
 # 友链
