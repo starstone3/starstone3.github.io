@@ -30,10 +30,7 @@
         {{ include.title | default: site.data.ui-text[site.locale].toc_label }}
       </h4>
     </header>
-    {% capture toc %}
-    {:toc}
-    {% endcapture %}
-    {{ toc | markdownify }}
+    {% toc %}
   </nav>
 </aside>
 
