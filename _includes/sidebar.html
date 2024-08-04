@@ -21,16 +21,3 @@
       {% include nav_list nav=page.sidebar.nav %}
     {% endif %}
   {% endif %}
-
-  <!-- 添加目录 -->
-  <div class="toc">
-    <h2>目录</h2>
-    <ul>
-      {% for heading in page.content | toc %}
-        <li>
-          <a href="#{{ heading.id }}">{{ heading.text }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
-{% endif %}
