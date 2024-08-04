@@ -8,7 +8,8 @@ redirect_from:
 ---
 
 {% include base_path %}
-{:toc max_depth=1}
+* 目录
+{:toc}
 # Education
 * Ph.D in Version Control Theory, GitHub University, 2018 (expected)
 * M.S. in Jekyll, GitHub University, 2014
