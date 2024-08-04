@@ -9,14 +9,13 @@ redirect_from:
 
 {% include base_path %}
 {:toc max_depth=1}
-Education
-======
+# Education
 * Ph.D in Version Control Theory, GitHub University, 2018 (expected)
 * M.S. in Jekyll, GitHub University, 2014
 * B.S. in GitHub, GitHub University, 2012
 
-Work experience
-======
+# Work experience
+
 * Spring 2024: Academic Pages Collaborator
   * Github University
   * Duties includes: Updates and improvements to template
@@ -32,8 +31,7 @@ Work experience
   * Duties included: Tagging issues
   * Supervisor: Professor Git
   
-Skills
-======
+# Skills
 * Skill 1
 * Skill 2
   * Sub-skill 2.1
