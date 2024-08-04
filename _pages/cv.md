@@ -10,7 +10,6 @@ redirect_from:
 {% include base_path %}
 
 * 目录1
-
 {:toc}
 
 # Education
