@@ -25,8 +25,12 @@
   <!-- 添加目录 -->
   <div class="toc">
     <h2>目录</h2>
-    {:toc}
-  </div>
-
+    <ul>
+      {% for heading in page.content | toc %}
+        <li>
+          <a href="#{{ heading.id }}">{{ heading.text }}</a>
+        </li>
+      {% endfor %}
+    </ul>
   </div>
 {% endif %}
