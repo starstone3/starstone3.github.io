@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 {% include base_path %}
-
+{:toc max_depth=1}
 Education
 ======
 * Ph.D in Version Control Theory, GitHub University, 2018 (expected)
