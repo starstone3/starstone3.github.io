@@ -23,14 +23,14 @@
   {% endif %}
 </div> 
 <aside class="sidebar__right">
-  <nav class="toc" markdown="1">
+  <nav class="toc">
     <header>
       <h4 class="nav__title">
         <i class="fa fa-{{ include.icon | default: 'file-text' }}"></i> 
         {{ include.title | default: site.data.ui-text[site.locale].toc_label }}
       </h4>
     </header>
-    {:toc}
+    {%toc%}
   </nav>
 </aside>
 
