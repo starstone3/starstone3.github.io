@@ -9,8 +9,14 @@ redirect_from:
 
 {% include base_path %}
 
-* 目录1
-{:toc}
+<nav class="toc">
+  <header>
+    <h4 class="nav__title">目录</h4>
+  </header>
+  <div class="toc__menu">
+    {% toc %}
+  </div>
+</nav>
 
 # Education
 
@@ -34,7 +40,7 @@ redirect_from:
   * Github University
   * Duties included: Tagging issues
   * Supervisor: Professor Git
-  
+
 # Skills
 * Skill 1
 * Skill 2
@@ -47,16 +53,16 @@ redirect_from:
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
+
 # Talks
   <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
-  
+
 # Teaching
   <ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-#Service and leadership
+
+# Service and leadership
 * Currently signed in to 43 different slack teams
