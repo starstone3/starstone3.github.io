@@ -37,44 +37,43 @@ redirect_from:
 
     window.onscroll = function() {
       if (window.pageYOffset > sidebarTop) {
-        sidebar.classList.add("fixed-sidebar");
+        sidebar.style.position = "fixed";
+        sidebar.style.top = "10px";
+        sidebar.style.right = "10px";
+        sidebar.style.width = "200px";
       } else {
-        sidebar.classList.remove("fixed-sidebar");
+        sidebar.style.position = "static";
+        sidebar.style.width = "auto";
       }
     };
 
-    // 添加样式
-    var style = document.createElement("style");
-    style.innerHTML = `
-      .toc .nav__title {
-        font-size: 1.5em; /* 调整标题字体大小 */
-      }
-      .toc ul {
-        list-style-type: none;
-        padding-left: 0;
-      }
-      .toc li {
-        margin-bottom: 0.5em;
-      }
-      .toc a {
-        text-decoration: none;
-        color: inherit;
-        display: block; /* 确保链接元素占据整行 */
-        word-break: break-word; /* 处理长单词的换行 */
-        white-space: nowrap; /* 确保文本不换行 */
-        overflow: hidden; /* 隐藏超出部分 */
-        text-overflow: ellipsis; /* 使用省略号表示被截断的文本 */
-      }
-      .fixed-sidebar {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        width: 200px;
-      }
-    `;
-    document.head.appendChild(style);
-  });
+  //   // 添加样式
+  //   var style = document.createElement("style");
+  //   style.innerHTML = `
+  //     .toc .nav__title {
+  //       font-size: 1.5em; /* 调整标题字体大小 */
+  //     }
+  //     .toc ul {
+  //       list-style-type: none;
+  //       padding-left: 0;
+  //     }
+  //     .toc li {
+  //       margin-bottom: 0.5em;
+  //     }
+  //     .toc a {
+  //       text-decoration: none;
+  //       color: inherit;
+  //       display: block; /* 确保链接元素占据整行 */
+  //       word-break: break-word; /* 处理长单词的换行 */
+  //       white-space: nowrap; /* 确保文本不换行 */
+  //       overflow: hidden; /* 隐藏超出部分 */
+  //       text-overflow: ellipsis; /* 使用省略号表示被截断的文本 */
+  //     }
+  //   `;
+  //   document.head.appendChild(style);
+  // });
 </script>
+
 # Education
 
 * Ph.D in Version Control Theory, GitHub University, 2018 (expected)

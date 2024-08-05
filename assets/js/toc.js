@@ -39,6 +39,9 @@ document.addEventListener("DOMContentLoaded", function() {
       overflow: hidden; /* 隐藏超出部分 */
       text-overflow: ellipsis; /* 使用省略号表示被截断的文本 */
     }
+    #toc {
+      max-width: 200px; /* 设置最大宽度 */
+    }
   `;
   document.head.appendChild(style);
 });
