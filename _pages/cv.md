@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 {% include base_path %}
-<aside class="sidebar__right">
+<aside id="sidebar" class="sidebar__right">
   <nav class="toc">
       <header>
         <h4 class="nav__title">
@@ -30,6 +30,24 @@ redirect_from:
   </nav>
 </aside>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var sidebar = document.getElementById("sidebar");
+    var sidebarTop = sidebar.offsetTop;
+
+    window.onscroll = function() {
+      if (window.pageYOffset > sidebarTop) {
+        sidebar.style.position = "fixed";
+        sidebar.style.top = "10px";
+        sidebar.style.right = "10px";
+        sidebar.style.width = "200px";
+      } else {
+        sidebar.style.position = "static";
+        sidebar.style.width = "auto";
+      }
+    };
+  });
+</script>
 # Education
 
 * Ph.D in Version Control Theory, GitHub University, 2018 (expected)
