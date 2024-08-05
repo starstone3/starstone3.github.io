@@ -19,4 +19,22 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   toc.appendChild(tocList);
+
+  // 添加样式
+  var style = document.createElement("style");
+  style.innerHTML = `
+    #toc ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    #toc li {
+      margin-bottom: 0.5em;
+      white-space: pre-wrap; /* 保证每个标题单独换行 */
+    }
+    #toc a {
+      text-decoration: none;
+      color: inherit;
+    }
+  `;
+  document.head.appendChild(style);
 });
