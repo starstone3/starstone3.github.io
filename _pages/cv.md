@@ -37,13 +37,9 @@ redirect_from:
 
     window.onscroll = function() {
       if (window.pageYOffset > sidebarTop) {
-        sidebar.style.position = "fixed";
-        sidebar.style.top = "10px";
-        sidebar.style.right = "10px";
-        sidebar.style.width = "200px";
+        sidebar.classList.add("fixed-sidebar");
       } else {
-        sidebar.style.position = "static";
-        sidebar.style.width = "auto";
+        sidebar.classList.remove("fixed-sidebar");
       }
     };
 
@@ -68,6 +64,12 @@ redirect_from:
         white-space: nowrap; /* 确保文本不换行 */
         overflow: hidden; /* 隐藏超出部分 */
         text-overflow: ellipsis; /* 使用省略号表示被截断的文本 */
+      }
+      .fixed-sidebar {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        width: 200px;
       }
     `;
     document.head.appendChild(style);
