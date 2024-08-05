@@ -10,6 +10,12 @@ redirect_from:
 {% include base_path %}
 <aside class="sidebar__right">
   <nav class="toc">
+      <header>
+        <h4 class="nav__title">
+          <i class="fa fa-{{ include.icon | default: 'file-text' }}"></i> 
+          {{ include.title | default: site.data.ui-text[site.locale].toc_label }}
+        </h4>
+      </header>
     <div class="toc__menu">
       <ul>
         <li><a href="#education">Education</a></li>

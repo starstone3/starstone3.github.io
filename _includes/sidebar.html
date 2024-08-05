@@ -22,7 +22,7 @@
     {% endif %}
   {% endif %}
 </div> 
-<aside class="sidebar__right">
+<!-- <aside class="sidebar__right">
   <nav class="toc">
     <header>
       <h4 class="nav__title">
@@ -30,6 +30,9 @@
         {{ include.title | default: site.data.ui-text[site.locale].toc_label }}
       </h4>
     </header>
+    <div class="toc__menu">
+      {% toc %}
+    </div>
   </nav>
-</aside>
+</aside> -->
 {% endif %}
