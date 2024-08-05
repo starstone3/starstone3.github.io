@@ -308,10 +308,13 @@ toc:
   min_level: 1
   max_level: 6
   no_toc_section_class: 'no_toc'
-  list_class: 'toc-list'
-  sublist_class: 'toc-sublist'
-  item_class: 'toc-list-item'
-  link_class: 'toc-link'
+  list_class: 'toc__menu'
+  sublist_class: 'toc__sublist'
+  item_class: 'toc__item'
+  item_prefix: 'toc__'
+  list_number: false
+  max_depth: 4
+  separator: '_'
 
 # Archives
 #  Type
