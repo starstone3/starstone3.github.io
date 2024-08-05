@@ -29,11 +29,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     #toc li {
       margin-bottom: 0.5em;
-      white-space: pre-wrap; /* 保证每个标题单独换行 */
     }
     #toc a {
       text-decoration: none;
       color: inherit;
+      display: block; /* 确保链接元素占据整行 */
+      word-break: break-word; /* 处理长单词的换行 */
     }
   `;
   document.head.appendChild(style);
