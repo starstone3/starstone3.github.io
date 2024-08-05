@@ -35,6 +35,9 @@ document.addEventListener("DOMContentLoaded", function() {
       color: inherit;
       display: block; /* 确保链接元素占据整行 */
       word-break: break-word; /* 处理长单词的换行 */
+      white-space: nowrap; /* 确保文本不换行 */
+      overflow: hidden; /* 隐藏超出部分 */
+      text-overflow: ellipsis; /* 使用省略号表示被截断的文本 */
     }
   `;
   document.head.appendChild(style);
