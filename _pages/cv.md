@@ -14,7 +14,15 @@ redirect_from:
     <h4 class="nav__title">目录</h4>
   </header>
   <div class="toc__menu">
-    {% toc %}
+    <ul>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#work-experience">Work experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#talks">Talks</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#service-and-leadership">Service and leadership</a></li>
+    </ul>
   </div>
 </nav>
 
