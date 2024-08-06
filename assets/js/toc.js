@@ -81,29 +81,25 @@ document.addEventListener("DOMContentLoaded", function() {
       overflow: hidden; /* 隐藏超出部分 */
       text-overflow: ellipsis; /* 使用省略号表示被截断的文本 */
     }
-    #toc .toc-h1 a {
-      font-size: 1.2em; /* 一级标题字体大小 */
-      padding-left: 0; /* 一级标题无缩进 */
+    #toc ul ul a {
+      font-size: 1.1em; /* 二级嵌套字体大小 */
+      padding-left: 20px; /* 二级嵌套缩进 */
     }
-    #toc .toc-h2 a {
-      font-size: 1.1em; /* 二级标题字体大小 */
-      padding-left: 20px; /* 二级标题缩进 */
+    #toc ul ul ul a {
+      font-size: 1em; /* 三级嵌套字体大小 */
+      padding-left: 40px; /* 三级嵌套缩进 */
     }
-    #toc .toc-h3 a {
-      font-size: 1em; /* 三级标题字体大小 */
-      padding-left: 40px; /* 三级标题缩进 */
+    #toc ul ul ul ul a {
+      font-size: 0.9em; /* 四级嵌套字体大小 */
+      padding-left: 60px; /* 四级嵌套缩进 */
     }
-    #toc .toc-h4 a {
-      font-size: 0.9em; /* 四级标题字体大小 */
-      padding-left: 60px; /* 四级标题缩进 */
+    #toc ul ul ul ul ul a {
+      font-size: 0.8em; /* 五级嵌套字体大小 */
+      padding-left: 80px; /* 五级嵌套缩进 */
     }
-    #toc .toc-h5 a {
-      font-size: 0.8em; /* 五级标题字体大小 */
-      padding-left: 80px; /* 五级标题缩进 */
-    }
-    #toc .toc-h6 a {
-      font-size: 0.7em; /* 六级标题字体大小 */
-      padding-left: 100px; /* 六级标题缩进 */
+    #toc ul ul ul ul ul ul a {
+      font-size: 0.7em; /* 六级嵌套字体大小 */
+      padding-left: 100px; /* 六级嵌套缩进 */
     }
   `;
   document.head.appendChild(style);
