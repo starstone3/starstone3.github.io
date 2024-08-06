@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
       padding: 10px; /* 添加内边距 */
       background-color: #f9f9f9; /* 添加背景颜色 */
       position: fixed; /* 固定位置 */
-      top: 40px; /* 距离顶部 10px */
-      right: 50px; /* 距离右侧 10px */
+      top: 80px; /* 距离顶部 10px */
+      right: 150px; /* 距离右侧 10px */
       z-index: 1000; /* 确保在最上层 */
     }
     #toc ul {
@@ -65,23 +65,23 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     #toc li:nth-child(2) a {
       font-size: 1.1em; /* 二级标题字体大小 */
-      padding-left: 10px; /* 二级标题缩进 */
+      padding-left: 20px; /* 二级标题缩进 */
     }
     #toc li:nth-child(3) a {
       font-size: 1em; /* 三级标题字体大小 */
-      padding-left: 20px; /* 三级标题缩进 */
+      padding-left: 40px; /* 三级标题缩进 */
     }
     #toc li:nth-child(4) a {
       font-size: 0.9em; /* 四级标题字体大小 */
-      padding-left: 30px; /* 四级标题缩进 */
+      padding-left: 60px; /* 四级标题缩进 */
     }
     #toc li:nth-child(5) a {
       font-size: 0.8em; /* 五级标题字体大小 */
-      padding-left: 40px; /* 五级标题缩进 */
+      padding-left: 80px; /* 五级标题缩进 */
     }
     #toc li:nth-child(6) a {
       font-size: 0.7em; /* 六级标题字体大小 */
-      padding-left: 50px; /* 六级标题缩进 */
+      padding-left: 100px; /* 六级标题缩进 */
     }
   `;
   document.head.appendChild(style);
