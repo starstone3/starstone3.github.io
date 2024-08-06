@@ -12,8 +12,14 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   var tocList = document.createElement("ul");
+  var headerCount = 0;
 
   headers.forEach(function(header) {
+    headerCount++;
+    if (headerCount <= 3) {
+      return; // 跳过前三个标题
+    }
+
     var id = header.id || header.textContent.trim().toLowerCase().replace(/\s+/g, '-');
     header.id = id;
 
