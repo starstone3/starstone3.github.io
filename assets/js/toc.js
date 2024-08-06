@@ -50,6 +50,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     #toc {
       max-width: 200px; /* 设置最大宽度 */
+      border: 1px solid #ccc; /* 添加边框 */
+      padding: 10px; /* 添加内边距 */
+      background-color: #f9f9f9; /* 添加背景颜色 */
+      position: fixed; /* 固定位置 */
+      top: 10px; /* 距离顶部 10px */
+      right: 10px; /* 距离右侧 10px */
+      z-index: 1000; /* 确保在最上层 */
     }
   `;
   document.head.appendChild(style);
