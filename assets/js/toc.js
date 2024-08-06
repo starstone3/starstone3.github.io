@@ -35,6 +35,14 @@ document.addEventListener("DOMContentLoaded", function() {
     #toc {
       max-height: 80vh; /* 设置最大高度 */
       overflow-y: auto; /* 启用垂直滚动条 */
+      max-width: 200px; /* 设置最大宽度 */
+      border: 1px solid #ccc; /* 添加边框 */
+      padding: 10px; /* 添加内边距 */
+      background-color: #f9f9f9; /* 添加背景颜色 */
+      position: fixed; /* 固定位置 */
+      top: 15px; /* 距离顶部 10px */
+      right: 12px; /* 距离右侧 10px */
+      z-index: 1000; /* 确保在最上层 */
     }
     #toc ul {
       list-style-type: none; /* 去掉默认的列表样式 */
