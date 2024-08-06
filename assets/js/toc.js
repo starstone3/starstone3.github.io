@@ -59,6 +59,30 @@ document.addEventListener("DOMContentLoaded", function() {
       overflow: hidden; /* 隐藏超出部分 */
       text-overflow: ellipsis; /* 使用省略号表示被截断的文本 */
     }
+    #toc li:nth-child(1) a {
+      font-size: 1.2em; /* 一级标题字体大小 */
+      padding-left: 0; /* 一级标题无缩进 */
+    }
+    #toc li:nth-child(2) a {
+      font-size: 1.1em; /* 二级标题字体大小 */
+      padding-left: 10px; /* 二级标题缩进 */
+    }
+    #toc li:nth-child(3) a {
+      font-size: 1em; /* 三级标题字体大小 */
+      padding-left: 20px; /* 三级标题缩进 */
+    }
+    #toc li:nth-child(4) a {
+      font-size: 0.9em; /* 四级标题字体大小 */
+      padding-left: 30px; /* 四级标题缩进 */
+    }
+    #toc li:nth-child(5) a {
+      font-size: 0.8em; /* 五级标题字体大小 */
+      padding-left: 40px; /* 五级标题缩进 */
+    }
+    #toc li:nth-child(6) a {
+      font-size: 0.7em; /* 六级标题字体大小 */
+      padding-left: 50px; /* 六级标题缩进 */
+    }
   `;
   document.head.appendChild(style);
   console.log("样式已添加");
