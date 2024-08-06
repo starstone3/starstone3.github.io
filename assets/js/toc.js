@@ -82,34 +82,34 @@ document.addEventListener("DOMContentLoaded", function() {
       text-overflow: ellipsis; /* 使用省略号表示被截断的文本 */
     }
       #toc ul a {
-        font-size: 1.4em; /* 一级嵌套字体大小 */
+        font-size: 1.2em; /* 一级嵌套字体大小 */
         padding-left: 0; /* 一级嵌套缩进 */
-        color: #FF5733; /* 一级嵌套颜色：橙红色 */
+        color: #333; /* 一级嵌套颜色 */
       }
       #toc ul ul a {
-        font-size: 1.2em; /* 二级嵌套字体大小 */
+        font-size: 1.1em; /* 二级嵌套字体大小 */
         padding-left: 20px; /* 二级嵌套缩进 */
-        color: #33FF57; /* 二级嵌套颜色：绿色 */
+        color: #555; /* 二级嵌套颜色 */
       }
       #toc ul ul ul a {
         font-size: 1em; /* 三级嵌套字体大小 */
         padding-left: 40px; /* 三级嵌套缩进 */
-        color: #3357FF; /* 三级嵌套颜色：蓝色 */
+        color: #777; /* 三级嵌套颜色 */
       }
       #toc ul ul ul ul a {
-        font-size: 0.8em; /* 四级嵌套字体大小 */
+        font-size: 0.9em; /* 四级嵌套字体大小 */
         padding-left: 60px; /* 四级嵌套缩进 */
-        color: #FF33A1; /* 四级嵌套颜色：粉红色 */
+        color: #999; /* 四级嵌套颜色 */
       }
       #toc ul ul ul ul ul a {
-        font-size: 0.6em; /* 五级嵌套字体大小 */
+        font-size: 0.8em; /* 五级嵌套字体大小 */
         padding-left: 80px; /* 五级嵌套缩进 */
-        color: #33FFF5; /* 五级嵌套颜色：青色 */
+        color: #bbb; /* 五级嵌套颜色 */
       }
       #toc ul ul ul ul ul ul a {
-        font-size: 0.5em; /* 六级嵌套字体大小 */
+        font-size: 0.7em; /* 六级嵌套字体大小 */
         padding-left: 100px; /* 六级嵌套缩进 */
-        color: #F5FF33; /* 六级嵌套颜色：黄色 */
+        color: #ddd; /* 六级嵌套颜色 */
       }
   `;
   document.head.appendChild(style);
