@@ -32,9 +32,12 @@ document.addEventListener("DOMContentLoaded", function() {
   // 添加样式
   var style = document.createElement("style");
   style.innerHTML = `
+    #toc {
+      max-height: 80vh; /* 设置最大高度 */
+      overflow-y: auto; /* 启用垂直滚动条 */
+    }
     #toc ul {
-      list-style-type: none;
-      padding-left: 0;
+      list-style-type: none; /* 去掉默认的列表样式 */
     }
     #toc li {
       margin-bottom: 0.5em;

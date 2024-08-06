@@ -6,17 +6,50 @@ redirect_from:
   - /md/
   - /markdown.html
 ---
-<aside class="sidebar__right">
+<aside id="sidebar" class="sidebar__right">
   <nav class="toc">
-      <header>
-        <h4 class="nav__title">
-          <i class="fa fa-{{ include.icon | default: 'file-text' }}"></i> 
-          {{ include.title | default: site.data.ui-text[site.locale].toc_label }}
-        </h4>
-      </header>
+    <header>
+      <h4 class="nav__title">
+        <i class="fa fa-{{ include.icon | default: 'file-text' }}"></i> 
+        {{ include.title | default: site.data.ui-text[site.locale].toc_label }}
+      </h4>
+    </header>
     <div id="toc"></div>
   </nav>
 </aside>
+
+<style>
+  .sidebar__right.fixed {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 200px;
+  }
+
+  #toc {
+    max-height: 80vh; /* 设置最大高度 */
+    overflow-y: auto; /* 启用垂直滚动条 */
+  }
+
+  .toc ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .toc li {
+    margin-bottom: 0.5em;
+  }
+
+  .toc a {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* 确保链接元素占据整行 */
+    word-break: break-word; /* 处理长单词的换行 */
+    white-space: nowrap; /* 确保文本不换行 */
+    overflow: hidden; /* 隐藏超出部分 */
+    text-overflow: ellipsis; /* 使用省略号表示被截断的文本 */
+  }
+</style>
 
 <script src="{{ '/assets/js/toc.js' | relative_url }}" defer></script>
 
