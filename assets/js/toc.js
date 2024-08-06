@@ -1,8 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
   var toc = document.getElementById("toc");
-  if (!toc) return;
+  if (!toc) {
+    console.log("没有找到 id 为 'toc' 的元素");
+    return;
+  }
 
   var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+  if (headers.length === 0) {
+    console.log("没有找到任何标题元素");
+    return;
+  }
+
   var tocList = document.createElement("ul");
 
   headers.forEach(function(header) {
@@ -19,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   toc.appendChild(tocList);
+  console.log("目录已生成并添加到 'toc' 元素中");
 
   // 添加样式
   var style = document.createElement("style");
@@ -44,4 +53,5 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   `;
   document.head.appendChild(style);
+  console.log("样式已添加");
 });
