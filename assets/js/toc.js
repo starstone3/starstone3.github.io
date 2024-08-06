@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
       padding: 10px; /* 添加内边距 */
       background-color: #f9f9f9; /* 添加背景颜色 */
       position: fixed; /* 固定位置 */
-      top: 30px; /* 距离顶部 10px */
-      right: 20px; /* 距离右侧 10px */
+      top: 40px; /* 距离顶部 10px */
+      right: 50px; /* 距离右侧 10px */
       z-index: 1000; /* 确保在最上层 */
     }
     #toc ul {
