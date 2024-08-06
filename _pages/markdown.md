@@ -7,15 +7,14 @@ redirect_from:
   - /markdown.html
 ---
 <aside class="sidebar__right">
-  <nav class="toc" markdown="1">
-    <header>
-      <h4 class="nav__title">
-        <i class="fa fa-{{ include.icon | default: 'file-text' }}"></i> 
-        {{ include.title | default: site.data.ui-text[site.locale].toc_label }}
-      </h4>
-    </header>
-    * Auto generated table of contents
-      {:toc .toc__menu}
+  <nav class="toc">
+      <header>
+        <h4 class="nav__title">
+          <i class="fa fa-{{ include.icon | default: 'file-text' }}"></i> 
+          {{ include.title | default: site.data.ui-text[site.locale].toc_label }}
+        </h4>
+      </header>
+    <div id="toc"></div>
   </nav>
 </aside>
 ## Locations of key files/directories
