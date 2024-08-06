@@ -81,6 +81,10 @@ document.addEventListener("DOMContentLoaded", function() {
       overflow: hidden; /* 隐藏超出部分 */
       text-overflow: ellipsis; /* 使用省略号表示被截断的文本 */
     }
+    #toc ul a{
+      font-size: 1.2em; /* 一级嵌套字体大小 */
+      padding-left: 0; /* 一级嵌套缩进 */
+    }
     #toc ul ul a {
       font-size: 1.1em; /* 二级嵌套字体大小 */
       padding-left: 20px; /* 二级嵌套缩进 */
