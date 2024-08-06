@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
       list-style-type: none; /* 去掉默认的列表样式 */
     }
     #toc li {
-      margin-bottom: 0.5em;
+      margin-bottom: 1.0em;
     }
     #toc a {
       text-decoration: none;
@@ -81,29 +81,35 @@ document.addEventListener("DOMContentLoaded", function() {
       overflow: hidden; /* 隐藏超出部分 */
       text-overflow: ellipsis; /* 使用省略号表示被截断的文本 */
     }
-    #toc ul a{
+       #toc ul a {
       font-size: 1.2em; /* 一级嵌套字体大小 */
       padding-left: 0; /* 一级嵌套缩进 */
+      color: #333; /* 一级嵌套颜色 */
     }
     #toc ul ul a {
       font-size: 1.1em; /* 二级嵌套字体大小 */
       padding-left: 20px; /* 二级嵌套缩进 */
+      color: #555; /* 二级嵌套颜色 */
     }
     #toc ul ul ul a {
       font-size: 1em; /* 三级嵌套字体大小 */
       padding-left: 40px; /* 三级嵌套缩进 */
+      color: #777; /* 三级嵌套颜色 */
     }
     #toc ul ul ul ul a {
       font-size: 0.9em; /* 四级嵌套字体大小 */
       padding-left: 60px; /* 四级嵌套缩进 */
+      color: #999; /* 四级嵌套颜色 */
     }
     #toc ul ul ul ul ul a {
       font-size: 0.8em; /* 五级嵌套字体大小 */
       padding-left: 80px; /* 五级嵌套缩进 */
+      color: #bbb; /* 五级嵌套颜色 */
     }
     #toc ul ul ul ul ul ul a {
       font-size: 0.7em; /* 六级嵌套字体大小 */
       padding-left: 100px; /* 六级嵌套缩进 */
+      color: #ddd; /* 六级嵌套颜色 */
     }
   `;
   document.head.appendChild(style);
