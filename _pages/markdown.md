@@ -18,6 +18,8 @@ redirect_from:
   </nav>
 </aside>
 
+<script src="{{ '/assets/js/toc.js' | relative_url }}" defer></script>
+
 # Locations of key files/directories
 
 * Basic config options: _config.yml
