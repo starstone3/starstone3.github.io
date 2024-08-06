@@ -17,7 +17,8 @@ redirect_from:
     <div id="toc"></div>
   </nav>
 </aside>
-## Locations of key files/directories
+
+# Locations of key files/directories
 
 * Basic config options: _config.yml
 * Top navigation bar config: _data/navigation.yml
@@ -32,7 +33,7 @@ redirect_from:
 * Static files (like PDFs): /files/
 * Profile image (can set in _config.yml): images/profile.png
 
-## Tips and hints
+# Tips and hints
 
 * Name a file ".md" to have it render in markdown, name it ".html" to render in HTML.
 * Go to the [commit list](https://github.com/academicpages/academicpages.github.io/commits/master) (on your repo) to find the last version Github built with Jekyll. 
@@ -41,11 +42,11 @@ redirect_from:
   * Red X: error
   * No icon: not built
 
-## Resources
+# Resources
  * [Liquid syntax guide](https://shopify.github.io/liquid/tags/control-flow/)
  * [MathJax Documentation](https://docs.mathjax.org/en/latest/)
 
-## MathJax 
+# MathJax 
 
 Support for MathJax Version 3.0 is included in the template:
 
@@ -62,27 +63,27 @@ The default delimiters of `$$...$$` and `\\[...\\]` are supported for displayed 
 
 **Note** that since Academic Pages uses Markdown which cases some interference with MathJax and LaTeX for escaping characters and new lines, although [some workarounds exist](https://math.codidact.com/posts/278763/278772#answer-278772).
 
-## Markdown guide
+# Markdown guide
 
 Academic Pages uses [kramdown](https://kramdown.gettalong.org/index.html) for Markdown rendering, which has some differences from other Markdown implementations such as GitHub's. In addition to this guide, please see the [kramdown Syntax page](https://kramdown.gettalong.org/syntax.html) for full documentation.  
 
-### Header three
+## Header three
 
-#### Header four
+### Header four
 
-##### Header five
+#### Header five
 
-###### Header six
+##### Header six
 
-## Blockquotes
+# Blockquotes
 
 Single line blockquote:
 
 > Quotes are cool.
 
-## Tables
+# Tables
 
-### Table 1
+## Table 1
 
 | Entry            | Item   |                                                              |
 | --------         | ------ | ------------------------------------------------------------ |
@@ -90,7 +91,7 @@ Single line blockquote:
 | [Jane Doe](#)    | 2019   | Description of the item in the list                          |
 | [Doe Doe](#)     | 2022   | Description of the item in the list                          |
 
-### Table 2
+## Table 2
 
 | Header1 | Header2 | Header3 |
 |:--------|:-------:|--------:|
@@ -103,7 +104,7 @@ ll5   | cell6   |
 |=============================|
 | Foot1   | Foot2   | Foot3   |
 
-## Definition Lists
+# Definition Lists
 
 Definition List Title
 :   Definition list division.
@@ -117,7 +118,7 @@ Startup
 Do It Live
 :   I'll let Bill O'Reilly [explain](https://www.youtube.com/watch?v=O_HyZ5aW76c "We'll Do It Live") this one.
 
-## Unordered Lists (Nested)
+# Unordered Lists (Nested)
 
   * List item one 
       * List item one 
@@ -132,7 +133,7 @@ Do It Live
   * List item three
   * List item four
 
-## Ordered List (Nested)
+# Ordered List (Nested)
 
   1. List item one 
       1. List item one 
@@ -147,11 +148,11 @@ Do It Live
   3. List item three
   4. List item four
 
-## Buttons
+# Buttons
 
 Make any link standout more when applying the `.btn` class.
 
-## Notices
+# Notices
 
 Basic notices or call-outs are supported using the following syntax:
 
@@ -165,7 +166,7 @@ which wil render as:
 **Watch out!** You can also add notices by appending `{: .notice}` to the line following paragraph.
 {: .notice}
 
-### Footnotes
+# Footnotes
 
 Footnotes can be useful for clarifying points in the text, or citing information.[^1] Markdown support numeric footnotes, as well as text as long as the values are unique.[^note]
 
@@ -179,29 +180,29 @@ This is the regular text.[^1] This is more regular text.[^note]
 [^1]: Such as this footnote.
 [^note]: When using text for footnotes markers, no spaces are permitted in the name.
 
-## HTML Tags
+# HTML Tags
 
-### Address Tag
+## Address Tag
 
 <address>
   1 Infinite Loop<br /> Cupertino, CA 95014<br /> United States
 </address>
 
-### Anchor Tag (aka. Link)
+## Anchor Tag (aka. Link)
 
 This is an example of a [link](http://github.com "Github").
 
-### Abbreviation Tag
+## Abbreviation Tag
 
 The abbreviation CSS stands for "Cascading Style Sheets".
 
 *[CSS]: Cascading Style Sheets
 
-### Cite Tag
+## Cite Tag
 
 "Code is poetry." ---<cite>Automattic</cite>
 
-### Code Tag
+## Code Tag
 
 You will learn later on in these tests that `word-wrap: break-word;` will be your best friend.
 
@@ -217,23 +218,23 @@ or R:
 print("Hello World!", quote = FALSE)
 ```
 
-### Strike Tag
+## Strike Tag
 
 This tag will let you <strike>strikeout text</strike>.
 
-### Emphasize Tag
+## Emphasize Tag
 
 The emphasize tag should _italicize_ text.
 
-### Insert Tag
+## Insert Tag
 
 This tag should denote <ins>inserted</ins> text.
 
-### Keyboard Tag
+## Keyboard Tag
 
 This scarcely known tag emulates <kbd>keyboard text</kbd>, which is usually styled like the `<code>` tag.
 
-### Preformatted Tag
+## Preformatted Tag
 
 This tag styles large blocks of code.
 
@@ -247,23 +248,23 @@ This tag styles large blocks of code.
 }
 </pre>
 
-### Quote Tag
+## Quote Tag
 
 <q>Developers, developers, developers&#8230;</q> &#8211;Steve Ballmer
 
-### Strong Tag
+## Strong Tag
 
 This tag shows **bold text**.
 
-### Subscript Tag
+## Subscript Tag
 
 Getting our science styling on with H<sub>2</sub>O, which should push the "2" down.
 
-### Superscript Tag
+## Superscript Tag
 
 Still sticking with science and Isaac Newton's E = MC<sup>2</sup>, which should lift the 2 up.
 
-### Variable Tag
+## Variable Tag
 
 This allows you to denote <var>variables</var>.
 
