@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   headers.forEach(function(header) {
     headerCount++;
-    if (headerCount <= 3) {
-      return; // 跳过前三个标题
+    if (headerCount <= 2) {
+      return; // 跳过前两个标题
     }
 
     var id = header.id || header.textContent.trim().toLowerCase().replace(/\s+/g, '-');
@@ -70,8 +70,8 @@ document.addEventListener("DOMContentLoaded", function() {
       padding: 10px; /* 添加内边距 */
       background-color: #f9f9f9; /* 添加背景颜色 */
       position: fixed; /* 固定位置 */
-      top: 80px; /* 距离顶部 10px */
-      right: 150px; /* 距离右侧 10px */
+      top: 80px; /* 距离顶部 80px */
+      right: 150px; /* 距离右侧 150px */
       z-index: 1000; /* 确保在最上层 */
     }
     #toc ul {
