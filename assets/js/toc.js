@@ -5,10 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
     return;
   }
 
-  // 假设你可以在 JavaScript 中获取到这个变量的值
   var tocTitle = "本页内容"; // 这里替换为实际的值，例如从服务器获取或通过其他方式传递
 
-  // 创建图标和标题元素
   var tocHeader = document.createElement("div");
   tocHeader.innerHTML = '<i class="fa fa-file-text"></i> ' + tocTitle;
   toc.appendChild(tocHeader);
@@ -39,6 +37,15 @@ document.addEventListener("DOMContentLoaded", function() {
     tocLink.href = "#" + id;
     tocLink.textContent = header.textContent;
 
+    tocLink.addEventListener("click", function() {
+      // 移除所有标题的红色样式
+      headers.forEach(function(h) {
+        h.style.color = "";
+      });
+      // 将点击的标题变成红色
+      header.style.color = "red";
+    });
+
     tocItem.appendChild(tocLink);
 
     if (level > currentLevel) {
@@ -59,23 +66,22 @@ document.addEventListener("DOMContentLoaded", function() {
   toc.appendChild(tocList);
   console.log("目录已生成并添加到 'toc' 元素中");
 
-  // 添加样式
   var style = document.createElement("style");
   style.innerHTML = `
     #toc {
-      max-height: 80vh; /* 设置最大高度 */
-      overflow-y: auto; /* 启用垂直滚动条 */
-      max-width: 200px; /* 设置最大宽度 */
-      border: 1px solid #ccc; /* 添加边框 */
-      padding: 10px; /* 添加内边距 */
-      background-color: #f9f9f9; /* 添加背景颜色 */
-      position: fixed; /* 固定位置 */
-      top: 80px; /* 距离顶部 80px */
-      right: 150px; /* 距离右侧 150px */
-      z-index: 1000; /* 确保在最上层 */
+      max-height: 80vh;
+      overflow-y: auto;
+      max-width: 200px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      background-color: #f9f9f9;
+      position: fixed;
+      top: 80px;
+      right: 150px;
+      z-index: 1000;
     }
     #toc ul {
-      list-style-type: none; /* 去掉默认的列表样式 */
+      list-style-type: none;
     }
     #toc li {
       margin-bottom: 1.0em;
@@ -83,42 +89,42 @@ document.addEventListener("DOMContentLoaded", function() {
     #toc a {
       text-decoration: none;
       color: inherit;
-      display: block; /* 确保链接元素占据整行 */
-      word-break: break-word; /* 处理长单词的换行 */
-      white-space: nowrap; /* 确保文本不换行 */
-      overflow: hidden; /* 隐藏超出部分 */
-      text-overflow: ellipsis; /* 使用省略号表示被截断的文本 */
+      display: block;
+      word-break: break-word;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-      #toc ul a {
-        font-size: 1.2em; /* 一级嵌套字体大小 */
-        padding-left: 0; /* 一级嵌套缩进 */
-        color: #333; /* 一级嵌套颜色 */
-      }
-      #toc ul ul a {
-        font-size: 1.1em; /* 二级嵌套字体大小 */
-        padding-left: 20px; /* 二级嵌套缩进 */
-        color: #555; /* 二级嵌套颜色 */
-      }
-      #toc ul ul ul a {
-        font-size: 1em; /* 三级嵌套字体大小 */
-        padding-left: 40px; /* 三级嵌套缩进 */
-        color: #777; /* 三级嵌套颜色 */
-      }
-      #toc ul ul ul ul a {
-        font-size: 0.9em; /* 四级嵌套字体大小 */
-        padding-left: 60px; /* 四级嵌套缩进 */
-        color: #999; /* 四级嵌套颜色 */
-      }
-      #toc ul ul ul ul ul a {
-        font-size: 0.8em; /* 五级嵌套字体大小 */
-        padding-left: 80px; /* 五级嵌套缩进 */
-        color: #bbb; /* 五级嵌套颜色 */
-      }
-      #toc ul ul ul ul ul ul a {
-        font-size: 0.7em; /* 六级嵌套字体大小 */
-        padding-left: 100px; /* 六级嵌套缩进 */
-        color: #ddd; /* 六级嵌套颜色 */
-      }
+    #toc ul a {
+      font-size: 1.2em;
+      padding-left: 0;
+      color: #333;
+    }
+    #toc ul ul a {
+      font-size: 1.1em;
+      padding-left: 20px;
+      color: #555;
+    }
+    #toc ul ul ul a {
+      font-size: 1em;
+      padding-left: 40px;
+      color: #777;
+    }
+    #toc ul ul ul ul a {
+      font-size: 0.9em;
+      padding-left: 60px;
+      color: #999;
+    }
+    #toc ul ul ul ul ul a {
+      font-size: 0.8em;
+      padding-left: 80px;
+      color: #bbb;
+    }
+    #toc ul ul ul ul ul ul a {
+      font-size: 0.7em;
+      padding-left: 100px;
+      color: #ddd;
+    }
   `;
   document.head.appendChild(style);
   console.log("样式已添加");
