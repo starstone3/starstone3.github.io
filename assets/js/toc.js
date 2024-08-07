@@ -38,12 +38,18 @@ document.addEventListener("DOMContentLoaded", function() {
     tocLink.textContent = header.textContent;
 
     tocLink.addEventListener("click", function() {
-      // 移除所有标题的红色样式
+      // 移除所有标题和目录链接的红色样式
       headers.forEach(function(h) {
         h.style.color = "";
       });
-      // 将点击的标题变成红色
+      var tocLinks = document.querySelectorAll("#toc a");
+      tocLinks.forEach(function(link) {
+        link.style.color = "";
+      });
+
+      // 将点击的标题和目录链接变成红色
       header.style.color = "red";
+      tocLink.style.color = "red";
     });
 
     tocItem.appendChild(tocLink);
