@@ -5,6 +5,14 @@ document.addEventListener("DOMContentLoaded", function() {
     return;
   }
 
+  // 假设你可以在 JavaScript 中获取到这个变量的值
+  var tocTitle = "本页内容"; // 这里替换为实际的值，例如从服务器获取或通过其他方式传递
+
+  // 创建图标和标题元素
+  var tocHeader = document.createElement("div");
+  tocHeader.innerHTML = '<i class="fa fa-file-text"></i> ' + tocTitle;
+  toc.appendChild(tocHeader);
+
   var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
   if (headers.length === 0) {
     console.log("没有找到任何标题元素");
