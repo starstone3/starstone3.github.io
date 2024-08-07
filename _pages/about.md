@@ -8,13 +8,10 @@ redirect_from:
 ---
 <aside id="sidebar" class="sidebar__right">
   <nav class="toc">
-      <header>
-        <h4 class="nav__title">
-          <i class="fa fa-{{ include.icon | default: 'file-text' }}"></i> 
-          {{ include.title | default: site.data.ui-text[site.locale].toc_label }}
-        </h4>
-      </header>
-    <div id="toc"></div>
+    <div id="toc-container">
+      <div id="toc">
+      </div>
+    </div>
   </nav>
 </aside>
 
