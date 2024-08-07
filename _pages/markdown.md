@@ -8,13 +8,15 @@ redirect_from:
 ---
 <aside id="sidebar" class="sidebar__right">
   <nav class="toc">
-    <header>
-      <h4 class="nav__title">
+    <div id="toc-container">
+      <h4 class="toc__title">
         <i class="fa fa-{{ include.icon | default: 'file-text' }}"></i> 
         {{ include.title | default: site.data.ui-text[site.locale].toc_label }}
       </h4>
-    </header>
-    <div id="toc"></div>
+      <div id="toc">
+        <!-- 这里将生成的目录放置在这个 div 中 -->
+      </div>
+    </div>
   </nav>
 </aside>
 
