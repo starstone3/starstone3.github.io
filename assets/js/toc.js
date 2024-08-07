@@ -52,6 +52,16 @@ document.addEventListener("DOMContentLoaded", function() {
       tocLink.style.color = "red";
     });
 
+    tocLink.addEventListener("mouseover", function() {
+      header.style.color = "lightcoral"; // 鼠标悬浮时标题颜色变淡
+    });
+
+    tocLink.addEventListener("mouseout", function() {
+      if (header.style.color !== "red") {
+        header.style.color = ""; // 鼠标移开时恢复原颜色
+      }
+    });
+
     tocItem.appendChild(tocLink);
 
     if (level > currentLevel) {
