@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
       top: 80px;
       right: 150px;
       z-index: 1000;
+      cursor: move; /* 添加鼠标指针样式 */
     }
     #toc ul {
       list-style-type: none;
@@ -158,4 +159,55 @@ document.addEventListener("DOMContentLoaded", function() {
   `;
   document.head.appendChild(style);
   console.log("样式已添加");
+
+  // 添加拖动功能
+  var isDragging = false;
+  var startX, startY, initialX, initialY;
+
+  toc.addEventListener("mousedown", function(e) {
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    initialX = toc.offsetLeft;
+    initialY = toc.offsetTop;
+    toc.style.cursor = "grabbing";
+  });
+
+  document.addEventListener("mousemove", function(e) {
+    if (isDragging) {
+      var dx = e.clientX - startX;
+      var dy = e.clientY - startY;
+      toc.style.left = initialX + dx + "px";
+      toc.style.top = initialY + dy + "px";
+    }
+  });
+
+  document.addEventListener("mouseup", function() {
+    isDragging = false;
+    toc.style.cursor = "move";
+  });
+
+  // 触屏支持
+  toc.addEventListener("touchstart", function(e) {
+    isDragging = true;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    initialX = toc.offsetLeft;
+    initialY = toc.offsetTop;
+    toc.style.cursor = "grabbing";
+  });
+
+  document.addEventListener("touchmove", function(e) {
+    if (isDragging) {
+      var dx = e.touches[0].clientX - startX;
+      var dy = e.touches[0].clientY - startY;
+      toc.style.left = initialX + dx + "px";
+      toc.style.top = initialY + dy + "px";
+    }
+  });
+
+  document.addEventListener("touchend", function() {
+    isDragging = false;
+    toc.style.cursor = "move";
+  });
 });
