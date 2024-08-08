@@ -7,6 +7,16 @@ redirect_from:
   - /incourse.html
 
 ---
+
+<aside id="sidebar" class="sidebar__right">
+  <nav class="toc">
+    <div id="toc-container">
+      <div id="toc">
+      </div>
+    </div>
+  </nav>
+</aside>
+
 # 随便写写
 由于在学习方面受到了很多前人的帮助，所以我也想在这里写一点上课的经验与感悟，造福后人谈不上，只是希望后来的同学们能少走一些弯路。
 
