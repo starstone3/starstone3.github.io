@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
       tocLink.style.color = "red";
 
       // 平滑滚动到目标位置
-      var offset = 60; // 根据你的固定头部高度调整
+      var offset = 75; // 根据你的固定头部高度调整
       var elementPosition = header.getBoundingClientRect().top + window.pageYOffset;
       var offsetPosition = elementPosition - offset;
 
