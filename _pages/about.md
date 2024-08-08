@@ -15,25 +15,6 @@ redirect_from:
   </nav>
 </aside>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var sidebar = document.getElementById("sidebar");
-    var sidebarTop = sidebar.offsetTop;
-
-    window.onscroll = function() {
-      if (window.pageYOffset > sidebarTop) {
-        sidebar.style.position = "fixed";
-        sidebar.style.top = "10px";
-        sidebar.style.right = "10px";
-        sidebar.style.width = "200px";
-      } else {
-        sidebar.style.position = "static";
-        sidebar.style.width = "auto";
-      }
-    };
-  });
-</script>
-
 # Whoami
 
 Hello，我是starstone3，目前就读于浙江大学计算机科学与技术专业。有点摆，有点懒，但是又有点想做出点东西。
