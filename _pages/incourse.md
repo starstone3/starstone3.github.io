@@ -5,7 +5,6 @@ author_profile: true
 redirect_from: 
   - /ic/
   - /incourse.html
-
 ---
 
 <aside id="sidebar" class="sidebar__right">
