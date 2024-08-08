@@ -160,6 +160,22 @@ document.addEventListener("DOMContentLoaded", function() {
   document.head.appendChild(style);
   console.log("样式已添加");
 
+  // 计算最长标题的宽度
+  var maxWidth = 200; // 最大宽度
+  var padding = 20; // 内边距
+  var longestWidth = 0;
+
+  headers.forEach(function(header) {
+    var width = header.offsetWidth;
+    if (width > longestWidth) {
+      longestWidth = width;
+    }
+  });
+
+  // 设置目录的宽度
+  var tocWidth = Math.min(longestWidth + padding, maxWidth);
+  toc.style.width = tocWidth + "px";
+
   // 添加拖动功能
   var isDragging = false;
   var startX, startY, initialX, initialY;
