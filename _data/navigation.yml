@@ -20,7 +20,9 @@ main:
     
   # - title: "CV"
   #   url: /cv/
-    
+  - title: "每日瞎写"
+    url: /diary/
+
   - title: "Guide"
     url: /markdown/
   
