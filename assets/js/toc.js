@@ -37,7 +37,9 @@ document.addEventListener("DOMContentLoaded", function() {
     tocLink.href = "#" + id;
     tocLink.textContent = header.textContent;
 
-    tocLink.addEventListener("click", function() {
+    tocLink.addEventListener("click", function(e) {
+      e.preventDefault();
+
       // 移除所有标题和目录链接的红色样式
       headers.forEach(function(h) {
         h.style.color = "";
@@ -50,6 +52,16 @@ document.addEventListener("DOMContentLoaded", function() {
       // 将点击的标题和目录链接变成红色
       header.style.color = "red";
       tocLink.style.color = "red";
+
+      // 平滑滚动到目标位置
+      var offset = 60; // 根据你的固定头部高度调整
+      var elementPosition = header.getBoundingClientRect().top + window.pageYOffset;
+      var offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     });
 
     tocLink.addEventListener("mouseover", function() {
