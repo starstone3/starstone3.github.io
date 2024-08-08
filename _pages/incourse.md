@@ -41,3 +41,9 @@ redirect_from:
 普物就一个字，**难**。对于我这种毫无竞赛基础的人来讲，简直是上大学以来最大的坎。大家一党要记得交作业和做每周的quiz，<strike>不然老师想捞你都捞不起来。</strike>这门课我期中考考了81（捞之后的），期末考前一晚复习到凌晨一点，所幸期末没有考很难的相对论等，最后的成绩是91/4.5.
 关于这门课，我做了一份很简陋的笔记，其中无相对论部分：
 [下载 普物笔记](smaterials/physics.pdf "点击下载"){:download="physics.pdf"}
+
+# 杂项
+* [部分课电子书](https://pan.baidu.com/s/1ld8aE8RUtDug8LqlKbQmYQ?pwd=7wct)
+* 程序设计与算法基础资料：
+    * [辅学网·程算](https://ckc-agc.bowling233.top/programming/)
+    * [图灵网·程算](https://zju-turing.github.io/TuringCourses/major_basic/programming/)
