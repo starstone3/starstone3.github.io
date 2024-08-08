@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // 计算最长标题的宽度
   var maxWidth = 200; // 最大宽度
-  var padding = 20; // 内边距
+  var padding = 10; // 内边距
   var longestWidth = 0;
 
   headers.forEach(function(header) {
