@@ -98,15 +98,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
   var style = document.createElement("style");
   style.innerHTML = `
-    #toc {
+     #toc {
       max-height: 80vh; /* 设置最大高度为视口高度的 80%，使其在内容过多时可以滚动 */
       overflow-y: auto; /* 当内容溢出时，垂直方向显示滚动条 */
       max-width: 200px; /* 设置最大宽度为 200 像素 */
       border: 1px solid #ccc; /* 设置边框为 1 像素宽的实线，颜色为浅灰色 */
       padding: 10px; /* 设置内边距为 10 像素 */
-      background: linear-gradient(135deg, #e0e0e0 25%, #c0c0c0 25%, #c0c0c0 50%, #e0e0e0 50%, #e0e0e0 75%, #c0c0c0 75%, #c0c0c0 100%);
-      background-size: 20px 20px;
-      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+      background: linear-gradient(135deg, #d4d4d4, #f6f6f6); /* 使用线性渐变创建银色金属质感 */
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 255, 255, 0.5); /* 添加内外阴影增强金属效果 */
       position: fixed; /* 设置元素为固定定位，使其在页面滚动时保持在固定位置 */
       top: 80px; /* 设置元素距离视口顶部 80 像素 */
       right: 150px; /* 设置元素距离视口右侧 150 像素 */
