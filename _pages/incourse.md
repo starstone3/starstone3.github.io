@@ -16,6 +16,8 @@ redirect_from:
   </nav>
 </aside>
 
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=27&pause=1000&color=F7581A&background=FFC18800&center=true&vCenter=true&width=435&lines=%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95)](https://git.io/typing-svg)
+
 # 随便写写
 
 由于在学习方面受到了很多前人的帮助，所以我也想在这里写一点上课的经验与感悟，造福后人谈不上，只是希望后来的同学们能少走一些弯路。
