@@ -72,7 +72,7 @@ nav :
   - "💠 封面":
     - "💠 封面": index.md
   - "课程笔记":
-    - incourse\index.md
+    - incourse/index.md
     - ADS: 
       - incourse/ADS/Tree.md
 
