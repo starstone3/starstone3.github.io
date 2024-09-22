@@ -9,7 +9,7 @@ theme:
   language: zh
   icon:
     # logo: material/pac-man
-    # logo: assets/images/1718441323923.jpg
+    logo: site/assets/images/fav1.jpg
     repo: fontawesome/brands/github-alt
     admonition:
       info: fontawesome/solid/anchor
