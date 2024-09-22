@@ -9,7 +9,7 @@ theme:
   language: zh
   icon:
     # logo: material/pac-man
-    logo: site/assets/images/fav1.jpg
+    # logo: site/assets/images/fav1.jpg
     repo: fontawesome/brands/github-alt
     admonition:
       info: fontawesome/solid/anchor
@@ -68,5 +68,7 @@ theme:
     - content.action.view
     - content.code.annotate
 nav :
+  - "💠 封面":
+    - "💠 封面": index.md
   - "课程笔记":
     - "ADS": "incourse/ADS.md"
