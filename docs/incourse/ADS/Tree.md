@@ -1,6 +1,7 @@
 ---
 comments : true
 ---
+<link rel="stylesheet" type="text/css" href="../../../css/styles.css">
 
 # Kinds of Trees
 
@@ -8,7 +9,7 @@ comments : true
 
 最常规的维护写法：
 
-```c
+```c title="AVL Tree"
 
 struct avltree
 {
