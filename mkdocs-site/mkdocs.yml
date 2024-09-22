@@ -68,4 +68,5 @@ theme:
     - content.action.view
     - content.code.annotate
 nav :
-  
+  - "课程笔记":
+    - "ADS": "incourse/ADS.md"
