@@ -1,17 +1,22 @@
-# Welcome to MkDocs
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=300&&section=header&text=Hey,guys!&fontSize=90&fontAlign=50&fontAlignY=30&desc=I am starstone3.&descAlign=50&descSize=30&descAlignY=60&animation=twinkling" />
+</p>
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+# 终于等到你！
 
-## Commands
+## Whoami
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Hello，我是starstone3，目前就读于浙江大学计算机科学与技术专业。有点摆，有点懒，但是又有点想做出点东西。
 
-## Project layout
+## 网站初衷
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+这个网站建立的初衷是<strike>暑假太空了没事做</strike>想有一个地方来记录自己的学习与生活。但是由于平时实在太烂，又常年<strike>在steam里挥斥方遒</strike>，所以网站目前还很简陋，等待建设。
+
+## 我的兴趣
+**好玩的东西！**虽然目前还没有开发这方面的经历与能力，但希望我以后能接触到。
+
+<img src="https://komarev.com/ghpvc/?username=starstone3&abbreviated=true&color=yellow" />
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=300&&section=footer&text=Bye!&fontSize=90&fontAlign=50&fontAlignY=70&desc=Hope see you again!&descAlign=50&descSize=30&descAlignY=40&animation=twinkling" />
+</p>

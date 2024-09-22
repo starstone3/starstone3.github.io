@@ -1,10 +1,11 @@
 site_name: starstone3's Notebook
 site_author: starstone3
 site_url: 'https://starstone3.github.io'
-
-repo_name: 'starstone3s repo'
+edit_uri: blob/main/docs
+repo_name: 'starstone3 sleeps here'
 repo_url: 'https://github.com/starstone3/starstone3.github.io'
 theme:
+  custom_dir: overrides
   name: material
   language: zh
   icon:
@@ -34,7 +35,7 @@ theme:
           name: 关闭自动模式
       - media: "(prefers-color-scheme: light)"
         scheme: default # 日间模式
-        primary: yellow # 上方的
+        primary: Teal # 上方的
         accent: light blue # 链接等可交互元件的高亮色
         toggle:
           icon: material/toggle-switch # 图标
@@ -71,4 +72,77 @@ nav :
   - "💠 封面":
     - "💠 封面": index.md
   - "课程笔记":
-    - "ADS": "incourse/ADS.md"
+    - incourse\index.md
+    - ADS: 
+      - incourse/ADS/Tree.md
+
+extra:
+  generator: true #是否删除页脚显示“使用 MkDocs 材料制造”
+  analytics:
+    provider: google #谷歌分析
+    property:
+
+    # 网页底部反馈
+    feedback:
+      title: 此页面有帮助吗？
+      ratings:
+        - icon: material/thumb-up-outline #图标可自定义
+          name: This page was helpful
+          data: 1
+          note: >-
+            谢谢你的反馈！
+        - icon: material/thumb-down-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
+
+plugins:
+  - statistics:
+      words_per_minute: 200
+  - search:
+      lang:
+        - zh
+        - en
+      separator: '[\s\-\.]+'
+markdown_extensions:
+  - toc:
+      permalink: true # link for each title
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}} # enable Unicode link
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      # smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  # - pymdownx.smartsymbols
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
