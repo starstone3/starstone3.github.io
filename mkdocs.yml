@@ -95,8 +95,8 @@ extra:
           name: This page could be improved
           data: 0
           note: >-
-            Thanks for your feedback! Help us improve this page by
-            using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
+            呜呜呜，别骂了别骂了，请联系我！
+            <a href="mailto:pxxhello@gmail.com">俺的gmail</a>
 
 plugins:
   - statistics:
