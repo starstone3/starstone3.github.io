@@ -5,8 +5,7 @@ edit_uri: blob/main/docs
 repo_name: 'starstone3 sleeps here'
 repo_url: 'https://github.com/starstone3/starstone3.github.io'
 theme:
-  custom_dir: overrides
-  name: material
+  name: material 
   language: zh
   icon:
     # logo: material/pac-man
@@ -68,6 +67,7 @@ theme:
     - content.action.edit
     - content.action.view
     - content.code.annotate
+  custom_dir: overrides
 nav :
   - "💠 封面":
     - "💠 封面": index.md
