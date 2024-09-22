@@ -1,6 +1,6 @@
 # ADS
 
-# AVL Tree
+## AVL Tree
 
 最常规的维护写法：
 
