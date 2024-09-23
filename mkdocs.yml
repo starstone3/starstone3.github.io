@@ -69,8 +69,8 @@ theme:
     - content.code.annotate
   custom_dir: overrides
 nav :
-  - "💠 封面":
-    - "💠 封面": index.md
+  - "封面":
+    - "封面": index.md
   - "课程笔记":
     - incourse/index.md
     - ADS: 

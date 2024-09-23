@@ -15,8 +15,6 @@ Hello，我是starstone3，目前就读于浙江大学计算机科学与技术�
 ## 我的兴趣
 **好玩的东西！**虽然目前还没有开发这方面的经历与能力，但希望我以后能接触到。
 
-<img src="https://komarev.com/ghpvc/?username=starstone3&abbreviated=true&color=yellow" />
-
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=300&&section=footer&text=Bye!&fontSize=90&fontAlign=50&fontAlignY=70&desc=Hope see you again!&descAlign=50&descSize=30&descAlignY=40&animation=twinkling" />
 </p>
