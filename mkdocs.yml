@@ -164,3 +164,4 @@ extra_javascript:
   - _js/katex.js
   # - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js
   - https://jsd.cdn.zzko.cn/npm/katex@0.16.4/dist/katex.min.js
+copyright: 'Copyright &copy 2024 starstone3'

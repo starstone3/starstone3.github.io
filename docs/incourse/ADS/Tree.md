@@ -3,8 +3,46 @@ comments : true
 ---
 <link rel="stylesheet" type="text/css" href="../../../css/styles.css">
 
-# Kinds of Trees
 
+
+
+# Kinds of Trees：AVL,Splay,B+ and Red Black
+
+!!! note ""
+        === "Frame 1"
+            下图为一个 AVL 树：
+
+            ```mermaid
+            graph TD;
+            A(("8, BF=1"))
+            B(("4, BF=0"))
+            C(("9, BF=0"))
+            D(("2, BF=0"))
+            E(("6, BF=0"))
+            A === B
+            A === C
+            B === D
+            B === E
+            ```
+        
+        === "Frame 2"
+            现在我们插入 `5`：
+
+            ```mermaid
+            graph TD;
+            A(("8, BF=2"))
+            B(("4, BF=-1"))
+            C(("9, BF=0"))
+            D(("2, BF=0"))
+            E(("6, BF=1"))
+            F(("5, BF=0"))
+            A === B
+            A === C
+            B === D
+            B === E
+            E === F
+            E === NULL
+            ```
 ## AVL Tree
 
 最常规的维护写法：
