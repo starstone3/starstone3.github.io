@@ -165,11 +165,13 @@ extra_css:
   - https://jsd.cdn.zzko.cn/npm/katex@0.16.4/dist/katex.min.css
   - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
   - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
+  - https://unpkg.com/katex@0/dist/katex.min.css
   # - https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css
 extra_javascript:
   - _js/extra.js
-  # - _js/mathjax.js
+  - _js/mathjax.js
   - _js/katex.js
-  # - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js
-  - https://jsd.cdn.zzko.cn/npm/katex@0.16.4/dist/katex.min.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 copyright: 'Copyright &copy 2024 starstone3'
