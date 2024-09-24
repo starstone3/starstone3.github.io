@@ -59,7 +59,7 @@ theme:
     - search.suggest # 搜索输入一些字母时推荐补全整个单词
     - search.highlight # 搜索出的文章关键词加入高亮
     - search.share #搜索分享按钮
-    - navigation.expand # 打开Tab时左侧目录全部展开
+    # - navigation.expand # 打开Tab时左侧目录全部展开
     - navigation.indexes #启用节索引页后，可以将文档直接附加到节
     - content.tabs.link
     - content.tooltips
@@ -75,8 +75,9 @@ nav :
     - incourse/index.md
     - ADS: 
       - incourse/ADS/index.md
-      - incourse/ADS/Tree.md
+      - "AVL树,Splay树，红黑树与B+树": incourse/ADS/Tree.md
       - incourse/ADS/amana.md
+      - incourse/ADS/fileindex.md
   - "大一课程遗物":
     - incourse/old/index.md
     - incourse/old/fds.md
