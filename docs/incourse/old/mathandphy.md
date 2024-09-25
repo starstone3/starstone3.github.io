@@ -48,7 +48,7 @@ comment : true
 普物就一个字，**难**。对于我这种毫无竞赛基础的人来讲，简直是上大学以来最大的坎。大家一定要记得交作业和做每周的quiz，<strike>不然老师想捞你都捞不起来。</strike>这门课我期中考考了81（捞之后的），期末考前一晚复习到凌晨一点，所幸期末没有考很难的相对论等，最后的成绩是91/4.5.
 关于这门课，我做了一份很简陋的笔记，其中无相对论部分：
 
-<a href="https://starstone3_ori.github.io/smaterials/physics.pdf" download="physics.pdf">下载 普物笔记</a>
+<a href="https://starstone3.github.io/docs/smaterials/physics.pdf" download="physics.pdf">下载 普物笔记</a>
 
 # 杂项
 
