@@ -78,6 +78,10 @@ nav :
       - "AVL树,Splay树，红黑树与B+树": incourse/ADS/Tree.md
       - incourse/ADS/amana.md
       - incourse/ADS/fileindex.md
+    - "计算机组成":
+      - incourse/Comcompose/index.md
+      - "Chapter 2:Instructions: Language of the Machine": incourse/Comcompose/Ch2.md
+      - "Chapter 3:Arithmetic for Computer": incourse/Comcompose/Ch3.md
   - "大一课程遗物":
     - incourse/old/index.md
     - incourse/old/fds.md
