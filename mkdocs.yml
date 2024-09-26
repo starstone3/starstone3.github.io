@@ -71,6 +71,7 @@ theme:
 nav :
   - "封面":
     - "封面": index.md
+    - "友链": friends.md
   - "课程笔记":
     - incourse/index.md
     - ADS: 
