@@ -88,7 +88,11 @@ nav :
     - incourse/old/fds.md
     - incourse/old/digital.md
     - incourse/old/mathandphy.md
-
+  - "论文阅读与课外学习":
+    - article/index.md
+    - "课外学习":
+      - article/out/index.md
+      - article/out/Transformer.md
 extra:
   generator: true #是否删除页脚显示“使用 MkDocs 材料制造”
   analytics:
