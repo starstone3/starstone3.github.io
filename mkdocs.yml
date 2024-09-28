@@ -93,6 +93,22 @@ nav :
     - "课外学习":
       - article/out/index.md
       - article/out/Transformer.md
+    - "论文阅读":
+      - article/read/index.md
+      - article/read/What is chatgpt doing and Why does it work.md
+      - article/read/Instruction Tuning for Large Language Model  A Survey.md
+      - article/read/Visual Instruction Tuning and Improved Baselines with Visual Instruction Tuning.md
+      - article/read/GPT-4 Technical Report.md
+      - article/read/CogAgent A Visual Language Model for GUI Agents.md
+
+
+
+
+
+
+
+
+
 extra:
   generator: true #是否删除页脚显示“使用 MkDocs 材料制造”
   analytics:
