@@ -66,3 +66,8 @@ comments : true
 此外，为了防止过拟合，采用了多种屏幕分辨率进行渲染，这些分辨率是从各种设备的常用分辨率列表中随机选取的。
 
 此外，为了防止 HTML 代码变得过于冗长和笨重，作者按通过删除 DOM 元素中的冗余属性来进行必要的数据清理。
+
+## 随意一句
+
+**and convert them into a natural language question-and-answer format using GPT-4**这里也使用了其他的AI来生成数据集。
+
