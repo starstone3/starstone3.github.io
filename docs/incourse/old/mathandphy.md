@@ -50,7 +50,7 @@ comment : true
 
 <a href="https://starstone3.github.io/smaterials/physics.pdf" download="physics.pdf">下载 普物笔记</a>
 
-# 杂项
+## 杂项
 
 * [部分课电子书](https://pan.baidu.com/s/1ld8aE8RUtDug8LqlKbQmYQ?pwd=7wct)
 
