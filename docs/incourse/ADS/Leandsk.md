@@ -40,7 +40,13 @@ comments : true
 
 左偏堆最重要的操作在于合并，因此先介绍merge。
 
-#### 递归版本
+#### merge
+!!! example "例子"
+    === "合并前"
+        ![](../../image/pp8.png)
+    === "合并后"
+        ![](../../image/pp9.png)
+##### 递归版本
 
 我们先假设现在的左偏堆是小顶堆。那么合并的思想就在于不断比较两个堆顶元素的大小，保持小的堆顶的左子树不变，右子树为**右子树与另一个堆合并的结果**，在任何一次合并结束后，检查左右子树是否满足
 
@@ -51,7 +57,7 @@ comments : true
 如果不满足，则调换左右子树，并更新根的dist值。
 
 ---
-##### 代码
+###### 代码
 
 ```c title="recursive"
 #include <stdio.h>
@@ -117,9 +123,20 @@ int main() {
     return 0;
 }
 ```
-#### 循环版本
 
-##### 代码
+---
+
+##### 循环版本
+介绍左偏堆合并的迭代版本。与递归版本不同，迭代版本通过显式的栈来模拟递归调用，从而避免了递归调用带来的栈空间开销。
+
+迭代版本的基本思想如下：
+
+1. 首先比较两个堆顶元素的大小，选择较小的作为新的根节点。
+2. 使用一个栈来保存需要处理的右子树指针。
+3. 在循环中不断比较两个堆的当前节点，选择较小的节点并将其右子树指针压入栈中。
+4. 当其中一个堆处理完毕后，将另一个堆的剩余部分直接连接到当前节点的右子树。
+5. 最后，从栈中弹出节点，调整左右子树以满足左偏堆的性质。
+###### 代码
 
 ```c title="iterative"
 #include <stdio.h>
@@ -220,6 +237,9 @@ int main() {
 #### 删除
 删除堆顶，合并左右子树即可
 
+
+---
+
 ## Skew Heaps
 
 !!! info "资料"
@@ -238,14 +258,92 @@ int main() {
 
 3. p的左子树是原来p的右子树与q合并的结果。
 
-!!! info "example from wiki"
+!!! example "example from wiki"
     === "合并前"
         ![](../../image/pp3.png)
     === "合并后"
         ![](../../image/pp4.png)
 
+
+---
+
 ### 循环
 
 iterative版本就不写了，放一个[wiki链接](https://zh.wikipedia.org/wiki/%E6%96%9C%E5%A0%86#%E9%9D%9E%E9%80%92%E5%BD%92%E5%90%88%E5%B9%B6%E5%AE%9E%E7%8E%B0)
 
+
+---
+
+
 ### 均摊分析
+
+#### 定义
+采用势能法对斜堆操作的时间复杂度进行分析。由于斜堆主要的操作是merge，所以我们对merge进行分析，希望证明它是$O(\log{n})$.
+
+!!! definition "势能函数"
+    $\Phi(D_i)=$the number of heavy nodes in heap
+    !!! definition "heavy node"
+        from PPT:A node p is heavy if the number of descendants of p’s right subtree is at least half of the number of descendants of p, and light otherwise. Note that the number of descendants of a node includes the node itself.
+        
+        总的来说，就是右子树中节点个数超过总的一半的节点。
+
+        反之可定义light node.
+
+!!! properties "一些性质"
+    1. 只有原先最右侧路径上的节点的轻重状态有可能发生变化。
+
+    2. 只有原先最右侧路径上的节点会被访问，作相关操作。
+
+    3. 如果一个节点是 light node，并且在其右子树发生了合并（包括翻转），那么它**可能**变为一个 heavy node
+
+    4. 如果一个节点是 heavy node，并且在其右子树发生了合并（包括翻转），那么它**一定**变为一个 light node
+
+列出势能法的式子：
+
+$\hat{c_i}=c_i+\Phi(D_i)-\Phi(D_{i-1})$
+
+#### 分析
+
+记:
+
++ $l_1$：1号堆最右侧路径上light node的个数
+
++ $h_1$: 1号堆最右侧路径上heavy node的个数
+
++ $l_2$: 2号堆最右侧路径上light node的个数
+
++ $h_2$: 2号堆最右侧路径上heavy node的个数
+
++ h: 两个堆不在最右侧路径上heavy node的个数，这些节点始终为heavy node
+
+---
+
+因此：
+
++ $c_i$在最坏情况下为$l_1+h_1+l_2+h_2$，即两个堆右侧节点全部被访问
+
++ $\Phi(D_{i-1}) = h + h_1 + h_2$
+
++ $\Phi(D_i) <= h + l_1 + l_2$,因为最右侧路径上的heavy node必然会变成light node(见性质4)
+
+    >  如果一个节点是 heavy node，并且在其右子树发生了合并（包括翻转），那么它**一定**变为一个 light node
+
+    而合并完后，如果要让势能最大，我们只能假设所有的light node全部变成了heavy node。
+
+    >  如果一个节点是 light node，并且在其右子树发生了合并（包括翻转），那么它**可能**变为一个 heavy node
+
+    因此得到$\Phi(D_i) <= h + l_1 + l_2$
+
+#### 综上所述
+
+$\hat{c_i}=c_i+\Phi(D_i)-\Phi(D_{i-1}) <=2(l_1 + l_2)$
+
+考虑上界的话，我们需要让$l_1 + l_2$尽可能大，那什么时候尽可能大呢？
+
+回想light node的定义：一个节点，它右子树的节点少于这颗子树全部节点的一半。
+
+那light node尽可能多是多少呢...一个树右路径上的节点受限，联想到之前的左倾树，一颗树有N个节点，最右侧路径上最多有多少节点呢？
+
+<center><span style="font-size: 2em;">**$\log(N)$**</span></center>
+
+至此，我们推出Skew heap merge操作的时间复杂度是$O(\log(N))$,由于其他操作都可以看成是特殊的merge，因此结束推理，Q.E.D

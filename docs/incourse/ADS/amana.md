@@ -20,7 +20,7 @@ comment : true
  * 数学公式：
     * 聚合分析：T(n) = O(f(n))，其中T(n)是n次操作的总代价，f(n)是一个函数。
     * 均摊代价法：$c_i = O(1)$，其中c_i是第i次操作的均摊代价。
-    * 势能法：$c_i + Φ(D_i) - Φ(D_{i-1}) = O(1)$，其中$c_i$是第i次操作的实际代价，Φ是势能函数，$D_i$是第i次操作后的数据结构状态。因此$\sum_{i=1}^{n}\hat{c_i} = \sum_{i=1}^{n} c_i +\phi(D_n)-\phi(D_{1})$
+    * 势能法：$c_i + Φ(D_i) - Φ(D_{i-1}) = O(1)$，其中$c_i$是第i次操作的实际代价，Φ是势能函数，$D_i$是第i次操作后的数据结构状态。因此$\sum_{i=1}^{n}\hat{c_i} = \sum_{i=1}^{n} c_i +\Phi(D_n)-\Phi(D_{1})$
 在这里我们主要介绍势能法。
 
 ---
@@ -53,13 +53,13 @@ comment : true
 >
 > + 对于实际开销大的步骤，要通过势能函数使$\hat{c_i}$小下来
 
-开销最大的步骤明显是Multipop,那么要使它的$\hat{c_i}$降下来，我们必须考虑一个势能函数使得$\phi(D_i)<<\phi(D_{i-1})$,同时还要满足初始时整个结构的势能最小。**欸**，我们想到，可以定义$\phi(D_i)=sizeof(D_i),sizeof(D_i)$指$D_i$下栈的元素个数。分析如下：
+开销最大的步骤明显是Multipop,那么要使它的$\hat{c_i}$降下来，我们必须考虑一个势能函数使得$\Phi(D_i)<<\Phi(D_{i-1})$,同时还要满足初始时整个结构的势能最小。**欸**，我们想到，可以定义$\Phi(D_i)=sizeof(D_i),sizeof(D_i)$指$D_i$下栈的元素个数。分析如下：
 
-+ push:$\hat{c_i}=c_i+\phi(D_i)-\phi(D_{i-1})=1+1=2$
++ push:$\hat{c_i}=c_i+\Phi(D_i)-\Phi(D_{i-1})=1+1=2$
 
-+ pop:$\hat{c_i}=c_i+\phi(D_i)-\phi(D_{i-1})=1 - 1=0$
++ pop:$\hat{c_i}=c_i+\Phi(D_i)-\Phi(D_{i-1})=1 - 1=0$
 
-+ Multipop:$\hat{c_i}=c_i+\phi(D_i)-\phi(D_{i-1})=k-k=0$
++ Multipop:$\hat{c_i}=c_i+\Phi(D_i)-\Phi(D_{i-1})=k-k=0$
 
 则$\sum_{i=1}^n \hat(c_i)=\sum_{i=1}^n O(1)=O(n) \geq \sum_{i=1}^{n} c_i,故T_{amortized}=\frac{O(n)}{n}=O(1)$
 
@@ -93,10 +93,10 @@ Splay Tree的三个操作分析起来有点复杂，并且包含了一些数学�
             先来看第一条原则
             > 尽量使初始状态的势能最小
             
-            可以直接排除掉B选项，C我感觉也可以排，但是说不清，先留着。然后再看这个结构开销最大的操作是Inadequate Block insert and move，因此我们的势能函数需要满足的特点是:在扩容后$\phi(D_i)$大大减少，这时就可以看出D选项的合理性了。再来具体分析。应用D选项的势能函数后:
+            可以直接排除掉B选项，C我感觉也可以排，但是说不清，先留着。然后再看这个结构开销最大的操作是Inadequate Block insert and move，因此我们的势能函数需要满足的特点是:在扩容后$\Phi(D_i)$大大减少，这时就可以看出D选项的合理性了。再来具体分析。应用D选项的势能函数后:
 
-            + Available Block insert:$\hat{c_i}=c_i+\phi(D_i)-\phi(D_{i-1})=1+1=2$
+            + Available Block insert:$\hat{c_i}=c_i+\Phi(D_i)-\Phi(D_{i-1})=1+1=2$
 
-            + Inadequate Block insert and move:$\hat{c_i}=c_i+\phi(D_i)-\phi(D_{i-1})=`k`+1 - k+1=2$
+            + Inadequate Block insert and move:$\hat{c_i}=c_i+\Phi(D_i)-\Phi(D_{i-1})=`k`+1 - k+1=2$
 
             则$\sum_{i=1}^n \hat(c_i)=\sum_{i=1}^n O(1)=O(n) \geq \sum_{i=1}^{n} c_i,故T_{amortized}=\frac{O(n)}{n}=O(1)$
