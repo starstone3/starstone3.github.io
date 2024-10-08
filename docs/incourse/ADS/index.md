@@ -11,3 +11,9 @@ comments: true
             ADS苦手。 ——starstone3
         </div>
     </div>
+
+
+!!! info "例题参考"
+    本课程例题解答参考：
+
+    + https://zhoutimemachine.github.io/note/courses/ads-hw-review
