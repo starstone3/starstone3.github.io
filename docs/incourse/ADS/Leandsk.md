@@ -244,10 +244,22 @@ int main() {
 
 !!! info "例题"
     === "T1"
-    
+        ![](../../image/pp12.png)
+        ??? tip "解析"
+            插入完的树如图：
+
+            ![](../../image/pp16.png)
+
+            因此可以看出D是错的，Npl都是2
+    === "T2"
+        ![](../../image/pp13.png)
+
+        ??? tip "解析"
+            通过特殊值法与感受法可以看出A与C是对的，由C可以推出D是错的，应该为$O(\log(N))$
 
 
----
+
+--- 
 
 ## Skew Heaps
 
@@ -356,3 +368,25 @@ $\hat{c_i}=c_i+\Phi(D_i)-\Phi(D_{i-1}) <=2(l_1 + l_2)$
 <center><span style="font-size: 2em;">**$\log(N)$**</span></center>
 
 至此，我们推出Skew heap merge操作的时间复杂度是$O(\log(N))$,由于其他操作都可以看成是特殊的merge，因此结束推理，Q.E.D
+
+### 例题
+
+!!! info "例题"
+    === "T1"
+        ![](../../image/pp10.png)
+        ??? tip "解析"
+            emmm,好像就是这样的，画了几个简单情况符合。
+    === "T2"
+        ![](../../image/pp11.png)
+        ??? tip "解析"
+            好像是没有什么规定？
+    === "T3"
+        ![](../../image/pp14.png)
+        ??? tip "解析"
+            和上面的判断题一样，应该是个满二叉树。
+    === "T4"
+        ![](../../image/pp15.png)
+        ??? tip "解析"
+            结果如图：
+
+            ![](../../image/ads_hw_4.5.png)
