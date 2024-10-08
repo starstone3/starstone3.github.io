@@ -79,6 +79,7 @@ nav :
       - "AVL树,Splay树，红黑树与B+树": incourse/ADS/Tree.md
       - incourse/ADS/amana.md
       - incourse/ADS/fileindex.md
+      - "Leftist Heaps and Skew Heaps": incourse/ADS/Leandsk.md
     - "计算机组成":
       - incourse/Comcompose/index.md
       - "Chapter 2:Instructions: Language of the Machine": incourse/Comcompose/Ch2.md
