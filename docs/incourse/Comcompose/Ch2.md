@@ -56,3 +56,32 @@ int add(int a,int b){
     return a+b;
 }
 ```
+
+---
+
+## 指令集操作
+
+### 算术操作
+
+在RISC-V中，每个指令只能有一个操作。
+对于f=(g+h)-(i+j)
+
+RISC-V Code:
+```plaintext
+
+add t0,g,h
+add t1,i,j
+sub f,t0,t1
+
+```
+!!! info "寄存器表"
+    然而在指令集中，其实没有我们所写的变量名，而是通过一个个寄存器来存储数据集。也就是：
+    
+    + Load values from memory into registers  
+    
+    + Store result from register to memory
+    ![](../../image/pp26.png)
+
+---
+
+RISC-V是小端的，把低位数据放在低位地址里.
