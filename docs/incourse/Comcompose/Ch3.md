@@ -172,3 +172,13 @@ comments : true
 #### 乘法
 
 小数相乘，指数相加，需要注意的是指数相加的结果需要**减去**一个bias，不然bias会加两次。
+
+#### 精确计算
+
+IEEE Std 754建议了一些额外的位数，用来增加计算的精度。
+
++ Guard: The first of two extra bits.
+
++ Round: method to make the immediate floatingpoint result fit the floating-point format.
+
++ Units in the last place(ulp):The number of bits in  error in the least significant bits of the significant  between the actual number and the number that  can be represented.
