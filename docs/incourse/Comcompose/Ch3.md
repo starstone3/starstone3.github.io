@@ -81,3 +81,6 @@ comments : true
         ![](../../image/p68.png)
     === "example"
         ![](../../image/p69.png)
+    === "总结"
+        ![](../../image/pp17.png)
+### 除法
