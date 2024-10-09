@@ -102,7 +102,7 @@ nav :
       - article/read/Visual Instruction Tuning and Improved Baselines with Visual Instruction Tuning.md
       - article/read/GPT-4 Technical Report.md
       - article/read/CogAgent A Visual Language Model for GUI Agents.md
-  - "妙妙小工具":
+  - "妙妙屋":
     - "封面": tools/index.md
     - "妙妙小工具": tools/tools.md
 
