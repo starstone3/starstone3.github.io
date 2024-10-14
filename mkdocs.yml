@@ -204,5 +204,5 @@ extra_javascript:
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
-  - javascripts/busuanzi.pure.mini.js
+  - '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
 copyright: 'Copyright &copy 2024 starstone3'
