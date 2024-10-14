@@ -1,3 +1,4 @@
+<script defer src="https://vercount.one/js"></script>
 <div class="post-body">
    <div id="links">
       <style>
@@ -70,3 +71,5 @@
               </div>
           </div>
       </div>
+<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
+<span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>

@@ -1,3 +1,4 @@
+<script defer src="https://vercount.one/js"></script>
 ---
 comments : true
 hide :
@@ -68,3 +69,6 @@ Decoder的主要功能是将Encoder的输出转换为目标序列。具体步骤
 
 5. **前馈神经网络**：
     * 使用两个线性变换和一个ReLU非线性变换，最后进行残差连接和归一化处理。
+
+<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
+<span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>

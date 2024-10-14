@@ -1,3 +1,4 @@
+<script defer src="https://vercount.one/js"></script>
 ---
 comment : true
 ---
@@ -63,3 +64,5 @@ comment : true
 * [LALU](https://ckc-agc.bowling233.top/lalu/)
 
 * [All-Sum-In-One](https://github.com/IsshikiHugh/zju-cs-asio)
+<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
+<span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>

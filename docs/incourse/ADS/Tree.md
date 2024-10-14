@@ -5,6 +5,7 @@ statistics : true
 ---
 <link rel="stylesheet" type="text/css" href="../../../css/styles.css">
 
+<script defer src="https://vercount.one/js"></script>
 
 
 
@@ -1058,3 +1059,6 @@ int main() {
         ![](../../image/p52.png)
     === "T4"
         ![](../../image/p53.png)
+
+<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
+<span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>

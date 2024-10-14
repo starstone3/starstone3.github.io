@@ -1,3 +1,4 @@
+<script defer src="https://vercount.one/js"></script>
 ---
 comments : true
 hide:
@@ -25,3 +26,6 @@ hide:
 简单的总结：
 
 The basic concept of ChatGPT is at some level rather simple. Start from a huge sample of human-created text from the web, books, etc. Then train a neural net to generate text that’s “like this”. And in particular, make it able to start from a “prompt” and then continue with text that’s “like what it’s been trained with”
+
+<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
+<span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>

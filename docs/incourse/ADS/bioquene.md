@@ -1,3 +1,4 @@
+<script defer src="https://vercount.one/js"></script>
 ---
 comments : true
 ---
@@ -54,3 +55,5 @@ comments : true
 因此就有三棵树，度分别为3，2，0，由此我们也可以推出合并的时间复杂度是$O(\log(N))$,因为二进制有$\log(N)$位
 !!! example "例子"
     ![](../../image/pp7.png)
+<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
+<span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>

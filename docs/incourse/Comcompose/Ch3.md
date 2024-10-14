@@ -1,3 +1,4 @@
+<script defer src="https://vercount.one/js"></script>
 ---
 comments : true
 ---
@@ -182,3 +183,5 @@ IEEE Std 754建议了一些额外的位数，用来增加计算的精度。
 + Round: method to make the immediate floatingpoint result fit the floating-point format.
 
 + Units in the last place(ulp):The number of bits in  error in the least significant bits of the significant  between the actual number and the number that  can be represented.
+<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
+<span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>

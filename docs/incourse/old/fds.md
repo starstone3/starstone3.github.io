@@ -1,3 +1,4 @@
+<script defer src="https://vercount.one/js"></script>
 ---
 comment : true
 ---
@@ -21,3 +22,5 @@ FDS这门课总体来说难度不大，是一门你平时好好学，project认�
     * <a href="https://starstone3.github.io/smaterials/单选题 - 浙江大学2023-2024学年春夏学期 《数据结构基础》课程期末考试试卷.pdf" download="单选题 - 浙江大学2023-2024学年春夏学期 《数据结构基础》课程期末考试试卷.pdf">下载 单选题 - 浙江大学2023-2024学年春夏学期 《数据结构基础》课程期末考试试卷</a>
     * <a href="https://starstone3.github.io/smaterials/6-1-1 Height of Binary Search Tree - 浙江大学2023-2024学年春夏学期 《数据结构基础》课程期末考试试卷.pdf" download="6-1-1 Height of Binary Search Tree - 浙江大学2023-2024学年春夏学期 《数据结构基础》课程期末考试试卷.pdf">下载 函数题 - 浙江大学2023-2024学年春夏学期 《数据结构基础》课程期末考试试卷</a>
     * <a href="https://starstone3.github.io/smaterials/程序填空题 - 浙江大学2023-2024学年春夏学期 《数据结构基础》课程期末考试试卷.pdf" download="程序填空题 - 浙江大学2023-2024学年春夏学期 《数据结构基础》课程期末考试试卷.pdf">下载 程序填空题 - 浙江大学2023-2024学年春夏学期 《数据结构基础》课程期末考试试卷</a>
+<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
+<span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>

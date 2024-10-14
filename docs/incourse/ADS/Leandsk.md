@@ -1,3 +1,4 @@
+<script defer src="https://vercount.one/js"></script>
 ---
 comments : true
 ---
@@ -393,3 +394,5 @@ $\hat{c_i}=c_i+\Phi(D_i)-\Phi(D_{i-1}) <=2(l_1 + l_2)$
             结果如图：
 
             ![](../../image/ads_hw_4.5.png)
+<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
+<span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>
