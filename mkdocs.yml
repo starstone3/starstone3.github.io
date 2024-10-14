@@ -77,8 +77,8 @@ nav :
     - ADS: 
       - incourse/ADS/index.md
       - "AVL树,Splay树，红黑树与B+树": incourse/ADS/Tree.md
-      - incourse/ADS/amana.md
-      - incourse/ADS/fileindex.md
+      - "均摊分析": incourse/ADS/amana.md
+      - "倒排索引": incourse/ADS/fileindex.md
       - "Leftist Heaps and Skew Heaps": incourse/ADS/Leandsk.md
       - "Binomial Queue": incourse/ADS/bioquene.md
     - "计算机组成":
@@ -87,9 +87,9 @@ nav :
       - "Chapter 3:Arithmetic for Computer": incourse/Comcompose/Ch3.md
   - "大一课程遗物":
     - incourse/old/index.md
-    - incourse/old/fds.md
-    - incourse/old/digital.md
-    - incourse/old/mathandphy.md
+    - "数据结构基础": incourse/old/fds.md
+    - "数字逻辑设计": incourse/old/digital.md
+    - "数理基础课": incourse/old/mathandphy.md
   - "论文阅读与课外学习":
     - article/index.md
     - "课外学习":
@@ -204,5 +204,5 @@ extra_javascript:
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
-  - '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
+  - //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
 copyright: 'Copyright &copy 2024 starstone3'
