@@ -1,9 +1,11 @@
-<script defer src="https://vercount.one/js"></script>
 ---
 comments : true
 hide:
     - feedback
 ---
+
+<script defer src="https://vercount.one/js"></script>
+
 # [Visual Instruction Tuning与Improved Baselines with Visual Instruction Tuning](https://llava-vl.github.io/)
 
 这里也出现了一段话：**Finally, note that visual instruction tuning is different from visual prompt tuning : the former aims to improve the model’s instruction-following abilities, while the latter aims to improve the parameter-efficiency in model adaptation**

@@ -1,7 +1,8 @@
-<script defer src="https://vercount.one/js"></script>
 ---
 comments : true
 ---
+
+<script defer src="https://vercount.one/js"></script>
 
 # 妙妙小工具
 

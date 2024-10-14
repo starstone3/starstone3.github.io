@@ -1,7 +1,8 @@
-<script defer src="https://vercount.one/js"></script>
 ---
 comments : true
 ---
+
+<script defer src="https://vercount.one/js"></script>
 
 # [GPT-4 Technical Report](https://arxiv.org/abs/2303.08774)
 

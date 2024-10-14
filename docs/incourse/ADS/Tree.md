@@ -5,8 +5,8 @@ statistics : true
 ---
 <link rel="stylesheet" type="text/css" href="../../../css/styles.css">
 
-<script defer src="https://vercount.one/js"></script>
 
+<script defer src="https://vercount.one/js"></script>
 
 
 # Kinds of Trees：AVL,Splay,B+ and Red Black

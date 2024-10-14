@@ -1,7 +1,9 @@
-<script defer src="https://vercount.one/js"></script>
 ---
 comments : true
 ---
+
+<script defer src="https://vercount.one/js"></script>
+
 # Arithmetic for Computer
 
 !!! info "参考"

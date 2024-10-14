@@ -1,9 +1,10 @@
-<script defer src="https://vercount.one/js"></script>
 ---
 hide :
     -feedback
 comments : true
 ---
+
+<script defer src="https://vercount.one/js"></script>
 
 # Inverted File Index
 
