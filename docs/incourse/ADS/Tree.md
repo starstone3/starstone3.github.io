@@ -792,7 +792,257 @@ B+树的编程题在作业中涉及，但我写得十分臃肿无用，所以最
 
 ```c title="我的代码"
 
-    none
+    #include <stdio.h>
+#include <stdlib.h>
+
+#define rank 3
+#define max 10000
+
+int hash[1000000];
+
+typedef struct Node {
+    int numofkeys;
+    int numofchild;
+    int data[4];
+    struct Node *child[5];
+    struct Node *parent;
+} Node;
+
+Node *Root = NULL;
+
+typedef struct Queue {
+    Node* nodes[max];
+    int front;
+    int rear;
+    int currentLevelCount;
+    int nextLevelCount;
+} Queue;
+
+Queue* create_queue() {
+    Queue* queue = (Queue*)malloc(sizeof(Queue));
+    queue->front = 0;
+    queue->rear = 0;
+    queue->currentLevelCount = 1;
+    queue->nextLevelCount = 0;
+    return queue;
+}
+
+void enqueue(Queue* queue, Node* node) {
+    if (queue->rear < max) {
+        queue->nodes[queue->rear++] = node;
+        queue->nextLevelCount++;
+    }
+}
+
+Node* dequeue(Queue* queue) {
+    if (queue->front < queue->rear) {
+        queue->currentLevelCount--;
+        return queue->nodes[queue->front++];
+    }
+    return NULL;
+}
+
+int is_current_level_empty(Queue* queue) {
+    return queue->currentLevelCount == 0;
+}
+
+void reset_level_count(Queue* queue) {
+    queue->currentLevelCount = queue->nextLevelCount;
+    queue->nextLevelCount = 0;
+}
+
+Node* create_node(Node* parent) {
+    Node* node = (Node*)malloc(sizeof(Node));
+    node->numofkeys = 0;
+    node->numofchild = 0;
+    node->parent = parent;
+    return node;
+}
+
+void print_node(Node* node) {
+    printf("[");
+    for (int i = 0; i < node->numofkeys; ++i) {
+        if (i != 0) printf(",");
+        printf("%d", node->data[i]);
+    }
+    printf("]");
+}
+
+void insertion_sort(int* arr, int n) {
+    for (int i = 1; i < n; ++i) {
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
+    }
+}
+
+void insertion_sort_nodes(Node** arr, int n) {
+    for (int i = 1; i < n; ++i) {
+        Node* key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j]->data[0] > key->data[0]) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
+    }
+}
+
+void split(Node* node) {
+    int i, mid;
+    int numchild = node->numofchild;
+    int is_leaf = (numchild == 0);
+    int numkey = node->numofkeys;
+    if ((is_leaf && numkey <= rank) || (!is_leaf && numkey < rank)) {
+        return;
+    }
+
+    if (node->parent == NULL) {
+        Root = node->parent = create_node(NULL);
+    }
+
+    Node* parent = node->parent;
+    Node* splitlchild = create_node(parent);
+    Node* splitrchild = create_node(parent);
+
+    if (is_leaf) {
+        mid = 2;
+        for (i = 0; i < mid; ++i) {
+            splitlchild->data[i] = node->data[i];
+        }
+        for (i = mid; i < numkey; ++i) {
+            splitrchild->data[i - mid] = node->data[i];
+        }
+        splitlchild->numofkeys = mid;
+        splitrchild->numofkeys = numkey - mid;
+    } else {
+        mid = 1;
+        for (i = 0; i < mid; ++i) {
+            splitlchild->data[i] = node->data[i];
+        }
+        for (i = mid + 1; i < numkey; ++i) {
+            splitrchild->data[i - mid - 1] = node->data[i];
+        }
+        for (i = 0; i <= mid; ++i) {
+            splitlchild->child[i] = node->child[i];
+        }
+        for (i = mid + 1; i < numchild; ++i) {
+            splitrchild->child[i - mid - 1] = node->child[i];
+        }
+        splitlchild->numofkeys = mid;
+        splitrchild->numofkeys = numkey - mid - 1;
+        splitlchild->numofchild = mid + 1;
+        splitrchild->numofchild = numchild - mid - 1;
+    }
+    int flag=0;
+    parent->data[parent->numofkeys++] = node->data[mid];
+
+    for (i = 0; i < parent->numofchild; ++i) {
+        if (parent->child[i] == node) {
+            flag=1;
+            parent->child[i] = splitlchild;
+            break;
+        }
+    }
+    if (!flag) 
+        parent->child[parent->numofchild++] = splitlchild;
+    parent->child[parent->numofchild++] = splitrchild;
+    insertion_sort(parent->data, parent->numofkeys);
+    insertion_sort_nodes(parent->child, parent->numofchild);
+    free(node);
+    split(parent);
+}
+
+void insert(Node* node, int n) {
+    if (node == NULL) {
+        node = create_node(NULL);
+        Root = node;
+    }
+
+    while (node->numofchild != 0) {
+        int i = 0;
+        while (i < node->numofkeys && n >= node->data[i]) {
+            i++;
+        }
+        node = node->child[i];
+    }
+
+    node->data[node->numofkeys++] = n;
+    insertion_sort(node->data, node->numofkeys);
+    split(node);
+}
+
+void print_tree() {
+    if (Root == NULL) return;
+
+    Queue* queue = create_queue();
+    queue->nodes[queue->rear++] = Root;
+
+    while (queue->front < queue->rear) {
+        Node* node = dequeue(queue);
+
+        print_node(node);
+
+        for (int i = 0; i < node->numofchild; ++i) {
+            enqueue(queue, node->child[i]);
+        }
+
+        if (is_current_level_empty(queue)) {
+            printf("\n");
+            reset_level_count(queue);
+        }
+    }
+
+    free(queue);
+}
+
+int is_queue_empty(Queue* queue) {
+    return queue->front == queue->rear;
+}
+
+void validate_parent_child_relationships(Node* root) {
+    if (root == NULL) return;
+
+    Queue* queue = create_queue();
+    enqueue(queue, root);
+
+    while (!is_queue_empty(queue)) {
+        Node* node = dequeue(queue);
+
+        for (int i = 0; i < node->numofchild; ++i) {
+            if (node->child[i]->parent != node) {
+                node->child[i]->parent = node;
+            }
+            enqueue(queue, node->child[i]);
+        }
+    }
+
+    free(queue);
+}
+
+int main() {
+    int nnn;
+    scanf("%d", &nnn);
+    int num;
+    for (int i = 0; i < nnn; ++i) {
+        scanf("%d", &num);
+        if (hash[num]) {
+            printf("Key %d is duplicated\n", num);
+            continue;
+        } else {
+            hash[num] = 1;
+        }
+        insert(Root, num);
+        validate_parent_child_relationships(Root);
+    }
+
+    print_tree();
+    return 0;
+}
 
 ```
 ### 例题
