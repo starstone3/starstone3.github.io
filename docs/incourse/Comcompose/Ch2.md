@@ -120,5 +120,28 @@ RISC-V是小端的，把低位数据放在低位地址里.
             + sd 表示存储双字（store doubleword），即将一个64位的数据从寄存器存储到内存中。
             + x9 是源寄存器，表示要存储的数据来自寄存器 x9。
             + 64(x22) 表示目标内存地址，由寄存器 x22 的值加上偏移量 64 计算得到。
+
+### 汇总及练习
+
+!!! note "汇总"
+    ![](../../image/pp33.png)
+    ??? example "例子"
+        ![](../../image/pp34.png)
+
+---
+思考：这四条指令的RISC-V指令是什么？
+    ??? info "答案"
+        === "ld"
+            ![](../../image/pp36.png)
+        === "add"
+            ![](../../image/pp37.png)
+        === "addi"
+            ![](../../image/pp38.png)
+        === "sd"
+            ![](../../image/pp39.png)
+
+### 其他指令
+
+![](../../image/pp40.png)
 <span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
 <span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>
