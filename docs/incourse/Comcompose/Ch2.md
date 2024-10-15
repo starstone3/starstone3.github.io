@@ -133,13 +133,13 @@ RISC-V是小端的，把低位数据放在低位地址里.
 
 ??? info "答案"
     === "ld"
-            ![](../../image/pp36.png)
+        ![](../../image/pp36.png)
     === "add"
-            ![](../../image/pp37.png)
+        ![](../../image/pp37.png)
     === "addi"
-            ![](../../image/pp38.png)
+        ![](../../image/pp38.png)
     === "sd"
-            ![](../../image/pp39.png)
+        ![](../../image/pp39.png)
 
 ### 其他指令
 
