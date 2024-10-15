@@ -81,7 +81,7 @@ comments : true
         + ...
 
         因此，总开销为$\frac{n}{2}*1+\frac{n}{4}*2+...=2N$
-        
+
         均摊下来就是常数时间。
 
 
@@ -89,7 +89,7 @@ comments : true
 我们不妨思考，哪一步的开销最大？显然是当发生进位，也即我们需要删除树并合并树的情况，不然，直接创造树即可。根据均摊分析的原则，让开销大的步骤尽可能小下来，我们作如下规定：
 
 !!! info "前提"
-    + $\hat{c_i}=c_i+\Phi(D_i)-\Phi(D_{i-1})
+    + $\hat{c_i}=c_i+\Phi(D_i)-\Phi(D_{i-1})$
 
     + $\Phi(D_i)=$number of trees after the ith insertion
     
