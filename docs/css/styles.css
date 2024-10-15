@@ -1,7 +1,7 @@
 /* styles.css */
 pre code {
     display: block;
-    max-height: 600px; /* 设置最大高度 */
+    max-height: 400px; /* 设置最大高度 */
     max-width: 1000px;  /* 设置最大宽度 */
     overflow-x: auto;  /* 横向滚动条 */
     overflow-y: auto;  /* 纵向滚动条 */
