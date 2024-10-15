@@ -214,5 +214,28 @@ ElementType  DeleteMin( BinQueue H )
 	return MinItem;
 }
 ```
+## 例题
+
+!!! note "例题"
+    === "T1"
+        ![](../../image/pp41.png)
+        ??? general "解析"
+            $(42)_{10}=(101010)_2$
+    === "T2"
+        ![](../../image/pp42.png)
+        ??? general "解析"
+            均摊分析法，Insertion是$O(1)$
+            
+            find-max比较难，肯定不是，findmin倒是有可能$O(1)$（指针标记）
+
+            merge和deletemin都是$O(\log(N))$
+    === "T3"
+        ![](../../image/pp43.png)
+        ??? general "解析"
+            D选项：4为根的$B_2$和2为根的$B_2$合并了。23就不用动了。
+    === "T4"
+        ![](../../image/pp44.png)
+        ??? general "解析"
+            C选项：29当然可以作为根，另外两个$B_2$去合并就行
 <span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
 <span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>
