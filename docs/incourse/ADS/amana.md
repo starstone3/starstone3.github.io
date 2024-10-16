@@ -127,5 +127,5 @@ Splay Tree的三个操作分析起来有点复杂，并且包含了一些数学�
             + Inadequate Block insert and move:$\hat{c_i}=c_i+\Phi(D_i)-\Phi(D_{i-1})=`k`+1 - k+1=2$
 
             则$\sum_{i=1}^n \hat(c_i)=\sum_{i=1}^n O(1)=O(n) \geq \sum_{i=1}^{n} c_i,故T_{amortized}=\frac{O(n)}{n}=O(1)$
-<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
-<span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>
+<!--<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
+<span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>-->

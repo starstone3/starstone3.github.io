@@ -37,5 +37,5 @@ comment : true
 * [14次lab实验报告](https://pan.baidu.com/s/1UcC1vsapyvwV5WJy24EyJw?pwd=k6b6)
 
 * [大程项目](https://github.com/wildfire322/Digital-design-lab)
-<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
-<span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>
+<!--<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
+<span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>-->

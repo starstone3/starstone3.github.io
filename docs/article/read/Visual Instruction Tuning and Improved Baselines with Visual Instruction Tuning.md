@@ -43,5 +43,5 @@ hide:
     5. 针对多模态任务的精细设计
         + 特定任务处理：LLaVA 的设计理念包括了针对不同任务（如视觉问答、图像描述等）的特定模块优化。通过对多模态任务的精细处理，模型能够根据上下文更好地推理，从而在多模态任务中表现出色。
         + 适应性强的架构：LLaVA 的架构支持不同类型的输入数据，并通过灵活的训练流程和优化策略，使得它能够在多种场景和任务中进行扩展和应用。
-<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
-<span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>
+<!--<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
+<span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>-->
