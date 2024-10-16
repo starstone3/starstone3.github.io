@@ -192,6 +192,8 @@ RISC-V是小端的，把低位数据放在低位地址里.
 
 这些指令用于根据寄存器值的比较来控制执行流程。
 
+---
+
 #### jalr指令
 JALR（Jump And Link Register）是一种跳转指令，用于跳转到由寄存器指定的地址，并将返回地址存储在另一个寄存器中。具体来说，它的操作如下：
 
@@ -208,6 +210,8 @@ JALR（Jump And Link Register）是一种跳转指令，用于跳转到由寄存
 
     这条指令将跳转到x2寄存器的值加上4的地址，并将返回地址存储在x1寄存器中。
 
+---
+
 ##### 利用jalr指令实现switch函数
 
 !!! note "解析"
@@ -218,5 +222,85 @@ JALR（Jump And Link Register）是一种跳转指令，用于跳转到由寄存
     === "详解"
         ![](../../image/pp57.png)
 
+## 函数设计
+
+一个函数设计应当有下面六步组成：
+
+1. Place Parameters in a place where the procedure can access them  (where? function arguments (a0-a7))
+
+2. Transfer control to the procedure:jump to  
+
+3. Acquire the storage resources needed for the procedure  
+
+4. Perform the desired task  
+
+5. Place the result value in a place where the calling program can  access it (where?returned values (a0-a1) )  
+
+6. Return control to the point of origin (how to find this? (ra))
+### Step1,参数存储
+在RISC-V中，参数存储主要涉及到八个用于传递参数和返回值的寄存器以及堆栈。
+
+#### 八个参数寄存器
+
+RISC-V架构中有八个专门用于传递函数参数和返回值的寄存器，分别是`a0`到`a7`。这些寄存器的使用规则如下：
+
+- `a0`到`a7`：用于传递函数参数。如果参数超过八个，多余的参数需要通过堆栈传递。
+- `a0`和`a1`：用于存储函数的返回值。
+
+例如，假设有一个函数`foo`，它有三个参数并返回一个值：
+
+```plaintext
+int foo(int x, int y, int z);
+```
+
+在调用`foo`函数时，参数`x`、`y`和`z`会分别存储在寄存器`a0`、`a1`和`a2`中。函数返回时，返回值会存储在寄存器`a0`中。
+
+#### 堆栈
+
+当函数参数超过八个时，或者需要保存临时数据时，堆栈会被用来存储这些额外的信息。堆栈是一个后进先出（LIFO）的数据结构，通常由寄存器`sp`（堆栈指针）管理。
+
+在函数调用过程中，堆栈的使用步骤如下：
+
+1. **保存调用者的上下文**：在调用函数之前，调用者需要将一些寄存器的值保存到堆栈中，以便在函数返回后恢复这些值。
+2. **传递额外的参数**：如果函数参数超过八个，多余的参数会被压入堆栈。
+3. **保存被调用者的上下文**：被调用的函数可能需要使用一些寄存器，这些寄存器的原始值需要保存到堆栈中。
+4. **函数返回**：函数执行完毕后，从堆栈中恢复寄存器的值，并返回到调用者。
+
+
+!!! note "图解"
+    ![](../../image/pp58.png)
+    ??? warning "sp到底指向哪里"
+        经过课上激烈的讨论，sp应该指向栈顶数据的开头，所以图中sd ...,8(sp)应该为sd ...,0(sp)
+例如，假设有一个函数`bar`，它有十个参数：
+
+```plaintext
+void bar(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j);
+```
+
+在调用`bar`函数时，前八个参数`a`到`h`会存储在寄存器`a0`到`a7`中，而参数`i`和`j`会被压入堆栈。
+
+#### 优化
+
+在RISC-V中，寄存器的使用分为临时寄存器和保存寄存器两类：
+
+- `t0` 到 `t6`：7个临时寄存器，由被调用者（callee）不需要保存。如果函数使用了这些寄存器，不需要在函数返回前恢复它们的值。
+- `s0` 到 `s11`：12个保存寄存器，必须由被调用者保存。如果函数使用了这些寄存器，必须在函数返回前恢复它们的值。
+
+!!! info "32个寄存器"
+    ![](../../image/pp59.png)
+
+### Step2，调用函数
+使用指令
+```plaintext
+jal x1, ProcedureAddress
+```
+
+### Step6,函数返回
+使用指令
+```plaintext
+jalr x0, 0(x1)
+```
+!!! tips "x0"
+    Use x0 as rd (x0 cannot be changed)
 <!--<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
 <span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>-->
