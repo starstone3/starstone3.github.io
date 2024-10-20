@@ -302,5 +302,128 @@ jalr x0, 0(x1)
 ```
 !!! tips "x0"
     Use x0 as rd (x0 cannot be changed)
+
+## 重点详解之递归指令
+
+!!! example "阶乘为例"
+    === "C语言"
+        ![](../../image/pp62.png)
+    === "RISC-V码"
+        ![](../../image/pp61.png)
+    接下来是对于这段RISC-V码的具体解析，由于递归理解起来比较难，我将以fact(3)的计算为例，进行解释。
+    ??? general "解析"
+        === "Step1"
+            **调用fact(3)**
+            
+            参数 n = 3 存储在寄存器 `a0（x10）`。
+        === "Step2"
+
+            **调整栈空间：**
+
+            ```riscv
+            addi sp, sp, -16  # 分配16字节的栈空间
+
+            sd ra, 8(sp)      # 保存返回地址 ra
+
+            sd a0, 0(sp)      # 保存参数 n (即 a0 = 3)
+            ```
+
+            这一步是：
+
+            + 将栈指针 `sp` 下移 16 字节（空出位置存放局部变量）。
+
+            + 保存返回地址 `ra（x1）`到栈中（`sp+8`）。
+
+            + 将参数 `n = 3 `保存到栈中的 `sp+0` 位置。
+        === "Step3"
+
+            **判断 n 是否大于等于 1**
+
+            ```riscv
+            addi t0, a0, -1   # t0 = n - 1 = 3 - 1 = 2
+
+            bge t0, zero, L1  # 如果 n >= 1，跳到 L1 继续执行
+            ```
+
+            这一步是：
+
+            + 将 `n - 1 `的结果（2）存入寄存器 `t0`。
+
+            +  判断 `t0 >= 0`，因为 `2 >= 0`，所以跳转到标签` L1`。
+        === "Step4"
+            **递归调用 `fact(2)`**
+
+            ```riscv
+            L1: addi a0, a0, -1  # a0 = n - 1 = 3 - 1 = 2
+                jal ra, fact     # 调用 fact(2)
+            ```
+
+            这一步是：
+
+            + 将 `a0` 设为 `n - 1 = 2`，这相当于准备递归调用 `fact(2)`。
+
+            + 使用 `jal` 指令，跳转到 `fact` 的开始，并将当前的返回地址（下一条指令的位置）存入 `ra`，这样递归调用结束后可以返回这里。
+        
+        === "Step5"
+            **进行fact(2)**
+
+            OK,我们现在又回到了`fact`,但此时`a0`中存的不再是3，而是2了。仿照3的格式进行`fact(2)`,直到进入`fact(0)`
+        === "Step6"
+            **进行fact(0)**
+
+            常规的调整栈空间后，在bge指令处我们发现，$t_0$的结果小于0了，于是不会跳转到L1，而是继续进行下面的指令。
+
+            ```riscv
+            addi a0, zero, 1  # a0 = 1
+            addi sp, sp, 16   # 恢复栈指针
+            jalr zero, 0(ra)  # 返回，fact(0) = 1
+
+            ```
+            我们结束了递归，这时传回去的`a0`为1，因为$0!=1$
+        === "Step7"
+            **计算fact(1)**
+            
+            我们不妨思考，`ra`的地址存的是哪里的地址呢？就是刚刚在L1中使用的`jal ra,fact`命令
+
+            于是我们回到这里，继续执行下面的指令。
+
+            ```riscv
+            add t1, a0, zero  # t1 = 1 (保存 fact(0) 的结果)
+            ld a0, 0(sp)      # 恢复参数 n = 1
+            ld ra, 8(sp)      # 恢复返回地址
+            add sp, sp, 16    # 恢复栈指针
+            mul a0, a0, t1    # a0 = 1 * 1 = 1 (计算 1 * fact(0))
+            jalr zero, 0(ra)  # 返回，fact(1) = 1
+
+            ```
+        === "Step8"
+            **递归计算**
+
+            我们不难发现，除第一个外所有的`ra`（第一个`ra`就是函数的返回地址）都是在`jal ra,fact`指令后跳转到fact,再在`sd ra,8(sp)`指令中储存的。
+            所以`jalr zero,0(ra)`跳转到的是比现在的n大1的L1处。比如说，我们接续刚刚返回`fact(1)=1`的指令
+
+            ```riscv
+            add t1, a0, zero  # t1 = 1 (保存 fact(1) 的结果)
+            ld a0, 0(sp)      # 恢复参数 n = 2
+            ld ra, 8(sp)      # 恢复返回地址
+            add sp, sp, 16    # 恢复栈指针
+            mul a0, a0, t1    # a0 = 2 * 1 = 2 (计算 2 * fact(1))
+            jalr zero, 0(ra)  # 返回，fact(2) = 2
+            ```
+            这样就计算好了`fact(2)`
+
+            以此类推，`fact(3)`也计算出来了:
+
+            ```riscv
+            add t1, a0, zero  # t1 = 2 (保存 fact(2) 的结果)
+            ld a0, 0(sp)      # 恢复参数 n = 3
+            ld ra, 8(sp)      # 恢复返回地址
+            add sp, sp, 16    # 恢复栈指针
+            mul a0, a0, t1    # a0 = 3 * 2 = 6 (计算 3 * fact(2))
+            jalr zero, 0(ra)  # 返回，fact(3) = 6
+
+            ```
+            于是就返回了6.
+            至此，相信能理解`fact(n)`是如何计算的了。
 <!--<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
 <span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>-->
