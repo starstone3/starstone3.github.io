@@ -247,4 +247,22 @@ int main() {
 
 回溯算法的总体套路。
 
+
 ![](../../image/pp67.png)
+
+
+## $\alpha - \beta$剪枝
+
+我认为讲得很清楚的[一篇帖子](https://zhuanlan.zhihu.com/p/658351019)，还有[oiwiki](https://oi-wiki.org/search/alpha-beta/#alpha-beta-%E5%89%AA%E6%9E%9D)，有空<strike>(大概率不会)</strike>再码
+
+## 例题
+
+!!! example "例题"
+    === "T1"
+        ![](../../image/pp68.png)
+        ??? general "解析"
+            3-3=0，选B
+    === "T2"
+        ![](../../image/pp69.png)
+        ??? general "解析"
+            按照深度优先搜索的顺序，我们访问到a的父亲，此时a的父亲的$\beta$为68，而a的$\alpha$为86（先访问了b），此时$\alpha > \beta$，已经不会有意义了，所以不再需要访问c，也就是c被剪枝了。选C
