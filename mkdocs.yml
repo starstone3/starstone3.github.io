@@ -81,6 +81,7 @@ nav :
       - "倒排索引": incourse/ADS/fileindex.md
       - "Leftist Heaps and Skew Heaps": incourse/ADS/Leandsk.md
       - "Binomial Queue": incourse/ADS/bioquene.md
+      - "回溯" : incourse/ADS/backtracking.md
     - "计算机组成":
       - incourse/Comcompose/index.md
       - "Chapter 2:Instructions: Language of the Machine": incourse/Comcompose/Ch2.md
