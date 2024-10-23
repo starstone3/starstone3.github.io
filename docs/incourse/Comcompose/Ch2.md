@@ -125,7 +125,11 @@ RISC-V是小端的，把低位数据放在低位地址里.
 ### 汇总及练习
 
 !!! note "汇总"
-    ![](../../image/pp33.png)
+    === "初始版"
+        ![](../../image/pp33.png)
+    === "详细版"
+        ![](../../image/pp70.png)
+        ![](../../image/pp71.png)
     ??? example "例子"
         ![](../../image/pp34.png)
 
@@ -425,5 +429,7 @@ jalr x0, 0(x1)
             ```
             于是就返回了6.
             至此，相信能理解`fact(n)`是如何计算的了。
+
+
 <!--<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
 <span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>-->
