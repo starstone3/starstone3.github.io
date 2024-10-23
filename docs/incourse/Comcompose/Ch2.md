@@ -443,5 +443,30 @@ jalr x0, 0(x1)
         ![](../../image/pp75.png)
     ??? general "优化"
         这里的i可以存放在临时寄存器中，这样就不用在栈中存储。
+
+
+## RISC V Addressing for 32-Bit Immediate  and Addresses
+
+### 32-bit constant
+
+使用lui与addi指令实现加载32位立即数。
+
+``` riscv
+lui x5, 0x12346 //0x12345+1,加1是为了抵消由于低十二位数与高二十位数作加法引起的拓展位数带来的误差。
+addi x5, x5, 0x678
+```
+
+### Branch Addressing
+
+![](../../image/pp76.png)
+
+### Jump Addressing
+
+![](../../image/pp77.png)
+
+
+
+
+
 <!--<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
 <span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>-->
