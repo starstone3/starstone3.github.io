@@ -89,7 +89,7 @@ hide :
                   <div>
                      <a href="https://www.luogu.com.cn/user/93838#article" target=“_blank”>hongse_fox</a>
                   </div>
-                  <div class="info">一个挣扎的oier</div>
+                  <div class="info">一个爱玩原神的玩机器粉丝</div>
                </div>
             </div>
          </div>
