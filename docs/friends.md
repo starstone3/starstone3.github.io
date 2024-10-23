@@ -84,15 +84,6 @@ hide :
                </div>
             </div>
             <div class="card">
-               <img class="ava" src="https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png" />
-               <div class="card-header">
-                  <div>
-                     <a href="https://twitter.com/" target=“_blank”>Twitter</a>
-                  </div>
-                  <div class="info">小鸟是我的好盆友(bushi)</div>
-               </div>
-            </div>
-            <div class="card">
                <img class="ava" src="https://img.qovv.cn/2024/04/25/662a36181d738.jpg"/>
                <div class="card-header">
                   <div>
