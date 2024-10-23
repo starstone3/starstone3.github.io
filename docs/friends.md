@@ -80,7 +80,7 @@ hide :
                   <div>
                      <a href="https://lakerswillwin.github.io/" target=“_blank”>Lane</a>
                   </div>
-                  <div class="info">这是lz的新家，欢迎大家来玩(bushi)。</div>
+                  <div class="info">lane's home。</div>
                </div>
             </div>
             <div class="card">
