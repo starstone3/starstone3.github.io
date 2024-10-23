@@ -128,8 +128,11 @@ RISC-V是小端的，把低位数据放在低位地址里.
     === "初始版"
         ![](../../image/pp33.png)
     === "详细版"
-        ![](../../image/pp70.png)
         ![](../../image/pp71.png)
+        ![](../../image/pp70.png)
+        提问：lh,lw,lb这些从内存中加载不足8字节的数据到64位寄存器中，空余的位数怎么办呢？
+            ??? general "解"
+                ![](../../image/pp72.png)
     ??? example "例子"
         ![](../../image/pp34.png)
 
@@ -430,6 +433,15 @@ jalr x0, 0(x1)
             于是就返回了6.
             至此，相信能理解`fact(n)`是如何计算的了。
 
+## 实例：字符串复制
 
+!!! example "实例"
+    === "C code"
+        ![](../../image/pp73.png)
+    === "RISC-V"
+        ![](../../image/pp74.png)
+        ![](../../image/pp75.png)
+    ??? general "优化"
+        这里的i可以存放在临时寄存器中，这样就不用在栈中存储。
 <!--<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
 <span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>-->
