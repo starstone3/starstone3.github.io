@@ -130,9 +130,12 @@ RISC-V是小端的，把低位数据放在低位地址里.
     === "详细版"
         ![](../../image/pp71.png)
         ![](../../image/pp70.png)
+
         提问：lh,lw,lb这些从内存中加载不足8字节的数据到64位寄存器中，空余的位数怎么办呢？
-            ??? general "解"
-                ![](../../image/pp72.png)
+
+        ??? general "解"
+            ![](../../image/pp72.png)
+
     ??? example "例子"
         ![](../../image/pp34.png)
 
