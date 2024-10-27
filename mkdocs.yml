@@ -5,7 +5,7 @@ edit_uri: blob/main/docs
 repo_name: 'starstone3 sleeps here'
 repo_url: 'https://github.com/starstone3/starstone3.github.io'
 theme:
-  favicon: image/fav1.jpg
+  favicon: image/fav1.png
   name: material 
   language: zh
   icon:
