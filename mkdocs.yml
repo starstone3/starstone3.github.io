@@ -97,6 +97,8 @@ nav :
     - "课外学习":
       - article/out/index.md
       - article/out/Transformer.md
+      - "动态规划": article/out/DP.md
+      - "机器学习": article/out/ML.md
     - "论文阅读":
       - article/read/index.md
       - article/read/What is chatgpt doing and Why does it work.md
