@@ -94,7 +94,7 @@ $\therefore \theta = (X^T X)^{-1} X^T y$
 
 公式：
 
-$\frac{\partial J(\theta)}{\partial \theta_j} = 1 \frac{1}{m} \sum_{i=1}^{m} (y^i - h_{\theta}(x^i) )x^i_j$
+$\frac{\partial J(\theta)}{\partial \theta_j} = -\frac{1}{m} \sum_{i=1}^{m} (y^i - h_{\theta}(x^i) )x^i_j$
 
 $\theta^{\prime}_j= \theta_j - \alpha \frac{1}{m} \sum_{i=1}^{m} (h_{\theta}(x^i) - y^i)x^i_j$
 
