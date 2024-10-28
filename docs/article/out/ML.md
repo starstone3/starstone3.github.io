@@ -42,7 +42,7 @@ x_2
 
 ## 似然函数
 
-由于误差服从正态分布，其密度函数为$f(\epsilon^{(i)})=\frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(- \frac{(\epsilon^{(i)})^2}{2 \sigma^2}\right)$
+对于上面的案例，由于误差服从正态分布，其密度函数为$f(\epsilon^{(i)})=\frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(- \frac{(\epsilon^{(i)})^2}{2 \sigma^2}\right)$
 
 我们用$y, x$来表示$\epsilon$，于是得到$f(y^{(i)}|x^{(i)}, \theta)= \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(- \frac{(y^{(i)} - \theta^T x^{(i)})^2}{2 \sigma^2}\right)$
 
@@ -73,3 +73,74 @@ $= X^T X \theta - X^T y$
 要求极值点，因此偏导为0
 
 $\therefore \theta = (X^T X)^{-1} X^T y$
+
+## 梯度下降
+
+上面的似然函数推导听上去很美好，X，Y都是已知的，我们只需要
+代进去就能得出$\theta$，然而,$X^T X$并不总是可逆的，这就意味着
+我们不能直接得出$\theta$的值。因此，需要引入梯度下降的概念。
+
+### 概念
+机器学习的主要目的是通过迭代地调整模型参数，以最小化损失函数。因为有许多目标函数是不可解的，因此，需要梯度下降的思想。
+
+### 做法
+
+梯度在数学的学习中都已经接触过，是一个多元函数在某点处变化最快的方向和速率，是一个向量，也是我们常说的方向导数。
+
+假设现在我们的目标函数是$J(\theta)= \frac{1}{2m} \sum^m_{i=1}(y^i - h_{\theta}(x^i))^2$，初始先随机取$\theta$的值，为了不断更新$\theta$来让预测值和真实值更接近，有如下方法
+
+#### 批量梯度下降 (Batch Gradient Descent)
+批量梯度下降使用整个训练集来计算梯度更新。
+
+公式：
+
+$\frac{\partial J(\theta)}{\partial \theta_j} = 1 \frac{1}{m} \sum_{i=1}^{m} (y^i - h_{\theta}(x^i) )x^i_j$
+
+$\theta^{\prime}_j= \theta_j - \alpha \frac{1}{m} \sum_{i=1}^{m} (h_{\theta}(x^i) - y^i)x^i_j$
+
+解释：
+
+- $\theta$：参数向量
+- $\alpha$：学习率
+- $m$：训练样本的数量
+- $h_{\theta}(x^i)$：模型的预测值
+- $y^i$：某个真实值
+- $x^i$：某个输入特征向量
+- $x^i_j$:某个输入向量与参数$\theta_j$相匹配的
+
+#### 随机梯度下降 (Stochastic Gradient Descent)
+随机梯度下降每次只使用一个训练样本来更新参数。
+
+公式：
+$\theta^{\prime}_j= \theta_j - \alpha (h_{\theta}(x^i) - y^i)x^i_j$
+
+解释：
+
+- $\theta$：参数向量
+- $\alpha$：学习率
+- $h_{\theta}(x^i)$：模型的预测值
+- $y^i$：某个真实值
+- $x^i$：某个输入特征向量
+- $x^i_j$:某个输入向量与参数$\theta_j$相匹配的
+
+#### 小批量梯度下降 (Mini-batch Gradient Descent)
+小批量梯度下降使用一小部分训练样本（称为小批量）来计算梯度更新。
+
+公式：
+$\theta^{\prime}_j= \theta_j - \alpha \frac{1}{b} \sum_{i=1}^{b} (h_{\theta}(x^i) - y^i)x^i_j$
+
+解释：
+
+- $\theta$：参数向量
+- $\alpha$：学习率
+- $b$：小批量的样本数量
+- $h_{\theta}(x^i)$：模型的预测值
+- $y^i$：某个真实值
+- $x^i$：某个输入特征向量
+- $x^i_j$:某个输入向量与参数$\theta_j$相匹配的
+
+
+需要说明一下的是，学习率相当于是每次参数更新的步长大小，因为我们算出来的梯度只是在某一点的方向导数，并不能代表全部，所以更新的学习率需要仔细考虑。
+
+## 线性回归模型实战
+
