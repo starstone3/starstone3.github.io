@@ -100,3 +100,40 @@ comments: true
         }
     };
     ```
+
+### 将数字变成0的操作次数
+
+![](../../image/pp79.png)
+
+??? general "解析"
+    也是很简单的思路。
+    ```cpp
+    class Solution {
+        int f[1000001];
+
+    public:
+        int numberOfSteps(int num) {
+            f[0] = 0;
+            f[1] = 1;
+            if (num == 0)
+                return 0;
+            else if (num == 1)
+                return 1;
+            else {
+                for (int i = 2; i <= num; i++) {
+                    if (i % 2 == 0) {
+                        f[i] = f[i / 2] + 1;
+                    } else {
+                        f[i] = f[i - 1] + 1;
+                    }
+                }
+                return f[num];
+            }
+        }
+    };
+    ```
+    其实还有更优思路，比如根据题意可以推算出，最终步数应该为num的二进制最后一位的数+（其他每一位的数+1）。
+
+    + 以14为例子，二进制为1110，结果1+1 + 1+1 + 1+1 + 0 = 6。
+    
+    + 以8为例子，二进制为1000，结果1+1 + 0+1 + 0+1 + 0 = 4。
