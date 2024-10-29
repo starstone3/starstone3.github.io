@@ -146,28 +146,18 @@ comments: true
     也是很直接的一道题。任何一个台阶可以从它下面一级台阶和下面两级台阶跳上来，比较一下即可。
 
     ```cpp
-        class Solution {
+    class Solution {
         int mincost[1001];
     public:
-        int min(int a,int b){
-            return a< b?a:b;
-        }
         int minCostClimbingStairs(vector<int>& cost) {
-            if(cost.size()==1){
-                return cost[0];
-            }
-            else if(cost.size()==2){
-                return min(cost[0],cost[1]);
-            }
-            else {
                 mincost[0]=0;
                 mincost[1]=0;
-                for(int i=2;i<cost.size();i++){
+                int k=cost.size();
+                for(int i=2;i<=k;i++){
                     mincost[i]=min(mincost[i-1]+cost[i-1],mincost[i-2]+cost[i-2]);
                 }
-            }
-            int k=cost.size();
-            return min(mincost[k-1]+cost[k-1],mincost[k-2]+cost[k-2]);
+            
+            return mincost[k];
         }
     };
     ```
