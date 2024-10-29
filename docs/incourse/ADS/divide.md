@@ -224,13 +224,6 @@ $$T(N) = aT(\frac{N}{b}) + f(N)$$
 我愿称之为背公式大法。
 
 !!! definition
-    ----
-
-### Master method(主方法)
-
-我愿称之为背公式大法。
-
-!!! definition
 
     设 $a \geq 1$ 且 $b > 1$ 为常数，设 $f(N)$ 为一个函数，并且 $T(N)$ 在非负整数上由递推关系 $T(N) = aT(N/b) + f(N)$ 定义。那么我们可以根据$f(N)$的情况直接得出$T(N)$的时间复杂度。
 
@@ -381,3 +374,37 @@ $$T(N)=\Theta(n^{\log_b^a})+\sum_{j=0}^{\log_b^n -1} a^jf(\frac{n}{b^j})$$
 
 
 ## 例题
+
+!!! note "例题"
+    === "T1"
+        ![](../../image/pp87.png)
+        ??? general "解析"
+            a=8,b=3,$f(N) = O(N^2 \log N)$,$a \lt b^k$，所以可以得出选A。
+    === "T2"
+        ![](../../image/pp88.png)
+        考虑主方法
+        ??? general "解析"
+            A，$T(N)=2T(N/3)+O(N)$，则 $N^{\log_ba}=N^{\log_32}<N$，$T=O(N)$。
+
+            B，$T(N)=2T(N/3)+O(N\log N)$，则 $N^{\log_ba}=N^{\log_32}<N<N\log N$，$T=O(N\log N)$。
+
+            C，$T(N)=3T(N/2)+O(N)$，则 $N^{\log_ba}=N^{\log_23}>N$，$T=O(N^{\log_23})$。
+
+            D，$T(N)=3T(N/3)+O(N\log N)$，则 $N^{\log_ba}=N$，$T=O(N\log^2 N)$。
+
+            故选C。
+    
+    === "T3"
+        ![](../../image/pp89.png)
+        ??? general "解析"
+            $a=3,b=3,f(N)=N$,由主函数形式一可知，$T(N)=\Theta(N^{\log_b^a}\log N)=\Theta(N\log N)$
+    
+    === "T4"
+        ![](../../image/pp90.png)
+        ??? general "解析"
+
+            $$T(n)=2^k T(n^{\frac{1}{2^k}})+k \log n$$
+
+            不妨考虑$n^{\frac{1}{2^k}}$是某一常数，则$k = \log \log n$
+
+            则$T(n) = O(\log n + \log \log n \log n)=O(\log \log n \log n)$
