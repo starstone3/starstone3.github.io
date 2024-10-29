@@ -48,31 +48,37 @@ x_2
 
 ### 似然函数定义
 似然函数表示为所有观测值的联合概率密度函数
-$L(\theta) = \prod_{i=1}^{n} f(y^{(i)}|x^{(i)}, \theta) = \prod_{i=1}^{n} \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(- \frac{(y^{(i)} - \theta^T x^{(i)})^2}{2 \sigma^2}\right)$
+
+$$L(\theta) = \prod_{i=1}^{n} f(y^{(i)}|x^{(i)}, \theta) = \prod_{i=1}^{n} \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(- \frac{(y^{(i)} - \theta^T x^{(i)})^2}{2 \sigma^2}\right)$$
 
 ### 对数似然函数
 有时为了简化计算，我们会取一个对数。
-$\ell(\theta) = \log L(\theta) = \sum_{i=1}^{n} \log \left( \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(- \frac{(y^{(i)} - \theta^T x^{(i)})^2}{2 \sigma^2}\right) \right)$
+
+$$\ell(\theta) = \log L(\theta) = \sum_{i=1}^{n} \log \left( \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(- \frac{(y^{(i)} - \theta^T x^{(i)})^2}{2 \sigma^2}\right) \right)$$
 
 进一步简化对数似然函数：
 
-$\ell(\theta) = n \log{\frac{1}{\sqrt{2 \pi} \sigma}} - \frac{1}{2\sigma ^2} \sum_{i=1}^n((y^{(i)} - \theta^T x^{(i)})^2)$
+$$\ell(\theta) = n \log{\frac{1}{\sqrt{2 \pi} \sigma}} - \frac{1}{2\sigma ^2} \sum_{i=1}^n((y^{(i)} - \theta^T x^{(i)})^2)$$
 
 现在再回过头来思考一下，我们的目的是什么呢？就是让似然函数越大越好。考虑上式中的变量，我们只需要让$\frac{1}{2}\sum_{i=1}^n((y^{(i)} - \theta^T x^{(i)})^2)$越小越好.
 
 不妨记$J(\theta) = \frac{1}{2}\sum_{i=1}^n((y^{(i)} - \theta^T x^{(i)})^2)$
 
-$J(\theta) = \frac{1}{2} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2 = \frac{1}{2} (X\theta - y)^T (X\theta - y)$
+$$J(\theta) = \frac{1}{2} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2 = \frac{1}{2} (X\theta - y)^T (X\theta - y)$$
 
-对$\theta$ 求偏导： $\nabla_\theta J(\theta) = \nabla_\theta \left( \frac{1}{2} (X\theta - y)^T (X\theta - y) \right) = \nabla_\theta \left( \frac{1}{2} (\theta^T X^T X \theta - \theta^T X^T y - y^T X \theta + y^T y) \right)$
+对$\theta$ 求偏导： 
 
-$= \frac{1}{2} \nabla_\theta \left( \theta^T X^T X \theta - \theta^T X^T y - y^T X \theta + y^T y \right)$
+$$\nabla_\theta J(\theta) = \nabla_\theta \left( \frac{1}{2} (X\theta - y)^T (X\theta - y) \right) $$
 
-$= X^T X \theta - X^T y$
+$$= \nabla_\theta \left( \frac{1}{2} (\theta^T X^T X \theta - \theta^T X^T y - y^T X \theta + y^T y) \right)$$
+
+$$= \frac{1}{2} \nabla_\theta \left( \theta^T X^T X \theta - \theta^T X^T y - y^T X \theta + y^T y \right)$$
+
+$$= X^T X \theta - X^T y$$
 
 要求极值点，因此偏导为0
 
-$\therefore \theta = (X^T X)^{-1} X^T y$
+$$\therefore \theta = (X^T X)^{-1} X^T y$$
 
 ## 梯度下降
 
@@ -94,9 +100,9 @@ $\therefore \theta = (X^T X)^{-1} X^T y$
 
 公式：
 
-$\frac{\partial J(\theta)}{\partial \theta_j} = -\frac{1}{m} \sum_{i=1}^{m} (y^i - h_{\theta}(x^i) )x^i_j$
+$$\frac{\partial J(\theta)}{\partial \theta_j} = -\frac{1}{m} \sum_{i=1}^{m} (y^i - h_{\theta}(x^i) )x^i_j$$
 
-$\theta^{\prime}_j= \theta_j - \alpha \frac{1}{m} \sum_{i=1}^{m} (h_{\theta}(x^i) - y^i)x^i_j$
+$$\theta^{\prime}_j= \theta_j - \alpha \frac{1}{m} \sum_{i=1}^{m} (h_{\theta}(x^i) - y^i)x^i_j$$
 
 解释：
 
@@ -112,7 +118,8 @@ $\theta^{\prime}_j= \theta_j - \alpha \frac{1}{m} \sum_{i=1}^{m} (h_{\theta}(x^i
 随机梯度下降每次只使用一个训练样本来更新参数。
 
 公式：
-$\theta^{\prime}_j= \theta_j - \alpha (h_{\theta}(x^i) - y^i)x^i_j$
+
+$$\theta^{\prime}_j= \theta_j - \alpha (h_{\theta}(x^i) - y^i)x^i_j$$
 
 解释：
 
@@ -127,7 +134,8 @@ $\theta^{\prime}_j= \theta_j - \alpha (h_{\theta}(x^i) - y^i)x^i_j$
 小批量梯度下降使用一小部分训练样本（称为小批量）来计算梯度更新。
 
 公式：
-$\theta^{\prime}_j= \theta_j - \alpha \frac{1}{b} \sum_{i=1}^{b} (h_{\theta}(x^i) - y^i)x^i_j$
+
+$$\theta^{\prime}_j= \theta_j - \alpha \frac{1}{b} \sum_{i=1}^{b} (h_{\theta}(x^i) - y^i)x^i_j$$
 
 解释：
 
