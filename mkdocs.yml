@@ -87,6 +87,7 @@ nav :
       - incourse/Comcompose/index.md
       - "Chapter 2:Instructions: Language of the Machine": incourse/Comcompose/Ch2.md
       - "Chapter 3:Arithmetic for Computer": incourse/Comcompose/Ch3.md
+      - "Chapter 4: The Processor": incourse/Comcompose/Ch4.md
   - "大一课程遗物":
     - incourse/old/index.md
     - "数据结构基础": incourse/old/fds.md
