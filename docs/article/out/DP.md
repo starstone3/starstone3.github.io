@@ -161,3 +161,73 @@ comments: true
         }
     };
     ```
+
+### 打家劫舍
+
+![](../../image/pp102.png)
+
+??? general "解析"
+    第一个房子:最大值必然是nums[0];
+
+    第二个房子：最大值必然是nums[0],nums[1]中的较大者。
+
+    第i个房子：最大值要么来自于抢第i个房子，值为f[i-2]+nums[i]，要么不抢第i-1个房子，值为f[i-1].
+
+    ```cpp
+    class Solution {
+        int f[101];//到第i个房子的时候能获得的最大价值
+    public:
+        int rob(vector<int>& nums) {
+            f[0]=nums[0];
+            int k=nums.size();
+            for (int i=1;i<k;i++){
+                if(i==1){
+                    f[1]=max(nums[0],nums[1]);
+                }
+                else{
+                    f[i]=max(f[i-2]+nums[i],f[i-1]);
+                }
+            }
+            return f[k-1];
+        }
+    };
+    ```
+
+### 打家劫舍II
+
+![](../../image/pp102.png)
+
+??? general "解析"
+    我的思路很简单。既然头和尾不能都选，那我就算两种情况下的最大值:去头和去尾。在每种情况内部，是和上面那道题一样的。最后比较大小即可。
+    ```cpp
+    class Solution {
+        int f1[101];
+        int f2[101];
+    public:
+        int rob(vector<int>& nums) {
+            f1[0]=nums[0];
+            int k=nums.size();
+            if(k>1)
+                f2[0]=nums[1];
+            else
+                return nums[0];
+            for (int i=1;i < k-1;i++){
+                if(i==1){
+                    f1[1]=max(nums[0],nums[1]);
+                }
+                else{
+                    f1[i]=max(f1[i-2]+nums[i],f1[i-1]);
+                    }
+                }
+            for (int i=2;i < k;i++){
+                if(i == 2){
+                    f2[1]= max(nums[1],nums[2]);
+                }
+                else{
+                    f2[i-1]=max(f2[i-3]+nums[i],f2[i-2]);
+                    }
+                }
+            return max(f1[k-2],f2[k-2]);
+        }
+    };
+    ```
