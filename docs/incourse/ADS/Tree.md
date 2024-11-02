@@ -28,9 +28,9 @@ AVL树是一种自平衡二叉搜索树，其中所有节点的左右子树高�
 
     解答：https://stackoverflow.com/questions/30769383/finding-the-minimum-and-maximum-height-in-a-avl-tree-given-a-number-of-nodes
 
-    最小高度十分简单，按照完全二叉树的顺序填入即可。而最大高度有点复杂，直接给出公式：
+    最小高度十分简单，按照完全二叉树的顺序填入即可。而最大高度有点复杂。wiki上是这样说的。
 
-    $$1.44 \log_2^{n+2} - 0.328$$ ,向下取整
+    ![](../../image/pp105.png)
 
 #### 性质：
 1. **高度**：具有`n`个节点的AVL树的高度为O(log n)，确保高效的搜索、插入和删除操作。
