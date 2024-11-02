@@ -11,7 +11,8 @@ theme:
   icon:
     # logo: material/pac-man
     logo:  fontawesome/solid/cloud-moon
-    repo: fontawesome/brands/github-alt
+    # repo: fontawesome/brands/github-alt
+    repo: simple/eslgaming
     admonition:
       info: fontawesome/solid/anchor
       note: fontawesome/solid/pen-nib
