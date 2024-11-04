@@ -270,6 +270,11 @@ def generate_polynomials(dataset, polynomial_degree, normalize_data=False):
     elif num_features_2 == 0:
         dataset_2 = dataset_1
 
+    #重新更新,获取最新的样本数量和特征数量
+    (num_examples_1, num_features_1) = dataset_1.shape
+    (num_examples_2, num_features_2) = dataset_2.shape
+
+
     # 确定要使用的特征数量，选择较小的特征数
     num_features = num_features_1 if num_features_1 < num_features_2 else num_features_2
     dataset_1 = dataset_1[:, :num_features]
@@ -630,3 +635,111 @@ plt.show()
 所以我们可以看到，用两个自变量是比一个自变量训练效果好的
 
 ---
+
+## 非线性回归
+
+在上面的联系中，我们在训练\(\theta\)时都是默认x的次数是一次，也就是因变量与自变量的关系是线性的。下面是当我们假设因变量和自变量关系是非线性的情况。
+
+### 读取数据
+
+```python
+import numpy as np
+
+import pandas as pd
+
+import matplotlib.pyplot as plt
+
+from linear import LinearRegression
+
+data = pd.read_csv('linearstudy/data/non-linear-regression-x-y.csv')
+
+x=data['x'].values.reshape(data.shape[0],1)
+
+y=data['y'].values.reshape(data.shape[0],1)
+
+plt.plot(x, y,'r')
+
+plt.xlabel('x')
+
+plt.ylabel('y')
+
+plt.title('The scatter of x and y')
+
+plt.show()
+
+```
+
+!!! info "数据图"
+    ![](../../image/pp108.png)
+
+
+### 做非线性处理
+
+```python
+iterations = 50000
+
+alpha = 0.01
+
+polynomial_degree = 15
+
+normalize_data = True
+
+sinusoid_degree = 15
+
+linear_regression = LinearRegression(x, y, polynomial_degree, sinusoid_degree,normalize_data )
+```
+
+在上述代码中：
+
++ 多项式次数 (polynomial_degree = 15)：将原始特征扩展为15次多项式，有助于捕捉数据中的高次非线性关系.
+
++ 正弦波次数 (sinusoid_degree = 15)：引入15个不同频率的正弦函数，增强模型对周期性模式的识别能力。
+
+### 训练
+
+```python
+(cost_history,theta) = linear_regression.train(alpha, iterations)
+
+print(f'开始损失值: {cost_history[0]}')
+
+print(f'结束损失值: {cost_history[-1]}')
+
+plt.plot(range(iterations), cost_history, 'b')
+
+plt.xlabel('iterations')
+
+plt.ylabel('cost')
+
+plt.title('The cost of iterations')
+
+plt.show()
+
+predicton_nums = 1000
+
+x_pred = np.linspace(x.min(), x.max(), predicton_nums).reshape(predicton_nums, 1)
+
+y_pred = linear_regression.predict(x_pred)
+
+plt.scatter(x, y, c='r')
+
+plt.plot(x_pred, y_pred, 'b')
+
+plt.xlabel('x')
+
+plt.ylabel('y')
+
+plt.title('The scatter of x and y')
+
+plt.show()
+
+
+```
+
+!!! info "结果"
+    === "Loss图"
+        ![](../../image/pp109.png)
+        
+        损失从一开始的2322.5164294103674降到最后35.110714989706445
+    
+    === "拟合图"
+        ![](../../image/pp110.png)
