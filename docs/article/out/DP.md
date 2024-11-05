@@ -231,3 +231,65 @@ comments: true
         }
     };
     ```
+
+### 解码方法
+
+![](../../image/pp116.png)
+
+??? general
+    对于第i个位置，需要判断它能否与i-1位组成合法字母。如果可以并且第i位不是0的话，f[i]=
+    f[i-1]+f[i-2]，不然,f[i]=f[i-1]
+
+    **需要考虑空字符!!!**因为这个卡了好久。空字符串的解码方法为1种
+
+    ```cpp
+    class Solution {
+        int f[101];
+    public:
+        int numDecodings(string s) {
+        int k = s.length();
+        f[0] = 1;
+            for (int i = 1; i <= k; ++i) {
+                if (s[i - 1] != '0') {
+                    f[i] += f[i - 1];
+                }
+                if (i > 1 && s[i - 2] != '0' && ((s[i - 2] - '0') * 10 + (s[i - 1] - '0') <= 26)) {
+                    f[i] += f[i - 2];
+                }
+            }
+            return f[k];
+        }
+    };
+    ```
+### 分割数组以得到最大值
+
+![](../../image/pp117.png)
+
+??? general
+    ```cpp
+    class Solution {
+        int dp[510];
+    public:
+        int maxSumAfterPartitioning(vector<int>& arr, int k) {
+        int maxn,cnt;
+        int n = arr.size();
+        for(int i=0;i<n;i++){
+                maxn = 0;
+                dp[i]=0;
+                cnt=0;
+                for(int j = i;j>=0;j--){
+                    maxn = max(arr[j],maxn);
+                    cnt++;
+                    if(cnt>k)
+                        break;
+                    if(j)
+                        dp[i]=max(dp[i],cnt*maxn+dp[j-1]);
+                    else
+                        dp[i]=max(dp[i],cnt*maxn);
+                }
+        }
+        return dp[n-1];
+
+        }
+    };
+    ```
