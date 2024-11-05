@@ -738,8 +738,55 @@ plt.show()
 !!! info "结果"
     === "Loss图"
         ![](../../image/pp109.png)
-        
+
         损失从一开始的2322.5164294103674降到最后35.110714989706445
     
     === "拟合图"
         ![](../../image/pp110.png)
+
+## 模型评估
+
+### Sklearn
+
+Sklearn库是一个功能强大的机器学习库，提供了丰富的算法和工具用于数据预处理、特征选择、模型训练和评估。
+
+#### 安装
+
+可以使用以下命令通过pip安装scikit-learn：
+
+```shell
+pip install scikit-learn
+```
+
+#### 常用模块
+
++ linear_model: 线性回归、逻辑回归等模型
+
++ tree: 决策树
+
++ ensemble: 集成方法，如随机森林、梯度提升
+
++ preprocessing: 数据预处理工具
+
++ model_selection: 模型选择与验证
+
+#### 示例：线性回归
+
+```python
+from sklearn.linear_model import LinearRegression
+import numpy as np
+
+# 准备数据
+X = np.array([[1], [2], [3], [4], [5]])
+y = np.array([2, 4, 6, 8, 10])
+
+# 创建模型
+model = LinearRegression()
+
+# 训练模型
+model.fit(X, y)
+
+# 进行预测
+predictions = model.predict([[6]])
+print(predictions)  # 输出: [12.]
+```
