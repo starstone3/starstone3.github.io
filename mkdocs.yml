@@ -85,6 +85,7 @@ nav :
       - "Binomial Queue": incourse/ADS/bioquene.md
       - "回溯" : incourse/ADS/backtracking.md
       - "分治算法": incourse/ADS/divide.md
+      - "动态规划": incourse/ADS/dp.md
     - "计算机组成":
       - incourse/Comcompose/index.md
       - "Chapter 2:Instructions: Language of the Machine": incourse/Comcompose/Ch2.md
