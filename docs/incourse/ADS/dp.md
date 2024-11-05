@@ -196,9 +196,11 @@ $$
 
 - \( T_{i j} \) is optimal \( \Rightarrow r_{i j} = k \) is such that
 
-  $ c_{i j} = \min_{i<l\leq j}\left\{ w_{i j} + c_{i, l-1} + c_{l+1, j} \right\} $
+$$
+c_{i j} = \min_{i<l\leq j} \left( w_{i j} + c_{i, l-1} + c_{l+1, j} \right)
+$$
 
-  $ i < l \leq j $
+  $$ i < l \leq j $$
 
 ## All-Pairs Shortest Path
 
@@ -208,3 +210,22 @@ $$
 使用[弗洛伊德-沃舍尔算法](https://zh.wikipedia.org/wiki/Floyd-Warshall%E7%AE%97%E6%B3%95)
 
 也是动态规划。
+
+
+## 例题
+
+!!! example "题"
+    === "T1"
+        ![](../../image/pp113.png)
+        ??? general "解析"
+            D.很明显是$\max_{1 \leq i \leq n}({R_i + R_{n-i}})$
+
+    === "T2"
+        ![](../../image/pp114.png)
+        ??? general "解析"
+            D.当我们在计算A(i-2,j-2)的时候又要用到A(i,j)。这样就永远循环计算了。
+    
+    === "T3"
+        ![](../../image/pp114.png)
+        ??? general "解析"
+            B.很明显j要降序。
