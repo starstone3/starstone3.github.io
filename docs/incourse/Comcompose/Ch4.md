@@ -19,9 +19,8 @@ comments : true
     === "Datapath"
         ![](../../image/pp81.png)
 
-## Logic Design Convention
 
-### 指令处理的步骤
+## 指令处理的步骤
 
 1. **提取**：
     - 从指令存储器中获取指令。
@@ -53,6 +52,9 @@ comments : true
 
 
 ---
+
+## 单周期CPU
+
 
 ### Datapath 与 Cpu_ctrl
 
@@ -179,3 +181,123 @@ Main Decoder其实很简单，根据opcode把能赋值的先赋值了。
 ```verilog title="cpu_ctrl"
 等实验做完再放
 ```
+
+## 流水线CPU
+
+采用流水线的思想，尽可能并行进行任务。
+
+### 阶段
+
+1. IF:Instruction fetch from memory
+
+2. ID:Instruction decode and register read
+
+3. EX:Execute operation or calculate address
+
+4. MEM:Access memory operand
+
+5. WB:Write result back to register
+
+<div style="text-align: center;">
+    <img src="../../../image/pp118.png" style="max-width: 80%; height: auto;">
+</div>
+
+### 流水线中的问题与解决方案
+
+https://zhuanlan.zhihu.com/p/447682231
+
+
+#### 数据冒险（Data Hazards）
+在RISC-V架构的流水线CPU中，数据冒险通常由指令间的数据依赖引起。例如，当一条指令需要使用前一条指令的计算结果作为操作数时，就会发生数据冒险。为了解决数据冒险，RISC-V流水线常采用以下方法：
+
+- **转发（Forwarding）**：将执行阶段或内存访问阶段的结果直接传递给需要该数据的指令，减少流水线暂停。
+
+    **示例：**
+    ```assembly
+    ADD x1, x2, x3    # 第1条指令
+    SUB x4, x1, x5    # 第2条指令依赖于x1的值
+    ```
+    在没有转发的情况下，第2条指令必须等待第1条指令完成写回后才能执行。而通过转发，第1条指令的结果可以直接从执行阶段传递给第2条指令，避免了暂停。
+
+    <div style="text-align: center;">
+    <img src="../../../image/pp119.png" style="max-width: 80%; height: auto;">
+    </div>
+
+
+
+- **流水线暂停（Pipeline Stalls）**：当数据依赖无法通过转发解决时，通过插入气泡（NOP指令）来暂时停止流水线，以等待数据准备就绪。
+    **示例：**
+    ```assembly
+    LOAD x1, 0(x2)    # 第1条指令
+    ADD x3, x1, x4     # 第2条指令依赖于x1的值，需要插入NOP
+    NOP                # 插入的气泡
+    SUB x5, x3, x6     # 第3条指令
+    ```
+- **指令调度**：重新安排指令的执行顺序，尽量减少数据依赖带来的影响。
+    **示例：**
+    ```assembly
+    LOAD x1, 0(x2)    # 第1条指令
+    NOP                # 为数据准备时间插入
+    ADD x3, x1, x4     # 第2条指令
+    SUB x5, x3, x6     # 第3条指令
+    ```
+    <div style="text-align: center;">
+    <img src="../../../image/pp120.png" style="max-width: 80%; height: auto;">
+    </div>
+
+#### 控制冒险（Control Hazards）
+控制冒险主要发生在分支指令执行时，预测下一条指令的地址成为问题。RISC-V流水线通常采用以下策略来应对控制冒险：
+
+- **分支预测（Branch Prediction）**：通过预测分支的走向（如静态预测或动态预测）来提前加载指令，减少因分支指令带来的流水线停顿。
+    **示例**
+    ```assembly
+    BEQ x1, x2, label  # 分支指令
+    ADD x3, x4, x5      # 预测执行的指令
+    label:
+    SUB x6, x7, x8      # 分支跳转目标
+    ```
+- **分支延迟槽（Branch Delay Slot）**：在分支指令之后安排一条与分支结果无关的指令执行，以利用这一个周期，减少性能损失。
+- **延迟分支（Delayed Branch）**：类似于分支延迟槽，通过调整指令调度来优化分支指令的执行。
+
+#### 结构冒险（Structural Hazards）
+结构冒险是由于流水线中硬件资源的竞争引起的冲突。例如，当多个指令同时需要访问同一个内存资源时，可能会导致结构冒险。
+
+```assembly title="例子"
+
+LOAD x1, 0(x2)    # 第1条指令访问内存
+STORE x3, 4(x4)    # 第2条指令同时访问内存，若只有一个内存端口，将产生结构冒险
+```
+
+
+
+RISC-V流水线通过以下方法缓解结构冒险：
+
+- **资源多路复用**：增加硬件资源的实例，比如多个寄存器文件端口或独立的缓存访问路径，以支持同时的资源访问需求。
+- **流水线分段**：将硬件资源划分为多个独立的子单元，每个子单元负责不同的流水线阶段，减少资源竞争。
+- **动态调度**：根据指令的资源需求动态分配硬件资源，优化资源利用率，降低结构冒险发生的概率。
+
+### 结构：数据通路与控制
+
+!!! info "汇总图"
+    ![](../../image/pp121.png)
+
+    _中间的长条状是寄存器，存了上一个指令的各种信息_
+    
+#### 冒险
+
+##### 冒险的检测
+
+###### Data Hazards
+
+数据冒险发生在两个指令的寄存器出现相同，也就是上一条指令的rd是下一条指令的rs1或rs2，同时还要关注Regwrite信号
+
+!!! tip "检测"
+    === "情况判断"
+        ![](../../image/pp122.png)
+    === "特殊情况1"
+        ![](../../image/pp123.png)
+    === "特殊情况2"
+        ![](../../image/pp124.png)
+
+
+
