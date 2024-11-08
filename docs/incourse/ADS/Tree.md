@@ -312,7 +312,7 @@ node insert(node root, int key) {
 
 + [删除](https://www.bilibili.com/video/BV16m421u7Tb)
 
-但其实插入与删除的规则都可以从保持红黑树的性质这一目的出发推测，下面在给出结论的同时附上一些个人粗浅的分析过程。
+但其实插入与删除的规则都可以从保持红黑树的性质这一目的出发推测，下面在给出结论的同时附上一些个人粗浅的分析过程。在此附上一个[可视化红黑树操作](https://www.cs.usfca.edu/~galles/visualization/RedBlack.html)
 
 ### 插入
 

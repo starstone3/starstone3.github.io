@@ -43,5 +43,11 @@ comments : true
 ## latex公式工具
 
 https://www.latexlive.com/
+
+## 红黑树可视化
+
+https://www.cs.usfca.edu/~galles/visualization/RedBlack.html
+
+
 <!--<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
 <span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>-->
