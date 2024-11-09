@@ -819,7 +819,7 @@ none
     === "T4"
         ![](../../image/p53.png)
         !!! warning "纠错"
-            这题应该选C，A,C选项都考虑根节点即可。
+            这题应该选C，A,D选项都考虑根节点即可。
 
 <!--<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
 <span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>-->
