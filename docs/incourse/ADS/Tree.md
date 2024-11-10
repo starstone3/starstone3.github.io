@@ -428,12 +428,12 @@ node insert(node root, int key) {
                         ![](../../image/p19.png)
                     === "后来"
                         ![](../../image/p18.png)
-                === "RR"
+                === "LR"
                     === "原来"
                         ![](../../image/p20.png)
                     === "后来"
                         ![](../../image/p21.png)
-                === "LR"
+                === "RR"
                     === "原来"
                         ![](../../image/p22.png)
                     === "后来"
