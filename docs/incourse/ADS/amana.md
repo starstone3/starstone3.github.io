@@ -88,7 +88,7 @@ comment : true
 
 + Multipop:$\hat{c_i}=c_i+\Phi(D_i)-\Phi(D_{i-1})=k-k=0$
 
-则$\sum_{i=1}^n \hat(c_i)=\sum_{i=1}^n O(1)=O(n) \geq \sum_{i=1}^{n} c_i,故T_{amortized}=\frac{O(n)}{n}=O(1)$
+则$\sum_{i=1}^n \hat{c_i}=\sum_{i=1}^n O(1)=O(n) \geq \sum_{i=1}^{n} c_i,故T_{amortized}=\frac{O(n)}{n}=O(1)$
 
 #### Splay Tree
 
