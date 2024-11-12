@@ -86,6 +86,7 @@ nav :
       - "回溯" : incourse/ADS/backtracking.md
       - "分治算法": incourse/ADS/divide.md
       - "动态规划": incourse/ADS/dp.md
+      - "贪心算法": incourse/ADS/greedy.md
       - "课程资源": incourse/ADS/resource.md
     - "计算机组成":
       - incourse/Comcompose/index.md
