@@ -264,8 +264,8 @@ https://zhuanlan.zhihu.com/p/447682231
 
 ```assembly title="例子"
 
-LOAD x1, 0(x2)    # 第1条指令访问内存
-STORE x3, 4(x4)    # 第2条指令同时访问内存，若只有一个内存端口，将产生结构冒险
+load x1, 0(x2)    # 第1条指令访问内存
+store x3, 4(x4)    # 第2条指令同时访问内存，若只有一个内存端口，将产生结构冒险
 ```
 
 
@@ -296,8 +296,70 @@ RISC-V流水线通过以下方法缓解结构冒险：
         ![](../../image/pp122.png)
     === "特殊情况1"
         ![](../../image/pp123.png)
+
+        只有我们需要向rd写入数据的时候可能发生冒险
     === "特殊情况2"
         ![](../../image/pp124.png)
 
+        x0不需要考虑，因为不能写
+
+具体用逻辑来写，就是这样
+
+!!! tip
+    === "逻辑写法"
+        ![](../../image/pp125.png)
+    
+    === "forward信号说明"
+        ![](../../image/pp126.png)
+
+        ??? warning "这样就好了吗?"
+
+            思考这样一种情况：
+
+            ![](../../image/pp127.png)
+
+            那我x1不是应该从最近的一条指令把数据旁路过来吗？
+
+            所以MEM Hazard应该是这样
+
+            ![](../../image/pp128.png)
+
+---
+
+再思考，这样好了吗🤔？
+
+我们来看load指令:
+
+```riscv
+load x2,10(x1)
+
+and x4,x2,x5
+```
+这样的冲突是符合EX Hazard的所有条件的，但load指令不能在这个地方旁路过来，因为在EX/MEM这个阶段load指令还没有加载到数据，所以需要等到MEM/WB阶段。
+
+<div style="text-align: center;">
+    <img src="../../../image/pp129.png" style="max-width: 80%; height: auto;">
+    </div>
 
 
+---
+
+
+总结:
+
+<div style="text-align: center;">
+    <img src="../../../image/pp130.png" style="max-width: 90%; height: auto;">
+    </div>
+
+---
+
+###### Control Hazards
+
+
+为解决控制冒险，我们可以提前计算来判断是否要跳转。
+
+<div style="text-align: center;">
+    <img src="../../../image/pp131.png" style="max-width: 90%; height: auto;">
+    </div>
+
+但是即便这样，我们也会浪费一个时钟。因为加入跳转成立，那本来取的下一条指令就不对了。因此，可以考虑采用Branch Prediction的方法
