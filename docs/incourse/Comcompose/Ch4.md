@@ -287,7 +287,8 @@ RISC-V流水线通过以下方法缓解结构冒险：
 
 ##### 冒险的检测
 
-###### Data Hazards
+###### Data Hazards与Structural Hazards
+
 
 数据冒险发生在两个指令的寄存器出现相同，也就是上一条指令的rd是下一条指令的rs1或rs2，同时还要关注Regwrite信号
 
@@ -362,4 +363,123 @@ and x4,x2,x5
     <img src="../../../image/pp131.png" style="max-width: 90%; height: auto;">
     </div>
 
-但是即便这样，我们也会浪费一个时钟。因为加入跳转成立，那本来取的下一条指令就不对了。因此，可以考虑采用Branch Prediction的方法
+但是即便这样，我们也会浪费一个时钟。因为加入跳转成立，那本来取的下一条指令就不对了。因此，可以考虑采用Branch Prediction的方法。
+
+### RISC-V with Static Dual Issue(并行处理两条指令)
+
+通过增加寄存器，ALU与ImmGen，我们可以实现并行处理两条指令：load/store和ALU/branch指令。
+
+!!! info "CPU改造"
+    ![](../../image/pp135.png)
+
+---
+
+然而，并行处理这两条指令并不总是可行的。
+例如
+    
+```riscv
+load x2,10(x1)
+add x4,x2,x5
+```
+在这样两条指令中，第二条指令需要等待第一条指令的load指令执行完毕才能执行，因此无法并行处理。
+
+---
+
+#### Loop Unrolling
+
+正是因为有上面哪些问题，我们可以使用循环展开的思想，将一条指令拆分成多条指令，这样就可以并行处理了。
+
+```riscv
+Loop: ld x31,0(x20) // x31=array element  
+add x31,x31,x21 // add scalar in x21  
+sd x31,0(x20) // store result  
+addi x20,x20,-8 // decrement pointer  
+blt x22,x20,Loop // branch if x22 < x20
+```
+
+上面这段代码如果要并行处理的话，为了避免冒险，结果是这样的:
+
+<div style="text-align: center;">
+    <img src="../../../image/pp136.png" style="max-width: 90%; height: auto;">
+    </div>
+
+但是我们可以将循环展开，这样就可以并行处理了。
+
+<div style="text-align: center;">
+    <img src="../../../image/pp137.png" style="max-width: 90%; height: auto;">
+    </div>
+
+思想相当于这样:
+
+<div style="text-align: center;">
+    <img src="../../../image/pp138.png" style="max-width: 70%; height: auto;">
+    </div>
+
+---
+
+#### Dynamic Scheduling
+
+动态调度是指在运行时根据指令的资源需求动态分配硬件资源，以优化资源利用率，降低结构冒险发生的概率。
+
++ **CPU可以乱序执行指令**
+
++ **乱序执行的指令需要按照原有的顺序写入寄存器**
+
+#### Register Renaming
+
+寄存器重命名是指将指令中的逻辑寄存器重命名为物理寄存器，以避免数据冒险。
+
+
+---
+
+#### Speculation
+
+在乱序执行的过程中，我们可以猜测一些指令的执行结果，如果猜测正确，那么就可以继续执行，否则就回滚。
+
+1. Branch Prediction: 预测分支指令的走向，提前加载指令，减少分支带来的性能损失。
+
+2. load Speculation: 预测load指令的加载地址与加载数据，提前加载数据，减少load指令带来的性能损失。
+
+---
+
+## 指令中断
+
+在CPU执行时，有两个原因会导致CPU work flow的改变
+
+1. **Control Flow Change**: 分支指令，跳转指令等
+
+2. **Exception and Interrupts**:不可预测的事件，比如除零，内存访问错误等
+
+---
+
+### Exception
+
+处理器内部的异常，比如overflow，undefined instruction等。
+
+上述说法是狭义的异常，广义的异常还包括中断。
+
+中断是指处理器外部的异常，比如时钟中断，IO中断等。
+
+### 处理Exception
+
+首先，CPU要知道:
+
+1. **异常发生的原因**
+
+2. **哪条指令导致了异常**
+
+因此，在发生异常时，CPU会将异常原因和导致异常的指令的地址存储在一些特殊的寄存器(比如`cause`和`epc`)中。其中，`cause`寄存器存储异常原因，`epc`寄存器存储导致异常的指令的地址。
+
+接着，CPU会跳转到异常处理程序的地址，开始处理异常。
+
+---
+
+那么怎么根据异常原因跳转到对应的异常处理程序呢？
+
+#### 固定地址
+
+CPU先跳到一个固定地址，这个地址存储了所有异常处理程序的入口地址，然后根据异常原因选择对应的异常处理程序。
+
+#### 中断向量表
+
+根据`cause`寄存器的值，选择对应的异常处理程序的地址。但是地址中存放的是`Jal`指令，两级跳转。
