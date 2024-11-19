@@ -78,7 +78,7 @@ nav :
     - incourse/index.md
     - ADS: 
       - incourse/ADS/index.md
-      - "AVL树,Splay树，红黑树与B+树": incourse/ADS/Tree.md
+      - "AVL树,Splay树,红黑树与B+树": incourse/ADS/Tree.md
       - "均摊分析": incourse/ADS/amana.md
       - "倒排索引": incourse/ADS/fileindex.md
       - "Leftist Heaps and Skew Heaps": incourse/ADS/Leandsk.md
@@ -87,6 +87,7 @@ nav :
       - "分治算法": incourse/ADS/divide.md
       - "动态规划": incourse/ADS/dp.md
       - "贪心算法": incourse/ADS/greedy.md
+      - "NP Completeness": incourse/ADS/np.md
       - "课程资源": incourse/ADS/resource.md
     - "计算机组成":
       - incourse/Comcompose/index.md
