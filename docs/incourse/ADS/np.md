@@ -116,3 +116,50 @@ $$
     The first problem that was proven to be NP-complete was the Satisfiability problem (Circuit-SAT): Input a boolean expression and ask if it has an assignment to the variables that gives the expression a value of 1.
     
     Cook showed in 1971 that all the problems in NP could be polynomially transformed to Satisfiability.  He proved it by solving this problem on a nondeterministic Turing machine in polynomial time.
+
+## Formal-language Theory
+
+### 字母表
+
+- **字母表（$\Sigma$）**：一个有限的符号集合。
+
+### 语言
+
+- **语言（$L$）**：由字母表 $\Sigma$ 中符号组成的字符串集合。
+- **空字符串**：用 $\varepsilon$ 表示。
+- **空语言**：用 $\emptyset$ 表示。
+- **所有字符串的语言**：用 $\Sigma^*$ 表示。
+- **补集**：$L$ 的补集表示为 $ \Sigma ^* - L$。
+
+### 语言的运算
+
+- **连接**：
+    - 两个语言 $L_1$ 和 $L_2$ 的连接是：
+        - $L = \{ x_1x_2 \mid x_1 \in L_1 \text{ 且 } x_2 \in L_2 \}$。
+
+- **闭包（克林星闭包，Kleene star）**：
+    - 语言 $L$ 的闭包表示为 $L^*$，定义为：
+        - $L^* = \{\varepsilon\} \cup L \cup L^2 \cup L^3 \cup \dots$，
+        - 其中 $L^k$ 是通过将 $L$ 自身连接 $k$ 次得到的语言。
+
+### 算法与语言的决定
+
+- **Accept**:**算法 $A$ 接受字符串 $x \in \{0, 1\}^*$ 当且仅当 $A(x) = 1$**。
+- **Reject**:**算法 $A$ 拒绝字符串 $x$ 当且仅当 $A(x) = 0$**。
+- **Decide**:**如果每一个属于语言 $L$ 的二进制字符串都被算法 $A$ 接受，并且每一个不属于 $L$ 的二进制字符串都被算法 $A$ 拒绝，那么算法 $A$ 决定了语言 $L$**。
+- **为了接受一个语言，算法只需要处理属于 $L$ 的字符串；但要决定一个语言，算法必须正确地接受或拒绝 $\{0, 1\}^*$ 中的每一个字符串**。
+
+### NP 类的语言
+
+- **定义**：一个语言 $L$ 属于 NP，当且仅当存在一个双输入的多项式时间算法 $A$ 和一个常数 $c$，满足
+    $$
+    L = \{ x \in \{0, 1\}^* \mid \exists y \text{，且 } |y| = O(|x|^c) \text{ 且 } A(x, y) = 1 \}。
+    $$
+    换句话说，算法 $A$ 在多项式时间内验证语言 $L$。
+
+
+### 语言的多项式约化
+
+
+!!! definition "L1 is polynomial-time reducible to a language L2 ( $L1 \leq_P L2$ ) "
+    语言 $L_1$ 可以多项式约化到语言 $L_2$，当且仅当存在一个多项式时间算法 $A$，使得对于所有的字符串 $x$，$x \in L_1$ 当且仅当 $A(x) \in L_2$。
