@@ -27,7 +27,7 @@ theme:
       example: fontawesome/solid/flask
       quote: fontawesome/solid/link
   font:
-    text: LXGW WenKai Screen GB Screen # Share Tech
+    text: LXGW WenKai Screen GB Screen #Noto Serif SC  # Share Tech
     code: JetBrains Mono
   palette:
       - media: "(prefers-color-scheme)"
@@ -94,6 +94,7 @@ nav :
       - "Chapter 2:Instructions: Language of the Machine": incourse/Comcompose/Ch2.md
       - "Chapter 3:Arithmetic for Computer": incourse/Comcompose/Ch3.md
       - "Chapter 4: The Processor": incourse/Comcompose/Ch4.md
+      - "Chapter 5:Cache": incourse/Comcompose/Ch5.md
   - "大一课程遗物":
     - incourse/old/index.md
     - "数据结构基础": incourse/old/fds.md
