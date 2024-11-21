@@ -82,7 +82,7 @@ Memory中有32个block，Cache中有8个block，那么我们可以将Memory中�
 
         因此，Cache的大小是
         
-        $2^{10}(\text{一共这么多个Block}) * (128 + 18 + 1)(\text{每个Block有128个bit存数据，18位tag，1位valid位}) $
+        $2^{10}$(一共这么多个Block) $* (128 + 18 + 1)$(每个Block有128个bit存数据，18位tag，1位valid位) 
         
         $= 2^{10} * 147 = 147Kbits$
 
