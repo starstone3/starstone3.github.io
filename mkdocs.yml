@@ -66,8 +66,8 @@ theme:
     - content.tabs.link
     - content.tooltips
     - content.code.copy #代码复制
-    - content.action.edit
-    - content.action.view
+    # - content.action.edit
+    # - content.action.view
     - content.code.annotate
   custom_dir: overrides
 nav :
@@ -88,6 +88,7 @@ nav :
       - "动态规划": incourse/ADS/dp.md
       - "贪心算法": incourse/ADS/greedy.md
       - "NP Completeness": incourse/ADS/np.md
+      - "近似算法": incourse/ADS/Approximation.md
       - "课程资源": incourse/ADS/resource.md
     - "计算机组成":
       - incourse/Comcompose/index.md
