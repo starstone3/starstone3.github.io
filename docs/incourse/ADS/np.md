@@ -164,6 +164,61 @@ $$
 !!! definition "L1 is polynomial-time reducible to a language L2 ( $L1 \leq_P L2$ ) "
     语言 $L_1$ 可以多项式约化到语言 $L_2$，当且仅当存在一个多项式时间算法 $A$，使得对于所有的字符串 $x$，$x \in L_1$ 当且仅当 $A(x) \in L_2$。
 
+##  Clique problem与Vertex cover problem
+
+### Clique problem
+
+**定义**：给定一个无向图 $G$ 和一个整数 $k$，判断 $G$ 中是否存在一个包含 $k$ 个顶点的完全子图（clique）。
+
+### Vertex cover problem
+
+**定义**：给定一个无向图 $G$ 和一个整数 $k$，判断 $G$ 中是否存在一个包含至多$k$个顶点的子图，并且$G$中的每条边都至少有一个端点在这个子图中。
+
+### NPC证明
+
+假设我们现在已经知道Clique problem是一个NPC问题，我们来证明Vertex cover problem也是一个NPC问题。
+
+!!! proof
+    === "Vertex cover problem $\in$ NP"
+
+        首先，检查一个解$V^{'}$的顶点数。然后，对于每一条边(u,v)，检查是否满足$u \in V^{'} \text{or }  v \in V^{'}$.时间复杂度为$O(N^2)$
+
+    === "CLIQUE $\leq_p$ VERTEX-COVER "
+        考虑这样的$G$与$\bar G$
+        === "G"
+            ![](../../image/i19.png)
+        === "$\bar G$"
+            ![](../../image/i20.png)
+        若$\bar G$有size为$\left| V \right| - K$的点覆盖，则G有size为K的clique
+
+        === "=>"
+            若 $G$ 有一个大小为 $K$ 的团 $V' \subseteq V$,设 $(u, v)$ 为 $\bar E$ 中的任意一条边(E是G中边的集合,$\bar E$就是完全图减去原来有的边的集合,也就是$\bar G$中边的集合)。
+
+            则:
+
+            + 至少 $u$ 或 $v$ 中的一个不属于 $V'$
+
+            + 至少 $u$ 或 $v$ 中的一个属于 $V - V'$
+
+            所以$\bar G$ 的每一条边都被 $V - V'$ 中的一个顶点覆盖
+
+            因此，集合 $V - V'$，其大小为 $|V| - K$，构成了 $\bar G$ 的一个顶点覆盖。
+        === "<="
+            若 $\bar G$ 有一个大小为 $|V| - K$ 的顶点覆盖 $V' \subseteq V$
+
+            对于所有 $u, v \in V$，如果 $(u, v) \notin E$，则 $u \in V'$ 或 $v \in V'$ 或两者都属。
+
+            对于所有 $u, v \in V$，如果 $u \notin V'$ 且 $v \notin V'$，则 $(u, v) \in E$。
+            
+            因此，$V - V'$ 是一个团，并且它有大小 $|V| - |V'| = K$。
+    
+    最后，由于G到$\bar G$的转变是$O(N^2)$复杂度的，所以我们有CLIQUE $\leq_p$ VERTEX-COVER。
+
+综上，我们证明了Vertex cover problem 也是NPC问题。
+
+
+---
+
 
 ## 例题
 
