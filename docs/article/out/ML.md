@@ -820,3 +820,87 @@ print(predictions)  # 输出: [12.]
 <div align="center">
     <img src="../../../image/i21.png" width="80%">
 </div>
+
+在sklearn中，就有交叉验证的库可以调用：
+
+```python title="cross_validation"
+
+import numpy as np  # 导入numpy库用于数值计算
+import os  # 导入os库用于操作系统相关功能
+import matplotlib.pyplot as plt  # 导入matplotlib用于绘图
+import warnings  # 导入warnings库用于控制警告信息
+from sklearn.datasets import fetch_openml  # 从sklearn.datasets导入fetch_openml函数用于获取数据集
+import joblib  # 导入joblib用于数据的持久化存储
+from sklearn.model_selection import cross_val_score  # 导入cross_val_score用于交叉验证
+from sklearn.linear_model import SGDClassifier  # 导入SGDClassifier用于分类模型
+
+# 忽略所有警告信息
+warnings.filterwarnings("ignore")
+
+# 设置随机种子以确保结果可重复
+np.random.seed(42)
+
+# 定义数据集的保存路径
+data_path = 'mnist_784.pkl'
+
+# 检查本地是否存在数据集文件
+if os.path.exists(data_path):
+    mnist = joblib.load(data_path)  # 加载本地数据集
+    print("加载本地数据集")
+else:
+    # 如果本地不存在，则从OpenML下载MNIST数据集
+    mnist = fetch_openml('mnist_784', version=1, as_frame=False, parser='auto')
+    joblib.dump(mnist, data_path)  # 保存下载的数据集到本地
+    print("下载并保存数据集")
+
+# 将特征数据转换为float64类型
+X = mnist.data.astype('float64')
+# 将目标标签转换为int32类型
+y = mnist.target.astype('int32')
+
+# 划分训练集和测试集，前60000个样本用于训练，后10000个样本用于测试
+X_train, X_test = X[:60000], X[60000:]
+y_train, y_test = y[:60000], y[60000:]
+
+# 打印训练集和测试集的形状信息
+print("数据集形状:")
+print(f"X_train: {X_train.shape}, X_test: {X_test.shape}")
+print(f"y_train: {y_train.shape}, y_test: {y_test.shape}")
+
+# 生成一个0到60000的随机排列索引
+shuffle_index = np.random.permutation(60000)
+
+# 根据随机索引打乱训练集的顺序
+X_train, y_train = X_train[shuffle_index], y_train[shuffle_index]
+
+# 实例化SGD分类器，设置最大迭代次数、容忍度和随机状态
+sgd_clf = SGDClassifier(max_iter=10000, tol=1e-3, random_state=42)
+
+# 创建一个二元目标变量，仅标记为5的样本为True，其余为False
+y_train_5 = (y_train == 5)
+
+# 使用训练数据拟合SGD分类器
+sgd_clf.fit(X_train, y_train_5)
+
+# 打印交叉验证的准确率
+print("交叉验证准确率:")
+
+# 进行3折(把训练集拆分为3份)交叉验证，计算准确率
+accuracy = cross_val_score(sgd_clf, X_train, y_train_5, cv=3, scoring='accuracy')
+
+# 输出交叉验证的结果
+print(accuracy)
+```
+
+命令行输出:
+
+```plaintext
+
+加载本地数据集
+数据集形状:
+X_train: (60000, 784), X_test: (10000, 784)
+y_train: (60000,), y_test: (10000,)
+交叉验证准确率:
+[0.9681  0.95655 0.95515]
+
+```
