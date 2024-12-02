@@ -305,7 +305,7 @@ r(C) = \max_i \text{dist}(s_i, C) = \text{最小覆盖半径}
             C.试试看0.2,0.9,0.2,0.9的item.
 
             对于D，如果有两个bin的剩余容量大于一般，根据First Fit的原则，无论后一个bin里有几个item,都必然在选择是会选择前一个bin放进去。
-
+                
     === "T4"
         ![](../../image/i17.png)
         ??? general "解析"
