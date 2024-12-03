@@ -75,7 +75,7 @@ Memory中有32个block，Cache中有8个block，那么我们可以将Memory中�
 
 ---
 
-!!! example "例题"
+!!! example "例题1"
     How many total bits are required for a direct-mapped cache 16KB of data and 4-word blocks, assuming a 32-bit address?
     ??? general 
         首先，条件是一个Cache有16KB,也就是4K个字节。每个block有4个字，所以有1K(这里的K是1024!)个block。所以我们需要10位来表示index。然后，一个Block有4*4=16个字节，所以我们需要4位来表示offset.因此,tag的位数是32-10-4=18位。
@@ -85,6 +85,15 @@ Memory中有32个block，Cache中有8个block，那么我们可以将Memory中�
         $2^{10}$(一共这么多个Block) $* (128 + 18 + 1)$(每个Block有128个bit存数据，18位tag，1位valid位) 
         
         $= 2^{10} * 147 = 147Kbits$
+
+
+!!! example "例题2"
+    Consider a cache with 64 blocks and a block size of 16 bytes.What block number does byte address 1200 map to?
+    ??? general
+        
+        由于block size是16字节，所以我们可以知道，block 0的地址是0-15，block 1的地址是16-31，以此类推。所以，byte address 1200属于block 75。(其实就是1200/16向下取整)
+
+        然而，最多只有64个block，所以我们需要取模。所以，byte address 1200映射到了block 75 mod 64 = 11。
 
 ### Handling Cache Writes hit and Misses
 
@@ -110,3 +119,33 @@ Memory中有32个block，Cache中有8个block，那么我们可以将Memory中�
     + **Write Allocate**: 从 memory 里把对应的 block 拿到 cache，然后写入 cache，再写入 memory.
 
     + **No-Write Allocate**: 直接写入 memory.
+
+## Deep concepts
+
+### Block Placement
+
+Block可以被放到Cache中的哪些位置?
+
+#### Direct Mapped Cache
+
+上面已经介绍过，一个block只能放在Cache中的一个位置，这个位置是由block address的低n位决定的。
+
+#### Fully Associative Cache
+
+一个block可以放在Cache中的任何位。
+
+#### Set Associative Cache
+
+一个block可以放在Cache中的一组位置。例如，假设cache中有8个block，我们可以将这8个block分成4组，每组有2个block。那么内存中的block 12可以放在set0中的任何一个位置(12 mod 4 = 0)，内存中的block 13可以放在set1中的任何一个位置(13 mod 4 = 1)。
+
+一组(set)是cache中的一些block的集合。如果一个set中有n个block，那么这个cache就是n-way set associative cache。
+
+Direct Mapped Cache可以看成1-way set associative cache的特例。
+
+### Block Identification
+
+如何确定一个block是否在Cache中?
+
+正如上面已经介绍过，使用tag与vaild来确定一个block是否在Cache中。
+
+在set associative cache中，我们需要使用index来确定一个block在哪个set中。这时，index的位数是$log_2$(set的个数)。而在Fully Associative Cache中，index的位数是0。因为这时的set的个数是1，所以一个block可以放在任何位置。
