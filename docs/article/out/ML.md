@@ -904,3 +904,87 @@ y_train: (60000,), y_test: (10000,)
 [0.9681  0.95655 0.95515]
 
 ```
+
+### 混淆矩阵
+
+混淆矩阵一般用于评估分类模型的性能，它是一个二维矩阵，用于展示模型的预测结果和真实标签之间的关系。一般的结构为：
+
+$$
+\begin{array}{|c|c|}
+\hline
+\text{真实类别} & \text{预测类别} \\
+\hline
+\text{真负例} & \text{假正例} \\
+\text{假负例} & \text{真正例} \\
+\hline
+\end{array}
+$$
+
+```python title="混淆矩阵"
+import numpy as np  # 导入numpy库用于数值计算
+import os  # 导入os库用于操作系统相关功能
+import matplotlib.pyplot as plt  # 导入matplotlib用于绘图
+import warnings  # 导入warnings库用于控制警告信息
+from sklearn.datasets import fetch_openml  # 从sklearn.datasets导入fetch_openml函数用于获取数据集
+import joblib  # 导入joblib用于数据的持久化存储
+from sklearn.model_selection import cross_val_score  # 导入cross_val_score用于交叉验证
+from sklearn.linear_model import SGDClassifier  # 导入SGDClassifier用于分类模型
+
+# 忽略所有警告信息
+warnings.filterwarnings("ignore")
+
+# 设置随机种子以确保结果可重复
+np.random.seed(42)
+
+# 定义数据集的保存路径
+data_path = 'mnist_784.pkl'
+
+# 检查本地是否存在数据集文件
+if os.path.exists(data_path):
+    mnist = joblib.load(data_path)  # 加载本地数据集
+    print("加载本地数据集")
+else:
+    # 如果本地不存在，则从OpenML下载MNIST数据集
+    mnist = fetch_openml('mnist_784', version=1, as_frame=False, parser='auto')
+    joblib.dump(mnist, data_path)  # 保存下载的数据集到本地
+    print("下载并保存数据集")
+
+# 将特征数据转换为float64类型
+X = mnist.data.astype('float64')
+# 将目标标签转换为int32类型
+y = mnist.target.astype('int32')
+
+# 划分训练集和测试集，前60000个样本用于训练，后10000个样本用于测试
+X_train, X_test = X[:60000], X[60000:]
+y_train, y_test = y[:60000], y[60000:]
+
+# 生成一个0到60000的随机排列索引
+shuffle_index = np.random.permutation(60000)
+
+# 根据随机索引打乱训练集的顺序
+X_train, y_train = X_train[shuffle_index], y_train[shuffle_index]
+
+# 实例化SGD分类器，设置最大迭代次数、容忍度和随机状态
+sgd_clf = SGDClassifier(max_iter=10000, tol=1e-3, random_state=42)
+
+# 创建一个二元目标变量，仅标记为5的样本为True，其余为False
+y_train_5 = (y_train == 5)
+
+from sklearn.model_selection import cross_val_predict  # 导入cross_val_predict用于交叉验证预测
+
+result = cross_val_predict(sgd_clf, X_train, y_train_5, cv=3)
+
+from sklearn.metrics import confusion_matrix  # 导入confusion_matrix用于混淆矩阵计算
+
+matrix = confusion_matrix(y_train_5, result)
+
+print(f"混淆矩阵：\n{matrix}")
+```
+
+输出结果:
+
+```plaintext
+[[53124  1455]
+ [  949  4472]]
+```
+53124代表非5的结果被成功识别，1455代表非5的结果被错误识别，949代表5的结果被错误识别，4472代表5的结果被成功识别。
