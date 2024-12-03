@@ -140,3 +140,55 @@ ConfigType State_flipping()
 + 集合B内的点状态均为1。
 
 这样，我们就可以将这个问题转换为一个Hopfield Neural Networks问题。集合内的边都是坏边，集合间的边都是好边。而我们的调整，就是将一个不满足的点从一个集合移动到另一个集合，也就是上面的State-flipping Algorithm。这样会让好边的权重增加，坏边的权重减少，最终找到一个最大值。
+
+### How good is this local optimum?
+
+结论：
+
+设 (A, B) 是一个局部最优划分，设 $w(A^*, B^*)$ 是一个全局最优划分。那么 $w(A, B) \geq \frac{1}{2}w(A^*, B^*)$。
+
+!!! info "Big-improvement flip"
+    ![](../../image/i32.png)
+
+### Try a better local?
+
+当局部搜索时，邻域应该足够丰富，以避免陷入不理想的局部最优；但邻域不宜过大，因为我们希望能够高效地搜索可能的局部调整。
+
+
+## 例题
+
+!!! info "例题"
+    === "T1"
+        ![](../../image/i26.png)
+        ??? general "解析"
+            T.删除了图中这个黑色的点后，很显然只能删掉最下面两个点，保留了中间的点，因此是最优的。
+    === "T2"
+        ![](../../image/i27.png)
+        ??? general "解析"
+            F.反例见[此](https://zhoutimemachine.github.io/note/courses/ads-hw-review/#hw12)
+    === "T3"
+        ![](../../image/i28.png)
+        ??? general "解析"
+            T.search space与neighborhood不同，search space指的是所有可能的解，而neighborhood指的是与当前解相邻的解。SAT问题中，N个变量，每个可以取0或1，那么search space就有$2^N$个解.N-Queens问题中，每个皇后可以放在N个位置，那么search space就有$N^N$个解。
+    === "T4"
+        ![](../../image/i29.png)
+        ??? general "解析"
+            B.没有太看懂，但是我感觉Max Leaf Spanning Tree和Max Degree Spanning Tree的cost[T]定义的是不是有问题?题目里说的是向cost[T]减小的方向走。
+
+    === "T5"
+        ![](../../image/i30.png)
+        ??? general "解析"
+            A:每次操作都会导致dif减小，然而dif最小是0，因此肯定会终止，故错误。
+
+            B:正确，移过去的不会再移回来，因此最多n次。
+
+            C：考虑{1,2,3,4,5}={1,2,3}+{4,5}.理论最优解是{1,2,5}+{3,4},dif=1.然而局部搜索移动时，完全动不了，因为不管移哪个都违背了"we only move a job if the move decreases the absolute difference"，也就是说，局部搜索太短视了，看不到暂时的牺牲为了长远的利益。
+
+            D：错误。考虑{1,2,100}={1,2}+{100}
+    
+    === "T6"
+        ![](../../image/i31.png)
+        ??? general "解析"
+            见[上图](#how-good-is-this-local-optimum)结论
+
+            

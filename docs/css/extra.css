@@ -52,9 +52,8 @@ article a[href^="https://"]::after {
     max-width: 95%;
 } */
 
-body,
-input {
-    font-family: 'LXGW WenKai Screen', 'Lexend', 'Noto Sans SC', 'Source Code Pro', -apple-system, Helvetica, Arial, sans-serif;
+body{
+    font-family:'Microsoft YaHei','LiSu','KaiTi','SimHei','SimSun','LXGW WenKai Screen', 'Lexend', 'Noto Sans SC', 'Source Code Pro', -apple-system, Helvetica, Arial, sans-serif;
 }
 
 center,
