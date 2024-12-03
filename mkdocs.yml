@@ -89,6 +89,7 @@ nav :
       - "贪心算法": incourse/ADS/greedy.md
       - "NP Completeness": incourse/ADS/np.md
       - "近似算法": incourse/ADS/Approximation.md
+      - "局部搜索": incourse/ADS/localsearch.md
       - "课程资源": incourse/ADS/resource.md
     - "计算机组成":
       - incourse/Comcompose/index.md
