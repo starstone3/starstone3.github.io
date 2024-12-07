@@ -44,7 +44,7 @@ comments : true
 
 ### Next Fit Algorithm(online)
 
-Next Fit Algorithm在处理每个item时，都会尝试将item放入最后一个箱子中，如果放不下，则会尝试放入下一个箱子中。
+Next Fit Algorithm在处理每个item时，都会尝试将item放入当前的最后一个箱子中，如果放不下，则会尝试新开一个箱子，放入其中。
 
 如果用M表示算法的准确解，则Next Fit使用箱子的个数不超过$2M-1$。
 
