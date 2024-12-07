@@ -148,4 +148,81 @@ Direct Mapped Cache可以看成1-way set associative cache的特例。
 
 正如上面已经介绍过，使用tag与vaild来确定一个block是否在Cache中。
 
-在set associative cache中，我们需要使用index来确定一个block在哪个set中。这时，index的位数是$log_2$(set的个数)。而在Fully Associative Cache中，index的位数是0。因为这时的set的个数是1，所以一个block可以放在任何位置。
+在set associative cache中，我们需要使用index来确定一个block在哪个set中。这时，index的位数是$\log_2\text{(set的个数)}$。而在Fully Associative Cache中，index的位数是0。因为这时的set的个数是1，所以一个block可以放在任何位置。
+
+### Block Replacement
+
+当Cache满了，我们需要替换一个block。那么我们如何选择要替换的block呢?
+
++ 对于Direct Mapped Cache，只有一个block可以被替换，所以只有一个选择。
+
++ 对于Fully Associative Cache与set-associative，有多个block可以选择。常见的替换策略有：
+
+    1. Random Replacement: 随机选择一个block替换。
+
+    1. Least Recently Used (LRU): 选择最近最少使用的block替换。
+
+    1. First-In-First-Out (FIFO): 选择最先进入的block替换。
+
+    1. Not Recently Used (NRU): 选择最近没有被使用的block替换。
+
+    1. Least Frequently Used (LFU): 选择最少被使用的block替换。
+
+### Write Strategy
+
+思考一个问题:当数据被写入cache时，我们要不要把数据也写入memory呢?
+
+根据是否写入memory，我们可以分为两种策略：
+
++ Write Through: 写入cache的同时写入memory。这样cache和memory总是一致的，但是写入速度慢。
+
++ Write Back: 写入cache，等到这个block被替换时，再写入memory。这样写入速度快，但是cache和memory可能不一致。另外，这种策略需要一个Dirty Bit来记录这个block是否被修改过,若dirty bit为1，说明这个block被修改过，当这个block被**替换**(不是写!!!)时，需要写回内存。
+
+----
+
+在Write Through中，由于内存的写入速度比cache慢，所以会出现Write Stall的情况。Write Stall是指当CPU写入数据时，由于cache和memory不一致，所以CPU需要等待memory写入完成后才能继续执行。这样会导致CPU的效率降低。
+
+为了解决这个问题，我们引入了Write Buffer。Write Buffer是一个缓冲区，当CPU写入数据时，数据首先被写入Write Buffer，然后CPU继续执行。由Write Buffer向内存中写入数据。需要注意的是,Write Buffer并不能消除Write Stall，因为Buffer的大小也是有限的。
+
+---
+
+再思考一个问题：发生了Write Miss怎么办n?
+
++ Write Allocate: 从memory中读取block到cache，然后写入cache。
+
++ No-Write Allocate(Write Around): 直接写入memory。
+
+Write Back一般使用Write Allocate，Write Through一般使用No-Write Allocate。
+
+!!! tip "Miss 汇总"
+    ![](../../image/i33.png)
+
+## Measuring and improving cache performance
+
+### Cache Performance Metrics
+
+我们使用Chapter 1中学的CPU Time来衡量Cache的性能。但要略作修改
+
+!!! definition
+    CPU time=  (CPU execution clock cycles + Memory-stall clock cycles) ×Clock cycle time
+
+    Memory Stall指的是CPU等待memory的时间，它等于Read Stall + Write Stall。
+
+    + Read Stall: 读取数据时，由于数据不在cache中，所以需要等待memory读取数据。
+    
+        Read Stall Cycles = $\frac{Read}{Program} \times  Read Miss Rate \times Read Miss Penalty$
+
+    + Write Stall(对于Write Through With Buffer): 写入数据时，由于cache与memory不一致，所以需要等待memory写入数据。
+    
+        Write Stall Cycles = $\frac{Write}{Program} \times  Write Miss Rate \times Write Miss Penalty + Write Buffer Stalls$
+
+在大部分情况下，Read Miss Penalty = Write Miss Penalty。如果忽略Buffer Stall,那么Memory Stall Cycles = $\frac{Memory}{Program} \times Miss Rate \times Miss Penalty$
+
+!!! example "练习"
+    ![](../../image/i34.png)
+    ??? general "Answer"
+        ![](../../image/i35.png)
+
+### Improving Cache Performance
+
+首先，要减少Direct Mapped Cache的使用。因为它的Miss Rate很高，而且Miss Penalty也很高。
