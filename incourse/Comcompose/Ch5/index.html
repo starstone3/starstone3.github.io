@@ -1262,6 +1262,57 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#block-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Block Replacement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write Strategy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measuring-and-improving-cache-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measuring and improving cache performance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Measuring and improving cache performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cache-performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Performance Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improving-cache-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Improving Cache Performance
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2031,6 +2082,57 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#block-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Block Replacement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write Strategy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measuring-and-improving-cache-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measuring and improving cache performance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Measuring and improving cache performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cache-performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Performance Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improving-cache-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Improving Cache Performance
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2056,7 +2158,7 @@
 
 <h1 id="cache">Cache<a class="headerlink" href="#cache" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1733 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 4 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 9 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2482 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 7 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 12 分钟</p>
 </div>
 <h2 id="memory-hierarchy-introduction">Memory Hierarchy Introduction<a class="headerlink" href="#memory-hierarchy-introduction" title="Permanent link">&para;</a></h2>
 <p>内存访问有如下两个特点：</p>
@@ -2205,7 +2307,92 @@
 <h3 id="block-identification">Block Identification<a class="headerlink" href="#block-identification" title="Permanent link">&para;</a></h3>
 <p>如何确定一个block是否在Cache中?</p>
 <p>正如上面已经介绍过，使用tag与vaild来确定一个block是否在Cache中。</p>
-<p>在set associative cache中，我们需要使用index来确定一个block在哪个set中。这时，index的位数是<span class="arithmatex">\(log_2\)</span>(set的个数)。而在Fully Associative Cache中，index的位数是0。因为这时的set的个数是1，所以一个block可以放在任何位置。</p>
+<p>在set associative cache中，我们需要使用index来确定一个block在哪个set中。这时，index的位数是<span class="arithmatex">\(\log_2\text{(set的个数)}\)</span>。而在Fully Associative Cache中，index的位数是0。因为这时的set的个数是1，所以一个block可以放在任何位置。</p>
+<h3 id="block-replacement">Block Replacement<a class="headerlink" href="#block-replacement" title="Permanent link">&para;</a></h3>
+<p>当Cache满了，我们需要替换一个block。那么我们如何选择要替换的block呢?</p>
+<ul>
+<li>
+<p>对于Direct Mapped Cache，只有一个block可以被替换，所以只有一个选择。</p>
+</li>
+<li>
+<p>对于Fully Associative Cache与set-associative，有多个block可以选择。常见的替换策略有：</p>
+<ol>
+<li>
+<p>Random Replacement: 随机选择一个block替换。</p>
+</li>
+<li>
+<p>Least Recently Used (LRU): 选择最近最少使用的block替换。</p>
+</li>
+<li>
+<p>First-In-First-Out (FIFO): 选择最先进入的block替换。</p>
+</li>
+<li>
+<p>Not Recently Used (NRU): 选择最近没有被使用的block替换。</p>
+</li>
+<li>
+<p>Least Frequently Used (LFU): 选择最少被使用的block替换。</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="write-strategy">Write Strategy<a class="headerlink" href="#write-strategy" title="Permanent link">&para;</a></h3>
+<p>思考一个问题:当数据被写入cache时，我们要不要把数据也写入memory呢?</p>
+<p>根据是否写入memory，我们可以分为两种策略：</p>
+<ul>
+<li>
+<p>Write Through: 写入cache的同时写入memory。这样cache和memory总是一致的，但是写入速度慢。</p>
+</li>
+<li>
+<p>Write Back: 写入cache，等到这个block被替换时，再写入memory。这样写入速度快，但是cache和memory可能不一致。另外，这种策略需要一个Dirty Bit来记录这个block是否被修改过,若dirty bit为1，说明这个block被修改过，当这个block被<strong>替换</strong>(不是写!!!)时，需要写回内存。</p>
+</li>
+</ul>
+<hr />
+<p>在Write Through中，由于内存的写入速度比cache慢，所以会出现Write Stall的情况。Write Stall是指当CPU写入数据时，由于cache和memory不一致，所以CPU需要等待memory写入完成后才能继续执行。这样会导致CPU的效率降低。</p>
+<p>为了解决这个问题，我们引入了Write Buffer。Write Buffer是一个缓冲区，当CPU写入数据时，数据首先被写入Write Buffer，然后CPU继续执行。由Write Buffer向内存中写入数据。需要注意的是,Write Buffer并不能消除Write Stall，因为Buffer的大小也是有限的。</p>
+<hr />
+<p>再思考一个问题：发生了Write Miss怎么办n?</p>
+<ul>
+<li>
+<p>Write Allocate: 从memory中读取block到cache，然后写入cache。</p>
+</li>
+<li>
+<p>No-Write Allocate(Write Around): 直接写入memory。</p>
+</li>
+</ul>
+<p>Write Back一般使用Write Allocate，Write Through一般使用No-Write Allocate。</p>
+<div class="admonition tip">
+<p class="admonition-title">Miss 汇总</p>
+<p><a class="glightbox" href="../../../image/i33.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i33.png" /></a></p>
+</div>
+<h2 id="measuring-and-improving-cache-performance">Measuring and improving cache performance<a class="headerlink" href="#measuring-and-improving-cache-performance" title="Permanent link">&para;</a></h2>
+<h3 id="cache-performance-metrics">Cache Performance Metrics<a class="headerlink" href="#cache-performance-metrics" title="Permanent link">&para;</a></h3>
+<p>我们使用Chapter 1中学的CPU Time来衡量Cache的性能。但要略作修改</p>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>CPU time=  (CPU execution clock cycles + Memory-stall clock cycles) ×Clock cycle time</p>
+<p>Memory Stall指的是CPU等待memory的时间，它等于Read Stall + Write Stall。</p>
+<ul>
+<li>
+<p>Read Stall: 读取数据时，由于数据不在cache中，所以需要等待memory读取数据。</p>
+<p>Read Stall Cycles = <span class="arithmatex">\(\frac{Read}{Program} \times  Read Miss Rate \times Read Miss Penalty\)</span></p>
+</li>
+<li>
+<p>Write Stall(对于Write Through With Buffer): 写入数据时，由于cache与memory不一致，所以需要等待memory写入数据。</p>
+<p>Write Stall Cycles = <span class="arithmatex">\(\frac{Write}{Program} \times  Write Miss Rate \times Write Miss Penalty + Write Buffer Stalls\)</span></p>
+</li>
+</ul>
+</div>
+<p>在大部分情况下，Read Miss Penalty = Write Miss Penalty。如果忽略Buffer Stall,那么Memory Stall Cycles = <span class="arithmatex">\(\frac{Memory}{Program} \times Miss Rate \times Miss Penalty\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">练习</p>
+<p><a class="glightbox" href="../../../image/i34.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i34.png" /></a></p>
+<details class="general">
+<summary>Answer</summary>
+<p><a class="glightbox" href="../../../image/i35.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i35.png" /></a></p>
+</details>
+</div>
+<h3 id="improving-cache-performance">Improving Cache Performance<a class="headerlink" href="#improving-cache-performance" title="Permanent link">&para;</a></h3>
+<p>首先，要减少Direct Mapped Cache的使用。因为它的Miss Rate很高，而且Miss Penalty也很高。</p>
 
 
 
@@ -2214,37 +2401,8 @@
 
 
   
-    
-  
-  
-    
   
 
-
-  <aside class="md-source-file">
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="最后更新">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年12月3日</span>
-  </span>
-
-    
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="创建日期">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月20日</span>
-  </span>
-
-    
-    
-    
-  </aside>
 
 
   
