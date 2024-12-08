@@ -988,3 +988,113 @@ print(f"混淆矩阵：\n{matrix}")
  [  949  4472]]
 ```
 53124代表非5的结果被成功识别，1455代表非5的结果被错误识别，949代表5的结果被错误识别，4472代表5的结果被成功识别。
+
+### Sklearn中的评估函数
+
++ accuracy_score: 计算准确率.
+    ```python
+    from sklearn.metrics import accuracy_score
+    accuracy = accuracy_score(y_train_5, result)
+    print(f"准确率: {accuracy}")
+    ```
++ precision_score: 计算精确率.
+    ```python
+    from sklearn.metrics import precision_score
+    precision = precision_score(y_train_5, result)
+    print(f"精确率: {precision}")
+    ```
++ recall_score: 计算召回率.
+    ```python
+    from sklearn.metrics import recall_score
+    recall = recall_score(y_train_5, result)
+    print(f"召回率: {recall}")
+    ```
++ f1_score: 计算F1分数(精确率和召回率的调和平均值).
+    ```python
+    from sklearn.metrics import f1_score
+    f1 = f1_score(y_train_5, result)
+    print(f"F1分数: {f1}")
+    ```
+
+### 评估阈值
+
+阈值指的是分类器的决策边界，当分类器的预测概率大于阈值时，样本被划分为正例，否则被划分为负例。在sklearn中，我们可以使用decision_function()方法获取分类器的决策分数。这个函数返回每个样本的分数，然后我们可以根据这个分数设置不同的阈值。
+
+```python
+
+from sklearn.metrics import precision_recall_curve  # 导入precision_recall_curve用于计算精确率和召回率
+
+# 获取分类器的决策分数
+
+scores = cross_val_predict(sgd_clf, X_train, y_train_5, cv=3, method='decision_function')
+
+# 计算精确率和召回率
+
+precisions, recalls, thresholds = precision_recall_curve(y_train_5, scores)
+
+# 绘制精确率和召回率曲线
+
+plt.plot(thresholds, precisions[:-1], 'b--', label='Precision')
+
+plt.plot(thresholds, recalls[:-1], 'g-', label='Recall')
+
+plt.xlabel('Threshold')
+
+plt.legend()
+
+plt.show()
+
+```
+
+
+阈值越大，精确率越高，召回率越低，反之亦然。
+
+<div align="center">
+    <img src="../../../image/i36.png" width="80%">
+</div>
+
+### ROC曲线
+
+ROC曲线也是一种用于评估二元分类器(就像这里识别某个数字是不是5)性能的工具，它展示了真正例率(TPR)和假正例率(FPR)之间的关系。TPR是指正确识别正例的比例，FPR是指错误识别负例的比例。ROC曲线的横轴是FPR，纵轴是TPR。
+
+```python
+
+from sklearn.metrics import roc_curve  # 导入roc_curve用于计算ROC曲线
+
+# 计算ROC曲线
+
+fpr, tpr, thresholds = roc_curve(y_train_5, scores)
+
+# 绘制ROC曲线
+
+plt.plot(fpr, tpr, 'b-')
+
+plt.plot([0, 1], [0, 1], 'k--')
+
+plt.xlabel('False Positive Rate')
+
+plt.ylabel('True Positive Rate')
+
+plt.show()
+
+```
+
+<div align="center">
+    <img src="../../../image/i37.png" width="80%">
+</div>
+
+这里理想的状态是ROC曲线尽可能地靠近左上角，即FPR为0，TPR为1。
+
+常用的评估方法是计算ROC曲线下的面积(AUC)，AUC越接近1，分类器的性能越好。AUC为0.5意味着和纯随机分类没什么区别。
+
+```python
+
+from sklearn.metrics import roc_auc_score  # 导入roc_auc_score用于计算AUC
+
+# 计算AUC
+
+auc = roc_auc_score(y_train_5, scores)
+
+print(f"AUC: {auc}")
+
+```
