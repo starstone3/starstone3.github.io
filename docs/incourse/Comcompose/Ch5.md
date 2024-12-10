@@ -226,3 +226,51 @@ Write Back一般使用Write Allocate，Write Through一般使用No-Write Allocat
 ### Improving Cache Performance
 
 首先，要减少Direct Mapped Cache的使用。因为它的Miss Rate很高，而且Miss Penalty也很高。
+
+## Virtual Memory
+
+### 介绍
+
+在PPT中，虚拟内存被定义为：把那些内存中放不下且不经常使用的数据放到磁盘上，从而释放内存空间。
+
+虚拟内存让每个进程都产生幻觉:它有一个连续的内存空间，而不是一个分散的内存空间。
+
+<div align="center">
+    <img src="../../../image/i38.png" width="800"/>
+</div>
+
+正如上图所示，进程实际使用的内存地址，我们称之为**物理地址(Physical Address)**。而进程认为自己使用的内存地址，我们称之为**虚拟地址(Virtual Address)**。虚拟地址是连续的，而物理地址是分散的。而虚拟地址空间被分为多个**页(Page)**，物理地址空间被分为多个**帧(Frame)**。在实际操作中，我们需要将虚拟地址映射到物理地址。
+
+
+!!! warning
+    在PPT中，将物理地址空间分为了**Physical Page**.但是在这里，我们将物理地址空间分为了**Frame**。这两者是等价的。
+
+### Page Tables（页表）
+
+在上面提到，虚拟地址到物理地址的转换是一个映射的过程。这个映射关系被存储在**页表(Page Table)**中。页表是一个数组，存储在内存中，数组的每一个元素是一个**页表项(Page Table Entry)**。页表项包含了虚拟地址到物理地址的映射关系。
+
+虚拟内存与物理内存的地址与cache的地址类似，由于虚拟内存是类似于Fully Associative Cache的，所以其index的位数是0。而tag的位数是$\log_2\text{(Page的个数)}$，offset的位数是$\log_2\text{(Page Size)}$。
+
+PPT的解释图如下：
+
+<div align="center">
+    <img src="../../../image/i39.png" width="800"/>
+</div>
+
+!!! tip "How large is the page table?"
+    ![](../../image/i40.png)
+
+### Page Faults
+
+在[介绍](#介绍)中的图片可以看出，实际的全部Virtual Page可能大于内存的容量，因此有部分页会放在硬盘中。当一个进程访问一个不在内存中的页时，会发生**Page Fault**。Page Fault是一个异常，会暂停进程的执行。当发生Page Fault时，操作系统会将这个页从磁盘中读取到内存中，然后重新执行这个指令。
+
+### TLB(Translation Lookaside Buffer)
+
+让我们来思考一个问题：当我们要访问一个内存地址时，我们需要现根据虚拟地址找到页表中entry的位置，然后再根据entry中的物理地址找到物理地址。由于页表是存放在内存中的，所以在找entry时，我们已经访问了一次内存，然后在访问真正的物理地址时，我们又访问了一次内存。这样的话，我们进行一次映射需要访问两次内存，这样的效率是很低的。
+
+为了解决这个问题，我们引入了TLB。TLB是一个**cache**，存放了页表中的一部分entry。当我们要访问一个内存地址时，我们首先在TLB中查找，如果找到了，那么我们就可以直接访问物理地址。如果没有找到，那么我们再去访问内存。
+
+需要注意的时，TLB的Block Replacement策略是是自定义的，并且它有一个**valid bit**来表示这个entry是否有效，还有一个**dirty bit**来表示这个entry是否被修改过，使用Write Back策略。
+
+!!! tip "Miss 总结"
+    ![](../../image/i41.png)
