@@ -124,9 +124,9 @@ $$
 
         这里作一些简化:用C G 两点的曲线与坐标轴围成的面积表示$\int_{k}^{N} \frac{1}{x} \mathrm{d} x$，用A E 两点的曲线与坐标轴围成的面积表示$\int_{k-1}^{N-1} \frac{1}{x} \mathrm{d} x$，而$\sum_{i=k}^{N-1} \frac{1}{i} = \sum_{i=k}^{N-1} \frac{1}{i} \times 1$,则:
 
-        + 相比于$\int_{k}^{N} \frac{1}{x} \mathrm{d} x$，原来的求和相当于每次用长边(比如CDFE中的CD)作为矩形的高，因此比实际面积大。
+        + 相比于$\int_{k}^{N} \frac{1}{x} \mathrm{d} x$，$\sum_{i=k}^{N-1} \frac{1}{i}$相当于每次用长边(比如CDFE中的CD)作为矩形的高，因此比实际面积大。
 
-        + 相比于$\int_{k-1}^{N-1} \frac{1}{x} \mathrm{d} x$，原来的求和相当于每次用短边(比如ABCD中的CD)作为矩形的高，因此比实际面积小。
+        + 相比于$\int_{k-1}^{N-1} \frac{1}{x} \mathrm{d} x$，$\sum_{i=k}^{N-1} \frac{1}{i}$相当于每次用短边(比如ABCD中的CD)作为矩形的高，因此比实际面积小。
 
 有了上面那个引理，我们可以得到:
 
