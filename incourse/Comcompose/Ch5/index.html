@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../image/fav1.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
     
     
       
@@ -1318,6 +1318,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#virtual-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Memory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#介绍" class="md-nav__link">
+    <span class="md-ellipsis">
+      介绍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-tables页表" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page Tables（页表）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-faults" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page Faults
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tlbtranslation-lookaside-buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      TLB(Translation Lookaside Buffer)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2138,6 +2189,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#virtual-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Memory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#介绍" class="md-nav__link">
+    <span class="md-ellipsis">
+      介绍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-tables页表" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page Tables（页表）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-faults" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page Faults
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tlbtranslation-lookaside-buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      TLB(Translation Lookaside Buffer)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2158,7 +2260,7 @@
 
 <h1 id="cache">Cache<a class="headerlink" href="#cache" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2482 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 7 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 12 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 3309 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 11 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 17 分钟</p>
 </div>
 <h2 id="memory-hierarchy-introduction">Memory Hierarchy Introduction<a class="headerlink" href="#memory-hierarchy-introduction" title="Permanent link">&para;</a></h2>
 <p>内存访问有如下两个特点：</p>
@@ -2393,6 +2495,41 @@
 </div>
 <h3 id="improving-cache-performance">Improving Cache Performance<a class="headerlink" href="#improving-cache-performance" title="Permanent link">&para;</a></h3>
 <p>首先，要减少Direct Mapped Cache的使用。因为它的Miss Rate很高，而且Miss Penalty也很高。</p>
+<h2 id="virtual-memory">Virtual Memory<a class="headerlink" href="#virtual-memory" title="Permanent link">&para;</a></h2>
+<h3 id="介绍">介绍<a class="headerlink" href="#介绍" title="Permanent link">&para;</a></h3>
+<p>在PPT中，虚拟内存被定义为：把那些内存中放不下且不经常使用的数据放到磁盘上，从而释放内存空间。</p>
+<p>虚拟内存让每个进程都产生幻觉:它有一个连续的内存空间，而不是一个分散的内存空间。</p>
+<div align="center">
+    <a class="glightbox" href="../../../image/i38.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i38.png" width="800"/></a>
+</div>
+
+<p>正如上图所示，进程实际使用的内存地址，我们称之为<strong>物理地址(Physical Address)</strong>。而进程认为自己使用的内存地址，我们称之为<strong>虚拟地址(Virtual Address)</strong>。虚拟地址是连续的，而物理地址是分散的。而虚拟地址空间被分为多个<strong>页(Page)</strong>，物理地址空间被分为多个<strong>帧(Frame)</strong>。在实际操作中，我们需要将虚拟地址映射到物理地址。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>在PPT中，将物理地址空间分为了<strong>Physical Page</strong>.但是在这里，我们将物理地址空间分为了<strong>Frame</strong>。这两者是等价的。</p>
+</div>
+<h3 id="page-tables页表">Page Tables（页表）<a class="headerlink" href="#page-tables页表" title="Permanent link">&para;</a></h3>
+<p>在上面提到，虚拟地址到物理地址的转换是一个映射的过程。这个映射关系被存储在<strong>页表(Page Table)</strong>中。页表是一个数组，存储在内存中，数组的每一个元素是一个<strong>页表项(Page Table Entry)</strong>。页表项包含了虚拟地址到物理地址的映射关系。</p>
+<p>虚拟内存与物理内存的地址与cache的地址类似，由于虚拟内存是类似于Fully Associative Cache的，所以其index的位数是0。而tag的位数是<span class="arithmatex">\(\log_2\text{(Page的个数)}\)</span>，offset的位数是<span class="arithmatex">\(\log_2\text{(Page Size)}\)</span>。</p>
+<p>PPT的解释图如下：</p>
+<div align="center">
+    <a class="glightbox" href="../../../image/i39.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i39.png" width="800"/></a>
+</div>
+
+<div class="admonition tip">
+<p class="admonition-title">How large is the page table?</p>
+<p><a class="glightbox" href="../../image/i40.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../image/i40.png" /></a></p>
+</div>
+<h3 id="page-faults">Page Faults<a class="headerlink" href="#page-faults" title="Permanent link">&para;</a></h3>
+<p>在<a href="#介绍">介绍</a>中的图片可以看出，实际的全部Virtual Page可能大于内存的容量，因此有部分页会放在硬盘中。当一个进程访问一个不在内存中的页时，会发生<strong>Page Fault</strong>。Page Fault是一个异常，会暂停进程的执行。当发生Page Fault时，操作系统会将这个页从磁盘中读取到内存中，然后重新执行这个指令。</p>
+<h3 id="tlbtranslation-lookaside-buffer">TLB(Translation Lookaside Buffer)<a class="headerlink" href="#tlbtranslation-lookaside-buffer" title="Permanent link">&para;</a></h3>
+<p>让我们来思考一个问题：当我们要访问一个内存地址时，我们需要现根据虚拟地址找到页表中entry的位置，然后再根据entry中的物理地址找到物理地址。由于页表是存放在内存中的，所以在找entry时，我们已经访问了一次内存，然后在访问真正的物理地址时，我们又访问了一次内存。这样的话，我们进行一次映射需要访问两次内存，这样的效率是很低的。</p>
+<p>为了解决这个问题，我们引入了TLB。TLB是一个<strong>cache</strong>，存放了页表中的一部分entry。当我们要访问一个内存地址时，我们首先在TLB中查找，如果找到了，那么我们就可以直接访问物理地址。如果没有找到，那么我们再去访问内存。</p>
+<p>需要注意的时，TLB的Block Replacement策略是是自定义的，并且它有一个<strong>valid bit</strong>来表示这个entry是否有效，还有一个<strong>dirty bit</strong>来表示这个entry是否被修改过，使用Write Back策略。</p>
+<div class="admonition tip">
+<p class="admonition-title">Miss 总结</p>
+<p><a class="glightbox" href="../../image/i41.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../image/i41.png" /></a></p>
+</div>
 
 
 
