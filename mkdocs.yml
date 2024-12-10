@@ -97,6 +97,7 @@ nav :
       - "Chapter 3:Arithmetic for Computer": incourse/Comcompose/Ch3.md
       - "Chapter 4: The Processor": incourse/Comcompose/Ch4.md
       - "Chapter 5:Cache": incourse/Comcompose/Ch5.md
+      - "Chapter 6:Storage, Networks and Other Peripherals": incourse/Comcompose/Ch6.md
   - "大一课程遗物":
     - incourse/old/index.md
     - "数据结构基础": incourse/old/fds.md
