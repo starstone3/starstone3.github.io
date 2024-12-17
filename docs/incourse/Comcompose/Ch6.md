@@ -1,3 +1,10 @@
+---
+comments : true
+
+statistics : true
+---
+
+
 # Storage, Networks and Other Peripherals
 
 上面的设备统称为I/O设备，包括存储设备、网络设备和其他外设。
