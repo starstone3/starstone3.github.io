@@ -36,7 +36,7 @@ theme:
           name: 关闭自动模式
       - media: "(prefers-color-scheme: light)"
         scheme: default # 日间模式
-        primary: Teal # 上方的
+        primary: teal # 上方的
         accent: light blue # 链接等可交互元件的高亮色
         toggle:
           icon: material/toggle-switch # 图标
@@ -165,7 +165,7 @@ plugins:
   - glightbox
   - git-revision-date-localized:
       enable_creation_date: true
-      enabled: false
+      enabled: true
       # type: timeago
       exclude:
         - index.md
@@ -228,11 +228,13 @@ extra_css:
   - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
   - https://unpkg.com/katex@0/dist/katex.min.css
   - css/extra.css
+  - css/styles.css
   # - https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css
 extra_javascript:
   - _js/extra.js
   - _js/mathjax.js
   - _js/katex.js
+  - _js/linenumber.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js

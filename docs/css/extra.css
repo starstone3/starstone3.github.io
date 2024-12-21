@@ -119,7 +119,7 @@ li {
     --md-default-fg-color--light: rgba(72, 52, 52, .54);
     --md-default-fg-color--lighter: rgba(72, 52, 52, .32);
     --md-default-fg-color--lightest: rgba(72, 52, 52, .27);
-    --md-default-bg-color: #fffaf5;
+    --md-default-bg-color: #fafaf9;
     --md-default-bg-color--light: hsla(0, 0%, 100%, .7);
     --md-default-bg-color--lighter: hsla(0, 0%, 100%, .3);
     --md-default-bg-color--lightest: hsla(0, 0%, 100%, .12);
@@ -133,8 +133,8 @@ li {
     --md-accent-fg-color--transparent: rgba(3, 169, 244, .1); /* Transparent Light Blue */
     --md-accent-bg-color: #fff;
     --md-accent-bg-color--light: hsla(0, 0%, 100%, .7);
-    --md-code-fg-color: #66806A;
-    --md-code-bg-color: #FFF3E4;
+    --md-code-fg-color: #0f0f0f;
+    --md-code-bg-color: #e9e4e4;
     --md-code-hl-color: #d7e1c3;
     --md-code-hl-number-color: #d52a2a;
     --md-code-hl-special-color: #db1457;
