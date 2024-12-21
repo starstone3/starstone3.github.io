@@ -1,28 +1,41 @@
-/* styles.css */
+/* 自动行号样式 */
 pre code {
-    display: block;
-    max-height: 400px; /* 设置最大高度 */
-    max-width: 1000px;  /* 设置最大宽度 */
-    overflow-x: auto;  /* 横向滚动条 */
-    overflow-y: auto;  /* 纵向滚动条 */
-    border: 1px solid #afcbf1; /* 添加边框 */
-    border-radius: 8px; /* 圆角边框 */
-    padding: 15px; /* 增加内边距 */
-    background-color: #f9f9f9; /* 背景颜色 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    counter-reset: line-number; /* 重置行号计数器 */
+    position: relative; /* 定位用于子元素行号 */
+    display: block; /* 确保代码块显示为块状 */
+    max-height: 400px;
+    max-width: 1000px;
+    overflow-x: auto;
+    overflow-y: auto;
+    border: 1px solid #afcbf1;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #333333; /* 添加代码文本颜色 */
 }
 
-/* 自定义滚动条 */
-pre code::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+pre code div {
+    display: block; /* 每行代码独立为块 */
+    position: relative; /* 相对定位用于行号 */
+    padding-left: 3em; /* 为行号留出空间 */
+    white-space: pre-wrap; /* 保持代码的格式和换行 */
+    word-break: break-word; /* 避免长代码溢出 */
 }
 
-pre code::-webkit-scrollbar-thumb {
-    background-color: #c1c1c1;
-    border-radius: 4px;
+pre code div:not(:empty)::before {
+    counter-increment: line-number; /* 自动增加行号 */
+    content: counter(line-number); /* 显示行号 */
+    position: absolute; /* 绝对定位行号 */
+    left: 0; /* 行号靠左 */
+    width: 2.5em; /* 为行号预留宽度 */
+    text-align: right; /* 行号右对齐 */
+    user-select: none; /* 禁止选中行号 */
+    opacity: 0.9; /* 行号透明度 */
+    color: #241b1b; /* 行号颜色 */
+    border-right: 1px solid #131212; /* 添加右边框作为分隔线 */
+    margin-right: 1em; /* 为分隔线和代码之间添加间距 */
+    padding-right: 0.5em; /* 行号和分隔线之间的间距 */
 }
 
-pre code::-webkit-scrollbar-track {
-    background-color: #eaeaea;
-}
+
