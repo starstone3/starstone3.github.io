@@ -158,3 +158,51 @@ When a single failure correction is not  sufficient, Parity can be generalized t
 + **Collision Detection**:设备检测到冲突后，等待一段时间再次请求总线
 
 仲裁需要考虑优先级与公平性。
+
+## I/O与其他设备交互
+
+I/O有三种交流是必备的:
+
+1. 操作系统必须能给I/O设备发送命令
+
+2. 设备必须能够在 I/O 设备完成操作或遇到错误时通知操作系统
+
+3. 数据必须能在内存与I/O之间传输
+
+### I/O与处理器交互
+
+有三种方式:
+
+1. **Polling**:处理器每隔一段时间询问I/O设备是否完成操作(检查status bit)，能否进行下一个I/O操作
+
+2. **Interrupts**:I/O设备完成操作后，向处理器发送中断信号，处理器暂停当前操作，处理中断
+
+3. **DMA**:Direct Memory Access,直接内存访问，I/O设备直接访问内存，不需要处理器参与
+
+#### Polling
+
+缺点是处理器需要不断询问I/O设备是否完成操作，浪费CPU时间。
+
+#### Interrupts
+
+如图:
+
+<div align="center">
+    <img src="../../../image/i75.png" width="70%">
+</div>
+
+#### DMA
+
+DMA的过程如下:
+
+<div align="center">
+    <img src="../../../image/i76.png" width="70%">
+</div>
+
+这里，CPU只负责告诉DMA什么时候要读写，DMA负责实际的读写操作。用文字描述的话，是以下三步:
+
+1. 处理器通过提供设备标识、操作类型、作为数据传输源或目标的内存地址以及传输字节数等信息来配置DMA。
+
+2. DMA控制器通过总线请求总线控制权，然后将数据从设备传输到内存或从内存传输到设备。
+
+3. 传输完成后，DMA控制器通过中断通知处理器，处理器检查中断，判断是成功还是出现error。
