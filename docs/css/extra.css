@@ -59,7 +59,8 @@ body{
 center,
 p,
 li {
-    font-size: large;
+    font-size: medium;
+    /* opacity: .9; */
 }
 
 .md-nav__link {
@@ -115,7 +116,7 @@ li {
 
 :root,
 [data-md-color-scheme=default] {
-    --md-default-fg-color: rgba(74, 61, 61, 0.78);
+    --md-default-fg-color: rgba(74, 61, 61, 0.9);
     --md-default-fg-color--light: rgba(72, 52, 52, .54);
     --md-default-fg-color--lighter: rgba(72, 52, 52, .32);
     --md-default-fg-color--lightest: rgba(72, 52, 52, .27);
@@ -470,6 +471,31 @@ li {
   .tabbed-labels::-webkit-scrollbar {
     display: none;
   }
+
+/* Webkit浏览器的滚动条样式 */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #e1e5f4;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #647ee7;
+  border-radius: 4px;
+  min-height: 20px;
+  background-image: linear-gradient(45deg,
+      rgba(255, 255, 255, 0.2) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.2) 75%,
+      transparent 75%,
+      transparent);
+  background-size: 10px 10px;
+}
   .tabbed-labels > label {
     width: auto;
     padding: 0.9375em 1.25em 0.78125em;
@@ -494,7 +520,7 @@ li {
     top: 0.75em;
     left: 0;
     padding-right: 0.64em;
-    color: gray;
+    color: rgb(197, 19, 19);
     background: linear-gradient(to right, rgb(255, 255, 255) 75%, rgba(255, 255, 255, 0));
     content: "\25C0";
     cursor: pointer;

@@ -19,6 +19,7 @@ comments : true
     === "Datapath"
         ![](../../image/pp81.png)
 
+---
 
 ## 指令处理的步骤
 
@@ -179,7 +180,67 @@ Main Decoder其实很简单，根据opcode把能赋值的先赋值了。
 ##### Code
 
 ```verilog title="cpu_ctrl"
-等实验做完再放
+module SCPU_ctrl(
+    input [4:0]OPcode, //Opcode------inst[6:2]
+    input [2:0]Fun3, //Function-----inst[14:12]
+    input Fun7, //Function-----inst[30]
+    input MIO_ready, //CPU Wait
+    output reg [1:0]ImmSel, 
+    output reg ALUSrc_B, 
+    output reg [1:0]MemtoReg, 
+    output reg Jump, 
+    output reg Branch, 
+    output reg RegWrite, 
+    output reg MemRW,
+    output reg [2:0]ALU_Control,
+    output reg CPU_MIO
+    ); 
+    
+    wire [3:0] Fun;
+    reg [1:0] ALUop;
+    
+    always@(*) begin
+        case(OPcode)
+            5'b01100: begin ALUop = 2'b10; Branch = 0; Jump = 0; ImmSel = 2'b00; ALUSrc_B = 0; MemRW = 0; RegWrite = 1; MemtoReg = 2'b00; end //ALU
+            5'b00000: begin ALUop = 2'b00; Branch = 0; Jump = 0; ImmSel = 2'b00; ALUSrc_B = 1; MemRW = 0; RegWrite = 1; MemtoReg = 2'b01; end //load
+            5'b01000: begin ALUop = 2'b00; Branch = 0; Jump = 0; ImmSel = 2'b01; ALUSrc_B = 1; MemRW = 1; RegWrite = 0; MemtoReg = 2'b00; end //store
+            5'b11000: begin ALUop = 2'b01; Branch = 1; Jump = 0; ImmSel = 2'b10; ALUSrc_B = 0; MemRW = 0; RegWrite = 0; MemtoReg = 2'b00; end //beq
+            5'b11011: begin ALUop = 2'b00; Branch = 0; Jump = 1; ImmSel = 2'b11; ALUSrc_B = 1; MemRW = 0; RegWrite = 1; MemtoReg = 2'b10; end //jump
+            5'b00100: begin ALUop = 2'b11; Branch = 0; Jump = 0; ImmSel = 2'b00; ALUSrc_B = 1; MemRW = 0; RegWrite = 1; MemtoReg = 2'b00; end //ALUi
+            default: begin ALUop = 2'b00; Branch = 0; Jump = 0; ImmSel = 2'b00; ALUSrc_B = 0; MemRW = 0; RegWrite = 0; MemtoReg = 2'b00; end
+        endcase
+    end
+    
+    assign Fun = {Fun3,Fun7};
+    always @* begin
+        case(ALUop)
+        2'b00: ALU_Control = 3'b010 ; //add load store
+        2'b01: ALU_Control = 3'b110 ; //sub beq
+        2'b10: 
+            case(Fun)
+                4'b0000: ALU_Control = 3'b010 ; //add
+                4'b0001: ALU_Control = 3'b110 ; //sub
+                4'b1110: ALU_Control = 3'b000 ; //and
+                4'b1100: ALU_Control = 3'b001 ; //or
+                4'b0100: ALU_Control = 3'b111 ; //slt
+                4'b1010: ALU_Control = 3'b101 ; //srl
+                4'b1000: ALU_Control = 3'b011 ; //xor
+                default: ALU_Control=3'bx;
+            endcase
+        2'b11: 
+            case(Fun3)
+                3'b000: ALU_Control = 3'b010; //addi
+                3'b010: ALU_Control = 3'b111; //slti
+                3'b100: ALU_Control = 3'b011; //xori
+                3'b110: ALU_Control = 3'b001; //ori
+                3'b111: ALU_Control = 3'b000; //andi
+                3'b101: ALU_Control = 3'b101; //srli
+                default: ALU_Control=3'bx;
+            endcase
+        endcase
+    end
+    
+endmodule
 ```
 
 ## 流水线CPU
@@ -201,6 +262,23 @@ Main Decoder其实很简单，根据opcode把能赋值的先赋值了。
 <div style="text-align: center;">
     <img src="../../../image/pp118.png" style="max-width: 80%; height: auto;">
 </div>
+
+
+
+### 结构：数据通路与控制
+
+!!! info "汇总图"
+    ![](../../image/pp121.png)
+
+中间的长条状是寄存器，存了上一个指令的各种信息。下面来作具体解释:
+
+1. **IF/ID**:这一部分的寄存器中存储的是指令本身与指令的地址，因为在ID中需要进行指令的解码，但是IF马上又要读下一条指令了，因此需要保存。
+
+2. **ID/EX**:这一部分的寄存器中首先需要继承IF/ID中的指令与指令地址，然后需要存储的是指令的译码结果(opcode,Imm,rd编号)与寄存器的读取结果(rs1,rs2的值)等。
+
+3. **EX/MEM**:这一部分的寄存器中存储的是ALU的运算结果(包括算术ALU与地址计算的ALU)，以及rd编号,Branch,Jal等
+
+4. **MEM/WB**:这一部分的寄存器中存储的是从内存中读取的数据，ALU计算的结果，MemToReg信号,rd编号等。
 
 ### 流水线中的问题与解决方案
 
@@ -276,18 +354,14 @@ RISC-V流水线通过以下方法缓解结构冒险：
 - **流水线分段**：将硬件资源划分为多个独立的子单元，每个子单元负责不同的流水线阶段，减少资源竞争。
 - **动态调度**：根据指令的资源需求动态分配硬件资源，优化资源利用率，降低结构冒险发生的概率。
 
-### 结构：数据通路与控制
-
-!!! info "汇总图"
-    ![](../../image/pp121.png)
-
-    _中间的长条状是寄存器，存了上一个指令的各种信息_
     
-#### 冒险
+其实，结构冒险在CPU硬件设计时就已经解决了，所以在使用时不需要担心。
 
-##### 冒险的检测
+### 冒险
 
-###### Data Hazards与Structural Hazards
+#### 冒险的检测
+
+##### Data Hazards与Structural Hazards
 
 
 数据冒险发生在两个指令的寄存器出现相同，也就是上一条指令的rd是下一条指令的rs1或rs2，同时还要关注Regwrite信号
@@ -313,7 +387,7 @@ RISC-V流水线通过以下方法缓解结构冒险：
     === "forward信号说明"
         ![](../../image/pp126.png)
 
-        ??? warning "这样就好了吗?"
+        ??? question "这样就好了吗?"
 
             思考这样一种情况：
 
@@ -327,7 +401,8 @@ RISC-V流水线通过以下方法缓解结构冒险：
 
 ---
 
-再思考，这样好了吗🤔？
+!!! question
+    这样好了吗🤔？
 
 我们来看load指令:
 
@@ -341,6 +416,9 @@ and x4,x2,x5
 <div style="text-align: center;">
     <img src="../../../image/pp129.png" style="max-width: 80%; height: auto;">
     </div>
+
+!!! danger
+    图中存在错误。IF/ID应为ID/EX，ID/EX应为EX/MEM。
 
 
 ---
@@ -365,6 +443,19 @@ and x4,x2,x5
 
 但是即便这样，我们也会浪费一个时钟。因为加入跳转成立，那本来取的下一条指令就不对了。因此，可以考虑采用Branch Prediction的方法。
 
+这又可以分为两种:
+
+1. **Static Prediction**: 静态预测，比如总是预测跳转成立，或者总是预测跳转不成立。
+
+2. **Dynamic Prediction**: 动态预测，通过历史记录来预测。
+
+---
+
+其实还有一种做法，也就是指令的重排。我们将肯定会执行的指令放在跳转指令的后面，这样即使预测错误，也不会浪费时钟周期。
+
+<div style="text-align: center;">
+    <img src="../../../image/i78.png" style="max-width: 90%; height: auto;">
+    </div>
 ### RISC-V with Static Dual Issue(并行处理两条指令)
 
 通过增加寄存器，ALU与ImmGen，我们可以实现并行处理两条指令：load/store和ALU/branch指令。
@@ -387,7 +478,7 @@ add x4,x2,x5
 
 #### Loop Unrolling
 
-正是因为有上面哪些问题，我们可以使用循环展开的思想，将一条指令拆分成多条指令，这样就可以并行处理了。
+正是因为有上面那些问题，我们可以使用循环展开的思想，将一条指令拆分成多条指令，这样就可以并行处理了。
 
 ```riscv
 Loop: ld x31,0(x20) // x31=array element  
@@ -403,7 +494,7 @@ blt x22,x20,Loop // branch if x22 < x20
     <img src="../../../image/pp136.png" style="max-width: 90%; height: auto;">
     </div>
 
-但是我们可以将循环展开，这样就可以并行处理了。
+但是我们可以将循环展开，这样就可以并行处理了。也就是把原来多个循环重复执行的指令放在一起，作为一个循环。
 
 <div style="text-align: center;">
     <img src="../../../image/pp137.png" style="max-width: 90%; height: auto;">
@@ -508,7 +599,7 @@ CPU先跳到一个固定地址，这个地址存储了所有异常处理程序�
 
 ### 退出异常
 
-当异常处理程序执行完毕时,在机器模式下使用mret指令返回到之前的程序流程。
+当异常处理程序执行完毕时,在机器模式下使用mert指令返回到之前的程序流程。
 
 
 ### 流水线下的异常
