@@ -8,7 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;700&display=swap');
 
 h2::before, h3::before, h4::before {
-    content: "# ";
+    content: " ";
 }
 
 .md-ellipsis,
@@ -27,7 +27,7 @@ h1,
 .md-typeset h3,
 .md-typeset h4,
 .md-typeset h5 {
-    font-weight: 600;
+    font-weight: 900;
 }
 
 /* article a[href^="http"]::after,
@@ -59,7 +59,7 @@ body{
 center,
 p,
 li {
-    font-size: medium;
+    font-size: large;
 }
 
 .md-nav__link {
@@ -115,15 +115,15 @@ li {
 
 :root,
 [data-md-color-scheme=default] {
-    --md-default-fg-color: rgba(72, 52, 52, .78);
+    --md-default-fg-color: rgba(4, 4, 4, 0.78);
     --md-default-fg-color--light: rgba(72, 52, 52, .54);
     --md-default-fg-color--lighter: rgba(72, 52, 52, .32);
     --md-default-fg-color--lightest: rgba(72, 52, 52, .27);
-    --md-default-bg-color: #fafaf9;
+    --md-default-bg-color: #ffffff;
     --md-default-bg-color--light: hsla(0, 0%, 100%, .7);
     --md-default-bg-color--lighter: hsla(0, 0%, 100%, .3);
     --md-default-bg-color--lightest: hsla(0, 0%, 100%, .12);
-    --md-primary-fg-color: #008080; /* Teal */
+    --md-primary-fg-color: #119494c9; /* Teal */
     --md-primary-fg-color--light: #66b2b2; /* Lighter Teal */
     --md-primary-fg-color--dark: #004d4d; /* Darker Teal */
     --md-primary-bg-color: #FDF6EC;
