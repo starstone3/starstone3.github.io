@@ -115,7 +115,7 @@ li {
 
 :root,
 [data-md-color-scheme=default] {
-    --md-default-fg-color: rgba(4, 4, 4, 0.78);
+    --md-default-fg-color: rgba(74, 61, 61, 0.78);
     --md-default-fg-color--light: rgba(72, 52, 52, .54);
     --md-default-fg-color--lighter: rgba(72, 52, 52, .32);
     --md-default-fg-color--lightest: rgba(72, 52, 52, .27);
