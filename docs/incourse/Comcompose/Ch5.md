@@ -41,7 +41,7 @@ comments : true
 
 ---
 
-## The basics of cache
+## The Basics of Cache
 
 我们要如何确认一个block在不在Cache中呢?如果在，我们如何找到它呢?
 
@@ -124,7 +124,8 @@ Memory中有32个block，Cache中有8个block，那么我们可以将Memory中�
 
 ### Block Placement
 
-Block可以被放到Cache中的哪些位置?
+!!! question
+    Block可以被放到Cache中的哪些位置?
 
 #### Direct Mapped Cache
 
@@ -140,11 +141,18 @@ Block可以被放到Cache中的哪些位置?
 
 一组(set)是cache中的一些block的集合。如果一个set中有n个block，那么这个cache就是n-way set associative cache。
 
+下图就是四路组相联(4-way set associative)的Cache:
+
+<div align="center">
+    <img src="../../../image/i77.png" width="80%"/>
+</div>
+
 Direct Mapped Cache可以看成1-way set associative cache的特例。
 
 ### Block Identification
 
-如何确定一个block是否在Cache中?
+!!! question
+    如何确定一个block是否在Cache中?
 
 正如上面已经介绍过，使用tag与vaild来确定一个block是否在Cache中。
 
@@ -152,7 +160,8 @@ Direct Mapped Cache可以看成1-way set associative cache的特例。
 
 ### Block Replacement
 
-当Cache满了，我们需要替换一个block。那么我们如何选择要替换的block呢?
+!!! question
+    当Cache满了，我们需要替换一个block。那么我们如何选择要替换的block呢?
 
 + 对于Direct Mapped Cache，只有一个block可以被替换，所以只有一个选择。
 
@@ -170,7 +179,8 @@ Direct Mapped Cache可以看成1-way set associative cache的特例。
 
 ### Write Strategy
 
-思考一个问题:当数据被写入cache时，我们要不要把数据也写入memory呢?
+!!! question
+    当数据被写入cache时，我们要不要把数据也写入memory呢?
 
 根据是否写入memory，我们可以分为两种策略：
 
@@ -186,7 +196,8 @@ Direct Mapped Cache可以看成1-way set associative cache的特例。
 
 ---
 
-再思考一个问题：发生了Write Miss怎么办n?
+!!! question
+    发生了Write Miss怎么办?
 
 + Write Allocate: 从memory中读取block到cache，然后写入cache。
 

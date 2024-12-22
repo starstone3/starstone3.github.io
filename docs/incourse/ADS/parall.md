@@ -5,7 +5,7 @@ statistics : true
 ---
 
 !!! warning
-    这部分写得非常混乱，可以移步[Bruce的笔记](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/ADS/Chapter%2014/#work-depth)
+    这部分写得略混乱，可以移步[Bruce的笔记](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/ADS/Chapter%2014/#work-depth)
 
 # 并发计算
 
@@ -291,13 +291,17 @@ for Pi , 1 <= i <= n(也即是m) pardo
 
         但是这样的工作量是很大的。每一个处理器都干了$2\log n$的活，这样的话，总的工作量就是$O(n\log n)$。
 
-因此，我们把原来的数据分割为$p=n/\log n$块，每块的头一个元素寻找RANK值，形成了图中的箭头。箭头划分出至多2p个区域。每一块区域并行处理，区域内部使用朴素的串行算法。
+因此，我们把原来的数据分割为$p=\frac{n}{\log n}$块，每块的头一个元素寻找RANK值，形成了图中的箭头。这里相当于是p个二分查找并行，因为我们要为p个元素找到RANK值，因此$T(n) = O(\log n)$，$W(n) = p \log n = O(n)$
+
+箭头划分出至多2p个区域。每一块区域并行处理，区域内部使用朴素的串行算法。
 
 <div align="center">
     <img src="../../../image/i63.png">
 </div>
 
-这样每块的大小为$\log n$，总的工作量为$p \log n = n$，时间复杂度为$O(\log n)$
+这样每块的大小为$\log n$，总的工作量为$p \log n = O(n)$，时间复杂度为$O(\log n)$
+
+综上，我们得到了一个时间复杂度为$O(\log n)$，工作量为$O(n)$的算法。
 
 ---
 
@@ -305,11 +309,12 @@ for Pi , 1 <= i <= n(也即是m) pardo
 
 Maximum Finding问题是这样的，给定一个数组$A(1), A(2), \cdots, A(n)$，求最大的元素。
 
-朴素的想法:
+### 朴素的想法
 
 > 如果要求前缀最大值(最小值)，只需要把求和问题的"+"换成"max"(或"min")即可,T(n)与W(n)不变。
 
 ---
+### Compare all pairs
 
 另给出一种算法:
 ```c title="Compare all pairs"
@@ -329,6 +334,8 @@ for Pi , 1 <= i <= n  pardo
 
 ---
 
+### 分割
+
 如果我们以$\sqrt{n}$分割，每块内部用普通的串行算法寻找最大值，合并时用上面的算法寻找最大值，结果如下 ：
 
 <div align="center">
@@ -343,9 +350,10 @@ for Pi , 1 <= i <= n  pardo
 
 ---
 
+### Random Sampling
+
 <strike>没想到吧，还有一种做法</strike>
 
-**Random Sampling**：
 
 1. 把数组A中随机挑$n^{\frac{7}{8}}$个元素出来，形成数组B
 
@@ -391,7 +399,9 @@ for Pi , 1 <= i <= n  pardo
     === "T8"
         ![](../../image/i73.png)
         ??? general "解析"
-            A.按我的理解，递归深度有$\log n$层，使用Parallel Ranking可以让每层的$T(n)=O(\log n)$,$W(n)=O(n)$
+            A.按我的理解，递归深度有$\log n$层，使用Parallel Ranking可以让每层的$W(n)=O(n)$，综合起来的工作量是$O(n\log n)$。而对于$T(n)$,最底下那层是$\log 1$，往上一层是$\log 2$,以此类推是$\log 4,\log 8,\cdots,\log n$，不妨设$n=2^l$,那么
+            
+            $T(n)=\log 1 + \log 2 + \cdots + \log n =(0 + 1 + \cdots +l) \log 2 = \frac{l(l+1)}{2}\log 2 = O(\log^2 n)$
 
     === "T9"
         ![](../../image/i74.png)
