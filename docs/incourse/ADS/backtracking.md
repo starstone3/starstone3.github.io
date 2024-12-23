@@ -2,8 +2,6 @@
 comments : true
 ---
 
-<link rel="stylesheet" type="text/css" href="../../../css/styles.css">
-
 # Backtracking
 
 !!! info "参考资料"

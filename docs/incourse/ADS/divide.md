@@ -384,13 +384,13 @@ $$T(N)=\Theta(n^{\log_b^a})+\sum_{j=0}^{\log_b^n -1} a^jf(\frac{n}{b^j})$$
         ![](../../image/pp88.png)
         考虑主方法
         ??? general "解析"
-            A，$T(N)=2T(N/3)+O(N)$，则 $N^{\log_ba}=N^{\log_32}<N$，$T=O(N)$。
+            A，$T(N)=2T(N/3)+O(N)$，则 $N^{\log_ba}=N^{\log_32}<N$，$T=O(N)$
 
-            B，$T(N)=2T(N/3)+O(N\log N)$，则 $N^{\log_ba}=N^{\log_32}<N<N\log N$，$T=O(N\log N)$。
+            B，$T(N)=2T(N/3)+O(N\log N)$，则 $N^{\log_ba}=N^{\log_32}<N<N\log N$，$T=O(N\log N)$
 
-            C，$T(N)=3T(N/2)+O(N)$，则 $N^{\log_ba}=N^{\log_23}>N$，$T=O(N^{\log_23})$。
+            C，$T(N)=3T(N/2)+O(N)$，则 $N^{\log_ba}=N^{\log_23}>N$，$T=O(N^{\log_23})$
 
-            D，$T(N)=3T(N/3)+O(N\log N)$，则 $N^{\log_ba}=N$，$T=O(N\log^2 N)$。
+            D，$T(N)=3T(N/3)+O(N\log N)$，则 $N^{\log_ba}=N$，$T=O(N\log^2 N)$
 
             故选C。
     
