@@ -68,8 +68,6 @@ comments : true
 ###### 代码
 
 ```c title="recursive"
-#include <stdio.h>
-#include <stdlib.h>
 
 typedef struct LeftistNode {
     int key;
@@ -103,32 +101,6 @@ LeftistNode* merge(LeftistNode* h1, LeftistNode* h2) {
     }
     h1->dist = (h1->right == NULL) ? 0 : h1->right->dist + 1;
     return h1;
-}
-
-void inorderTraversal(LeftistNode* root) {
-    if (root != NULL) {
-        inorderTraversal(root->left);
-        printf("%d ", root->key);
-        inorderTraversal(root->right);
-    }
-}
-
-int main() {
-    LeftistNode* h1 = createNode(3);
-    h1->left = createNode(10);
-    h1->right = createNode(8);
-
-    LeftistNode* h2 = createNode(7);
-    h2->left = createNode(12);
-    h2->right = createNode(9);
-
-    LeftistNode* mergedHeap = merge(h1, h2);
-
-    printf("Inorder traversal of merged heap: ");
-    inorderTraversal(mergedHeap);
-    printf("\n");
-
-    return 0;
 }
 ```
 
