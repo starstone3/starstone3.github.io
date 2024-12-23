@@ -78,7 +78,9 @@ comments : true
     === "T2"
         ![](../../image/pp46.png)
         ??? general "解析"
-            召回率与这个无关。通俗解释召回率：正样本中有多少是被找了出来
+            + Data Retrieval Performance Evaluation: 评估数据检索性能，主要关注检索速度。
+
+            + Information Retrieval Performance Evaluation: 评估信息检索性能，主要关注检索结果的质量和相关性。
     === "T3"
         ![](../../image/pp47.png)
         ??? general "解析"
