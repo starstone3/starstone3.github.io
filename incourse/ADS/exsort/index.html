@@ -10,13 +10,13 @@
         <meta name="author" content="starstone3">
       
       
-        <link rel="canonical" href="https://starstone3.github.io/incourse/ADS/Approximation/">
+        <link rel="canonical" href="https://starstone3.github.io/incourse/ADS/exsort/">
       
       
-        <link rel="prev" href="../np/">
+        <link rel="prev" href="../parall/">
       
       
-        <link rel="next" href="../localsearch/">
+        <link rel="next" href="../resource/">
       
       
       <link rel="icon" href="../../../image/fav1.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>近似算法 - Starstone3's bed</title>
+        <title>外部排序 - Starstone3's bed</title>
       
     
     
@@ -150,7 +150,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#近似算法" class="md-skip">
+        <a href="#外部排序" class="md-skip">
           跳转至
         </a>
       
@@ -184,7 +184,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              近似算法
+              外部排序
             
           </span>
         </div>
@@ -899,30 +899,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    近似算法
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Approximation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -931,230 +911,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#近似范式approximation-scheme" class="md-nav__link">
-    <span class="md-ellipsis">
-      近似范式(Approximation Scheme)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#approximate-bin-packing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Approximate Bin Packing
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Approximate Bin Packing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#问题描述" class="md-nav__link">
-    <span class="md-ellipsis">
-      问题描述
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#next-fit-algorithmonline" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next Fit Algorithm(online)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#first-fit-algorithmonline" class="md-nav__link">
-    <span class="md-ellipsis">
-      First Fit Algorithm(online)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#best-fit-algorithmonline" class="md-nav__link">
-    <span class="md-ellipsis">
-      Best Fit Algorithm(online)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#online算法的结论近似比" class="md-nav__link">
-    <span class="md-ellipsis">
-      online算法的结论(近似比)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#first-fit-decreasingoffline" class="md-nav__link">
-    <span class="md-ellipsis">
-      First Fit Decreasing(offline)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-knapsack-problem背包问题" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Knapsack Problem(背包问题)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The Knapsack Problem(背包问题)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#问题描述_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      问题描述
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fractional-version" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fractional Version
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#0-1-version" class="md-nav__link">
-    <span class="md-ellipsis">
-      0-1 Version
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="0-1 Version">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#贪心做法" class="md-nav__link">
-    <span class="md-ellipsis">
-      贪心做法
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#动态规划做法" class="md-nav__link">
-    <span class="md-ellipsis">
-      动态规划做法
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-k-center-problemk中心问题" class="md-nav__link">
-    <span class="md-ellipsis">
-      The K-center Problem(K中心问题)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The K-center Problem(K中心问题)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#简单贪心" class="md-nav__link">
-    <span class="md-ellipsis">
-      简单贪心
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2r-greedy" class="md-nav__link">
-    <span class="md-ellipsis">
-      2r-greedy
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#a-smarter-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      A smarter solution
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#最后" class="md-nav__link">
-    <span class="md-ellipsis">
-      最后
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#例题" class="md-nav__link">
-    <span class="md-ellipsis">
-      例题
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1227,10 +983,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../exsort/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1239,6 +1004,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -2064,218 +1830,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#近似范式approximation-scheme" class="md-nav__link">
-    <span class="md-ellipsis">
-      近似范式(Approximation Scheme)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#approximate-bin-packing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Approximate Bin Packing
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Approximate Bin Packing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#问题描述" class="md-nav__link">
-    <span class="md-ellipsis">
-      问题描述
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#next-fit-algorithmonline" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next Fit Algorithm(online)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#first-fit-algorithmonline" class="md-nav__link">
-    <span class="md-ellipsis">
-      First Fit Algorithm(online)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#best-fit-algorithmonline" class="md-nav__link">
-    <span class="md-ellipsis">
-      Best Fit Algorithm(online)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#online算法的结论近似比" class="md-nav__link">
-    <span class="md-ellipsis">
-      online算法的结论(近似比)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#first-fit-decreasingoffline" class="md-nav__link">
-    <span class="md-ellipsis">
-      First Fit Decreasing(offline)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-knapsack-problem背包问题" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Knapsack Problem(背包问题)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The Knapsack Problem(背包问题)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#问题描述_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      问题描述
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fractional-version" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fractional Version
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#0-1-version" class="md-nav__link">
-    <span class="md-ellipsis">
-      0-1 Version
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="0-1 Version">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#贪心做法" class="md-nav__link">
-    <span class="md-ellipsis">
-      贪心做法
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#动态规划做法" class="md-nav__link">
-    <span class="md-ellipsis">
-      动态规划做法
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-k-center-problemk中心问题" class="md-nav__link">
-    <span class="md-ellipsis">
-      The K-center Problem(K中心问题)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The K-center Problem(K中心问题)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#简单贪心" class="md-nav__link">
-    <span class="md-ellipsis">
-      简单贪心
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2r-greedy" class="md-nav__link">
-    <span class="md-ellipsis">
-      2r-greedy
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#a-smarter-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      A smarter solution
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#最后" class="md-nav__link">
-    <span class="md-ellipsis">
-      最后
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#例题" class="md-nav__link">
-    <span class="md-ellipsis">
-      例题
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2292,284 +1846,158 @@
   
 
 
-<p><link rel="stylesheet" type="text/css" href="../../../css/styles.css"></p>
-<h1 id="近似算法">近似算法<a class="headerlink" href="#近似算法" title="Permanent link">&para;</a></h1>
+<h1 id="外部排序">外部排序<a class="headerlink" href="#外部排序" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2770 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 6 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 14 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 12 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 17 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间不到 1 分钟</p>
 </div>
-<div class="admonition link">
-<p class="admonition-title">from wiki</p>
-<p><a href="https://zh.wikipedia.org/wiki/%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95">https://zh.wikipedia.org/wiki/%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95</a></p>
+<p>时间匆忙，参考<a href="https://note.isshikih.top/cour_note/D2CX_AdvancedDataStructure/Lec15/">这里</a>。</p>
+<!-- 当数据量很大时，我们无法把所有的数据都放到内存中进行排序，但是如果数据被存储在硬盘上，会有什么影响?
+
+正如计算机组成已经学过的，在硬盘上读取数据需要先找到盘片，然后找到磁道，然后等待磁头旋转到对应的扇区下，这个过程是非常耗时的。所以，如果我们要对硬盘上的数据进行排序，我们不能简单地把所有数据读取到内存中进行排序，而是需要一种特殊的排序方法，这就是外部排序。
+
+假设内存同时一共可以处理三个数据，而现有的待排序数据如下:
+
+<div align="center">
+    <a class="glightbox" href="../../../image/i79.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i79.png" width="80%"></a>
 </div>
-<p>在上节课中提到，当今的学界倾向于<span class="arithmatex">\(P \neq NP\)</span>, 即NP问题不可能在多项式时间内解决。因此，我们需要寻找一种近似算法来解决NP问题。近似算法是一种在多项式时间内求解NP问题的方法，它不一定能够得到问题的最优解，但是可以得到一个<strong>接近最优解</strong>的解。</p>
-<div class="admonition definition">
-<p class="admonition-title">Approximation ratio</p>
-<p>近似比<span class="arithmatex">\(\rho(n)\)</span>是一个常数，对于一个最优化问题的近似算法，我们假设<span class="arithmatex">\(f(n,x)\)</span>是对输入x的最坏情况的一种量化。<span class="arithmatex">\(x\)</span>为近似解,<span class="arithmatex">\(x^*\)</span>为准确解，那么<span class="arithmatex">\(\rho(n)\)</span>定义为：</p>
-<div class="arithmatex">\[\rho(n) = \max\left\{ \frac{f(n,x)}{f(n,x^*)}, \frac{f(n,x^*)}{f(n,x)} \right\}\]</div>
+
+---
+
+我们每次读三个数据排序，交替写入硬盘T2与T3中，结果如下:
+
+<div align="center">
+    <a class="glightbox" href="../../../image/i80.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i80.png" width="80%"></a>
 </div>
-<h2 id="近似范式approximation-scheme">近似范式(Approximation Scheme)<a class="headerlink" href="#近似范式approximation-scheme" title="Permanent link">&para;</a></h2>
-<p>近似范式是对于某一族问题的一种近似算法，它可以在多项式时间内得到一个接近最优解的解。近似范式的近似比<span class="arithmatex">\(\rho(n)\)</span>是一个常数，且<span class="arithmatex">\(\rho(n)\)</span>可以随着输入规模<span class="arithmatex">\(n\)</span>的增大而减小。</p>
-<blockquote>
-<p>可以把范式想成是一种输出为算法的函数，输入是<span class="arithmatex">\(\epsilon\)</span>,对于特定的<span class="arithmatex">\(\epsilon &gt; 0\)</span>，范式会给出一个近似比为<span class="arithmatex">\(1+\epsilon\)</span>的算法。</p>
-</blockquote>
-<p>而此时，这种算法的时间复杂度可以看成是<span class="arithmatex">\(O(f(n,\epsilon))\)</span>，其中<span class="arithmatex">\(f(n,\epsilon)\)</span>是一个关于<span class="arithmatex">\(n\)</span>和<span class="arithmatex">\(\epsilon\)</span>的函数。</p>
-<p><strong>PTAS(Polynomial Time Approximation Scheme)</strong>是在<span class="arithmatex">\(\epsilon\)</span>确定的情况下，<span class="arithmatex">\(f(n,\epsilon)\)</span>关于<span class="arithmatex">\(n\)</span>是多项式的范式。</p>
-<h2 id="approximate-bin-packing">Approximate Bin Packing<a class="headerlink" href="#approximate-bin-packing" title="Permanent link">&para;</a></h2>
-<h3 id="问题描述">问题描述<a class="headerlink" href="#问题描述" title="Permanent link">&para;</a></h3>
-<p>给定<span class="arithmatex">\(n\)</span>个物品，每个物品的大小为<span class="arithmatex">\(s_i \in (0,1]\)</span>，每个箱子的容量为1。我们需要将这些物品放入尽可能少的箱子中。</p>
-<div class="admonition example">
-<p class="admonition-title">🌰</p>
-<p>给定 7 个 item，size 分别为<span class="arithmatex">\(0.2,0.5,0.4,0.7,0.1,0.3,0.8\)</span>则最少需要 3 个 bin（准确解）：</p>
-<ul>
-<li>bin1: 0.2, 0.8</li>
-<li>bin2: 0.5, 0.4,0.1</li>
-<li>bin3: 0.7, 0.3</li>
-</ul>
+
+这个时候一组有序序列包含三个数据。
+
+---
+
+??? question "为什么排完的数据不写回T1?"
+    因为T1也是一个硬盘，当我们排序完一组数据后，磁头已经移动到下一组数据的扇区了，如果我们要写回T1，就需要等待磁头移动到T1的扇区，这样会浪费很多时间。所以我们选择了交替写入T2和T3。
+
+
+
+然后，对T2与T3中的数据归并，交替放在T1与T4中，结果如下:
+
+<div align="center">
+    <a class="glightbox" href="../../../image/i81.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i81.png" width="80%"></a>
 </div>
-<p>这是一个NPH问题(?)，下面我们将考虑如下的算法。注意:online算法意味着在处理<span class="arithmatex">\(ith\)</span>个item时，我们不知道后面的item的大小。而offline算法则是在处理<span class="arithmatex">\(ith\)</span>个item时，我们已经知道所有item的大小。</p>
-<h3 id="next-fit-algorithmonline">Next Fit Algorithm(online)<a class="headerlink" href="#next-fit-algorithmonline" title="Permanent link">&para;</a></h3>
-<p>Next Fit Algorithm在处理每个item时，都会尝试将item放入当前的最后一个箱子中，如果放不下，则会尝试新开一个箱子，放入其中。</p>
-<p>如果用M表示算法的准确解，则Next Fit使用箱子的个数不超过<span class="arithmatex">\(2M-1\)</span>。</p>
-<details class="note">
-<summary>证明</summary>
-<p>我们将问题转换为若Next Fit使用了<span class="arithmatex">\(2M\)</span>个箱子，则最优解至少需要<span class="arithmatex">\(M+1\)</span>个箱子。</p>
-<p>设 <span class="arithmatex">\(S(B_i)\)</span> 为第 <span class="arithmatex">\(i\)</span> 个箱子的已经放下的item的size。那么我们必定有：</p>
-<div class="arithmatex">\[
-\begin{align*}
-S(B_1) + S(B_2) &amp;&gt; 1, \\
-S(B_3) + S(B_4) &amp;&gt; 1, \\
-&amp;\vdots \\
-S(B_{2M-1}) + S(B_{2M}) &amp;&gt; 1.
-\end{align*}
-\]</div>
-<p>这意味着：</p>
-<div class="arithmatex">\[
-\sum_{i=1}^{2M} S(B_i) &gt; M.
-\]</div>
-<p>最优解至少需要 <span class="arithmatex">\(\left\lceil \frac{\text{所有物品的总大小}}{1} \right\rceil\)</span> 个箱子，这可以表示为：</p>
-<div class="arithmatex">\[
-\left\lceil \sum_{i=1}^{2M} S(B_i) \right\rceil \geq M + 1.
-\]</div>
-<p>因此，Next Fit算法的箱子个数不会超过<span class="arithmatex">\(2M-1\)</span>。</p>
-</details>
-<h3 id="first-fit-algorithmonline">First Fit Algorithm(online)<a class="headerlink" href="#first-fit-algorithmonline" title="Permanent link">&para;</a></h3>
-<p>First Fit Algorithm在处理每个item时，都会尝试将item放入第一个箱子中，如果放不下，则会尝试放入下一个箱子中。也即，将item放在第一个能容纳的箱子里，不然就新开一个箱子。</p>
-<p>如果用M表示算法的准确解，则First Fit使用箱子的个数不超过<span class="arithmatex">\(1.7M\)</span>。</p>
-<h3 id="best-fit-algorithmonline">Best Fit Algorithm(online)<a class="headerlink" href="#best-fit-algorithmonline" title="Permanent link">&para;</a></h3>
-<p>Best Fit Algorithm在处理每个item时，都会尝试将item放入剩余空间最小且能容纳的箱子中。</p>
-<p>如果用M表示算法的准确解，则Best Fit使用箱子的个数不超过<span class="arithmatex">\(1.7M\)</span>。</p>
-<hr />
-<h3 id="online算法的结论近似比">online算法的结论(近似比)<a class="headerlink" href="#online算法的结论近似比" title="Permanent link">&para;</a></h3>
-<p>There are inputs that force any on-line bin-packing algorithm to use at least 5/3 the optimal number of bins.</p>
-<p>也即，对于任何online算法，其近似比<span class="arithmatex">\(\rho(n) \geq \frac{5}{3}\)</span>。</p>
-<hr />
-<h3 id="first-fit-decreasingoffline">First Fit Decreasing(offline)<a class="headerlink" href="#first-fit-decreasingoffline" title="Permanent link">&para;</a></h3>
-<p>First Fit Decreasing Algorithm是First Fit Algorithm的一个变种，它首先将所有item按照大小降序排列，然后再使用First Fit Algorithm。</p>
-<p>如果用M表示算法的准确解，则First Fit Decreasing使用箱子的个数不超过</p>
-<div class="arithmatex">\[\frac{11M}{9} + \frac{6}{9}\]</div>
-<hr />
-<h2 id="the-knapsack-problem背包问题">The Knapsack Problem(背包问题)<a class="headerlink" href="#the-knapsack-problem背包问题" title="Permanent link">&para;</a></h2>
-<h3 id="问题描述_1">问题描述<a class="headerlink" href="#问题描述_1" title="Permanent link">&para;</a></h3>
-<p>给定<span class="arithmatex">\(n\)</span>个物品，每个物品的大小为<span class="arithmatex">\(w_i\)</span>，价值为<span class="arithmatex">\(p_i\)</span>，背包的容量为<span class="arithmatex">\(M\)</span>。我们需要将这些物品放入背包中，使得背包中物品的总价值最大。</p>
-<h3 id="fractional-version">Fractional Version<a class="headerlink" href="#fractional-version" title="Permanent link">&para;</a></h3>
-<p>假设我们记<span class="arithmatex">\(x_i\)</span>是第i个item的放入百分比(假设item是连续可分的)，则获得的利润为<span class="arithmatex">\(p_i x_i\)</span>,占据的空间为<span class="arithmatex">\(w_i x_i\)</span></p>
-<p>那么我们就是要在<span class="arithmatex">\(\sum w_i x_i \leq M\)</span>的约束条件下，求出最大的<span class="arithmatex">\(\sum p_i x_i\)</span>.</p>
-<p>很显然，这时候我们只需要考虑"性价比":<span class="arithmatex">\(\frac{p_i}{w_i}\)</span>最大的物品，将它们放入即可。这种情况下得到的解已经是准确解了。</p>
-<h3 id="0-1-version">0-1 Version<a class="headerlink" href="#0-1-version" title="Permanent link">&para;</a></h3>
-<p>0-1 Version要求对于一件item，我们要么放，要么不放。</p>
-<p>现在，问题变成了一个NPC问题。</p>
-<h4 id="贪心做法">贪心做法<a class="headerlink" href="#贪心做法" title="Permanent link">&para;</a></h4>
-<p>贪心的策略是总是选择贪心策略可以是总是选可以放得下的、还没放入中的，利润最大的或$
-\frac{p_i}{w_i}$最大的。这些做法的近似比都是 2。</p>
-<div class="admonition proof">
-<p class="admonition-title">贪心算法的2-近似度证明</p>
-<ul>
-<li><span class="arithmatex">\(p_\text{max}\)</span>: 所有物品中单个物品的最大利润</li>
-<li><span class="arithmatex">\(P_\text{optimal}\)</span>: 最优解的总利润</li>
-<li><span class="arithmatex">\(P_\text{greedy}\)</span>: 贪心算法得到的解的总利润</li>
-</ul>
-<p>近似比 <span class="arithmatex">\(\rho\)</span> 定义为:
+
+这个时候一组有序序列包含六个数据。
+
+---
+
+最后，再对T1与T4中的数据归并，交替放在T2与T3中，结果如下:
+
+<div align="center">
+    <a class="glightbox" href="../../../image/i82.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i82.png" width="80%"></a>
+</div>
+
+这个时候一组有序序列包含十二个数据。
+
+---
+
+此时Number of Passes为:
+
 $$
-\rho = \max(\frac{P_\text{optimal}}{P_\text{greedy}}, \frac{P_\text{greedy}}{P_\text{optimal}})
-$$</p>
-<ol>
-<li>
-<p>首先我们有两个重要的不等式:</p>
-<div class="arithmatex">\[
-\begin{cases}
-p_\text{max} \leq P_\text{greedy} &amp; (1) \\
-P_\text{optimal} \leq P_\text{greedy} + p_\text{max} &amp; (2)
-\end{cases}
-\]</div>
-</li>
-<li>
-<p>从不等式(1)得到:</p>
-<div class="arithmatex">\[
-\frac{p_\text{max}}{P_\text{greedy}} \leq 1 \quad (3)
-\]</div>
-</li>
-<li>
-<p>将不等式(2)除以 <span class="arithmatex">\(P_\text{greedy}\)</span> 并结合(3):</p>
-<div class="arithmatex">\[
-\frac{P_\text{optimal}}{P_\text{greedy}} \leq 1 + \frac{p_\text{max}}{P_\text{greedy}} \leq 2
-\]</div>
-</li>
-</ol>
+1 + \lceil\log_2 {N/M}\rceil
+$$
+
+为了减少Passes的数目，我们考虑增大对数的底数，也就是K-way merge sort。
+
+总的过程如下:
+
+1. <div align="center">
+    <a class="glightbox" href="../../../image/i83.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i83.png" width="80%"></a>
 </div>
-<h4 id="动态规划做法">动态规划做法<a class="headerlink" href="#动态规划做法" title="Permanent link">&para;</a></h4>
-<p>设 <span class="arithmatex">\(W_{i, p}\)</span> 表示从集合 <span class="arithmatex">\(\{1, \ldots, i\}\)</span> 中选取元素，使得总利润恰好为 <span class="arithmatex">\(p\)</span> 时的最小重量。</p>
-<ol>
-<li><strong>选择第 <span class="arithmatex">\(i\)</span> 项:</strong> <span class="arithmatex">\(W_{i,p} = w_i + W_{i-1,p-p_i}\)</span></li>
-<li><strong>跳过第 <span class="arithmatex">\(i\)</span> 项:</strong> <span class="arithmatex">\(W_{i,p} = W_{i-1,p}\)</span></li>
-<li><strong>无法达到利润 <span class="arithmatex">\(p\)</span>:</strong> <span class="arithmatex">\(W_{i,p} = \infty\)</span></li>
-</ol>
-<p><span class="arithmatex">\(W_{i, p}\)</span> 的递推公式可以定义为：</p>
-<div class="arithmatex">\[
-W_{i, p} = 
-\begin{cases} 
-\infty &amp; \text{如果 } i = 0 \\
-W_{i-1, p} &amp; \text{如果 } p_i &gt; p \\
-\min\{W_{i-1, p}, w_i + W_{i-1, p-p_i}\} &amp; \text{其他情况}
-\end{cases}
-\]</div>
-<p>其中 <span class="arithmatex">\(i = 1, \ldots, n\)</span> 且 <span class="arithmatex">\(p = 1, \ldots, n p_{\max}\)</span>，时间复杂度为 <span class="arithmatex">\(O(n^2 p_{\max})\)</span>。</p>
-<blockquote>
-<p><span class="arithmatex">\(p_{\text{max}}\)</span>就是上面提到的所有物品中单个物品的最大利润</p>
-</blockquote>
-<h2 id="the-k-center-problemk中心问题">The K-center Problem(K中心问题)<a class="headerlink" href="#the-k-center-problemk中心问题" title="Permanent link">&para;</a></h2>
-<p>K 中心问题指：给定平面上的一系列 site（即点），在平面中找出 <span class="arithmatex">\(k\)</span> 个不同的 center，记 <span class="arithmatex">\(site_i\)</span> 到离它最近的 center 的距离为 <span class="arithmatex">\(dis_i\)</span>，求 <span class="arithmatex">\(\max \{dis_i\}\)</span> 的最小值。</p>
-<div class="arithmatex">\[
-\text{dist}(s_i, C) = \min_{c \in C} \text{dist}(s_i, c)
-\]</div>
-<p>即从 <span class="arithmatex">\(s_i\)</span> 到最近中心的距离</p>
-<div class="arithmatex">\[
-r(C) = \max_i \text{dist}(s_i, C) = \text{最小覆盖半径}
-\]</div>
-<p>找到一个中心集合 <span class="arithmatex">\(C\)</span>，使得 <span class="arithmatex">\(r(C)\)</span> 最小，条件是 <span class="arithmatex">\(|C| = K\)</span>。</p>
-<h3 id="简单贪心">简单贪心<a class="headerlink" href="#简单贪心" title="Permanent link">&para;</a></h3>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>Put the first center at the best possible location for a single center, and then keep adding centers so as to reduce the covering radius each time by as much as possible.</p>
-<p>这个做法说着简单，其实有很大的bug。比如如果一开始所有点形成了两个几种的点云，那么第一个点就会选择两个点云的中间，这显然是不合理的。</p>
+
+2. <div align="center">
+    <a class="glightbox" href="../../../image/i84.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i84.png" width="80%"></a>
 </div>
-<h3 id="2r-greedy">2r-greedy<a class="headerlink" href="#2r-greedy" title="Permanent link">&para;</a></h3>
-<p>假设最优解对应的中心集为 <span class="arithmatex">\(C^*\)</span>，满足 <span class="arithmatex">\(\forall C_x\)</span>，如果 <span class="arithmatex">\(r(C_x) \geq r(C^*)\)</span>，则必定存在覆盖方案。反之，如果能够验证 <span class="arithmatex">\(C_x\)</span> 能覆盖所有点，则可约束最优解的半径 <span class="arithmatex">\(r(C^*) \leq r(C_x)\)</span>。</p>
-<div class="admonition info">
-<p class="admonition-title">解释</p>
-<p>设 <span class="arithmatex">\(C_x\)</span> 为选定的中心，<span class="arithmatex">\(S_x\)</span> 为尚未被覆盖的点集，<span class="arithmatex">\(r_x\)</span> 为当前待判断的半径，<span class="arithmatex">\(S\)</span> 为所有点的集合，算法步骤如下：</p>
-<ol>
-<li>初始化 <span class="arithmatex">\(C_x = \emptyset\)</span>；</li>
-<li>当 <span class="arithmatex">\(S_x \neq \emptyset\)</span> 时，重复以下操作：<ol>
-<li>随机选择一个点 <span class="arithmatex">\(s_i \in S_x\)</span>，加入 <span class="arithmatex">\(C_x\)</span> 作为中心，并从 <span class="arithmatex">\(S_x\)</span> 中移除 <span class="arithmatex">\(s_i\)</span>；</li>
-<li>从 <span class="arithmatex">\(S_x\)</span> 中移除所有距离 <span class="arithmatex">\(s_i\)</span> 不超过 <span class="arithmatex">\(2r_x\)</span> 的点，即删除所有满足 <span class="arithmatex">\(dis(s_i, s_j) \leq 2r_x\)</span> 的点 <span class="arithmatex">\(s_j\)</span>；</li>
-</ol>
-</li>
-<li>
-<p>所有点被覆盖后：</p>
-<ol>
-<li>若 <span class="arithmatex">\(|C_x| \leq k\)</span>，则返回 <strong>是</strong>；</li>
-<li>否则返回 <strong>否</strong>。</li>
-</ol>
-</li>
-<li>
-<p>如果返回 <strong>是</strong>，下一个 <span class="arithmatex">\(r_x\)</span> 应取更小的值；</p>
-</li>
-<li>如果返回 <strong>否</strong>，下一个 <span class="arithmatex">\(r_x\)</span> 应取更大的值。</li>
-</ol>
+
+3. <div align="center">
+    <a class="glightbox" href="../../../image/i85.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i85.png" width="80%"></a>
 </div>
-<ol>
-<li>当算法成功时，说明 <span class="arithmatex">\(2r_x \geq r(C^*)\)</span>，即可以用 <span class="arithmatex">\(k\)</span> 个半径为 <span class="arithmatex">\(2r_x\)</span> 的圆覆盖所有点；</li>
-<li>当算法失败时，不能确定 <span class="arithmatex">\(2r_x \geq r(C^*)\)</span>，但可以确定 <span class="arithmatex">\(r_x \leq r(C^*)\)</span>，因为该方法并非最优。</li>
-</ol>
-<p><strong>引理</strong>：假设存在半径为 <span class="arithmatex">\(r\)</span>，以 <span class="arithmatex">\(c\)</span> 为圆心的圆 <span class="arithmatex">\(C\)</span> 覆盖了所有点集 <span class="arithmatex">\(S\)</span>。对于任意固定半径 <span class="arithmatex">\(r'\)</span>，如果以 <span class="arithmatex">\(S\)</span> 中任意点 <span class="arithmatex">\(s_i\)</span> 为圆心的圆 <span class="arithmatex">\(C_i\)</span> 能覆盖所有点，则必须满足 <span class="arithmatex">\(r' \geq 2r\)</span>。</p>
-<blockquote>
-<p>引理的证明关键在于考虑两个分布在直径两端的点的情况。</p>
-</blockquote>
-<p>该引理的附加结论为：</p>
-<p>最优覆盖半径为 <span class="arithmatex">\(r\)</span> 的圆，必然能被半径为 <span class="arithmatex">\(2r\)</span>、任意点为圆心的圆所覆盖。极端情况就是选取的点刚好在原来最优覆盖半径为<span class="arithmatex">\(r\)</span>的圆的边界上。</p>
-<hr />
-<p>当返回<strong>是</strong>的时候，我们缩小<span class="arithmatex">\(r_x\)</span>，不然，扩大<span class="arithmatex">\(r_x\)</span>。最终，我们会得到一个<span class="arithmatex">\(r_x\)</span>满足<span class="arithmatex">\(r_x\leq r(C^*) \leq 2r_x\)</span></p>
-<p>最终的答案就是<span class="arithmatex">\(2r_x\)</span></p>
-<p>其近似比为2.</p>
-<h3 id="a-smarter-solution">A smarter solution<a class="headerlink" href="#a-smarter-solution" title="Permanent link">&para;</a></h3>
-<p>上面那个做法总是随机的选取新的 <span class="arithmatex">\(c_i\)</span>，但是对于 center 的选取，我们其实可以总是选择距离已有的 center 最远的点，此外，当 <span class="arithmatex">\(|C| &gt; k\)</span> 时，我们也没必要继续做了。</p>
-<h2 id="最后">最后<a class="headerlink" href="#最后" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p>A :Optimality --quality of a solution(准确解or近似解)</p>
-</li>
-<li>
-<p>B :Efficiency --cost of computations</p>
-</li>
-<li>
-<p>C :All instances</p>
-</li>
-</ul>
-<p>对于一个问题的解法，满足:</p>
-<ul>
-<li>
-<p>A+B:Exact and fast algorithms for special cases</p>
-</li>
-<li>
-<p>A+C:Exact algorithms for all instances</p>
-</li>
-<li>
-<p>B+C:Approximation algorithms </p>
-</li>
-</ul>
-<p>即使我们证明了P = NP,也不一定能保证一个解法同时满足上面三个特点。</p>
-<hr />
-<h2 id="例题">例题<a class="headerlink" href="#例题" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">例题</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">T1</label><label for="__tabbed_1_2">T2</label><label for="__tabbed_1_3">T3</label><label for="__tabbed_1_4">T4</label><label for="__tabbed_1_5">T5</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><a class="glightbox" href="../../../image/i14.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i14.png" /></a></p>
-<details class="general">
-<summary>解析</summary>
-<p>F.<span class="arithmatex">\(\alpha\)</span>是tight只能说明对于这一种算法的近似比是最优的，但是不能说明这个算法是最优的。可能还有其他算法的近似比更好。</p>
-</details>
+
+此时，Number of Passes为:
+
+$$
+1 + \lceil\log_K {N/M}\rceil
+$$
+
+是快了很多，但是这需要2k个硬盘！！！
+
+---
+
+## 使用更少的磁盘
+
+### 为2-way merge sort使用两个磁盘
+
+最聪明的做法是设计斐波那契数。
+
+!!! "runs"
+    runs可以理解为排好序的一组数据
+
+!!! success "Smart Spilt"
+    通过尝试将每个硬盘里的runs个数设为斐波那契数，可以使得最后的Passes数目最少。
+    === "Step1"
+        ![](../../image/i86.png)
+    === "Step2"
+        ![](../../image/i87.png)
+    === "Step3"
+        ![](../../image/i88.png)
+    === "Step4"
+        ![](../../image/i89.png)
+    === "Step5"
+        ![](../../image/i90.png)
+    === "Step6"
+        ![](../../image/i91.png)
+    === "Step7"
+        ![](../../image/i92.png)
+    === "Step8"
+        ![](../../image/i93.png)
+    === "Step9"
+        ![](../../image/i94.png)
+
+---
+
+我们得出结论:
+
+对于`k`-way merge sort，最好的方法是把runs的数目分别分割为`k`阶斐波那契数。
+
+!!! definition "k阶斐波那契数"
+    $$
+    F_N^k = F_{N-1}^k + F_{N-2}^k + \cdots + F_{N-k}^k
+
+    F_N^k = \begin{cases}
+    0 & N = 1, 2, \cdots, k-2 \\
+    1 & N = k-1 \\
+    F_{N-1}^k + F_{N-2}^k + \cdots + F_{N-k}^k & N > k
+    \end{cases}
+
+    也不难发现我们平常说的斐波那契数就是2阶斐波那契数。
+
+在这样的情况下，只需要`k`+1个硬盘。
+
+
+---
+
+## How to handle the buffers for parallel operation?
+
+给出结论:对于k-way merge sort，我们需要2k个input buffers和2个output buffer。
+
+k的增大也不一定是好事，它会导致seek time的增加，所以我们需要权衡。
+
+<div align="center">
+    <a class="glightbox" href="../../../image/i95.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i95.png" width="80%"></a>
 </div>
-<div class="tabbed-block">
-<p><a class="glightbox" href="../../../image/i15.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i15.png" /></a></p>
-<details class="general">
-<summary>解析</summary>
-<p>F.</p>
-<div class="arithmatex">\[
-\rho_1=\frac{C_2}{C_2^*}=\frac{T}{T^*}=2,\quad
-\rho_2=\frac{C_1^*}{C_1}=\frac{|V|-T^*}{|V|-T}=1+\frac{1}{\dfrac{|V|}{T^*}-2}
-\]</div>
-<p>因此，clique的<span class="arithmatex">\(\rho_2\)</span>不一定是2</p>
-</details>
-</div>
-<div class="tabbed-block">
-<p><a class="glightbox" href="../../../image/i16.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i16.png" /></a></p>
-<details class="general">
-<summary>解析</summary>
-<p>C.试试看0.2,0.9,0.2,0.9的item.</p>
-<p>对于D，如果有两个bin的剩余容量大于一般，根据First Fit的原则，无论后一个bin里有几个item,都必然在选择是会选择前一个bin放进去。</p>
-</details>
-</div>
-<div class="tabbed-block">
-<p><a class="glightbox" href="../../../image/i17.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i17.png" /></a></p>
-<details class="general">
-<summary>解析</summary>
-<p><div style="text-align:center;">
-    <a class="glightbox" href="../../../image/ads_hw_11.1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/ads_hw_11.1.png" alt="11.1" style="margin: 0 auto; zoom: 80%;"/></a>
-</div></p>
-</details>
-</div>
-<div class="tabbed-block">
-<p><a class="glightbox" href="../../../image/i18.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i18.png" /></a></p>
-<details class="general">
-<summary>解析</summary>
-<p>看不懂???</p>
-</details>
-</div>
-</div>
-</div>
-</div>
+
+## Replacement selection
+
+思考，runs的个数是不是一定受内存限制?
+
+如果使用 -->
 
 
 
@@ -2705,7 +2133,7 @@ r(C) = \max_i \text{dist}(s_i, C) = \text{最小覆盖半径}
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../np/" class="md-footer__link md-footer__link--prev" aria-label="上一页: NP Completeness">
+          <a href="../parall/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 并发计算">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2715,20 +2143,20 @@ r(C) = \max_i \text{dist}(s_i, C) = \text{最小覆盖半径}
                 上一页
               </span>
               <div class="md-ellipsis">
-                NP Completeness
+                并发计算
               </div>
             </div>
           </a>
         
         
           
-          <a href="../localsearch/" class="md-footer__link md-footer__link--next" aria-label="下一页: 局部搜索">
+          <a href="../resource/" class="md-footer__link md-footer__link--next" aria-label="下一页: 课程资源">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                局部搜索
+                课程资源
               </div>
             </div>
             <div class="md-footer__button md-icon">
