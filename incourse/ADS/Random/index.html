@@ -2197,7 +2197,7 @@ N (\frac{3}{4})^{j+1} \leq |S| \leq N (\frac{3}{4})^{j}
 E(T_{type j}) = O(N (\frac{3}{4})^{j}) \times (\frac{4}{3})^{j+1} = O(N)
 \]</div>
 <p>而总共有多少个j可以取呢？我们可以知道，当|S|=1时循环终止，因此<span class="arithmatex">\(N (\frac{3}{4})^{j} \geq 1\)</span></p>
-<p>故一共<span class="arithmatex">\(\log_{\frac{3}{4}} N\)</span>个j</p>
+<p>故一共<span class="arithmatex">\(\log_{\frac{4}{3}} N\)</span>个j</p>
 <p>所以这种快排算法的时间复杂度就是:</p>
 <div class="arithmatex">\[\begin{align}
 T_{\text{type j}} \times \text{number of j} &amp;= O(N) \times O(\log N)\\
