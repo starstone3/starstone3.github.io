@@ -166,6 +166,10 @@ ConfigType State_flipping()
         ![](../../image/i27.png)
         ??? general "解析"
             F.反例见[此](https://zhoutimemachine.github.io/note/courses/ads-hw-review/#hw12)
+
+            其实，这里的局部搜索的问题就在于它可能会将两个很近的点划分到不同的set当中，因为一开始的$c_i$是随机落点的，所以这个问题是有可能发生的。而这种情况得到的距离肯定是远大于最优解的。
+
+            设想有一个长方形，长边无限长，短边无限短，四个点分别在四个角上，很显然最优解的圆心肯定在短边上，但如果一开始的随机的圆心落到了长边的中点，那就寄了。
     === "T3"
         ![](../../image/i28.png)
         ??? general "解析"
