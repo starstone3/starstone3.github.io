@@ -181,8 +181,9 @@ k的增大也不一定是好事，它会导致seek time的增加，所以我们�
         ![](../../image/i100.png)
         ??? general "解答"
             B。根据公式:
+
             $$
-            \text{Number of Passes} = 1 + \lceil\log_K {N/M}\rceil = 1 + \lceil\log_2 {2^8 * 10^8/2^27}\rceil = 1 + 8 = 9
+            \text{Number of Passes} = 1 + \lceil\log_K {N/M}\rceil = 1 + \lceil\log_2 {2^8 * 10^8/2^{27}}\rceil = 1 + 8 = 9
             $$
     
     === "T6"
