@@ -1,6 +1,11 @@
+// ...existing code...
 document.querySelectorAll("pre code").forEach((codeBlock) => {
-    const lines = codeBlock.textContent.split("\n").slice(0, -1); // 删除最后一个空行
+    const lines = codeBlock.textContent.split("\n");
+    if (lines[lines.length - 1].trim() === "") {
+        lines.pop(); // 仅在最后一行空白时再删除
+    }
     codeBlock.innerHTML = lines
-        .map((line) => `<div>${line || " "}</div>`) // 包裹每行，保留空行
-        .join(""); // 将它们拼接回 HTML 中
+        .map((line) => `<div style="white-space: pre;">${line || " "}</div>`)
+        .join("");
 });
+// ...existing code...
