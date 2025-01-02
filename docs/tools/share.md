@@ -18,7 +18,7 @@ comments : true
 
 + <a href="https://starstone3.github.io/smaterials/光速测量.pdf" download="光速测量.pdf">光速测量</a> 最终得分:91
 
-+ <a href="https://starstone3.github.io/smaterials/传感器设计与应用实验.pdf" download="传感器设计与应用实验.pdf">传感器设计与应用实验</a> 最终得分:
++ <a href="https://starstone3.github.io/smaterials/传感器设计与应用实验.pdf" download="传感器设计与应用实验.pdf">传感器设计与应用实验</a> 最终得分: 87,评语：计算结果有效数字位数过多-3，思考题1，2回答不对-5，**很不推荐**
 
 + <a href="https://starstone3.github.io/smaterials/光刻工艺实验.pdf" download="光刻工艺实验.pdf">光刻工艺实验</a> 最终得分:93
 
