@@ -21,5 +21,5 @@ statistics : true
 
 + <a href="https://starstone3.github.io/smaterials/yy_mid.zip" download="yy_mid.zip">yy_mid.zip</a>
 
-.
+
 + <a href="https://starstone3.github.io/smaterials/期末资源.zip" download="期末资源.zip">期末资源汇总</a>
