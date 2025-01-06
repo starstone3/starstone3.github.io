@@ -29,3 +29,7 @@ comments : true
 + <a href="https://starstone3.github.io/smaterials/labview虚拟仿真实验.pdf" download="labview虚拟仿真实验.pdf">labview虚拟仿真实验</a> 最终得分:92
 
 + <a href="https://starstone3.github.io/smaterials/热敏电阻与热电偶温度特性研究.pdf" download="热敏电阻与热电偶温度特性研究.pdf">热敏电阻与热电偶温度特性研究</a> 最终得分:96
+
+## 普通物理学II（H）
+
++ <a href="https://starstone3.github.io/smaterials/physicsII.pdf" download="physicsII.pdf">电磁部分笔记</a>
