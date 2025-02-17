@@ -103,6 +103,7 @@ nav :
       - "Chapter 6:Storage, Networks and Other Peripherals": incourse/Comcompose/Ch6.md
     - "数据库系统":
       - incourse/db/index.md
+      - "Chapter 1:Introduction": incourse/db/ch1.md
     - "OOP":
       - incourse/oop/index.md
   - "大一课程遗物":
@@ -171,7 +172,7 @@ plugins:
   - glightbox
   - git-revision-date-localized:
       enable_creation_date: true
-      enabled: true
+      enabled: false
       # type: timeago
       exclude:
         - index.md
