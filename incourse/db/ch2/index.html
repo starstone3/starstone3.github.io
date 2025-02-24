@@ -1474,7 +1474,7 @@
           <li class="md-nav__item">
   <a href="#projectpi" class="md-nav__link">
     <span class="md-ellipsis">
-      Project:\(\pi\)
+      Project:\(\Pi\)
     </span>
   </a>
   
@@ -1571,6 +1571,33 @@
   <a href="#半连接操作" class="md-nav__link">
     <span class="md-ellipsis">
       半连接操作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      NULL Values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assignment-leftarrow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assignment: \(\leftarrow\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#division-div" class="md-nav__link">
+    <span class="md-ellipsis">
+      Division: \(\div\)
     </span>
   </a>
   
@@ -2514,7 +2541,7 @@
           <li class="md-nav__item">
   <a href="#projectpi" class="md-nav__link">
     <span class="md-ellipsis">
-      Project:\(\pi\)
+      Project:\(\Pi\)
     </span>
   </a>
   
@@ -2611,6 +2638,33 @@
   <a href="#半连接操作" class="md-nav__link">
     <span class="md-ellipsis">
       半连接操作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      NULL Values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assignment-leftarrow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assignment: \(\leftarrow\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#division-div" class="md-nav__link">
+    <span class="md-ellipsis">
+      Division: \(\div\)
     </span>
   </a>
   
@@ -2742,8 +2796,8 @@
     <div align="center">
     <a class="glightbox" href="../../../image/i112.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i112.png" width="60%"></a>
     </div></p>
-<h4 id="projectpi">Project:<span class="arithmatex">\(\pi\)</span><a class="headerlink" href="#projectpi" title="Permanent link">&para;</a></h4>
-<p>投影操作，选择满足条件的属性。表示为<span class="arithmatex">\(\pi_{attribute}(relation)\)</span>。例如：<span class="arithmatex">\(\pi_{name, dept_name}(instructor)\)</span>, 选择出<code>name</code>和<code>dept_name</code>属性,组成一个新的关系。</p>
+<h4 id="projectpi">Project:<span class="arithmatex">\(\Pi\)</span><a class="headerlink" href="#projectpi" title="Permanent link">&para;</a></h4>
+<p>投影操作，选择满足条件的属性。表示为<span class="arithmatex">\(\Pi_{attribute}(relation)\)</span>。例如：<span class="arithmatex">\(\Pi_{name, dept_name}(instructor)\)</span>, 选择出<code>name</code>和<code>dept_name</code>属性,组成一个新的关系。</p>
 <div align="center">
     <a class="glightbox" href="../../../image/i113.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i113.png" width="60%"></a>
     </div>
@@ -2759,7 +2813,7 @@
 </li>
 </ol>
 <p>例如，要找到所以2009年秋学期与2010年春学期的课，可以这样写：</p>
-<p><span class="arithmatex">\(\pi_{course_id}(\sigma_{semester='Fall' \land year=2009}(section)) \cup \pi_{course_id}(\sigma_{semester='Spring' \land year=2010}(section))\)</span></p>
+<p><span class="arithmatex">\(\Pi_{course_id}(\sigma_{semester='Fall' \land year=2009}(section)) \cup \Pi_{course_id}(\sigma_{semester='Spring' \land year=2010}(section))\)</span></p>
 <div align="center">
     <a class="glightbox" href="../../../image/i114.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i114.png" width="60%"></a>
     </div>
@@ -2767,7 +2821,7 @@
 <h4 id="set-difference-">Set Difference:<span class="arithmatex">\(-\)</span><a class="headerlink" href="#set-difference-" title="Permanent link">&para;</a></h4>
 <p>差操作，返回两个关系的差集。</p>
 <p>例如，要找到所有2009年秋学期但不是2010年春学期的课，可以这样写：</p>
-<p><span class="arithmatex">\(\pi_{course_id}(\sigma_{semester='Fall' \land year=2009}(section)) - \pi_{course_id}(\sigma_{semester='Spring' \land year=2010}(section))\)</span></p>
+<p><span class="arithmatex">\(\Pi_{course_id}(\sigma_{semester='Fall' \land year=2009}(section)) - \Pi_{course_id}(\sigma_{semester='Spring' \land year=2010}(section))\)</span></p>
 <div align="center">
     <a class="glightbox" href="../../../image/i115.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i115.png" width="60%"></a>
     </div>
@@ -2814,7 +2868,7 @@
     R \cap S = R - (R - S)
     \]</div>
 <h4 id="natural-joinbowtie">Natural Join:<span class="arithmatex">\(\bowtie\)</span><a class="headerlink" href="#natural-joinbowtie" title="Permanent link">&para;</a></h4>
-<p>自然连接操作，返回两个关系的连接。自然连接是一种特殊的笛卡尔积，它只返回那些在连接属性(<span class="arithmatex">\(R \cup S\)</span>)上相等的元组。自然连接满足结合律和交换律。</p>
+<p>自然连接操作，返回两个关系的连接。自然连接是一种特殊的笛卡尔积，它只返回那些在连接属性(<span class="arithmatex">\(R \cap S\)</span>)上相等的元组。自然连接满足结合律和交换律。</p>
 <h4 id="theta-jion">Theta Jion<a class="headerlink" href="#theta-jion" title="Permanent link">&para;</a></h4>
 <p>在自然连接的基础上加上一个条件。</p>
 <p>写作：</p>
@@ -2829,26 +2883,25 @@
     </div>
 
 <ol>
-<li>Left Outer Join: 返回左关系的所有元组，同时返回那些在连接属性上不相等的右关系的元组。</li>
+<li>
+<p>Left Outer Join: 返回左关系的所有元组，同时返回那些在连接属性上不相等的右关系的元组。</p>
+<p><div align="center">
+<a class="glightbox" href="../../../image/i118.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i118.png" width="60%"></a>
+</div></p>
+</li>
+<li>
+<p>Right Outer Join: 返回右关系的所有元组，同时返回那些在连接属性上不相等的左关系的元组。</p>
+<p><div align="center">
+<a class="glightbox" href="../../../image/i119.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i119.png" width="60%"></a>
+</div></p>
+</li>
+<li>
+<p>Full Outer Join: 返回两个关系的所有元组，同时返回那些在连接属性上不相等的元组。</p>
+<p><div align="center">
+<a class="glightbox" href="../../../image/i120.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i120.png" width="60%"></a>
+</div></p>
+</li>
 </ol>
-<div align="center">
-    <a class="glightbox" href="../../../image/i118.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i118.png" width="60%"></a>
-    </div>
-
-<ol>
-<li>Right Outer Join: 返回右关系的所有元组，同时返回那些在连接属性上不相等的左关系的元组。</li>
-</ol>
-<div align="center">
-    <a class="glightbox" href="../../../image/i119.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i119.png" width="60%"></a>
-    </div>
-
-<ol>
-<li>Full Outer Join: 返回两个关系的所有元组，同时返回那些在连接属性上不相等的元组。</li>
-</ol>
-<div align="center">
-    <a class="glightbox" href="../../../image/i120.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i120.png" width="60%"></a>
-    </div>
-
 <details class="tips">
 <summary>外连接的表示？</summary>
 <p><a class="glightbox" href="../../../image/i121.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i121.png" /></a></p>
@@ -2872,9 +2925,8 @@
     <a class="glightbox" href="../../../image/i122.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i122.png" width="60%"></a>
     </div>
 
-<ol>
-<li>
-<p>NULL Values.与Null的比较会得到一个新的布尔值：Unknown。</p>
+<h4 id="null-values">NULL Values<a class="headerlink" href="#null-values" title="Permanent link">&para;</a></h4>
+<p>与Null的比较会得到一个新的布尔值：Unknown。</p>
 <ol>
 <li>
 <p>Or: True or Unknown = True, False or Unknown = Unknown, Unknown or Unknown = Unknown.</p>
@@ -2886,28 +2938,22 @@
 <p>Not: Not Unknown = Unknown.</p>
 </li>
 </ol>
-</li>
-<li>
-<p>Assignment: <span class="arithmatex">\(\leftarrow\)</span>, 赋值操作，将一个关系赋值给一个变量。</p>
-</li>
-</ol>
+<h4 id="assignment-leftarrow">Assignment: <span class="arithmatex">\(\leftarrow\)</span><a class="headerlink" href="#assignment-leftarrow" title="Permanent link">&para;</a></h4>
+<p>赋值操作，将一个关系赋值给一个变量。</p>
 <p>例如：</p>
 <div class="arithmatex">\[
-    R \leftarrow \sigma_{dept_name='Finance'}(instructor)
-    \]</div>
+R \leftarrow \sigma_{dept_name='Finance'}(instructor)
+ \]</div>
 <p>这个操作将选择出<code>dept_name</code>为<code>Finance</code>的元组，并将其赋值给变量<code>R</code>。</p>
-<ol>
-<li>
-<p>Division: <span class="arithmatex">\(\div\)</span>, 除法操作，返回两个关系的商。</p>
+<h4 id="division-div">Division: <span class="arithmatex">\(\div\)</span><a class="headerlink" href="#division-div" title="Permanent link">&para;</a></h4>
+<p>除法操作，返回两个关系的商。</p>
 <div class="admonition definition">
 <p class="admonition-title">商的定义</p>
 <p>给定关系 r(R) 和 s(S)，其中 S 是 R 的子集，r <span class="arithmatex">\(\div\)</span> s 是满足以下条件的最大关系 t(R-S)：</p>
 </div>
 <div class="arithmatex">\[
-    t \times s \subseteq r
-    \]</div>
-</li>
-</ol>
+t \times s \subseteq r
+\]</div>
 <p>简单来说，关系 <code>r</code> 除以关系 <code>s</code> 的结果是一个关系 <code>t</code>，<code>t</code> 包含 <code>r</code> 中所有与 <code>s</code> 中的元组组合后仍然在 <code>r</code> 中的元组。</p>
 <p>除法可以使用如下的公式表示：</p>
 <div class="arithmatex">\[
@@ -2939,7 +2985,7 @@
 <h4 id="generalized-projection">Generalized Projection<a class="headerlink" href="#generalized-projection" title="Permanent link">&para;</a></h4>
 <p>在投影操作中允许使用表达式。</p>
 <p>例如：</p>
-<p><span class="arithmatex">\(\pi_{name, salary*1.1}(instructor)\)</span></p>
+<p><span class="arithmatex">\(\Pi_{name, salary*1.1}(instructor)\)</span></p>
 <h4 id="aggregation">Aggregation<a class="headerlink" href="#aggregation" title="Permanent link">&para;</a></h4>
 <p>聚合操作用于对关系中的元组进行汇总计算。它可以分为两种情况：</p>
 <ol>
