@@ -104,8 +104,11 @@ nav :
     - "数据库系统":
       - incourse/db/index.md
       - "Chapter 1:Introduction": incourse/db/ch1.md
+      - "Chapter 2:关系数据模型": incourse/db/ch2.md
     - "OOP":
       - incourse/oop/index.md
+    - "计算机体系结构":
+      - incourse/CA/index.md
   - "大一课程遗物":
     - incourse/old/index.md
     - "数据结构基础": incourse/old/fds.md
