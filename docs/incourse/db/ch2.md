@@ -90,9 +90,9 @@ comments : true
     </div>
 
 
-#### Project:$\pi$
+#### Project:$\Pi$
     
-投影操作，选择满足条件的属性。表示为$\pi_{attribute}(relation)$。例如：$\pi_{name, dept_name}(instructor)$, 选择出`name`和`dept_name`属性,组成一个新的关系。
+投影操作，选择满足条件的属性。表示为$\Pi_{attribute}(relation)$。例如：$\Pi_{name, dept_name}(instructor)$, 选择出`name`和`dept_name`属性,组成一个新的关系。
     
 <div align="center">
     <img src="../../../image/i113.png" width="60%">
@@ -108,7 +108,7 @@ comments : true
 
 例如，要找到所以2009年秋学期与2010年春学期的课，可以这样写：
 
-$\pi_{course_id}(\sigma_{semester='Fall' \land year=2009}(section)) \cup \pi_{course_id}(\sigma_{semester='Spring' \land year=2010}(section))$
+$\Pi_{course_id}(\sigma_{semester='Fall' \land year=2009}(section)) \cup \Pi_{course_id}(\sigma_{semester='Spring' \land year=2010}(section))$
 
 <div align="center">
     <img src="../../../image/i114.png" width="60%">
@@ -120,7 +120,7 @@ $\pi_{course_id}(\sigma_{semester='Fall' \land year=2009}(section)) \cup \pi_{co
 
 例如，要找到所有2009年秋学期但不是2010年春学期的课，可以这样写：
 
-$\pi_{course_id}(\sigma_{semester='Fall' \land year=2009}(section)) - \pi_{course_id}(\sigma_{semester='Spring' \land year=2010}(section))$
+$\Pi_{course_id}(\sigma_{semester='Fall' \land year=2009}(section)) - \Pi_{course_id}(\sigma_{semester='Spring' \land year=2010}(section))$
 
 <div align="center">
     <img src="../../../image/i115.png" width="60%">
@@ -181,7 +181,7 @@ $$
 
 #### Natural Join:$\bowtie$
 
-自然连接操作，返回两个关系的连接。自然连接是一种特殊的笛卡尔积，它只返回那些在连接属性($R \cup S$)上相等的元组。自然连接满足结合律和交换律。
+自然连接操作，返回两个关系的连接。自然连接是一种特殊的笛卡尔积，它只返回那些在连接属性($R \cap S$)上相等的元组。自然连接满足结合律和交换律。
 
 #### Theta Jion
 
@@ -204,19 +204,19 @@ $$
 
 1. Left Outer Join: 返回左关系的所有元组，同时返回那些在连接属性上不相等的右关系的元组。
 
-<div align="center">
+    <div align="center">
     <img src="../../../image/i118.png" width="60%">
     </div>
 
 2. Right Outer Join: 返回右关系的所有元组，同时返回那些在连接属性上不相等的左关系的元组。
 
-<div align="center">
+    <div align="center">
     <img src="../../../image/i119.png" width="60%">
     </div>
 
 3. Full Outer Join: 返回两个关系的所有元组，同时返回那些在连接属性上不相等的元组。
 
-<div align="center">
+    <div align="center">
     <img src="../../../image/i120.png" width="60%">
     </div>
 
@@ -241,33 +241,39 @@ $$
     <img src="../../../image/i122.png" width="60%">
     </div>
 
-5. NULL Values.与Null的比较会得到一个新的布尔值：Unknown。
+#### NULL Values
 
-    1. Or: True or Unknown = True, False or Unknown = Unknown, Unknown or Unknown = Unknown.
+与Null的比较会得到一个新的布尔值：Unknown。
 
-    2. And: True and Unknown = Unknown, False and Unknown = False, Unknown and Unknown = Unknown.
+1. Or: True or Unknown = True, False or Unknown = Unknown, Unknown or Unknown = Unknown.
 
-    3. Not: Not Unknown = Unknown.
+2. And: True and Unknown = Unknown, False and Unknown = False, Unknown and Unknown = Unknown.
 
-6. Assignment: $\leftarrow$, 赋值操作，将一个关系赋值给一个变量。
+3. Not: Not Unknown = Unknown.
+
+#### Assignment: $\leftarrow$
+
+赋值操作，将一个关系赋值给一个变量。
 
 例如：
 
 $$
-    R \leftarrow \sigma_{dept_name='Finance'}(instructor)
-    $$
+R \leftarrow \sigma_{dept_name='Finance'}(instructor)
+ $$
 
 这个操作将选择出`dept_name`为`Finance`的元组，并将其赋值给变量`R`。
 
 
-7. Division: $\div$, 除法操作，返回两个关系的商。
+#### Division: $\div$
 
-    !!! definition "商的定义"
-        给定关系 r(R) 和 s(S)，其中 S 是 R 的子集，r $\div$ s 是满足以下条件的最大关系 t(R-S)：
+除法操作，返回两个关系的商。
+
+!!! definition "商的定义"
+    给定关系 r(R) 和 s(S)，其中 S 是 R 的子集，r $\div$ s 是满足以下条件的最大关系 t(R-S)：
         
-    $$
-        t \times s \subseteq r
-        $$
+$$
+t \times s \subseteq r
+$$
 
 简单来说，关系 `r` 除以关系 `s` 的结果是一个关系 `t`，`t` 包含 `r` 中所有与 `s` 中的元组组合后仍然在 `r` 中的元组。
 
@@ -307,7 +313,7 @@ $$
 
 例如：
 
-$\pi_{name, salary*1.1}(instructor)$
+$\Pi_{name, salary*1.1}(instructor)$
 
 #### Aggregation
 
