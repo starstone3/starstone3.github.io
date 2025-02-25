@@ -109,6 +109,7 @@ nav :
       - incourse/oop/index.md
     - "计算机体系结构":
       - incourse/CA/index.md
+      - "Chapter 1": incourse/CA/Ch1.md
   - "大一课程遗物":
     - incourse/old/index.md
     - "数据结构基础": incourse/old/fds.md
@@ -152,12 +153,12 @@ extra:
       title: 此页面有帮助吗？
       ratings:
         - icon: material/thumb-up-outline #图标可自定义
-          name: This page was helpful
+          name: 这玩意有点用
           data: 1
           note: >-
             谢谢你的反馈！
         - icon: material/thumb-down-outline
-          name: This page could be improved
+          name: 这玩意真有用吗
           data: 0
           note: >-
             呜呜呜，别骂了别骂了，请联系我！
@@ -175,7 +176,7 @@ plugins:
   - glightbox
   - git-revision-date-localized:
       enable_creation_date: true
-      enabled: false
+      enabled: true
       # type: timeago
       exclude:
         - index.md
