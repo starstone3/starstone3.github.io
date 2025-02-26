@@ -176,7 +176,7 @@ plugins:
   - glightbox
   - git-revision-date-localized:
       enable_creation_date: true
-      enabled: true
+      enabled: false
       # type: timeago
       exclude:
         - index.md

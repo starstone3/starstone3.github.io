@@ -169,6 +169,15 @@ $\sigma_{instructor.ID=teaches.ID}(instructor \times teaches)$
         \rho_{professor(instructor_id, name)}(instructor)
     $$
 
+#### Example
+
+!!! note "🌰"
+    === "T1"
+        ??? general "Find the names of all instructors in the Physics department, along with the course_id of all courses they have taught"
+
+            $\Pi_{instructor.name,course\text{_}id}(\sigma_{dept\text{_}name="Physics"}(\sigma_{instructor.id=teaches.id}(instructor \times teaches)))$
+
+
 ### Additional Operations
 
 #### Intersection:$\cap$
@@ -354,5 +363,5 @@ $\Pi_{name, salary*1.1}(instructor)$
 在这个例子中，`dept_name` 是分组属性，`AVG(salary)` 是聚合函数。结果将包含每个部门的名称以及该部门教师的平均工资。
 
 <div align="center">
-    <img src="../../../image/i123.png" width="60%">
+    <img src="../../../image/i123.png" width="80%">
     </div>

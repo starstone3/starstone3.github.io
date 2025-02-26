@@ -28,6 +28,8 @@ comments: true
 
 集群计算是指将多台计算机连接在一起，以共同完成一个任务。这种计算方式通常用于高性能计算，如科学计算，数据分析等。
 
+---
+
 ## 并发的种类与结构
 
 通常，在应用上有两种并发：
@@ -58,6 +60,8 @@ Flynn将计算机分为四类：
 
 4. MIMD(Multiple Instruction, Multiple Data)：多指令多数据，即多核处理器。每个处理器获得自己的数据并执行自己的指令。
 
+---
+
 ## ISA
 
 ISA(Instruction Set Architecture)是指令集架构，是计算机硬件与软件之间的接口。ISA定义了计算机的指令集，寄存器，内存模型等。在计算机组成与本课程中，我们使用的ISA都是RISC-V，这是一个开源的ISA,由伯克利大学开发。
@@ -67,3 +71,127 @@ RISC-V是32位的，有32个通用寄存器，使用load/store指令访问内存
 !!! note "指令说明（和计组中的一样）"
     ![](../../image/i124.png)
 
+## Performance
+
+### Bandwidth over Latency
+
+我们使用两个指标来度量性能：
+
+1. Latency(Response Time)：延迟，即完成一个任务所需的时间。
+
+2. Throughput(Bandwidth)：吞吐量，即单位时间内完成的任务数量。
+
+它们的关系如下图所示：
+
+<div align="center">
+    <img src="../../../image/i125.png" width="60%">
+    </div>
+
+---
+
+### Scaling of Transistor Performance and Wires
+
+
+!!! definition "集成电路处理器的特征尺寸"
+    特征尺寸(Feature Size)是指晶体管在X和Y方向上的最小尺寸。
+
+特征尺寸越小,，晶体管的数量就越多，性能就越高。
+
+然而,当特征尺寸减小时,线路会变得更短,带来的是更糟糕的电阻与电容
+
+
+---
+
+## Trends in Power and Energy in Integrated Circuits
+
+当我们比较两个处理器的效率时,不应该比较它们的平均功率,而应该比较它们在同一任务上的能量消耗.因为功率更大的处理器可能在同一任务上更快,从而消耗更少的能量.
+
+### Energy and Power Within a Microprocessor
+
++ dynamic energy:用来转换晶体管状态的能量
+
+    - 如果脉冲是$0 \rightarrow 1 \rightarrow 0$或者$1 \rightarrow 0 \rightarrow 1$,那么:
+
+        $$
+        Energy_{dynamic} \propto Capacitive load \times Voltage^2 
+        $$
+
+    - 如果脉冲是$0 \rightarrow 1 \rightarrow 0$或者$1 \rightarrow 0 \rightarrow 1$,那么:
+
+        $$
+        Energy_{dynamic} \propto Capacitive load \times Voltage^2 \times \frac{1}{2}
+        $$
+    
++ power:功率是单位时间内消耗的能量
+
+    $$
+    Power_{dynamic} \propto Capacitive load \times Voltage^2 \times \frac{1}{2} \times Switech\text{_}Frequency
+    $$
+
+    对于一个固定的任务,降低时钟频率可以降低功率,但不会减少总的能量消耗.所以,超频有风险.
+
+    但是很显然,降低电压可以显著减少能量与功率,所以近些年的处理器都在努力降低电压.
+
++ Static Energy:
+    能量泄露导致的损耗.
+
+---
+
+
+为了提高能量效率,同时保持时钟频率与电压稳定,有如下技术:
+
+1. Do nothing well:将不活跃的模块关闭,来节约能量
+
+2. Dynamic voltage-frequency scaling (DVFS): 在低活跃状态下降低时钟频率和电压
+
+3. Design for the typical case: 对于笔记本等经常空闲的设备,设置待机状态
+
+4. Overclocking:超频,让芯片更猛,直到温度太高
+
+### Trends in Cost
+
+#### 时间,产量与商业化的影响
+
++ 时间:即使工艺没有改进,制造计算机的成本也会随着时间流逝而下降
+
+    + 学习曲线(Learning Curve):制造成本随时间下降的曲线
+
+    + 学习曲线可通过产出(yield)测量
+
++ 产量:产量的提高会降低成本
+
+    - 减少了走完学习曲线(积累经验)所需的时间，因为学习曲线部分与制造的系统(或芯片)数量成正比
+
+    - 产量的提高会提高购买与制造效率.
+    
+    - 减少了每台计算机必须摊销的开发成本量，从而使成本和销售价格更加接近并仍然获利。
+
++ 商业化:供应商的竞争会导致成本降低.
+
+#### Cost of an Integrated Circuit
+
+集成电路的成本计算公式为：
+
+$$
+\text{Cost of integrated circuit}=\frac{\text{Cost of die} + \text{Cost of testing die} + \text{Cost of packaging and final test}}{\text{Final test yield}}
+​$$
+
+每个晶片(die)的成本为:
+
+$$
+\text{Cost of die}=\frac{\text{Cost of wafer}}{\text{Dies per wafer}\times\text{Die yield}}
+​$$
+
+而一个晶圆(wafer)上的晶片数目为:
+
+$$
+\text{Dies per wafer}=\frac{\pi\times(\frac{\text{Wafer diameter}}{2})^2}{\text{Die area}}−\frac{\pi\times\text{Wafer diameter}}{\sqrt{2\times\text{Die area}}}​
+$$
+
+当然,一个晶圆上的晶片并不都是合格的,我们假设缺陷随机分布于晶圆上,且产量与制造过程的复杂性成反比,有如下公式:
+
+$$
+\text{Die yield}=\text{Wafer yield}\times\frac{1}{(1+\text{Defects per unit area}\times\text{Die area})^N}​
+$$
+
+这里的Die yield指的是好的晶片产出,N是process-complexity factor(过程复杂性因子),衡量制造的困难程度.
