@@ -107,6 +107,8 @@ nav :
       - "Chapter 2:关系数据模型": incourse/db/ch2.md
     - "OOP":
       - incourse/oop/index.md
+      - "Chapter 1:Introduction": incourse/oop/intro.md
+      - "Chapter 2:类与对象": incourse/oop/class.md
     - "计算机体系结构":
       - incourse/CA/index.md
       - "Chapter 1": incourse/CA/Ch1.md
