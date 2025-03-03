@@ -105,6 +105,7 @@ nav :
       - incourse/db/index.md
       - "Chapter 1:Introduction": incourse/db/ch1.md
       - "Chapter 2:关系数据模型": incourse/db/ch2.md
+      - "Chapter 3:SQL介绍": incourse/db/ch3.md
     - "OOP":
       - incourse/oop/index.md
       - "Chapter 1:Introduction": incourse/oop/intro.md
