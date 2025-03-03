@@ -246,6 +246,22 @@ where condition
 
 SQL查询语句的结果是一个关系
 
+### SQL语句的执行顺序
+
+1. FROM：确定数据来源
+
+2. WHERE：根据条件过滤原始表中的行
+
+3. GROUP BY：将数据按指定列进行分组
+
+4. HAVING：根据条件过滤分组后的结果
+
+5. SELECT：选择最终要返回的列
+
+6. ORDER BY：对结果进行排序
+
+7. LIMIT：限制返回的行数
+
 ### Select Clause(选择子句)
 
 Select语句与第二章中的projection操作相当
@@ -479,7 +495,6 @@ limit n
 
 limit也可以接受两个参数,表示返回的元组的起始位置和数量.
 
-### Duplicates
 
 ### Set Operations
 
@@ -511,3 +526,487 @@ from instructor
 where salary is null
 ```
 
+### Aggregate Functions
+
+正如关系代数中的`aggregate`操作一样,SQL中也有一些聚合函数,用于对一组值进行计算,返回一个单一的值，包括：
+
+1. count(x) - 计算x的个数
+
+2. sum(x) - 计算x的和
+
+3. avg(x) - 计算x的平均值
+
+4. min(x) - 计算x的最小值
+
+5. max(x) - 计算x的最大值
+
+!!! example 
+    === "🌰1"
+        Find the average salary of instructors in the Computer Science department 
+
+        ``` sql
+        select avg(salary)
+        from instructor
+        where dept_name = 'Comp. Sci.'
+        ```
+    === "🌰2"
+        Find the total number of instructors who teach a course in the Spring 2010 semester
+        ``` sql
+        select count(distinct ID)
+        from teaches
+        where semester = 'Spring' and year = 2010
+        ```
+    === "🌰3"
+        Find the number of tuples in the course relation
+        ``` sql
+        select count(*)
+        from course
+        ```
+
+#### group by
+group by子句用于将查询结果分组,其基本格式为:
+
+``` sql
+select select-list
+from table-list
+where condition
+group by group-list
+```
+
+例如,在
+``` sql
+select dept_name, avg(salary)
+from instructor
+group by dept_name
+```
+执行后,结果为
+
+<div align="center">
+    <img src="../../../image/i123.png" width="80%">
+    </div>
+
+!!! warning
+    Attributes in select clause outside of aggregate functions must appear in group by list
+
+    ```sql title="erroneous code"
+        select dept_name, ID, avg (salary)
+        from instructor
+        group by dept_name;
+    ```
+
+    其中ID没有包裹在group by中,这会导致数据库不知道应该从哪一组选取结果
+
+
+#### Having clause
+
+having子句用于对分组后的结果进行过滤,其基本格式为:
+
+``` sql
+select select-list
+from table-list
+where condition
+group by group-list
+having having-condition
+```
+
+例如,在
+``` sql
+select dept_name, avg(salary)
+from instructor
+group by dept_name
+having avg (salary) > 42000;
+```
+
+这段代码的目的是根据系别将教师名单分组，并选出平均工资大于42000的系。
+
+当`having`与`where`语句同时存在时，`having`语句会晚于`where`语句执行,相当于`where`语句提前作一遍过滤
+
+```sql
+select dept_name, count (*) as cnt
+from instructor
+where  salary >=100000
+group by dept_name
+having  count (*) > 10
+order by cnt;
+```
+
+#### Null Values and Aggregates
+
+除了`count`以外,所有的聚合函数都会忽略在聚合属性上是`NULL`的元组
+
+当所有数据均为`NULL`时
+
++ `count`返回0
+
++ 其他函数返回`NULL`
+
+#### Arithmetric expression with Aggregate functions
+
+为找到没有重名学生的系:
+
+```sql
+select dept_name
+from student
+group by dept_name
+having count(distinct name) = count(id)
+```
+
+!!! example "What is the meaning of the following statement ?"
+
+    ```sql
+    select dept_name
+    from student
+    group by dept_name
+    having 1-count(distinct name)/ count(id)<0.001 ;
+    ```
+
+    ??? general "解释"
+        很显然是找重名学生比例低于0.001的部门
+
+
+### Nested Queries(嵌套查询)
+
+嵌套查询是指在一个查询中嵌套另一个查询,即在一个查询的`select`、`from`、`where`子句中嵌套另一个查询
+
+嵌套查询有三种作用：
+
+
+!!! tips
+    === "Set Membership(集合成员资格)"
+
+        使用`in`关键字判断一个值是否在一个集合中
+
+        ``` sql
+        select name
+        from instructor
+        where dept_name in (select dept_name from department where building = 'Main')
+        ```
+
+        `not in`关键字用于判断一个值是否不在一个集合中
+
+        ``` sql
+        select name
+        from instructor
+        where dept_name not in (select dept_name from department where building = 'Main')
+        ```
+
+        `in`的也可以用于判断多个值是否在一个集合中
+
+        ``` sql
+        select count (distinct ID)
+        from takes
+        where (course_id, sec_id, semester, year) in (select course_id, sec_id, semester, year
+                                        from teaches
+                                        where teaches.ID= ‘10101’);
+        ```
+
+    === "Set Comparison(比较)"
+
+        `> some`比较符号用于判断一个值是否大于集合中的某个值
+
+        ``` sql
+        select name
+        from instructor
+        where salary > some (select salary
+                            from instructor
+                            where dept_name = ’Biology’);
+        ```
+
+        !!! definition "some"
+            对于表达式 F <comp> some R，其数学定义为：
+
+            $$
+            F \langle comp \rangle \text{ some } R \iff \exists t \in R \text{ such that } (F \langle comp \rangle t)
+            $$
+
+            其中 $\langle comp \rangle$ 可以是以下比较操作符：
+
+            1. $=$（等于）
+
+            2. $\neq$（不等于）
+
+            3. $>$（大于）
+
+            4. $<$（小于）
+
+            5. $\geq$（大于等于）
+
+            6. $\leq$（小于等于）
+
+        `> all`比较符号用于判断一个值是否大于集合中的所有值
+        ``` sql
+        select name
+        from instructor
+        where salary > all (select salary
+                            from instructor
+                            where dept_name = ’Biology’);
+        ```
+
+        !!! definition "all"
+            对于表达式 F <comp> all R，其数学定义为：
+
+            $$
+            F \langle comp \rangle \text{ all } R \iff \forall t \in R \text{ such that } (F \langle comp \rangle t)
+            $$
+
+            其中 $\langle comp \rangle$ 可以是以下比较操作符：
+
+            1. $=$（等于）
+
+            2. $<>$（不等于）
+
+            3. $>$（大于）
+
+            4. $<$（小于）
+
+            5. $\geq$（大于等于）
+
+            6. $\leq$（小于等于）
+
+        **注意,`in`与`= some`等价,但`not in`与`<> some`不等价,`= all`与`in`不等价,`not in`与`<> all`等价**
+
+        然而,单独的`>`,`<`等被称为`comparison`而不是`comparison with set`,它们要求比较的对象是单一的值,而不是集合,对于的查询语句称为标量子查询(Scalar Subquery)
+
+    === "Set cardinality(集合基数)"
+
+        `exists`关键字用于判断一个集合是否为空
+
+        ``` sql
+        select course_id 
+        from section as S 
+        where semester = ’Fall’ and year= 2009 and exists (select * from section as Twhere semester = ’Spring’ and year= 2010 and S.course_id= T.course_id);
+
+        ```
+
+        `not exists`关键字用于判断一个集合是否不为空
+
+        ``` sql
+        select name
+        from instructor
+        where not exists (select *
+                        from teaches
+                        where teaches.ID = instructor.ID);
+        ```
+
+    ---
+
+    个人感觉,正常的查询语句是一个单层循环,而嵌套查询是一个多层循环,即在一个循环中又嵌套了一个循环,而且这个循环的范围是上一个循环的范围,即在上一个循环的基础上进行筛选
+    例如,在
+    ``` sql
+    select name
+    from instructor
+    where exists (select *
+                from teaches
+                where teaches.ID = instructor.ID);
+    ```
+    和C语言一样.
+    ``` c
+    for(int i=0;i<10;i++)//第一个select语句
+        for(int j=0;j<10;j++)//子查询语句
+            if(i==j)
+                printf("%d %d\n",i,j);
+    ```
+
+### unique
+
+unique关键字用于判断一个集合是否唯一
+
+``` sql
+select course_id
+from section as S
+where semester = ’Fall’ and year= 2009 and unique (select course_id from section as T where semester = ’Spring’ and year= 2010 and S.course_id= T.course_id);
+```
+
+这段代码的目的是找出2009年秋季学期开设的课程中,在2010年春季学期开设的课程中只有一门课程与之相同的课程
+
+注意,对于空集合,`unique`返回`true`,而`exists`返回`false`
+
+!!! example
+    === "🌰1"
+        Find all courses that were offered once in 2009
+        ??? general
+            ``` sql
+            select T.course_id
+            from section as T
+            where T.semester = ’Fall’ and T.year= 2009 and unique (select course_id from section where semester = ’Spring’ and year= 2009 and T.course_id= course_id);
+            ```
+    === "🌰2"
+        Find all courses that were offered at most once in every semester
+
+        ??? general
+            ``` sql
+            select T.course_id
+            from section as T
+            where unique(select course_id from section where semester = T.semester and year= T.year and T.course_id= course_id);
+            ```
+### From语句中的子查询语句
+
+在from语句中,我们可以使用子查询语句,即在from语句中嵌套另一个查询
+
+Find the average instructors’ salaries of those departments where the average salary is greater than $42,000. 
+
+``` sql
+ select dept_name, avg_salary 
+ from (select dept_name, avg (salary) as avg_salary from instructor  group by dept_name) 
+ where avg_salary > 42000;
+ ```
+
+#### lateral clause
+
+lateral子句用于在from语句中嵌套另一个查询,并且这个查询可以引用外部查询的列
+
+``` sql
+
+select T.course_id, T.semester, T.year, avg (T.grade)
+from takes as T, lateral (select avg (grade) from takes where course_id = T.course_id and semester = T.semester and year = T.year) as avg_grade
+```
+
+### With子句
+
+With子句用于在查询中定义临时表,相当于在查询中嵌套另一个查询,并且这个查询可以引用外部查询的列
+
+``` sql
+with avg_salary as (select dept_name, avg (salary) as avg_salary from instructor group by dept_name)
+select dept_name
+from avg_salary
+where avg_salary > 42000;
+```
+
+with语句也可以用在一些复杂的查询中:
+
+``` sql
+with dept _total (dept_name, value) as
+        (select dept_name, sum(salary)
+         from instructor
+         group by dept_name),
+        dept_total_avg(value) as
+        (select avg(value)
+         from dept_total)
+select dept_name
+from dept_total, dept_total_avg
+where dept_total.value >= dept_total_avg.value;
+```
+
+## 数据库修改操作
+
+### 删除操作 (DELETE)
+
+我们使用关键字 `delete` 来实现删除操作，包括：
+
+1.  **删除整张表中的所有数据 (保留表结构)**
+
+    ```sql
+    DELETE FROM instructor;
+    ```
+
+    这条语句会删除 `instructor` 表中的所有行，但表结构（列定义、约束等）仍然存在。
+
+2.  **删除满足特定条件的行**
+
+    ```sql
+    DELETE FROM instructor
+    WHERE dept_name = 'Comp. Sci.';
+    ```
+
+    这条语句会删除 `instructor` 表中 `dept_name` 列值为 `'Comp. Sci.'` 的所有行。`WHERE` 子句用于指定删除条件。
+
+    **注意：**  `WHERE` 子句可以包含复杂的逻辑表达式(如in,>some等)，使用 `AND`、`OR`、`NOT` 等逻辑运算符组合多个条件。
+
+    **外键约束的影响：** 删除操作可能会受到外键约束的影响。如果被删除的行在其他表中被引用（作为外键），则删除操作可能会失败，或者根据外键约束的定义执行级联删除、设置为空等操作。
+
+### 插入操作 (INSERT)
+
+我们使用关键字 `insert` 来实现插入操作，包括：
+
+1.  **插入单个元组**
+
+    ```sql
+    INSERT INTO instructor (ID, name, dept_name, salary)
+    VALUES ('12345', '李明', 'Comp. Sci.', 80000);
+    ```
+
+    这条语句向 `instructor` 表中插入一个新的行，指定了每个列的值。
+
+    *   列的顺序可以与表中定义的顺序不同，但必须在 `INSERT INTO` 子句中明确指定列名。
+    *   如果省略了某些列，则这些列的值将被设置为 `NULL`（如果该列允许 `NULL` 值），或者使用该列的默认值（如果定义了默认值）。
+
+2.  **插入多个元组**
+
+    ```sql
+    INSERT INTO instructor (ID, name, dept_name, salary)
+    VALUES
+        ('12345', '李明', 'Comp. Sci.', 80000),
+        ('67890', '王红', 'Physics', 75000);
+    ```
+
+    这条语句一次性向 `instructor` 表中插入多个新的行。
+
+3.  **从查询结果插入**
+
+    ```sql
+    INSERT INTO instructor (ID, name, dept_name, salary)
+    SELECT ID, name, dept_name, salary
+    FROM old_instructor
+    WHERE dept_name = 'Comp. Sci.';
+    ```
+
+    这条语句从 `old_instructor` 表中查询 `dept_name` 为 `'Comp. Sci.'` 的所有行，并将查询结果插入到 `instructor` 表中。
+
+    *   `SELECT` 子句中的列必须与 `INSERT INTO` 子句中的列在数量和数据类型上匹配。
+
+### 更新操作 (UPDATE)
+
+我们使用关键字 `update` 来实现更新操作，包括：
+
+1.  **更新所有行**
+
+    ```sql
+    UPDATE instructor
+    SET salary = salary * 1.1;
+    ```
+
+    这条语句将 `instructor` 表中所有行的 `salary` 列的值增加 10%。
+
+2.  **更新满足特定条件的行**
+
+    ```sql
+    UPDATE instructor
+    SET salary = salary * 1.1
+    WHERE dept_name = 'Comp. Sci.';
+    ```
+
+    这条语句将 `instructor` 表中 `dept_name` 列值为 `'Comp. Sci.'` 的所有行的 `salary` 列的值增加 10%。`WHERE` 子句用于指定更新条件。
+
+3.  **更新多个列**
+
+    ```sql
+    UPDATE instructor
+    SET salary = salary * 1.1, dept_name = '信息科学'
+    WHERE ID = '12345';
+    ```
+
+    这条语句将 `instructor` 表中 `ID` 为 `'12345'` 的行的 `salary` 列的值增加 10%，并将 `dept_name` 列的值更新为 `'信息科学'`。
+
+4.  **使用子查询更新**
+
+    ```sql
+    UPDATE instructor
+    SET salary = (SELECT avg(salary) FROM instructor)
+    WHERE dept_name = 'Comp. Sci.';
+    ```
+
+    这条语句将 `instructor` 表中 `dept_name` 列值为 `'Comp. Sci.'` 的所有行的 `salary` 列的值更新为 `instructor` 表中所有教师的平均工资。
+
+    **注意：**  `UPDATE` 语句也可能会受到外键约束的影响，类似于 `DELETE` 语句。
+
+    !!! tips "case语句"
+        `update`语句中也可以使用`case`语句,用于根据条件更新不同的值
+
+        ``` sql
+        update instructor
+        set salary = case
+                        when dept_name = 'Comp. Sci.' then salary * 1.1
+                        when dept_name = 'Physics' then salary * 1.05
+                        else salary
+                    end;
+        ```
