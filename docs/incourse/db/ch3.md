@@ -295,7 +295,7 @@ select ID, name, salary/12
 from instructor
 ```
 
-这个语句会返回instructor表中所有教师的ID、姓名和月薪/12
+这个语句会返回instructor表中所有教师的ID、姓名和年薪/12
 
 ### Where Clause(选择子句)
 
@@ -320,8 +320,8 @@ where子句支持以下操作:
 !!! example "🌰"
     === "🌰1"
         ``` sql
-       select name from instructor
-       where dept_name = ‘Comp. Sci.'and salary > 80000
+        select name from instructor
+        where dept_name = ‘Comp. Sci.'and salary > 80000
         ```
     === "🌰2"
         ``` sql
