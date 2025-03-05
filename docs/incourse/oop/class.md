@@ -3,3 +3,437 @@ comments: true
 ---
 
 # 类与对象
+
+我们先来看下面这个用C++编写的选择排序程序:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+void selection_sort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        swap(arr[i], arr[minIndex]);
+    }
+}
+```
+
+我们使用这个程序,作为本节内容的例子.
+
+## 引用类型
+
+在上面的程序中,我们使用了一个`swap`函数来交换两个数的值。如果我们把`swap`函数这样写：
+
+```cpp
+
+void swap(int a, int b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+```
+学过C语言的都知道，这个函数不能交换两个数的值。因为函数参数是值传递，函数内对参数的修改不会影响到实参。
+如果我们想要交换两个数的值，可以使用指针作为参数：
+
+```cpp  
+void swap(int* a, int* b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+```
+
+但是使用指针作为参数会使得函数的调用变得复杂，调用时需要传入变量的地址，并且在函数内需要使用`*`来解引用。
+对此，C++提供了一个新的类型：引用类型来简化函数的调用。
+
+```cpp
+void swap(int& a, int& b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+```
+
+在函数参数中使用`&`表示引用类型，引用类型的参数在函数内可以直接使用，而不需要使用`*`来解引用。
+
+引用类型实际上就是对原来变量的一个别名，引用类型的参数在函数内对参数的修改会影响到实参。
+
+任何对别名的修改都会影响到原变量。
+
+## 函数模板
+
+在编写排序算法时,我们需要考虑到排序的对象可能是int, float, double, string等多种类型。
+如果我们为每种类型都编写一个排序函数,那就太麻烦了。
+C++提供了一个新的特性：模板（template）来解决这个问题。
+
+```cpp
+template <typename T>
+
+selection_sort(T arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        swap(arr[i], arr[minIndex]);
+    }
+}
+```
+
+这样,编译器会帮我们根据传入的参数类型来生成相应的函数。
+在函数定义时,我们使用`template <typename T>`来声明一个模板函数。
+需要注意的时,一个`template<typename T>`只对紧跟着的函数有效,如果我们要定义多个模板函数,需要为每个函数都添加`template<typename T>`。
+
+## 重载运算符
+
+好了,上面排序数据类型,比如int, float, double, string等都可以使用`<`来比较大小。
+
+那如果我们自己写一个类,比如`Point`类:
+```cpp
+class Point {
+public:
+    int x, y;
+    Point(int x, int y) : x(x), y(y) {}
+};
+```
+
+我们想要比较两个`Point`对象的大小,比如`p1 < p2`表示`p1`离原点更近,我们该怎么做呢?
+我们可以重载`<`运算符来实现这个功能。
+
+```cpp
+class Point {
+public:
+    int x, y;
+    Point(int x, int y) : x(x), y(y) {}
+    bool operator<(const Point& other) const {
+        return x * x + y * y < other.x * other.x + other.y * other.y;
+    }
+};
+```
+
+形如`bool operator< (const Point& other) const`的函数称为运算符重载函数。
+运算符重载函数的返回值类型是`bool`，表示比较的结果。
+
+重载函数也可以不写在类内,而是写在类外,但是需要在函数前面加上`类名::`来表示这个函数是属于哪个类的。
+
+```cpp
+bool operator<(const Point& p1, const Point& p2) {
+    return p1.x * p1.x + p1.y * p1.y < p2.x * p2.x + p2.y * p2.y;
+}
+```
+
+可以重载的运算符有很多:
+
+- 算术运算符：`+`, `-`, `*`, `/`, `%`
+
+- 关系运算符：`<`, `>`, `<=`, `>=`, `==`, `!=`
+
+- 逻辑运算符：`&&`, `||`, `!`
+
+- 位运算符：`&`, `|`, `^`, `~`, `<<`, `>>`
+
+- 赋值运算符：`=`, `+=`, `-=`, `*=`, `/=`, `%=`等
+
+- 其他运算符：`[]`, `()`, `->`, `++`, `--`
+
+甚至,你可以重载输出流运算符`<<`来实现自定义类型的输出。
+
+```cpp
+#include <iostream>
+using namespace std;
+class Point {
+public:
+    int x, y;
+    Point(int x, int y) : x(x), y(y) {}
+    friend ostream& operator<<(ostream& os, const Point& p) {
+        os << "(" << p.x << ", " << p.y << ")";
+        return os;
+    }
+};
+```
+
+---
+
+## 类与继承
+
+来个生硬的转场...我们们来看看类与继承。
+
+### 类
+
+假设现在有三个类:circle, rectangle, triangle,它们都有一个`area`方法来计算面积,一个`perimeter`方法来计算周长。
+
+```cpp
+const double PI = 3.14;
+class Circle {
+    private:
+    double radius;
+public:
+    Circle(double r) : radius(r) {}
+    double area() {
+        return PI * radius * radius;
+    }
+    double perimeter() {
+        return 2 * PI * radius;
+    }
+};
+
+class Rectangle {
+    private:
+    double width, height;
+public:
+    Rectangle(double w, double h) : width(w), height(h) {}
+    double area() {
+        return width * height;
+    }
+    double perimeter() {
+        return 2 * (width + height);
+    }
+};
+
+class Triangle {
+    private:
+    double a, b, c;
+public:
+    Triangle(double a, double b, double c) : a(a), b(b), c(c) {}
+    double area() {
+        double s = (a + b + c) / 2;
+        return sqrt(s * (s - a) * (s - b) * (s - c));
+    }
+    double perimeter() {
+        return a + b + c;
+    }
+};
+```
+
+!!! tips "类的小知识"
+    === "public, private, protected"
+        
+        在类中,我们可以使用`public`, `private`, `protected`来控制成员的访问权限。
+
+        - `public`表示公有成员,可以在类外访问。
+
+        - `private`表示私有成员,只能在类内访问。
+
+        - `protected`表示保护成员,只能在类内和子类中访问。
+
+        | 访问权限 | public | private | protected |
+        | -------- | ------ | ------- | --------- |
+        | 类内     | √      | √       | √         |
+        | 子类     | √      | ×       | √         |
+        | 类外     | √      | ×       | ×         |
+
+        例如上面的三个类中,`radius`, `width`, `height`, `a`, `b`, `c`都是私有成员,只能在类内访问。
+
+        **注意,`private`等关键字的作用范围是从声明到另一个`private`等关键字的声明为止。**
+
+    === "构造函数"
+        上面的三个类中,我们使用了构造函数来初始化成员变量。
+
+        构造函数与类名同名,没有返回值.
+
+        上面使用`:`的方法来初始化成员变量,它的基本规则是
+
+        ```cpp
+        ClassName(Type1 arg1, Type2 arg2, ...) : member1(arg1), member2(arg2), ... {
+            // constructor body
+        }
+        ```
+
+        也可以使用`=`的方法来初始化成员变量,但是这种方法只能在构造函数体内使用。
+
+        ```cpp
+        ClassName(Type1 arg1, Type2 arg2, ...) {
+            member1 = arg1;
+            member2 = arg2;
+            ...
+        }
+        ```
+
+    === "析构函数"
+        析构函数与类名同名,前面加上`~`,没有返回值,也没有参数。
+
+        析构函数在对象被销毁时自动调用,用于释放资源。
+
+        ```cpp
+        ~ClassName() {
+            // destructor body
+        }
+        ```
+
+---
+
+### 继承
+
+上面的三个类中,`area`和`perimeter`方法的实现是重复的。
+
+我们可以使用继承来简化设计
+
+```cpp
+class Shape {
+public:
+   protected:
+    const double PI = 3.14;
+    double area = 0;
+    double perimeter = 0;
+};
+class Circle : public Shape {
+private:
+    double radius;
+public:
+    Circle(double r) : radius(r) {}
+    void area() {
+        area = PI * radius * radius;
+    }
+    void perimeter() {
+        perimeter = 2 * PI * radius;
+    }
+};
+class Rectangle : public Shape {
+private:
+    double width, height;
+public:
+    Rectangle(double w, double h) : width(w), height(h) {}
+    void area() {
+        area = width * height;
+    }
+    void perimeter() {
+        perimeter = 2 * (width + height);
+    }
+};
+class Triangle : public Shape {
+private:
+    double a, b, c;
+public:
+    Triangle(double a, double b, double c) : a(a), b(b), c(c) {}
+    void area() {
+        double s = (a + b + c) / 2;
+        area = sqrt(s * (s - a) * (s - b) * (s - c));
+    }
+    void perimeter() {
+        perimeter = a + b + c;
+    }
+};
+``` 
+
+!!! definition "继承的一般写法"
+    ```cpp
+    class Base {
+    public:
+        // base class members
+    };
+    
+    class Derived : public Base {
+    public:
+        // derived class members
+    };
+    ```
+    这里的`public`表示`Derived`类是`Base`类的公有派生类。
+    还有`protected`和`private`两种方式,分别表示`Derived`类是`Base`类的保护派生类和私有派生类。
+
+    这三种方式的区别在于,派生类对基类成员的访问权限。
+
+    | 访问权限 | public | protected | private |
+    | -------- | ------ | --------- | ------- |
+    | 基类     | √      | √         | √       |
+    | 派生类   | √      | √         | ×       |
+    | 类外     | √      | ×         | ×       |
+
+    一般来说,我们使用`public`来继承基类。
+
+---
+
+### 抽象类与虚函数
+
+可以看到,对于上面三个类,我们都需要计算周长与面积,实际上,计算周长与面积的函数可以在基类中实现,而在派生类中只需要实现构造函数即可。
+
+然而,这三个几何图形的周长与面积的计算方法是不同的,所以我们不能在基类中实现这两个函数,只能够给出一个接口,让派生类来实现。这就需要用到关键字`virtual`与`override`。
+
+```cpp
+class Shape {
+protected:
+    const double PI = 3.14;
+    double area = 0;
+    double perimeter = 0;
+public:
+    virtual void area() = 0;
+    virtual void perimeter() = 0;
+};
+class Circle : public Shape {
+private:
+    double radius;
+public:
+    Circle(double r) : radius(r) {}
+    void area() override {
+        area = PI * radius * radius;
+    }
+    void perimeter() override {
+        perimeter = 2 * PI * radius;
+    }
+};
+class Rectangle : public Shape {
+private:
+    double width, height;
+public:
+
+    Rectangle(double w, double h) : width(w), height(h) {}
+    void area() override {
+        area = width * height;
+    }
+    void perimeter() override {
+        perimeter = 2 * (width + height);
+    }
+};
+class Triangle : public Shape {
+private:
+    double a, b, c;
+public:
+    Triangle(double a, double b, double c) : a(a), b(b), c(c) {}
+    void area() override {
+        double s = (a + b + c) / 2;
+        area = sqrt(s * (s - a) * (s - b) * (s - c));
+    }
+    void perimeter() override {
+        perimeter = a + b + c;
+    }
+};
+```
+
+!!! tips "虚函数与复写"
+    在上面的代码中,我们使用了`virtual`与`override`关键字。
+
+    - `virtual`表示这个函数是一个虚函数,可以在派生类中复写。
+
+    - `override`表示这个函数是对基类中的虚函数的复写。
+
+    - `= 0`表示这个函数是一个纯虚函数,没有实现,必须在派生类中实现。
+
+    - 如果一个类中有纯虚函数,那么这个类就是一个抽象类,不能实例化。
+
+### 友元函数
+
+在上面的代码中,我们使用了`protected`来保护成员变量,这意味着派生类可以访问基类的成员变量,但是类外不能访问。
+如果我们想要在类外访问基类的成员变量,可以使用友元函数。
+
+```cpp
+class Shape {
+protected:
+    const double PI = 3.14;
+    double area = 0;
+    double perimeter = 0;
+public:
+    virtual void area() = 0;
+    virtual void perimeter() = 0;
+    friend ostream& operator<<(ostream& os, const Shape& s) {
+        os << "area: " << s.area << ", perimeter: " << s.perimeter;
+        return os;
+    }
+};
+```
+在这样的情况下,我们可以在类外访问基类的成员变量。

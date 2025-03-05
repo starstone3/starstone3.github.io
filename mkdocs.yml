@@ -110,6 +110,7 @@ nav :
       - incourse/oop/index.md
       - "Chapter 1:Introduction": incourse/oop/intro.md
       - "Chapter 2:类与对象": incourse/oop/class.md
+      - "Chapter 3:STL": incourse/oop/STL.md
     - "计算机体系结构":
       - incourse/CA/index.md
       - "Chapter 1": incourse/CA/Ch1.md
