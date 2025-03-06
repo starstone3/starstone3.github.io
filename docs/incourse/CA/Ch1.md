@@ -195,3 +195,79 @@ $$
 $$
 
 这里的Die yield指的是好的晶片产出,N是process-complexity factor(过程复杂性因子),衡量制造的困难程度.
+
+## Dependability
+
+见计组[Measure](../Comcompose/Ch6.md#measure)与[Raid](../Comcompose/Ch6.md#raid)章节    
+
+
+## Measurement
+
+为了衡量计算机的性能,我们引入如下两个概念:
+
++ Execution Time:执行时间,即完成一个任务所需的时间
+    - 最直接的定义方法是`Wall-Clock Time/response time/elapsed time`,指的是完成一项任务所需的时间,包括所有的等待时间,如I/O,内存访问等
+
+    - 另一种定义方法是`CPU Time`,指的是CPU实际执行指令所需的时间,不包括I/O,内存访问等等待时间
+
+        - CPU time = Instruction count × CPI × Clock cycle time
+
+        - CPI = Clock cycles per instruction
+
+        - Clock cycle time = 1 / Clock frequency
+
+        - CPU time = Instruction count / Clock frequency × CPI
+
+    - `Workload`也是一种用来衡量计算机性能的方法,也即在给定一组任务(包括用户任务与系统任务)下的处理时间.
+
++ Throughput:吞吐量,即单位时间内完成的任务数量
+
+    - 通过`Throughput = 1 / Execution time`来计算
+
+    - 也可以通过`Throughput = Instruction count / CPU time`来计算
+
+    - 也可以通过`Throughput = Instruction count / (Instruction count / Clock frequency × CPI)`来计算
+
+    - 也可以通过`Throughput = Clock frequency / CPI`来计算
+
+## Benchmark
+
+<strike>感觉不会考,不记了</strike>
+
+## SPECRatio
+
+SPECRatio是SPEC基准测试的结果,用于衡量计算机性能.它是通过将计算机的执行时间与参考计算机的执行时间进行比较来计算的.
+SPECRatio的计算公式为:
+$$
+SPECRatio = \frac{Execution time of reference computer}{Execution time of computer under test}
+$$
+
+那么在比较两个计算机的性能时,公式如下:
+$$
+\frac{\text{SPECRatio of computer A}}{\text{SPECRatio of computer B}} = \frac{\text{Execution time of computer B}}{\text{Execution time of computer A}}
+$$
+
+由于SPEC是一个比值,在计算平均值时,我们使用几何平均数,而不是算术平均数.所以,我们使用如下公式来计算平均值:
+$$
+SPECRatio_{geometric} = \sqrt[n]{SPECRatio_1 \times SPECRatio_2 \times ... \times SPECRatio_n}
+$$
+
+---
+
+## Quantitative Principles
+
+Amdahl's Law:阿姆达尔定律,用于衡量计算机性能的提升与程序的并行化程度之间的关系.它的公式为:
+$$
+\text{New Execution Time} = \text{Old Execution Time} \times (1 - P) + \frac{\text{Old Execution Time} \times P}{N}
+$$
+其中,P是程序中可以并行化的部分,而N是并行化的程度.当P=1时,Speedup=N,即完全并行化.当P=0时,Speedup=1,即完全串行化.
+
+对此的加速比为
+$$
+Speedup = \frac{1}{(1 - P) + \frac{P}{N}}
+$$
+
+因此,如果我们只能加速整个任务中占比为P的部分,加速比最多为
+$$
+Speedup = \frac{1}{(1 - P)}
+$$
