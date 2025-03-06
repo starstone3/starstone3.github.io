@@ -16,7 +16,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../../old/">
+        <link rel="next" href="../Ch2/">
       
       
       <link rel="icon" href="../../../image/fav1.png">
@@ -1523,6 +1523,8 @@
       
         
       
+        
+      
     
     
       
@@ -1787,10 +1789,77 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dependability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measurement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benchmark
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      SPECRatio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantitative-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantitative Principles
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 2:Memory Hierarchy  Design
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2633,6 +2702,51 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dependability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measurement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benchmark
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      SPECRatio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantitative-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantitative Principles
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2654,7 +2768,7 @@
 
 <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1642 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 2 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 8 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2244 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 2 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 11 分钟</p>
 </div>
 <h2 id="class-of-computers">Class of Computers<a class="headerlink" href="#class-of-computers" title="Permanent link">&para;</a></h2>
 <h3 id="internet-of-thingsembedded-computers">Internet of Things/Embedded Computers<a class="headerlink" href="#internet-of-thingsembedded-computers" title="Permanent link">&para;</a></h3>
@@ -2843,6 +2957,88 @@ Power_{dynamic} \propto Capacitive load \times Voltage^2 \times \frac{1}{2} \tim
 \text{Die yield}=\text{Wafer yield}\times\frac{1}{(1+\text{Defects per unit area}\times\text{Die area})^N}​
 \]</div>
 <p>这里的Die yield指的是好的晶片产出,N是process-complexity factor(过程复杂性因子),衡量制造的困难程度.</p>
+<h2 id="dependability">Dependability<a class="headerlink" href="#dependability" title="Permanent link">&para;</a></h2>
+<p>见计组<a href="../../Comcompose/Ch6/#measure">Measure</a>与<a href="../../Comcompose/Ch6/#raid">Raid</a>章节    </p>
+<h2 id="measurement">Measurement<a class="headerlink" href="#measurement" title="Permanent link">&para;</a></h2>
+<p>为了衡量计算机的性能,我们引入如下两个概念:</p>
+<ul>
+<li>
+<p>Execution Time:执行时间,即完成一个任务所需的时间</p>
+<ul>
+<li>
+<p>最直接的定义方法是<code>Wall-Clock Time/response time/elapsed time</code>,指的是完成一项任务所需的时间,包括所有的等待时间,如I/O,内存访问等</p>
+</li>
+<li>
+<p>另一种定义方法是<code>CPU Time</code>,指的是CPU实际执行指令所需的时间,不包括I/O,内存访问等等待时间</p>
+<ul>
+<li>
+<p>CPU time = Instruction count × CPI × Clock cycle time</p>
+</li>
+<li>
+<p>CPI = Clock cycles per instruction</p>
+</li>
+<li>
+<p>Clock cycle time = 1 / Clock frequency</p>
+</li>
+<li>
+<p>CPU time = Instruction count / Clock frequency × CPI</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>Workload</code>也是一种用来衡量计算机性能的方法,也即在给定一组任务(包括用户任务与系统任务)下的处理时间.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Throughput:吞吐量,即单位时间内完成的任务数量</p>
+<ul>
+<li>
+<p>通过<code>Throughput = 1 / Execution time</code>来计算</p>
+</li>
+<li>
+<p>也可以通过<code>Throughput = Instruction count / CPU time</code>来计算</p>
+</li>
+<li>
+<p>也可以通过<code>Throughput = Instruction count / (Instruction count / Clock frequency × CPI)</code>来计算</p>
+</li>
+<li>
+<p>也可以通过<code>Throughput = Clock frequency / CPI</code>来计算</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="benchmark">Benchmark<a class="headerlink" href="#benchmark" title="Permanent link">&para;</a></h2>
+<p><strike>感觉不会考,不记了</strike></p>
+<h2 id="specratio">SPECRatio<a class="headerlink" href="#specratio" title="Permanent link">&para;</a></h2>
+<p>SPECRatio是SPEC基准测试的结果,用于衡量计算机性能.它是通过将计算机的执行时间与参考计算机的执行时间进行比较来计算的.
+SPECRatio的计算公式为:
+$$
+SPECRatio = \frac{Execution time of reference computer}{Execution time of computer under test}
+$$</p>
+<p>那么在比较两个计算机的性能时,公式如下:
+$$
+\frac{\text{SPECRatio of computer A}}{\text{SPECRatio of computer B}} = \frac{\text{Execution time of computer B}}{\text{Execution time of computer A}}
+$$</p>
+<p>由于SPEC是一个比值,在计算平均值时,我们使用几何平均数,而不是算术平均数.所以,我们使用如下公式来计算平均值:
+$$
+SPECRatio_{geometric} = \sqrt[n]{SPECRatio_1 \times SPECRatio_2 \times ... \times SPECRatio_n}
+$$</p>
+<hr />
+<h2 id="quantitative-principles">Quantitative Principles<a class="headerlink" href="#quantitative-principles" title="Permanent link">&para;</a></h2>
+<p>Amdahl's Law:阿姆达尔定律,用于衡量计算机性能的提升与程序的并行化程度之间的关系.它的公式为:
+$$
+\text{New Execution Time} = \text{Old Execution Time} \times (1 - P) + \frac{\text{Old Execution Time} \times P}{N}
+$$
+其中,P是程序中可以并行化的部分,而N是并行化的程度.当P=1时,Speedup=N,即完全并行化.当P=0时,Speedup=1,即完全串行化.</p>
+<p>对此的加速比为
+$$
+Speedup = \frac{1}{(1 - P) + \frac{P}{N}}
+$$</p>
+<p>因此,如果我们只能加速整个任务中占比为P的部分,加速比最多为
+$$
+Speedup = \frac{1}{(1 - P)}
+$$</p>
 
 
 
@@ -2995,13 +3191,13 @@ Power_{dynamic} \propto Capacitive load \times Voltage^2 \times \frac{1}{2} \tim
         
         
           
-          <a href="../../old/" class="md-footer__link md-footer__link--next" aria-label="下一页: 开始">
+          <a href="../Ch2/" class="md-footer__link md-footer__link--next" aria-label="下一页: Chapter 2:Memory Hierarchy  Design">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                开始
+                Chapter 2:Memory Hierarchy  Design
               </div>
             </div>
             <div class="md-footer__button md-icon">
