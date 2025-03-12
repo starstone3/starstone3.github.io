@@ -135,7 +135,7 @@ li {
     --md-accent-bg-color: #fff;
     --md-accent-bg-color--light: hsla(0, 0%, 100%, .7);
     --md-code-fg-color: #0f0f0f;
-    --md-code-bg-color: #e9e4e4;
+    --md-code-bg-color: #f9f5f5;
     --md-code-hl-color: #d7e1c3;
     --md-code-hl-number-color: #d52a2a;
     --md-code-hl-special-color: #db1457;
@@ -226,7 +226,7 @@ li {
 }
 
 ::selection {
-    background:rgba(209, 195, 177, 0.6);
+    background:rgba(241, 239, 236, 0.6);
     /* color:blac; */
 }
 
