@@ -33,3 +33,8 @@ comments : true
 ## 普通物理学II（H）
 
 + <a href="https://starstone3.github.io/smaterials/physicsII.pdf" download="physicsII.pdf">电磁部分笔记</a>
+
+## 生命教育概论MOOC答案
+
++ <a href="https://starstone3.github.io/smaterials/生命的教育_浙江大学中国大学mooc课后章节答案期末考试题库2023年.pdf" download="生命的教育_浙江大学中国大学mooc课后章节答案期末考试题库2023年.pdf">生命教育概论期末答案</a> 仅供参考
++ <a href="https://starstone3.github.io/smaterials/生命教育概论mooc答案.docx" download="生命教育概论mooc答案.docx">生命教育概论MOOC平时答案</a> 仅供参考
