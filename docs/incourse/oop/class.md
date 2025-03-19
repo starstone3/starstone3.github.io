@@ -123,9 +123,13 @@ public:
 
 重载函数也可以不写在类内,而是写在类外,但是需要在函数前面加上`类名::`来表示这个函数是属于哪个类的。
 
+形如`<class name> :: <function name>`的东西叫做resolver,表示这个函数是属于哪个类的。
+
+如果是直接`::`的形式,表示这个函数是属于全局的。
+
 ```cpp
-bool operator<(const Point& p1, const Point& p2) {
-    return p1.x * p1.x + p1.y * p1.y < p2.x * p2.x + p2.y * p2.y;
+bool Pointer::operator<(const Point& other) const {
+    return x * x + y * y < other.x * other.x + other.y * other.y;
 }
 ```
 
@@ -437,3 +441,149 @@ public:
 };
 ```
 在这样的情况下,我们可以在类外访问基类的成员变量。
+
+## Comopile Unit
+
+在C++中,每个源文件都是一个编译单元,编译器会将每个编译单元编译成一个目标文件,然后链接成一个可执行文件。
+
+编译分为三个阶段:
+
+- 预处理阶段:将源文件中的宏定义,头文件等进行处理,生成一个`.i`文件。
+
+- 编译器单独处理每个 `.cpp` 文件，生成对应的目标文件（`.obj` 或 `.o`）
+
+- 链接阶段:将所有的目标文件链接成一个可执行文件。
+
+!!! info "头文件(.h)"
+    正如我们在C语言中学过的，我们可以在一个文件中声明所有的函数和类，然后使用`#include`来包含这个文件。
+
+    `#include`的写法有两种:
+
+    1. `#include <filename>`:表示包含系统头文件,编译器会在系统目录中查找这个文件。
+
+    2. `#include "filename"`:表示包含用户自定义头文件,编译器会在当前目录中查找这个文件。
+
+    一般来说，头文件在写的时候最好加上这样几句话：
+
+    ```cpp
+    #ifndef FILENAME_H
+    #define FILENAME_H
+    // header file content
+    #endif
+    ```
+    
+
+    这几句话的意思是，如果`FILENAME_H`没有定义，就定义它，然后包含头文件的内容，最后结束这个条件编译。
+
+    如果`FILENAME_H`已经定义，就不再包含头文件的内容。
+
+    这样可以防止头文件被多次包含，造成重复定义的错误。
+
+    给一个例子，我们定义一个`Point`类的头文件`Point.h`：
+
+    ```cpp
+    #ifndef POINT_H
+    #define POINT_H
+    class Point {
+    public:
+        int x, y;
+        Point(int x, int y) : x(x), y(y) {}
+        void move(int x,int y);
+        void print();
+    };
+    #endif
+    ```
+
+    然后在`Point.cpp`中实现这个类：
+
+    ```cpp
+    #include "Point.h"
+    #include <iostream>
+    using namespace std;
+    void Point::move(int x, int y) {
+        this->x += x;
+        this->y += y;
+    }
+    void Point::print() {
+        cout << "(" << x << ", " << y << ")" << endl;
+    }
+    ```
+    在`main.cpp`中使用这个类：
+
+    ```cpp
+    #include "Point.h"
+    int main() {
+        Point p(1, 2);
+        p.move(3, 4);
+        p.print();
+        return 0;
+    }
+    ```
+
+## Build Tools
+
+在上面的例子中，我们用了好几个程序来实现`Point`类。
+
+熟悉命令行操作的都知道，我们可以使用`g++`命令来编译这个程序：
+
+```bash
+g++ -o main.exe Point.cpp main.cpp
+```
+
+这条命令会将`Point.cpp`和`main.cpp`编译成一个可执行文件`main.exe`。
+
+但是，如果我们有多个头文件，或者想要在不同的环境下编译这个程序，就需要使用一些工具来帮助我们。
+
+我们在这里介绍`CMake`.
+
+!!! tip
+    我是在WSL中使用CMake，因为在linux中使用CMake比较方便。
+
+1. 首先，使用`sudo apt install cmake`安装CMake。
+
+2. 然后，在**项目目录**下创建一个`CMakeLists.txt`文件，内容如下：
+
+    ```cmake
+    cmake_minimum_required(VERSION 3.10)
+
+    project(Point)
+
+    set(CMAKE_CXX_STANDARD 11)
+
+    include_directories(include)
+
+    add_executable(main src/main.cpp src/Point.cpp)
+    ```
+
+    + `cmake_minimum_required(VERSION 3.10)`表示CMake的最低版本要求。
+
+    + `project(Point)`表示项目名称为`Point`(不需要和文件名一致)。
+
+    + `set(CMAKE_CXX_STANDARD 11)`表示使用C++11标准(可不写)。
+
+    + `include_directories(include)`表示包含头文件的目录为`include`。
+
+    + `add_executable(main src/main.cpp src/Point.cpp)`表示生成的可执行文件名为`main`，源文件为`src/main.cpp`和`src/Point.cpp`.注意这里的路径是相对于`CMakeLists.txt`文件的路径。
+
+3. 然后，在**项目目录**下创建一个`build`目录，进入这个目录：
+    
+    ```bash
+    mkdir build
+    cd build
+    ```
+
+4. 然后，使用`cmake ..`命令生成Makefile文件：
+
+    ```bash
+    cmake ..
+    ```
+    这个命令会在`build`目录下生成一个`Makefile`文件。
+
+5. 然后，使用`make`命令编译这个程序：
+
+    ```bash
+    make
+    ```
+
+6. 最后，使用`./main`命令运行这个程序：
+
