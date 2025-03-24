@@ -189,14 +189,14 @@ R 的主键由实体集合 E1, E2, ..En 的主键的并集组成。
 
 将ER图转换为关系模式的过程称为`reduction to relational schemas`
 
-+ A strong entity set reduces to a schema with the same attributes
-    - course(course_id, title, credits)
++ A strong entity set reduces to a schema with the same attributes.
+    - 例:course(course_id, title, credits)
 
-+ A weak entity set becomes a table that includes a column for the primary key of the identifying strong entity set 
++ A weak entity set becomes a table that includes a column for the primary key of the identifying strong entity set .也就是外键的使用
 
     - Primary key of the table is the union of the discriminator of the weak entity set and  the primary key of the identifying strong entity set 
 
-    - section(sec_id, course_id, semester, year)
+    - 例:section(sec_id, course_id, semester, year)
 
 + A many-to-many relationship set is represented as a schema with attributes for the primary keys of the two participating entity sets, and any descriptive attributes of the relationship set.
 
