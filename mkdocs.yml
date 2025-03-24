@@ -108,6 +108,7 @@ nav :
       - "Chapter 3:SQL介绍": incourse/db/ch3.md
       - "Chapter 4:中级SQL": incourse/db/ch4.md
       - "Chapter 5:高级SQL": incourse/db/ch5.md
+      - "Chapter 6:ER模型": incourse/db/ch6.md
     - "OOP":
       - incourse/oop/index.md
       - "Chapter 1:Introduction": incourse/oop/intro.md
@@ -185,7 +186,7 @@ plugins:
   - glightbox
   - git-revision-date-localized:
       enable_creation_date: true
-      enabled: true
+      enabled: false
       # type: timeago
       exclude:
         - index.md
