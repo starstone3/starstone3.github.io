@@ -118,7 +118,7 @@ nav :
     - "计算机体系结构":
       - incourse/CA/index.md
       - "Chapter 1": incourse/CA/Ch1.md
-      - "Chapter 2:Memory Hierarchy  Design": incourse/CA/Ch2.md
+      - "Chapter 3:Memory Hierarchy Design": incourse/CA/Ch3.md
   - "大一课程遗物":
     - incourse/old/index.md
     - "数据结构基础": incourse/old/fds.md

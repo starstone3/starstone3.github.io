@@ -217,11 +217,13 @@ R 的主键由实体集合 E1, E2, ..En 的主键的并集组成。
 ### Common Mistakes in E-R Diagrams
 
 1. 信息冗余
+    
     !!! example "`dept_name`冗余"
         ![](../../image/i145.png)
         `student`表中有`dept_name`属性，`department`表中也有`dept_name`属性，这样会导致数据冗余
 
 2.  属性设置不当
+    
     !!! example 
         ![](../../image/i146.png)
         
@@ -243,5 +245,5 @@ R 的主键由实体集合 E1, E2, ..En 的主键的并集组成。
 
 ---
 
-后面的内容懒得写了，看[这里](hhttps://note.hobbitqia.cc/DB/db6/#use-of-entity-sets-vs-relationship-sets)吧
+后面的内容懒得写了，看[这里](https://note.hobbitqia.cc/DB/db6/#use-of-entity-sets-vs-relationship-sets)吧
 
