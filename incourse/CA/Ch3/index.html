@@ -10,7 +10,7 @@
         <meta name="author" content="starstone3">
       
       
-        <link rel="canonical" href="https://starstone3.github.io/incourse/CA/Ch2/">
+        <link rel="canonical" href="https://starstone3.github.io/incourse/CA/Ch3/">
       
       
         <link rel="prev" href="../Ch1/">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Chapter 2:Memory Hierarchy Design - Starstone3's bed</title>
+        <title>Chapter 3:Memory Hierarchy Design - Starstone3's bed</title>
       
     
     
@@ -184,7 +184,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 2:Memory Hierarchy  Design
+              Chapter 3:Memory Hierarchy Design
             
           </span>
         </div>
@@ -1705,7 +1705,7 @@
           
   
   <span class="md-ellipsis">
-    Chapter 2:Memory Hierarchy  Design
+    Chapter 3:Memory Hierarchy Design
     
   </span>
   
@@ -1717,7 +1717,7 @@
         
   
   <span class="md-ellipsis">
-    Chapter 2:Memory Hierarchy  Design
+    Chapter 3:Memory Hierarchy Design
     
   </span>
   
@@ -2528,7 +2528,7 @@
 
 <h1 id="memory-hierarchy">Memory Hierarchy<a class="headerlink" href="#memory-hierarchy" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 176 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 1 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 386 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 2 分钟</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -2541,6 +2541,28 @@
 <h3 id="dram">DRAM<a class="headerlink" href="#dram" title="Permanent link">&para;</a></h3>
 <p>DRAM(Dynamic Random Access Memory) 是一种更常见的内存类型，通常用于主内存。它使用电容器来存储每个比特，因此需要定期刷新以保持数据。DRAM 的速度较慢，但成本低，密度高。</p>
 <p>DRAM 的速度比 SRAM 慢，但成本更低，密度更高。它通常用于主内存。</p>
+<ul>
+<li>
+<p>SDRAM(Synchronous DRAM)：是一种同步动态随机存取存储器。它与 CPU 的时钟信号同步工作，从而提高了数据传输的效率。</p>
+</li>
+<li>
+<p>DDR(Double Data Rate)：是一种双倍数据速率同步动态随机存取存储器，是 SDRAM 的升级版。它在时钟信号的上升沿和下降沿都传输数据，从而使数据传输速率翻倍。</p>
+<ul>
+<li>
+<p>DDR2：DDR 的第二代，具有更高的时钟频率和更低的功耗。</p>
+</li>
+<li>
+<p>DDR3：DDR 的第三代，具有更高的时钟频率、更大的带宽和更低的功耗。</p>
+</li>
+<li>
+<p>DDR4：DDR 的第四代，进一步提升了时钟频率和带宽，并降低了功耗，是目前主流的内存类型。</p>
+</li>
+<li>
+<p>DDR5：最新的 DDR 技术，具有更高的时钟频率、更大的带宽和更低的功耗。</p>
+</li>
+</ul>
+</li>
+</ul>
 
 
 
@@ -2563,7 +2585,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月6日 11:40:59">2025年3月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月25日 07:22:26">2025年3月25日</span>
   </span>
 
     
@@ -2573,7 +2595,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月6日 11:40:59">2025年3月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月25日 07:22:26">2025年3月25日</span>
   </span>
 
     
