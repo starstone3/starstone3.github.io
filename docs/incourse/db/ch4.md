@@ -172,7 +172,8 @@ check (value in (’Bachelors’, ’Masters’, ’Doctorate’));
 
 4. `check`从句
     - check(P),P是一个谓语
-    - ```sql
+    -   
+        ```sql
         create table section (
         course_id varchar (8),
         sec_id varchar (8),
@@ -184,6 +185,7 @@ check (value in (’Bachelors’, ’Masters’, ’Doctorate’));
         primary key (course_id, sec_id, semester, year),
         check (semester in (’Fall’, ’Winter’, ’Spring’, ’Summer’)));
         ```
+
     - 这里确保了学期是春夏秋冬中的一个
 
 ### 引用完整性
