@@ -3,7 +3,7 @@ pre code {
     counter-reset: line-number; /* 重置行号计数器 */
     position: relative; /* 定位用于子元素行号 */
     display: block; /* 确保代码块显示为块状 */
-    max-height: 400px;
+    max-height: 1000px;
     max-width: 1000px;
     overflow-x: auto;
     overflow-y: auto;
