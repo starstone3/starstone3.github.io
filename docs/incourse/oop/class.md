@@ -275,6 +275,22 @@ public:
         }
         ```
 
+    + 如果什么都不写，默认变量和函数是`public`的。
+
+    + 如果不写构造函数，编译器会自动生成一个默认构造函数。
+
+    + 根据传进构造函数内的参数的不同，编译器会自动调用对应的构造函数。
+
+??? warning "private对象真的不能在类外访问吗?"
+    实际上，我们可以使用指针的方式来访问私有成员变量。
+
+    ```cpp
+    Circle c(1);
+    Circle* p = &c;
+    cout << p->area() << endl; // 3.14
+    ```
+
+    这是一个C++的<strike>漏洞</strike>特性。
 ---
 
 ### 继承
@@ -354,8 +370,37 @@ public:
     | 类外     | √      | ×         | ×       |
 
     一般来说,我们使用`public`来继承基类。
-
+    如果不写访问权限,默认是`private`继承。
+    但如果是`struct`,默认是`public`继承。
 ---
+
+子类在初始化时，也会调用父类的构造函数。如果父类构造函数不是默认构造函数(不写或者没有参数与行为的构造函数)，那么子类必须在初始化列表中调用父类的构造函数。
+
+```cpp
+class Shape {
+public:
+    Shape() {
+        cout << "Shape constructor" << endl;
+    }
+    Shape(int x) {
+        cout << "Shape constructor with x = " << x << endl;
+    }
+};
+class Circle : public Shape {
+public:
+    Circle() : Shape() {
+        cout << "Circle constructor" << endl;
+    }
+    Circle(int x) : Shape(x) {
+        cout << "Circle constructor with x = " << x << endl;
+    }
+};
+```
+
+因此，在初始化时，基类的构造函数会先被调用，然后才是派生类的构造函数。
+
+对于析构函数，则顺序正好相反，先调用派生类的析构函数，然后才是基类的析构函数。
+
 
 ### 抽象类与虚函数
 
@@ -418,12 +463,217 @@ public:
 
     - `virtual`表示这个函数是一个虚函数,可以在派生类中复写。
 
-    - `override`表示这个函数是对基类中的虚函数的复写。
+    - `override`表示这个函数是对基类中的虚函数的复写,并不是必需的,但是加了这个关键字,编译器会检查这个函数是否真的复写了基类中的虚函数。如果没有复写,编译器会报错。
 
     - `= 0`表示这个函数是一个纯虚函数,没有实现,必须在派生类中实现。
 
     - 如果一个类中有纯虚函数,那么这个类就是一个抽象类,不能实例化。
 
+---
+
++ 非虚函数:编译器在编译时就生成了静态的函数调用表,在运行时直接调用这个函数。
+
++ 虚函数:编译器在编译时生成了动态的函数调用表,在运行时根据对象的类型来决定调用哪个函数。
+
+    - 由此可以引出静态绑定与动态绑定的概念
+
+    - 静态绑定:根据声明的类型来决定调用哪个函数,在编译时就确定了函数的地址。
+
+    - 动态绑定:根据实际的类型来决定调用哪个函数,在运行时才确定函数的地址。
+
+??? note "How virtual really works"
+    我们先写如下代码:
+    ```cpp
+    #include<iostream>
+
+    using namespace std;
+
+    class Base{
+    public:
+        Base() : data(10) {}
+        void foo() {
+            cout << "Base::foo(): data = " << data << endl;
+        }
+    private:
+        int data;
+    };
+
+    int main(){
+        Base b;
+        b.foo();
+
+        cout << "Size of b is: " << sizeof(b) << endl;
+        return 0;
+    }
+    ```
+
+    运行结果为:
+    <div align="center">
+            <img src="../../../image/i150.png" width="50%" />
+        </div>
+    
+    这里我们可以看到,`sizeof(b)`的值是`4`,也就是`int`类型的大小,这是因为`data`是一个`int`类型的成员变量.
+
+    现在,我们加一个虚函数`bar()`:
+    ```cpp
+    virtual void bar() {
+        cout << "Base::bar()" << endl;
+    }
+    ```
+
+    现在b的大小是多少呢?
+
+    <div align="center">
+            <img src="../../../image/i151.png" width="50%" />
+        </div>
+
+    可以看到,`sizeof(b)`变成了16,居然多了12个字节,这12个字节是什么呢?
+
+    我们写一个指针,来访问一下这块地方:
+    ```cpp
+    int *p = (int*)&b;
+    cout << *p << endl;
+    p++;
+    cout << *p << endl;
+    p++;
+    cout << *p << endl;
+    ```
+
+    这里用一个`int*`指针是因为,我们知道`int`类型的大小是4,而`void*`指针的大小是8,这样`p`每加1,其访问的地址就会加四个字节
+
+    结果是:
+    <div align="center">
+            <img src="../../../image/i152.png" width="50%" />
+        </div>
+
+    可以看到,在`b`的内存中,前8个字节都是神奇的数字:1274168736与32758,这数字可能因电脑不同而不同,但再之后我们可以看到,出现了我们的`data`变量,也就是`10`.至于为什么后面还有四个字节,学过计组的或许能想到,内存空间是有对齐要求的,这里可能是用了double words来对齐.
+
+    实际上,前8个字节存放的是一个函数指针,指向`bar()`函数的地址.这是因为`bar`函数加了`virtual`关键字,编译器会在这个类的对象中添加一个指向虚函数表的指针,这个指针指向了`bar()`函数的地址.
+
+    实际上,使用`base`实例化的多个对象,它们的`bar()`函数指针是一样的,也就是它们指向同一个函数.
+    ```
+    int main(){
+        Base b;
+        b.foo();
+
+        cout << "Size of b is: " << sizeof(b) << endl;
+        int *p = (int*)&b;
+        void* vptr = *(void* *)p;
+        cout << "b的函数指针地址: " << vptr << endl; 
+
+        Base b2;
+        void *vptr2 = *((void**)&b2);
+        cout << "b2的函数指针地址: " << vptr2 << endl;
+        return 0;
+    }
+    ```
+
+    运行结果:
+    <div align="center">
+            <img src="../../../image/i153.png" width="50%" />
+        </div>
+
+    我们再来看看,在子类中,虚函数是什么样的
+
+    ```cpp
+    #include<iostream>
+
+    using namespace std;
+
+    class Base{
+    public:
+        Base() : data(10) {}
+        void foo() {
+            cout << "Base::foo(): data = " << data << endl;
+        }
+
+        virtual void bar() {
+            cout << "Base::bar()" << endl;
+        }
+    private:
+        int data;
+    };
+
+    class Derived : public Base{
+        public:
+            void bar(){
+                cout << "Derived::bar()" << endl;
+            }
+        };
+    int main(){
+        Base b;
+        b.foo();
+
+        cout << "Size of b is: " << sizeof(b) << endl;
+        int *p = (int*)&b;
+        void* vptr = *(void* *)p;
+        cout << "b的函数指针地址: " << vptr << endl; 
+
+        Base b2;
+        void *vptr2 = *((void**)&b2);
+        cout << "b2的函数指针地址: " << vptr2 << endl;
+
+        Derived d;
+
+        void* vptr3 = *((void**)&d);
+        cout << "d的函数指针地址: " << vptr3 << endl;
+
+        return 0;
+    }
+    ```
+
+    运行结果:
+    <div align="center">
+            <img src="../../../image/i154.png" width="50%" />
+        </div>
+
+    可以看到,它们之间差了32个字节,32个字节是什么呢?我猜测是两个基类的大小,因为上面定义了两个基类对象`b`和`b2`,它们的大小是16.
+
+    但如果我把继承类中的`bar()`函数去掉呢?
+
+    结果如图:
+    <div align="center">
+            <img src="../../../image/i155.png" width="50%" />
+        </div>
+
+    可以看到,地址还是没变,这是因为这个函数指针实际上指向每个类的虚函数表,所以即使`Derived`类中没有`bar()`函数,它也会指向`Derived`类的虚函数表中的`bar()`函数.
+
+现在,我们可以说说虚函数到底是怎么工作的了:
+
+1. 当我们定义一个类时,编译器会为这个类生成一个虚函数表,这个表中存放了这个类的所有虚函数的地址.
+
+2. 当我们用这个类实例化一个对象时,编译器会为这个对象添加一个指向虚函数表的指针.
+
+3. 当我们调用一个虚函数时,编译器会根据这个对象的虚函数表中的指针来找到这个虚函数的地址,然后调用这个函数.
+
+如果一个函数有多种类型,它们又全部被定义为虚函数,那么我们在子函数重写时,必须要重写这个函数所有的类型,不然其他类型的函数会被忽略.
+
+```cpp
+classBase {
+    public:
+    virtual voidfunc();
+    virtual voidfunc(int);
+};
+```
+
+
+!!! info
+    如下操作中:
+    ```cpp
+    Ellipse elly(20F, 40F);
+    Circle circ(60F);
+    elly = circ;
+    ```
+    由于`Circle`是`Ellipse`的子类,所以可以直接赋值给`elly`,但是这样的赋值会截断`Circle`中`Ellipse`中没有的成员变量,所以会导致数据丢失.
+
+    但是,我们如果用指针赋值:
+    ```cpp
+    Ellipse *elly = newEllipse(20f, 40f);
+    Circle *circ = newCircle(60f);
+    elly = circ;
+    ```
+
+    这是,`elly`就变成了一个指向`Circle`对象的指针,而不是一个`Ellipse`对象,所以不会丢失数据.
 ### 友元函数
 
 在上面的代码中,我们使用了`protected`来保护成员变量,这意味着派生类可以访问基类的成员变量,但是类外不能访问。
@@ -445,6 +695,26 @@ public:
 };
 ```
 在这样的情况下,我们可以在类外访问基类的成员变量。
+
+### Upcasting:上转型
+
+!!! definition "上转型"
+    上转型是指将派生类对象转换为基类对象的过程。
+
+    例如：
+    ```cpp
+    Circle c(1);
+    Shape* s = &c; // 上转型
+    ```
+
+    这里的`Shape* s = &c;`表示将`Circle`类的对象`c`转换为`Shape`类的指针`s`。
+
+    上转型是安全的，因为派生类对象包含了基类对象的所有成员变量和成员函数。
+    上转型后,我们只能访问基类的成员变量和成员函数,不能访问派生类的成员变量和成员函数。
+
+    另外，上转型也可以通过引用来实现。
+
+    `Shape& s = c;`表示将`Circle`类的对象`c`转换为`Shape`类的引用`s`。
 
 ## Comopile Unit
 
