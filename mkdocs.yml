@@ -118,6 +118,7 @@ nav :
     - "计算机体系结构":
       - incourse/CA/index.md
       - "Chapter 1:Introduction": incourse/CA/Ch1.md
+      - "Chapter 2:Instruction-Level Parallelism": incourse/CA/Ch2.md
       - "Chapter 3:Memory Hierarchy Design": incourse/CA/Ch3.md
   - "大一课程遗物":
     - incourse/old/index.md
@@ -186,7 +187,7 @@ plugins:
   - glightbox
   - git-revision-date-localized:
       enable_creation_date: true
-      enabled: false
+      enabled: true
       # type: timeago
       exclude:
         - index.md
