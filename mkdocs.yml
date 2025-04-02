@@ -117,7 +117,7 @@ nav :
       - "Chapter 4:Memory Model": incourse/oop/memory.md
     - "计算机体系结构":
       - incourse/CA/index.md
-      - "Chapter 1": incourse/CA/Ch1.md
+      - "Chapter 1:Introduction": incourse/CA/Ch1.md
       - "Chapter 3:Memory Hierarchy Design": incourse/CA/Ch3.md
   - "大一课程遗物":
     - incourse/old/index.md
@@ -186,7 +186,7 @@ plugins:
   - glightbox
   - git-revision-date-localized:
       enable_creation_date: true
-      enabled: true
+      enabled: false
       # type: timeago
       exclude:
         - index.md

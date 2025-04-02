@@ -225,6 +225,138 @@ $$
             }
             ```
         显然,后面一个循环更好,因为它更好地利用了空间局部性,可以被编译器优化为更好的缓存访问模式.
+    
+    - 另一种优化的方法是分块矩阵乘法(blocking)
+
+        !!! example "例子"
+            1. **没有Blocking的普通矩阵乘法**
+
+                假设有两个矩阵 \( A \) 和 \( B \)，它们分别是 \( 4 \times 4 \) 的矩阵。我们要计算 \( C = A \times B \)。
+
+                矩阵 \( A \) 和 \( B \) 如下：
+
+                \[
+                A = \begin{pmatrix}
+                1 & 2 & 3 & 4 \\
+                5 & 6 & 7 & 8 \\
+                9 & 10 & 11 & 12 \\
+                13 & 14 & 15 & 16
+                \end{pmatrix}
+                \]
+
+                \[
+                B = \begin{pmatrix}
+                1 & 0 & 0 & 0 \\
+                0 & 1 & 0 & 0 \\
+                0 & 0 & 1 & 0 \\
+                0 & 0 & 0 & 1
+                \end{pmatrix}
+                \]
+
+                矩阵乘法规则：
+
+                \[
+                C_{ij} = \sum_{k=1}^{n} A_{ik} B_{kj}
+                \]
+
+                由于矩阵 \( B \) 是单位矩阵，最终的结果 \( C \) 和 \( A \) 相同：
+
+                \[
+                C = \begin{pmatrix}
+                1 & 2 & 3 & 4 \\
+                5 & 6 & 7 & 8 \\
+                9 & 10 & 11 & 12 \\
+                13 & 14 & 15 & 16
+                \end{pmatrix}
+                \]
+
+                问题：
+
+                - 每次计算 \( C_{ij} \) 时，都需要从内存中读取 \( A \) 和 \( B \) 的元素，并进行运算。若矩阵规模很大，频繁访问内存会导致性能下降。
+
+            2. **使用Blocking优化后的矩阵乘法**
+
+                我们将矩阵分成更小的块进行计算，假设 **block大小为 \( 2 \times 2 \)**。这样，矩阵 \( A \) 和 \( B \) 会被分成 4 个 \( 2 \times 2 \) 的小块。
+
+                分块矩阵 \( A \) 和 \( B \)：
+
+                \[
+                A = \begin{pmatrix}
+                A_{11} & A_{12} \\
+                A_{21} & A_{22}
+                \end{pmatrix}
+                \]
+
+                其中：
+
+                \[
+                A_{11} = \begin{pmatrix} 1 & 2 \\ 5 & 6 \end{pmatrix}, A_{12} = \begin{pmatrix} 3 & 4 \\ 7 & 8 \end{pmatrix}, A_{21} = \begin{pmatrix} 9 & 10 \\ 13 & 14 \end{pmatrix}, A_{22} = \begin{pmatrix} 11 & 12 \\ 15 & 16 \end{pmatrix}
+                \]
+
+                \[
+                B = \begin{pmatrix}
+                B_{11} & B_{12} \\
+                B_{21} & B_{22}
+                \end{pmatrix}
+                \]
+
+                其中：
+
+                \[
+                B_{11} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, B_{12} = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}, B_{21} = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}, B_{22} = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}
+                \]
+
+            3. **计算分块后的结果**
+
+                每个小块 \( A_{ij} \) 和 \( B_{ij} \) 都会单独计算，然后将结果汇总到矩阵 \( C \)。
+
+                计算小块乘积：
+
+                1. 计算 \( C_{11} \) 的块：\( A_{11} \times B_{11} \)
+
+                    \[
+                    A_{11} \times B_{11} = \begin{pmatrix} 1 & 2 \\ 5 & 6 \end{pmatrix} \times \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 1 & 2 \\ 5 & 6 \end{pmatrix}
+                    \]
+
+                2. 计算 \( C_{12} \) 的块：\( A_{11} \times B_{12} \)
+
+                    \[
+                    A_{11} \times B_{12} = \begin{pmatrix} 1 & 2 \\ 5 & 6 \end{pmatrix} \times \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}
+                    \]
+
+                3. 计算 \( C_{21} \) 的块：\( A_{21} \times B_{11} \)
+
+                    \[
+                    A_{21} \times B_{11} = \begin{pmatrix} 9 & 10 \\ 13 & 14 \end{pmatrix} \times \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 9 & 10 \\ 13 & 14 \end{pmatrix}
+                    \]
+
+                4. 计算 \( C_{22} \) 的块：\( A_{21} \times B_{12} \)
+
+                    \[
+                    A_{21} \times B_{12} = \begin{pmatrix} 9 & 10 \\ 13 & 14 \end{pmatrix} \times \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}
+                    \]
+
+            4. **汇总结果**
+
+                将所有小块相加，得到最终结果矩阵 \( C \)：
+
+                \[
+                C = \begin{pmatrix}
+                1 + 0 & 2 + 0 \\
+                5 + 0 & 6 + 0 \\
+                9 + 0 & 10 + 0 \\
+                13 + 0 & 14 + 0
+                \end{pmatrix}
+                =
+                \begin{pmatrix}
+                1 & 2 & 3 & 4 \\
+                5 & 6 & 7 & 8 \\
+                9 & 10 & 11 & 12 \\
+                13 & 14 & 15 & 16
+                \end{pmatrix}
+                \]
+            
+            这个技术的关键之一就是选取合适的块大小。块大小过小会导致频繁的缓存缺失，而块大小过大则会导致缓存空间浪费。
 
 8. **Hardware Prefetching**：硬件预取
 
