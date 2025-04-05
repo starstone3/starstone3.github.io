@@ -38,3 +38,8 @@ comments : true
 
 + <a href="https://starstone3.github.io/smaterials/生命的教育_浙江大学中国大学mooc课后章节答案期末考试题库2023年.pdf" download="生命的教育_浙江大学中国大学mooc课后章节答案期末考试题库2023年.pdf">生命教育概论期末答案</a> 仅供参考
 + <a href="https://starstone3.github.io/smaterials/生命教育概论mooc答案.docx" download="生命教育概论mooc答案.docx">生命教育概论MOOC平时答案</a> 仅供参考
+
+
+## 鱼书 for 深度学习
+
++ <a href="https://starstone3.github.io/smaterials/深度学习入门：基于Python的理论与实现.pdf" download="深度学习入门.pdf">深度学习入门：基于Python的理论与实现</a>
