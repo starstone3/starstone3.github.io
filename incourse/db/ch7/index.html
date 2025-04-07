@@ -1695,6 +1695,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Third Normal Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#规范化的目标" class="md-nav__link">
+    <span class="md-ellipsis">
+      规范化的目标
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#er模型与nf模型的关系" class="md-nav__link">
+    <span class="md-ellipsis">
+      ER模型与NF模型的关系
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multivalued-dependencies多值依赖" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multivalued Dependencies(多值依赖)
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -2875,6 +2908,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Third Normal Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#规范化的目标" class="md-nav__link">
+    <span class="md-ellipsis">
+      规范化的目标
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#er模型与nf模型的关系" class="md-nav__link">
+    <span class="md-ellipsis">
+      ER模型与NF模型的关系
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multivalued-dependencies多值依赖" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multivalued Dependencies(多值依赖)
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -2898,7 +2964,7 @@
 
 <h1 id="关系数据库设计">关系数据库设计<a class="headerlink" href="#关系数据库设计" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 3025 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 23 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 15 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 3403 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 25 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 17 分钟</p>
 </div>
 <h2 id="介绍">介绍<a class="headerlink" href="#介绍" title="Permanent link">&para;</a></h2>
 <div class="admonition example">
@@ -3499,6 +3565,55 @@ K \text{ is a superkey} \iff K \rightarrow R \text{ and } K' \nrightarrow R \tex
 \)</span></p>
 </li>
 </ol>
+<h3 id="规范化的目标">规范化的目标<a class="headerlink" href="#规范化的目标" title="Permanent link">&para;</a></h3>
+<p>假设R是一个关系模式，F是其上的函数依赖集。我们需要：</p>
+<ol>
+<li>
+<p><strong>判断</strong>关系模式R是否处于“<strong>好</strong>”范式。</p>
+</li>
+<li>
+<p>如果关系模式R<strong>不处于</strong>“好”范式，则将其<strong>分解</strong>为一组关系模式 <span class="arithmatex">\(\{R_1, R_2, ..., R_n\}\)</span>，使得：</p>
+<ul>
+<li>
+<p>每个分解后的关系模式 <span class="arithmatex">\(R_i\)</span> 都处于<strong>好范式</strong>（例如，BCNF或3NF）。</p>
+</li>
+<li>
+<p>该分解是<strong>无损连接</strong>的。</p>
+</li>
+<li>
+<p><strong>最好</strong>，该分解还应<strong>保持函数依赖</strong>。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="er模型与nf模型的关系">ER模型与NF模型的关系<a class="headerlink" href="#er模型与nf模型的关系" title="Permanent link">&para;</a></h2>
+<div align="center">
+    <a class="glightbox" href="../../../image/i179.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i179.png" width="80%"></a>
+</div>
+
+<h2 id="multivalued-dependencies多值依赖">Multivalued Dependencies(多值依赖)<a class="headerlink" href="#multivalued-dependencies多值依赖" title="Permanent link">&para;</a></h2>
+<p>设R是一个关系模式，<span class="arithmatex">\(\alpha \subseteq R\)</span>且<span class="arithmatex">\(\beta \subseteq R\)</span>。多值依赖<span class="arithmatex">\(\alpha \twoheadrightarrow \beta\)</span></p>
+<p>在R上成立的条件是：对于任何合法关系r(R)中的任意两个元组t1和t2，如果t1[<span class="arithmatex">\(\alpha\)</span>] = t2[<span class="arithmatex">\(\alpha\)</span>]，那么在r中必然存在元组t3和t4，使得：</p>
+<ul>
+<li>t3[<span class="arithmatex">\(\alpha\)</span>] = t4[<span class="arithmatex">\(\alpha\)</span>] = t1[<span class="arithmatex">\(\alpha\)</span>] = t2[<span class="arithmatex">\(\alpha\)</span>]（这四个元组在<span class="arithmatex">\(\alpha\)</span>上的值相同）</li>
+<li>t3[<span class="arithmatex">\(\beta\)</span>] = t1[<span class="arithmatex">\(\beta\)</span>]（t3在<span class="arithmatex">\(\beta\)</span>上的值与t1相同）</li>
+<li>t3[R - <span class="arithmatex">\(\alpha\)</span> - <span class="arithmatex">\(\beta\)</span>] = t2[R - <span class="arithmatex">\(\alpha\)</span> - <span class="arithmatex">\(\beta\)</span>]（t3在剩余属性上的值与t2相同）</li>
+<li>t4[<span class="arithmatex">\(\beta\)</span>] = t2[<span class="arithmatex">\(\beta\)</span>]（t4在<span class="arithmatex">\(\beta\)</span>上的值与t2相同）</li>
+<li>t4[R - <span class="arithmatex">\(\alpha\)</span> - <span class="arithmatex">\(\beta\)</span>] = t1[R - <span class="arithmatex">\(\alpha\)</span> - <span class="arithmatex">\(\beta\)</span>]（t4在剩余属性上的值与t1相同）</li>
+</ul>
+<p>看上去很晦涩,我们来看看例子:</p>
+<div align="center">
+    <a class="glightbox" href="../../../image/i180.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i180.png" width="80%"></a>
+</div>
+
+<p>通俗来讲,多值依赖就是一个属性决定了另一个属性的集合,而且与剩下的属性可以随意组合.</p>
+<div class="admonition info">
+<p class="admonition-title">Theory of MVDs</p>
+<ol>
+<li>如果<span class="arithmatex">\(\alpha \rightarrow \beta\)</span>，那么<span class="arithmatex">\(\alpha \twoheadrightarrow \beta\)</span></li>
+</ol>
+</div>
+<p>后面不想写了,看<a href="https://note.hobbitqia.cc/DB/db7/#multivalued-dependencies">这里</a></p>
 
 
 
@@ -3507,8 +3622,37 @@ K \text{ is a superkey} \iff K \rightarrow R \text{ and } K' \nrightarrow R \tex
 
 
   
+    
+  
+  
+    
   
 
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月7日 11:11:47">2025年4月7日</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月7日 09:40:04">2025年4月7日</span>
+  </span>
+
+    
+    
+    
+  </aside>
 
 
   
