@@ -485,3 +485,52 @@ Because it is not always possible to achieve both BCNF and dependency preservati
     \(
     (R_1, R_2, \ldots, R_i)
     \)
+
+### 规范化的目标
+
+假设R是一个关系模式，F是其上的函数依赖集。我们需要：
+
+1.  **判断**关系模式R是否处于“**好**”范式。
+
+2.  如果关系模式R**不处于**“好”范式，则将其**分解**为一组关系模式 $\{R_1, R_2, ..., R_n\}$，使得：
+
+    *   每个分解后的关系模式 $R_i$ 都处于**好范式**（例如，BCNF或3NF）。
+
+    *   该分解是**无损连接**的。
+
+    *   **最好**，该分解还应**保持函数依赖**。
+
+
+
+## ER模型与NF模型的关系
+
+<div align="center">
+    <img src="../../../image/i179.png" width="80%">
+</div>
+
+## Multivalued Dependencies(多值依赖)
+
+设R是一个关系模式，$\alpha \subseteq R$且$\beta \subseteq R$。多值依赖$\alpha \twoheadrightarrow \beta$
+
+在R上成立的条件是：对于任何合法关系r(R)中的任意两个元组t1和t2，如果t1[$\alpha$] = t2[$\alpha$]，那么在r中必然存在元组t3和t4，使得：
+
+- t3[$\alpha$] = t4[$\alpha$] = t1[$\alpha$] = t2[$\alpha$]（这四个元组在$\alpha$上的值相同）
+- t3[$\beta$] = t1[$\beta$]（t3在$\beta$上的值与t1相同）
+- t3[R - $\alpha$ - $\beta$] = t2[R - $\alpha$ - $\beta$]（t3在剩余属性上的值与t2相同）
+- t4[$\beta$] = t2[$\beta$]（t4在$\beta$上的值与t2相同）
+- t4[R - $\alpha$ - $\beta$] = t1[R - $\alpha$ - $\beta$]（t4在剩余属性上的值与t1相同）
+
+
+看上去很晦涩,我们来看看例子:
+<div align="center">
+    <img src="../../../image/i180.png" width="80%">
+</div>
+
+通俗来讲,多值依赖就是一个属性决定了另一个属性的集合,而且与剩下的属性可以随意组合.
+
+!!! info "Theory of MVDs"
+
+    1. 如果$\alpha \rightarrow \beta$，那么$\alpha \twoheadrightarrow \beta$
+
+
+后面不想写了,看[这里](https://note.hobbitqia.cc/DB/db7/#multivalued-dependencies)
