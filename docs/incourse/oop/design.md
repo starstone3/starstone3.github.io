@@ -235,6 +235,8 @@ int main(){
 
 - 因此,在设计过程中,我们需要思考,需求会变在什么地方,那么我们就把这部分抽象出来,做成虚函数,让用户实现
 
+---
+
 ## 继续
 
 我们写一个类,来计算形如`f(x) = x^n - a`的零点,也就是`n`次方根.
@@ -319,3 +321,59 @@ int main(){
 <div align="center">
     <img src="../../../image/i182.png" width="80%">
 </div>
+
+---
+
+## 最后
+
+在课上，老师还讲了一种非常有趣的做法，不需要类来实现，而是使用`function`这个库来实现。
+
+我们定义一个输入是double，输出也是double的函数类型`function<double(double)>`
+
+```cpp
+#include<function>
+using fn = function<double(double)>;
+```
+
+然后，我们把牛顿迭代法的实现放在一个函数中，传入`f`和`f_prime`函数作为参数。
+
+```cpp
+double newton_solver(fn f, fn f_prime, double x0, int max_iter, double tolerance) {
+    int k = 0;
+    double x = x0;
+    while (fabs(f(x)) > tolerance && k < max_iter) {
+        x = x - f(x) / f_prime(x);
+        k++;
+        cout << "第" << k << "次迭代：x=" << x << " f(x)=" << f(x) << endl;
+    }
+    return x;
+}
+```
+
+然后我们就可以自定义函数并传给`newton_solver`函数了。
+
+```cpp
+double sqrt_solver(double x=1.0,double a) {
+    auto f = [a](double x) { return x * x - a; };
+    auto f_prime = [](double x) { return 2 * x; };
+    return newton_solver(f, f_prime, x, 32, 1e-12);
+}
+```
+
+这里要解释一下写法
+
+!!! info "Lambda in C++"
+    Python中的Lambda函数很简单，写法是`lambda arguments: expression`，表示一个匿名函数，对参数作`expression`操作。
+
+    C++中的Lambda函数写法是`[capture](parameters) -> return_type { body }`，表示一个匿名函数，对参数作`body`操作。
+
+    - `capture`表示捕获外部变量的方式，可以是值捕获或引用捕获
+
+    - `parameters`表示函数参数
+
+    - `-> return_type`表示返回值类型，可以省略，编译器会自动推导    
+    
+    在这里，我们就定义了一个匿名函数，它的参数是`x`，返回值是`x*x-a`，并把它赋值给`f`。
+
+如此，我们就可以求解任意函数的零点了。
+
