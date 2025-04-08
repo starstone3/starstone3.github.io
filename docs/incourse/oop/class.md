@@ -664,7 +664,7 @@ classBase {
     Circle circ(60F);
     elly = circ;
     ```
-    由于`Circle`是`Ellipse`的子类,所以可以直接赋值给`elly`,但是这样的赋值会截断`Circle`中`Ellipse`中没有的成员变量,所以会导致数据丢失.
+    由于`Circle`是`Ellipse`的子类,所以可以直接赋值给`elly`,但是这样的赋值会截断`Circle`中`Ellipse`中没有的成员变量,所以会导致数据丢失.需要注意的时,这里函数指针没有被赋值,`elly` 仍然保留 `Ellipse` 类的虚函数表,这样是安全的.
 
     但是,我们如果用指针赋值:
     ```cpp
