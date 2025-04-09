@@ -1806,6 +1806,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Chapter 2:Instruction-Level Parallelism
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1817,6 +1830,82 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ilp-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      ILP exploitation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ILP exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependence
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-dependence数据依赖" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Dependence(数据依赖)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name-dependence名称依赖" class="md-nav__link">
+    <span class="md-ellipsis">
+      Name Dependence(名称依赖)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-dependence控制依赖" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Dependence(控制依赖)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2552,6 +2641,71 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ilp-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      ILP exploitation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ILP exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependence
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-dependence数据依赖" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Dependence(数据依赖)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name-dependence名称依赖" class="md-nav__link">
+    <span class="md-ellipsis">
+      Name Dependence(名称依赖)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-dependence控制依赖" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Dependence(控制依赖)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2571,7 +2725,7 @@
 
 <h1 id="指令级并行">指令级并行<a class="headerlink" href="#指令级并行" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 400 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 3 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 2 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1134 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 16 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 6 分钟</p>
 </div>
 <p>开头<a href="../../Comcompose/Ch4/#流水线cpu">流水线</a>在前面学过了...</p>
 <p>在计组中我们学习的指令都是整数指令，实际上，对于浮点指令(FP)，流水线需要做一些小改动。</p>
@@ -2627,6 +2781,93 @@
 </li>
 </ol>
 </div>
+<h2 id="ilp-exploitation">ILP exploitation<a class="headerlink" href="#ilp-exploitation" title="Permanent link">&para;</a></h2>
+<div class="admonition definition">
+<p class="admonition-title">ILP exploitation</p>
+<p>ILP exploitation(指令级并行性利用)是指通过编译器和硬件的配合来提高指令级并行性。</p>
+<ul>
+<li>
+<p>Compiler-based static parallelism:编译器在编译时分析指令之间的依赖关系，并将可以并行执行的指令进行调度。</p>
+</li>
+<li>
+<p>Hardware-based dynamic parallelism:硬件在运行时动态分析指令之间的依赖关系，并将可以并行执行的指令进行调度。</p>
+</li>
+</ul>
+</div>
+<p>什么样的指令可以并行呢?</p>
+<p>如果两条指令一起执行时不会有stall，不会引起结构冒险，这两条指令就是可以并行的。</p>
+<p>不然，我们称这些指令是有依赖的，即Dependant Instructions。</p>
+<h3 id="dependence">Dependence<a class="headerlink" href="#dependence" title="Permanent link">&para;</a></h3>
+<h4 id="data-dependence数据依赖">Data Dependence(数据依赖)<a class="headerlink" href="#data-dependence数据依赖" title="Permanent link">&para;</a></h4>
+<p>数据依赖是指两条指令之间存在数据传递关系，即一条指令的输出结果作为另一条指令的输入。典型的数据依赖就是:</p>
+<ul>
+<li>
+<p>Read After Write (RAW): 也称为真实依赖，表示第二条指令需要读取第一条指令的结果。</p>
+</li>
+<li>
+<p><code>assembly
+  add r1, r2, r3
+  sub r4, r1, r5</code></p>
+</li>
+<li>
+<p>在上面的例子中，第二条指令需要读取第一条指令的结果r1，因此它们之间存在数据依赖关系。</p>
+</li>
+</ul>
+<p>总的来说，如果指令j不与指令i有数据依赖关系，那么下面的情况都不能出现：</p>
+<ul>
+<li>
+<p>指令j需要指令i的结果</p>
+</li>
+<li>
+<p>指令j数据依赖指令k，指令k数据依赖指令i</p>
+</li>
+</ul>
+<h4 id="name-dependence名称依赖">Name Dependence(名称依赖)<a class="headerlink" href="#name-dependence名称依赖" title="Permanent link">&para;</a></h4>
+<p>名称依赖是指两条指令之间存在名称冲突，即它们使用了相同的寄存器或内存地址，但实际上它们之间并没有数据传递关系。</p>
+<p>典型的名称依赖有以下两种：</p>
+<ul>
+<li>
+<p>WAR(Write After Read): 也称为反依赖(Antidependence)，即后一条指令写入了一个寄存器或内存地址，而前一条指令读取了这个寄存器或内存地址。</p>
+<ul>
+<li>
+<p><code>assembly
+    fsd r1, 0(r2)
+    addi r2,r2,-1</code></p>
+</li>
+<li>
+<p>这两条指令实际上没有数据依赖关系,但是它们执行的顺序不能交换，因为第二条指令会覆盖第一条指令的结果。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>WAW(Write After Write): 也称为输出依赖(Output Dependence)，即两条指令都要写入同一个寄存器或内存地址。</p>
+<ul>
+<li>
+<p><code>assembly
+    fsd r1, 0(r2)
+    fsd r1, 4(r2)</code></p>
+</li>
+<li>
+<p>同样,这两条指令没有数据依赖,但不能交换顺序.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>要解决名称依赖的问题，我们可以采取如下措施:</p>
+<ul>
+<li>Register Renaming:把寄存器重命名为不同的寄存器,这样就可以避免名称依赖的问题。</li>
+</ul>
+<h4 id="control-dependence控制依赖">Control Dependence(控制依赖)<a class="headerlink" href="#control-dependence控制依赖" title="Permanent link">&para;</a></h4>
+<p>控制依赖是指两条指令之间存在控制关系，即一条指令的执行结果影响了另一条指令的执行。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>beq r1, r2, L1
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>addi r3, r4, 1
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>L1:
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>addi r5, r6, 2
+</code></pre></div>
+<p>在上面的例子中，第二条指令的执行结果取决于第一条指令的执行结果，因此它们之间存在控制依赖关系。</p>
+<p>这与我们计组学的Control Hazard是一样的。</p>
 
 
 
@@ -2649,7 +2890,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月2日 07:38:55">2025年4月2日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月9日 07:25:29">2025年4月9日</span>
   </span>
 
     
