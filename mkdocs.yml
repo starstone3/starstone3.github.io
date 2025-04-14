@@ -2,7 +2,7 @@ site_name: Starstone3's bed
 site_author: starstone3
 site_url: 'https://starstone3.github.io'
 edit_uri: blob/main/docs
-repo_name: 'starstone3 sleeps here'
+repo_name: 'Starstone3 sleeps here'
 repo_url: 'https://github.com/starstone3/starstone3.github.io'
 theme:
   favicon: image/fav1.png
@@ -10,6 +10,7 @@ theme:
   language: zh
   icon:
     # logo: material/pac-man
+    set: material
     logo:  fontawesome/solid/cloud-moon
     # repo: fontawesome/brands/github-alt
     repo: simple/eslgaming
@@ -110,6 +111,8 @@ nav :
       - "Chapter 5:高级SQL": incourse/db/ch5.md
       - "Chapter 6:ER模型": incourse/db/ch6.md
       - "Chapter 7:关系数据库设计": incourse/db/ch7.md
+      - "Chapter 12: 数据存储": incourse/db/ch12.md
+      - "Chapter 13:数据存储结构": incourse/db/ch13.md
     - "OOP":
       - incourse/oop/index.md
       - "Chapter 1:Introduction": incourse/oop/intro.md
