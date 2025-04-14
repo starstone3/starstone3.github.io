@@ -120,6 +120,7 @@ nav :
       - "Chapter 3:STL": incourse/oop/STL.md
       - "Chapter 4:Memory Model": incourse/oop/memory.md
       - "Chapter 5:C++设计": incourse/oop/design.md
+      - "Chapter 6:复制构造": incourse/oop/copy.md
     - "计算机体系结构":
       - incourse/CA/index.md
       - "Chapter 1:Introduction": incourse/CA/Ch1.md
