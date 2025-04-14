@@ -10,22 +10,28 @@
         <meta name="author" content="starstone3">
       
       
+        <link rel="canonical" href="https://starstone3.github.io/incourse/oop/copy/">
       
       
+        <link rel="prev" href="../design/">
       
-      <link rel="icon" href="/image/fav1.png">
+      
+        <link rel="next" href="../../CA/">
+      
+      
+      <link rel="icon" href="../../../image/fav1.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
     
     
       
-        <title>Starstone3's bed</title>
+        <title>Chapter 6:复制构造 - Starstone3's bed</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -85,7 +91,7 @@
       
     
     
-      <link rel="stylesheet" href="/css/flink.css">
+      <link rel="stylesheet" href="../../../css/flink.css">
     
       <link rel="stylesheet" href="https://jsd.cdn.zzko.cn/npm/katex@0.16.4/dist/katex.min.css">
     
@@ -95,11 +101,11 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="/css/extra.css">
+      <link rel="stylesheet" href="../../../css/extra.css">
     
-      <link rel="stylesheet" href="/css/styles.css">
+      <link rel="stylesheet" href="../../../css/styles.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -116,7 +122,16 @@
     
     
     
-  </head>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -134,6 +149,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#copy-constructor" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -144,7 +164,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/." title="Starstone3&#39;s bed" class="md-header__button md-logo" aria-label="Starstone3's bed" data-md-component="logo">
+    <a href="../../.." title="Starstone3&#39;s bed" class="md-header__button md-logo" aria-label="Starstone3's bed" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M495.8 0c5.5 0 10.9.2 16.3.7 7 .6 12.8 5.7 14.3 12.5s-1.6 13.9-7.7 17.3c-44.4 25.2-74.4 73-74.4 127.8 0 81 65.5 146.6 146.2 146.6 8.6 0 17-.7 25.1-2.1 6.9-1.2 13.8 2.2 17 8.5s1.9 13.8-3.1 18.7c-34.5 33.6-81.7 54.4-133.6 54.4-9.3 0-18.4-.7-27.4-1.9-11.2-22.6-29.8-40.9-52.6-51.7-2.7-58.5-50.3-105.3-109.2-106.7-1.7-10.4-2.6-21-2.6-31.8C304 86.1 389.8 0 495.8 0m-47.9 431.9c0 44.2-35.8 80-80 80H96c-53 0-96-43-96-96 0-47.6 34.6-87 80-94.6V320c0-53 43-96 96-96 34.9 0 65.4 18.6 82.2 46.4 13-9.1 28.8-14.4 45.8-14.4 44.2 0 80 35.8 80 80 0 5.9-.6 11.7-1.9 17.2 37.4 6.7 65.8 39.4 65.8 78.7"/></svg>
@@ -164,7 +184,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Chapter 6:复制构造
             
           </span>
         </div>
@@ -294,7 +314,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link">
           
   
   
@@ -312,11 +332,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/incourse/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -338,7 +360,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/incourse/old/" class="md-tabs__link">
+        <a href="../../old/" class="md-tabs__link">
           
   
   
@@ -360,7 +382,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/article/" class="md-tabs__link">
+        <a href="../../../article/" class="md-tabs__link">
           
   
   
@@ -382,7 +404,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/tools/" class="md-tabs__link">
+        <a href="../../../tools/" class="md-tabs__link">
           
   
   
@@ -418,7 +440,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Starstone3&#39;s bed" class="md-nav__button md-logo" aria-label="Starstone3's bed" data-md-component="logo">
+    <a href="../../.." title="Starstone3&#39;s bed" class="md-nav__button md-logo" aria-label="Starstone3's bed" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M495.8 0c5.5 0 10.9.2 16.3.7 7 .6 12.8 5.7 14.3 12.5s-1.6 13.9-7.7 17.3c-44.4 25.2-74.4 73-74.4 127.8 0 81 65.5 146.6 146.2 146.6 8.6 0 17-.7 25.1-2.1 6.9-1.2 13.8 2.2 17 8.5s1.9 13.8-3.1 18.7c-34.5 33.6-81.7 54.4-133.6 54.4-9.3 0-18.4-.7-27.4-1.9-11.2-22.6-29.8-40.9-52.6-51.7-2.7-58.5-50.3-105.3-109.2-106.7-1.7-10.4-2.6-21-2.6-31.8C304 86.1 389.8 0 495.8 0m-47.9 431.9c0 44.2-35.8 80-80 80H96c-53 0-96-43-96-96 0-47.6 34.6-87 80-94.6V320c0-53 43-96 96-96 34.9 0 65.4 18.6 82.2 46.4 13-9.1 28.8-14.4 45.8-14.4 44.2 0 80 35.8 80 80 0 5.9-.6 11.7-1.9 17.2 37.4 6.7 65.8 39.4 65.8 78.7"/></svg>
@@ -471,7 +493,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/." class="md-nav__link ">
+            <a href="../../.." class="md-nav__link ">
               
   
   
@@ -506,7 +528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/friends/" class="md-nav__link">
+      <a href="../../../friends/" class="md-nav__link">
         
   
   
@@ -533,6 +555,8 @@
       
   
   
+    
+  
   
   
     
@@ -556,18 +580,21 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/incourse/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -580,13 +607,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             课程笔记
@@ -655,7 +682,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/incourse/ADS/" class="md-nav__link ">
+            <a href="../../ADS/" class="md-nav__link ">
               
   
   
@@ -690,7 +717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/ADS/Tree/" class="md-nav__link">
+      <a href="../../ADS/Tree/" class="md-nav__link">
         
   
   
@@ -713,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/ADS/amana/" class="md-nav__link">
+      <a href="../../ADS/amana/" class="md-nav__link">
         
   
   
@@ -736,7 +763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/ADS/fileindex/" class="md-nav__link">
+      <a href="../../ADS/fileindex/" class="md-nav__link">
         
   
   
@@ -759,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/ADS/Leandsk/" class="md-nav__link">
+      <a href="../../ADS/Leandsk/" class="md-nav__link">
         
   
   
@@ -782,7 +809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/ADS/bioquene/" class="md-nav__link">
+      <a href="../../ADS/bioquene/" class="md-nav__link">
         
   
   
@@ -805,7 +832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/ADS/backtracking/" class="md-nav__link">
+      <a href="../../ADS/backtracking/" class="md-nav__link">
         
   
   
@@ -828,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/ADS/divide/" class="md-nav__link">
+      <a href="../../ADS/divide/" class="md-nav__link">
         
   
   
@@ -851,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/ADS/dp/" class="md-nav__link">
+      <a href="../../ADS/dp/" class="md-nav__link">
         
   
   
@@ -874,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/ADS/greedy/" class="md-nav__link">
+      <a href="../../ADS/greedy/" class="md-nav__link">
         
   
   
@@ -897,7 +924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/ADS/np/" class="md-nav__link">
+      <a href="../../ADS/np/" class="md-nav__link">
         
   
   
@@ -920,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/ADS/Approximation/" class="md-nav__link">
+      <a href="../../ADS/Approximation/" class="md-nav__link">
         
   
   
@@ -943,7 +970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/ADS/localsearch/" class="md-nav__link">
+      <a href="../../ADS/localsearch/" class="md-nav__link">
         
   
   
@@ -966,7 +993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/ADS/Random/" class="md-nav__link">
+      <a href="../../ADS/Random/" class="md-nav__link">
         
   
   
@@ -989,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/ADS/parall/" class="md-nav__link">
+      <a href="../../ADS/parall/" class="md-nav__link">
         
   
   
@@ -1012,7 +1039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/ADS/exsort/" class="md-nav__link">
+      <a href="../../ADS/exsort/" class="md-nav__link">
         
   
   
@@ -1035,7 +1062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/ADS/resource/" class="md-nav__link">
+      <a href="../../ADS/resource/" class="md-nav__link">
         
   
   
@@ -1097,7 +1124,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/incourse/Comcompose/" class="md-nav__link ">
+            <a href="../../Comcompose/" class="md-nav__link ">
               
   
   
@@ -1132,7 +1159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/Comcompose/Ch2/" class="md-nav__link">
+      <a href="../../Comcompose/Ch2/" class="md-nav__link">
         
   
   
@@ -1155,7 +1182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/Comcompose/Ch3/" class="md-nav__link">
+      <a href="../../Comcompose/Ch3/" class="md-nav__link">
         
   
   
@@ -1178,7 +1205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/Comcompose/Ch4/" class="md-nav__link">
+      <a href="../../Comcompose/Ch4/" class="md-nav__link">
         
   
   
@@ -1201,7 +1228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/Comcompose/Ch5/" class="md-nav__link">
+      <a href="../../Comcompose/Ch5/" class="md-nav__link">
         
   
   
@@ -1224,7 +1251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/Comcompose/Ch6/" class="md-nav__link">
+      <a href="../../Comcompose/Ch6/" class="md-nav__link">
         
   
   
@@ -1294,7 +1321,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/incourse/db/" class="md-nav__link ">
+            <a href="../../db/" class="md-nav__link ">
               
   
   
@@ -1329,7 +1356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/db/ch1/" class="md-nav__link">
+      <a href="../../db/ch1/" class="md-nav__link">
         
   
   
@@ -1352,7 +1379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/db/ch2/" class="md-nav__link">
+      <a href="../../db/ch2/" class="md-nav__link">
         
   
   
@@ -1375,7 +1402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/db/ch3/" class="md-nav__link">
+      <a href="../../db/ch3/" class="md-nav__link">
         
   
   
@@ -1398,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/db/ch4/" class="md-nav__link">
+      <a href="../../db/ch4/" class="md-nav__link">
         
   
   
@@ -1421,7 +1448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/db/ch5/" class="md-nav__link">
+      <a href="../../db/ch5/" class="md-nav__link">
         
   
   
@@ -1444,7 +1471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/db/ch6/" class="md-nav__link">
+      <a href="../../db/ch6/" class="md-nav__link">
         
   
   
@@ -1467,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/db/ch7/" class="md-nav__link">
+      <a href="../../db/ch7/" class="md-nav__link">
         
   
   
@@ -1490,7 +1517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/db/ch12/" class="md-nav__link">
+      <a href="../../db/ch12/" class="md-nav__link">
         
   
   
@@ -1513,7 +1540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/db/ch13/" class="md-nav__link">
+      <a href="../../db/ch13/" class="md-nav__link">
         
   
   
@@ -1541,6 +1568,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1569,15 +1598,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/incourse/oop/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1596,7 +1625,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             OOP
@@ -1612,7 +1641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/oop/intro/" class="md-nav__link">
+      <a href="../intro/" class="md-nav__link">
         
   
   
@@ -1635,7 +1664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/oop/class/" class="md-nav__link">
+      <a href="../class/" class="md-nav__link">
         
   
   
@@ -1658,7 +1687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/oop/STL/" class="md-nav__link">
+      <a href="../STL/" class="md-nav__link">
         
   
   
@@ -1681,7 +1710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/oop/memory/" class="md-nav__link">
+      <a href="../memory/" class="md-nav__link">
         
   
   
@@ -1704,7 +1733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/oop/design/" class="md-nav__link">
+      <a href="../design/" class="md-nav__link">
         
   
   
@@ -1724,10 +1753,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/incourse/oop/copy/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Chapter 6:复制构造
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1738,6 +1789,77 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#细看拷贝构造函数" class="md-nav__link">
+    <span class="md-ellipsis">
+      细看拷贝构造函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copy-ctor-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copy ctor guidelines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#杂项" class="md-nav__link">
+    <span class="md-ellipsis">
+      杂项
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="杂项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#禁用拷贝构造" class="md-nav__link">
+    <span class="md-ellipsis">
+      禁用拷贝构造
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emplace_back" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emplace_back
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1785,7 +1907,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/incourse/CA/" class="md-nav__link ">
+            <a href="../../CA/" class="md-nav__link ">
               
   
   
@@ -1820,7 +1942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/CA/Ch1/" class="md-nav__link">
+      <a href="../../CA/Ch1/" class="md-nav__link">
         
   
   
@@ -1843,7 +1965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/CA/Ch2/" class="md-nav__link">
+      <a href="../../CA/Ch2/" class="md-nav__link">
         
   
   
@@ -1866,7 +1988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/CA/Ch3/" class="md-nav__link">
+      <a href="../../CA/Ch3/" class="md-nav__link">
         
   
   
@@ -1931,7 +2053,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/incourse/old/" class="md-nav__link ">
+            <a href="../../old/" class="md-nav__link ">
               
   
   
@@ -1966,7 +2088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/old/fds/" class="md-nav__link">
+      <a href="../../old/fds/" class="md-nav__link">
         
   
   
@@ -1989,7 +2111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/old/digital/" class="md-nav__link">
+      <a href="../../old/digital/" class="md-nav__link">
         
   
   
@@ -2012,7 +2134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/incourse/old/mathandphy/" class="md-nav__link">
+      <a href="../../old/mathandphy/" class="md-nav__link">
         
   
   
@@ -2067,7 +2189,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/article/" class="md-nav__link ">
+            <a href="../../../article/" class="md-nav__link ">
               
   
   
@@ -2129,7 +2251,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/article/out/" class="md-nav__link ">
+            <a href="../../../article/out/" class="md-nav__link ">
               
   
   
@@ -2164,7 +2286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/article/out/Transformer/" class="md-nav__link">
+      <a href="../../../article/out/Transformer/" class="md-nav__link">
         
   
   
@@ -2187,7 +2309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/article/out/DP/" class="md-nav__link">
+      <a href="../../../article/out/DP/" class="md-nav__link">
         
   
   
@@ -2210,7 +2332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/article/out/ML/" class="md-nav__link">
+      <a href="../../../article/out/ML/" class="md-nav__link">
         
   
   
@@ -2274,7 +2396,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/article/read/" class="md-nav__link ">
+            <a href="../../../article/read/" class="md-nav__link ">
               
   
   
@@ -2309,7 +2431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/article/read/What%20is%20chatgpt%20doing%20and%20Why%20does%20it%20work/" class="md-nav__link">
+      <a href="../../../article/read/What%20is%20chatgpt%20doing%20and%20Why%20does%20it%20work/" class="md-nav__link">
         
   
   
@@ -2332,7 +2454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/article/read/Instruction%20Tuning%20for%20Large%20Language%20Model%20%20A%20Survey/" class="md-nav__link">
+      <a href="../../../article/read/Instruction%20Tuning%20for%20Large%20Language%20Model%20%20A%20Survey/" class="md-nav__link">
         
   
   
@@ -2355,7 +2477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/article/read/Visual%20Instruction%20Tuning%20and%20Improved%20Baselines%20with%20Visual%20Instruction%20Tuning/" class="md-nav__link">
+      <a href="../../../article/read/Visual%20Instruction%20Tuning%20and%20Improved%20Baselines%20with%20Visual%20Instruction%20Tuning/" class="md-nav__link">
         
   
   
@@ -2378,7 +2500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/article/read/GPT-4%20Technical%20Report/" class="md-nav__link">
+      <a href="../../../article/read/GPT-4%20Technical%20Report/" class="md-nav__link">
         
   
   
@@ -2401,7 +2523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/article/read/CogAgent%20A%20Visual%20Language%20Model%20for%20GUI%20Agents/" class="md-nav__link">
+      <a href="../../../article/read/CogAgent%20A%20Visual%20Language%20Model%20for%20GUI%20Agents/" class="md-nav__link">
         
   
   
@@ -2424,7 +2546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/article/read/Knowledge%20Distillation%20A%20Survey/" class="md-nav__link">
+      <a href="../../../article/read/Knowledge%20Distillation%20A%20Survey/" class="md-nav__link">
         
   
   
@@ -2487,7 +2609,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/tools/" class="md-nav__link ">
+            <a href="../../../tools/" class="md-nav__link ">
               
   
   
@@ -2522,7 +2644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tools/tools/" class="md-nav__link">
+      <a href="../../../tools/tools/" class="md-nav__link">
         
   
   
@@ -2545,7 +2667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tools/share/" class="md-nav__link">
+      <a href="../../../tools/share/" class="md-nav__link">
         
   
   
@@ -2585,6 +2707,67 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#细看拷贝构造函数" class="md-nav__link">
+    <span class="md-ellipsis">
+      细看拷贝构造函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copy-ctor-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copy ctor guidelines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#杂项" class="md-nav__link">
+    <span class="md-ellipsis">
+      杂项
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="杂项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#禁用拷贝构造" class="md-nav__link">
+    <span class="md-ellipsis">
+      禁用拷贝构造
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emplace_back" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emplace_back
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2596,8 +2779,391 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="copy-constructor">Copy Constructor<a class="headerlink" href="#copy-constructor" title="Permanent link">&para;</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1026 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 122 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 3 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 7 分钟</p>
+</div>
+<div class="admonition definition">
+<p class="admonition-title">Copy</p>
+<p>Copy就是在创建一个新对象时，将一个已存在对象的值复制到新对象中。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">//Currency as pass-by-value argument </span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">voidfunc</span><span class="p">(</span><span class="n">Currency</span><span class="w"> </span><span class="n">p</span><span class="p">){</span><span class="w">    </span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;X = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">dollars</span><span class="p">();</span><span class="w"> </span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="p">...</span><span class="w"> </span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">Currency</span><span class="w"> </span><span class="n">bucks</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">func</span><span class="p">(</span><span class="n">bucks</span><span class="p">);</span><span class="w"> </span><span class="c1">// bucks is copied into p</span>
+</code></pre></div>
+<p>在这里,<code>func</code>函数的参数<code>p</code>是一个<code>Currency</code>对象的副本。</p>
+<p>这意味着在函数调用时，<code>bucks</code>对象的值被复制到<code>p</code>中。</p>
+<p>不过在平时写的时候,更常见的情况是使用引用传递,即<code>func(Currency &amp;p)</code>。</p>
+</div>
+<hr />
+<p>还是以一段程序开始:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">howmany</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">message</span><span class="p">){</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="s">&quot;,&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;howmany=&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">howmany</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">}</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">class</span><span class="w"> </span><span class="nc">Howmany</span><span class="p">{</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="n">Howmany</span><span class="p">(){</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">        </span><span class="n">howmany</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Howmany::Howmany()&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="o">~</span><span class="n">Howmany</span><span class="p">(){</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">        </span><span class="n">howmany</span><span class="o">--</span><span class="p">;</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">        </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Howmany::~Howmany()&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="p">};</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="n">Howmany</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">Howmany</span><span class="w"> </span><span class="n">x</span><span class="p">){</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;f(Howmany x)&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="p">}</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">    </span><span class="n">Howmany</span><span class="w"> </span><span class="n">h</span><span class="p">;</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;After Howmany h;&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">    </span><span class="n">Howmany</span><span class="w"> </span><span class="n">h2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">h</span><span class="p">);</span><span class="w"> </span><span class="c1">// copy constructor</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;After Howmany h2 = f(h);&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="p">}</span>
+</code></pre></div>
+<p>这段程序的运行结果是:</p>
+<div align="center">
+<a class="glightbox" href="../../../image/i193.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i193.png" width="100%"></a>
+</div>
+
+<p>这里调用了三次析构函数,但为什么好像只调用了一次构造函数呢?</p>
+<details class="tip">
+<summary>分析</summary>
+<p>这是因为在后面两次构造,也就是对<code>x</code>的构造和对<code>h2</code>的构造,都是调用了拷贝构造函数,而不是默认构造函数。</p>
+<p>而我们的类里面,没有拷贝构造函数,所以编译器会自动生成一个拷贝构造函数,这个拷贝构造函数的实现是直接把对象的所有成员变量逐个复制到新对象中。</p>
+<p>但是没有带上<code>howmany++</code>的语句,看起来好像只调用了一次构造函数.</p>
+<p>如果我们自己写一个拷贝构造函数:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">Howmany</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Howmany</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">){</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="n">howmany</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Howmany::Howmany(const Howmany&amp;)&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
+</code></pre></div>
+<p><div align="center">
+<a class="glightbox" href="../../../image/i194.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i194.png" width="100%"></a>
+</div></p>
+<p>这样就正常了，三次构造，三次析构。</p>
+<p>btw,在初始化时,<code>=</code>和<code>()</code>都会调用拷贝构造函数，也就是说，<code>MyClass b = a;</code>和<code>MyClass b(a);</code>是等价的。</p>
+</details>
+<hr />
+<h2 id="细看拷贝构造函数">细看拷贝构造函数<a class="headerlink" href="#细看拷贝构造函数" title="Permanent link">&para;</a></h2>
+<p>拷贝构造函数的定义是这样的:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">T</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+</code></pre></div>
+<p>如果我们不写拷贝构造函数，编译器会自动生成一个拷贝构造函数。</p>
+<p>这个自动生成的拷贝构造函数是<code>Member-wise copy</code>,也就是说，编译器会把对象的每个成员变量都复制到新对象中。</p>
+<p>对于一般的变量,这当然是好的,但是对于指针来说,就意味着会把地址也复制过去.</p>
+<div align="center">
+<a class="glightbox" href="../../../image/i195.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i195.png" width="100%"></a>
+</div>
+
+<p>来搞点小花招:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="cp">#include</span><span class="cpf">&lt;cstring&gt;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">{</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="n">Person</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="p">){</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">char</span><span class="p">[</span><span class="n">strlen</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="n">strcpy</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="o">~</span><span class="n">Person</span><span class="p">(){</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">        </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="p">};</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="n">Person</span><span class="w"> </span><span class="n">p1</span><span class="p">(</span><span class="s">&quot;Trump&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">    </span><span class="n">Person</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p1</span><span class="p">;</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">p1</span><span class="p">.</span><span class="n">name</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">p2</span><span class="p">.</span><span class="n">name</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="p">}</span>
+</code></pre></div>
+<p>这个程序跑出来,两个指针的地址是一样的,这是因为<code>name</code>是一个指针变量,所以编译器会把指针的值复制到新对象中,而不是复制指针指向的内容.</p>
+<p>当然,如果你真的去跑的话,这个程序在最后肯定会出错或者崩溃.原因在于,删除<code>p1</code>的时候,<code>p2</code>的指针也被删除了,所以<code>p2</code>的指针就变成了悬空指针,在调用<code>p2</code>的析构函数的时候,我们在对一块地址<code>delete</code>了两次,所以会出错.</p>
+<p>我们只要加上一个拷贝构造函数就可以了:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Person</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Person</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">){</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">char</span><span class="p">[</span><span class="n">strlen</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">name</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">        </span><span class="n">strcpy</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">other</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">}</span>
+</code></pre></div>
+<p>这样,两个指针指向的地址就不一样了,所以不会出错.</p>
+<hr />
+<p>实际上,在C++中,更推荐的做法是使用<code>std::string</code>类,而不是使用<code>char*</code>指针.因为<code>std::string</code>类本身是一个类,因此在拷贝构造时会自动调用<code>`std::string</code>类的拷贝构造函数,而不是直接复制指针.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="cp">#include</span><span class="cpf">&lt;string&gt;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">{</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="n">Person</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="o">:</span><span class="n">name</span><span class="p">(</span><span class="n">n</span><span class="p">){}</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="p">};</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="n">Person</span><span class="w"> </span><span class="n">p1</span><span class="p">(</span><span class="s">&quot;Trump&quot;</span><span class="p">);</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span><span class="n">Person</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p1</span><span class="p">;</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">p1</span><span class="p">.</span><span class="n">name</span><span class="p">.</span><span class="n">data</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">p2</span><span class="p">.</span><span class="n">name</span><span class="p">.</span><span class="n">data</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="p">}</span>
+</code></pre></div></p>
+<p>这样,两个对象的指针地址就不一样了,所以不会出错.</p>
+<hr />
+<p>现在,我们可以把默认拷贝构造的<code>Member-wise copy</code>总结如下:</p>
+<ol>
+<li>
+<p>Calling the copy ctors for each class-typemember (and the base part), recursively</p>
+</li>
+<li>
+<p>Doing a plain assignment for each non-classtype member (e.g., int or pointer).</p>
+</li>
+</ol>
+<h2 id="copy-ctor-guidelines">Copy ctor guidelines<a class="headerlink" href="#copy-ctor-guidelines" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Rule</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Rule of Zero</label><label for="__tabbed_1_2">Rule of Three</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>如果没有必要,就不要定义下面三者:</p>
+<ol>
+<li>
+<p>拷贝构造函数</p>
+</li>
+<li>
+<p>析构函数</p>
+</li>
+<li>
+<p><code>=</code>运算符重载</p>
+</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p>如果你定义了上面三者中的一个,那么就必须定义另外两个.</p>
+<p>例如</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="n">MyClass</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MyClass</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// copy ctor</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="n">MyClass</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MyClass</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// assignment operator</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="o">~</span><span class="n">MyClass</span><span class="p">();</span><span class="w"> </span><span class="c1">// destructor</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">};</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>一般来说,重载<code>=</code>运算符有一个约定俗成的规则:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">MyClass</span><span class="o">&amp;</span><span class="w"> </span><span class="n">MyClass</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MyClass</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">){</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">){</span><span class="w"> </span><span class="c1">// check for self-assignment</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">        </span><span class="c1">// do the assignment</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w"> </span><span class="c1">// return the current object</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">}</span>
+</code></pre></div>
+<p>先检查是否为自赋值可以避免很多麻烦.</p>
+<h2 id="杂项">杂项<a class="headerlink" href="#杂项" title="Permanent link">&para;</a></h2>
+<h3 id="禁用拷贝构造">禁用拷贝构造<a class="headerlink" href="#禁用拷贝构造" title="Permanent link">&para;</a></h3>
+<p>有时候,由于拷贝构造的代价太大,或是其他原因,我们需要禁用拷贝构造函数.</p>
+<p>在C++11之前,一般是把拷贝构造设为private,然后不实现:</p>
+<p>在C++11之后,可以使用<code>delete</code>关键字:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="n">MyClass</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MyClass</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span><span class="w"> </span><span class="c1">// disable copy ctor</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="n">MyClass</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MyClass</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span><span class="w"> </span><span class="c1">// disable assignment operator</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">};</span>
+</code></pre></div>
+这样,如果你尝试使用拷贝构造函数或赋值运算符,编译器会报错.</p>
+<h3 id="emplace_back">Emplace_back<a class="headerlink" href="#emplace_back" title="Permanent link">&para;</a></h3>
+<p>在C++11中,我们可以使用<code>emplace_back</code>来避免拷贝构造函数的调用.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">;</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"> </span><span class="c1">// copy constructor is called</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&quot;World&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// no copy constructor is called</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="p">}</span>
+</code></pre></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月14日 09:42:19">2025年4月14日</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月14日 09:42:19">2025年4月14日</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        此页面有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="这玩意有点用" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="这玩意真有用吗" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              谢谢你的反馈！
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              呜呜呜，别骂了别骂了，请联系我！ <a href="mailto:pxxhello@gmail.com">俺的gmail</a>
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+  <h2 id="__comments">评论</h2>
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+  data-repo="starstone3/starstone3.github.io"
+  data-repo-id="R_kgDOM1N9qQ"
+  data-category="Announcements"
+  data-category-id="DIC_kwDOM1N9qc4Cir1z"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="preferred_color_scheme"
+  data-lang="zh-CN"
+  crossorigin="anonymous"
+  async>
+</script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
+                
               </article>
             </div>
           
@@ -2617,6 +3183,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../design/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Chapter 5:C++设计">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Chapter 5:C++设计
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../CA/" class="md-footer__link md-footer__link--next" aria-label="下一页: CAAAAAA">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                CAAAAAA
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -2647,16 +3251,16 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.annotate"], "search": "/assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
-        <script src="/_js/extra.js"></script>
+        <script src="../../../_js/extra.js"></script>
       
-        <script src="/_js/mathjax.js"></script>
+        <script src="../../../_js/mathjax.js"></script>
       
-        <script src="/_js/katex.js"></script>
+        <script src="../../../_js/katex.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
@@ -2667,5 +3271,7 @@
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
