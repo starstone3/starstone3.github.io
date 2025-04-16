@@ -2006,6 +2006,57 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#dynamic-branch-prediction动态分支预测" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Branch Prediction(动态分支预测)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic Branch Prediction(动态分支预测)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-bit-predictor1位预测器" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 bit predictor(1位预测器)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-bit-predictor2位预测器" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 bit predictor(2位预测器)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-target-bufferbtb分支目标缓冲器" class="md-nav__link">
+    <span class="md-ellipsis">
+      Branch Target Buffer(BTB)(分支目标缓冲器)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tournament-predictor比赛预测器" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tournament Predictor(比赛预测器)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2840,6 +2891,57 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#dynamic-branch-prediction动态分支预测" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Branch Prediction(动态分支预测)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic Branch Prediction(动态分支预测)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-bit-predictor1位预测器" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 bit predictor(1位预测器)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-bit-predictor2位预测器" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 bit predictor(2位预测器)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-target-bufferbtb分支目标缓冲器" class="md-nav__link">
+    <span class="md-ellipsis">
+      Branch Target Buffer(BTB)(分支目标缓冲器)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tournament-predictor比赛预测器" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tournament Predictor(比赛预测器)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2866,7 +2968,7 @@
 
 <h1 id="指令级并行">指令级并行<a class="headerlink" href="#指令级并行" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2084 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 60 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 11 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2689 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 60 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 14 分钟</p>
 </div>
 <p>开头<a href="../../Comcompose/Ch4/#流水线cpu">流水线</a>在前面学过了...</p>
 <p>在计组中我们学习的指令都是整数指令，实际上，对于浮点指令(FP)，流水线需要做一些小改动。</p>
@@ -3141,6 +3243,119 @@
 <p>这样,我们用有用的指令代替了stall,所以完全不需要停了.</p>
 <p>四个循环一共用了14个周期,平均每个循环3.5个周期,提升可以说非常大了.</p>
 <hr />
+<h3 id="dynamic-branch-prediction动态分支预测">Dynamic Branch Prediction(动态分支预测)<a class="headerlink" href="#dynamic-branch-prediction动态分支预测" title="Permanent link">&para;</a></h3>
+<h4 id="1-bit-predictor1位预测器">1 bit predictor(1位预测器)<a class="headerlink" href="#1-bit-predictor1位预测器" title="Permanent link">&para;</a></h4>
+<p>用一个位来表示分支是否被预测为taken,如果是,就用1表示,如果不是,就用0表示.</p>
+<p>如果当前预测的结果和实际结果相同,就不需要更新,如果不同,就更新.</p>
+<p>相当于一个只有两个状态的有限状态机.</p>
+<p>这个方法对于“摇摆"的分支预测效果会很糟糕，比如taken和not taken交替出现的情况。</p>
+<p>在这个情况下，我们思考2bit预测器的设计。</p>
+<h4 id="2-bit-predictor2位预测器">2 bit predictor(2位预测器)<a class="headerlink" href="#2-bit-predictor2位预测器" title="Permanent link">&para;</a></h4>
+<p>2bit预测器使用两个位来表示分支的状态，分为四种状态:</p>
+<ul>
+<li>
+<p>00: strongly not taken(强不跳转)</p>
+</li>
+<li>
+<p>01: weakly not taken(弱不跳转)</p>
+</li>
+<li>
+<p>10: weakly taken(弱跳转)</p>
+</li>
+<li>
+<p>11: strongly taken(强跳转)</p>
+</li>
+</ul>
+<p>强弱在这里其实没有特别的含义，与1bit预测器的主要区别就是，2bit预测器需要两次错误才能改变预测状态</p>
+<pre>
+
+
+┌───────────┐         ┌─────────────┐
+│          │ taken  │            │
+│    00    ├────────►│     01     │
+│ 强不跳转  │         │  弱不跳转   │
+│          │◄────────┤            │
+└───────────┘not taken└─────┬───────┘
+                          │       ▲ 
+                          │taken  |  not taken                                
+                          ▼       |
+┌───────────┐         ┌─────────────┐
+│           │   taken │           │
+│    11     │◄────────┤     10     │
+│  强跳转    │         │   弱跳转    │
+│           ├────────►│            │
+└───────────not taken └─────────────┘
+
+
+</pre>
+
+<h4 id="branch-target-bufferbtb分支目标缓冲器">Branch Target Buffer(BTB)(分支目标缓冲器)<a class="headerlink" href="#branch-target-bufferbtb分支目标缓冲器" title="Permanent link">&para;</a></h4>
+<p>BTB中放置了分支指令的PC地址和目标地址，当我们遇到分支指令时，就可以直接从BTB中找到目标地址。</p>
+<ol>
+<li>
+<p>工作原理</p>
+<ol>
+<li>
+<p><strong>预存储分支信息</strong>：BTB存储了分支指令的PC地址和对应的目标地址的映射关系</p>
+</li>
+<li>
+<p><strong>提前获取目标</strong>：处理器遇到分支指令时，不必等到指令解码阶段才知道跳转目标，而是可以直接查询BTB</p>
+</li>
+<li>
+<p><strong>预取指令</strong>：处理器可以根据BTB中的信息提前从目标地址获取指令，大大减少分支指令带来的流水线停顿</p>
+</li>
+</ol>
+</li>
+<li>
+<p>BTB的结构</p>
+<p>BTB通常实现为一个缓存结构：</p>
+<table>
+<thead>
+<tr>
+<th>分支指令地址</th>
+<th>目标地址</th>
+<th>预测信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x1000</td>
+<td>0x2000</td>
+<td>Taken</td>
+</tr>
+<tr>
+<td>0x1200</td>
+<td>0x1500</td>
+<td>Not Taken</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>实际应用过程</p>
+<ol>
+<li>
+<p><strong>IF阶段</strong>：处理器获取指令并检查该地址是否在BTB中</p>
+</li>
+<li>
+<p><strong>命中时</strong>：如果命中且预测为taken，处理器直接从目标地址获取下一条指令</p>
+</li>
+<li>
+<p><strong>未命中时</strong>：继续顺序执行，并在确认为分支指令后更新BTB</p>
+</li>
+<li>
+<p><strong>预测错误</strong>：如果分支预测错误，处理器清空流水线并从正确的地址重新取指令</p>
+</li>
+</ol>
+</li>
+</ol>
+<h4 id="tournament-predictor比赛预测器">Tournament Predictor(比赛预测器)<a class="headerlink" href="#tournament-predictor比赛预测器" title="Permanent link">&para;</a></h4>
+<p>Todo...</p>
 
 
 
@@ -3163,7 +3378,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月15日 15:13:21">2025年4月15日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月16日 04:06:03">2025年4月16日</span>
   </span>
 
     
