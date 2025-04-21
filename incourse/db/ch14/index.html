@@ -1775,6 +1775,72 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#indexing-on-flash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Indexing on Flash
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Indexing on Flash">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-structured-merge-lsm-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Structured Merge (LSM) Tree
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Log Structured Merge (LSM) Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stepped-merge-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stepped Merge Index
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffer-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buffer Tree
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bitmap-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bitmap Indices
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3008,6 +3074,72 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#indexing-on-flash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Indexing on Flash
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Indexing on Flash">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-structured-merge-lsm-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Structured Merge (LSM) Tree
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Log Structured Merge (LSM) Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stepped-merge-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stepped Merge Index
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffer-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buffer Tree
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bitmap-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bitmap Indices
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3029,7 +3161,7 @@
 
 <h1 id="索引">索引<a class="headerlink" href="#索引" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1286 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 4 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 22 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 6 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1935 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 4 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 25 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 10 分钟</p>
 </div>
 <h2 id="basic-concepts">Basic Concepts<a class="headerlink" href="#basic-concepts" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3465,6 +3597,138 @@ max{\lceil \log_{n/2} {K/2} \rceil +1 ,\lceil \log_{n/2} K \rceil }\geq h \geq \
 </li>
 </ul>
 <h2 id="indexing-in-main-memory">Indexing in Main Memory<a class="headerlink" href="#indexing-in-main-memory" title="Permanent link">&para;</a></h2>
+<p>当索引结构（如 B+ 树）主要或完全存储在主内存（RAM）中时，我们需要考虑新的性能优化点。</p>
+<ul>
+<li>
+<p><strong>内存访问的成本：</strong></p>
+<ul>
+<li>虽然内存随机访问比磁盘/闪存快得多，但与 CPU 缓存（Cache）相比，仍然相对较慢且存在延迟。</li>
+</ul>
+</li>
+<li>
+<p><strong>大节点与缓存未命中（Cache Misses）：</strong></p>
+<ul>
+<li>传统 B+ 树为优化磁盘 I/O 而设计的大节点，在内存中进行内部查找（如二分查找）时，容易跨越多个block，导致频繁的<strong>缓存未命中</strong>，降低效率。</li>
+</ul>
+</li>
+<li>
+<p><strong>缓存友好（Cache-Conscious）数据结构：</strong></p>
+<ul>
+<li>对于内存索引，优化重点转向<strong>最大化 CPU 缓存利用率</strong>。我们需要设计“缓存友好”的数据结构。</li>
+</ul>
+</li>
+</ul>
+<p><strong>关键思想（Key Idea）：</strong></p>
+<p>为了平衡磁盘/内存访问和缓存访问的优化：</p>
+<ol>
+<li>
+<p><strong>保留大节点：</strong> 继续使用较大的 B+ 树节点，以减少磁盘 I/O（如果需要）或整体内存访问（如减少 TLB 未命中）。</p>
+</li>
+<li>
+<p><strong>优化节点内部结构：</strong> 不再使用简单的有序数组，而是在大节点<strong>内部嵌入一个小的、缓存友好的树结构</strong>（例如，节点大小与缓存行匹配的小 B 树）。这样，节点内部的查找操作能更好地利用缓存，减少未命中。</p>
+</li>
+</ol>
+<h2 id="indexing-on-flash">Indexing on Flash<a class="headerlink" href="#indexing-on-flash" title="Permanent link">&para;</a></h2>
+<p>在闪存中，写入不是立即的，需要等待原来的数据被擦除后才能写入新的数据。</p>
+<p>闪存的随机读取速度远快于磁盘，没有寻道和旋转延迟。因此，读取小页面和大页面的延迟差异远小于磁盘</p>
+<p>并且，如果使用大页面，擦除时的代价就会很高。</p>
+<ul>
+<li>
+<p>Optimum page size therefore much smaller</p>
+</li>
+<li>
+<p>Bulk-loading still useful since it minimizes page erases</p>
+</li>
+<li>
+<p>Write-optimized tree structures (i.e., LSM-tree) have been adapted to minimize page writes for flash-optimized search trees</p>
+</li>
+</ul>
+<h3 id="log-structured-merge-lsm-tree">Log Structured Merge (LSM) Tree<a class="headerlink" href="#log-structured-merge-lsm-tree" title="Permanent link">&para;</a></h3>
+<div class="admonition definition">
+<p class="admonition-title">LSM Tree</p>
+<p>LSM树是一种数据结构，旨在优化写入操作的性能。它通过将写入操作首先存储在内存中，然后定期将这些数据批量写入磁盘，从而减少随机写入的次数。</p>
+<p><a class="glightbox" href="../../../image/i220.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i220.png" /></a></p>
+</div>
+<p>插入数据时:</p>
+<ol>
+<li>
+<p>数据块先插入到内存中的<span class="arithmatex">\(L_0\)</span>树</p>
+</li>
+<li>
+<p>当<span class="arithmatex">\(L_0\)</span>树满了，使用bottom-up build的策略把<span class="arithmatex">\(L_0\)</span>树中的数据写入到<span class="arithmatex">\(L_1\)</span>树中</p>
+</li>
+<li>
+<p>当<span class="arithmatex">\(L_1\)</span>树的大小超过某个阈值，就把它合并到<span class="arithmatex">\(L_2\)</span>树中</p>
+</li>
+<li>
+<p>以此类推，有<span class="arithmatex">\(L_3\)</span>树，<span class="arithmatex">\(L_4\)</span>树，...</p>
+</li>
+</ol>
+<h4 id="stepped-merge-index">Stepped Merge Index<a class="headerlink" href="#stepped-merge-index" title="Permanent link">&para;</a></h4>
+<p>当一层上存在k个索引时，把它们合并为下一层的一个树。</p>
+<div align="center">
+<a class="glightbox" href="../../../image/i221.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i221.png" width="100%"></a></div>
+
+<p>布隆过滤器可以用来快速判断一个元素是否在某个集合中。</p>
+<ol>
+<li>使用一个位数组和多个哈希函数。</li>
+<li>添加元素时，用哈希函数计算多个位置，并将这些位置的位设为 1。</li>
+<li>查询元素时，检查其哈希函数对应的所有位：<ul>
+<li>如果<strong>所有位</strong>都是 1，则报告元素<strong>可能存在</strong>。</li>
+<li>如果<strong>至少有一位</strong>是 0，则报告元素<strong>绝对不存在</strong>。</li>
+</ul>
+</li>
+</ol>
+<h4 id="delete">Delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h4>
+<p>在LSM树中，如果我们要删除一个entry,我们就加入一个特殊的delete entry，然后：</p>
+<ol>
+<li>
+<p>在查询时，同时查找original entry和delete entry,如果有entry和某个delete entry匹配了，就不返回</p>
+</li>
+<li>
+<p>在合并树时，如果我们找到某个delete entry匹配了某个entry,就把这个这两个entry都删除掉</p>
+</li>
+</ol>
+<h3 id="buffer-tree">Buffer Tree<a class="headerlink" href="#buffer-tree" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Key idea: each internal node of B+-tree has a buffer to store inserts</p>
+</blockquote>
+<p>也就是把B+树每个节点剩下的空间用来存储插入的记录.
+    - 这样可以减少磁盘I/O,因为我们可以把插入的记录先存储在内存中,等到节点满了再写入磁盘.</p>
+<h2 id="bitmap-indices">Bitmap Indices<a class="headerlink" href="#bitmap-indices" title="Permanent link">&para;</a></h2>
+<p>认为一个关系里的一个个元组都是从0开始有序依次编号的</p>
+<p>对于每一个属性的每一种值，都有一个bitmap，<code>1</code>表示该元组的该属性为这个值,反之为<code>0</code>.</p>
+<p>因此,bitmap使用于那些值比较少的属性,比如性别,国家,城市等.</p>
+<div class="admonition example">
+<p class="admonition-title">Bitmap Indices</p>
+<p><a class="glightbox" href="../../../image/i222.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i222.png" /></a></p>
+</div>
+<p>Bitmap Indices对于多值属性的查找非常友好,只要把两个属性值的bitmap做与(and)/或(or)操作就可以了.</p>
+<ul>
+<li>
+<p>Bitmaps are packed into words": 位图在内存中不是按单个位存储的，而是被打包成 CPU 的原生字长（Word Size），通常是 32 位或 64 位。这意味着一个 32 位的整数可以存储位图中的 32 个连续位。</p>
+</li>
+<li>
+<p>为了快速知道结果位图中有多少个 1,我们使用如下方法</p>
+<ol>
+<li>预计算数组: 事先创建一个包含 256 个元素的数组（我们称之为 popcount_lookup）。数组的索引范围是 0 到 255，正好对应一个字节（8 位）能表示的所有可能值。</li>
+<li>
+<p>数组内容: <code>popcount_lookup[i]</code> 存储的是整数 i 的二进制表示中包含的 1 的个数。例如：</p>
+<ul>
+<li><code>popcount_lookup[0]</code> (二进制 00000000) = 0, </li>
+<li><code>popcount_lookup[1]</code> (00000001) = 1, </li>
+<li><code>popcount_lookup[2]</code> (00000010) = 1, </li>
+<li><code>popcount_lookup[3]</code> (00000011) = 2, </li>
+<li>..., </li>
+<li><code>popcount_lookup[255]</code> (11111111) = 8</li>
+</ul>
+</li>
+<li>
+<p>将位图按字节（8 位）拆分。对于每个字节，直接以该字节的值作为索引去查预计算数组，就能立刻得到这个字节中 1 的个数。</p>
+</li>
+</ol>
+</li>
+</ul>
 
 
 
@@ -3487,7 +3751,7 @@ max{\lceil \log_{n/2} {K/2} \rceil +1 ,\lceil \log_{n/2} K \rceil }\geq h \geq \
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月21日 04:25:06">2025年4月21日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月21日 06:38:12">2025年4月21日</span>
   </span>
 
     
