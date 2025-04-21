@@ -113,6 +113,7 @@ nav :
       - "Chapter 7:关系数据库设计": incourse/db/ch7.md
       - "Chapter 12: 数据存储": incourse/db/ch12.md
       - "Chapter 13:数据存储结构": incourse/db/ch13.md
+      - "Chapter 14:索引": incourse/db/ch14.md
     - "OOP":
       - incourse/oop/index.md
       - "Chapter 1:Introduction": incourse/oop/intro.md
