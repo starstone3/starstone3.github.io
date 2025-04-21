@@ -16,11 +16,11 @@
         <link rel="prev" href="../ch12/">
       
       
-        <link rel="next" href="../../oop/">
+        <link rel="next" href="../ch14/">
       
       
       <link rel="icon" href="../../../image/fav1.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -1308,6 +1308,8 @@
       
         
       
+        
+      
     
     
     
@@ -1699,10 +1701,123 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#buffer-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buffer Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Buffer Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buffer-manager要做什么" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buffer Manager要做什么
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffer-manager的策略" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buffer Manager的策略
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Buffer Manager的策略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#固定块pinned-block机制" class="md-nav__link">
+    <span class="md-ellipsis">
+      固定块(Pinned Block)机制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#缓冲区锁定" class="md-nav__link">
+    <span class="md-ellipsis">
+      缓冲区锁定
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="缓冲区锁定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#锁定规则" class="md-nav__link">
+    <span class="md-ellipsis">
+      锁定规则
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffer-replacement-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buffer-Replacement Policies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clock-an-approximation-of-lru" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clock: An approximation of LRU
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 14:索引
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2881,6 +2996,96 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#buffer-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buffer Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Buffer Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buffer-manager要做什么" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buffer Manager要做什么
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffer-manager的策略" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buffer Manager的策略
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Buffer Manager的策略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#固定块pinned-block机制" class="md-nav__link">
+    <span class="md-ellipsis">
+      固定块(Pinned Block)机制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#缓冲区锁定" class="md-nav__link">
+    <span class="md-ellipsis">
+      缓冲区锁定
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="缓冲区锁定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#锁定规则" class="md-nav__link">
+    <span class="md-ellipsis">
+      锁定规则
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffer-replacement-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buffer-Replacement Policies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clock-an-approximation-of-lru" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clock: An approximation of LRU
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2902,7 +3107,7 @@
 
 <h1 id="数据存储结构">数据存储结构<a class="headerlink" href="#数据存储结构" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1544 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 9 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 8 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2158 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 6 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 13 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 11 分钟</p>
 </div>
 <h2 id="file-organization">File Organization<a class="headerlink" href="#file-organization" title="Permanent link">&para;</a></h2>
 <blockquote>
@@ -3164,6 +3369,136 @@
 </li>
 </ol>
 <hr />
+<h2 id="buffer-management">Buffer Management<a class="headerlink" href="#buffer-management" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Blocks are units of both storage allocation and data transfer.</p>
+<p>Buffer – portion of main memory available to store copies of disk blocks.</p>
+<p>Buffer manager – subsystem responsible for allocating buffer space in main memory.</p>
+</blockquote>
+<h3 id="buffer-manager要做什么">Buffer Manager要做什么<a class="headerlink" href="#buffer-manager要做什么" title="Permanent link">&para;</a></h3>
+<p>当程序需要访问磁盘上的数据块时，会调用Buffer Manager：</p>
+<ol>
+<li>
+<p><strong>如果请求的块已在Buffer中</strong></p>
+<ul>
+<li>Buffer Manager直接返回该块在内存中的地址</li>
+</ul>
+</li>
+<li>
+<p><strong>如果请求的块不在Buffer中</strong></p>
+<ul>
+<li>Buffer Manager在Buffer中分配空间</li>
+<li>如需要腾出空间，则替换（移除）某个其他块</li>
+<li>被替换的块仅在自上次写入/从磁盘读取后被修改时才写回磁盘</li>
+<li>从磁盘读取新块到Buffer，并向请求者返回该块在内存中的地址</li>
+</ul>
+</li>
+</ol>
+<h3 id="buffer-manager的策略">Buffer Manager的策略<a class="headerlink" href="#buffer-manager的策略" title="Permanent link">&para;</a></h3>
+<p>Buffer Manager在需要为新数据块腾出空间时，需要遵循一定的策略：</p>
+<h4 id="固定块pinned-block机制">固定块(Pinned Block)机制<a class="headerlink" href="#固定块pinned-block机制" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>固定块</strong>：不允许被写回磁盘的内存块</p>
+</li>
+<li>
+<p><strong>固定过程</strong>：</p>
+<ul>
+<li>
+<p>在读/写数据块前进行固定(Pin)操作</p>
+</li>
+<li>
+<p>读/写完成后进行解除固定(Unpin)操作</p>
+</li>
+<li>
+<p>支持多个并发的固定/解除固定操作</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>固定计数器</strong>：</p>
+<ul>
+<li>
+<p>维护每个缓冲块的固定计数</p>
+</li>
+<li>
+<p>只有当固定计数为0时，缓冲块才能被替换出去</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="缓冲区锁定">缓冲区锁定<a class="headerlink" href="#缓冲区锁定" title="Permanent link">&para;</a></h4>
+<p>缓冲区需要共享锁和排他锁来保证数据一致性：</p>
+<ul>
+<li>
+<p><strong>共享锁(Shared Lock)</strong>：允许多个进程同时读取</p>
+</li>
+<li>
+<p><strong>排他锁(Exclusive Lock)</strong>：仅允许一个进程独占访问</p>
+</li>
+</ul>
+<h5 id="锁定规则">锁定规则<a class="headerlink" href="#锁定规则" title="Permanent link">&para;</a></h5>
+<ol>
+<li>
+<p>同一时刻只能有一个进程获得排他锁</p>
+</li>
+<li>
+<p>排他锁与共享锁不能同时存在</p>
+</li>
+<li>
+<p>多个进程可以同时获得共享锁</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>应用场景</strong>：锁机制防止在页面内容移动/重组时被并发操作读取，并确保同一时间只进行一次移动/重组操作。读取操作获取共享锁，更新操作需要排他锁。</p>
+</blockquote>
+<div align="center">
+<a class="glightbox" href="../../../image/i196.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i196.png" width="100%"></a>
+</div>
+
+<h3 id="buffer-replacement-policies">Buffer-Replacement Policies<a class="headerlink" href="#buffer-replacement-policies" title="Permanent link">&para;</a></h3>
+<p>正如在计组中学过的，对于一个buffer，我们需要考虑替换策略。</p>
+<details class="example">
+<summary>LRU</summary>
+<p><a class="glightbox" href="../../../image/i197.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i197.png" /></a></p>
+<blockquote>
+<p>LRU strategy - replace the block least recently used</p>
+</blockquote>
+</details>
+<p>还有一些其他的策略：</p>
+<ol>
+<li>
+<p>Toss-immediate strategy:当一个block最后一个tuple被处理完时，就把这个block替换掉</p>
+</li>
+<li>
+<p>MRU Strategy:替换掉最近使用的block</p>
+</li>
+<li>
+<p>Buffer managers also support forced output of blocks for the purpose of recovery </p>
+</li>
+</ol>
+<h3 id="clock-an-approximation-of-lru">Clock: An approximation of LRU<a class="headerlink" href="#clock-an-approximation-of-lru" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Arrange block into a cycle, store one reference_bit per block</p>
+<p>When pin_count reduces to 0, set  reference _bit =1</p>
+<p>reference _bit as the 2nd chance bit</p>
+</blockquote>
+<div align="center">
+<a class="glightbox" href="../../../image/i198.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i198.png" width="120%"></a>
+</div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>do for each block in cycle {
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    if (reference_bit ==1)
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        set reference_bit=0;
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    else if (reference_bit ==0)
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        choose this block for replacement;
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    } until a page is chosen;
+</code></pre></div>
+<div align="center">
+<a class="glightbox" href="../../../image/i199.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i199.png" width="120%"></a>
+</div>
+
+<p><code>reference_bit</code>为1表示这个block最近被使用过.</p>
 
 
 
@@ -3186,7 +3521,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月14日 06:12:24">2025年4月14日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月21日 04:25:06">2025年4月21日</span>
   </span>
 
     
@@ -3355,13 +3690,13 @@
         
         
           
-          <a href="../../oop/" class="md-footer__link md-footer__link--next" aria-label="下一页: 完辣">
+          <a href="../ch14/" class="md-footer__link md-footer__link--next" aria-label="下一页: Chapter 14:索引">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                完辣
+                Chapter 14:索引
               </div>
             </div>
             <div class="md-footer__button md-icon">
