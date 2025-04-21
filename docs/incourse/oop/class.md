@@ -93,7 +93,7 @@ selection_sort(T arr[], int n) {
 
 ## 重载运算符
 
-好了,上面排序数据类型,比如int, float, double, string等都可以使用`<`来比较大小。
+上面排序数据类型,比如int, float, double, string等都可以使用`<`来比较大小。
 
 那如果我们自己写一个类,比如`Point`类:
 ```cpp
@@ -118,14 +118,19 @@ public:
 };
 ```
 
-形如`bool operator< (const Point& other) const`的函数称为运算符重载函数。
-运算符重载函数的返回值类型是`bool`，表示比较的结果。
+- 形如`bool operator< (const Point& other) const`的函数称为运算符重载函数。
 
-重载函数也可以不写在类内,而是写在类外,但是需要在函数前面加上`类名::`来表示这个函数是属于哪个类的。
+- 重载运算符不能改变运算符的优先级和结合性，也不能改变运算符的参数个数。
 
-形如`<class name> :: <function name>`的东西叫做resolver,表示这个函数是属于哪个类的。
+- 重载函数也可以不写在类内,而是写在类外,但是需要在函数前面加上`类名::`来表示这个函数是属于哪个类的：`String String::operator+(const String& that);`。
 
-如果是直接`::`的形式,表示这个函数是属于全局的。
+- 或者在全局写`String operator+(const String& l, const String& r);`,传入两个参数,分别表示左操作数和右操作数。
+
+
+
+- 形如`<class name> :: <function name>`的东西叫做resolver,表示这个函数是属于哪个类的。
+
+    - 如果是直接`::`的形式,表示这个函数是属于全局的。
 
 ```cpp
 bool Pointer::operator<(const Point& other) const {
@@ -149,6 +154,8 @@ bool Pointer::operator<(const Point& other) const {
 
 甚至,你可以重载输出流运算符`<<`来实现自定义类型的输出。
 
+注意,`x+y`其实是`x.operator+(y)`的简写,所以我们可以重载`+`运算符来实现自定义类型的加法运算。
+
 ```cpp
 #include <iostream>
 using namespace std;
@@ -162,6 +169,131 @@ public:
     }
 };
 ```
+
+
+### i++与++i的重载
+
+我们需要思考,编译器如何区分`i++`与`++i`的区别呢?
+
+可以发现,`i++`是后置运算符,而`++i`是前置运算符,它们的区别在于传入的参数不同
+
+如下:
+
+```cpp
+Interger operator++(int) { //i++的重载
+    Interger temp = *this; 
+    ++value; 
+    return temp; //i++的返回值还是自增之前的
+}
+
+Interger operator++() { //++i的重载
+    ++value; 
+    return *this; 
+}
+```
+
+### 重载`[]`运算符
+> 必须是成员函数
+
+```cpp
+
+int& operator[](int index) {
+    return arr[index];
+}
+```
+
+### 重载`()`运算符
+
+`()`运算符重载允许对象像函数一样被调用，这种对象被称为**函数对象（Functor）**。通过重载`()`，我们可以让类的实例具有函数的行为。
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Adder {
+    int sum = 0;
+public:
+    // 重载()运算符
+    int operator()(int x) {
+        sum += x;
+        return sum;
+    }
+};
+
+int main() {
+    Adder add;
+    cout << add(5) << endl;  // 输出5
+    cout << add(10) << endl; // 输出15
+    return 0;
+}
+```
+
+重载还可以用在STL中,比如`std::sort`函数,我们可以传入一个自定义的比较函数来实现自定义排序.
+
+```cpp
+class Compare {
+public:
+    bool operator()(int a, int b) {
+        return a > b;  // 降序排序
+    }
+};
+sort(v.begin(), v.end(), Compare());
+```
+
+### 类型转换的重载
+
+```cpp
+operator double() const {
+    return static_cast<double>(fenzi) / fenmu;
+}
+```
+
+正如上面的代码所写的那样,我们可以重载类型转换的运算符,这样的一般写法是``operator <type>()`。
+
+
+##  隐式转换
+
+对于下面这段代码:
+
+```cpp
+#include <iostream>
+#include <vector>
+#include<string>
+using namespace std;
+
+class PathName {   string name; 
+public: 
+    PathName(const string& s) :name(s) {};    
+    ~PathName(){}; 
+}; 
+    
+int main(){
+    string abc("abc"); 
+    PathName xyz(abc); /
+    xyz = abc;        
+}
+```
+
+它是可以正常编译运行的,因为编译器会自动调用`PathName`类的构造函数来将`string`类型转换为`PathName`类型。
+
+但是,如果加上`explicit`关键字:
+
+```cpp
+#include <iostream>
+#include <vector>
+#include<string>
+using namespace std;
+
+class PathName {   string name;
+public: 
+    explicit PathName(const string& s) :name(s) {};    
+    ~PathName(){}; 
+};
+```
+
+这样就会报错了,因为`explicit`关键字表示这个构造函数是显式的,不能隐式转换。
+
+当然,隐式转换要求构造函数只有一个参数,或者多参数,但是后面都有默认值。
 
 ---
 
