@@ -2087,6 +2087,72 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dynamic-scheduling动态调度" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Scheduling(动态调度)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic Scheduling(动态调度)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scoreboard-scheduling记分板调度" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scoreboard Scheduling(记分板调度)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scoreboard Scheduling(记分板调度)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-instruction-status-table指令状态表" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Instruction Status Table(指令状态表)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-functional-unit-status-table功能单元状态表" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Functional Unit Status Table(功能单元状态表)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-register-result-table寄存器结果表" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Register Result Table(寄存器结果表)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#工作流程详解" class="md-nav__link">
+    <span class="md-ellipsis">
+      工作流程详解
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2972,6 +3038,72 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dynamic-scheduling动态调度" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Scheduling(动态调度)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic Scheduling(动态调度)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scoreboard-scheduling记分板调度" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scoreboard Scheduling(记分板调度)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scoreboard Scheduling(记分板调度)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-instruction-status-table指令状态表" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Instruction Status Table(指令状态表)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-functional-unit-status-table功能单元状态表" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Functional Unit Status Table(功能单元状态表)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-register-result-table寄存器结果表" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Register Result Table(寄存器结果表)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#工作流程详解" class="md-nav__link">
+    <span class="md-ellipsis">
+      工作流程详解
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2993,10 +3125,15 @@
 
 <h1 id="指令级并行">指令级并行<a class="headerlink" href="#指令级并行" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2696 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 60 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 14 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 4623 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 60 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 14 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 24 分钟</p>
 </div>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 比赛预测器没写</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 比赛预测器没写</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Tomasulo算法没写</p>
+</li>
 </ul>
 <p>开头<a href="../../Comcompose/Ch4/#流水线cpu">流水线</a>在前面学过了...</p>
 <p>在计组中我们学习的指令都是整数指令，实际上，对于浮点指令(FP)，流水线需要做一些小改动。</p>
@@ -3384,6 +3521,257 @@
 </ol>
 <h4 id="tournament-predictor比赛预测器">Tournament Predictor(比赛预测器)<a class="headerlink" href="#tournament-predictor比赛预测器" title="Permanent link">&para;</a></h4>
 <p>Todo...</p>
+<h2 id="dynamic-scheduling动态调度">Dynamic Scheduling(动态调度)<a class="headerlink" href="#dynamic-scheduling动态调度" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>允许指令乱序<strong>执行</strong></p>
+</li>
+<li>
+<p>将流水线的<code>ID</code>阶段分为两个阶段:</p>
+<ul>
+<li>
+<p><code>Issue</code>阶段：指令解码，检查有没有结构冒险</p>
+</li>
+<li>
+<p><code>Read Operands</code>阶段：一直等待，直到没有数据冒险后，读取操作数</p>
+</li>
+<li>
+<p>因此现在的五级流水线实际上是:</p>
+<ul>
+<li>
+<p>IF:取指令</p>
+</li>
+<li>
+<p>ID:指令解码</p>
+</li>
+<li>
+<p>Issue:发射指令</p>
+</li>
+<li>
+<p>Read Operands:读取操作数</p>
+</li>
+<li>
+<p>EX:执行指令</p>
+</li>
+<li>
+<p>WB:写回结果</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">注意</p>
+<p>乱序执行只指在<code>EX</code>阶段乱序执行,在<code>IF</code>取指阶段还是要按顺序取指.</p>
+</div>
+<p>因此我们的调度策略是:</p>
+<ul>
+<li>
+<p><strong>一旦有一条指令stall了,把其他可用的指令发射.</strong></p>
+</li>
+<li>
+<p>"可用"指该条指令不依赖任何正在执行的指令或是前面Stall的指令.</p>
+</li>
+</ul>
+<p>为了实现这个调度策略,我们介绍如下两种算法.</p>
+<hr />
+<h3 id="scoreboard-scheduling记分板调度">Scoreboard Scheduling(记分板调度)<a class="headerlink" href="#scoreboard-scheduling记分板调度" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">示意图</p>
+<p><a class="glightbox" href="../../../image/i223.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i223.png" /></a></p>
+</div>
+<p>所谓Scoreboard,就是在寄存器与功能单元（如整数加法器、浮点乘法器等）之间加一个表格,用来各种情况,并发出调度的信号.</p>
+<p>它由如下三部分,也可以当作是三个表格组成:</p>
+<ul>
+<li>
+<p><strong>Instruction Status Table</strong>:指令状态表,跟踪当前正在处理的每条指令。记录每条指令所处的阶段与要求的功能单元。</p>
+</li>
+<li>
+<p><strong>Functional Unit Status Table</strong>:功能单元状态表</p>
+</li>
+<li>
+<p><strong>Register Result Table</strong>:寄存器结果表,用来记录寄存器的状态</p>
+</li>
+</ul>
+<h4 id="1-instruction-status-table指令状态表">1. Instruction Status Table(指令状态表)<a class="headerlink" href="#1-instruction-status-table指令状态表" title="Permanent link">&para;</a></h4>
+<p>指令状态表声明指令所处的状态,包括:</p>
+<ul>
+<li>
+<p><code>issue</code></p>
+</li>
+<li>
+<p><code>read operands</code></p>
+</li>
+<li>
+<p><code>execution</code></p>
+</li>
+<li>
+<p><code>write back</code></p>
+</li>
+</ul>
+<blockquote>
+<p>我们这里忽略了内存访问,是因为在乱序执行中,我们更关注浮点指令的执行,因为它们的用时比整数指令长.而<code>ld/sd</code>可以认为是整数指令.</p>
+</blockquote>
+<div align="center">
+    <a class="glightbox" href="../../../image/i225.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i225.png" alt="Instruction Status Table" width="2000"/></a>
+    <br>
+    <caption>Instruction Status Table</caption>
+</div>
+
+<h4 id="2-functional-unit-status-table功能单元状态表">2. Functional Unit Status Table(功能单元状态表)<a class="headerlink" href="#2-functional-unit-status-table功能单元状态表" title="Permanent link">&para;</a></h4>
+<p>典型的状态表如下:</p>
+<div align="center">
+    <a class="glightbox" href="../../../image/i224.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i224.png" alt="Functional Unit Status Table" width="2000"/></a>
+    <br>
+    <caption>Functional Unit Status Table</caption>
+</div>
+
+<p>一个功能单元的状态由如下9个字段表明:</p>
+<ol>
+<li>
+<p><code>busy</code>:表示该功能单元是否正在使用</p>
+</li>
+<li>
+<p><code>op</code>:表示该功能单元正在执行的操作,如加法、乘法等</p>
+</li>
+<li>
+<p><code>Fj</code>, <code>Fk</code> (源寄存器): 指令的源寄存器。</p>
+</li>
+<li>
+<p><code>Fi</code> (目标寄存器): 指令的目标寄存器。</p>
+</li>
+<li>
+<p><code>Qj</code>, <code>Qk</code>: 表示源寄存器的值来自哪个功能单元。</p>
+</li>
+<li>
+<p><code>Rj</code>, <code>Rk</code>: 表示源寄存器是否准备好。在<code>Read Operands</code>后,<code>Rj</code>和<code>Rk</code>会被重置为<code>No</code>.</p>
+</li>
+</ol>
+<h4 id="3-register-result-table寄存器结果表">3. Register Result Table(寄存器结果表)<a class="headerlink" href="#3-register-result-table寄存器结果表" title="Permanent link">&para;</a></h4>
+<div align="center">
+    <a class="glightbox" href="../../../image/i226.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i226.png" alt="Register Result Table" width="2000"/></a>
+    <br>
+    <caption>Register Result Table</caption>
+</div>
+
+<p>这张表很简单,就是声明某个寄存器会被哪条活跃的指令写入,如果没用到,则设置为空.</p>
+<h4 id="工作流程详解">工作流程详解<a class="headerlink" href="#工作流程详解" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>在<code>Issue</code>阶段,Scoreboard检查指令需要使用的功能单元是否空闲,如果空闲,就把指令发射,同时,更新上面这三张表:</p>
+<ul>
+<li>更新<strong>指令状态表</strong>，将该指令标记为 Issue 阶段。</li>
+<li>更新<strong>功能单元状态表</strong>中对应功能单元的条目，标记其为 Busy，并记录操作类型 (Op)、目的寄存器 (Fi) 和源寄存器 (Fj, Fk)。   </li>
+<li>更新<strong>寄存器结果状态表</strong>，标记 Fi 寄存器将由该功能单元写入。</li>
+</ul>
+</li>
+<li>
+<p>在<code>Read Operands</code>阶段, 检查是否存在 RAW 冒险（真数据依赖）。即，指令的源操作数是否就绪。操作数就绪的条件是：</p>
+<ul>
+<li>
+<p>操作数已经存在于寄存器中且</p>
+</li>
+<li>
+<p>没有之前发射但尚未完成的指令会写入该源寄存器（通过检查<strong>寄存器结果状态表</strong>：如果 <code>RegResult[源寄存器]</code> 为空，则表示没有正在计算该寄存器值的未完成指令）</p>
+</li>
+</ul>
+</li>
+<li>
+<p>在<code>Execution</code>阶段, 功能单元执行指令。经过一定周期,完成执行后,进入下一阶段</p>
+</li>
+<li>
+<p>在<code>Write Back</code>阶段, 检查是否存在 <code>WAR</code> 或 <code>WAW</code> 冒险（假数据依赖）:</p>
+<ul>
+<li>
+<p><code>WAW</code> (Write After Write): 检查是否有<strong>更早</strong>发射但<strong>尚未完成写回</strong>的指令，也打算写入当前指令的目的寄存器<code>Fi</code>。这可以通过检查<strong>寄存器结果状态表</strong>：如果<code>RegResult[Fi]</code>不等于当前指令所在的功能单元，说明有其他单元将写入Fi，并且它的指令是先发射的.</p>
+</li>
+<li>
+<p><code>WAR</code> (Write After Read): 检查是否有 <strong>更早</strong> 发射但 <strong>尚未读取源操作数</strong> 的指令，其源操作数是当前指令将要写入的目的寄存器 <code>Fi</code>。Scoreboard需要检查<strong>功能单元状态表</strong>中所有其他之前未完成指令的<code>Fj/Fk</code>字段，看是否有等于 <code>Fi</code> 的，并且其 <code>Rj/Rk</code> 标记仍为<code>No</code>。</p>
+</li>
+<li>
+<p>如果不存在WAR或WAW冒险,指令将结果写回目标寄存器，同时：</p>
+<ul>
+<li>
+<p>更新<strong>指令状态表</strong>。</p>
+</li>
+<li>
+<p>更新<strong>功能单元状态表</strong>中对应功能单元的条目，标记其为不忙碌 (Busy = No)。</p>
+</li>
+<li>
+<p>同时，通知所有正在等待这个结果作为源操作数的其他指令，它们的操作数已就绪（在各自的<strong>功能单元状态表</strong>中更新 <code>Qj/Qk</code> 并设置 <code>Rj/Rk</code> 为 <code>Yes</code>）。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">例子</p>
+<p>以这篇<a href="https://zhuanlan.zhihu.com/p/496078836">知乎文章</a>中的例子展开.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:10"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><input id="__tabbed_1_8" name="__tabbed_1" type="radio" /><input id="__tabbed_1_9" name="__tabbed_1" type="radio" /><input id="__tabbed_1_10" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Cycle 1</label><label for="__tabbed_1_2">Cycle 2</label><label for="__tabbed_1_3">Cycle 3</label><label for="__tabbed_1_4">Cycle 4</label><label for="__tabbed_1_5">Cycle 5</label><label for="__tabbed_1_6">Cycle 6</label><label for="__tabbed_1_7">Cycle 7</label><label for="__tabbed_1_8">Cycle 8</label><label for="__tabbed_1_9">Cycle 9</label><label for="__tabbed_1_10">Cycle 10</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a class="glightbox" href="../../../image/i227.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i227.png" /></a></p>
+<p>第一个周期,大家都很空,于是第一条指令顺利发射了:)</p>
+<p>同时更新了计分板信息.</p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" href="../../../image/i228.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i228.png" /></a></p>
+<p>第二条指令也是<code>ld</code>指令,因为检测到整数单元还在处理第一条指令,所以不能发射,也不更新计分板</p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" href="../../../image/i229.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i229.png" /></a></p>
+<p>因为第二条指令阻塞了,所以第三条指令也不能发射.</p>
+<p>但此时,第一条指令完成了<code>Read Operands</code>,所以<code>Rk</code>被重置为<code>No</code>,并且更新了计分板.</p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" href="../../../image/i230.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i230.png" /></a></p>
+<p>依然阻塞...但第一条指令现在要写回了,并且由于它是第一条指令,所以写回不会有什么<code>WAR</code>和<code>WAW</code>冒险.解放了整数单元</p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" href="../../../image/i231.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i231.png" /></a></p>
+<p>第二条指令终于可以发射了,并且更新了计分板.</p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" href="../../../image/i232.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i232.png" /></a></p>
+<p>乘法单元是空闲的,所以第三条指令可以顺利发射,而第二条指令在<code>Read Operands</code>阶段也是没有什么问题的.但Scoreboard检测到第三条指令的<code>Fj</code>是和第二条指令的<code>Fi</code>相同的,所以第二条指令的<code>Rj</code>被设为<code>No</code>,它不准进入下一环节.</p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" href="../../../image/i233.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i233.png" /></a></p>
+<p>第七个周期,加法单元空闲,所以可以发射第四条指令.第三条指令被卡住,第二条指令顺利执行.</p>
+<p>但可以发现,第四条指令的<code>Fk</code>和第二条指令的<code>Fi</code>是一样的,所以它也被标记了,卡住!</p>
+<p>周期结束时,第二条指令改写计分板,改写 Rk为<code>No</code></p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" href="../../../image/i234.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i234.png" /></a></p>
+<p>第八个周期，因为除法部件空闲，所以第五条指令可以发射.第三、四条指令因为有数据依赖,被卡住,而第二条指令顺利写回.</p>
+<p>然而,第五条指令要用到第三条指令的<code>Fi</code>,因此它被标记了.</p>
+<p>在周期的最后,LD 将数据写回寄存器堆,更新:</p>
+<ul>
+<li>
+<p>将寄存器表中的<code>F2</code>设为blank</p>
+</li>
+<li>
+<p>第三、四条指令的<code>Rj</code>,<code>Rk</code>全部是<code>Yes</code>了,它们在下一个周期可以执行.</p>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" href="../../../image/i235.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i235.png" /></a></p>
+<p>第六条指令要用到加法单元,但它现在被第四条指令占用,所以无法发射.第三、四条指令进入<code>Read Operands</code>阶段并完成。</p>
+<blockquote>
+<p>Mult1 后面的10和Add后面的2告诉我们从下一周期开始，乘法和加法将要开始各自的计算，其分别需要10个周期、2个周期。</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" href="../../../image/i237.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/i237.png" /></a></p>
+<p>第十个周期，第五条除法指令还在等待寄存器值。第三、四条指令继续执行</p>
+<p>后面基本没什么问题，不写了。</p>
+</div>
+</div>
+</div>
+</div>
 
 
 
@@ -3406,7 +3794,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月22日 05:36:15">2025年4月22日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月22日 13:27:19">2025年4月22日</span>
   </span>
 
     
