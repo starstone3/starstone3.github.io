@@ -97,5 +97,36 @@ curl -I https://www.google.com
 ```
 查看返回的状态码是否为200.
 
+
+## 服务器后台跑脚本
+
+用`screen`命令可以在后台运行脚本，即使本地电脑关机也没事。常见命令:
+
+```bash
+screen -S name # 创建一个新的screen会话并命名为name
+
+screen -r name # 重新连接到名为name的screen会话
+
+screen -ls # 列出所有的screen会话
+
+screen -X -S name quit # 删除名为name的screen会话
+
+ctrl + a + d # 分离当前screen会话并返回到shell
+
+ctrl a esc # 进入复制模式
+```
+
+一般的用法是:
+    
+```bash
+screen -S name # 创建一个新的screen会话并命名为name
+
+python script.py #或者
+
+bash script.sh # 运行脚本
+
+# ctrl + a + d # 分离当前screen会话并返回到shell
+```
+
 <!--<span id="busuanzi_container_page_pv">本页总访问量<span id="busuanzi_value_page_pv"></span>次</span>
 <span id="busuanzi_container_page_uv">本页总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>-->
