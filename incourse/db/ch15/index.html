@@ -1884,12 +1884,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#hash-join" class="md-nav__link">
     <span class="md-ellipsis">
       Hash-Join
@@ -1923,6 +1918,11 @@
       Cost of Hash Join
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3278,12 +3278,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#hash-join" class="md-nav__link">
     <span class="md-ellipsis">
       Hash-Join
@@ -3317,6 +3312,11 @@
       Cost of Hash Join
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4035,14 +4035,14 @@ $$
 x_r = \sqrt{b_r} \times \frac{M}{\sqrt{b_r} + \sqrt{b_s}}, \
 x_s = \sqrt{b_s} \times \frac{M}{\sqrt{b_r} + \sqrt{b_s}}
 $$</p>
-<h2 id="hash-join">Hash-Join<a class="headerlink" href="#hash-join" title="Permanent link">&para;</a></h2>
+<h3 id="hash-join">Hash-Join<a class="headerlink" href="#hash-join" title="Permanent link">&para;</a></h3>
 <p>我们使用一个哈希函数，把元组分块，这样，由于哈希函数的特点，能够连接的属性的值一定在同一块中，反之不然。</p>
 <div align="center">
     <a class="glightbox" href="../../../image/i265.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i265.png" width="80%"></a></div>
 
 <p>并且，分成的块数<span class="arithmatex">\(n\)</span>与哈希函数要设计过，使得块的大小是足以放进内存的。</p>
 <p><span class="arithmatex">\(n \geq \lceil \frac{b_s}{M} \rceil\)</span></p>
-<h3 id="hash-join-algorithm">Hash-Join Algorithm<a class="headerlink" href="#hash-join-algorithm" title="Permanent link">&para;</a></h3>
+<h4 id="hash-join-algorithm">Hash-Join Algorithm<a class="headerlink" href="#hash-join-algorithm" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>对关系s用哈希函数H，内存同样保留input buffer和output buffer，分片之后再写出去</p>
@@ -4069,7 +4069,7 @@ $$</p>
 <p>需要注意的是，在分块的时候，我们要求对于每个块都要有一个输出缓冲块，比如哈希函数映射的值范围是0到n-1，那么我们就要有n个输出缓冲块,根据哈希函数的值来决定输出缓冲块的编号。</p>
 <p>由此就引发了一个问题，因为这样的算法要求每次分块的个数必然不能大于内存的块数，如果原来关系很大，大到即使分成这么多块，大小还是太大了怎么办?</p>
 <p>所以要用Recursive partitioning</p>
-<h3 id="recursive-partitioning">Recursive partitioning<a class="headerlink" href="#recursive-partitioning" title="Permanent link">&para;</a></h3>
+<h4 id="recursive-partitioning">Recursive partitioning<a class="headerlink" href="#recursive-partitioning" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p>Instead of partitioning n ways, use  M – 1 partitions for s</p>
@@ -4081,7 +4081,7 @@ $$</p>
 <p>For example, consider a memory size of 12M bytes, divided into 4K bytes blocks; it would contain a total of 3K (3072) blocks. We can use a memory of this size to partition relations of size up to 3K ∗ 3K blocks, which is 36G (3K ∗ 3K ∗ 4K ) bytes. </p>
 </li>
 </ul>
-<h3 id="cost-of-hash-join">Cost of Hash Join<a class="headerlink" href="#cost-of-hash-join" title="Permanent link">&para;</a></h3>
+<h4 id="cost-of-hash-join">Cost of Hash Join<a class="headerlink" href="#cost-of-hash-join" title="Permanent link">&para;</a></h4>
 <div align="center">
     <a class="glightbox" href="../../../image/i266.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/i266.png" width="80%"></a></div>
 
@@ -4199,7 +4199,7 @@ $$</p>
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月27日 15:02:04">2025年4月27日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月27日 15:29:59">2025年4月27日</span>
   </span>
 
     
