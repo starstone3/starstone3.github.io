@@ -445,7 +445,7 @@ from instructor
 ``` sql
 select name from instructor where name like '%!%' escape '!'
 ```
-这个语句会返回instructor表中所有姓名中包含"%"的教师
+这个语句会返回instructor表中所有姓名中以"%"结尾的教师
 
 
 #### 其他操作

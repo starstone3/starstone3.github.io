@@ -211,19 +211,19 @@ $$
     <img src="../../../image/i117.png" width="60%">
     </div>
 
-1. Left Outer Join: 返回左关系的所有元组，同时返回那些在连接属性上不相等的右关系的元组。
+1. Left Outer Join: 返回左关系的所有元组，同时返回那些在连接属性上相等的右关系的元组。
 
     <div align="center">
     <img src="../../../image/i118.png" width="60%">
     </div>
 
-2. Right Outer Join: 返回右关系的所有元组，同时返回那些在连接属性上不相等的左关系的元组。
+2. Right Outer Join: 返回右关系的所有元组，同时返回那些在连接属性上相等的左关系的元组。
 
     <div align="center">
     <img src="../../../image/i119.png" width="60%">
     </div>
 
-3. Full Outer Join: 返回两个关系的所有元组，同时返回那些在连接属性上不相等的元组。
+3. Full Outer Join: 返回两个关系的所有元组，同时返回那些在连接属性上相等的元组。
 
     <div align="center">
     <img src="../../../image/i120.png" width="60%">
