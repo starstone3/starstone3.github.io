@@ -156,6 +156,262 @@ swap<int>(int,double)
 
 ## Class Template
 
-在开头声明一个类型模板,然后在类里面的许多函数都可以用这个类型模板
+类模板在开头声明一个或多个类型参数，然后在类的定义中使用这些类型参数，使得类的成员变量和成员函数可以适用于不同的数据类型。这样，我们只需编写一次类的代码，就能处理多种不同类型的数据。
 
+使用类模板时，我们必须显式指定模板参数类型，而不是让编译器推导类型。
 比如常用的`vector<int> s`
+
+```cpp
+template <class T>
+class Vector {
+public:
+    Vector(int);
+    ~Vector();
+    Vector(const Vector&);
+    Vector& operator=(const Vector&); T& operator[](int);
+private:
+    T* m_elements;
+    int m_size;
+}
+```
+
+在成员函数定义时,我们需要在函数名前加上`template <class T>`，以告诉编译器这是一个模板函数。
+
+```cpp
+template <class T> 
+Vector<T>::Vector(int size) : m_size(size) { 
+m_elements = new T[m_size]; 
+} 
+template <class T> 
+T& Vector<T>::operator[](int indx) { 
+ if (indx < m_size && indx > 0) { return m_elements[indx]; 
+ } else { 
+ ... 
+ } 
+}
+```
+
+---
+
+类型参数也可以不止一个，比如
+
+```cpp
+template < class Key, class Value >
+class HashTable {
+    const Value& lookup (const Key&) const;
+
+    void insert (const Key&, const Value&);
+
+    /* ... */
+}
+```
+
+这样,我们就可以为哈希表的键和值指定不同的类型了.
+
+
+---
+
+类型参数与非类型参数也可以共存
+
+```cpp
+template <class T, int bounds = 100>
+class FixedVector {
+public:
+    FixedVector();
+    T& operator[](int);
+private:
+    T elements[bounds]; // fixed-size array!
+}
+```
+
+这样,在我们创建`FixedVector`对象时,可以指定一个大小,如果不指定,默认是100.
+
+```cpp
+FixedVector<int> v1; // 100 elements
+FixedVector<int, 50> v2; // 50 elements
+```
+
+
+## Member templates
+
+类模板的成员函数也可以是模板的,比如
+
+```cpp
+template<typename T> 
+class complex
+{
+public:
+    template<class X> complex(const complex<X>&);
+/* ... */
+};
+```
+
+这样,可以接受不同类型的参数.
+
+---
+
+## Templates and inheritance
+
+类模板可以继承其他类模板,也可以继承普通类.
+
+```cpp
+template <class A>
+class Derived : public Base { /* ... */ }
+
+template <class A>
+class Derived : public List<A> { /* ... */ }
+```
+
+普通类也可以继承实例化后的类模板:
+
+```cpp
+class Derived : public List<int> { /* ... */ }
+```
+
+## CRTP (Curiously Recurring Template Pattern)
+
+CRTP 是一种 C++ 模板编程技巧，其中一个类将自身作为模板参数传递给其基类。这种模式允许在编译时实现静态多态性，并允许基类访问派生类的成员。
+
+### 模式结构
+
+```cpp
+template <typename Derived>
+class Base {
+public:
+    void interface() {
+        // 使用 static_cast 将 Base* 转换为 Derived*
+        static_cast<Derived*>(this)->implementation();
+    }
+};
+
+class Derived : public Base<Derived> {
+public:
+    void implementation() {
+        // 派生类的具体实现
+    }
+};
+```
+
+
+## Morality
+
+Put the definition/declaration for templates in theheader file
+
+应当将模板的定义和声明都放在头文件中
+
+- won't allocate storage for the function/class atthat point
+
+- compiler/linker have mechanisms for removingmultiple definitions
+
+
+!!! example
+    与普通函数和类不同，模板需要在编译时看到完整定义才能实例化。如果模板定义放在源文件中：
+
+    - 编译器在包含头文件的其他源文件中看不到完整定义
+
+    - 无法正确生成特定类型的实例化版本
+
+    - 会导致链接错误（未定义的引用）
+
+    === "正确做法"
+        ```cpp title="mathutils.h"
+        // 头文件中同时包含声明和定义
+        #ifndef MATH_UTILS_H
+        #define MATH_UTILS_H
+
+        template <typename T>
+        class Calculator {
+        public:
+            // 函数声明和定义都在头文件中
+            T add(T a, T b) {
+                return a + b;
+            }
+            
+            T multiply(T a, T b) {
+                return a * b;
+            }
+        };
+
+        // 函数模板也一样
+        template <typename T>
+        T maximum(T a, T b) {
+            return (a > b) ? a : b;
+        }
+
+        #endif
+        ```
+
+        ```cpp title="main.cpp"        
+        #include "mathutils.h"
+        #include <iostream>
+        
+        int main() {
+            // 使用int类型实例化模板
+            Calculator<int> intCalc;
+            std::cout << "2 + 3 = " << intCalc.add(2, 3) << std::endl;
+            
+            // 使用double类型实例化模板
+            Calculator<double> doubleCalc;
+            std::cout << "2.5 * 3.0 = " << doubleCalc.multiply(2.5, 3.0) << std::endl;
+            
+            // 使用函数模板
+            std::cout << "Max of 10 and 20: " << maximum(10, 20) << std::endl;
+            std::cout << "Max of 3.14 and 2.72: " << maximum(3.14, 2.72) << std::endl;
+            
+            return 0;
+        }
+        ```
+
+
+    === "错误做法"
+        ```cpp title="mathutils.h"
+            #ifndef MATH_UTILS_H
+            #define MATH_UTILS_H
+            
+            // 只在头文件中包含声明
+            template <typename T>
+            class Calculator {
+            public:
+                T add(T a, T b);
+                T multiply(T a, T b);
+            };
+            
+            template <typename T>
+            T maximum(T a, T b);
+            
+            #endif
+        ```
+
+        ```cpp title="mathutils.cpp"
+            #include "mathutils.h"
+            
+            // 在源文件中包含定义
+            template <typename T>
+            T Calculator<T>::add(T a, T b) {
+                return a + b;
+            }
+            
+            template <typename T>
+            T Calculator<T>::multiply(T a, T b) {
+                return a * b;
+            }
+            
+            template <typename T>
+            T maximum(T a, T b) {
+                return (a > b) ? a : b;
+            }
+        ```
+
+        ```cpp title="main.cpp"
+            #include "mathutils.h"
+            #include <iostream>
+            
+            int main() {
+                // 这段代码编译会成功，但链接时会失败
+                // 因为编译器在这个文件中看不到模板的具体实现
+                Calculator<int> intCalc;
+                std::cout << "2 + 3 = " << intCalc.add(2, 3) << std::endl;
+                
+                return 0;
+            }
+        ```
