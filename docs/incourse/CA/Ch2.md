@@ -423,6 +423,8 @@ Todo...
 !!! info "示意图"
     ![](../../image/i223.png)
 
+    可视化：https://jasonren0403.github.io/scoreboard/
+
 所谓Scoreboard,就是在寄存器与功能单元（如整数加法器、浮点乘法器等）之间加一个表格,用来各种情况,并发出调度的信号.
 
 它由如下三部分,也可以当作是三个表格组成:
