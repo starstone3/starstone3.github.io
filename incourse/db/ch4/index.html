@@ -3780,37 +3780,46 @@ check (semester in (’Fall’, ’Winter’, ’Spring’, ’Summer’)));
 <h2 id="transactions事务">Transactions(事务)<a class="headerlink" href="#transactions事务" title="Permanent link">&para;</a></h2>
 <p>事务的ACID特性包括：</p>
 <ol>
-<li><strong>原子性(Atomicity)</strong>：</li>
-<li>事务是一个不可分割的操作单元，要么全部执行成功，要么全部不执行</li>
 <li>
-<p>例如：银行转账时，从A账户扣款和向B账户存款必须同时成功或同时失败
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">BEGIN</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span>
+<p><strong>原子性(Atomicity)</strong>：</p>
+</li>
+<li>
+<p>事务是一个不可分割的操作单元，要么全部执行成功，要么全部不执行</p>
+</li>
+<li>
+<p>例如：银行转账时，从A账户扣款和向B账户存款必须同时成功或同时失败</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">BEGIN</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span>
 <a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">account_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="p">;</span>
 <a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">account_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;B&#39;</span><span class="p">;</span>
 <a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="k">COMMIT</span><span class="p">;</span><span class="w">  </span><span class="c1">-- 全部成功才提交</span>
 <a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="c1">-- 如果任何一步失败，则自动ROLLBACK</span>
-</code></pre></div></p>
-</li>
+</code></pre></div>
+<ol>
 <li>
 <p><strong>一致性(Consistency)</strong>：</p>
+<ul>
+<li>
+<p>事务执行前后，数据库必须从一个一致性状态转换到另一个一致性状态</p>
 </li>
-<li>事务执行前后，数据库必须从一个一致性状态转换到另一个一致性状态</li>
 <li>
 <p>例如：转账前后，总金额保持不变；外键约束、唯一性约束等规则始终得到满足
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1">-- 转账前后总额相同</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1">-- 转账前后总额相同</span>
 <a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">balance</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">account</span><span class="p">;</span><span class="w">  </span><span class="c1">-- 转账前：1000</span>
 <a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="c1">-- 转账操作</span>
 <a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">balance</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">account</span><span class="p">;</span><span class="w">  </span><span class="c1">-- 转账后：1000</span>
 </code></pre></div></p>
 </li>
+</ul>
+</li>
 <li>
 <p><strong>隔离性(Isolation)</strong>：</p>
-</li>
+<ul>
 <li>多个事务并发执行时，每个事务都应该感觉不到其他事务的存在</li>
 <li>事务的中间结果对其他事务必须是不可见的</li>
-<li>
-<p>对于任意两个事务T1和T2，T1必须觉得自己要么是在T2完全执行完后才开始执行，要么是在T2开始执行前就已经执行完成
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c1">-- 事务1</span>
+<li>对于任意两个事务T1和T2，T1必须觉得自己要么是在T2完全执行完后才开始执行，要么是在T2开始执行前就已经执行完成
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c1">-- 事务1</span>
 <a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="k">BEGIN</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span>
 <a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">account_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="p">;</span>
 <a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="c1">-- 此时事务2无法看到余额减少</span>
@@ -3821,18 +3830,21 @@ check (semester in (’Fall’, ’Winter’, ’Spring’, ’Summer’)));
 <a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">account_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="p">;</span>
 <a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="c1">-- 要么看到更新前的余额，要么看到更新后的余额，不会看到中间状态</span>
 <a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="k">COMMIT</span><span class="p">;</span>
-</code></pre></div></p>
+</code></pre></div></li>
+</ul>
 </li>
 <li>
 <p><strong>持久性(Durability)</strong>：</p>
-</li>
+<ul>
 <li>一旦事务提交，其对数据库的修改就是永久性的</li>
 <li>即使系统崩溃，已提交的事务结果也不会丢失</li>
 <li>通常通过写入磁盘和日志机制来实现
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">BEGIN</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">BEGIN</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span>
 <a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
 <a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="k">COMMIT</span><span class="p">;</span><span class="w">  </span><span class="c1">-- 提交后，即使系统立即崩溃，更新也不会丢失</span>
 </code></pre></div></li>
+</ul>
+</li>
 </ol>
 <h3 id="事务相关的命令">事务相关的命令<a class="headerlink" href="#事务相关的命令" title="Permanent link">&para;</a></h3>
 <ol>
@@ -4002,7 +4014,7 @@ check (semester in (’Fall’, ’Winter’, ’Spring’, ’Summer’)));
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月27日 11:14:23">2025年3月27日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月9日 08:19:32">2025年5月9日</span>
   </span>
 
     
