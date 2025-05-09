@@ -416,8 +416,11 @@ WHERE condition;
 事务的ACID特性包括：
 
 1. **原子性(Atomicity)**：
+
    - 事务是一个不可分割的操作单元，要么全部执行成功，要么全部不执行
+
    - 例如：银行转账时，从A账户扣款和向B账户存款必须同时成功或同时失败
+
    ```sql
    BEGIN TRANSACTION;
    UPDATE account SET balance = balance - 100 WHERE account_id = 'A';
@@ -427,42 +430,45 @@ WHERE condition;
    ```
 
 2. **一致性(Consistency)**：
-   - 事务执行前后，数据库必须从一个一致性状态转换到另一个一致性状态
-   - 例如：转账前后，总金额保持不变；外键约束、唯一性约束等规则始终得到满足
-   ```sql
-   -- 转账前后总额相同
-   SELECT SUM(balance) FROM account;  -- 转账前：1000
-   -- 转账操作
-   SELECT SUM(balance) FROM account;  -- 转账后：1000
-   ```
+   
+    - 事务执行前后，数据库必须从一个一致性状态转换到另一个一致性状态
+
+    - 例如：转账前后，总金额保持不变；外键约束、唯一性约束等规则始终得到满足
+    ```sql
+    -- 转账前后总额相同
+    SELECT SUM(balance) FROM account;  -- 转账前：1000
+    -- 转账操作
+    SELECT SUM(balance) FROM account;  -- 转账后：1000
+    ```
 
 3. **隔离性(Isolation)**：
-   - 多个事务并发执行时，每个事务都应该感觉不到其他事务的存在
-   - 事务的中间结果对其他事务必须是不可见的
-   - 对于任意两个事务T1和T2，T1必须觉得自己要么是在T2完全执行完后才开始执行，要么是在T2开始执行前就已经执行完成
-   ```sql
-   -- 事务1
-   BEGIN TRANSACTION;
-   UPDATE account SET balance = balance - 100 WHERE account_id = 'A';
-   -- 此时事务2无法看到余额减少
-   COMMIT;
+   
+    - 多个事务并发执行时，每个事务都应该感觉不到其他事务的存在
+    - 事务的中间结果对其他事务必须是不可见的
+    - 对于任意两个事务T1和T2，T1必须觉得自己要么是在T2完全执行完后才开始执行，要么是在T2开始执行前就已经执行完成
+    ```sql
+    -- 事务1
+    BEGIN TRANSACTION;
+    UPDATE account SET balance = balance - 100 WHERE account_id = 'A';
+    -- 此时事务2无法看到余额减少
+    COMMIT;
 
-   -- 事务2
-   BEGIN TRANSACTION;
-   SELECT balance FROM account WHERE account_id = 'A';
-   -- 要么看到更新前的余额，要么看到更新后的余额，不会看到中间状态
-   COMMIT;
-   ```
+    -- 事务2
+    BEGIN TRANSACTION;
+    SELECT balance FROM account WHERE account_id = 'A';
+    -- 要么看到更新前的余额，要么看到更新后的余额，不会看到中间状态
+    COMMIT;
+    ```
 
 4. **持久性(Durability)**：
-   - 一旦事务提交，其对数据库的修改就是永久性的
-   - 即使系统崩溃，已提交的事务结果也不会丢失
-   - 通常通过写入磁盘和日志机制来实现
-   ```sql
-   BEGIN TRANSACTION;
-   UPDATE account SET balance = balance - 100;
-   COMMIT;  -- 提交后，即使系统立即崩溃，更新也不会丢失
-   ```
+    - 一旦事务提交，其对数据库的修改就是永久性的
+    - 即使系统崩溃，已提交的事务结果也不会丢失
+    - 通常通过写入磁盘和日志机制来实现
+    ```sql
+    BEGIN TRANSACTION;
+    UPDATE account SET balance = balance - 100;
+    COMMIT;  -- 提交后，即使系统立即崩溃，更新也不会丢失
+    ```
 
 ### 事务相关的命令
 
