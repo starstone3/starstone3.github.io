@@ -417,17 +417,17 @@ WHERE condition;
 
 1. **原子性(Atomicity)**：
 
-   - 事务是一个不可分割的操作单元，要么全部执行成功，要么全部不执行
+    - 事务是一个不可分割的操作单元，要么全部执行成功，要么全部不执行
 
-   - 例如：银行转账时，从A账户扣款和向B账户存款必须同时成功或同时失败
+    - 例如：银行转账时，从A账户扣款和向B账户存款必须同时成功或同时失败
 
-   ```sql
-   BEGIN TRANSACTION;
-   UPDATE account SET balance = balance - 100 WHERE account_id = 'A';
-   UPDATE account SET balance = balance + 100 WHERE account_id = 'B';
-   COMMIT;  -- 全部成功才提交
-   -- 如果任何一步失败，则自动ROLLBACK
-   ```
+    ```sql
+    BEGIN TRANSACTION;
+    UPDATE account SET balance = balance - 100 WHERE account_id = 'A';
+    UPDATE account SET balance = balance + 100 WHERE account_id = 'B';
+    COMMIT;  -- 全部成功才提交
+    -- 如果任何一步失败，则自动ROLLBACK
+    ```
 
 2. **一致性(Consistency)**：
    
@@ -461,9 +461,14 @@ WHERE condition;
     ```
 
 4. **持久性(Durability)**：
+
     - 一旦事务提交，其对数据库的修改就是永久性的
+
+    
     - 即使系统崩溃，已提交的事务结果也不会丢失
+
     - 通常通过写入磁盘和日志机制来实现
+    
     ```sql
     BEGIN TRANSACTION;
     UPDATE account SET balance = balance - 100;
