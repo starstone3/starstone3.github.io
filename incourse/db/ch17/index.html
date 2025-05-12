@@ -1651,6 +1651,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Chapter 17:事务
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1662,6 +1675,193 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-simple-transaction-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Simple Transaction Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Simple Transaction Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transaction-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transaction State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concurrent-executions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concurrent Executions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schedule
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serializability可串行化" class="md-nav__link">
+    <span class="md-ellipsis">
+      Serializability(可串行化)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Serializability(可串行化)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conflict-serializability冲突可串行化" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conflict Serializability（冲突可串行化）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-for-serializability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing for Serializability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-serializability视图可串行化" class="md-nav__link">
+    <span class="md-ellipsis">
+      View Serializability（视图可串行化）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-notions-of-serializability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Notions of Serializability
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recoverable-schedules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recoverable Schedules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recoverable Schedules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cascading-rollbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cascading Rollbacks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transaction-isolation-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transaction Isolation Levels
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concurrency-control-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concurrency Control Protocols
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concurrency Control Protocols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#基于锁的协议" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于锁的协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#基于时间戳的协议" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于时间戳的协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#基于验证的协议" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于验证的协议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2777,6 +2977,182 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-simple-transaction-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Simple Transaction Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Simple Transaction Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transaction-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transaction State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concurrent-executions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concurrent Executions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schedule
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serializability可串行化" class="md-nav__link">
+    <span class="md-ellipsis">
+      Serializability(可串行化)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Serializability(可串行化)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conflict-serializability冲突可串行化" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conflict Serializability（冲突可串行化）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-for-serializability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing for Serializability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-serializability视图可串行化" class="md-nav__link">
+    <span class="md-ellipsis">
+      View Serializability（视图可串行化）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-notions-of-serializability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Notions of Serializability
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recoverable-schedules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recoverable Schedules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recoverable Schedules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cascading-rollbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cascading Rollbacks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transaction-isolation-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transaction Isolation Levels
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concurrency-control-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concurrency Control Protocols
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concurrency Control Protocols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#基于锁的协议" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于锁的协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#基于时间戳的协议" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于时间戳的协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#基于验证的协议" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于验证的协议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2796,9 +3172,439 @@
 
 <h1 id="transaction">Transaction<a class="headerlink" href="#transaction" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 11 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间不到 1 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2377 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 19 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 12 分钟</p>
 </div>
 <p>前面已经在<a href="../ch4/#transactions事务">这里</a>介绍过</p>
+<h2 id="a-simple-transaction-model">A Simple Transaction Model<a class="headerlink" href="#a-simple-transaction-model" title="Permanent link">&para;</a></h2>
+<p>在本章中,我们简化设计,把事务与数据的交互分为两种:</p>
+<ul>
+<li>
+<p><code>read(X)</code> ,将数据项 X 从数据项传输到执行读操作的事务的主内存工作区中的一个变量,也称为<code>X</code></p>
+</li>
+<li>
+<p><code>write(X)</code> ,将事务的主内存工作区中的变量 X 的值传输到数据库中的数据项上</p>
+</li>
+</ul>
+<div align="center">
+    <a class="glightbox" href="../../../image/mac9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/mac9.png" width="50%"></a></div>
+
+<div class="admonition tip">
+<p class="admonition-title">Example of Fund Transfer</p>
+<p><a class="glightbox" href="../../../image/mac10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/mac10.png" /></a></p>
+<ol>
+<li>
+<p>Atomicity requirement</p>
+<ul>
+<li>所有的操作都要么完成,要么不完成</li>
+</ul>
+</li>
+<li>
+<p>Durability requirement</p>
+<ul>
+<li>如果操作确认完成,数据库必须更新</li>
+</ul>
+</li>
+<li>
+<p>Consistency requirement</p>
+<ul>
+<li>
+<p>Explicitly（显式） specified integrity constraints e.g. primary keys , foreign keys</p>
+</li>
+<li>
+<p>Implicit （隐式） integrity constraints e.g. sum of balances of all accounts minus sum of loan amounts must equal value of cash-in-hand</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Isolation requirement</p>
+<ul>
+<li>如果在 step 3 6 之间，另一个事务能够访问数据库,那么它就会看到一个不一致的状态.比如,A+B总值不对.</li>
+</ul>
+</li>
+</ol>
+</div>
+<h3 id="transaction-state">Transaction State<a class="headerlink" href="#transaction-state" title="Permanent link">&para;</a></h3>
+<div align="center">
+    <a class="glightbox" href="../../../image/mac11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/mac11.png" width="50%"></a></div>
+
+<ul>
+<li>
+<p><code>Active</code> : 事务正在执行</p>
+</li>
+<li>
+<p><code>Partially Committed</code> : 事务已经执行完所有的操作,但还没有提交(after the final statement has been executed)</p>
+</li>
+<li>
+<p><code>Failed</code> : 事务执行失败,需要回滚</p>
+</li>
+<li>
+<p><code>Aborted</code> : 事务已经回滚,需要重新开始或者直接kill掉这个事务</p>
+</li>
+<li>
+<p><code>Committed</code> : 事务已经提交,所有的操作都已经完成</p>
+</li>
+</ul>
+<h3 id="concurrent-executions">Concurrent Executions<a class="headerlink" href="#concurrent-executions" title="Permanent link">&para;</a></h3>
+<p>并发执行有很多优点,比如提高效率(one transaction can be using the CPU while another is reading from or writing to the disk)等等,但是如果不加以控制,可能会导致问题.</p>
+<ul>
+<li>
+<p>Lost Update（丢失修改）</p>
+<details class="tip">
+<summary>Tip</summary>
+<p><a class="glightbox" href="../../../image/mac12.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/mac12.png" /></a>
+相当于有一百张票,两个人都订票,但是最后系统却显示剩余99张票,而不是98张票</p>
+</details>
+</li>
+<li>
+<p>Dirty Read（脏读）</p>
+<details class="tip">
+<summary>Tip</summary>
+<p><a class="glightbox" href="../../../image/mac13.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/mac13.png" /></a>
+事务T2读取了事务T1未提交的值,但是T1最后回滚了,那么T2读取的值就不对了</p>
+</details>
+</li>
+<li>
+<p>Unrepeatable Read（不可重复读）</p>
+<details class="tip">
+<summary>Tip</summary>
+<p><a class="glightbox" href="../../../image/mac14.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/mac14.png" /></a>
+事务隔离要求,T1读到的值,在T1提交之前,不能被其他事务修改,否则就会导致不可重复读的问题</p>
+</details>
+</li>
+<li>
+<p>Phantom Problem（幻读）</p>
+<details class="tip">
+<summary>Tip</summary>
+<p><a class="glightbox" href="../../../image/mac15.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/mac15.png" /></a>
+事务T1读取了一个范围内的值,但是在T1提交之前,另一个事务T2插入了一个新的值,那么T1读取的范围就会发生变化,导致幻读的问题</p>
+</details>
+</li>
+</ul>
+<h2 id="schedule">Schedule<a class="headerlink" href="#schedule" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>当一组事务被执行时，它们的执行顺序称为调度（schedule）。调度可以是串行的，也可以是并行的。</p>
+<p>一般来说,单个事务内的指令是保持原来的顺序的</p>
+<p>如果一个事务成功执行,那么commit就是它的最后一条指令,不然rollback就是它的最后一条指令</p>
+</blockquote>
+<div class="admonition example">
+<p class="admonition-title">🌰</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">串行1</label><label for="__tabbed_1_2">串行2</label><label for="__tabbed_1_3">并行</label><label for="__tabbed_1_4">并行/不保持值</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a class="glightbox" href="../../../image/mac1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/mac1.png" /></a></p>
+<p>等待T1完成后,再执行T2</p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" href="../../../image/mac2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/mac2.png" /></a></p>
+<p>等待T2完成后,再执行T1</p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" href="../../../image/mac3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/mac3.png" /></a></p>
+<p>T1和T2交替执行,但最终的结果和串行1或串行2是一样的</p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" href="../../../image/mac4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/mac4.png" /></a></p>
+<p>T1和T2交替执行,但最终的结果和串行1或串行2不一样</p>
+<p>一般来说,这样做都会出现问题.</p>
+</div>
+</div>
+</div>
+</div>
+<h2 id="serializability可串行化">Serializability(可串行化)<a class="headerlink" href="#serializability可串行化" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>基本假设:每条事务都保持数据库的一致性</p>
+<p>那么,它们串行执行,也必然能保持数据库的一致性</p>
+</blockquote>
+<div class="admonition definition">
+<p class="admonition-title">可串行化</p>
+<p>如果一个调度(可能是并发)的结果和某个串行调度的结果等价,那么这个调度就是可串行化的</p>
+<p>根据"等价"的定义不同,有两种可串行化定义:</p>
+<ol>
+<li>
+<p>conflict serializability(冲突可串行化 )</p>
+</li>
+<li>
+<p>view serializability(视图可串行化)</p>
+</li>
+</ol>
+</div>
+<p><strong>Conflicting Instructions</strong></p>
+<ul>
+<li>
+<p>来自于事务<span class="arithmatex">\(T_i\)</span>和<span class="arithmatex">\(T_j\)</span>的指令<span class="arithmatex">\(I_i\)</span>和<span class="arithmatex">\(I_j\)</span>冲突,当且仅当:</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(I_i\)</span>和<span class="arithmatex">\(I_j\)</span>访问同一个数据项</p>
+</li>
+<li>
+<p><span class="arithmatex">\(I_i\)</span>和<span class="arithmatex">\(I_j\)</span>至少有一个是写操作</p>
+</li>
+</ol>
+</li>
+<li>
+<p>冲突的指令要求它们之间必须建立一个逻辑顺序,也就是一个“谁先谁后”的约束</p>
+</li>
+</ul>
+<h3 id="conflict-serializability冲突可串行化">Conflict Serializability（冲突可串行化）<a class="headerlink" href="#conflict-serializability冲突可串行化" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>如果一个调度<span class="arithmatex">\(S\)</span>可以通过交换一系列不冲突的指令的顺序,来变成另一个调度<span class="arithmatex">\(S'\)</span>，那么我们称<span class="arithmatex">\(S\)</span>和<span class="arithmatex">\(S'\)</span>是冲突等价(conflict equivalent)的</p>
+</li>
+<li>
+<p>如果<span class="arithmatex">\(S\)</span>是冲突等价于某个串行调度<span class="arithmatex">\(S'\)</span>，那么<span class="arithmatex">\(S\)</span>就是冲突可串行化的</p>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">🌰</p>
+<p><a class="glightbox" href="../../../image/mac5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/mac5.png" /></a></p>
+</div>
+<h3 id="testing-for-serializability">Testing for Serializability<a class="headerlink" href="#testing-for-serializability" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Precedence graph（前驱图 ） — a directed graph where the vertices are the transactions (names).</p>
+<p>We draw an arc from <span class="arithmatex">\(T_i\)</span> to <span class="arithmatex">\(T_j\)</span> if the two transaction conflict, and <span class="arithmatex">\(T_i\)</span> accessed the data item on which the conflict arose earlier.</p>
+</blockquote>
+<p>那么,我们可以从前驱图的角度,判断一个调度是否是冲突可串行化的:如果一个调度的前驱图是无环的,那么这个调度就是冲突可串行化的</p>
+<p>并且,如果一个调度是无环的,我们可以使用拓扑排序的方法获得最后的串行调度</p>
+<div align="center">
+    <a class="glightbox" href="../../../image/mac6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/mac6.png" width="50%"></a></div>
+
+<div align="center">
+    <a class="glightbox" href="../../../image/mac7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/mac7.png" width="50%"></a></div>
+
+<div class="admonition example">
+<p class="admonition-title">🌰</p>
+<p><a class="glightbox" href="../../../image/mac8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../image/mac8.png" /></a></p>
+</div>
+<h3 id="view-serializability视图可串行化">View Serializability（视图可串行化）<a class="headerlink" href="#view-serializability视图可串行化" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>视图可串行化是冲突可串行化的一个更宽松的定义</p>
+</li>
+<li>
+<p>view equivalence(视图等价): <span class="arithmatex">\(S\)</span>和<span class="arithmatex">\(S'\)</span>是视图等价的,当且仅当对于任意数据项Q:</p>
+<ol>
+<li>
+<p>如果<span class="arithmatex">\(S\)</span>中有事务<span class="arithmatex">\(T_i\)</span>读了Q的初始值,那么在<span class="arithmatex">\(S'\)</span>中的<span class="arithmatex">\(T_i\)</span>也必须读取Q的初始值</p>
+</li>
+<li>
+<p>如果<span class="arithmatex">\(S\)</span>中的事务<span class="arithmatex">\(T_i\)</span>使用<code>read(Q)</code>读取了<span class="arithmatex">\(T_j\)</span>产生的值,那么<span class="arithmatex">\(S'\)</span>中的<span class="arithmatex">\(T_i\)</span>也必须使用<code>read(Q)</code>读取<span class="arithmatex">\(T_j\)</span>同一个<code>write(Q)</code>产生的值</p>
+</li>
+<li>
+<p>如果<span class="arithmatex">\(S\)</span>中的事务<span class="arithmatex">\(T_i\)</span>用<code>write(Q)</code>写入了Q的最终值,那么<span class="arithmatex">\(S'\)</span>中的<span class="arithmatex">\(T_i\)</span>也必须用<code>write(Q)</code>写入Q的最终值</p>
+</li>
+</ol>
+</li>
+<li>
+<p>如果<span class="arithmatex">\(S\)</span>是视图等价于某个串行调度<span class="arithmatex">\(S'\)</span>，那么<span class="arithmatex">\(S\)</span>就是视图可串行化的</p>
+</li>
+<li>
+<p>所有的冲突可串行化的调度都是视图可串行化的,但是并不是所有的视图可串行化的调度都是冲突可串行化的
+    <div align="center">
+        <a class="glightbox" href="../../../image/mac16.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/mac16.png" width="50%"></a>
+        <br>
+        <caption>视图可串行化的调度(T27,T28,T29),但不是冲突可串行化</caption>
+    </div></p>
+</li>
+</ul>
+<h3 id="other-notions-of-serializability">Other Notions of Serializability<a class="headerlink" href="#other-notions-of-serializability" title="Permanent link">&para;</a></h3>
+<p>有的调度既不是冲突可串行化又不是视图可串行化，但它是可串行化的。</p>
+<div align="center">
+    <a class="glightbox" href="../../../image/mac17.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/mac17.png" width="100%"></a>
+    </div>
+
+<p>这种基于数学的可串行化,难以编码到数据库中,所以很难实现.</p>
+<h2 id="recoverable-schedules">Recoverable Schedules<a class="headerlink" href="#recoverable-schedules" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>如果一个事务<span class="arithmatex">\(T_i\)</span>读取了另一个事务<span class="arithmatex">\(T_j\)</span>的值,那么<span class="arithmatex">\(T_i\)</span>必须在<span class="arithmatex">\(T_j\)</span>提交之后提交</p>
+<p><div align="center">
+    <a class="glightbox" href="../../../image/mac18.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/mac18.png" width="50%"></a>
+    <br>
+    <caption>不是可恢复调度</caption>
+    </div></p>
+</li>
+<li>
+<p>上图的调度中,如果<span class="arithmatex">\(T_8\)</span>回滚了,那么<span class="arithmatex">\(T_9\)</span>读取的脏数据就完全错误了,并且此时已经<span class="arithmatex">\(T_9\)</span>已经提交了,所以会出问题.</p>
+</li>
+</ul>
+<h3 id="cascading-rollbacks">Cascading Rollbacks<a class="headerlink" href="#cascading-rollbacks" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>一个事务的回滚会导致其他事务的回滚,也就是级联回滚</p>
+<p><div align="center">
+    <a class="glightbox" href="../../../image/mac19.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/mac19.png" width="50%"></a>
+    <br>
+    <caption>If <span class="arithmatex">\(T_{10}\)</span> fails,<span class="arithmatex">\(T_{11}\)</span> and <span class="arithmatex">\(T_{12}\)</span> must also be rolled back.</caption>
+    </div></p>
+</li>
+<li>
+<p>但是级联回滚的开销太大了,所以我们更希望使用非级联回滚的调度</p>
+<ul>
+<li>
+<p>也即是,<span class="arithmatex">\(T_j\)</span>在<span class="arithmatex">\(T_i\)</span>提交之前,不能读取<span class="arithmatex">\(T_i\)</span>的值</p>
+</li>
+<li>
+<p>这也是一种更严格的可恢复调度</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="transaction-isolation-levels">Transaction Isolation Levels<a class="headerlink" href="#transaction-isolation-levels" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>数据库系统必须确保所有可能的调度（Schedule）满足以下条件：</p>
+<ul>
+<li>
+<p>是 <strong>冲突可串行化（Conflict Serializable）</strong> 或 <strong>视图可串行化（View Serializable）</strong></p>
+</li>
+<li>
+<p>是 <strong>可恢复的（Recoverable）</strong></p>
+</li>
+<li>
+<p>最好是 <strong>无级联回滚的（Cascadeless）</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>并发控制协议（Concurrency Control Protocols）</strong>，使事务调度在运行时就具备以下性质：</p>
+<ul>
+<li>
+<p>是冲突/视图可串行化的</p>
+</li>
+<li>
+<p>是可恢复的</p>
+</li>
+<li>
+<p>无级联回滚</p>
+</li>
+</ul>
+</li>
+<li>
+<p>完全的隔离会导致性能下降,所以我们可以使用不同的隔离级别来控制事务之间的隔离程度(minisql part 7部分)</p>
+<ul>
+<li>
+<p>Serializable — default:</p>
+<ul>
+<li>最高的隔离级别,所有的事务都是串行执行的,但是性能最低</li>
+</ul>
+</li>
+<li>
+<p>Repeatable Read:</p>
+<ul>
+<li>只有已被提交的记录可以读取,在事务进行时始终保持共享锁</li>
+</ul>
+</li>
+<li>
+<p>Read Committed:</p>
+<ul>
+<li>只有已被提交的记录可以读取,但是只有读数据时会加共享锁,因此重复读取的结果可能不一致</li>
+</ul>
+</li>
+<li>
+<p>Read Uncommitted:</p>
+<ul>
+<li>
+<p>最低的隔离级别</p>
+</li>
+<li>
+<p>允许读取未提交的记录,但是会导致脏读的问题,性能最高</p>
+</li>
+</ul>
+</li>
+<li>
+<p>在sql中,可以使用<code>SET TRANSACTION ISOLATION LEVEL</code>来设置隔离级别</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="concurrency-control-protocols">Concurrency Control Protocols<a class="headerlink" href="#concurrency-control-protocols" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>事务调度的并发控制协议,是为了确保所有的调度都满足可串行化的要求</p>
+</blockquote>
+<h3 id="基于锁的协议">基于锁的协议<a class="headerlink" href="#基于锁的协议" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>锁的粒度</strong></p>
+<ul>
+<li>对整个数据库加锁 vs 对单个数据项加锁</li>
+</ul>
+</li>
+<li>
+<p><strong>锁的持有时间</strong>  </p>
+</li>
+<li>
+<p><strong>锁的类型</strong></p>
+<ul>
+<li>共享锁（Shared Lock）：允许多个事务同时读取数据</li>
+<li>排他锁（Exclusive Lock）：仅允许一个事务写入数据，阻止其他事务的读写操作</li>
+</ul>
+</li>
+</ul>
+<h3 id="基于时间戳的协议">基于时间戳的协议<a class="headerlink" href="#基于时间戳的协议" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>时间戳分配</strong></p>
+<ul>
+<li>当事务开始时，系统会为其分配一个唯一的时间戳</li>
+</ul>
+</li>
+<li>
+<p><strong>数据项时间戳</strong></p>
+<ul>
+<li>
+<p>每个数据项存储两种时间戳：</p>
+<ul>
+<li>
+<p>读时间戳（Read Timestamp）：记录最后读取该数据项的事务的时间戳</p>
+</li>
+<li>
+<p>写时间戳（Write Timestamp）：记录最后修改该数据项的事务的时间戳</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>访问顺序检测</strong></p>
+<ul>
+<li>系统使用时间戳来检测事务访问数据的顺序是否违反了串行化要求</li>
+</ul>
+</li>
+</ul>
+<h3 id="基于验证的协议">基于验证的协议<a class="headerlink" href="#基于验证的协议" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>乐观并发控制</strong></p>
+<ul>
+<li>假设事务之间的冲突较少，大多数情况下不会发生冲突</li>
+</ul>
+</li>
+<li>
+<p><strong>适用场景</strong></p>
+<ul>
+<li>事务之间冲突率较低的环境</li>
+</ul>
+</li>
+<li>
+<p><strong>三阶段执行</strong></p>
+<ul>
+<li>
+<p>每个事务必须经过三个阶段：</p>
+<ol>
+<li>
+<p><strong>读取阶段</strong>：事务只读取数据，不进行任何修改</p>
+</li>
+<li>
+<p><strong>验证阶段</strong>：检查是否与其他事务冲突</p>
+</li>
+<li>
+<p><strong>写入阶段</strong>：通过验证后，事务可以将修改写入数据库</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
 
 
 
@@ -2807,37 +3613,8 @@
 
 
   
-    
-  
-  
-    
   
 
-
-  <aside class="md-source-file">
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="最后更新">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月12日 02:10:38">2025年5月12日</span>
-  </span>
-
-    
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="创建日期">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月12日 02:10:38">2025年5月12日</span>
-  </span>
-
-    
-    
-    
-  </aside>
 
 
   
