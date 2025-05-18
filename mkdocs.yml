@@ -131,8 +131,9 @@ nav :
     - "计算机体系结构":
       - incourse/CA/index.md
       - "Chapter 1:Introduction": incourse/CA/Ch1.md
-      - "Chapter 2:Instruction-Level Parallelism": incourse/CA/Ch2.md
-      - "Chapter 3:Memory Hierarchy Design": incourse/CA/Ch3.md
+      - "Chapter 2:Memory Hierarchy Design": incourse/CA/Ch3.md
+      - "Chapter 3:Instruction-Level Parallelism": incourse/CA/Ch2.md
+      - "Chapter 4:Data-Level Parallelism": incourse/CA/Ch4.md
   - "大一课程遗物":
     - incourse/old/index.md
     - "数据结构基础": incourse/old/fds.md
