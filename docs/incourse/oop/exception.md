@@ -215,6 +215,25 @@ throw VectorIndexError(idx);
 
 - `std::bad_typeid`: 类型异常
 
+```cpp title="sample"
+#include <iostream>
+#include <stdexcept>
+#include <string>
+#include <vector>
+#include <exception>
+using namespace std;
+int main() {
+    try {
+        vector<int> v(10);
+        cout << v.at(20) << endl; // 越界异常
+    } catch (const out_of_range& e) {
+        cout << "out_of_range: " << e.what() << endl;
+    } catch (const exception& e) {
+        cout << "exception: " << e.what() << endl;
+    }
+}
+```
+
 ## 异常继承
 
 异常是一个类,所以它也可以继承,我们可以定义一个基类,然后定义多个子类来表示不同类型的异常.

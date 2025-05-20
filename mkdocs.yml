@@ -129,6 +129,7 @@ nav :
       - "Chapter 7:模板" : incourse/oop/template.md
       - "Chapter 8:迭代器": incourse/oop/iterator.md
       - "Chapter 9:异常处理": incourse/oop/exception.md
+      - "Chapter 10:智能指针": incourse/oop/spointer.md
     - "计算机体系结构":
       - incourse/CA/index.md
       - "Chapter 1:Introduction": incourse/CA/Ch1.md
