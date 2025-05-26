@@ -111,13 +111,14 @@ nav :
       - "Chapter 5:高级SQL": incourse/db/ch5.md
       - "Chapter 6:ER模型": incourse/db/ch6.md
       - "Chapter 7:关系数据库设计": incourse/db/ch7.md
-      - "Chapter 12: 数据存储": incourse/db/ch12.md
+      - "Chapter 12:数据存储": incourse/db/ch12.md
       - "Chapter 13:数据存储结构": incourse/db/ch13.md
       - "Chapter 14:索引": incourse/db/ch14.md
       - "Chapter 15:查询处理": incourse/db/ch15.md
       - "Chapter 16:查询优化": incourse/db/ch16.md
       - "Chapter 17:事务": incourse/db/ch17.md
       - "Chapter 18:并发控制": incourse/db/ch18.md
+      - "Chapter 19:恢复": incourse/db/ch19.md
     - "OOP":
       - incourse/oop/index.md
       - "Chapter 1:Introduction": incourse/oop/intro.md
