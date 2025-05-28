@@ -423,3 +423,107 @@ CUDA,即 Compute Unified Device Architecture,是NVIDIA推出的一种并行计�
 <div align="center">
     <img src="../../../image/mac50.png" width="100%"/>
 </div>
+
+
+### GPU Structure
+
+- **Grid**: GPU的最顶层结构,由多个Block组成
+
+- **Block**: Block是GPU的基本执行单元,由多个Warp组成
+
+- **Warp**: 通常是32个线程组成的一个执行单元，是GPU调度的最小单位
+
+- **Thread**: GPU的最小执行单元,每个Thread可以独立执行代码
+
+- **Element**: GPU的最小数据单元,每个Thread可以处理多个Element
+
+比如,对于向量$A = B \times C$,一个8192个元素的乘法
+
+<div align="center">
+    <img src="../../../image/mac73.png" width="70%"/>
+</div>
+
+这个grid有16个block,每个block包含16个thread,每个thread处理32个元素
+
+---
+
+下图是一个简单的多线程SIMD处理器框架
+
+<div align="center">
+    <img src="../../../image/mac74.png" width="90%"/>
+</div>
+
+可以看到,多个函数单元是并行的.
+
+### SIMD Thread Scheduler
+
+一共有两级的GPU调度器:
+
+- **Thread Block Scheduler**:负责调度Block,每个Block可以包含多个Thread.将Block分配到多线程SIMD处理器上执行
+
+- **SIMD Thread Scheduler**:负责调度Thread,每个Thread可以处理多个Element.调度决定一个SIMD处理器中的线程何时运行
+
+
+### Nvidia GPU ISA
+
+**PTX**:NVIDIA的并行线程执行（Parallel Thread Execution）虚拟机指令集架构（ISA），提供稳定的指令集供编译器使用
+
+??? info "基本的PTX指令"
+    ![](../../image/mac75.png)
+
+
+用PTX实现上面的DAXPY就是:
+
+<div align="center">
+    <img src="../../../image/mac76.png" width="70%"/>
+</div>
+
+### Conditional Branch
+
+也使用`Predicate`寄存器,但是它的实现方式与CPU不同.
+
+- **Predicate Register**:每个线程都有一个`Predicate`寄存器,用于存储条件判断的结果
+
+- **Predicate Execution**:每个线程可以根据`Predicate`寄存器的值决定是否执行某条指令
+
+```ptx
+// PTX code for conditional execution
+.reg .pred p;
+setp.ne.b32 p, r1, 0; // Set predicate if r1 is not equal to 0
+@p add.f32 r2, r2, r3; // Conditionally execute if p is true
+```
+
+### GPU Memory
+> 别问我笔记为啥这么少,因为上课几乎就是飞速带过...
+
+<div align="center">
+    <img src="../../../image/mac77.png" width="70%"/>
+    <br>
+    <caption>
+        <b>GPU Memory Hierarchy</b>
+    </caption>
+</div>
+
+详细的看[这里](https://note.noughtq.top/system/ca/4#nvinda-gpu-memory-structures)
+
+### GPU vs Vector
+
+??? info "GPU中的术语对标Vector"
+    ![](../../image/mac78.png)
+
+---
+
+以及架构的对比:
+
+<div align="center">
+    <img src="../../../image/mac79.png" width="100%"/>
+</div>
+
+### GPU vs Multimedia SIMD
+> GPU和多媒体SIMD的区别在于,GPU是为通用计算而设计的,而多媒体SIMD是为特定应用而设计的
+>
+> 然而上课啥也没说,就一张图
+
+<div align="center">
+    <img src="../../../image/mac80.png" width="100%"/>
+</div>
