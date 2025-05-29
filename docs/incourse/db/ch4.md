@@ -171,8 +171,7 @@ check (value in (’Bachelors’, ’Masters’, ’Doctorate’));
     - 例如: `CREATE TABLE table_name (column1 data_type, column2 data_type, UNIQUE (column1, column2));`
 
 4. `check`从句
-    - check(P),P是一个谓语
-    -   
+    - check(P),P是一个谓语  
         ```sql
         create table section (
         course_id varchar (8),
@@ -265,25 +264,26 @@ WHERE condition;
 来创建视图.
 
 视图的重要特点：
+
 1. **虚拟性**：创建视图时并不会真正地创建一个新表并存储数据，而是仅仅保存了查询表达式的定义。
-   ```sql
-   -- 例如创建一个教授工资视图
-   CREATE VIEW faculty_salary AS
-   SELECT ID, name, salary
-   FROM instructor
-   WHERE dept_name = 'Finance';
-   ```
+    ```sql
+    -- 例如创建一个教授工资视图
+    CREATE VIEW faculty_salary AS
+    SELECT ID, name, salary
+    FROM instructor
+    WHERE dept_name = 'Finance';
+    ```
 
 2. **查询重写**：当使用视图时，系统会将视图的定义替换到原始查询中。例如：
-   ```sql
-   -- 原始查询
-   SELECT name FROM faculty_salary WHERE salary > 90000;
-   
-   -- 系统实际执行的查询
-   SELECT name 
-   FROM instructor 
-   WHERE dept_name = 'Finance' AND salary > 90000;
-   ```
+    ```sql
+    -- 原始查询
+    SELECT name FROM faculty_salary WHERE salary > 90000;
+
+    -- 系统实际执行的查询
+    SELECT name 
+    FROM instructor 
+    WHERE dept_name = 'Finance' AND salary > 90000;
+    ```
 
 3. **动态性**：由于视图是基于原始表的查询定义，所以当原始表的数据发生变化时，通过视图看到的数据也会随之改变，始终反映最新的数据状态。
 
@@ -313,53 +313,53 @@ WHERE salary > 90000;
 但是，这种特性对视图的条件要求很苛刻，只有满足如下条件的视图才可以更新：
 
 1. **单一基表**：FROM子句中只能包含一个数据库表，不能包含多表连接、子查询等。
-   ```sql
-   -- 可更新的视图
-   CREATE VIEW cs_faculty AS
-   SELECT ID, name, salary
-   FROM instructor
-   WHERE dept_name = 'Comp. Sci.';
+    ```sql
+    -- 可更新的视图
+    CREATE VIEW cs_faculty AS
+    SELECT ID, name, salary
+    FROM instructor
+    WHERE dept_name = 'Comp. Sci.';
 
-   -- 不可更新的视图（多表连接）
-   CREATE VIEW faculty_dept AS
-   SELECT i.name, d.building
-   FROM instructor i JOIN department d
-   ON i.dept_name = d.dept_name;
-   ```
+    -- 不可更新的视图（多表连接）
+    CREATE VIEW faculty_dept AS
+    SELECT i.name, d.building
+    FROM instructor i JOIN department d
+    ON i.dept_name = d.dept_name;
+    ```
 
 2. **简单映射**：SELECT子句只能包含列名，不能包含：
-   - 表达式（如 salary * 1.1）
-   - 聚合函数（如 SUM, COUNT）
-   - DISTINCT关键字
-   ```sql
-   -- 可更新的视图
-   CREATE VIEW simple_faculty AS
-   SELECT ID, name, salary
-   FROM instructor;
+    - 表达式（如 salary * 1.1）
+    - 聚合函数（如 SUM, COUNT）
+    - DISTINCT关键字
+    ```sql
+    -- 可更新的视图
+    CREATE VIEW simple_faculty AS
+    SELECT ID, name, salary
+    FROM instructor;
 
-   -- 不可更新的视图（包含表达式）
-   CREATE VIEW salary_plus AS
-   SELECT ID, name, salary * 1.1 as increased_salary
-   FROM instructor;
-   ```
+    -- 不可更新的视图（包含表达式）
+    CREATE VIEW salary_plus AS
+    SELECT ID, name, salary * 1.1 as increased_salary
+    FROM instructor;
+    ```
 
 3. **NULL值允许**：未在视图中列出的原表列必须允许为NULL值或有默认值
-   ```sql
-   -- 假设phone_number允许为NULL
-   CREATE VIEW basic_info AS
-   SELECT ID, name
-   FROM instructor;
-   -- 此时可以通过视图插入数据，phone_number会自动设为NULL
-   ```
+    ```sql
+    -- 假设phone_number允许为NULL
+    CREATE VIEW basic_info AS
+    SELECT ID, name
+    FROM instructor;
+    -- 此时可以通过视图插入数据，phone_number会自动设为NULL
+    ```
 
 4. **无分组**：查询中不能包含GROUP BY或HAVING子句
-   ```sql
-   -- 不可更新的视图（包含分组）
-   CREATE VIEW dept_total AS
-   SELECT dept_name, SUM(salary) as total_salary
-   FROM instructor
-   GROUP BY dept_name;
-   ```
+    ```sql
+    -- 不可更新的视图（包含分组）
+    CREATE VIEW dept_total AS
+    SELECT dept_name, SUM(salary) as total_salary
+    FROM instructor
+    GROUP BY dept_name;
+    ```
 
 ### Materialized Views
 

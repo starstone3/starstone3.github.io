@@ -138,15 +138,15 @@ Student(sid: string, name: string, login: string, age: integer, gpa: real)
 DDL用于定义数据库的逻辑结构,包括表的创建、删除、修改等。
 例如:
     
-    ```sql
-    CREATE TABLE Student(
-        sid CHAR(20),
-        name CHAR(20),
-        login CHAR(10),
-        age INTEGER,
-        gpa REAL
-    )
-    ```
+```sql
+CREATE TABLE Student(
+    sid CHAR(20),
+    name CHAR(20),
+    login CHAR(10),
+    age INTEGER,
+    gpa REAL
+)
+```
 ??? note "在实际应用中,实际的数据,比如学生的姓名当然是数据,那这些定义数据的语句是什么呢"
     这些数据被称为Metadata(元数据),它们是用来描述数据的数据(Data about data)。它们被存储在data dictionary(数据字典)中。
     

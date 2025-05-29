@@ -589,9 +589,9 @@ group by dept_name
     Attributes in select clause outside of aggregate functions must appear in group by list
 
     ```sql title="erroneous code"
-        select dept_name, ID, avg (salary)
-        from instructor
-        group by dept_name;
+    select dept_name, ID, avg (salary)
+    from instructor
+    group by dept_name;
     ```
 
     其中ID没有包裹在group by中,这会导致数据库不知道应该从哪一组选取结果
@@ -846,17 +846,16 @@ where semester = ’Fall’ and year= 2009 and unique (select course_id from sec
 Find the average instructors’ salaries of those departments where the average salary is greater than $42,000. 
 
 ``` sql
- select dept_name, avg_salary 
- from (select dept_name, avg (salary) as avg_salary from instructor  group by dept_name) 
- where avg_salary > 42000;
- ```
+select dept_name, avg_salary 
+from (select dept_name, avg (salary) as avg_salary from instructor  group by dept_name) 
+where avg_salary > 42000;
+```
 
 #### lateral clause
 
 lateral子句用于在from语句中嵌套另一个查询,并且这个查询可以引用外部查询的列
 
 ``` sql
-
 select T.course_id, T.semester, T.year, avg (T.grade)
 from takes as T, lateral (select avg (grade) from takes where course_id = T.course_id and semester = T.semester and year = T.year) as avg_grade
 ```
