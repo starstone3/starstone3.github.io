@@ -1591,21 +1591,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#--checkpp是一个谓语" class="md-nav__link">
-    <span class="md-ellipsis">
-      - check(P),P是一个谓语
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="- check(P),P是一个谓语">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#引用完整性" class="md-nav__link">
     <span class="md-ellipsis">
@@ -3387,21 +3372,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#--checkpp是一个谓语" class="md-nav__link">
-    <span class="md-ellipsis">
-      - check(P),P是一个谓语
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="- check(P),P是一个谓语">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#引用完整性" class="md-nav__link">
     <span class="md-ellipsis">
@@ -3763,22 +3733,24 @@
 </li>
 <li>
 <p><code>check</code>从句</p>
-<h2 id="--checkpp是一个谓语">- check(P),P是一个谓语<a class="headerlink" href="#--checkpp是一个谓语" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>```sql
-create table section (
-course_id varchar (8),
-sec_id varchar (8),
-semester varchar (6),
-year numeric (4,0),
-building varchar (15),
-room_number varchar (7),
-time slot id varchar (4), 
-primary key (course_id, sec_id, semester, year),
-check (semester in (’Fall’, ’Winter’, ’Spring’, ’Summer’)));
-```
-</code></pre></div>
 <ul>
-<li>这里确保了学期是春夏秋冬中的一个</li>
+<li>
+<p>check(P),P是一个谓语<br />
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">section</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">course_id</span><span class="w"> </span><span class="nb">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">8</span><span class="p">),</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">sec_id</span><span class="w"> </span><span class="nb">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">8</span><span class="p">),</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">semester</span><span class="w"> </span><span class="nb">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">6</span><span class="p">),</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">year</span><span class="w"> </span><span class="nb">numeric</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">building</span><span class="w"> </span><span class="nb">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">15</span><span class="p">),</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">room_number</span><span class="w"> </span><span class="nb">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">7</span><span class="p">),</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="k">time</span><span class="w"> </span><span class="n">slot</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="nb">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="p">),</span><span class="w"> </span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">course_id</span><span class="p">,</span><span class="w"> </span><span class="n">sec_id</span><span class="p">,</span><span class="w"> </span><span class="n">semester</span><span class="p">,</span><span class="w"> </span><span class="k">year</span><span class="p">),</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="k">check</span><span class="w"> </span><span class="p">(</span><span class="n">semester</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="err">’</span><span class="n">Fall</span><span class="err">’</span><span class="p">,</span><span class="w"> </span><span class="err">’</span><span class="n">Winter</span><span class="err">’</span><span class="p">,</span><span class="w"> </span><span class="err">’</span><span class="n">Spring</span><span class="err">’</span><span class="p">,</span><span class="w"> </span><span class="err">’</span><span class="n">Summer</span><span class="err">’</span><span class="p">)));</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>这里确保了学期是春夏秋冬中的一个</p>
+</li>
 </ul>
 </li>
 </ol>
@@ -3846,18 +3818,20 @@ check (semester in (’Fall’, ’Winter’, ’Spring’, ’Summer’)));
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">condition</span><span class="p">;</span>
 </code></pre></div>
 来创建视图.</p>
-<p>视图的重要特点：
-1. <strong>虚拟性</strong>：创建视图时并不会真正地创建一个新表并存储数据，而是仅仅保存了查询表达式的定义。
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">-- 例如创建一个教授工资视图</span>
+<p>视图的重要特点：</p>
+<ol>
+<li>
+<p><strong>虚拟性</strong>：创建视图时并不会真正地创建一个新表并存储数据，而是仅仅保存了查询表达式的定义。
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">-- 例如创建一个教授工资视图</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">faculty_salary</span><span class="w"> </span><span class="k">AS</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">instructor</span>
 <a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Finance&#39;</span><span class="p">;</span>
 </code></pre></div></p>
-<ol>
+</li>
 <li>
 <p><strong>查询重写</strong>：当使用视图时，系统会将视图的定义替换到原始查询中。例如：
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1">-- 原始查询</span>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1">-- 原始查询</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">faculty_salary</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">90000</span><span class="p">;</span>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
 <a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1">-- 系统实际执行的查询</span>
@@ -3889,7 +3863,7 @@ check (semester in (’Fall’, ’Winter’, ’Spring’, ’Summer’)));
 <ol>
 <li>
 <p><strong>单一基表</strong>：FROM子句中只能包含一个数据库表，不能包含多表连接、子查询等。
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1">-- 可更新的视图</span>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1">-- 可更新的视图</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">cs_faculty</span><span class="w"> </span><span class="k">AS</span>
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">instructor</span>
@@ -3904,12 +3878,11 @@ check (semester in (’Fall’, ’Winter’, ’Spring’, ’Summer’)));
 </li>
 <li>
 <p><strong>简单映射</strong>：SELECT子句只能包含列名，不能包含：</p>
-</li>
+<ul>
 <li>表达式（如 salary * 1.1）</li>
 <li>聚合函数（如 SUM, COUNT）</li>
-<li>
-<p>DISTINCT关键字
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1">-- 可更新的视图</span>
+<li>DISTINCT关键字
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1">-- 可更新的视图</span>
 <a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">simple_faculty</span><span class="w"> </span><span class="k">AS</span>
 <a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
 <a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">instructor</span><span class="p">;</span>
@@ -3918,11 +3891,12 @@ check (semester in (’Fall’, ’Winter’, ’Spring’, ’Summer’)));
 <a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">salary_plus</span><span class="w"> </span><span class="k">AS</span>
 <a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">increased_salary</span>
 <a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="k">FROM</span><span class="w"> </span><span class="n">instructor</span><span class="p">;</span>
-</code></pre></div></p>
+</code></pre></div></li>
+</ul>
 </li>
 <li>
 <p><strong>NULL值允许</strong>：未在视图中列出的原表列必须允许为NULL值或有默认值
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1">-- 假设phone_number允许为NULL</span>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1">-- 假设phone_number允许为NULL</span>
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">basic_info</span><span class="w"> </span><span class="k">AS</span>
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">name</span>
 <a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">instructor</span><span class="p">;</span>
@@ -3931,7 +3905,7 @@ check (semester in (’Fall’, ’Winter’, ’Spring’, ’Summer’)));
 </li>
 <li>
 <p><strong>无分组</strong>：查询中不能包含GROUP BY或HAVING子句
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1">-- 不可更新的视图（包含分组）</span>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1">-- 不可更新的视图（包含分组）</span>
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">dept_total</span><span class="w"> </span><span class="k">AS</span>
 <a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">total_salary</span>
 <a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">instructor</span>
@@ -4220,7 +4194,7 @@ check (semester in (’Fall’, ’Winter’, ’Spring’, ’Summer’)));
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月12日 02:10:38 UTC">2025年5月12日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月29日 13:48:06 UTC">2025年5月29日</span>
   </span>
 
     

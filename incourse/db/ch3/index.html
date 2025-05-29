@@ -1773,6 +1773,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="From语句中的子查询语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lateral-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      lateral clause
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -3664,6 +3679,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="From语句中的子查询语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lateral-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      lateral clause
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -3743,7 +3773,7 @@
 
 <h1 id="sql语言介绍">SQL语言介绍<a class="headerlink" href="#sql语言介绍" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 3518 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 233 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 1 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 21 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 3518 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 232 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 1 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 20 分钟</p>
 </div>
 <h2 id="sql的历史">SQL的历史<a class="headerlink" href="#sql的历史" title="Permanent link">&para;</a></h2>
 <p>SQL（Structured Query Language）是一种用于管理关系型数据库的标准语言。它的历史可以追溯到20世纪70年代，最初由IBM的研究人员开发。</p>
@@ -4356,9 +4386,9 @@ instructor(ID,name, dept_name,salary)</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Attributes in select clause outside of aggregate functions must appear in group by list</p>
-<div class="highlight"><span class="filename">erroneous code</span><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="w"> </span><span class="p">(</span><span class="n">salary</span><span class="p">)</span>
-<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">    </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
-<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">    </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">dept_name</span><span class="p">;</span>
+<div class="highlight"><span class="filename">erroneous code</span><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="w"> </span><span class="p">(</span><span class="n">salary</span><span class="p">)</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">dept_name</span><span class="p">;</span>
 </code></pre></div>
 <p>其中ID没有包裹在group by中,这会导致数据库不知道应该从哪一组选取结果</p>
 </div>
@@ -4585,38 +4615,33 @@ F \langle comp \rangle \text{ all } R \iff \forall t \in R \text{ such that } (F
 <h3 id="from语句中的子查询语句">From语句中的子查询语句<a class="headerlink" href="#from语句中的子查询语句" title="Permanent link">&para;</a></h3>
 <p>在from语句中,我们可以使用子查询语句,即在from语句中嵌套另一个查询</p>
 <p>Find the average instructors’ salaries of those departments where the average salary is greater than $42,000. </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">avg_salary</span><span class="w"> </span>
-<a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="w"> </span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">avg_salary</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span><span class="w">  </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">dept_name</span><span class="p">)</span><span class="w"> </span>
-<a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">avg_salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">42000</span><span class="p">;</span>
-<a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a><span class="w"> </span><span class="o">```</span>
-<a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a>
-<a id="__codelineno-55-6" name="__codelineno-55-6" href="#__codelineno-55-6"></a><span class="o">####</span><span class="w"> </span><span class="k">lateral</span><span class="w"> </span><span class="n">clause</span>
-<a id="__codelineno-55-7" name="__codelineno-55-7" href="#__codelineno-55-7"></a>
-<a id="__codelineno-55-8" name="__codelineno-55-8" href="#__codelineno-55-8"></a><span class="n">lateral子句用于在from语句中嵌套另一个查询</span><span class="p">,</span><span class="err">并且这个查询可以引用外部查询的列</span>
-<a id="__codelineno-55-9" name="__codelineno-55-9" href="#__codelineno-55-9"></a>
-<a id="__codelineno-55-10" name="__codelineno-55-10" href="#__codelineno-55-10"></a><span class="o">```</span><span class="w"> </span><span class="k">sql</span>
-<a id="__codelineno-55-11" name="__codelineno-55-11" href="#__codelineno-55-11"></a>
-<a id="__codelineno-55-12" name="__codelineno-55-12" href="#__codelineno-55-12"></a><span class="k">select</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">course_id</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">semester</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="w"> </span><span class="p">(</span><span class="n">T</span><span class="p">.</span><span class="n">grade</span><span class="p">)</span>
-<a id="__codelineno-55-13" name="__codelineno-55-13" href="#__codelineno-55-13"></a><span class="k">from</span><span class="w"> </span><span class="n">takes</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="k">lateral</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="k">avg</span><span class="w"> </span><span class="p">(</span><span class="n">grade</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">takes</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">course_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">course_id</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">semester</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">semester</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="k">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="k">year</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">avg_grade</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">avg_salary</span><span class="w"> </span>
+<a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a><span class="k">from</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="w"> </span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">avg_salary</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span><span class="w">  </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">dept_name</span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a><span class="k">where</span><span class="w"> </span><span class="n">avg_salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">42000</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="lateral-clause">lateral clause<a class="headerlink" href="#lateral-clause" title="Permanent link">&para;</a></h4>
+<p>lateral子句用于在from语句中嵌套另一个查询,并且这个查询可以引用外部查询的列</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="k">select</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">course_id</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">semester</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="w"> </span><span class="p">(</span><span class="n">T</span><span class="p">.</span><span class="n">grade</span><span class="p">)</span>
+<a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a><span class="k">from</span><span class="w"> </span><span class="n">takes</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="k">lateral</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="k">avg</span><span class="w"> </span><span class="p">(</span><span class="n">grade</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">takes</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">course_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">course_id</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">semester</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">semester</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="k">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="k">year</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">avg_grade</span>
 </code></pre></div>
 <h3 id="with子句">With子句<a class="headerlink" href="#with子句" title="Permanent link">&para;</a></h3>
 <p>With子句用于在查询中定义临时表,相当于在查询中嵌套另一个查询,并且这个查询可以引用外部查询的列</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="k">with</span><span class="w"> </span><span class="n">avg_salary</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="w"> </span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">avg_salary</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">dept_name</span><span class="p">)</span>
-<a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span>
-<a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a><span class="k">from</span><span class="w"> </span><span class="n">avg_salary</span>
-<a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a><span class="k">where</span><span class="w"> </span><span class="n">avg_salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">42000</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="k">with</span><span class="w"> </span><span class="n">avg_salary</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="w"> </span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">avg_salary</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">dept_name</span><span class="p">)</span>
+<a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span>
+<a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a><span class="k">from</span><span class="w"> </span><span class="n">avg_salary</span>
+<a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a><span class="k">where</span><span class="w"> </span><span class="n">avg_salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">42000</span><span class="p">;</span>
 </code></pre></div>
 <p>with语句也可以用在一些复杂的查询中:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="k">with</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="n">_total</span><span class="w"> </span><span class="p">(</span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">as</span>
-<a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a><span class="w">        </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span>
-<a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a><span class="w">         </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
-<a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a><span class="w">         </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">dept_name</span><span class="p">),</span>
-<a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a><span class="w">        </span><span class="n">dept_total_avg</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">as</span>
-<a id="__codelineno-57-6" name="__codelineno-57-6" href="#__codelineno-57-6"></a><span class="w">        </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-<a id="__codelineno-57-7" name="__codelineno-57-7" href="#__codelineno-57-7"></a><span class="w">         </span><span class="k">from</span><span class="w"> </span><span class="n">dept_total</span><span class="p">)</span>
-<a id="__codelineno-57-8" name="__codelineno-57-8" href="#__codelineno-57-8"></a><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span>
-<a id="__codelineno-57-9" name="__codelineno-57-9" href="#__codelineno-57-9"></a><span class="k">from</span><span class="w"> </span><span class="n">dept_total</span><span class="p">,</span><span class="w"> </span><span class="n">dept_total_avg</span>
-<a id="__codelineno-57-10" name="__codelineno-57-10" href="#__codelineno-57-10"></a><span class="k">where</span><span class="w"> </span><span class="n">dept_total</span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">dept_total_avg</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="k">with</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="n">_total</span><span class="w"> </span><span class="p">(</span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">as</span>
+<a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a><span class="w">        </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span>
+<a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a><span class="w">         </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
+<a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a><span class="w">         </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">dept_name</span><span class="p">),</span>
+<a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a><span class="w">        </span><span class="n">dept_total_avg</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">as</span>
+<a id="__codelineno-58-6" name="__codelineno-58-6" href="#__codelineno-58-6"></a><span class="w">        </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<a id="__codelineno-58-7" name="__codelineno-58-7" href="#__codelineno-58-7"></a><span class="w">         </span><span class="k">from</span><span class="w"> </span><span class="n">dept_total</span><span class="p">)</span>
+<a id="__codelineno-58-8" name="__codelineno-58-8" href="#__codelineno-58-8"></a><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span>
+<a id="__codelineno-58-9" name="__codelineno-58-9" href="#__codelineno-58-9"></a><span class="k">from</span><span class="w"> </span><span class="n">dept_total</span><span class="p">,</span><span class="w"> </span><span class="n">dept_total_avg</span>
+<a id="__codelineno-58-10" name="__codelineno-58-10" href="#__codelineno-58-10"></a><span class="k">where</span><span class="w"> </span><span class="n">dept_total</span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">dept_total_avg</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
 </code></pre></div>
 <h2 id="数据库修改操作">数据库修改操作<a class="headerlink" href="#数据库修改操作" title="Permanent link">&para;</a></h2>
 <h3 id="删除操作-delete">删除操作 (DELETE)<a class="headerlink" href="#删除操作-delete" title="Permanent link">&para;</a></h3>
@@ -4624,14 +4649,14 @@ F \langle comp \rangle \text{ all } R \iff \forall t \in R \text{ such that } (F
 <ol>
 <li>
 <p><strong>删除整张表中的所有数据 (保留表结构)</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">instructor</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">instructor</span><span class="p">;</span>
 </code></pre></div>
 <p>这条语句会删除 <code>instructor</code> 表中的所有行，但表结构（列定义、约束等）仍然存在。</p>
 </li>
 <li>
 <p><strong>删除满足特定条件的行</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">instructor</span>
-<a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Comp. Sci.&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">instructor</span>
+<a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Comp. Sci.&#39;</span><span class="p">;</span>
 </code></pre></div>
 <p>这条语句会删除 <code>instructor</code> 表中 <code>dept_name</code> 列值为 <code>'Comp. Sci.'</code> 的所有行。<code>WHERE</code> 子句用于指定删除条件。</p>
 <p><strong>注意：</strong>  <code>WHERE</code> 子句可以包含复杂的逻辑表达式(如in,&gt;some等)，使用 <code>AND</code>、<code>OR</code>、<code>NOT</code> 等逻辑运算符组合多个条件。</p>
@@ -4643,8 +4668,8 @@ F \langle comp \rangle \text{ all } R \iff \forall t \in R \text{ such that } (F
 <ol>
 <li>
 <p><strong>插入单个元组</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">instructor</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="p">)</span>
-<a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;12345&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;李明&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Comp. Sci.&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">80000</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">instructor</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="p">)</span>
+<a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;12345&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;李明&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Comp. Sci.&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">80000</span><span class="p">);</span>
 </code></pre></div>
 <p>这条语句向 <code>instructor</code> 表中插入一个新的行，指定了每个列的值。</p>
 <ul>
@@ -4654,19 +4679,19 @@ F \langle comp \rangle \text{ all } R \iff \forall t \in R \text{ such that } (F
 </li>
 <li>
 <p><strong>插入多个元组</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">instructor</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="p">)</span>
-<a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a><span class="k">VALUES</span>
-<a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a><span class="w">    </span><span class="p">(</span><span class="s1">&#39;12345&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;李明&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Comp. Sci.&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">80000</span><span class="p">),</span>
-<a id="__codelineno-61-4" name="__codelineno-61-4" href="#__codelineno-61-4"></a><span class="w">    </span><span class="p">(</span><span class="s1">&#39;67890&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;王红&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Physics&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">75000</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">instructor</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="p">)</span>
+<a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a><span class="k">VALUES</span>
+<a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a><span class="w">    </span><span class="p">(</span><span class="s1">&#39;12345&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;李明&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Comp. Sci.&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">80000</span><span class="p">),</span>
+<a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a><span class="w">    </span><span class="p">(</span><span class="s1">&#39;67890&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;王红&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Physics&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">75000</span><span class="p">);</span>
 </code></pre></div>
 <p>这条语句一次性向 <code>instructor</code> 表中插入多个新的行。</p>
 </li>
 <li>
 <p><strong>从查询结果插入</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">instructor</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="p">)</span>
-<a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
-<a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">old_instructor</span>
-<a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Comp. Sci.&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">instructor</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="p">)</span>
+<a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
+<a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">old_instructor</span>
+<a id="__codelineno-63-4" name="__codelineno-63-4" href="#__codelineno-63-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Comp. Sci.&#39;</span><span class="p">;</span>
 </code></pre></div>
 <p>这条语句从 <code>old_instructor</code> 表中查询 <code>dept_name</code> 为 <code>'Comp. Sci.'</code> 的所有行，并将查询结果插入到 <code>instructor</code> 表中。</p>
 <ul>
@@ -4679,44 +4704,44 @@ F \langle comp \rangle \text{ all } R \iff \forall t \in R \text{ such that } (F
 <ol>
 <li>
 <p><strong>更新所有行</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">instructor</span>
-<a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a><span class="k">SET</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">instructor</span>
+<a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a><span class="k">SET</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span>
 </code></pre></div>
 <p>这条语句将 <code>instructor</code> 表中所有行的 <code>salary</code> 列的值增加 10%。</p>
 </li>
 <li>
 <p><strong>更新满足特定条件的行</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">instructor</span>
-<a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a><span class="k">SET</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span>
-<a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Comp. Sci.&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">instructor</span>
+<a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a><span class="k">SET</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span>
+<a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Comp. Sci.&#39;</span><span class="p">;</span>
 </code></pre></div>
 <p>这条语句将 <code>instructor</code> 表中 <code>dept_name</code> 列值为 <code>'Comp. Sci.'</code> 的所有行的 <code>salary</code> 列的值增加 10%。<code>WHERE</code> 子句用于指定更新条件。</p>
 </li>
 <li>
 <p><strong>更新多个列</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">instructor</span>
-<a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a><span class="k">SET</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;信息科学&#39;</span>
-<a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;12345&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">instructor</span>
+<a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a><span class="k">SET</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;信息科学&#39;</span>
+<a id="__codelineno-66-3" name="__codelineno-66-3" href="#__codelineno-66-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;12345&#39;</span><span class="p">;</span>
 </code></pre></div>
 <p>这条语句将 <code>instructor</code> 表中 <code>ID</code> 为 <code>'12345'</code> 的行的 <code>salary</code> 列的值增加 10%，并将 <code>dept_name</code> 列的值更新为 <code>'信息科学'</code>。</p>
 </li>
 <li>
 <p><strong>使用子查询更新</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">instructor</span>
-<a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a><span class="k">SET</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">instructor</span><span class="p">)</span>
-<a id="__codelineno-66-3" name="__codelineno-66-3" href="#__codelineno-66-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Comp. Sci.&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">instructor</span>
+<a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a><span class="k">SET</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">instructor</span><span class="p">)</span>
+<a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Comp. Sci.&#39;</span><span class="p">;</span>
 </code></pre></div>
 <p>这条语句将 <code>instructor</code> 表中 <code>dept_name</code> 列值为 <code>'Comp. Sci.'</code> 的所有行的 <code>salary</code> 列的值更新为 <code>instructor</code> 表中所有教师的平均工资。</p>
 <p><strong>注意：</strong>  <code>UPDATE</code> 语句也可能会受到外键约束的影响，类似于 <code>DELETE</code> 语句。</p>
 <div class="admonition tips">
 <p class="admonition-title">case语句</p>
 <p><code>update</code>语句中也可以使用<code>case</code>语句,用于根据条件更新不同的值</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="k">update</span><span class="w"> </span><span class="n">instructor</span>
-<a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a><span class="k">set</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">case</span>
-<a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a><span class="w">                </span><span class="k">when</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Comp. Sci.&#39;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span>
-<a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a><span class="w">                </span><span class="k">when</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Physics&#39;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">05</span>
-<a id="__codelineno-67-5" name="__codelineno-67-5" href="#__codelineno-67-5"></a><span class="w">                </span><span class="k">else</span><span class="w"> </span><span class="n">salary</span>
-<a id="__codelineno-67-6" name="__codelineno-67-6" href="#__codelineno-67-6"></a><span class="w">            </span><span class="k">end</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="k">update</span><span class="w"> </span><span class="n">instructor</span>
+<a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a><span class="k">set</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">case</span>
+<a id="__codelineno-68-3" name="__codelineno-68-3" href="#__codelineno-68-3"></a><span class="w">                </span><span class="k">when</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Comp. Sci.&#39;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span>
+<a id="__codelineno-68-4" name="__codelineno-68-4" href="#__codelineno-68-4"></a><span class="w">                </span><span class="k">when</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Physics&#39;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">05</span>
+<a id="__codelineno-68-5" name="__codelineno-68-5" href="#__codelineno-68-5"></a><span class="w">                </span><span class="k">else</span><span class="w"> </span><span class="n">salary</span>
+<a id="__codelineno-68-6" name="__codelineno-68-6" href="#__codelineno-68-6"></a><span class="w">            </span><span class="k">end</span><span class="p">;</span>
 </code></pre></div>
 </div>
 </li>
@@ -4743,7 +4768,7 @@ F \langle comp \rangle \text{ all } R \iff \forall t \in R \text{ such that } (F
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月27日 15:02:04 UTC">2025年4月27日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月29日 13:48:06 UTC">2025年5月29日</span>
   </span>
 
     
