@@ -3395,7 +3395,7 @@
 
 <h1 id="数据库恢复">数据库恢复<a class="headerlink" href="#数据库恢复" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 4928 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 16 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 25 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 4927 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 16 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 25 分钟</p>
 </div>
 <blockquote>
 <p>最后一章</p>
@@ -3625,7 +3625,7 @@
 </blockquote>
 <hr />
 <h3 id="wal">WAL<a class="headerlink" href="#wal" title="Permanent link">&para;</a></h3>
-<p><strong>WAL</strong>(Write-Ahead Logging),也即先写日志原则,要求在将内存中的数据项写到硬盘时间,需要先将日志记录写到稳定存储中.</p>
+<p><strong>WAL</strong>(Write-Ahead Logging),也即先写日志原则,要求在将内存中的数据项写到硬盘之前,需要先将日志记录写到稳定存储中.</p>
 <h3 id="database-modification">Database Modification<a class="headerlink" href="#database-modification" title="Permanent link">&para;</a></h3>
 <p>在一项事务进行数据项修改时,实际上是先在私有工作区中修改数据项,然后将修改后的数据项写入到内存中的缓冲区,最后将日志记录写入到稳定存储中.</p>
 <p>而真正对数据库产生影响的,是在事务写到内存或者硬盘之后.因此,不同的修改方式主要关注于事务在提交之前,能否将数据写出私有工作区.</p>
@@ -3719,7 +3719,7 @@
 <div align="center">
     <a class="glightbox" href="../../../image/mac56.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../../image/mac56.png" width="100%"/></a>
     <br>
-    <caption>采用checkpoint的日志,其中redo的范围减少的</caption>
+    <caption>采用checkpoint的日志,其中redo的范围减少</caption>
 </div>
 
 <h2 id="recovery-algorithm">Recovery Algorithm<a class="headerlink" href="#recovery-algorithm" title="Permanent link">&para;</a></h2>
@@ -4239,7 +4239,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月27日 12:51:11 UTC">2025年5月27日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年6月6日 08:40:42 UTC">2025年6月6日</span>
   </span>
 
     
