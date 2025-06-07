@@ -13,3 +13,6 @@ comments: true
             硬件大魔王第三阶段,希望比第二阶段弱.
         </div>
     </div>
+
+! tip "复习指路"
+    https://tsuki0512.github.io/2024_fall/CA/final_review/
