@@ -14,5 +14,5 @@ comments: true
         </div>
     </div>
 
-! tip "复习指路"
+!!! tip "复习指路"
     https://tsuki0512.github.io/2024_fall/CA/final_review/
