@@ -112,9 +112,9 @@ vst v3,0(x6) # store y[i]
 
 1. 有几个**Convoy**
 
-    - `vld v0,0(x5)` 和 `vld v2,0(x6)` 形成一个Convoy
+    - `vld v0,0(x5)` 和 `vmul.vx v1,v0,f0` 形成一个Convoy
     
-    - `vmul.vx v1,v0,f0` 和 `vfadd.vv v3,v1,v2` 形成一个Convoy
+    - `vld v2,0(x6)` 和 `vfadd.vv v3,v1,v2` 形成一个Convoy
     
     - `vst v3,0(x6)` 形成一个Convoy
 
