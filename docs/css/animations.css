@@ -87,17 +87,20 @@
 
 /* 页头动画 - 页面加载时从顶部滑入 */
 .md-header {
-    animation: slideInFromTop 0.6s ease-out;
+    animation: slideInFromTop 0.3s ease-out;           /* 缩短动画时长 */
+    will-change: transform, opacity;                    /* 优化GPU加速 */
 }
 
 /* 侧边栏动画 - 页面加载时从左侧滑入 */
 .md-sidebar {
-    animation: slideInFromLeft 0.8s ease-out;
+    animation: slideInFromLeft 0.4s ease-out;          /* 缩短动画时长 */
+    will-change: transform, opacity;                    /* 优化GPU加速 */
 }
 
 /* 主内容区动画 - 页面加载时淡入并缩放 */
 .md-content__inner {
-    animation: fadeInScale 0.8s ease-out;
+    animation: fadeInScale 0.4s ease-out;              /* 缩短动画时长 */
+    will-change: transform, opacity;                    /* 优化GPU加速 */
 }
 
 /* ========================================
@@ -200,6 +203,52 @@
 /* 主要内容区域的页面切换动画 */
 .md-main__inner {
     animation: fadeInScale 0.5s ease-out;
+}
+
+/* ========================================
+   页面切换性能优化
+   ======================================== */
+
+/* 为页面切换添加预加载优化 */
+.md-main {
+    contain: layout style paint;                        /* CSS containment 优化 */
+}
+
+/* 减少不必要的重绘和重排 */
+.md-content__inner {
+    transform: translateZ(0);                          /* 强制GPU加速 */
+    backface-visibility: hidden;                       /* 避免背面可见性计算 */
+}
+
+/* 页面切换时的平滑过渡 */
+.md-main__inner {
+    animation: none;                                   /* 移除可能的冲突动画 */
+    transition: opacity 0.2s ease-out;                /* 简化为透明度过渡 */
+}
+
+/* 首次加载后禁用某些动画以提升切换速度 */
+.page-loaded .md-header,
+.page-loaded .md-sidebar,
+.page-loaded .md-content__inner {
+    animation: none;                                   /* 首次加载后不再播放进入动画 */
+}
+
+/* 预加载关键资源的样式 */
+.md-nav__link {
+    will-change: auto;                                 /* 避免不必要的GPU层创建 */
+}
+
+.md-nav__link:hover {
+    will-change: transform, background-color;          /* 只在需要时启用GPU加速 */
+}
+
+/* 优化滚动性能 */
+.md-content {
+    scroll-behavior: auto;                             /* 在首次加载时禁用平滑滚动 */
+}
+
+.page-loaded .md-content {
+    scroll-behavior: smooth;                           /* 加载完成后启用平滑滚动 */
 }
 
 /* ========================================

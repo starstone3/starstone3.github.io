@@ -262,20 +262,21 @@ markdown_extensions:
   - pymdownx.tilde
   
 extra_css:
+  # 核心样式优先加载
+  - css/extra.css
+  - css/animations.css
+  # 功能样式延后加载
   - css/flink.css
   - css/homepage.css
-  - css/animations.css
-  # - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css
-  # - https://cdn.jsdelivr.net/npm/cn-fontsource-lxgw-wen-kai-gb-screen@1.0.6/font.min.css
+  - css/styles.css
+  # 外部字体和数学公式最后加载
   - https://jsd.cdn.zzko.cn/npm/katex@0.16.4/dist/katex.min.css
   - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
   - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
   - https://unpkg.com/katex@0/dist/katex.min.css
-  - css/extra.css
-  - css/styles.css
   # - https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css
 extra_javascript:
-  - _js/extra.js
+  - _js/extra_optimized.js
   - _js/mathjax.js
   - _js/katex.js
   # - _js/linenumber.js
