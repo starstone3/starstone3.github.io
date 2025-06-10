@@ -1,56 +1,157 @@
 
-/* Copy from https://github.com/TonyCrane/note/blob/master/docs/css/flink.css */
+/* 现代化友链样式 */
 .flink-list {
-    overflow: auto;
-    padding: 10px 10px 0;
-    text-align: center;
-  }
-  .flink-list a {
-    color: #4a4a4a;
-  }
-  [data-md-color-scheme="slate"] .flink-list a {
-    color: rgba(255,255,255,0.7);
-  }
-  .flink-list-item {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+    text-align: left;
+}
+
+.flink-list a {
+    color: inherit;
+    text-decoration: none;
+}
+
+[data-md-color-scheme="slate"] .flink-list a {
+    color: rgba(255,255,255,0.9);
+}
+
+.flink-list-item {
     position: relative;
-    float: left;
     overflow: hidden;
-    margin: 15px 7px;
-    width: calc(100% / 2 - 15px);
-    height: 90px;
-    border-radius: 8px;
-    line-height: 17px;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    transition: 0.25s;
-  }
-  .flink-item-icon {
-    float: left;
+    height: 120px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 4px 16px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+[data-md-color-scheme="slate"] .flink-list-item {
+    background: rgba(30, 41, 59, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.flink-list-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.flink-list-item:hover::before {
+    opacity: 1;
+}
+
+.flink-item-icon {
+    flex-shrink: 0;
+    margin-right: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
     overflow: hidden;
-    margin: 15px 10px;
-    width: 60px;
-    height: 60px;
-    border-radius: 35px;
-  }
-  .flink-item-name {
-    padding: 16px 10px 0 0;
-    height: 40px;
-    font-weight: bold;
-    font-size: 1.33em;
-  }
-  .flink-item-desc {
-    padding: 16px 10px 16px 0;
-    height: 50px;
-    font-size: 0.93em;
-  }
-  .flink-list-item:hover {
-    background-color: rgba(185, 169, 126, 0.1);
-  }
-  @media screen and (max-width: 1600px) {
-    .flink-list-item {
-      width: calc(100% - 15px) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.flink-item-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.flink-list-item:hover .flink-item-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.flink-list-item:hover .flink-item-icon img {
+    transform: scale(1.1);
+}
+
+.flink-item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flink-item-name {
+    font-weight: 700;
+    font-size: 1.4em;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+}
+
+.flink-item-desc {
+    font-size: 0.95em;
+    opacity: 0.8;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+}
+
+.flink-list-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.15),
+        0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.flink-list-item:hover .flink-item-name {
+    background: linear-gradient(90deg, #f093fb, #f5576c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.flink-list-item:hover .flink-item-desc {
+    opacity: 1;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .flink-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px 0;
     }
-  }
+    
+    .flink-list-item {
+        height: 100px;
+        padding: 15px;
+    }
+    
+    .flink-item-icon {
+        width: 60px;
+        height: 60px;
+        margin-right: 15px;
+    }
+    
+    .flink-item-name {
+        font-size: 1.2em;
+    }
+    
+    .flink-item-desc {
+        font-size: 0.9em;
+    }
+}
   @media screen and (max-width: 1220px) {
     .flink-list-item {
       width: calc(50% - 15px) !important;

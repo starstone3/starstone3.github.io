@@ -26,6 +26,20 @@ Hello，我是starstone3，目前就读于浙江大学计算机科学与技术�
   <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=300&&section=footer&text=Bye!&fontSize=90&fontAlign=50&fontAlignY=70&desc=Hope see you again!&descAlign=50&descSize=30&descAlignY=40&animation=twinkling" />
 </p>
 
+## 网站统计
 
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+<div class="stats-section">
+  <div class="stat-card">
+    <div class="stat-number"><span id="busuanzi_value_site_pv">...</span></div>
+    <div class="stat-label">总访问量</div>
+  </div>
+  
+  <div class="stat-card">
+    <div class="stat-number"><span id="busuanzi_value_site_uv">...</span></div>
+    <div class="stat-label">独立访客</div>
+  </div>
+</div>
+
+
+<!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span> -->
