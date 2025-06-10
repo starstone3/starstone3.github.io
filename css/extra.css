@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap');
@@ -588,3 +587,119 @@ li {
       order: 3;
     }
   }
+
+/* ========================================
+   自定义链接样式
+   ======================================== */
+
+/* 覆盖默认的链接颜色 */
+.md-typeset a {
+    color: #667eea !important;                    /* 默认链接颜色 - 蓝紫色 */
+    text-decoration: none;                        /* 移除下划线 */
+    transition: all 0.3s ease;                   /* 平滑过渡效果 */
+    position: relative;                           /* 为伪元素定位做准备 */
+}
+
+/* 链接悬停时的颜色变化 */
+.md-typeset a:hover {
+    color: #f093fb !important;                   /* 悬停时的颜色 - 粉紫色 */
+    transform: translateY(-1px);                  /* 轻微上浮效果 */
+}
+
+/* 链接获得焦点时的样式 */
+.md-typeset a:focus {
+    color: #764ba2 !important;                   /* 焦点时的颜色 */
+}
+
+/* 为链接添加下划线动画效果 */
+.md-typeset a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea, #f093fb);  /* 渐变下划线 */
+    transition: width 0.3s ease;
+}
+
+.md-typeset a:hover::after {
+    width: 100%;                                 /* 悬停时下划线展开 */
+}
+
+/* 导航链接特殊样式 */
+.md-nav__link {
+    color: #64748b !important;                   /* 导航链接颜色 */
+}
+
+.md-nav__link:hover {
+    color: #667eea !important;                   /* 导航链接悬停颜色 */
+    background: rgba(102, 126, 234, 0.1);        /* 悬停背景色 */
+    border-radius: 6px;                          /* 圆角 */
+}
+
+/* 活跃导航链接样式 */
+.md-nav__link--active {
+    color: #f093fb !important;                   /* 当前页面链接颜色 */
+    font-weight: 600;                            /* 加粗 */
+}
+
+/* 代码中的链接样式 */
+.md-typeset code a {
+    color: #667eea !important;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.md-typeset code a:hover {
+    color: #f093fb !important;
+    background: rgba(240, 147, 251, 0.1);
+}
+
+/* 深色模式下的链接样式 */
+[data-md-color-scheme="slate"] .md-typeset a {
+    color: #a47bea !important;                   /* 深色模式默认链接颜色 */
+}
+
+[data-md-color-scheme="slate"] .md-typeset a:hover {
+    color: #f093fb !important;                   /* 深色模式悬停颜色 */
+}
+
+[data-md-color-scheme="slate"] .md-nav__link {
+    color: #94a3b8 !important;                   /* 深色模式导航链接 */
+}
+
+[data-md-color-scheme="slate"] .md-nav__link:hover {
+    color: #a47bea !important;                   /* 深色模式导航悬停 */
+    background: rgba(164, 123, 234, 0.1);
+}
+
+/* ========================================
+   通过CSS变量统一调整链接颜色
+   ======================================== */
+
+:root {
+    /* 自定义链接颜色变量 */
+    --custom-link-color: #667eea;               /* 主要链接颜色 */
+    --custom-link-hover-color: #f093fb;        /* 链接悬停颜色 */
+    --custom-link-active-color: #764ba2;       /* 链接激活颜色 */
+    --custom-nav-color: #64748b;               /* 导航文字颜色 */
+    --custom-nav-hover-color: #667eea;         /* 导航悬停颜色 */
+    
+    /* 覆盖Material主题的链接颜色变量 */
+    --md-typeset-a-color: var(--custom-link-color);
+    --md-accent-fg-color: var(--custom-link-hover-color);
+}
+
+/* 深色模式下的颜色变量 */
+[data-md-color-scheme="slate"] {
+    --custom-link-color: #a47bea;
+    --custom-link-hover-color: #f093fb;
+    --custom-link-active-color: #c46fd3;
+    --custom-nav-color: #94a3b8;
+    --custom-nav-hover-color: #a47bea;
+    
+    --md-typeset-a-color: var(--custom-link-color);
+    --md-accent-fg-color: var(--custom-link-hover-color);
+}

@@ -1,41 +1,106 @@
-/* 自动行号样式 */
+/* 现代化代码块样式 */
 pre code {
-    counter-reset: line-number; /* 重置行号计数器 */
-    position: relative; /* 定位用于子元素行号 */
-    display: block; /* 确保代码块显示为块状 */
-    max-height: 1000px;
-    max-width: 1000px;
+    counter-reset: line-number;
+    position: relative;
+    display: block;
+    max-height: 800px;
+    max-width: 100%;
     overflow-x: auto;
     overflow-y: auto;
-    border: 1px solid #afcbf1;
-    border-radius: 8px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    color: #333333; /* 添加代码文本颜色 */
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    background: linear-gradient(135deg, #c8dfc7 0%, #f1f2f1 100%);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    position: relative;
 }
 
+/* 代码块顶部装饰条 */
+pre code::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+}
+
+
+
 pre code div {
-    display: block; /* 每行代码独立为块 */
-    position: relative; /* 相对定位用于行号 */
-    padding-left: 3em; /* 为行号留出空间 */
-    white-space: pre-wrap; /* 保持代码的格式和换行 */
-    word-break: break-word; /* 避免长代码溢出 */
+    display: block;
+    position: relative;
+    padding-left: 4em;
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.6;
+    margin-top: 25px; /* 为顶部装饰留出空间 */
+}
+
+pre code div:first-child {
+    margin-top: 35px; /* 第一行需要更多空间 */
 }
 
 pre code div:not(:empty)::before {
-    counter-increment: line-number; /* 自动增加行号 */
-    content: counter(line-number); /* 显示行号 */
-    position: absolute; /* 绝对定位行号 */
-    left: 0; /* 行号靠左 */
-    width: 2.5em; /* 为行号预留宽度 */
-    text-align: right; /* 行号右对齐 */
-    user-select: none; /* 禁止选中行号 */
-    opacity: 0.9; /* 行号透明度 */
-    color: #241b1b; /* 行号颜色 */
-    border-right: 1px solid #131212; /* 添加右边框作为分隔线 */
-    margin-right: 1em; /* 为分隔线和代码之间添加间距 */
-    padding-right: 0.5em; /* 行号和分隔线之间的间距 */
+    counter-increment: line-number;
+    content: counter(line-number);
+    position: absolute;
+    left: 0;
+    width: 3em;
+    text-align: right;
+    user-select: none;
+    opacity: 0.5;
+    color: #94a3b8;
+    border-right: 2px solid rgba(148, 163, 184, 0.2);
+    margin-right: 1em;
+    padding-right: 1em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* 悬停时行号高亮 */
+pre code div:hover::before {
+    opacity: 1;
+    color: #667eea;
+    border-right-color: #667eea;
+}
+
+/* 语法高亮增强 */
+pre code .hljs-keyword {
+    color: #c792ea;
+    font-weight: 600;
+}
+
+pre code .hljs-string {
+    color: #c3e88d;
+}
+
+pre code .hljs-number {
+    color: #f78c6c;
+}
+
+pre code .hljs-comment {
+    color: #546e7a;
+    font-style: italic;
+}
+
+/* 代码复制按钮样式优化 */
+.md-clipboard {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.md-clipboard:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
 }
 
 
