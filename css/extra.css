@@ -703,3 +703,80 @@ li {
     --md-typeset-a-color: var(--custom-link-color);
     --md-accent-fg-color: var(--custom-link-hover-color);
 }
+
+/* ========================================
+   CSS性能优化
+   ======================================== */
+
+/* 减少重绘和重排 */
+* {
+    box-sizing: border-box;
+}
+
+/* 优化合成层 */
+.md-header,
+.md-sidebar,
+.md-content {
+    will-change: auto;                                 /* 避免过度使用GPU层 */
+}
+
+/* 只在需要时启用GPU加速 */
+.md-nav__link:hover,
+.md-typeset a:hover,
+.flink-list-item:hover {
+    will-change: transform, background-color;
+}
+
+/* 优化字体渲染 */
+body {
+    font-display: swap;                                /* 字体交换策略 */
+    text-rendering: optimizeSpeed;                     /* 优化文本渲染速度 */
+}
+
+/* 减少阴影计算复杂度 */
+.md-typeset pre,
+.feature-card,
+.flink-list-item {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);        /* 简化阴影 */
+}
+
+/* 优化过渡性能 */
+.md-typeset a,
+.md-nav__link,
+.flink-list-item {
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+/* 首屏加载优化 */
+.md-content__inner {
+    content-visibility: auto;                          /* 内容可见性优化 */
+    contain-intrinsic-size: 1000px;                   /* 预估内容大小 */
+}
+
+/* 图片优化 */
+.md-typeset img {
+    max-width: 100%;                                   /* 响应式图片 */
+    height: auto;                                      /* 保持比例 */
+}
+
+/* 减少不必要的动画在移动端 */
+@media (max-width: 768px) {
+    .md-typeset a::after,
+    .flink-list-item::before {
+        display: none;                                 /* 移动端隐藏装饰性动画 */
+    }
+    
+    .md-content__inner {
+        animation-duration: 0.2s;                      /* 缩短动画时长 */
+    }
+}
+
+/* 低功耗设备优化 */
+@media (prefers-reduced-motion: reduce) {
+    .hero-title,
+    .flink-item-icon,
+    .md-typeset img {
+        animation: none !important;
+        transition: none !important;
+    }
+}
