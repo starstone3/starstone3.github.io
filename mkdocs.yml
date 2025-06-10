@@ -276,7 +276,7 @@ extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css
   # - https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css
 extra_javascript:
-  - _js/extra_optimized.js
+  - _js/extra.js
   - _js/mathjax.js
   - _js/katex.js
   # - _js/linenumber.js
