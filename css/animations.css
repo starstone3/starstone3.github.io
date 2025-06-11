@@ -1,33 +1,23 @@
-/* ========================================
-   动画效果增强文件
-   用于提升网站用户体验的各种动画效果
-   ======================================== */
-
-/* ========================================
-   页面加载动画定义
-   ======================================== */
-
-/* 从顶部滑入动画 - 适用于页头等顶部元素 */
 @keyframes slideInFromTop {
     0% {
-        opacity: 0;                    /* 初始完全透明 */
-        transform: translateY(-30px);  /* 向上偏移30像素 */
+        opacity: 0;                  
+        transform: translateY(-30px); 
     }
     100% {
-        opacity: 1;                    /* 最终完全不透明 */
-        transform: translateY(0);      /* 回到原始位置 */
+        opacity: 1;                   
+        transform: translateY(0);     
     }
 }
 
 /* 从左侧滑入动画 - 适用于侧边栏等左侧元素 */
-@keyframes slideInFromLeft {
+ @keyframes slideInFromLeft {
     0% {
         opacity: 0;                    /* 初始完全透明 */
         transform: translateX(-30px);  /* 向左偏移30像素 */
     }
     100% {
-        opacity: 1;                    /* 最终完全不透明 */
-        transform: translateX(0);      /* 回到原始位置 */
+        opacity: 1;                   /* 最终完全不透明 */
+        transform: translateX(0);     /* 回到原始位置 */
     }
 }
 
@@ -43,104 +33,72 @@
     }
 }
 
-/* 淡入缩放动画 - 主要用于主要内容区域，营造优雅的进入效果 */
+
 @keyframes fadeInScale {
     0% {
-        opacity: 0;           /* 初始完全透明 */
-        transform: scale(0.9); /* 初始缩小到90% */
+        opacity: 0;           
+        transform: scale(0.9); 
     }
     100% {
-        opacity: 1;           /* 最终完全不透明 */
-        transform: scale(1);   /* 恢复到原始大小 */
+        opacity: 1;          
+        transform: scale(1);  
     }
 }
 
-/* ========================================
-   交互动画定义
-   ======================================== */
 
-/* 脉冲动画 - 用于按钮悬停等需要吸引注意力的元素 */
 @keyframes pulse {
     0%, 100% {
-        transform: scale(1);    /* 开始和结束时保持原始大小 */
+        transform: scale(1);   
     }
     50% {
-        transform: scale(1.05); /* 中间时刻放大到105% */
+        transform: scale(1.05);
     }
 }
 
-/* 摇摆动画 - 用于标题悬停等需要活泼效果的元素 */
-@keyframes wiggle {
-    /* 大部分时间保持不旋转 */
-    0%, 7%, 14%, 21%, 28%, 35%, 42%, 49%, 56%, 63%, 70%, 77%, 84%, 91%, 98%, 100% {
-        transform: rotate(0deg);
-    }
-    /* 在特定时间点轻微左旋转，创造摇摆效果 */
-    3.5%, 10.5%, 17.5%, 24.5%, 31.5%, 38.5%, 45.5%, 52.5%, 59.5%, 66.5%, 73.5%, 80.5%, 87.5%, 94.5% {
-        transform: rotate(-2deg);
-    }
-}
 
-/* ========================================
-   元素动画应用
-   ======================================== */
 
 /* 页头动画 - 页面加载时从顶部滑入 */
 .md-header {
-    animation: slideInFromTop 0.3s ease-out;           /* 缩短动画时长 */
-    will-change: transform, opacity;                    /* 优化GPU加速 */
+    animation: slideInFromTop 0.3s ease-out;           
+    will-change: transform, opacity;                  
 }
 
 /* 侧边栏动画 - 页面加载时从左侧滑入 */
 .md-sidebar {
-    animation: slideInFromLeft 0.4s ease-out;          /* 缩短动画时长 */
-    will-change: transform, opacity;                    /* 优化GPU加速 */
+    animation: slideInFromLeft 0.4s ease-out;         
+    will-change: transform, opacity;                   
 }
 
 /* 主内容区动画 - 页面加载时淡入并缩放 */
 .md-content__inner {
-    animation: fadeInScale 0.4s ease-out;              /* 缩短动画时长 */
-    will-change: transform, opacity;                    /* 优化GPU加速 */
+    animation: fadeInScale 0.4s ease-out;              
+    will-change: transform, opacity;                   
 }
 
-/* ========================================
-   鼠标悬停交互效果
-   ======================================== */
+
 
 /* 导航链接悬停时的脉冲效果 */
 .md-nav__link:hover {
     animation: pulse 0.6s ease-in-out;
 }
 
-/* 标题悬停时的摇摆效果 - 增加趣味性 */
-/* .md-typeset h2:hover,
-.md-typeset h3:hover {
-    animation: wiggle 0.1s ease-in-out;
+/* 回到顶部按钮的过渡效果 */
+/* .md-top {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
 } */
 
-/* ========================================
-   按钮和控件动画效果
-   ======================================== */
-
-/* 回到顶部按钮的过渡效果 */
-.md-top {
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* 使用缓动函数创造自然的过渡 */
-}
-
 /* 回到顶部按钮悬停时的上浮效果 */
-.md-top:hover {
-   /* transform: translateY(-5px);                              /* 向上移动5像素 */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);             /* 添加阴影增强立体感 */
-}
+/* .md-top:hover {
+   transform: translateY(-5px);                           
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);            
+} */
 
-/* 搜索框聚焦时的脉冲动画 - 提示用户当前焦点 */
+
 .md-search__input:focus {
     animation: pulse 0.3s ease-in-out;
 }
 
-/* ========================================
-   内容元素悬停效果
-   ======================================== */
+
 
 /* 代码块悬停时的上浮效果 */
 .md-typeset pre:hover {
@@ -183,10 +141,10 @@
     display: inline-block;
     width: 20px;
     height: 20px;
-    border: 3px solid rgba(102, 126, 234, 0.3);  /* 灰色边框 */
-    border-radius: 50%;                           /* 圆形 */
-    border-top-color: #667eea;                    /* 顶部边框使用主题色 */
-    animation: spin 1s ease-in-out infinite;      /* 无限旋转动画 */
+    border: 3px solid rgba(102, 126, 234, 0.3);  
+    border-radius: 50%;                          
+    border-top-color: #667eea;                   
+    animation: spin 1s ease-in-out infinite;     
 }
 
 /* 旋转动画定义 */
@@ -196,23 +154,17 @@
     }
 }
 
-/* ========================================
-   页面切换动画
-   ======================================== */
 
 /* 主要内容区域的页面切换动画 */
 .md-main__inner {
     animation: fadeInScale 0.5s ease-out;
 }
 
-/* ========================================
-   页面切换性能优化
-   ======================================== */
 
 /* 为页面切换添加预加载优化 */
-.md-main {
-    contain: layout style paint;                        /* CSS containment 优化 */
-}
+/* .md-main {
+    contain: layout style paint;                        
+} */
 
 /* 减少不必要的重绘和重排 */
 .md-content__inner {
@@ -251,43 +203,30 @@
     scroll-behavior: smooth;                           /* 加载完成后启用平滑滚动 */
 }
 
-/* ========================================
-   响应式和可访问性优化
-   ======================================== */
-
-/* 减少动画设置 - 为有运动敏感度的用户提供支持 */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;        /* 将动画时长缩短到几乎为0 */
-        animation-iteration-count: 1 !important;      /* 动画只执行一次 */
-        transition-duration: 0.01ms !important;       /* 过渡时长也缩短到几乎为0 */
+        animation-duration: 0.01ms !important;       
+        animation-iteration-count: 1 !important;     
+        transition-duration: 0.01ms !important;       
     }
 }
 
-/* ========================================
-   移动端优化
-   ======================================== */
 
-/* 移动设备上的动画优化 - 缩短动画时长以提升性能 */
 @media screen and (max-width: 768px) {
     .md-content__inner {
-        animation-duration: 0.4s;  /* 主内容动画时长缩短 */
+        animation-duration: 0.4s;  
     }
     
     .md-sidebar {
-        animation-duration: 0.3s;  /* 侧边栏动画时长缩短 */
+        animation-duration: 0.3s;  
     }
     
     .md-header {
-        animation-duration: 0.3s;  /* 页头动画时长缩短 */
+        animation-duration: 0.3s;  
     }
 }
-
-/* ========================================
-   深色模式适配
-   ======================================== */
 
 /* 深色模式下的加载指示器颜色调整 */
 [data-md-color-scheme="slate"] .loading-indicator {
