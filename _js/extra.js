@@ -22,6 +22,42 @@ document.addEventListener('DOMContentLoaded', function() {
     // 添加平滑滚动
     document.documentElement.style.scrollBehavior = 'smooth';
     
+    // 移动端导航修复
+    if (window.innerWidth <= 768) {
+        // 确保移动端导航事件正常工作
+        const navLinks = document.querySelectorAll('.md-nav__link');
+        navLinks.forEach(link => {
+            // 移除可能干扰的事件监听器
+            link.style.pointerEvents = 'auto';
+            
+            // 添加触摸反馈
+            link.addEventListener('touchstart', function() {
+                this.style.backgroundColor = 'rgba(102, 126, 234, 0.1)';
+            }, { passive: true });
+            
+            link.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.style.backgroundColor = '';
+                }, 150);
+            }, { passive: true });
+        });
+        
+        // 确保汉堡菜单按钮工作正常
+        const drawerToggle = document.querySelector('[for="__drawer"]');
+        if (drawerToggle) {
+            drawerToggle.style.pointerEvents = 'auto';
+            drawerToggle.style.zIndex = '9999';
+        }
+        
+        // 确保导航抽屉工作正常
+        const drawer = document.querySelector('#__drawer');
+        if (drawer) {
+            drawer.addEventListener('change', function() {
+                console.log('Navigation drawer toggled:', this.checked);
+            });
+        }
+    }
+    
     // 图片懒加载和点击放大
     const images = document.querySelectorAll('.md-typeset img');
     images.forEach(img => {
