@@ -1,5 +1,5 @@
 /* 现代化代码块样式 */
-pre code {
+[data-md-color-scheme=default] pre code {
     counter-reset: line-number;
     position: relative;
     display: block;
@@ -20,19 +20,19 @@ pre code {
 }
 
 /* 代码块顶部装饰条 */
-pre code::before {
+[data-md-color-scheme=default] pre code::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+    background: linear-gradient(90deg, #a3dd3f, #46d76f, #0ad8af);
 }
 
 
 
-pre code div {
+[data-md-color-scheme=default] pre code div {
     display: block;
     position: relative;
     padding-left: 4em;
@@ -42,11 +42,11 @@ pre code div {
     margin-top: 25px; /* 为顶部装饰留出空间 */
 }
 
-pre code div:first-child {
+[data-md-color-scheme=default] pre code div:first-child {
     margin-top: 35px; /* 第一行需要更多空间 */
 }
 
-pre code div:not(:empty)::before {
+[data-md-color-scheme=default] pre code div:not(:empty)::before {
     counter-increment: line-number;
     content: counter(line-number);
     position: absolute;
@@ -62,7 +62,46 @@ pre code div:not(:empty)::before {
     font-weight: 500;
     transition: all 0.3s ease;
 }
+/* 夜间模式代码块样式 */
+[data-md-color-scheme=slate] pre code {
+    position: relative;
+    display: block;
+    max-height: 800px;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    color: #e2e8f0;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    color: #e2e8f0;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    position: relative;
+}
 
+[data-md-color-scheme=slate] pre code::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+}
+
+[data-md-color-scheme=slate] pre code div:not(:empty)::before {
+    color: #718096;
+    border-right: 2px solid rgba(113, 128, 150, 0.3);
+}
+
+[data-md-color-scheme=slate] pre code div:hover::before {
+    color: #63b3ed;
+    border-right-color: #63b3ed;
+}
 /* 悬停时行号高亮 */
 pre code div:hover::before {
     opacity: 1;
