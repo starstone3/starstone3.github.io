@@ -280,9 +280,9 @@ R \leftarrow \sigma_{dept_name='Finance'}(instructor)
 !!! definition "商的定义"
     给定关系 r(R) 和 s(S)，其中 S 是 R 的子集，r $\div$ s 是满足以下条件的最大关系 t(R-S)：
         
-$$
-t \times s \subseteq r
-$$
+    $$
+    t \times s \subseteq r
+    $$
 
 简单来说，关系 `r` 除以关系 `s` 的结果是一个关系 `t`，`t` 包含 `r` 中所有与 `s` 中的元组组合后仍然在 `r` 中的元组。
 
