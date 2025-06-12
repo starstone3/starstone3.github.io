@@ -382,8 +382,11 @@ WHERE condition;
 REFRESH MATERIALIZED VIEW view_name;
 ```
 如果要在创建物化视图时指定刷新策略，可以使用`WITH DATA`或`WITH NO DATA`选项。
+
 - `WITH DATA`：创建物化视图时立即填充数据
+
 - `WITH NO DATA`：创建物化视图时不填充数据，稍后可以手动刷新数据
+
 ```sql
 CREATE MATERIALIZED VIEW view_name
 WITH NO DATA AS

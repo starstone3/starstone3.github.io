@@ -150,23 +150,23 @@ $\sigma_{instructor.ID=teaches.ID}(instructor \times teaches)$
     将 `instructor` 关系重命名为 `professor`：
 
     $$
-        \rho_{professor}(instructor)
-        $$
+    \rho_{professor}(instructor)
+    $$
 
 2.  **重命名属性**：
 
     将 `instructor` 关系中的 `ID` 属性重命名为 `instructor_id`：
 
     $$
-        \rho_{instructor_id, name}(instructor)
-        $$
+    \rho_{instructor_{id}, name}(instructor)
+    $$
 
 3.  **同时重命名关系和属性**：
 
     将 `instructor` 关系重命名为 `professor`，并将 `ID` 属性重命名为 `instructor_id`：
 
     $$
-        \rho_{professor(instructor_id, name)}(instructor)
+        \rho_{professor(instructor_{id}, name)}(instructor)
     $$
 
 #### Example
@@ -289,28 +289,28 @@ R \leftarrow \sigma_{dept_name='Finance'}(instructor)
 除法可以使用如下的公式表示：
 
 $$
-    temp1 \leftarrow \Pi_{R-S}(r) 
-    $$
+temp1 \leftarrow \Pi_{R-S}(r) 
+$$
 
 
 $$
-    temp2 \leftarrow \Pi_{R-S}((temp1 \times s) - \Pi_{R-S,S}(r))
-    $$
+temp2 \leftarrow \Pi_{R-S}((temp1 \times s) - \Pi_{R-S,S}(r))
+$$
 
 
 $$
-    result \leftarrow temp1 - temp2
-    $$
+result \leftarrow temp1 - temp2
+$$
 
 **解释：**
 
 1.  **temp1**:  首先，我们通过投影操作 $\Pi_{R-S}(r)$，从关系 `r` 中选择所有不在关系 `s` 中的属性（R-S），并将结果存储在 `temp1` 中。这相当于找到所有可能出现在结果关系 `t` 中的元组。
 
 2.  **temp2**:  接下来，我们计算 `temp2`。
-        *   `(temp1 × s)`:  我们计算 `temp1` 和 `s` 的笛卡尔积。这将 `temp1` 中的每个元组与 `s` 中的每个元组组合在一起。
-        *   `\Pi_{R-S,S}(r)`:  我们从关系 `r` 中投影出属性 R-S 和 S，也就是关系 r 的所有属性。
-        *   `(temp1 × s) - \Pi_{R-S,S}(r)`:  我们从 `temp1 × s` 中减去 `\Pi_{R-S,S}(r)`。这将删除所有在 `r` 中存在的 `temp1` 和 `s` 的组合。剩下的元组就是那些与 `s` 组合后不在 `r` 中的 `temp1` 元组。
-        *   `\Pi_{R-S}((temp1 \times s) - \Pi_{R-S,S}(r))`:  我们从结果中投影出属性 R-S。这将删除所有与 `s` 组合后不在 `r` 中的 `temp1` 元组。
+    -   $(temp1 \times s)$:  我们计算 `temp1` 和 `s` 的笛卡尔积。这将 `temp1` 中的每个元组与 `s` 中的每个元组组合在一起。
+    -   $\Pi_{R-S,S}(r)$:  我们从关系 `r` 中投影出属性 R-S 和 S，也就是关系 r 的所有属性。
+    -   $(temp1 \times s) - \Pi_{R-S,S}(r)$:  我们从 $temp1 \times s$ 中减去 $\Pi_{R-S,S}(r)$。这将删除所有在 `r` 中存在的 `temp1` 和 `s` 的组合。剩下的元组就是那些与 `s` 组合后不在 `r` 中的 `temp1` 元组。
+    -   $\Pi_{R-S}((temp1 \times s) - \Pi_{R-S,S}(r))$:  我们从结果中投影出属性$R-S$。这将删除所有与 `s` 组合后不在 `r` 中的 `temp1` 元组。
 
 3.  **result**:  最后，我们计算 `temp1 - temp2`。这将从 `temp1` 中删除所有与 `s` 组合后不在 `r` 中的元组。剩下的元组就是关系 `r` 除以关系 `s` 的结果。
 

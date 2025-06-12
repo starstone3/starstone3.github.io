@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
         //     }
         // });
     
-    // 代码块复制功能增强
     const codeBlocks = document.querySelectorAll('pre code');
     codeBlocks.forEach(block => {
         block.addEventListener('mouseenter', function() {
