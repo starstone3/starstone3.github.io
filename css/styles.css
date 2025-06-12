@@ -27,7 +27,7 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #a3dd3f, #46d76f, #0ad8af);
+    background: linear-gradient(90deg, #a3dd3f, #46d76f, #f8f8f8);
 }
 
 
@@ -128,8 +128,8 @@ pre code .hljs-comment {
 }
 
 /* 代码复制按钮样式优化 */
-.md-clipboard {
-    background: rgba(255, 255, 255, 0.1);
+/* .md-clipboard {
+    background: rgba(255, 255, 255, 0.0);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 6px;
@@ -139,6 +139,6 @@ pre code .hljs-comment {
 .md-clipboard:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: scale(1.05);
-}
+} */
 
 
