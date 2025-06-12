@@ -14,7 +14,7 @@
     box-shadow: 
         0 10px 30px rgba(0, 0, 0, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    color: #e2e8f0;
+    color: #000101;
     font-family: 'JetBrains Mono', 'Fira Code', monospace;
     position: relative;
 }
@@ -74,7 +74,6 @@
     border-radius: 12px;
     padding: 20px;
     background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-    color: #e2e8f0;
     box-shadow: 
         0 10px 30px rgba(0, 0, 0, 0.5),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
