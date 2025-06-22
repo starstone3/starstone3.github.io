@@ -165,7 +165,10 @@ nav :
     - "封面": tools/index.md
     - "妙妙小工具": tools/tools.md
     - "分享": tools/share.md
-
+  - "本科回顾": 
+    - "封面": life/index.md
+    - "大一": life/1.md
+    - "大二": life/2.md
 
 
 
