@@ -141,6 +141,9 @@ nav :
       - "Chapter 3:Instruction-Level Parallelism": incourse/CA/Ch2.md
       - "Chapter 4:Data-Level Parallelism": incourse/CA/Ch4.md
       - "Chapter 5:Thread-Level Parallelism": incourse/CA/Ch5.md
+    - "计算理论":
+      - incourse/TOC/index.md
+      - "Ch1:Sets,Relations and Language": incourse/TOC/ch1.md
   - "大一课程遗物":
     - incourse/old/index.md
     - "数据结构基础": incourse/old/fds.md
