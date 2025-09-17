@@ -144,6 +144,12 @@ nav :
     - "计算理论":
       - incourse/TOC/index.md
       - "Ch1:Sets,Relations and Language": incourse/TOC/ch1.md
+    - "操作系统":
+      - incourse/OS/index.md
+      - "Chapter 1: Introduction": incourse/OS/ch1.md
+    - "计算机网络":
+      - incourse/CN/index.md
+      - "第一章:概述": incourse/CN/ch1.md
   - "大一课程遗物":
     - incourse/old/index.md
     - "数据结构基础": incourse/old/fds.md
