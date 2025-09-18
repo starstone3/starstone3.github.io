@@ -122,3 +122,39 @@ R的值域是所有与A中元素相关联的B中元素的集合
 + **反对称(Antisymmetric)**:若$(a, b) \in R$且$(b, a) \in R \Rightarrow a = b$，则称R是反对称的。
 
 + **传递(Transitive)**:若$(a, b) \in R$且$(b, c) \in R \Rightarrow (a, c) \in R$，则称R是传递的。
+
+### 等价关系(Equivalence Relation)
+
+一个二元关系R如果满足以下三个条件，则称R是等价关系:
+
+1. **自反性**: $\forall a \in A, (a, a) \in R$。
+
+2. **对称性**: 若$(a, b) \in R \Rightarrow (b, a) \in R$。
+
+3. **传递性**: 若$(a, b) \in R$且$(b, c) \in R \Rightarrow (a, c) \in R$。
+
+因此,一个等价关系可以将元素分割为若干等价类,等价类有代表元,和线性代数中学的一致.
+
+这些等价类组成了集合的一个分割(Partition).
+
+### 偏序关系(Partial Order)
+
+一个二元关系R如果满足**自反性**、**反对称性**和**传递性**,则称R是偏序关系.
+
+在这样的关系中,我们可以定义最大/小元(Greatest/Least Element)和极大/小值(Maximal/Minimal).
+
+以最大元和极大值为例:
+
+设集合A中的元素为$a_1, a_2, \ldots, a_n$，如果存在元素$a_{max} \in A$，使得对任意元素$a_i \in A$，都有$a_i \leq a_{max}$，则称$a_{max}$为A的最大元(Greatest Element)。
+
+如果不存在$a_{max}$，但存在元素$a_{m} \in A$，使得对任意元素$a_i \in A$，如果$a_i \neq a_{m}$且$a_i$与$a_{m}$不可比较，则称$a_{m}$为A的极大值(Maximal)。
+
+
+!!! definition "全序关系(Total Order)"
+    如果偏序关系R还满足**比较性**(Comparability)条件,即对任意$a, b \in A$，要么$(a, b) \in R$，要么$(b, a) \in R$，则称R是全序关系。
+
+## 有限集和无限集
+
+和离散讲的一样,有限集是指包含有限个元素的集合,无限集是指包含无限个元素的集合.
+
+其中,可数无限集是指其元素可以和自然数集建立一一对应关系的无限集,不可数无限集则不能.
