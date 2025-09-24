@@ -150,6 +150,7 @@ nav :
     - "计算机网络":
       - incourse/CN/index.md
       - "第一章:概述": incourse/CN/ch1.md
+      - "第二章:物理层": incourse/CN/ch2.md
   - "大一课程遗物":
     - incourse/old/index.md
     - "数据结构基础": incourse/old/fds.md
