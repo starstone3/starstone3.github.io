@@ -2519,6 +2519,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#操作系统的运行" class="md-nav__link">
+    <span class="md-ellipsis">
+      操作系统的运行
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="操作系统的运行">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#处理器的运行环境" class="md-nav__link">
+    <span class="md-ellipsis">
+      处理器的运行环境
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#中断interrupt" class="md-nav__link">
+    <span class="md-ellipsis">
+      中断(Interrupt)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#系统调用system-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      系统调用(System Call)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2547,6 +2589,8 @@
       
         
           
+        
+      
         
       
         
@@ -2607,6 +2651,29 @@
   
   <span class="md-ellipsis">
     第一章:概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CN/ch2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章:物理层
     
   </span>
   
@@ -3460,6 +3527,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#操作系统的运行" class="md-nav__link">
+    <span class="md-ellipsis">
+      操作系统的运行
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="操作系统的运行">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#处理器的运行环境" class="md-nav__link">
+    <span class="md-ellipsis">
+      处理器的运行环境
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#中断interrupt" class="md-nav__link">
+    <span class="md-ellipsis">
+      中断(Interrupt)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#系统调用system-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      系统调用(System Call)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3481,7 +3590,7 @@
 
 <h1 id="概述">概述<a class="headerlink" href="#概述" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 1778 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 2 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 9 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 3433 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 3 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 17 分钟</p>
 </div>
 <h2 id="什么是操作系统">什么是操作系统<a class="headerlink" href="#什么是操作系统" title="Permanent link">¶</a></h2>
 <blockquote>
@@ -3645,6 +3754,121 @@
 </div>
 </div>
 </div>
+<h2 id="操作系统的运行">操作系统的运行<a class="headerlink" href="#操作系统的运行" title="Permanent link">¶</a></h2>
+<h3 id="处理器的运行环境">处理器的运行环境<a class="headerlink" href="#处理器的运行环境" title="Permanent link">¶</a></h3>
+<p>CPU会运行两种不同性质的程序:</p>
+<ol>
+<li>
+<p><strong>用户程序</strong>: 由用户编写和运行的程序,如应用软件、游戏等.这些程序通常运行在用户态,权限受限,不能直接访问硬件资源.</p>
+</li>
+<li>
+<p><strong>系统程序</strong>: 由操作系统提供的程序,如文件管理、内存管理、设备驱动等.这些程序通常运行在内核态,权限较高,可以直接访问硬件资源.</p>
+</li>
+</ol>
+<p>它们之间最明显的区别就是,能否使用特权指令(Privileged Instruction)如访问硬件设备、管理内存等.</p>
+<p>操作系统的内核(Kernel)实际上是一个程序,负责了以下四种功能:</p>
+<ol>
+<li>
+<p>时钟管理,负责维护系统的时钟信息,提供时间片轮转等调度策略.</p>
+</li>
+<li>
+<p>中断机制的维护,负责处理各种中断请求,如I/O中断、定时器中断等.</p>
+</li>
+<li>
+<p>硬件原语的封装,提供对硬件设备的统一接口,如文件系统、网络协议等.</p>
+</li>
+<li>
+<p>进程、设备的管理,负责创建、销毁、调度进程,管理设备的使用等.</p>
+</li>
+</ol>
+<h3 id="中断interrupt">中断(Interrupt)<a class="headerlink" href="#中断interrupt" title="Permanent link">¶</a></h3>
+<p>正如在计组和体系中学过的, 中断是一种机制，它允许外部设备或内部事件向CPU发送信号，以便引起CPU的注意并请求服务。当CPU正在执行某个程序时，如果发生中断，CPU会暂停当前程序的执行，保存其状态，并转而执行中断处理程序。相关的概念有:</p>
+<ul>
+<li>
+<p><strong>mepc寄存器</strong>: 用于保存发生中断时的程序计数器(PC)的值,以便中断处理完成后能够返回到正确的位置继续执行.</p>
+</li>
+<li>
+<p><strong>中断向量表</strong>: 是一个存储中断处理程序入口地址的数据结构。每个中断类型都有一个对应的入口地址，当中断发生时，CPU可以通过查找中断向量表来找到相应的处理程序。</p>
+</li>
+<li>
+<p><strong>mcause寄存器</strong>: 用于保存引起中断的原因代码,以便中断处理程序能够根据不同的中断类型采取相应的措施.</p>
+</li>
+<li>
+<p><strong>mtval寄存器</strong>: 用于保存与中断相关的附加信息,如发生地址等.</p>
+</li>
+</ul>
+<p>在这里,我们可以理解到中断更深层的含义.正如上面所说,程序的运行有内核态和用户态之分.用户态下的程序无法使用内核态的指令,当它们有时候又必须使用这些功能,比如读写文件,访问网络等,这时候就需要通过中断来实现从用户态切换到内核态,以便使用这些特权指令.</p>
+<p>也就是说,发生中断时,CPU会从用户态切换到内核态,执行相应的中断处理程序,完成所需的操作后,再切换回用户态,继续执行用户程序.</p>
+<div align="center">
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac101.png" data-desc-position="bottom"><img src="../../../image/mac101.png" width="80%"></a>
+    <br>
+    中断的分类
+    </div>
+
+<div class="admonition info">
+<p class="admonition-title">Exception and Interrupt</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">trap/fault</label><label for="__tabbed_4_2">interrupt</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>
+<p><strong>Trap</strong>: 是一种同步事件,它是在程序执行过程中由程序本身引发的,如系统调用、调试断点等.当trap发生时,CPU会暂停当前程序的执行,保存其状态,并转而执行相应的trap处理程序.</p>
+</li>
+<li>
+<p><strong>Fault</strong>: 也是一种同步事件,它是在程序执行过程中由程序本身引发的,如非法内存访问、除零错误等.当fault发生时,CPU会暂停当前程序的执行,保存其状态,并转而执行相应的fault处理程序.</p>
+</li>
+<li>
+<p><strong>Abort</strong>: 是一种严重的同步事件,它通常是由硬件故障引起的,如内存错误、总线错误等.当abort发生时,CPU会立即停止当前程序的执行,并转而执行相应的abort处理程序.</p>
+</li>
+</ul>
+<p>Trap和fault都是由程序本身引发的,因此它们是同步事件,而abort通常是由硬件故障引起的,因此它是一种异步事件.</p>
+</div>
+<div class="tabbed-block">
+<p>中断是一种异步事件,它可以在任何时候发生,与当前正在执行的程序无关.中断通常由外部设备(如键盘、鼠标、网络接口等)或内部事件(如定时器中断)引起.当中断发生时,CPU会暂停当前程序的执行,保存其状态,并转而执行相应的中断处理程序.</p>
+<p>对于interrupt,还有可屏蔽中断与不可屏蔽中断的区分,这是为了区分中断的优先级.</p>
+<p>不可屏蔽中断(interrupt)通常是由严重的硬件故障引起的,如电源故障、内存错误等,通过NMI(Non-Maskable Interrupt)线发出信号.当不可屏蔽中断发生时,CPU必须立即响应,无法通过软件手段屏蔽或延迟处理.</p>
+<p>可屏蔽中断(interrupt)通常是由外部设备或内部事件引起的,如键盘输入、鼠标点击、网络数据到达等,通过INTR(Interrupt Request)线发出信号.当可屏蔽中断发生时,CPU可以根据当前的优先级设置决定是否响应,可以通过软件手段屏蔽或延迟处理.</p>
+<p>interrupt多由硬件引起</p>
+</div>
+</div>
+</div>
+</div>
+<h3 id="系统调用system-call">系统调用(System Call)<a class="headerlink" href="#系统调用system-call" title="Permanent link">¶</a></h3>
+<p>系统调用是用户程序与操作系统内核之间进行交互的接口。它允许用户程序请求操作系统提供特权服务，如文件操作、进程管理、内存分配等。也就是说,凡是这种特权服务,都需要让用户先向操作系统发出请求,然后让操作系统完成这些服务,然后操作系统把结果返回给用户.</p>
+<ol>
+<li>
+<p>用户程序发起系统调用</p>
+<ul>
+<li>用户程序将系统调用号和参数压入堆栈。</li>
+<li>执行系统调用指令（如 syscall 或 int 指令）。</li>
+<li>CPU执行陷入（trap）指令，状态从用户态切换到内核态。</li>
+</ul>
+</li>
+<li>
+<p>内核接管控制权</p>
+<ul>
+<li>
+<p>硬件和操作系统内核保存当前进程的现场（如程序计数器PC、程序状态字PSW、通用寄存器等）。</p>
+</li>
+<li>
+<p>根据系统调用号，查找系统调用入口表，跳转到对应的系统调用处理子程序。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>系统调用处理</p>
+<ul>
+<li>内核执行相应的系统调用处理逻辑（如文件操作、进程管理等）。</li>
+</ul>
+</li>
+<li>
+<p>返回用户程序</p>
+<ul>
+<li>系统调用处理完成后，恢复被中断进程（或新进程）的CPU现场。</li>
+<li>CPU状态从内核态切换回用户态，继续执行用户程序。</li>
+</ul>
+</li>
+</ol>
 
 
 
@@ -3667,7 +3891,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年9月18日 10:12:00 UTC">2025年9月18日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年9月24日 08:56:37 UTC">2025年9月24日</span>
   </span>
 
     
