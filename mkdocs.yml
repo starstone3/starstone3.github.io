@@ -144,9 +144,11 @@ nav :
     - "计算理论":
       - incourse/TOC/index.md
       - "Ch1:Sets,Relations and Language": incourse/TOC/ch1.md
+      - "Ch2:Regular Language and Automata": incourse/TOC/ch2.md
     - "操作系统":
       - incourse/OS/index.md
       - "Chapter 1: Introduction": incourse/OS/ch1.md
+      - "Chapter 2:进程与线程": incourse/OS/ch2.md
     - "计算机网络":
       - incourse/CN/index.md
       - "第一章:概述": incourse/CN/ch1.md
