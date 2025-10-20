@@ -2315,6 +2315,8 @@
       
         
       
+        
+      
     
     
     
@@ -2605,6 +2607,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Finite Representations of Languages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#泵引理pumping-lemma" class="md-nav__link">
+    <span class="md-ellipsis">
+      泵引理(Pumping Lemma)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2634,6 +2651,29 @@
   
   <span class="md-ellipsis">
     Ch2:Regular Language and Automata
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ch3:CFL与PDA
     
   </span>
   
@@ -3913,6 +3953,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Finite Representations of Languages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#泵引理pumping-lemma" class="md-nav__link">
+    <span class="md-ellipsis">
+      泵引理(Pumping Lemma)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -3941,7 +3996,7 @@
 
 <h1 id="集合关系与语言">集合、关系与语言<a class="headerlink" href="#集合关系与语言" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 3152 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 16 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 3157 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 16 分钟</p>
 </div>
 <h2 id="集合">集合<a class="headerlink" href="#集合" title="Permanent link">¶</a></h2>
 <p>集合是数学中最基本的概念之一。一个集合是一些不同对象的无序集，这些对象称为集合的元素。集合通常用大写字母表示，元素用小写字母表示。例如，集合 <span class="arithmatex">\(A = \{1, 2, 3\}\)</span> 包含三个元素：1、2 和 3。</p>
@@ -4414,6 +4469,7 @@ L = 0^* \cdot 1 \cdot 0^+ \cdot 1 \cdot 0^* \;\cup\; 0^* \cdot 1 \cdot 0^+ \cdot
 <p>我认为的一种比较清晰的表述是,一个字母表<span class="arithmatex">\(\Sigma\)</span>,用它里面的字符,与<code>(</code>,<code>)</code>,<code>*</code>,<span class="arithmatex">\(\cup\)</span>等符号,可以组成许多正则表达式,所有这些正则表达式组成了集合<span class="arithmatex">\(R\)</span>,而每一种正则表达式描述了一种正则语言.</p>
 <p>正则表达式与正则语言的关系,类似于程序与算法的关系,程序是算法的具体实现.</p>
 </details>
+<h4 id="泵引理pumping-lemma">泵引理(Pumping Lemma)<a class="headerlink" href="#泵引理pumping-lemma" title="Permanent link">¶</a></h4>
 <p>如果要证明一个语言不是正则语言,也即不能用正则表达式表示,我们通常使用<strong>泵引理(Pumping Lemma)</strong>来证明.</p>
 <p>泵定理的内容如下:</p>
 <p>若<span class="arithmatex">\(L\)</span>是正则语言,则存在一个整数<span class="arithmatex">\(p \geq 1\)</span>,使得对于任意字符串<span class="arithmatex">\(s \in L\)</span>且<span class="arithmatex">\(|s| \geq p\)</span>,都可以将<span class="arithmatex">\(s\)</span>分解为三个子串<span class="arithmatex">\(s = xyz\)</span>,满足以下条件:</p>
@@ -4528,7 +4584,7 @@ L = \{w \in \{a,b,c\}^* | w中不包含子串'ac'\}
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年10月2日 08:12:22 UTC">2025年10月2日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年10月20日 07:23:25 UTC">2025年10月20日</span>
   </span>
 
     
