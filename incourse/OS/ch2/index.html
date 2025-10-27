@@ -2660,6 +2660,63 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#线程" class="md-nav__link">
+    <span class="md-ellipsis">
+      线程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="线程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#线程的状态与转换" class="md-nav__link">
+    <span class="md-ellipsis">
+      线程的状态与转换
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#线程的控制" class="md-nav__link">
+    <span class="md-ellipsis">
+      线程的控制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#线程的实现方式" class="md-nav__link">
+    <span class="md-ellipsis">
+      线程的实现方式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="线程的实现方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#用户级线程与内核级线程" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户级线程与内核级线程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3717,6 +3774,63 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#线程" class="md-nav__link">
+    <span class="md-ellipsis">
+      线程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="线程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#线程的状态与转换" class="md-nav__link">
+    <span class="md-ellipsis">
+      线程的状态与转换
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#线程的控制" class="md-nav__link">
+    <span class="md-ellipsis">
+      线程的控制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#线程的实现方式" class="md-nav__link">
+    <span class="md-ellipsis">
+      线程的实现方式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="线程的实现方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#用户级线程与内核级线程" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户级线程与内核级线程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3738,7 +3852,7 @@
 
 <h1 id="进程与线程">进程与线程<a class="headerlink" href="#进程与线程" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 3486 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> 28 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 5 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 18 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 4977 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> 47 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 7 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 25 分钟</p>
 </div>
 <h2 id="什么是进程">什么是进程<a class="headerlink" href="#什么是进程" title="Permanent link">¶</a></h2>
 <h3 id="进程的概念与特征">进程的概念与特征<a class="headerlink" href="#进程的概念与特征" title="Permanent link">¶</a></h3>
@@ -3977,6 +4091,148 @@ PCB的内容
     上下文切换
 </div><p></p>
 </div>
+<h2 id="线程">线程<a class="headerlink" href="#线程" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>线程简单理解就是轻量化的进程.一个进程可以包含多个线程,这些线程共享进程的资源(如内存空间,文件描述符等),但每个线程有自己的寄存器状态和栈空间.</p>
+</blockquote>
+<ul>
+<li>
+<p>进程是资源分配与调度的基本单位</p>
+</li>
+<li>
+<p>线程是CPU调度与执行的基本单位</p>
+</li>
+</ul>
+<p>相比于进程,线程的优点包括:</p>
+<ol>
+<li>
+<p>创建和销毁开销较小:创建和销毁线程的开销远小于进程,因为线程共享进程的资源,不需要为每个线程分配独立的内存空间等.</p>
+</li>
+<li>
+<p>上下文切换开销较小:线程共享进程的内存空间等资源,不需要切换内存映射等.</p>
+</li>
+<li>
+<p>资源共享更方便:线程共享进程的内存空间等资源,线程之间可以直接访问共享数据,不需要使用复杂的进程间通信机制.</p>
+</li>
+</ol>
+<div style="text-align: center;">
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac158.png" data-desc-position="bottom"><img src="../../../image/mac158.png" width="50%"></a>
+    <br>
+    多线程系统
+</div>
+
+<h3 id="线程的状态与转换">线程的状态与转换<a class="headerlink" href="#线程的状态与转换" title="Permanent link">¶</a></h3>
+<p>线程有以下几种状态:</p>
+<ol>
+<li>
+<p>执行态(Running):线程正在使用CPU执行其任务.</p>
+</li>
+<li>
+<p>就绪态(Ready):线程获得了除CPU以外所有需要的资源,只要获得了CPU就可以运行.</p>
+</li>
+<li>
+<p>阻塞态(Blocked):线程因为缺少某项资源(不包括CPU)而无法继续执行,只能等待.</p>
+</li>
+</ol>
+<p>这几种状态的转换逻辑和进程是类似的</p>
+<h3 id="线程的控制">线程的控制<a class="headerlink" href="#线程的控制" title="Permanent link">¶</a></h3>
+<p>正如进程有进程控制块(PCB)一样,线程也有线程控制块(TCB).TCB包含了线程的各种信息,包括:</p>
+<ol>
+<li>
+<p>线程标识符(TID)</p>
+</li>
+<li>
+<p>寄存器状态</p>
+</li>
+<li>
+<p>线程状态</p>
+</li>
+<li>
+<p>优先级</p>
+</li>
+<li>
+<p>栈指针</p>
+</li>
+</ol>
+<p>要注意的是,统一进程中不同线程所共享的只有进程的资源(如内存空间,文件描述符等),而每个线程有自己的寄存器状态和栈空间.</p>
+<p>为了创建一个线程,一般会使用<code>pthread_create()</code>函数.这个函数会创建一个新的线程,并指定该线程要执行的函数.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;pthread.h&gt;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="nf">thread_function</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Hello from the new thread!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">pthread_t</span><span class="w"> </span><span class="kr">thread</span><span class="p">;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="c1">// 创建一个新线程</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="kr">thread</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">thread_function</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">"Error creating thread</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="c1">// 等待线程结束</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="n">pthread_join</span><span class="p">(</span><span class="kr">thread</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Thread has finished execution.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="p">}</span>
+</code></pre></div>
+<p>线程在终止时,一般不会立刻释放其资源,而是进入一个类似僵尸进程的状态,直到另一个线程调用<code>pthread_join()</code>来回收其资源,或者有线程重新调用了这个被终止的线程.</p>
+<h2 id="线程的实现方式">线程的实现方式<a class="headerlink" href="#线程的实现方式" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>线程的实现方式主要有两种:用户级线程(User-level threads)和内核级线程(Kernel-level threads).</p>
+</blockquote>
+<h3 id="用户级线程与内核级线程">用户级线程与内核级线程<a class="headerlink" href="#用户级线程与内核级线程" title="Permanent link">¶</a></h3>
+<p>用户级线程是在用户空间中实现的线程管理.用户级线程库负责创建,调度和管理线程,而操作系统内核并不知道这些线程的存在.</p>
+<p>而内核级线程则是由操作系统内核直接管理的线程.内核级线程由内核负责创建,调度和管理,时间片直接以线程为单位分配.</p>
+<p>进程是由内核创建,管理,并调度的,然而,进程中的线程却可以分为用户级和内核级两种.</p>
+<p>这种区别,就形成了用户级多线程和内核级多线程两种模式</p>
+<ol>
+<li>
+<p>用户级多线程(User-level multithreading):多个用户级线程由一个内核级进程来管理.内核只知道这个进程的存在,而不知道进程中的线程.用户级线程库负责线程的创建,调度和管理.</p>
+<ul>
+<li>
+<p>优点:创建和销毁线程的开销较小,上下文切换开销较小,资源共享更方便.</p>
+</li>
+<li>
+<p>缺点:如果一个线程阻塞了,那么整个进程都会被阻塞,因为内核只知道进程的存在;用户级线程库需要自己实现调度算法</p>
+</li>
+</ul>
+</li>
+<li>
+<p>内核级多线程(Kernel-level multithreading):内核直接管理多个线程,每个线程都有自己的线程控制块(TCB).内核负责线程的创建,调度和管理,时间片直接以线程为单位分配.</p>
+<ul>
+<li>
+<p>优点:如果一个线程阻塞了,其他线程仍然可以继续执行;内核可以更好地利用多核CPU,实现真正的并行执行.</p>
+</li>
+<li>
+<p>缺点:创建和销毁线程的开销较大,上下文切换开销较大</p>
+</li>
+</ul>
+</li>
+<li>
+<p>混合多线程(Hybrid multithreading):结合了用户级多线程和内核级多线程的优点.多个用户级线程映射到多个内核级线程上,内核负责调度内核级线程,而用户级线程库负责调度用户级线程.</p>
+<ul>
+<li>
+<p>优点:结合了用户级和内核级多线程的优点,提高了系统的并发性能和资源利用率.</p>
+</li>
+<li>
+<p>缺点:实现复杂度较高,需要协调用户级线程库和内核之间的调度.</p>
+</li>
+</ul>
+</li>
+</ol>
+<div style="text-align: center;">
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac164.png" data-desc-position="bottom"><img src="../../../image/mac164.png" width="70%"></a>
+    <br>
+    线程的实现方式
+</div>
+
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+<p>用户级多线程（多对一模型）与内核级多线程（一对一模型）的核心区别在于操作系统内核的“可见性”，这直接决定了程序能否实现并行。</p>
+<p>在<strong>用户级多线程</strong>中，多个用户线程被映射到<strong>一个</strong>内核线程上。内核只认识这一个内核线程，因此在多核CPU环境下，它最多也只会将这一个内核线程分配到<strong>一个</strong>CPU核心上。这意味着，所有用户线程只能在<strong>这一个核心上并发（Concurrency）</strong>执行（即宏观上同时，微观上交替），<strong>无法实现并行（Parallelism）</strong>（即真正的多核同时执行）。</p>
+<p>而在<strong>内核级多线程</strong>中，<strong>每一个</strong>用户线程都对应一个独立的内核线程。内核“看见”并管理所有这些内核线程，因此它可以将它们<strong>调度到多个不同的CPU核心上</strong>。这使得该模型能够实现真正的<strong>并行</strong>。当线程数多于核心数时，内核会在每个核心上再进行<strong>并发</strong>调度。</p>
+</div>
 
 
 
@@ -3999,7 +4255,7 @@ PCB的内容
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年10月20日 07:23:25 UTC">2025年10月20日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年10月27日 07:33:12 UTC">2025年10月27日</span>
   </span>
 
     
