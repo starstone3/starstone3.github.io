@@ -282,6 +282,20 @@ comments : true
 实际上,CFL和PDA之间是一个相互转换的过程.CFL产生一个字符串,而PDA则是识别一个字符串.
 > PDA的接受一个字符串的数学表达为:$(q, w, S) \vdash_M^* (q, \epsilon, \epsilon)$.相当于`S`是待匹配内容,而`w`是输入内容.每匹配一部分,就删去待匹配内容与输入内容的对应部分,直到两者都为空.
 
+普遍的规律是,对于一个上下文无关文法 $G = (V, \Sigma, R, S)$，我们可以构造一个下推自动机 $M = (K, \Sigma, \Gamma, \Delta, s, F)$，使得 $L(M) = L(G)$：
+
+- PDA $M$ 只有两个状态：$p$（初始状态）和 $q$（最终状态）。
+
+- 栈字母表 $\Gamma = V$。
+
+- $\Delta$ 包含以下转移规则：
+
+    - $(p, \epsilon, \epsilon) \rightarrow (q, S)$
+
+    - 对于每个产生式 $A \rightarrow x \in R$，有 $(q, \epsilon, A) \rightarrow (q, x)$
+
+    - 对于每个终结符 $a \in \Sigma$，有 $(q, a, a) \rightarrow (q, \epsilon)$
+
 ??? example "从 CFG 到 PDA 的转换示例"
     设上下文无关文法 $G = (V, \Sigma, R, S)$，其中：
     - $V = \{S, a, b, c\}$
@@ -335,6 +349,8 @@ comments : true
 
     最终，输入字符串被完全读取，栈为空，且 PDA 处于接受状态 $q$，因此字符串 `abbcbba` 被接受。
 
+
+    实际上,普遍的规律是,
 
 ---
 
@@ -522,3 +538,80 @@ comments : true
                 $$
                 \langle q, B, p \rangle \to a \langle r, C_1, p' \rangle \langle p', C_2, p \rangle
                 $$
+
+
+## Languages that are and are not CF
+
+和正则语言一样,我们必须先知道CFL在并集,连接和闭包下是封闭的.
+
+那么,也就是说,CFL在交集和补集下是不封闭的.
+
+
+!!! tip "Remark"
+    - 回顾一下正则语言在交集运算下的封闭性：
+
+        - 构造等价的DFA需要自动机是确定性的。
+
+        - 补集运算同样要求自动机是确定性的。
+
+        - $L_1 \cap L_2 = \overline{\overline{L_1} \cup \overline{L_2}}$
+
+    - 并非所有的上下文无关语言都能被一个确定性下推自动机（DPDA）接受，因此 CFL 在交集和补集运算下不封闭。
+
+!!! example "示例"
+
+    - $L_1 = \{a^n b^n c^m \mid m, n \ge 0\} = \{a^n b^n \mid n \ge 0\} \circ c^*$
+
+    - $L_2 = \{a^m b^n c^n \mid m, n \ge 0\} = a^* \circ \{b^n c^n \mid n \ge 0\}$
+
+    - $L_1$ 和 $L_2$ 都是上下文无关语言，但它们的交集 $L_1 \cap L_2 = \{a^n b^n c^n \mid n \ge 0\}$ 不是上下文无关语言。
+
+但是,一个CFL和一个正则语言的交集仍然是一个CFL.
+
+
+### Pumping Lemma for CFL
+
+令$L$为一个上下文无关语言,则存在一个整数$p \geq 1$,使得对于任意字符串$s \in L$且$|s| \geq p$,都可以将$s$分成五个子串$s = uvwxy$,满足:
+
+1. 对于任意整数$i \geq 0$,字符串$uv^i w x^i y \in L$.
+
+2. $|v x| \geq 1$.
+
+3. $|vwx| \leq p$。
+
+
+
+??? example "使用Pumping Lemma证明某语言不是CFL"
+    证明语言$L = \{a^n b^n c^n \mid n \geq 0\}$不是上下文无关语言.
+
+    假设$L$是一个上下文无关语言,则存在一个整数$p \geq 1$,使得对于任意字符串$s \in L$且$|s| \geq p$,都可以将$s$分成五个子串$s = uvwxy$,满足Pumping Lemma的条件.
+
+    现在,我们选择字符串$s = a^p b^p c^p \in L$,显然$|s| = 3p \geq p$.
+
+    根据Pumping Lemma,我们可以将$s$分成五个子串$s = uvwxy$,满足:
+
+    1. 对于任意整数 $i \geq 0$，字符串 $uv^i w x^i y \in L$。
+
+    2. $|vx| \geq 1$。
+
+    3. $|vwx| \leq p$。
+
+    由于 $|vwx| \leq p$，子串 `vwx` 只能是 `a...a`、`b...b`、`c...c`、`a...ab...b` 或 `b...bc...c` 的形式。它**不可能**同时包含 `a` 和 `c`，因为 `a` 和 `c` 之间被 `p` 个 `b` 隔开。
+
+    现在我们分情况讨论 `vx` 中包含的符号种类：
+
+    1.  **`vx` 只包含一种符号**
+        - `vx` 只能由 `a`、`b` 或 `c` 组成。
+        - 考虑字符串 $uv^2wx^2y$。由于 $|vx| \geq 1$，这个新字符串中至少有一种符号的数量增加了，而其他两种符号的数量保持不变。
+        - 因此，新字符串不再满足 `a`、`b`、`c` 数量相等的要求，即 $uv^2wx^2y \notin L$。这与条件1矛盾。
+
+    2.  **`vx` 包含两种符号**
+        - 根据 $|vwx| \leq p$ 的限制，`vx` 只能包含 `a` 和 `b`，或者 `b` 和 `c`。
+        - **情况一：`vx` 包含 `a` 和 `b`**。
+            - 考虑字符串 $uv^2wx^2y$。这个新字符串中 `a` 和 `b` 的数量增加了，但 `c` 的数量不变。因此，它不属于 $L$。这与条件1矛盾。
+            - 另外，如果 `v` 或 `x` 中任何一个同时包含 `a` 和 `b` (例如 `v = ab`)，那么 $uv^2wx^2y$ 会出现 `...ab...ab...` 这样的子串，破坏了 $a^n b^n c^n$ 的顺序，同样不属于 $L$。
+        - **情况二：`vx` 包含 `b` 和 `c`**。
+            - 同理，泵操作会破坏符号数量的平衡或顺序。
+
+    由于所有可能的情况都会导致矛盾，因此我们的初始假设“$L$ 是一个上下文无关语言”是错误的。
+    
