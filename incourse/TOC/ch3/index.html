@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../../image/fav1.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
@@ -2537,6 +2537,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#languages-that-are-and-are-not-cf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Languages that are and are not CF
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Languages that are and are not CF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pumping-lemma-for-cfl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pumping Lemma for CFL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3699,6 +3723,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#languages-that-are-and-are-not-cf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Languages that are and are not CF
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Languages that are and are not CF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pumping-lemma-for-cfl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pumping Lemma for CFL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3720,7 +3768,7 @@
 
 <h1 id="cfl与pda">CFL与PDA<a class="headerlink" href="#cfl与pda" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 4405 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 2 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 22 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 5393 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 2 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 27 分钟</p>
 </div>
 <p>我们已经知道,形如 a^n b^n 的语言不是正则语言,但这种语言很容易使用一种递归的方式来定义.</p>
 <p>显然<span class="arithmatex">\(\epsilon\)</span>属于该语言,并且如果 w 属于该语言,那么 a w b 也属于该语言.</p>
@@ -4088,6 +4136,29 @@ S \Rightarrow_{lm}^* w \iff (q, w, S) \vdash_M^* (q, \epsilon, \epsilon)
 <blockquote>
 <p>PDA的接受一个字符串的数学表达为:<span class="arithmatex">\((q, w, S) \vdash_M^* (q, \epsilon, \epsilon)\)</span>.相当于<code>S</code>是待匹配内容,而<code>w</code>是输入内容.每匹配一部分,就删去待匹配内容与输入内容的对应部分,直到两者都为空.</p>
 </blockquote>
+<p>普遍的规律是,对于一个上下文无关文法 <span class="arithmatex">\(G = (V, \Sigma, R, S)\)</span>，我们可以构造一个下推自动机 <span class="arithmatex">\(M = (K, \Sigma, \Gamma, \Delta, s, F)\)</span>，使得 <span class="arithmatex">\(L(M) = L(G)\)</span>：</p>
+<ul>
+<li>
+<p>PDA <span class="arithmatex">\(M\)</span> 只有两个状态：<span class="arithmatex">\(p\)</span>（初始状态）和 <span class="arithmatex">\(q\)</span>（最终状态）。</p>
+</li>
+<li>
+<p>栈字母表 <span class="arithmatex">\(\Gamma = V\)</span>。</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Delta\)</span> 包含以下转移规则：</p>
+<ul>
+<li>
+<p><span class="arithmatex">\((p, \epsilon, \epsilon) \rightarrow (q, S)\)</span></p>
+</li>
+<li>
+<p>对于每个产生式 <span class="arithmatex">\(A \rightarrow x \in R\)</span>，有 <span class="arithmatex">\((q, \epsilon, A) \rightarrow (q, x)\)</span></p>
+</li>
+<li>
+<p>对于每个终结符 <span class="arithmatex">\(a \in \Sigma\)</span>，有 <span class="arithmatex">\((q, a, a) \rightarrow (q, \epsilon)\)</span></p>
+</li>
+</ul>
+</li>
+</ul>
 <details class="example">
 <summary>从 CFG 到 PDA 的转换示例</summary>
 <p>设上下文无关文法 <span class="arithmatex">\(G = (V, \Sigma, R, S)\)</span>，其中：
@@ -4154,6 +4225,7 @@ S \Rightarrow_{lm}^* w \iff (q, w, S) \vdash_M^* (q, \epsilon, \epsilon)
 </li>
 </ul>
 <p>最终，输入字符串被完全读取，栈为空，且 PDA 处于接受状态 <span class="arithmatex">\(q\)</span>，因此字符串 <code>abbcbba</code> 被接受。</p>
+<p>实际上,普遍的规律是,</p>
 </details>
 <hr>
 <p>下面我们需要证明这个Claim</p>
@@ -4373,6 +4445,105 @@ S \to \langle s, Z, f' \rangle
 </div>
 </div>
 </details>
+<h2 id="languages-that-are-and-are-not-cf">Languages that are and are not CF<a class="headerlink" href="#languages-that-are-and-are-not-cf" title="Permanent link">¶</a></h2>
+<p>和正则语言一样,我们必须先知道CFL在并集,连接和闭包下是封闭的.</p>
+<p>那么,也就是说,CFL在交集和补集下是不封闭的.</p>
+<div class="admonition tip">
+<p class="admonition-title">Remark</p>
+<ul>
+<li>
+<p>回顾一下正则语言在交集运算下的封闭性：</p>
+<ul>
+<li>
+<p>构造等价的DFA需要自动机是确定性的。</p>
+</li>
+<li>
+<p>补集运算同样要求自动机是确定性的。</p>
+</li>
+<li>
+<p><span class="arithmatex">\(L_1 \cap L_2 = \overline{\overline{L_1} \cup \overline{L_2}}\)</span></p>
+</li>
+</ul>
+</li>
+<li>
+<p>并非所有的上下文无关语言都能被一个确定性下推自动机（DPDA）接受，因此 CFL 在交集和补集运算下不封闭。</p>
+</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">示例</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(L_1 = \{a^n b^n c^m \mid m, n \ge 0\} = \{a^n b^n \mid n \ge 0\} \circ c^*\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(L_2 = \{a^m b^n c^n \mid m, n \ge 0\} = a^* \circ \{b^n c^n \mid n \ge 0\}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(L_1\)</span> 和 <span class="arithmatex">\(L_2\)</span> 都是上下文无关语言，但它们的交集 <span class="arithmatex">\(L_1 \cap L_2 = \{a^n b^n c^n \mid n \ge 0\}\)</span> 不是上下文无关语言。</p>
+</li>
+</ul>
+</div>
+<p>但是,一个CFL和一个正则语言的交集仍然是一个CFL.</p>
+<h3 id="pumping-lemma-for-cfl">Pumping Lemma for CFL<a class="headerlink" href="#pumping-lemma-for-cfl" title="Permanent link">¶</a></h3>
+<p>令<span class="arithmatex">\(L\)</span>为一个上下文无关语言,则存在一个整数<span class="arithmatex">\(p \geq 1\)</span>,使得对于任意字符串<span class="arithmatex">\(s \in L\)</span>且<span class="arithmatex">\(|s| \geq p\)</span>,都可以将<span class="arithmatex">\(s\)</span>分成五个子串<span class="arithmatex">\(s = uvwxy\)</span>,满足:</p>
+<ol>
+<li>
+<p>对于任意整数<span class="arithmatex">\(i \geq 0\)</span>,字符串<span class="arithmatex">\(uv^i w x^i y \in L\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(|v x| \geq 1\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(|vwx| \leq p\)</span>。</p>
+</li>
+</ol>
+<details class="example">
+<summary>使用Pumping Lemma证明某语言不是CFL</summary>
+<p>证明语言<span class="arithmatex">\(L = \{a^n b^n c^n \mid n \geq 0\}\)</span>不是上下文无关语言.</p>
+<p>假设<span class="arithmatex">\(L\)</span>是一个上下文无关语言,则存在一个整数<span class="arithmatex">\(p \geq 1\)</span>,使得对于任意字符串<span class="arithmatex">\(s \in L\)</span>且<span class="arithmatex">\(|s| \geq p\)</span>,都可以将<span class="arithmatex">\(s\)</span>分成五个子串<span class="arithmatex">\(s = uvwxy\)</span>,满足Pumping Lemma的条件.</p>
+<p>现在,我们选择字符串<span class="arithmatex">\(s = a^p b^p c^p \in L\)</span>,显然<span class="arithmatex">\(|s| = 3p \geq p\)</span>.</p>
+<p>根据Pumping Lemma,我们可以将<span class="arithmatex">\(s\)</span>分成五个子串<span class="arithmatex">\(s = uvwxy\)</span>,满足:</p>
+<ol>
+<li>
+<p>对于任意整数 <span class="arithmatex">\(i \geq 0\)</span>，字符串 <span class="arithmatex">\(uv^i w x^i y \in L\)</span>。</p>
+</li>
+<li>
+<p><span class="arithmatex">\(|vx| \geq 1\)</span>。</p>
+</li>
+<li>
+<p><span class="arithmatex">\(|vwx| \leq p\)</span>。</p>
+</li>
+</ol>
+<p>由于 <span class="arithmatex">\(|vwx| \leq p\)</span>，子串 <code>vwx</code> 只能是 <code>a...a</code>、<code>b...b</code>、<code>c...c</code>、<code>a...ab...b</code> 或 <code>b...bc...c</code> 的形式。它<strong>不可能</strong>同时包含 <code>a</code> 和 <code>c</code>，因为 <code>a</code> 和 <code>c</code> 之间被 <code>p</code> 个 <code>b</code> 隔开。</p>
+<p>现在我们分情况讨论 <code>vx</code> 中包含的符号种类：</p>
+<ol>
+<li>
+<p><strong><code>vx</code> 只包含一种符号</strong></p>
+<ul>
+<li><code>vx</code> 只能由 <code>a</code>、<code>b</code> 或 <code>c</code> 组成。</li>
+<li>考虑字符串 <span class="arithmatex">\(uv^2wx^2y\)</span>。由于 <span class="arithmatex">\(|vx| \geq 1\)</span>，这个新字符串中至少有一种符号的数量增加了，而其他两种符号的数量保持不变。</li>
+<li>因此，新字符串不再满足 <code>a</code>、<code>b</code>、<code>c</code> 数量相等的要求，即 <span class="arithmatex">\(uv^2wx^2y \notin L\)</span>。这与条件1矛盾。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>vx</code> 包含两种符号</strong></p>
+<ul>
+<li>根据 <span class="arithmatex">\(|vwx| \leq p\)</span> 的限制，<code>vx</code> 只能包含 <code>a</code> 和 <code>b</code>，或者 <code>b</code> 和 <code>c</code>。</li>
+<li><strong>情况一：<code>vx</code> 包含 <code>a</code> 和 <code>b</code></strong>。<ul>
+<li>考虑字符串 <span class="arithmatex">\(uv^2wx^2y\)</span>。这个新字符串中 <code>a</code> 和 <code>b</code> 的数量增加了，但 <code>c</code> 的数量不变。因此，它不属于 <span class="arithmatex">\(L\)</span>。这与条件1矛盾。</li>
+<li>另外，如果 <code>v</code> 或 <code>x</code> 中任何一个同时包含 <code>a</code> 和 <code>b</code> (例如 <code>v = ab</code>)，那么 <span class="arithmatex">\(uv^2wx^2y\)</span> 会出现 <code>...ab...ab...</code> 这样的子串，破坏了 <span class="arithmatex">\(a^n b^n c^n\)</span> 的顺序，同样不属于 <span class="arithmatex">\(L\)</span>。</li>
+</ul>
+</li>
+<li><strong>情况二：<code>vx</code> 包含 <code>b</code> 和 <code>c</code></strong>。<ul>
+<li>同理，泵操作会破坏符号数量的平衡或顺序。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>由于所有可能的情况都会导致矛盾，因此我们的初始假设“<span class="arithmatex">\(L\)</span> 是一个上下文无关语言”是错误的。</p>
+</details>
 
 
 
@@ -4395,7 +4566,7 @@ S \to \langle s, Z, f' \rangle
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年10月27日 07:33:12 UTC">2025年10月27日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年11月5日 05:59:38 UTC">2025年11月5日</span>
   </span>
 
     
