@@ -819,14 +819,16 @@ Windows中,调度的单位是线程,每个线程都有一个优先级.线程的�
 
     - 如果另一个线程的优先级设置为 `THREAD_PRIORITY_LOWEST` (相对-2)，那么该线程的最终优先级就是 `8 - 2 = 6`。
 
+对于优先级为16-31的,我们称为实时优先级,因其优先级在确定后就不再改变.而对于优先级为1-15的,我们称为可变优先级,其优先级会根据线程的行为动态调整.
+
 ### 中断优先级
 
 在Windows操作系统中,中断优先级(Interrupt Priority)是指硬件中断请求(IRQs)的优先级.中断优先级决定了当多个中断同时发生时,哪个中断请求会被处理器优先响应.
 
 所有的应用程序,不管其线程优先级如何,都运行在低优先级的中断优先级上.这意味着,可被其他任意级别程序打断.
 
-<style="text-align: center;">
-    <img src="../../../image/mac172.png" width="70%"/>
+<div style="text-align: center;">
+    <img src="../../../image/mac172.png" width="40%"/>
     <br>
     <caption>Windows中断优先级</caption>
-</style>
+</div>

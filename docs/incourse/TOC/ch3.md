@@ -298,8 +298,11 @@ comments : true
 
 ??? example "从 CFG 到 PDA 的转换示例"
     设上下文无关文法 $G = (V, \Sigma, R, S)$，其中：
+
     - $V = \{S, a, b, c\}$
+
     - $\Sigma = \{a, b, c\}$
+    
     - $R = \{S \rightarrow aSa, S \rightarrow bSb, S \rightarrow c\}$
 
     那么该文法生成的语言 $L(G) = \{wcw^R \mid w \in \{a, b\}^*\}$。
@@ -348,9 +351,6 @@ comments : true
 
 
     最终，输入字符串被完全读取，栈为空，且 PDA 处于接受状态 $q$，因此字符串 `abbcbba` 被接受。
-
-
-    实际上,普遍的规律是,
 
 ---
 

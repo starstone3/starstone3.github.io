@@ -146,6 +146,7 @@ nav :
       - "Ch1:Sets,Relations and Language": incourse/TOC/ch1.md
       - "Ch2:Regular Language and Automata": incourse/TOC/ch2.md
       - "Ch3:CFL与PDA": incourse/TOC/ch3.md
+      - "Ch4:Turing Machine": incourse/TOC/ch4.md
     - "操作系统":
       - incourse/OS/index.md
       - "Chapter 1: Introduction": incourse/OS/ch1.md
