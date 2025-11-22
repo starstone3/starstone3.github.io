@@ -83,7 +83,7 @@ FA只能读取纸带上的内容并转移状态,PDA可以读取纸带上的内�
         -   $w_1 = w_2a_2$
         -   并且满足以下任一条件：
             -   如果 $a_1 \neq \sqcup$ 或 $u_1 \neq \epsilon$，则 $u_2 = a_1u_1$。例如,$(q_1,xy\underline{a_1}z) \vdash_M (q_2,x\underline{y}a_1z)$。
-            -   如果 $a_1 = \sqcup$ 且 $u_1 = \epsilon$，则 $u_2 = \epsilon$。例:如,$(q_1,xa_1\underline{\sqcup}) \vdash_M (q_2,\underline{x})$。
+            -   如果 $a_1 = \sqcup$ 且 $u_1 = \epsilon$，则 $u_2 = \epsilon$。例:如,$(q_1,x\underline{\sqcup}) \vdash_M (q_2,\underline{x})$。
     
     3.  **右移 (Move Right)**: $b = \rightarrow$
         -   $w_2 = w_1a_1$
@@ -193,7 +193,7 @@ FA只能读取纸带上的内容并转移状态,PDA可以读取纸带上的内�
 
 ## 使用图灵机
 
-- 图灵机 M 接受输入字符串 $w \in (\Sigma - \{\sqcup, \triangleleft\})^*$，如果从初始配置 $(s, \triangleleft\ \underline{\sqcup}w)$ 出发，经过若干步推导后，能够到达一个接受配置（
+- 图灵机 M 接受输入字符串 $w \in (\Sigma - \{\sqcup, \triangleleft\})^*$，如果从初始配置 $(s, \triangleleft\ \underline{\sqcup}w)$ 出发，经过若干步推导后，能够到达一个接受配置
 
 - 令 $\Sigma_0 \subseteq \Sigma - \{\sqcup, \triangleleft\}$ 为一个字母表 —— 即 M 的输入字母表。
 
@@ -213,3 +213,125 @@ FA只能读取纸带上的内容并转移状态,PDA可以读取纸带上的内�
 </div>
 
 - 这里就用到了我们之前说的基础图灵机
+
+
+### 递归可枚举
+
+!!! definition
+    设 $M = (K, \Sigma, \delta, s, H)$ 是一个图灵机。令 $\Sigma_0 \subseteq \Sigma - \{\triangleright, \sqcup\}$ 为一个字母表，$L \subseteq \Sigma_0^*$。
+    
+    - **半判定 (Semidecide)**: 图灵机 $M$ 半判定 $L$，当且仅当对所有 $w \in \Sigma^*$，以下条件成立：
+        - $w \in L$ 当且仅当 $M$ 在输入 $w$ 上停机。
+    
+    - **递归可枚举 (Recursively Enumerable, r.e.)**：一个语言 $L$ 是递归可枚举的，当且仅当存在一个图灵机 $M$ 能够半判定 $L$
+    > 所有递归语言都是递归可枚举语言
+
+### 递归语言的性质
+
+1. 递归语言的补集也是递归语言。
+
+    - 只要一个图灵机能够判定语言 $L$，我们就可以构造另一个图灵机来判定 $L$ 的补集 $\overline{L}$，方法是交换接受和拒绝状态。
+
+2. 递归语言的并集和交集也是递归语言。
+
+    - 对于两个递归语言 $L_1$ 和 $L_2$，我们可以构造一个图灵机来判定它们的并集 $L_1 \cup L_2$ 和交集 $L_1 \cap L_2$，方法是分别运行判定 $L_1$ 和 $L_2$ 的图灵机，并根据结果决定接受或拒绝。
+
+
+### 其他概念
+
+1. 一般的,对于一个输入$w$,初始状态为$(s,\triangleright\ \underline{\sqcup}w)$,并且$w$中不能有$\triangleright$和$\sqcup$符号.
+
+2.  假设图灵机 $M$ 在输入 $w$ 上停机，且 $(s, \triangleright\sqcup w) \vdash_M^* (h, \triangleright\sqcup y)$，其中 $y \in \Sigma_0^*$。则称 $y$ 为 $M$ 在输入 $w$ 上的**输出**，记作 $M(w)$。
+
+3. **计算函数**：设 $f: \Sigma_0^* \to \Sigma_0^*$ 为一个函数。图灵机 $M$ 计算函数 $f$，当且仅当对所有 $w \in \Sigma_0^*$，有 $M(w) = f(w)$。
+
+4. **递归函数**：函数 $f$ 是递归的，当且仅当存在一个图灵机 $M$ 能够计算 $f$。
+
+
+!!! example "构造一个图灵机计算函数$succ(n)=n+1$"
+    <div style="text-align: center;">
+        <img src="../../../image/mac193.png" width="30%">
+        <br>
+        <caption>图灵机计算函数$succ(n)=n+1$示意图</caption>
+    </div>
+
+    先找到这个二进制串的最后一位,然后:
+
+    - 如果是0,就把它改成1,然后停机.
+
+    - 如果是1,就把它改成0,然后继续向左找下一位,重复这个过程.
+
+    - 如果是空格,说明原来是形如`111...1`的字符串,就把空格改成1,原来的整体右移一位(已经全部变成0),然后停机.
+
+---
+
+
+## 图灵机拓展
+
+### Multi-tape Turing Machine
+
+!!! definition "k-带图灵机"
+    设 $k \geq 1$ 是一个整数。$k$-带图灵机是一个五元组 $M = (K, \Sigma, \delta, s, H)$，其中：
+    
+    - $K$、$\Sigma$、$s$ 和 $H$ 的定义与普通图灵机相同。
+    
+    - 转移函数为：$\delta: (K - H) \times \Sigma^k \to K \times (\Sigma \cup \{\leftarrow, \rightarrow\})^k$
+
+!!! definition "k-带图灵机的配置"
+    设 $M = (K, \Sigma, \delta, s, H)$ 是一个 $k$-带图灵机。$M$ 的配置是以下集合的一个成员：
+    
+    $$K \times \left(\triangleright\Sigma^* \times (\Sigma^* (\Sigma - \sqcup) \cup \{\epsilon\})\right)^k$$
+    
+    即**每一带**都有一个左端符号 $\triangleright$，左侧的内容，和右侧到最后一个非空白符号的内容。
+
+**约定**:
+
+1. 输入的字符串被放在第一个磁带上
+
+2. 其他磁带初始时为空白符号,并且头在最左边的空格上
+
+3. 计算的最后,输出在第一个磁带上,其他磁带可以忽略.
+
+
+!!! example "复制机 (Copying Machine)"
+    **问题**：将 $\sqcup w\sqcup$ 转换为 $\sqcup w\sqcup w\sqcup$（其中 $w$ 不包含空白符号）
+    
+    **解决方案**：使用 2-带图灵机实现。
+    
+    **算法步骤**：
+    
+    1. **第一阶段 - 复制到第二带**
+
+        - 同时向右移动两条磁带的读头
+
+        - 将第一条磁带上的每个符号复制到第二条磁带上
+
+        - 直到在第一条磁带上遇到空白符号为止
+    
+    2. **第二阶段 - 准备第二带**
+
+        - 向左移动第二条磁带的读头
+
+        - 直到在第二条磁带上遇到空白符号为止
+    
+    3. **第三阶段 - 复制回第一带**
+
+        - 同时向右移动两条磁带的读头
+
+        - 将第二条磁带上的符号复制到第一条磁带上
+        
+        - 当第二条磁带上遇到空白符号时停机
+    
+    **结果**：第一条磁带最终包含 $\sqcup w\sqcup w\sqcup$
+
+    <div style="text-align: center;">
+        <img src="../../../image/mac194.png" width="40%">
+        <br>
+        <caption>复制机示意图</caption>
+    </div>
+
+    <div style="text-align: center;">
+        <img src="../../../image/mac195.png" width="60%">
+        <br>
+        <caption>一个例子</caption>
+    </div>
