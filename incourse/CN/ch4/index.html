@@ -2838,6 +2838,8 @@
       
         
       
+        
+      
     
     
     
@@ -2961,6 +2963,34 @@
     
   
     Chapter 3:进程同步
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/bank/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    银行家算法
   
 
     
@@ -3287,6 +3317,78 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipv4地址与mac地址" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IPv4地址与MAC地址
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IPv4地址与MAC地址">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#地址解析协议-arp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        地址解析协议 (ARP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip数据报的发送和转发" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IP数据报的发送和转发
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipv4数据报的首部格式" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IPv4数据报的首部格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#静态路由" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        静态路由
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rip协议" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RIP协议
+      
+    </span>
+  </a>
   
 </li>
       
@@ -4341,6 +4443,78 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ipv4地址与mac地址" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IPv4地址与MAC地址
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IPv4地址与MAC地址">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#地址解析协议-arp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        地址解析协议 (ARP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip数据报的发送和转发" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IP数据报的发送和转发
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipv4数据报的首部格式" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IPv4数据报的首部格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#静态路由" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        静态路由
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rip协议" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RIP协议
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4363,7 +4537,7 @@
 
 <h1 id="网络层">网络层<a class="headerlink" href="#网络层" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 1965 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 3 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 10 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 4174 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 5 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 21 分钟</p>
 </div>
 <blockquote>
 <p>网络层的主要任务是将Packet从源地址经过多个网络传输到目的地址.该任务可以拆分为分组转发和路由选择两个子任务.</p>
@@ -4485,7 +4659,7 @@
 <p>例如，一个ISP拥有<code>206.0.68.0/22</code>到<code>206.0.71.0/22</code>这4个地址块。它可以向外界宣告它拥有一个更大的地址块<code>206.0.68.0/20</code>，这样外部路由器只需要一条路由记录就能找到这个ISP下的所有主机。</p>
 <p>路由聚合极大地减少了路由表的规模，减轻了路由器的负担，提高了互联网的整体性能。</p>
 <div style="text-align: center;">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac193.png" data-desc-position="bottom"><img src="../../../image/mac193.png" width="80%"></a>
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac197.png" data-desc-position="bottom"><img src="../../../image/mac197.png" width="80%"></a>
     <br>
     路由聚合示例
 </div>
@@ -4498,6 +4672,164 @@
 <li><code>206.0.70.0/22</code> -&gt; 路由器R2</li>
 </ul>
 <p>当一个目的地址为<code>206.0.70.130</code>的数据包到达时，两个条目都能匹配。此时，路由器会采用<strong>最长前缀匹配</strong>原则，选择网络前缀最长的那个条目进行转发。在这个例子中，<code>/22</code>比<code>/20</code>更长，因此数据包会被转发给路由器R2。</p>
+<hr>
+<h2 id="ipv4地址与mac地址">IPv4地址与MAC地址<a class="headerlink" href="#ipv4地址与mac地址" title="Permanent link">¶</a></h2>
+<p>数据链路层将IP数据报封装为帧进行传输,而帧的发送和接收是通过MAC地址来实现的.因此,在同一局域网内,需要将IP地址转换为对应的MAC地址.</p>
+<p>在帧的传输过程中,源IP地址和目的IP地址保持不变,但源MAC地址和目的MAC地址会根据每一跳的链路进行更新.每个路由器在转发数据包时,会将目的MAC地址设置为下一跳路由器的MAC地址.</p>
+<p>然而,在同一局域网内,主机需要知道目的IP地址对应的MAC地址,以便正确发送帧.为此,引入了地址解析协议(ARP).</p>
+<h3 id="地址解析协议-arp">地址解析协议 (ARP)<a class="headerlink" href="#地址解析协议-arp" title="Permanent link">¶</a></h3>
+<p>地址解析协议（ARP, Address Resolution Protocol）的作用是在局域网中，根据一个已知的IP地址，找出其对应的MAC地址。</p>
+<p>每台主机或路由器都有一个<strong>ARP缓存表（ARP Cache）</strong>，用于存储本局域网内各主机和路由器的IP地址与MAC地址的对应关系。</p>
+<p><strong>工作流程如下：</strong></p>
+<ol>
+<li>
+<p><strong>检查ARP缓存</strong>：
+    当主机A想给本局域网内的主机B发送IP数据报时，它会首先在自己的ARP缓存表中查找是否有主机B的IP地址对应的条目。</p>
+<ul>
+<li>
+<p><strong>如果找到</strong>：就直接从缓存中读取主机B的MAC地址，并用该MAC地址作为目的地址来封装数据帧，然后发送。</p>
+</li>
+<li>
+<p><strong>如果未找到</strong>：则进入下一步。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>发送ARP请求</strong>：
+    主机A会在本局域网内以<strong>广播</strong>的形式发送一个<strong>ARP请求分组</strong>。该请求分组的主要内容是：“我的IP地址是<code>IP_A</code>，我的MAC地址是<code>MAC_A</code>。我想知道IP地址为<code>IP_B</code>的主机的MAC地址是什么？”</p>
+</li>
+<li>
+<p><strong>目标主机响应</strong>：
+    局域网内的所有主机都会收到这个广播的ARP请求。</p>
+<ul>
+<li>
+<p>其他主机发现请求的IP地址不是自己，就会忽略该请求。当然,也可以在这时将A的IP和MAC地址存入自己的ARP缓存表中,以备后用.</p>
+</li>
+<li>
+<p>主机B发现请求的IP地址与自己的IP地址相匹配，它就会向主机A发送一个<strong>ARP响应分组</strong>。这个响应是<strong>单播</strong>的，直接发送给主机A。响应分组的内容是：“我的IP地址是<code>IP_B</code>，我的MAC地址是<code>MAC_B</code>。”</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>更新缓存并发送数据</strong>：</p>
+<p>主机A收到主机B的ARP响应后，就知道了主机B的MAC地址。它会将这个IP到MAC的映射关系存入自己的ARP缓存表中（通常会设置一个生存时间，如20分钟），然后用这个MAC地址来封装数据帧并发送给主机B。</p>
+</li>
+</ol>
+<h3 id="ip数据报的发送和转发">IP数据报的发送和转发<a class="headerlink" href="#ip数据报的发送和转发" title="Permanent link">¶</a></h3>
+<p>如果一个主机A向另一个主机B发送数据报,首先需要判断主机B是否在同一局域网内.</p>
+<ul>
+<li>查看子网掩码,将主机A的IP地址和主机B的IP地址分别与子网掩码进行与运算,如果结果相同,则说明两台主机在同一局域网内.</li>
+</ul>
+<p>如果不在同一局域网内,主机A需要将数据报发送给默认网关(路由器).此时,主机A需要知道默认网关的MAC地址,通过ARP协议获取.</p>
+<p>默认网关在收到数据报后,首先检查收到的IP报是否正确,然后根据路由表选择下一跳路由器,将数据报封装在新的帧中发送出去.在这个过程中,路由器会更新帧的源MAC地址和目的MAC地址,但IP报的源IP地址和目的IP地址保持不变.</p>
+<h3 id="ipv4数据报的首部格式">IPv4数据报的首部格式<a class="headerlink" href="#ipv4数据报的首部格式" title="Permanent link">¶</a></h3>
+<div style="text-align: center;">
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac198.png" data-desc-position="bottom"><img src="../../../image/mac198.png" width="80%"></a>
+    <br>
+    IPv4数据报首部格式
+</div>
+
+<ul>
+<li>
+<p>固定部分(20字节):</p>
+<ul>
+<li>
+<p>版本(Version): 4位,表示IP协议的版本号,IPv4为4.</p>
+</li>
+<li>
+<p>首部长度(IHL): 4位,表示IP数据报首部的长度,单位为32位(4字节).比如,如果首部长度为5,则表示首部长度为20字节(仅包含固定部分).</p>
+</li>
+<li>
+<p>服务类型(Type of Service): 8位,用于指示数据报的优先级和服务质量要求.</p>
+</li>
+<li>
+<p>总长度(Total Length): 16位,表示整个IP数据报的长度,单位为字节.</p>
+</li>
+<li>
+<p>标识(Identification): 16位,用于唯一标识一个IP数据报,在分片时使用.</p>
+</li>
+<li>
+<p>标志(Flags): 3位,用于控制和标识分片.</p>
+</li>
+<li>
+<p>片偏移(Fragment Offset): 13位,表示分片在原始数据报中的位置.</p>
+</li>
+<li>生存时间(Time to Live, TTL): 8位,用于防止数据报在网络中无限循环.</li>
+<li>协议(Protocol): 8位,表示上层协议类型,如TCP为6,UDP为17.</li>
+<li>首部校验和(Header Checksum): 16位,用于检测IP数据报首部在传输过程中是否出错.</li>
+<li>源IP地址(Source IP Address): 32位,表示发送方的IP地址.</li>
+<li>目的IP地址(Destination IP Address): 32位,表示接收方的IP地址.</li>
+</ul>
+</li>
+<li>
+<p>可选部分(0-40字节): 可选字段,用于扩展IP数据报的功能,如安全选项、时间戳等.</p>
+</li>
+<li>
+<p>填充部分: 用0填充首部,使其长度为32位(四字节)的整数倍.</p>
+</li>
+</ul>
+<div class="admonition definition">
+<p class="admonition-title">IPV4的分片</p>
+<p>我们知道,帧的数据载荷长度是有限制的,不同类型的链路有不同的最大传输单元(MTU,Maximum Transmission Unit).当IP数据报的长度超过链路的MTU时,就需要进行分片(Fragmentation).这就用到了IP数据报首部中的标识、标志和片偏移字段.</p>
+<ul>
+<li>
+<p>标识:属于同一个IPv4数据报的各分片数据报应该具有相同的标识。</p>
+</li>
+<li>
+<p>标志:三位的作用分别是</p>
+<ul>
+<li>
+<p>第1位: 保留位,必须为0.</p>
+</li>
+<li>
+<p>第2位: 不分片位(DF, Don't Fragment),如果设置为1,表示该数据报不能被分片.</p>
+</li>
+<li>
+<p>第3位: 更多分片位(MF, More Fragments),如果设置为1,表示后面还有分片;如果为0,表示这是最后一个分片.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>片偏移:表示该分片在原始数据报中的位置,单位为8字节(64位).例如,如果一个分片的片偏移为100,则表示该分片在原始数据报中的位置是第800字节(100*8).</p>
+</li>
+</ul>
+<p></p><div style="text-align: center;">
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac199.png" data-desc-position="bottom"><img src="../../../image/mac199.png" width="80%"></a>
+    <br>
+    IPV4分片示例
+</div><p></p>
+</div>
+<div class="admonition definition">
+<p class="admonition-title">首部校验和</p>
+<p>发送端端计算方法为:</p>
+<ol>
+<li>
+<p>将首部看作一系列16位的字(Word),如果首部长度不是16位的整数倍,则在末尾补0.</p>
+</li>
+<li>
+<p>将原来的校验和字段设为0.</p>
+</li>
+<li>
+<p>将所有16位字相加,如果在加法过程中产生了最高位（第 16 位）的进位（Carry）,则将该进位加到结果的最低位（第 1 位）上.</p>
+</li>
+<li>
+<p>对结果取反,得到校验和.</p>
+</li>
+</ol>
+<p>而接受方在接收到数据报后,也会按照相同的方法计算校验和,如果结果全为1,则表示数据报首部没有错误;否则,表示数据报首部在传输过程中发生了错误,需要丢弃该数据报.</p>
+<p>原理是<span class="arithmatex">\(A + \bar{A} = -1\)</span>.</p>
+</div>
+<h3 id="静态路由">静态路由<a class="headerlink" href="#静态路由" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>静态路由是手动添加的路由条目,通常用于小型网络或特定的路由需求.管理员需要手动配置每个路由器的路由表,指定目的地址、子网掩码、下一跳地址和出接口等信息.</p>
+</blockquote>
+<p>默认路由是一种特殊的静态路由,用于处理那些目的地址不在路由表中的数据报.默认路由通常指向一个网关(路由器),当路由器无法在路由表中找到匹配的条目时,就会将数据报发送到默认路由指定的网关.</p>
+<p>为了在最长前缀匹配规则下,最后使用默认路由,默认路由的网络前缀长度为0,表示匹配所有目的地址,也即<code>0.0.0.0/0</code></p>
+<p>特定主机路由是另一种静态路由,用于指定某个特定主机的路由路径.这种路由条目的网络前缀长度为32,表示只匹配该主机的IP地址.</p>
+<h2 id="rip协议">RIP协议<a class="headerlink" href="#rip协议" title="Permanent link">¶</a></h2>
+<p>路由信息协议(Routing Information Protocol,RIP)是一种基于距离矢量算法的动态路由协议.</p>
+<p>该协议要求每一个路由器维护一个路由表,记录到达各个目的网络的距离(跳数)和下一跳路由器地址.路由器通过定期和相邻路由器交换路由信息来更新路由表.</p>
+<p>路由器到直连网络的距离为1,到其他网络的距离为经过的路由器数量.超过15跳的网络被认为是不可达的.</p>
 
 
 
@@ -4520,7 +4852,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年11月12日 04:49:52 UTC">2025年11月12日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年11月22日 06:14:57 UTC">2025年11月22日</span>
   </span>
 
     
