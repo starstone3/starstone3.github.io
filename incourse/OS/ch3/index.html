@@ -2842,6 +2842,8 @@
       
         
       
+        
+      
     
     
     
@@ -3312,6 +3314,56 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#死锁检测" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        死锁检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#死锁恢复" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        死锁恢复
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="死锁恢复">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#进程终止-process-termination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        进程终止 (Process Termination)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#资源抢占-resource-preemption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        资源抢占 (Resource Preemption)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3346,6 +3398,34 @@
     
   
     银行家算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4:内存管理
   
 
     
@@ -4742,6 +4822,56 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#死锁检测" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        死锁检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#死锁恢复" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        死锁恢复
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="死锁恢复">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#进程终止-process-termination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        进程终止 (Process Termination)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#资源抢占-resource-preemption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        资源抢占 (Resource Preemption)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4774,7 +4904,7 @@
 
 <h1 id="进程同步">进程同步<a class="headerlink" href="#进程同步" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 6947 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> 291 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 4 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 38 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 7522 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> 291 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 5 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 41 分钟</p>
 </div>
 <ul>
 <li>
@@ -5643,6 +5773,176 @@ D. 3</p>
 </li>
 </ol>
 <p>内容较多,见<a href="../bank/">银行家算法</a></p>
+<h4 id="死锁检测">死锁检测<a class="headerlink" href="#死锁检测" title="Permanent link">¶</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">每种资源只有一个实例</label><label for="__tabbed_1_2">每种资源有多个实例</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>在这样的情况下,我们引入一个新概念: <strong>等待图 (Wait-for Graph)</strong></p>
+<ul>
+<li>
+<p>等待图是资源分配图的变形。</p>
+</li>
+<li>
+<p><strong>节点 (Nodes)</strong>: 图中的节点代表进程。</p>
+</li>
+<li>
+<p><strong>边</strong>: 如果 <span class="arithmatex">\(P_i\)</span> 正在等待 <span class="arithmatex">\(P_j\)</span>，则存在一条从 <span class="arithmatex">\(P_i\)</span> 到 <span class="arithmatex">\(P_j\)</span> 的有向边 (<span class="arithmatex">\(P_i \to P_j\)</span>)。</p>
+</li>
+<li>
+<p><strong>检测</strong>: 定期调用算法在图中搜索环。</p>
+</li>
+<li>
+<p><strong>复杂度</strong>: 检测图中是否存在环的算法需要 <span class="arithmatex">\(n^2\)</span> 数量级的操作，其中 <span class="arithmatex">\(n\)</span> 是图中的顶点数。</p>
+</li>
+</ul>
+<p></p><div style="text-align: center; display: flex; flex-wrap: wrap; justify-content: space-around;">
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac203.png" data-desc-position="bottom"><img src="../../../image/mac203.png" width="40%"></a>
+</div><p></p>
+</div>
+<div class="tabbed-block">
+<p>这种情况下的检测做法类似于银行家算法，但有以下关键区别。</p>
+<p><strong>死锁检测算法 (Deadlock Detection Algorithm)</strong></p>
+<ol>
+<li>
+<p><strong>数据结构</strong>:</p>
+<ul>
+<li>
+<p><code>Available</code>: 长度为 <span class="arithmatex">\(m\)</span> 的向量，表示每种资源的可用数量。</p>
+</li>
+<li>
+<p><code>Allocation</code>: <span class="arithmatex">\(n \times m\)</span> 矩阵，表示每个进程当前持有的资源数量。</p>
+</li>
+<li><code>Request</code>: <span class="arithmatex">\(n \times m\)</span> 矩阵，表示每个进程<strong>当前</strong>请求的资源数量。（注意：这里是 <code>Request</code> 而不是银行家算法中的 <code>Need</code>）。</li>
+</ul>
+</li>
+<li>
+<p><strong>算法步骤</strong>:</p>
+<ul>
+<li>
+<ul>
+<li><code>Work = Available</code></li>
+</ul>
+<p><strong>初始化</strong>:</p>
+<ul>
+<li>
+<p>对于 <span class="arithmatex">\(i = 1, \dots, n\)</span>:</p>
+<ul>
+<li>
+<p>如果 <code>Allocation[i] != 0</code>，则 <code>Finish[i] = false</code></p>
+</li>
+<li>
+<p>否则，<code>Finish[i] = true</code> (不占有资源的进程不会导致死锁)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>查找</strong>: 找到一个下标 <span class="arithmatex">\(i\)</span> 满足：</p>
+<ul>
+<li>
+<p><code>Finish[i] == false</code></p>
+</li>
+<li>
+<p><code>Request[i] &lt;= Work</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>分配与回收</strong>: 如果找到这样的 <span class="arithmatex">\(i\)</span>:</p>
+<ul>
+<li><code>Work = Work + Allocation[i]</code> </li>
+<li>
+<p><code>Finish[i] = true</code></p>
+</li>
+<li>
+<p>以此类推，重复查找步骤。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>判断</strong>: 如果没有这样的 <span class="arithmatex">\(i\)</span> 存在，且此时仍有 <code>Finish[i] == false</code>，则系统处于死锁状态，且进程 <span class="arithmatex">\(P_i\)</span> 参与了死锁。</p>
+</li>
+</ul>
+<p>该算法的时间复杂度为 <span class="arithmatex">\(O(m \times n^2)\)</span>:</p>
+<ul>
+<li>这是因为在最坏的情况下,算法需要遍历<span class="arithmatex">\(n\)</span>次进程列表(假设每次只能找到一个可以Finish的进程),每次遍历<span class="arithmatex">\(n\)</span>个进程,对于每个未完成的进程都需要比较其<span class="arithmatex">\(m\)</span>个资源请求是否小于等于当前可用资源。故总的时间复杂度为<span class="arithmatex">\(O(m \times n^2)\)</span></li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<h3 id="死锁恢复">死锁恢复<a class="headerlink" href="#死锁恢复" title="Permanent link">¶</a></h3>
+<p>当检测到死锁后,系统可以采取两种基本措施:通知系统管理员(人工干预)或让系统自动恢复.</p>
+<p>系统自动恢复主要通过<strong>打破死锁</strong>来实现,主要有两种方法:进程终止和资源抢占.</p>
+<h4 id="进程终止-process-termination">进程终止 (Process Termination)<a class="headerlink" href="#进程终止-process-termination" title="Permanent link">¶</a></h4>
+<ol>
+<li>
+<p><strong>终止所有死锁进程 (Abort all deadlocked processes)</strong>:</p>
+<ul>
+<li>这种方法最简单,但代价很大.因为这些进程可能已经计算了很长时间,终止它们意味着这些计算成果都将丢失,必须重新计算.</li>
+</ul>
+</li>
+<li>
+<p><strong>逐个终止进程 (Abort one process at a time)</strong>:</p>
+<ul>
+<li>每次终止一个进程,直到死锁循环被消除.</li>
+<li>这种方法的开销较大,因为每次终止一个进程后,都需要重新运行死锁检测算法,以确定死锁是否已被消除.</li>
+</ul>
+</li>
+</ol>
+<p><strong>选择被终止进程的依据</strong>:
+在选择终止哪个进程时,通常会考虑以下因素(类似于调度算法):</p>
+<ul>
+<li>
+<p>进程的优先级 (Priority).</p>
+</li>
+<li>
+<p>进程已运行的时间以及完成任务还需要的时间.</p>
+</li>
+<li>
+<p>进程已使用的资源数量和类型.</p>
+</li>
+<li>
+<p>进程完成任务还需要多少资源.</p>
+</li>
+<li>
+<p>需要终止多少个进程才能打破死锁.</p>
+</li>
+<li>
+<p>进程是交互式(interactive)的还是批处理(batch)的.</p>
+</li>
+</ul>
+<h4 id="资源抢占-resource-preemption">资源抢占 (Resource Preemption)<a class="headerlink" href="#资源抢占-resource-preemption" title="Permanent link">¶</a></h4>
+<p>如果不终止进程,也可以通过抢占资源来打破死锁.即从一个或多个进程中夺取资源,并将这些资源分配给其他进程.</p>
+<ol>
+<li>
+<p><strong>选择受害者 (Selecting a victim)</strong>:</p>
+<ul>
+<li>也就是选择抢占哪个进程的资源.</li>
+<li>主要原则是<strong>最小化代价 (minimize cost)</strong>.例如,抢占一个使用了较少资源的进程的资源,或者抢占一个刚刚开始运行的进程的资源.</li>
+</ul>
+</li>
+<li>
+<p><strong>回滚 (Rollback)</strong>:</p>
+<ul>
+<li>当一个进程的资源被抢占后,它无法继续执行.</li>
+<li>必须将该进程回滚到某个安全状态,并从该状态重启进程.</li>
+<li>最简单的回滚方法是完全回滚(Total Rollback),即终止进程并重新执行.更有效的方法是回滚到足够打破死锁的那个状态.</li>
+</ul>
+</li>
+<li>
+<p><strong>饥饿 (Starvation)</strong>:</p>
+<ul>
+<li>如果总是选择同一个进程作为受害者(例如基于成本因素),那么该进程可能永远无法完成任务,导致饥饿.</li>
+<li>解决方案: 在成本因素中包含<strong>回滚次数</strong>.确保一个进程只能在有限的次数内被选为受害者.</li>
+</ul>
+</li>
+</ol>
 
 
 
@@ -5665,7 +5965,7 @@ D. 3</p>
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年11月22日 06:14:57 UTC">2025年11月22日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年12月1日 05:51:26 UTC">2025年12月1日</span>
   </span>
 
     
