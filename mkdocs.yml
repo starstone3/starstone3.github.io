@@ -153,6 +153,7 @@ nav :
       - "Chapter 2:进程与线程": incourse/OS/ch2.md
       - "Chapter 3:进程同步": incourse/OS/ch3.md
       - "银行家算法": incourse/OS/bank.md
+      - "Chapter 4:内存管理": incourse/OS/ch4.md
     - "计算机网络":
       - incourse/CN/index.md
       - "第一章:概述": incourse/CN/ch1.md
