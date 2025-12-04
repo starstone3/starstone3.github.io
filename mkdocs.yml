@@ -160,6 +160,7 @@ nav :
       - "第二章:物理层": incourse/CN/ch2.md
       - "第三章:数据链路层": incourse/CN/ch3.md
       - "第四章:网络层": incourse/CN/ch4.md
+      - "第五章:运输层": incourse/CN/ch5.md
   - "大一课程遗物":
     - incourse/old/index.md
     - "数据结构基础": incourse/old/fds.md
