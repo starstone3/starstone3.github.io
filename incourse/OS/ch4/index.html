@@ -3330,6 +3330,62 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#虚拟内存" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        虚拟内存
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="虚拟内存">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#请求分页存储管理" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        请求分页存储管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="请求分页存储管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#页表机制" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        页表机制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#缺页中断机构-page-fault-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        缺页中断机构 (Page Fault Mechanism)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3358,6 +3414,8 @@
       
         
           
+        
+      
         
       
         
@@ -3519,6 +3577,34 @@
     
   
     第四章:网络层
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CN/ch5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五章:运输层
   
 
     
@@ -4682,6 +4768,62 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#虚拟内存" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        虚拟内存
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="虚拟内存">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#请求分页存储管理" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        请求分页存储管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="请求分页存储管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#页表机制" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        页表机制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#缺页中断机构-page-fault-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        缺页中断机构 (Page Fault Mechanism)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4704,7 +4846,7 @@
 
 <h1 id="内存管理">内存管理<a class="headerlink" href="#内存管理" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 4039 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 5 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 20 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 4910 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 5 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 25 分钟</p>
 </div>
 <blockquote>
 <p>MMU负责把虚拟地址转换成物理地址</p>
@@ -5378,6 +5520,111 @@ EAT = (t + \epsilon)\alpha + (t + t + \epsilon)(1 - \alpha)
     段页式存储管理
 </div>
 
+<h2 id="虚拟内存">虚拟内存<a class="headerlink" href="#虚拟内存" title="Permanent link">¶</a></h2>
+<p>为了实现对虚拟内存的管理,有三种方法:</p>
+<ul>
+<li>
+<p>请求分页存储管理</p>
+</li>
+<li>
+<p>请求分段存储管理</p>
+</li>
+<li>
+<p>请求段页式存储管理</p>
+</li>
+</ul>
+<h3 id="请求分页存储管理">请求分页存储管理<a class="headerlink" href="#请求分页存储管理" title="Permanent link">¶</a></h3>
+<p>请求分页也即是我们在Lab5中实现的,和懒加载类似,在没有用到的时候,进程仅拥有页表,而没有实际的内存空间,当需要访问的时候,才会将页面调入内存。</p>
+<p>在运行过程中，如果程序访问的页面不在内存中，系统会触发<strong>缺页中断</strong>，由操作系统负责将缺失的页面从外存调入内存。如果内存已满，还需要利用<strong>页面置换算法</strong>将暂时不用的页面换出。</p>
+<p>为了实现这一机制，系统需要在硬件层面提供更复杂的支持，主要包括扩展的<strong>页表机制</strong>、<strong>缺页中断机构</strong>和<strong>地址变换机构</strong>。</p>
+<h4 id="页表机制">页表机制<a class="headerlink" href="#页表机制" title="Permanent link">¶</a></h4>
+<p>在请求分页系统中，页表不仅要完成逻辑地址到物理地址的映射，还需要记录页面的状态（是否在内存、是否被修改等），以支持调页和置换。因此，页表项（PTE）在基本分页的基础上增加了若干字段：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">页号</th>
+<th style="text-align: center;">物理块号</th>
+<th style="text-align: center;"><strong>状态位 P</strong></th>
+<th style="text-align: center;"><strong>访问字段 A</strong></th>
+<th style="text-align: center;"><strong>修改位 M</strong></th>
+<th style="text-align: center;"><strong>外存地址</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>各字段含义如下：</p>
+<ul>
+<li>
+<p><strong>状态位 (Present/Valid Bit, P)</strong>：</p>
+<ul>
+<li>用于标记该页是否已调入内存。</li>
+<li><span class="arithmatex">\(P=1\)</span>：表示页面在内存中，可直接访问。</li>
+<li><span class="arithmatex">\(P=0\)</span>：表示页面在外存中，访问时会触发缺页中断。</li>
+</ul>
+</li>
+<li>
+<p><strong>访问字段 (Accessed/Reference Bit, A)</strong>：</p>
+<ul>
+<li>记录页面最近是否被访问过，或者记录访问次数。</li>
+<li><strong>作用</strong>：供页面置换算法（如 LRU）参考，决定哪些页面是"最近未被使用"的，从而优先淘汰。</li>
+</ul>
+</li>
+<li>
+<p><strong>修改位 (Modified/Dirty Bit, M)</strong>：</p>
+<ul>
+<li>标记页面调入内存后是否被修改过。</li>
+<li><strong>作用</strong>：置换页面时，如果 <span class="arithmatex">\(M=1\)</span>，说明页面数据已变，必须将其写回外存以更新副本；如果 <span class="arithmatex">\(M=0\)</span>，说明页面未变，直接覆盖即可，无需写回，从而减少 I/O 开销。</li>
+</ul>
+</li>
+<li>
+<p><strong>外存地址</strong>：</p>
+<ul>
+<li>指出该页在外存（通常是磁盘交换区）中的物理位置，以便在缺页时能找到并调入该页。</li>
+</ul>
+</li>
+</ul>
+<h4 id="缺页中断机构-page-fault-mechanism">缺页中断机构 (Page Fault Mechanism)<a class="headerlink" href="#缺页中断机构-page-fault-mechanism" title="Permanent link">¶</a></h4>
+<p>当进程试图访问一个状态位 <span class="arithmatex">\(P=0\)</span> 的页面时，硬件会产生<strong>缺页中断</strong>（Page Fault）。这是一种<strong>内部异常</strong>（Exception），其处理过程如下：</p>
+<ol>
+<li><strong>保护现场</strong>：CPU 暂停当前指令的执行，保存上下文。 </li>
+<li>
+<p><strong>分析原因</strong>：操作系统分析中断原因，确认是缺页。</p>
+</li>
+<li>
+<p><strong>查找空闲物理块</strong>：</p>
+<ul>
+<li>
+<p>若内存有空闲块，直接分配。</p>
+</li>
+<li>
+<p>若内存已满，依据<strong>置换算法</strong>选择一个受害者页面（Victim Page）换出。如果该页被修改过（<span class="arithmatex">\(M=1\)</span>），需先写回外存。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>调入页面</strong>：启动磁盘 I/O，将所需页面读入选定的物理块。</p>
+</li>
+<li>
+<p><strong>更新页表</strong>：修改页表项，将状态位 <span class="arithmatex">\(P\)</span> 置为 1，填入物理块号。</p>
+</li>
+<li>
+<p><strong>恢复执行</strong>：更新快表（TLB），恢复上下文，<strong>重新执行</strong>刚才那条产生缺页中断的指令。</p>
+</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>缺页中断与普通中断的一个重要区别是，缺页中断是在指令执行<strong>期间</strong>产生的，处理完成后需要<strong>重新执行</strong>该指令；而普通中断通常在指令执行<strong>结束</strong>后响应。</p>
+</div>
+
 
 
 
@@ -5399,7 +5646,7 @@ EAT = (t + \epsilon)\alpha + (t + t + \epsilon)(1 - \alpha)
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年12月2日 07:50:37 UTC">2025年12月2日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年12月4日 08:08:00 UTC">2025年12月4日</span>
   </span>
 
     
