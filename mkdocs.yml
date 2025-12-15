@@ -214,14 +214,14 @@ extra:
             <a href="mailto:pxxhello@gmail.com">俺的gmail</a>
 
 plugins:
-  - minify
+
   - statistics:
       words_per_minute: 200
   - search:
       lang:
         - zh
         - en
-      separator: '[\s\-\.]+'
+      separator: '[\s\-]+'
   - glightbox
   - git-revision-date-localized:
       enable_creation_date: true
@@ -235,6 +235,7 @@ plugins:
         - article/index.md
         - tools/index.md
         - incourse/index.md
+  - minify
 markdown_extensions:
   - toc:
       permalink: true

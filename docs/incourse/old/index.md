@@ -1,5 +1,7 @@
 ---
 comments: true
+search:
+  exclude: true
 ---
 # 开始
 !!! note "" 

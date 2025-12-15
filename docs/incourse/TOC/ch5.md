@@ -65,6 +65,8 @@ comments: true
 
     *   $\bar{H}_1 = \{ "M" \mid M \text{ does not halt on input } "M" \}$ (自我不停机)
 
+    假设停机问题是递归的,我们希望能用反证法证明它不是递归的.
+
     **1. $H$ 递归 $\Rightarrow H_1$ 递归**
     
     如果存在 TM $M_0$ 能判定一般停机问题 $H$，那么我们可以构造 $M_1$ 来判定 $H_1$：
@@ -101,6 +103,46 @@ comments: true
     $\Rightarrow$ **矛盾 (Contradiction)**: $M^*$ halts on $"M^*"$ $\iff$ $M^*$ does not halt on $"M^*"$.
     
     因此，不存在这样的 $M^*$，即 $\bar{H}_1$ 不是递归可枚举的。
+
+    因此,我们证明了停机问题是递归可枚举的,也很显然,因为在它可接收的输入上,它可以停机,在它无法接收的输入上,它无法停机.
+
+
+!!! note "另一个视角,停机问题是R.E.中最难的"
+    **假设** $H$ 是递归的，即存在一个判定器 (decider) $M_0$ 可以判定 $H$。
+
+    **给定** 任意一个半判定 (semideciding) 语言 $L(M)$ 的图灵机 $M$。
+    
+    我们可以设计一个新的图灵机 $M'$ 来**判定** $L(M)$，步骤如下：
+    
+    1.  **转换**: $M'$ 将其输入带从 $\triangleright \sqcup w \sqcup$ 转换为 $\triangleright \sqcup "M" "w" \sqcup$。
+    
+    2.  **模拟**: $M'$ 在该输入上模拟 $M_0$。
+    
+    **逻辑**: 
+    
+    因为 $M_0$ 能判定 $M$ 是否在 $w$ 上停机，如果 $M_0$ 输出“停机”，说明 $w \in L(M)$；如果 $M_0$ 输出“不停机”，说明 $w \notin L(M)$。
+    
+    这样，$M'$ 就能**判定**任何递归可枚举 (R.E.) 语言 $L(M)$。对于输入$w$,$M'$模拟$M_0$在输入$"M" "w"$上的运行。如果$M_0$输出`Yes`,那么说明$w \in L(M)$,$M'$也输出`Yes`，如果$M_0$输出`No`,那么说明$w \notin L(M)$,$M'$也输出`No`。这样,$M'$就判定了语言$L(M)$。
+    
+    这将意味着 **所有的 R.E. 语言都是递归的** (All R.E. languages are recursive)。
+    
+    **结论 (Remark)**:
+    
+    *   存在从所有 R.E. 语言到 $H$ 的归约 (Reductions from all r.e. languages to H)。
+
+    *   因此，$H$ 对于 R.E. 语言是完备的 (**H is complete for the r.e. languages**)。
+
+
+!!! definition "接收 vs 判定 (Recognize vs Decide)"
+    *   **接收 (Recognize)**: 对于语言 $L$ 中的输入，图灵机停机并接受；对于不在 $L$ 中的输入，图灵机**可能停机拒绝，也可能死循环**。
+        *   对应语言类：**递归可枚举 (Recursively Enumerable, R.E.)**
+    
+    *   **判定 (Decide)**: 对于语言 $L$ 中的输入，图灵机停机并接受；对于不在 $L$ 中的输入，图灵机**必须停机并拒绝** (Always Halts)。
+        *   对应语言类：**递归 (Recursive)**
+
+
+---
+
 
 ## 归约 (Reduction)
 
@@ -144,3 +186,50 @@ comments: true
     *   $\langle M, w \rangle \notin H \Rightarrow M$ 在 $w$ 上不停机 $\Rightarrow M_w$ 在空带上写入 $w$ 后运行但不停机 $\Rightarrow M_w \notin L$。
     
     由此可见，$H \le L$。因为 $H$ 不可判定，所以 $L$ 也不可判定。
+
+
+---
+
+## 递归可枚举语言的性质
+
+!!! definition "图灵可枚举 (Turing-enumerable)"
+    我们称图灵机 $M$ **枚举 (enumerates)** 语言 $L$，当且仅当对于 $M$ 的某个固定状态 $q$，有：
+    $$ L = \{ w \mid (s, \triangleright \sqcup) \vdash_M^* (q, \triangleright \sqcup w) \} $$
+    一个语言是**图灵可枚举的 (Turing-enumerable)**，当且仅当存在一个图灵机枚举它。
+
+    !!! info "解释 (Explanation)"
+        可以将这里的 $M$ 看作一个 **生成器 (Generator)**，而不是通常的判定器。
+        
+        *   **从零开始**: 机器 $M$ 从**空带** (input is empty) 开始运行 (starting configuration $(s, \triangleright \sqcup)$)。
+        
+        *   **输出机制**: 只要 $M$ 运行到了特定状态 $q$，此时带子上写的内容 $w$ 就算作是被“枚举”出来了，即 $w \in L$。
+        
+        *   **持续运行**: 机器 $M$ 并不需要停机。它可以进入状态 $q$ (输出 $w_1$)，然后继续计算，再次进入状态 $q$ (输出 $w_2$)，周而复始。
+        
+        *   **集合定义**: 最终，语言 $L$ 就是 $M$ 在整个运行历史中所有“路过”状态 $q$ 时带子内容的集合。
+
+!!! theorem "递归可枚举与图灵可枚举等价"
+    一个语言是递归可枚举的 (Recursively Enumerable)，当且仅当它是图灵可枚举的 (Turing-enumerable)。
+
+!!! theorem "递归语言的充要条件"
+    语言 $L$ 是**递归的** (Recursive)，当且仅当 $L$ 和它的补集 $\bar{L}$ 都是**递归可枚举的** (Recursively Enumerable, r.e.)。
+    
+    $$ L \in \text{Recursive} \iff L \in \text{r.e.} \land \bar{L} \in \text{r.e.} $$
+
+!!! proof "证明 (Proof)"
+    **1. ($\Rightarrow$) 如果 $L$ 是递归的，那么 $L$ 和 $\bar{L}$ 都是 r.e.**
+    
+    *   如果 $L$ 是递归的，根据定义，它一定是递归可枚举的。
+    *   递归语言对补运算封闭 (closed under complement)。因此，如果 $L$ 是递归的，$\bar{L}$ 也是递归的，从而 $\bar{L}$ 也是 r.e.。
+
+    **2. ($\Leftarrow$) 如果 $L$和 $\bar{L}$ 都是 r.e.，那么 $L$ 是递归的**
+    
+    我们构造一个判定过程 (Decision Procedure) 来判定 $L$：
+    
+    *   **并行模拟 (Parallel Simulation)**: 给定输入 $w$，我们同时运行 $L$ 的半判定程序 $M$ 和 $\bar{L}$ 的半判定程序 $\bar{M}$。
+    *   **必然停机**: 因为对于任意 $w$，要么 $w \in L$，要么 $w \in \bar{L}$ (两者必居其一)。因此，两个半判定程序中**必然有一个**会最终停机。
+    *   **判定逻辑**:
+        *   如果 $M$ 停机接受，$w \in L$，我们接受。
+        *   如果 $\bar{M}$ 停机接受，$w \in \bar{L}$ (即 $w \notin L$)，我们拒绝。
+        
+    因此，我们可以总是在有限时间内给出 Yes/No 的回答，说明 $L$ 是递归的。
