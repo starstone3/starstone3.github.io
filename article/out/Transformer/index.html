@@ -4335,7 +4335,7 @@ $$
 <li><strong>Q（Query）</strong>：通过一个矩阵<span class="arithmatex">\(W^Q\)</span>乘上输入向量得到。</li>
 <li><strong>K（Key）</strong>：通过一个矩阵<span class="arithmatex">\(W^K\)</span>乘上输入向量得到。</li>
 <li><strong>V（Value）</strong>：通过一个矩阵<span class="arithmatex">\(W^V\)</span>乘上输入向量得到。</li>
-<li>除以<span class="arithmatex">\(<span class="arithmatex">\(\sqrt{d_k}\)</span>\)</span>的目的是防止梯度消失，因为Q和K的点积可能会产生很大的值。</li>
+<li>除以$<span class="arithmatex">\(\sqrt{d_k}\)</span>$的目的是防止梯度消失，因为Q和K的点积可能会产生很大的值。</li>
 </ul>
 </li>
 <li>实际上，可能存在多个注意力头，每个注意力头的<span class="arithmatex">\(W^Q\)</span>、<span class="arithmatex">\(W^K\)</span>和<span class="arithmatex">\(W^V\)</span>矩阵是不一样的，这样可以让不同的注意力头关注不同的内容。这些不同的注意力头产生的结果矩阵再拼接起来。</li>
