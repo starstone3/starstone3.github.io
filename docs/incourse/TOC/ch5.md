@@ -186,7 +186,7 @@ comments: true
     *   $\langle M, w \rangle \notin H \Rightarrow M$ 在 $w$ 上不停机 $\Rightarrow M_w$ 在空带上写入 $w$ 后运行但不停机 $\Rightarrow M_w \notin L$。
     
     由此可见，$H \le L$。因为 $H$ 不可判定，所以 $L$ 也不可判定。
-
+    > 在我看来,规约的精髓在于行为一致,也就是当且仅当的特点.当停机问题的图灵机输出Yes时,新问题,或者说新语言的图灵机也要输出Yes,反之亦然.对于no的情况也是一样
 
 ---
 

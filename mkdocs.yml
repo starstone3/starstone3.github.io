@@ -162,6 +162,7 @@ nav :
       - "第三章:数据链路层": incourse/CN/ch3.md
       - "第四章:网络层": incourse/CN/ch4.md
       - "第五章:运输层": incourse/CN/ch5.md
+      - "第六章:应用层": incourse/CN/ch6.md
   - "大一课程遗物":
     - incourse/old/index.md
     - "数据结构基础": incourse/old/fds.md
@@ -186,8 +187,6 @@ nav :
     - "封面": tools/index.md
     - "妙妙小工具": tools/tools.md
     - "分享": tools/share.md
-  - "本科回顾": 
-    - "封面": life/index.md
 
 
 
