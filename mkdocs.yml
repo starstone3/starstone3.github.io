@@ -155,6 +155,7 @@ nav :
       - "Chapter 3:进程同步": incourse/OS/ch3.md
       - "银行家算法": incourse/OS/bank.md
       - "Chapter 4:内存管理": incourse/OS/ch4.md
+      - "Chapter 5:文件系统": incourse/OS/ch5.md
     - "计算机网络":
       - incourse/CN/index.md
       - "第一章:概述": incourse/CN/ch1.md
@@ -163,6 +164,7 @@ nav :
       - "第四章:网络层": incourse/CN/ch4.md
       - "第五章:运输层": incourse/CN/ch5.md
       - "第六章:应用层": incourse/CN/ch6.md
+      - "第七章:网络安全": incourse/CN/ch7.md
   - "大一课程遗物":
     - incourse/old/index.md
     - "数据结构基础": incourse/old/fds.md

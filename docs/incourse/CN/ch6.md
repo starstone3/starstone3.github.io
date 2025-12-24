@@ -242,4 +242,224 @@ sequenceDiagram
     Auth-->>Local: 6. 知道了! IP 是 1.2.3.4
 ```
 
+## 文件传输协议 (FTP)
 
+**文件传输协议 (FTP)** 是互联网上使用最广泛的文件传输协议。它使用 **TCP** 服务, 是一种 **有状态** 的协议。
+
+!!! note "核心特点: 双连接模式"
+    FTP 的一个显著特点是它使用 **两个并发的 TCP 连接**:
+    
+    1.  **控制连接 (Control Connection)**:
+        *   端口: **21**
+        *   生命周期: 贯穿整个会话期间 (Persistent)。
+        *   作用: 传输控制命令 (如登录用户名、密码、改变目录 `CWD`、获取列表 `LIST` 等)。
+    
+    2.  **数据连接 (Data Connection)**:
+        *   端口: **20** (主动模式下)
+        *   生命周期: **非持久** (Non-persistent)。每传输一个文件, 就建立一个新的数据连接, 传输完毕后关闭。
+        *   作用: 实际传输文件内容。
+        
+    > 实际上,FTP协议等实现和我们实验6的内容十分相似,都是由主进程来监听客户的连接,一旦有连接,创建子进程来处理
+
+### FTP 的两种传输模式
+
+数据连接的建立有两种模式, 主要区别在于 **谁主动发起连接**。
+
+!!! info "主动模式 (Active Mode / PORT)"
+    > 服务器连接客户端的20端口
+    
+    *   **原理**: 客户端监听一个随机端口 $N$, 并命令服务器 "来连我的端口 $N$"。服务器收到后, 从端口 **20** 发起连接去连客户端。
+
+    *   **弊端**: 容易被客户端的防火墙拦截 (因为是外部试图连入内部)。
+
+!!! success "被动模式 (Passive Mode / PASV)"
+    > 客户端连接服务器的随机端口
+
+    *   **原理**: 客户端命令服务器 "进入被动模式"。服务器开启一个随机端口 $P$, 并通知客户端 "我的端口是 $P$"。客户端主动发起连接去连服务器的端口 $P$。
+    
+    *   **优势**: 对客户端防火墙友好 (因为是客户端发起的出站连接)。**现代 FTP 客户端默认为被动模式。**
+
+!!! warning "有状态 (Stateful)"
+    FTP 服务器必须维护用户的状态信息 (如当前工作目录、用户账户关联)。这限制了服务器同时支持的用户数量 (可拓展性较差)。
+
+## 电子邮件 (Electronic Mail)
+
+电子邮件系统主要由三个主要构件组成: **用户代理 (User Agent)**、**邮件服务器 (Mail Server)** 和 **邮件传输协议**。
+
+**过程简述**: 发送方推给服务器 (SMTP), 服务器推给服务器 (SMTP), 接收方从服务器拉取 (POP3/IMAP)。
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant Sender as 发件人
+    participant UA_Sender as 用户代理 (Sender)
+    participant Server_Sender as 发送端邮件服务器
+    participant Server_Receiver as 接收端邮件服务器
+    participant UA_Receiver as 用户代理 (Receiver)
+    participant Receiver as 收件人
+
+    Note over Sender, UA_Sender: 1. 撰写和编辑
+    Sender->>UA_Sender: 撰写邮件
+
+    Note over UA_Sender, Server_Sender: 2. 发送邮件 (SMTP)
+    Sender->>UA_Sender: 点击 "发送"
+    UA_Sender->>Server_Sender: 发送邮件
+    
+    Note right of Server_Sender: 3. 放入缓存队列
+
+    Note over Server_Sender, Server_Receiver: 4. 直接传输 (SMTP)
+    Server_Sender->>Server_Receiver: 建立 TCP 连接并发送
+    Note right of Server_Sender: 无中间服务器落地
+
+    Note right of Server_Receiver: 5. 放入收件人邮箱
+
+    Note over Receiver, UA_Receiver: 6. 读取邮件 (Pull)
+    Receiver->>UA_Receiver: 打算收信
+    UA_Receiver->>Server_Receiver: 请求获取 (POP3/IMAP)
+    Server_Receiver-->>UA_Receiver: 返回邮件
+    UA_Receiver-->>Receiver: 阅读邮件
+```
+
+### 邮件协议概览
+
+| 协议 | 全称 | 端口 | 作用 | 类型 |
+| :--- | :--- | :--- | :--- | :--- |
+| **SMTP** | Simple Mail Transfer Protocol | **25** | 发送邮件: <br>1. 用户 -> 发送方服务器 <br>2. 发送方服务器 -> 接收方服务器 | **推 (Push)** |
+| **POP3** | Post Office Protocol v3 | **110** | 接收邮件: <br>接收方服务器 -> 用户 | **拉 (Pull)** |
+| **IMAP** | Internet Mail Access Protocol | **143** | 接收邮件: <br>接收方服务器 -> 用户 | **拉 (Pull)** |
+
+### 通用互联网邮件扩充 (MIME)
+
+由于 SMTP 最初设计时只能传输 **7-bit ASCII** 文本, 无法直接传输非英语字符、二进制文件 (图片、视频) 等。**MIME (Multipurpose Internet Mail Extensions)** 协议解决了这个问题。
+
+*   **作用**: MIME 在用户代理 (UA) 处将非 ASCII 数据 (如中文、图片) 转换为 ASCII 格式, 再交给 SMTP 传输。接收方收到后再还原。
+*   **不取代 SMTP**: MIME 是 SMTP 的补充, 并不是取代 SMTP。
+
+!!! abstract "MIME 头部字段"
+    MIME 增加了一些新的邮件首部字段来描述数据内容:
+    
+    *   `MIME-Version`: MIME 版本。
+    *   `Content-Type`: 数据类型 (如 `text/html`, `image/jpeg`).
+    *   `Content-Transfer-Encoding`: 编码方式 (如 `Base64` 用于将二进制转为 ASCII).
+
+### SMTP (简单邮件传输协议)
+
+SMTP 用于将邮件从发送方的邮件服务器传输到接收方的邮件服务器。
+
+!!! summary "SMTP 关键点"
+    *   **推协议 (Push Protocol)**: 发送方主动发起连接。
+    *   **ASCII 命令**: 所有命令和响应都是 7-bit ASCII 文本 (这也是为什么需要 MIME 来传输非文本数据)。
+    *   **持久连接**: SMTP 一般使用持久连接。
+    *   **交互过程**: 
+        1.  握手 (Handshaking)
+        2.  报文传输 (Transfer of messages)
+        3.  关闭 (Closure)
+
+### POP3 vs IMAP (邮件访问协议)
+
+当邮件到达接收方的邮件服务器后, 用户代理 (UA) 需要使用拉协议 (Pull Protocol) 将邮件取回。
+
+!!! failure "不能用 SMTP 取邮件"
+    SMTP 是推协议, 也就是 "我要给你东西"。也就是用户不能命令服务器 "把我的邮件推给我", 而是需要自己去 "拉"。
+
+#### POP3 (邮局协议)
+*   **简单**: 功能有限。
+*   **工作模式**:
+    *   **下载并删除 (Download and Delete)**: 邮件一旦下载到本地, 服务器上就删除了。
+    *   **下载并保留 (Download and Keep)**: 允许在服务器上保留副本。
+*   **无状态 (Stateless)**: POP3 服务器在会话之间通常不保留状态信息 (除了邮件本身)。
+
+#### IMAP (因特网邮件访问协议)
+*   **复杂 & 强大**: 允许用户在服务器上组织邮件。
+*   **在以服务器为中心的模式**: 邮件一直保存在服务器上, 用户可以在不同设备上看到一致的文件夹状态。
+*   **主要功能**:
+    *   创建/删除/重命名服务器上的文件夹。
+    *   只下载邮件头 (Header),以此决定是否下载正文。
+    *   **有状态 (Stateful)**: 服务器必须维护目录结构和邮件状态 (已读/未读/红旗等)。
+
+!!! tip "比较 POP3 和 IMAP"
+    如果你只在一个设备上看邮件, POP3 够用了。
+    如果你既在手机看, 又在电脑看, 还需要同步 "已读" 状态和文件夹, 必须用 **IMAP**。
+
+
+
+## 万维网
+> 万维网中,所有资源通过**统一资源定位符(URL)**来定位,并通过**超文本传输协议(HTTP)**来传输。
+>
+> 直白的说,www=URL+HTTP+HTML
+
+### 统一资源定位符 (URL)
+
+URL 是用来标识互联网上资源位置的字符串。
+
+**一般形式**: `<协议>://<主机>:<端口>/<路径>`
+*   `协议`: 如 `http`, `ftp`.
+*   `主机`: 域名或 IP 地址.
+*   `端口`: 可省略 (HTTP 默认为 80).
+*   `路径`: 资源在服务器上的具体位置.
+
+### 超文本传输协议 (HTTP)
+
+HTTP 是一个 **无状态 (Stateless)** 的协议。服务器不保留客户端的历史请求记录。
+
+*   **Cookie**: 为了解决无状态带来的业务困难 (如购物车、登录状态), 引入了 Cookie 技术在客户端保存状态。
+
+#### HTTP 连接方式
+
+1.  **非持久连接 (Non-persistent)** (HTTP/1.0):
+    *   每请求一个对象 (如一张图片), 都要新建一个 TCP 连接。
+    *   开销大, 效率低。
+
+2.  **持久连接 (Persistent)** (HTTP/1.1):
+    *   **流水线方式 (Pipelined)**: 默认. 客户端可以以此发送多个请求, 不必等待响应。
+    *   **非流水线方式**: 客户收到前一个响应才能发下一个请求。
+
+#### HTTP 报文格式
+
+HTTP 报文是面向文本的。
+
+!!! note "请求报文 (Request)"
+    由 **请求行 (Request Line)**、**首部行 (Headers)** 和 **实体主体 (Body)** 组成。
+    
+    ```http
+    GET /index.html HTTP/1.1      <-- 请求行: 方法 URL 版本
+    Host: www.example.com         <-- 首部行: 键值对
+    User-Agent: Mozilla/5.0
+    Connection: keep-alive        <-- `Connection: keep-alive` 表示持久连接,若为`close`则表示非持久连接
+                                  <-- 空行 (CRLF)
+    (Body: GET方法通常为空)        <-- 实体主体
+    ```
+
+!!! note "响应报文 (Response)"
+    由 **状态行 (Status Line)**、**首部行 (Headers)** 和 **实体主体 (Body)** 组成。
+    
+    ```http
+    HTTP/1.1 200 OK               <-- 状态行: 版本 状态码 短语
+    Date: Tue, 01 Jan 2024...     <-- 首部行
+    Content-Type: text/html
+    Content-Length: 1234
+                                  <-- 空行 (CRLF)
+    <html>...</html>              <-- 实体主体: 请求的文件内容
+    ```
+
+#### 常用方法 (Methods)
+*   `GET`: 请求读取由 URL 所标识的信息 (最常用)。
+*   `POST`: 向服务器提交数据 (如表单提交)。
+*   `HEAD`: 请求读取由 URL 所标识的信息的首部 (不返回主体, 用于测试文件是否存在/修改时间)。
+*   `PUT`: 上传文件。
+*   `DELETE`: 删除资源。
+
+#### 状态码 (Status Codes)
+*   **2xx (成功)**: `200 OK` (请求成功)。
+*   **3xx (重定向)**: `301 Moved Permanently` (永久移动)。
+*   **4xx (客户端错误)**: `400 Bad Request` (请求语法错误), `404 Not Found` (找不到资源)。
+*   **5xx (服务器错误)**: `500 Internal Server Error` (服务器内部故障), `502 Bad Gateway` (网关错误)。
+
+### 超文本标记语言 (HTML)
+HTML 是一种标记语言 (Markup Language), 使用标签 (Tag) 来描述网页的结构和内容。
+
+- HTML:描述网页上有什么
+
+- CSS:描述网页上怎么显示
+
+- JS:描述网页上怎么交互
