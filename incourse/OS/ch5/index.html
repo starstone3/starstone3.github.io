@@ -2627,6 +2627,8 @@
       
         
       
+        
+      
     
     
     
@@ -2806,6 +2808,34 @@
     
   
     Ch5:不可判定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TOC/prove/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    课内的证明
   
 
     
@@ -3293,6 +3323,56 @@
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#文件物理结构" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件物理结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件物理结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#连续分配" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        连续分配
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linked-allocation-链式分配" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linked Allocation (链式分配)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indexed-allocation-索引分配" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indexed Allocation (索引分配)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4604,6 +4684,56 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#文件物理结构" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件物理结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件物理结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#连续分配" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        连续分配
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linked-allocation-链式分配" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linked Allocation (链式分配)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indexed-allocation-索引分配" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indexed Allocation (索引分配)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4631,7 +4761,7 @@
 
 <h1 id="文件系统">文件系统<a class="headerlink" href="#文件系统" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 2039 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 4 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 10 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 2895 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 4 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 14 分钟</p>
 </div>
 <div class="admonition definition">
 <p class="admonition-title">文件</p>
@@ -4903,6 +5033,116 @@
 </ul>
 <p>FCB存储在硬盘的<strong>Inode</strong>中。</p>
 </div>
+<h3 id="文件物理结构">文件物理结构<a class="headerlink" href="#文件物理结构" title="Permanent link">¶</a></h3>
+<p>文件的物理结构即硬盘上的block是如何分配给文件的,由此引申出了如下的分配方式:</p>
+<h4 id="连续分配">连续分配<a class="headerlink" href="#连续分配" title="Permanent link">¶</a></h4>
+<p>在连续分配方式中,文件占据硬盘中一组连续的block,这样,我们只需要记录:</p>
+<ul>
+<li>
+<p>文件的起始block</p>
+</li>
+<li>
+<p>文件的大小</p>
+</li>
+</ul>
+<p>就可以访问文件,但这样对于为新文件分配空间不友好</p>
+<div class="admonition info">
+<p class="admonition-title">Extent-Based Systems (基于扩展/长度系统)</p>
+<p><strong>Extent (扩展/区段)</strong> 指的是磁盘上一组连续的物理块（Block）。基于 Extent 的分配是<strong>连续分配</strong>的一种改良变体。</p>
+<ul>
+<li>
+<p><strong>基本原理</strong>: </p>
+<ul>
+<li>
+<p>文件由一个或多个 Extent 组成。每个 Extent 内部是连续分配的。</p>
+</li>
+<li>
+<p>当创建一个文件时，分配一个初始的 Extent。</p>
+</li>
+<li>
+<p>当文件大小超过当前 Extent 时，系统会分配另一个新的 Extent（不一定与前一个相邻），并将其链接到文件上。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>元数据结构</strong>: </p>
+<ul>
+<li>
+<p>文件的位置信息不再是简单的“起始块+长度”，而是一个 <strong>Extent 列表</strong>。</p>
+</li>
+<li>
+<p>每个 Extent 记录包含：<strong>起始物理块号</strong>、<strong>块数（长度）</strong>、以及指向下一个 Extent 的<strong>指针</strong>（或直接在 Inode 中存储多个 Extent 描述符）。</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h4 id="linked-allocation-链式分配">Linked Allocation (链式分配)<a class="headerlink" href="#linked-allocation-链式分配" title="Permanent link">¶</a></h4>
+<p>在链式分配中，文件以<strong>数据块链表</strong>的形式组织。每个块不仅存储数据，还存储指向下一个块的指针。</p>
+<p>文件的目录条目只需要保存<strong>两个</strong>指针：</p>
+<ol>
+<li><strong>起始块指针 (Start)</strong></li>
+<li>
+<p><strong>终止块指针 (End)</strong></p>
+</li>
+<li>
+<p><strong>优点</strong>: 没有外部碎片，文件大小可以动态增长。</p>
+</li>
+<li>
+<p><strong>缺点</strong>: 只支持<strong>顺序访问</strong>，随机访问效率低（需要遍历链表）；指针占用额外空间；可靠性较差（指针丢失导致断链）。</p>
+</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">File Allocation Table (FAT)</p>
+<p>FAT (文件分配表) 是链式分配的一个重要变体，广泛用于 MS-DOS 和早期的 Windows 操作系统。</p>
+<ol>
+<li>
+<ul>
+<li>将所有盘块的链接指针统一存放在磁盘开头的一张表中，称为 <strong>文件分配表 (FAT)</strong>。</li>
+</ul>
+<p><strong>基本原理</strong>:</p>
+<ul>
+<li>
+<p>每个磁盘块在 FAT 表中对应一项。表项的内容是<strong>下一个盘块的编号</strong>。</p>
+</li>
+<li>
+<p>文件结束通常用一个特殊的标记（如 -1 或 EOF）表示。</p>
+</li>
+<li>
+<p>文件的目录条目只需存储<strong>起始块号</strong>。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>优点</strong>:</p>
+<ul>
+<li><strong>支持随机访问</strong>: 只要将 FAT 读入内存，就可以快速跟踪链表找到任意偏移量的块，无需读取中间的数据块。</li>
+<li><strong>减少磁头移动</strong>: 指针集中存储，不需要在磁盘上跳跃读取指针。</li>
+</ul>
+</li>
+<li>
+<p><strong>缺点</strong>:</p>
+<ul>
+<li><strong>占用内存</strong>: 为了保持高性能，FAT 表通常需要常驻内存。对于大容量磁盘和大量小块，FAT 表可能非常大，占用大量内存。</li>
+</ul>
+</li>
+</ol>
+</div>
+<h4 id="indexed-allocation-索引分配">Indexed Allocation (索引分配)<a class="headerlink" href="#indexed-allocation-索引分配" title="Permanent link">¶</a></h4>
+<p><strong>基本原理</strong>:
+每个文件都有其自己的<strong>索引块 (Index Block)</strong>，这是一个磁盘块，其中包含了指向文件所有数据块的地址列表。
+文件的目录条目包含指向该<strong>索引块</strong>的指针。</p>
+<ul>
+<li><strong>优点</strong>:<ul>
+<li><strong>支持直接访问</strong>: 可以通过索引块直接查找到任意偏移量的数据块。</li>
+<li><strong>无外部碎片</strong>: 数据块可以分散存储。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>:<ul>
+<li><strong>指针开销</strong>: 即使是很小的文件，也需要分配整个索引块来存储指针（可以通过多级索引等机制优化，如 Unix Inode）。</li>
+</ul>
+</li>
+</ul>
 
 
 
@@ -4925,7 +5165,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年12月24日 05:39:12 UTC">2025年12月24日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年12月29日 07:27:15 UTC">2025年12月29日</span>
   </span>
 
     
