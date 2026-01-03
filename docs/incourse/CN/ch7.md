@@ -333,23 +333,23 @@ sequenceDiagram
     2.  **记录阶段 (Record)**: 使用主密钥对应用层数据进行对称加密传输。
 
 
-    ```mermaid
-    sequenceDiagram
-    autonumber
-    participant C as 客户端/浏览器
-    participant S as 购物网站 Web服务器(HTTPS/443)
+```mermaid
+sequenceDiagram
+autonumber
+participant C as 客户端/浏览器
+participant S as 购物网站 Web服务器(HTTPS/443)
 
-    C->>S: ClientHello（浏览器支持的加密算法/版本/随机数）
-    S-->>C: ServerHello（服务器选定的加密算法/版本/随机数）
-    S-->>C: 服务器数字证书（含公钥）
-    Note over C: 使用CA公开发布的公钥验证证书
-    C->>S: 秘密数/预主密钥（用服务器公钥加密）
-    Note over S: 用服务器私钥解密得到秘密数
-    Note over C,S: 按协商算法由随机数+秘密数生成共享的对称会话密钥
-    C-->>S: 会话密钥产生完成（Finished）
-    S-->>C: 会话密钥产生完成（Finished）
-    C<->>S: 用会话密钥加密的安全数据传输
-    ```
+C->>S: ClientHello（浏览器支持的加密算法/版本/随机数）
+S-->>C: ServerHello（服务器选定的加密算法/版本/随机数）
+S-->>C: 服务器数字证书（含公钥）
+Note over C: 使用CA公开发布的公钥验证证书
+C->>S: 秘密数/预主密钥（用服务器公钥加密）
+Note over S: 用服务器私钥解密得到秘密数
+Note over C,S: 按协商算法由随机数+秘密数生成共享的对称会话密钥
+C-->>S: 会话密钥产生完成（Finished）
+S-->>C: 会话密钥产生完成（Finished）
+C<->>S: 用会话密钥加密的安全数据传输
+```
 
 ### 5. 应用层 (Application Layer) - PGP
 
