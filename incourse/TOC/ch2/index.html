@@ -5088,7 +5088,7 @@ w \in L(M) &amp;\iff (s, w) \vdash^*_M (f, \epsilon) \text{ for some } f \in F \
 <summary>为什么需要一个新的初始状态?</summary>
 <p>在常规的想法下,我们把原来的初始状态也允许当终止状态,并让每个终止状态无条件地跳回初始状态,似乎就可以了.</p>
 <p>但是,有<strong>反例</strong>:</p>
-<p>令<span class="arithmatex">\(L(M)=a(ab)^*\)</span>,那么<span class="arithmatex">\(L(M)^*= (a(ab)^*)^*\)</span>.如果不引入新的初始状态,那么原来的初始状态是终止状态,因此,字符串<span class="arithmatex">\(ab\)</span>就会被接受,但是<span class="arithmatex">\(ab \notin (a(ab)^*)^*\)</span>.</p>
+<p>令<span class="arithmatex">\(L(M)=a(ba)^*\)</span>,那么<span class="arithmatex">\(L(M)^*= (a(ba)^*)^*\)</span>.如果不引入新的初始状态,那么原来的初始状态是终止状态,因此,字符串<span class="arithmatex">\(ab\)</span>就会被接受,但是<span class="arithmatex">\(ab \notin (a(ba)^*)^*\)</span>.</p>
 </details>
 <h4 id="complementation">Complementation<a class="headerlink" href="#complementation" title="Permanent link">¶</a></h4>
 <p>假设有一个DFA,为<span class="arithmatex">\(M_1 = (Q_1, \Sigma, \delta_1, s_1, F_1)\)</span>,它识别语言<span class="arithmatex">\(L(M_1)\)</span>.</p>
@@ -5284,7 +5284,7 @@ k + (k + p)m + p = (k + p)(m + 1)
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年10月20日 07:23:25 UTC">2025年10月20日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年1月5日 13:47:36 UTC">2026年1月5日</span>
   </span>
 
     
