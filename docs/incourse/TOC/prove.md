@@ -6,6 +6,8 @@
 
 2. DFA $\leftrightarrow$ NFA（子集构造 + 显然方向）
 
+1. DFA $\leftarrow$ 正则表达式(加一个新起始状态和新终止状态,不断消除原来的节点)
+
 3. CFG $\leftrightarrow$ PDA（CFG $\to$ PDA：用栈模拟推导；PDA $\to$ CFG：用“从 p 到 q 把栈顶 A 弹空”的变量）
 
 4. TM $\leftrightarrow$ NTM（把非确定分支按 BFS/交错模拟,三带图灵机）
@@ -33,8 +35,11 @@
 | **递归可枚举语言 (RE)** | ✅ | ✅ | ❌ | ✅ | ✅ |
 
 > **关键点说明**：
+> 
 > 1. **CFL 的交集**：两个 CFL 的交集**不一定**是 CFL（经典反例：$L_1=\{a^nb^nc^m\}$, $L_2=\{a^mb^nc^n\}$ 都是 CFL，但交集 $a^nb^nc^n$ 不是）。
+> 
 > 2. **CFL 的补集**：CFL 的补集**不一定**是 CFL。如果 CFL 对补集封闭，结合对并集封闭，根据德摩根律 $L_1 \cap L_2 = \overline{\overline{L_1} \cup \overline{L_2}}$ 可推导出对交集封闭，产生矛盾。
+> 
 > 3. **RE 的补集**：RE 的补集**不一定**是 RE。如果一个语言 $L$ 和它的补集 $\overline{L}$ 都是 RE，那么 $L$ 是递归语言（Recursive）。停机问题 $H$ 是 RE，但其补集 $\overline{H}$ 不是 RE。
 
 ## 可判定 / 不可判定
