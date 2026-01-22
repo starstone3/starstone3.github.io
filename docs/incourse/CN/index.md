@@ -4,7 +4,7 @@ search:
   exclude: true
 ---
 
-# TOC
+# CN
 
 !!! note "" 
     <div style="border: 2px solid #4CAF50; border-radius: 10px; padding: 20px; background-color: #baf6f8; text-align: center;">

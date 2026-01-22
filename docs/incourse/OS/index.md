@@ -4,7 +4,7 @@ search:
   exclude: true
 ---
 
-# TOC
+# OS
 
 !!! note "" 
     <div style="border: 2px solid #4CAF50; border-radius: 10px; padding: 20px; background-color: #baf6f8; text-align: center;">
@@ -15,3 +15,7 @@ search:
             OS寄寄寄
         </div>
     </div>
+
+- <a href="https://starstone3.github.io/smaterials/OSA4(修改).pdf" download="OSA4(修改).pdf">OSA4(修改).pdf</a>
+
+- <a href="https://starstone3.github.io/smaterials/OSA4(修改).docx" download="OSA4(修改).docx">OSA4(修改).docx</a>
