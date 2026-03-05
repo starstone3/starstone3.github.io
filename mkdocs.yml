@@ -166,6 +166,13 @@ nav :
       - "第五章:运输层": incourse/CN/ch5.md
       - "第六章:应用层": incourse/CN/ch6.md
       - "第七章:网络安全": incourse/CN/ch7.md
+    - "量子信息基础":
+      - incourse/qi/index.md
+      - "信息量与熵": incourse/qi/lec1.md
+    - "编译原理":
+      - incourse/bianyi/index.md
+      - "第一章:介绍": incourse/bianyi/ch1.md
+      - "第二章:词法分析": incourse/bianyi/ch2.md
   - "大一课程遗物":
     - incourse/old/index.md
     - "数据结构基础": incourse/old/fds.md
