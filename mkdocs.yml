@@ -169,6 +169,7 @@ nav :
     - "量子信息基础":
       - incourse/qi/index.md
       - "信息量与熵": incourse/qi/lec1.md
+      - "复向量空间": incourse/qi/lec2.md
     - "编译原理":
       - incourse/bianyi/index.md
       - "第一章:介绍": incourse/bianyi/ch1.md
