@@ -7,13 +7,13 @@
         <meta name="author" content="starstone3">
       
       
-        <link rel="canonical" href="https://starstone3.github.io/incourse/db/ch18/">
+        <link rel="canonical" href="https://starstone3.github.io/incourse/qi/lec3/">
       
       
-        <link rel="prev" href="../ch17/">
+        <link rel="prev" href="../lec2/">
       
       
-        <link rel="next" href="../ch19/">
+        <link rel="next" href="../../bianyi/">
       
       
         
@@ -24,7 +24,7 @@
     
     
       
-        <title>Chapter 18:并发控制 - Starstone3's bed</title>
+        <title>Spins, Qubits, and Linear Operators for Measurement - Starstone3's bed</title>
       
     
     
@@ -178,7 +178,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#并发控制" class="md-skip">
+        <a href="#spins-qubits-and-linear-operators-for-measurement" class="md-skip">
           跳转至
         </a>
       
@@ -212,7 +212,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 18:并发控制
+              Spins, Qubits, and Linear Operators for  Measurement
             
           </span>
         </div>
@@ -1463,8 +1463,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1511,15 +1509,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4">
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../db/" class="md-nav__link ">
               
   
   
@@ -1543,7 +1541,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1563,7 +1561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch1/" class="md-nav__link">
+      <a href="../../db/ch1/" class="md-nav__link">
         
   
   
@@ -1591,7 +1589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch2/" class="md-nav__link">
+      <a href="../../db/ch2/" class="md-nav__link">
         
   
   
@@ -1619,7 +1617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch3/" class="md-nav__link">
+      <a href="../../db/ch3/" class="md-nav__link">
         
   
   
@@ -1647,7 +1645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch4/" class="md-nav__link">
+      <a href="../../db/ch4/" class="md-nav__link">
         
   
   
@@ -1675,7 +1673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch5/" class="md-nav__link">
+      <a href="../../db/ch5/" class="md-nav__link">
         
   
   
@@ -1703,7 +1701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch6/" class="md-nav__link">
+      <a href="../../db/ch6/" class="md-nav__link">
         
   
   
@@ -1731,7 +1729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch7/" class="md-nav__link">
+      <a href="../../db/ch7/" class="md-nav__link">
         
   
   
@@ -1759,7 +1757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch12/" class="md-nav__link">
+      <a href="../../db/ch12/" class="md-nav__link">
         
   
   
@@ -1787,7 +1785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch13/" class="md-nav__link">
+      <a href="../../db/ch13/" class="md-nav__link">
         
   
   
@@ -1815,7 +1813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch14/" class="md-nav__link">
+      <a href="../../db/ch14/" class="md-nav__link">
         
   
   
@@ -1843,7 +1841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch15/" class="md-nav__link">
+      <a href="../../db/ch15/" class="md-nav__link">
         
   
   
@@ -1871,7 +1869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch16/" class="md-nav__link">
+      <a href="../../db/ch16/" class="md-nav__link">
         
   
   
@@ -1899,7 +1897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch17/" class="md-nav__link">
+      <a href="../../db/ch17/" class="md-nav__link">
         
   
   
@@ -1924,37 +1922,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 18:并发控制
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../db/ch18/" class="md-nav__link">
         
   
   
@@ -1970,243 +1941,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#lock-based-protocols基于锁的协议" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lock-Based Protocols(基于锁的协议)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Lock-Based Protocols(基于锁的协议)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-two-phase-locking-protocol" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Two-Phase Locking Protocol
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2pl-proof" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2PL-Proof
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lock-conversion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lock Conversion
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation-of-locking" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation of Locking
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation of Locking">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#lock-table" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lock Table
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deadlock-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deadlock Handling
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deadlock-detection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deadlock Detection
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deadlock-recovery" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deadlock Recovery
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#graph-based-protocols" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Graph-Based Protocols
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Graph-Based Protocols">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tree-protocols" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tree Protocols
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multiple-granularity多粒度" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Multiple Granularity(多粒度)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Multiple Granularity(多粒度)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#intention-locks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Intention Locks
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#insert-and-delete-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Insert and Delete Operations
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Insert and Delete Operations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#index-locking-protocols" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Index Locking Protocols
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#next-key-locking" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next-Key Locking
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multiversion-concurrency-control-schemes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Multiversion Concurrency Control Schemes
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2219,7 +1953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch19/" class="md-nav__link">
+      <a href="../../db/ch19/" class="md-nav__link">
         
   
   
@@ -3667,6 +3401,8 @@
                 
   
   
+    
+  
   
   
     
@@ -3689,15 +3425,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" checked="">
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../qi/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -3721,7 +3457,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3741,7 +3477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../qi/lec1/" class="md-nav__link">
+      <a href="../lec1/" class="md-nav__link">
         
   
   
@@ -3769,7 +3505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../qi/lec2/" class="md-nav__link">
+      <a href="../lec2/" class="md-nav__link">
         
   
   
@@ -3794,10 +3530,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../qi/lec3/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spins, Qubits, and Linear Operators for  Measurement
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3813,6 +3576,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#stern-gerlach-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stern-Gerlach Experiment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-operators-and-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linear Operators and Matrices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pauli-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pauli Matrices
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4779,216 +4595,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#lock-based-protocols基于锁的协议" class="md-nav__link">
+  <a href="#stern-gerlach-experiment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lock-Based Protocols(基于锁的协议)
+        Stern-Gerlach Experiment
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Lock-Based Protocols(基于锁的协议)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-two-phase-locking-protocol" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Two-Phase Locking Protocol
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2pl-proof" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2PL-Proof
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lock-conversion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lock Conversion
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation-of-locking" class="md-nav__link">
+  <a href="#linear-operators-and-matrices" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementation of Locking
+        Linear Operators and Matrices
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Implementation of Locking">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#lock-table" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lock Table
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deadlock-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deadlock Handling
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deadlock-detection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deadlock Detection
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deadlock-recovery" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deadlock Recovery
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#graph-based-protocols" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Graph-Based Protocols
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Graph-Based Protocols">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tree-protocols" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tree Protocols
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#multiple-granularity多粒度" class="md-nav__link">
+  <a href="#pauli-matrices" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Multiple Granularity(多粒度)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Multiple Granularity(多粒度)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#intention-locks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Intention Locks
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#insert-and-delete-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Insert and Delete Operations
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Insert and Delete Operations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#index-locking-protocols" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Index Locking Protocols
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#next-key-locking" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next-Key Locking
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multiversion-concurrency-control-schemes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Multiversion Concurrency Control Schemes
+        Pauli Matrices
       
     </span>
   </a>
@@ -5015,596 +4647,446 @@
   
 
 
-<h1 id="并发控制">并发控制<a class="headerlink" href="#并发控制" title="Permanent link">¶</a></h1>
+<h1 id="spins-qubits-and-linear-operators-for-measurement">Spins, Qubits, and Linear Operators for  Measurement<a class="headerlink" href="#spins-qubits-and-linear-operators-for-measurement" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 2626 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 16 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 13 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 3032 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 1 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 15 分钟</p>
 </div>
-<h2 id="lock-based-protocols基于锁的协议">Lock-Based Protocols(基于锁的协议)<a class="headerlink" href="#lock-based-protocols基于锁的协议" title="Permanent link">¶</a></h2>
-<p>我们使用锁来控制对数据的访问,以确保在并发环境中数据的一致性和完整性。锁可以是独占锁或共享锁。</p>
-<ul>
-<li>
-<p>共享锁(S): 允许多个事务同时读取数据，但不允许修改。也即,数据是只读的</p>
-</li>
-<li>
-<p>独占锁(X): 允许一个事务对数据进行修改，其他事务不能读取或修改该数据。也即,对拥有锁的事务而言,数据是可读可写的</p>
-</li>
-<li>
-<p>对于同一个数据项,锁之间的排斥关系为:</p>
-<ul>
-<li>
-<p>如果一个事务持有共享锁,那么其他事务可以申请共享锁,但不能申请排他锁</p>
-</li>
-<li>
-<p>如果一个事务持有排他锁,那么其他事务不能申请任何类型的锁</p>
-</li>
-</ul>
-</li>
-</ul>
-<p>一个事务执行锁操作的例子:</p>
-<div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac22.png" data-desc-position="bottom"><img src="../../../image/mac22.png" width="30%"></a>
-    <br>
-    Example for lock
-</div>
-
-<p>但,这样简单的操作无法保证事务可串行化,如果A,B在读取的中间发生了更新,那么结果就会不一致.</p>
-<p>还有死锁的情况:</p>
-<div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac23.png" data-desc-position="bottom"><img src="../../../image/mac23.png" width="30%"></a>
-    <br>
-    Deadlock
-</div>
-<blockquote>
-<p>Neither <span class="arithmatex">\(T_3\)</span> nor <span class="arithmatex">\(T_4\)</span> can make progress — executing  <code>lock-S(B)</code> causes <span class="arithmatex">\(T_4\)</span> to wait for <span class="arithmatex">\(T_3\)</span> to release its lock on B</p>
-<p>while executing <code>lock-X(A)</code> causes <span class="arithmatex">\(T_3\)</span> to wait for <span class="arithmatex">\(T_4\)</span> to release its lock on A.</p>
-<p>Such a situation is called a deadlock. </p>
-</blockquote>
-<p>为此,我们引入locking protocol的概念.</p>
-<h3 id="the-two-phase-locking-protocol">The Two-Phase Locking Protocol<a class="headerlink" href="#the-two-phase-locking-protocol" title="Permanent link">¶</a></h3>
-<div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac24.png" data-desc-position="bottom"><img src="../../../image/mac24.png" width="70%"></a>
-    <br>
-    Two-Phase Locking Protocol
-</div>
-
-<p>两个阶段:</p>
-<ul>
-<li>
-<p><strong>Growing Phase</strong>: 事务可以申请锁,但不能释放锁</p>
-</li>
-<li>
-<p><strong>Shrinking Phase</strong>: 事务可以释放锁,但不能申请锁</p>
-</li>
-<li>
-<p>两个阶段转换的标志是事务释放第一个锁</p>
-</li>
-<li>
-<p>分界线是事务获得最后一个锁的时间,被称为<strong>lock point</strong></p>
-</li>
-<li>
-<p>按照<strong>lock point</strong>的顺序排序,得到一个调度,这个调度是可串行化的</p>
-</li>
-</ul>
-<h3 id="2pl-proof">2PL-Proof<a class="headerlink" href="#2pl-proof" title="Permanent link">¶</a></h3>
-<ul>
-<li>
-<p>by Contradiction</p>
-<ul>
-<li>若在前驱图中,<span class="arithmatex">\(T_i\)</span>到<span class="arithmatex">\(T_j\)</span>有一条边,那么<span class="arithmatex">\(LP(T_i)\)</span>在<span class="arithmatex">\(LP(T_j)\)</span>之前</li>
-</ul>
-<p></p><div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac25.png" data-desc-position="bottom"><img src="../../../image/mac25.png" width="70%"></a>
-    <br>
-    Contradiction
-</div><p></p>
-</li>
-<li>
-<p>by Induction</p>
-<ul>
-<li>
-<p>令<span class="arithmatex">\(T_i\)</span>是最小锁点的事务,若<span class="arithmatex">\(T_j\)</span>中有操作会阻碍<span class="arithmatex">\(T_i\)</span>中的某个操作</p>
-</li>
-<li>
-<p>那么<span class="arithmatex">\(T_j\)</span>的锁点在<span class="arithmatex">\(T_i\)</span>的锁点之前</p>
-</li>
-</ul>
-<p></p><div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac26.png" data-desc-position="bottom"><img src="../../../image/mac26.png" width="70%"></a>
-    <br>
-    Induction
-</div><p></p>
-</li>
-</ul>
-<hr>
-<p>基本的二阶段锁协议上延伸拓展出了一些其他的锁协议,为了保证可恢复的调度:</p>
-<ul>
-<li>
-<p><strong>Strict Two-Phase Locking Protocol</strong>: 事务在commit/abort之前,不能释放任何排他锁</p>
-<ul>
-<li>这样,就能保证在该事务出现需要回滚的情况下,不会有其他事务读到它写的数据</li>
-</ul>
-</li>
-<li>
-<p><strong>Rigorous Two-Phase Locking Protocol</strong>: 事务在commit/abort之前,不能释放任何锁</p>
-</li>
-</ul>
-<div class="admonition exmaple">
-<p class="admonition-title">Exmaple</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">T1</th>
-<th style="text-align: left;">T2</th>
-<th style="text-align: left;">T3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">write C</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">write C</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">write A</td>
-</tr>
-<tr>
-<td style="text-align: left;">write A</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
-<ol>
-<li>
-<p>画出前驱图</p>
-<p></p><div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/image.png" data-desc-position="bottom"><img src="../../../image/image.png" width="40%"></a>
-</div><p></p>
-</li>
-<li>
-<p>锁的操作?
-    </p><div align="center">
-        <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/image1.png" data-desc-position="bottom"><img src="../../../image/image1.png" width="40%"></a>
-    </div><p></p>
-</li>
-</ol>
-</div>
-<h3 id="lock-conversion">Lock Conversion<a class="headerlink" href="#lock-conversion" title="Permanent link">¶</a></h3>
-<blockquote>
-<p>锁可以升级和降级</p>
-</blockquote>
-<ul>
-<li>
-<p>在Growing Phase中,可以将S锁升级为X锁,但不能将X锁降级为S锁</p>
-</li>
-<li>
-<p>在Shrinking Phase中,可以将X锁降级为S锁,但不能将S锁升级为X锁</p>
-</li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Automatic Acquisition of Locks</p>
-<p>读和写操作都嵌入了锁相关的操作</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">read</label><label for="__tabbed_1_2">write</label></div>
+<h2 id="stern-gerlach-experiment">Stern-Gerlach Experiment<a class="headerlink" href="#stern-gerlach-experiment" title="Permanent link">¶</a></h2>
+<p>Stern-Gerlach 实验研究的是: 带有磁矩的原子束经过<strong>非均匀磁场</strong>时会如何偏转。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">实验装置</label><label for="__tabbed_1_2">测量结果</label><label for="__tabbed_1_3">再次测量</label><label for="__tabbed_1_4">物理意义</label><label for="__tabbed_1_5">Qubit 与 Bloch 球</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p></p><div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac31.png" data-desc-position="bottom"><img src="../../../image/mac31.png" width="70%"></a>
-    <br>
-    Read
-</div><p></p>
+<p>实验装置可以概括为:</p>
+<ul>
+<li>先用 collimator 把银原子束压窄成一束很细的粒子流</li>
+<li>再让它穿过一个沿 <code>z</code> 方向、且强度随位置变化的非均匀磁场</li>
+<li>最后原子打到玻璃探测屏上,观察落点分布</li>
+</ul>
+<p>磁场通常写成</p>
+<div class="arithmatex">\[
+\vec{B}(z) = B(z)\hat{z}
+\]</div>
+<p>这里关键不只是有磁场,而是磁场有梯度,因此原子会受到与</p>
+<div class="arithmatex">\[
+F_z \propto \frac{dB}{dz}
+\]</div>
+<p>相关的力,从而在 <code>z</code> 方向发生偏转。</p>
 </div>
 <div class="tabbed-block">
-<p></p><div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac32.png" data-desc-position="bottom"><img src="../../../image/mac32.png" width="70%"></a>
-    <br>
-    Write
-</div><p></p>
+<p>如果把自旋想成一个经典小磁针,那原子束经过磁场后,按直觉似乎应该在屏上形成<strong>连续分布</strong>。</p>
+<p>但 Stern 和 Gerlach 实际观察到的是:</p>
+<ul>
+<li>打开电磁铁后,银原子束分裂成了两条清晰的分支</li>
+<li>屏上只出现两个离散落点区域,而不是一整片连续条纹</li>
+</ul>
+<p>这说明沿 <code>z</code> 方向测量时,自旋只给出两个离散结果,通常记作:</p>
+<div class="arithmatex">\[
+|+z\rangle,\ |-z\rangle
+\]</div>
+<p>或者对应地理解为“spin up / spin down”。</p>
 </div>
+<div class="tabbed-block">
+<p>如果把第一台仪器后的探测屏拿掉,只保留其中一束,再把它送入第二台<strong>同样沿 <code>z</code> 方向</strong>的 Stern-Gerlach 仪器中,结果是:</p>
+<ul>
+<li>
+<p>光束<strong>不会再次分裂</strong></p>
+</li>
+<li>
+<p>它只会沿原来的那一支继续前进</p>
+</li>
+</ul>
+<p>这表示第一次测量之后,粒子已经被制备到了某个确定的 <code>z</code> 方向自旋本征态中。对同一方向重复测量,结果是确定的。</p>
+<p>如果把第二台仪器旋转,让磁场梯度改为沿 <code>x</code> 方向,情况就不同了:</p>
+<ul>
+<li>
+<p>原来从 <code>z</code> 方向筛出来的单束原子,进入第二台后会<strong>再次分裂成两束</strong></p>
+</li>
+<li>
+<p>且这两束的强度相等</p>
+</li>
+</ul>
+<p>也就是说,一个确定的 <code>$|+z\rangle$</code> 态,在 <code>x</code> 方向测量时会得到两个结果,概率各为 <code>1/2</code>。</p>
+<p>这可以记成</p>
+<div class="arithmatex">\[
+|+z\rangle = \frac{1}{\sqrt{2}}\left(|+x\rangle + |-x\rangle\right)
+\]</div>
+<p>这正是量子态叠加的典型表现。</p>
 </div>
+<div class="tabbed-block">
+<p>如果自旋只是经典意义下“只有两个值”的量,那我们可能会把它理解为一个集合,例如 <code>{0,1}</code>。这种描述只具有布尔逻辑,无法解释:</p>
+<ul>
+<li>
+<p>为什么同方向重复测量不再分裂</p>
+</li>
+<li>
+<p>为什么换一个测量方向后又会重新分裂</p>
+</li>
+<li>
+<p>为什么两个输出束恰好是等强的</p>
+</li>
+</ul>
+<p>因此,自旋<strong>不是经典 bit</strong>。</p>
+<p>更合适的描述是:</p>
+<ul>
+<li>
+<p>自旋态属于一个二维复向量空间 <span class="arithmatex">\(\mathbb{C}^2\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(|+z\rangle, |-z\rangle\)</span> 可以看成这空间中的一组基</p>
+</li>
+<li>
+<p><span class="arithmatex">\(|+x\rangle, |-x\rangle\)</span> 是另一组基</p>
+</li>
+<li>
+<p>同一个态在不同基下展开系数不同,于是对应不同测量结果的概率分布</p>
+</li>
+</ul>
+<p>所以每个自旋 <code>1/2</code> 系统都可以编码一个 <strong>qubit</strong>。</p>
 </div>
-</div>
-<h2 id="implementation-of-locking">Implementation of Locking<a class="headerlink" href="#implementation-of-locking" title="Permanent link">¶</a></h2>
+<div class="tabbed-block">
+<p>可以把经典 bit 的两个状态表示成二维空间中的两个正交单位向量:</p>
+<div class="arithmatex">\[
+|0\rangle \equiv |\uparrow\rangle =
+\begin{pmatrix}
+1\\
+0
+\end{pmatrix},
+\qquad
+|1\rangle \equiv |\downarrow\rangle =
+\begin{pmatrix}
+0\\
+1
+\end{pmatrix}
+\]</div>
+<p>对经典 bit 来说,系统只能处在 <span class="arithmatex">\(|0\rangle\)</span> 或 <span class="arithmatex">\(|1\rangle\)</span> 之一,不会同时处在两者的叠加态里。但在量子力学中,这两个态可以叠加,于是我们把它们提升为 $ \mathbb{C}^2 $中的一组基。</p>
+<p>因此一个一般的 qubit 状态可以写成</p>
+<div class="arithmatex">\[
+|\psi\rangle = \alpha |0\rangle + \beta |1\rangle
+= \begin{pmatrix}
+\alpha\\
+\beta
+\end{pmatrix},
+\qquad \alpha,\beta \in \mathbb{C}
+\]</div>
+<p>并满足归一化条件</p>
+<div class="arithmatex">\[
+\langle\psi|\psi\rangle = |\alpha|^2 + |\beta|^2 = 1
+\]</div>
+<p>这里的归一化来自概率解释: 测到 <span class="arithmatex">\(|0\rangle\)</span> 与 <span class="arithmatex">\(|1\rangle\)</span> 的概率之和必须为 <code>1</code>。</p>
+<p>同一个态也常写成</p>
+<div class="arithmatex">\[
+|\psi\rangle = \cos\frac{\theta}{2}|0\rangle + e^{i\phi}\sin\frac{\theta}{2}|1\rangle
+\]</div>
 <blockquote>
-<p>A lock manager can be implemented as a separate process to which transactions send lock and unlock requests</p>
+<p>这里多乘上一个<span class="arithmatex">\(e^{i\phi}\)</span>不改变模长,因为<span class="arithmatex">\(|e^{i\phi}|=1\)</span>。因此,我们可以把一个 qubit 的状态用 Bloch 球面上的一个点来表示,其中 <span class="arithmatex">\(\theta\)</span> 是极角, <span class="arithmatex">\(\phi\)</span> 是方位角。</p>
 </blockquote>
-<h3 id="lock-table">Lock Table<a class="headerlink" href="#lock-table" title="Permanent link">¶</a></h3>
-<div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac33.png" data-desc-position="bottom"><img src="../../../image/mac33.png" width="70%"></a>
-    <br>
-    Lock Table
-</div>
-
-<p>在minisql中,<code>lock_table_</code>是一个<code>unordered_map</code>,由<code>RowId</code>(数据项)映射到锁请求队列</p>
-<h3 id="deadlock-handling">Deadlock Handling<a class="headerlink" href="#deadlock-handling" title="Permanent link">¶</a></h3>
-<blockquote>
-<p>System is deadlocked if there is a set of transactions such that every transaction in the set is waiting for another transaction in the set.</p>
-<p>我们上面使用的二阶段锁协议,并不能保证没有死锁的发生,所以我们需要一个死锁处理机制.</p>
-</blockquote>
-<ul>
-<li>
-<p>Deadlock prevention protocols确保系统永远不会进入死锁状态,有如下几种方法</p>
-<ul>
-<li>
-<p>执行前获得所有锁(Require that each transaction locks all its data items before it begins execution (predeclaration))</p>
-</li>
-<li>
-<p>制定偏序关系,</p>
-<ul>
-<li>
-<p>a transaction can lock data items only in the order specified by the partial order (graph-based protocol).</p>
-</li>
-<li>
-<p>e.g. <span class="arithmatex">\(T_1\)</span>: A-50, B+50. <span class="arithmatex">\(T_2\)</span>: B-10, A+10. 我们可以强制<span class="arithmatex">\(T_2\)</span>先执行A+10,然后执行B-10,这样就不会发生死锁</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Timeout-Based Schemes</p>
-<ul>
-<li>
-<p>事务在等待锁时,如果超过了某个时间限制,就放弃等待,并回滚</p>
-</li>
-<li>
-<p>这种方法的缺点是可能会导致不必要的回滚,但它是最简单的死锁处理方法</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>还有一些利用事务的时间戳来避免死锁的方法,比如:</p>
-<ul>
-<li>
-<p>Wait-Die Scheme</p>
-<ul>
-<li>
-<p>如果一个事务请求一个锁,而这个锁已经被一个比它早开始的事务持有,那么这个事务就会被终止(死掉)(Younger transactions never wait for older ones; they are rolled back instead)</p>
-</li>
-<li>
-<p>否则,如果这个事务比持有锁的事务早开始,那么它就会等待(older transaction may wait for younger one to release data item)</p>
-</li>
-</ul>
+<p>这样就能把一个纯态表示成 Bloch 球面上的一个点。</p>
 <p></p><div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac27.png" data-desc-position="bottom"><img src="../../../image/mac27.png" width="70%"></a>
-    <br>
-    Wait-Die Scheme
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac229.png" data-desc-position="bottom"><img src="../../../image/mac229.png" width="40%" alt="Bloch 球"></a>
 </div><p></p>
-</li>
-<li>
-<p>Wound-Wait Scheme</p>
+<div class="admonition note">
+<p class="admonition-title">为什么是 <span class="arithmatex">\(\theta/2\)</span> 而不是 <span class="arithmatex">\(\theta\)</span></p>
+<p>这样写可以保证 <span class="arithmatex">\(|0\rangle\)</span> 与 <span class="arithmatex">\(|1\rangle\)</span> 之间的相对相位只由 <span class="arithmatex">\(\phi\)</span> 参数控制。如果直接写成 <span class="arithmatex">\(\cos\theta |0\rangle + e^{i\phi}\sin\theta |1\rangle\)</span>，那么 <span class="arithmatex">\(( \theta,\phi )\)</span> 与 <span class="arithmatex">\(( \pi-\theta,\pi+\phi )\)</span> 会只差一个整体相位 <span class="arithmatex">\(e^{i\pi}=-1\)</span>，从而对应同一个量子态，这样映射就不是一一对应了。</p>
+</div>
+<p>需要注意的是, Bloch 球上的几何表示并<strong>不直接保持正交关系</strong>。例如</p>
+<div class="arithmatex">\[
+\langle 0|1\rangle = 0
+\]</div>
+<p>但在 Bloch 球上, <span class="arithmatex">\(|0\rangle\)</span> 和 <span class="arithmatex">\(|1\rangle\)</span> 只是被画成方向相反的两个单位向量。</p>
+</div>
+</div>
+</div>
+<h2 id="linear-operators-and-matrices">Linear Operators and Matrices<a class="headerlink" href="#linear-operators-and-matrices" title="Permanent link">¶</a></h2>
+<p>这里直接给出几条结论:</p>
 <ul>
 <li>
-<p>如果一个事务请求一个锁,而这个锁已经被一个比它晚开始的事务持有,那么晚开始的事务会被直接终止(older transaction wounds (forces rollback) of younger transaction instead of waiting for it.)</p>
+<p>矩阵是测量的工具,它是一个<strong>线性算子</strong>。</p>
 </li>
 <li>
-<p>否则,如果这个事务比持有锁的事务晚开始,那么它就会等待(Younger transactions may wait for older ones.)</p>
-</li>
-</ul>
-<p></p><div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac28.png" data-desc-position="bottom"><img src="../../../image/mac28.png" width="70%"></a>
-    <br>
-    Wound-Wait Scheme
-</div><p></p>
+<p>矩阵的特征值就是测量结果</p>
 </li>
 <li>
-<p>Both in wait-die and in wound-wait schemes, a rolled back transactions is restarted with its original timestamp. Older transactions thus have precedence over newer ones, and starvation is hence avoided.</p>
+<p>矩阵的特征向量就是测量后粒子坍缩到的状态</p>
 </li>
 </ul>
-</li>
-</ul>
-<h3 id="deadlock-detection">Deadlock Detection<a class="headerlink" href="#deadlock-detection" title="Permanent link">¶</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">什么叫线性算子</label><label for="__tabbed_2_2">厄米算子</label><label for="__tabbed_2_3">别忘了可对角化矩阵</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>在线性代数里,一个算子本质上就是“把向量映射到另一个向量的规则”。如果这个规则记作 <span class="arithmatex">\(A\)</span>,那么</p>
+<div class="arithmatex">\[
+A: V \to V
+\]</div>
+<p>表示它把向量空间 <span class="arithmatex">\(V\)</span> 中的一个态映射到另一个态。</p>
+<p>所谓<strong>线性</strong>,就是它必须满足:</p>
+<div class="arithmatex">\[
+A(\alpha |\psi\rangle + \beta |\phi\rangle)
+=
+\alpha A|\psi\rangle + \beta A|\phi\rangle
+\]</div>
+<p>也就是说,先做线性组合再作用算子,和先分别作用再线性组合,结果一样。</p>
+<p>这件事很重要,因为量子态本身允许叠加。如果算子不保持线性,那它就没法和量子叠加原理兼容。</p>
+</div>
+<div class="tabbed-block">
+<p>在量子力学中,我们特别关注<strong>厄米算子</strong>（Hermitian operator）。一个算子 <span class="arithmatex">\(A\)</span> 是厄米的,如果它满足</p>
+<div class="arithmatex">\[
+A = A^\dagger
+\]</div>
+<p>这里 <span class="arithmatex">\(A^\dagger\)</span> 是 <span class="arithmatex">\(A\)</span> 的共轭转置。厄米算子有几个重要性质:</p>
+<ul>
+<li>
+<p>它的特征值都是实数,因此可以对应实际测量结果</p>
 <blockquote>
-<p>Minisql中也实现了.构建一个有向等待图.</p>
+<p>这里用线代I中学过的知识就知道,<span class="arithmatex">\(A |X\rangle = \lambda |X\rangle\)</span>,经过变换我们可以得到<span class="arithmatex">\(\langle X|A|X\rangle = \lambda \langle X|X\rangle = \lambda^* \langle X|X\rangle\)</span>,因此<span class="arithmatex">\(\lambda = \lambda^*\)</span>,说明<span class="arithmatex">\(\lambda\)</span>是实数.</p>
 </blockquote>
-<ul>
-<li>
-<p>若<span class="arithmatex">\(T_i\)</span>等待<span class="arithmatex">\(T_j\)</span>,那么就有一条边<span class="arithmatex">\(T_i \to T_j\)</span></p>
 </li>
 <li>
-<p>如果图中有环,那么就发生了死锁</p>
+<p>不同特征值对应的特征向量是正交的,因此可以形成一个完备的基底</p>
 </li>
 </ul>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>There are 6 transactions(T1-T6) and 6 data items(I1, I11, I5, I15, I9, I19, I29). Granted locks are filled (black) rectangles, while waiting requests are empty rectangles.</p>
-<p></p><div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac34.png" data-desc-position="bottom"><img src="../../../image/mac34.png" width="70%"></a>
-    <br>
-    Deadlock Detection
-</div><p></p>
-<p>T1 等 T2, T2 等 T6, T6 等 T1(死锁)</p>
-<p>T5等T6,T4等T3</p>
+<p>所有用来测量的矩阵都是厄米的,因为测量结果必须是实数!</p>
+<p>如果系统当前处于状态 <span class="arithmatex">\(|\psi\rangle\)</span>,现在去测量某个可观测量 <span class="arithmatex">\(L\)</span>,并且 <span class="arithmatex">\(\lambda\)</span> 是 <span class="arithmatex">\(L\)</span> 的一个本征值,对应本征态为 <span class="arithmatex">\(|\lambda\rangle\)</span>,那么测到结果 <span class="arithmatex">\(\lambda\)</span> 的概率为</p>
+<div class="arithmatex">\[
+P_\lambda = \langle\psi|\lambda\rangle\langle\lambda|\psi\rangle
+= |\langle\lambda|\psi\rangle|^2.
+\]</div>
+<p>这就是 Born rule 在离散本征态情形下的写法。这里 <span class="arithmatex">\(\langle\lambda|\psi\rangle\)</span> 表示“把态 <span class="arithmatex">\(|\psi\rangle\)</span> 投影到测量基底 <span class="arithmatex">\(|\lambda\rangle\)</span> 上得到的概率振幅”,而其模平方才是真正的测量概率。</p>
 </div>
-<h3 id="deadlock-recovery">Deadlock Recovery<a class="headerlink" href="#deadlock-recovery" title="Permanent link">¶</a></h3>
-<ul>
-<li>
-<p>When deadlock is detected :</p>
-<ul>
-<li>
-<p>Some transaction will have to rolled back (made a victim) to break deadlock.  Select that transaction as victim that will incur minimum cost.</p>
-</li>
-<li>
-<p>Rollback -- determine how far to roll back transaction</p>
-<ul>
-<li>
-<p>Total rollback: Abort the transaction and then restart it.</p>
-</li>
-<li>
-<p>More effective to roll back transaction only as far as necessary to break deadlock.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Starvation happens if same transaction is always chosen as victim. Include the number of rollbacks in the cost factor to avoid starvation</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="graph-based-protocols">Graph-Based Protocols<a class="headerlink" href="#graph-based-protocols" title="Permanent link">¶</a></h3>
-<p>我们讲数据项按某种偏序关系排序.如果<span class="arithmatex">\(d_i\)</span>到<span class="arithmatex">\(d_j\)</span>有一条边,那么对于需要同时访问<span class="arithmatex">\(d_i\)</span>和<span class="arithmatex">\(d_j\)</span>的事务,就需要先访问<span class="arithmatex">\(d_i\)</span>,再访问<span class="arithmatex">\(d_j\)</span></p>
-<div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac35.png" data-desc-position="bottom"><img src="../../../image/mac35.png" width="50%"></a>
-    <br>
-    Graph-Based Protocols
+<div class="tabbed-block">
+<p>我们知道一个矩阵的代数重数是它的特征值的重数,而几何重数是对应特征值的线性无关特征向量的个数。对于厄米矩阵来说,代数重数和几何重数总是相等的,因此它们都是可对角化的。</p>
+<p>更具体地说,如果矩阵 <span class="arithmatex">\(A\)</span> 有一组线性无关的特征向量</p>
+<div class="arithmatex">\[
+|v_1\rangle,\ |v_2\rangle,\ \dots,\ |v_n\rangle
+\]</div>
+<p>以及对应的特征值</p>
+<div class="arithmatex">\[
+\lambda_1,\ \lambda_2,\ \dots,\ \lambda_n,
+\]</div>
+<p>满足</p>
+<div class="arithmatex">\[
+A|v_i\rangle = \lambda_i |v_i\rangle,
+\qquad i=1,2,\dots,n,
+\]</div>
+<p>那么把这些特征向量按列排成矩阵</p>
+<div class="arithmatex">\[
+P=\begin{pmatrix}
+|v_1\rangle &amp; |v_2\rangle &amp; \cdots &amp; |v_n\rangle
+\end{pmatrix},
+\]</div>
+<p>就有</p>
+<div class="arithmatex">\[
+P^{-1}AP = D,
+\]</div>
+<p>其中</p>
+<div class="arithmatex">\[
+D=
+\begin{pmatrix}
+\lambda_1 &amp; 0 &amp; \cdots &amp; 0\\
+0 &amp; \lambda_2 &amp; \cdots &amp; 0\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+0 &amp; 0 &amp; \cdots &amp; \lambda_n
+\end{pmatrix}.
+\]</div>
+<p>这也等价于写成</p>
+<div class="arithmatex">\[
+A = P D P^{-1}.
+\]</div>
+<p>在原来的基底下,算子写成矩阵 <span class="arithmatex">\(A\)</span>；但如果换到由特征向量组成的新基底下,它就变成了对角矩阵 <span class="arithmatex">\(D\)</span>。所以对角化的本质其实就是<strong>换基</strong>。</p>
 </div>
-
-<h4 id="tree-protocols">Tree Protocols<a class="headerlink" href="#tree-protocols" title="Permanent link">¶</a></h4>
+</div>
+</div>
+<hr>
+<h2 id="pauli-matrices">Pauli Matrices<a class="headerlink" href="#pauli-matrices" title="Permanent link">¶</a></h2>
 <blockquote>
-<p>树协议是图协议的一种特殊情况</p>
+<p>在我看来,泡利矩阵的计算初衷就是,对于自旋方向真的是<span class="arithmatex">\(+z\)</span>的态,我们希望它在<span class="arithmatex">\(\sigma_z\)</span>上的测量结果是<span class="arithmatex">\(+1\)</span>,</p>
+<p>而对于自旋方向真的是<span class="arithmatex">\(-z\)</span>的态,我们希望它在<span class="arithmatex">\(\sigma_z\)</span>上的测量结果是<span class="arithmatex">\(-1\)</span>.因此我们就可以通过定义</p>
+<p><span class="arithmatex">\(\sigma_z\)</span>的矩阵表示来满足这个要求。对于<span class="arithmatex">\(\sigma_x\)</span>和<span class="arithmatex">\(\sigma_y\)</span>也是同样的道理。</p>
 </blockquote>
-<ol>
-<li>
-<p>只允许申请排他锁</p>
-</li>
-<li>
-<p>对于某个事务<span class="arithmatex">\(T_i\)</span>,它申请的第一个节点可以是任意的,当之后,一个节点Q能被<span class="arithmatex">\(T_i\)</span>锁住,当且仅当Q的父节点被<span class="arithmatex">\(T_i\)</span>锁住</p>
-</li>
-<li>
-<p>数据项可以在任何时候被释放锁</p>
-</li>
-<li>
-<p>如果数据项Q被<span class="arithmatex">\(T_i\)</span>锁住又释放,那么<span class="arithmatex">\(T_i\)</span>不能再申请Q的锁</p>
-</li>
-</ol>
-<div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac36.png" data-desc-position="bottom"><img src="../../../image/mac36.png" width="50%"></a>
-    <br>
-    Tree Protocols
-</div>
-
-<p>这样做,可以保证冲突可串行化.</p>
-<ul>
-<li>
-<p>优点:</p>
-<ul>
-<li>
-<p>释放锁比2PL更早,减少等待时间,提高并发度</p>
-</li>
-<li>
-<p>无死锁,不需要rollback</p>
-</li>
-</ul>
-</li>
-<li>
-<p>缺点:</p>
-<ul>
-<li>
-<p>不能保证可恢复,需要多加限制</p>
-</li>
-<li>
-<p>事务可能需要锁住比实际需求更多的数据项</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="multiple-granularity多粒度">Multiple Granularity(多粒度)<a class="headerlink" href="#multiple-granularity多粒度" title="Permanent link">¶</a></h2>
-<p>数据项可以表示为一个树的结构,根据其大小</p>
-<div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac29.png" data-desc-position="bottom"><img src="../../../image/mac29.png" width="70%"></a>
-    <br>
-    The Tree
-</div>
-
+<div class="tabbed-set tabbed-alternate" data-tabs="3:5"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><input id="__tabbed_3_4" name="__tabbed_3" type="radio"><input id="__tabbed_3_5" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1"><span class="arithmatex">\(\sigma_z\)</span> 的矩阵表示</label><label for="__tabbed_3_2"><span class="arithmatex">\(\sigma_x\)</span> 的构造</label><label for="__tabbed_3_3"><span class="arithmatex">\(\sigma_y\)</span> 与泡利矩阵</label><label for="__tabbed_3_4">任意方向的自旋测量</label><label for="__tabbed_3_5">与 Bloch 球的对应</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>之前已经知道,沿 <span class="arithmatex">\(z\)</span> 方向测量自旋时,两个本征态分别是</p>
+<div class="arithmatex">\[
+|0\rangle,\quad |1\rangle,
+\]</div>
+<p>对应的测量结果是 <span class="arithmatex">\(+1\)</span> 和 <span class="arithmatex">\(-1\)</span>。因此在 <span class="arithmatex">\(\{|0\rangle,|1\rangle\}\)</span> 这组基底下,算子 <span class="arithmatex">\(\sigma_z\)</span> 的矩阵元为</p>
+<div class="arithmatex">\[
+\sigma_z =
+\begin{pmatrix}
+\langle 0|\sigma_z|0\rangle &amp; \langle 0|\sigma_z|1\rangle\\
+\langle 1|\sigma_z|0\rangle &amp; \langle 1|\sigma_z|1\rangle
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 &amp; 0\\
+0 &amp; -1
+\end{pmatrix}.
+\]</div>
+<p>这里也用到了归一化条件</p>
+<div class="arithmatex">\[
+\langle 0|0\rangle = \langle 1|1\rangle = 1.
+\]</div>
+<p>如果一个自旋态写成</p>
+<div class="arithmatex">\[
+|\psi\rangle = \alpha |0\rangle + \beta |1\rangle,
+\]</div>
 <p>那么:</p>
 <ul>
-<li>
-<p>fine granularity（细粒度）:对树偏下的节点加锁,比如对叶子节点加锁</p>
-</li>
-<li>
-<p>coarse granularity（粗粒度）:对树偏上的节点加锁,比如对根节点加锁</p>
-</li>
+<li><span class="arithmatex">\(|\alpha|^2\)</span> 是测得自旋向上,也就是测得 <span class="arithmatex">\(\sigma_z = +1\)</span> 的概率</li>
+<li><span class="arithmatex">\(|\beta|^2\)</span> 是测得自旋向下,也就是测得 <span class="arithmatex">\(\sigma_z = -1\)</span> 的概率</li>
 </ul>
-<h3 id="intention-locks">Intention Locks<a class="headerlink" href="#intention-locks" title="Permanent link">¶</a></h3>
-<p>当事务涉及到多个粒度时,会产生不同级别上的锁冲突.比如,一个表的S锁和一个表中某个数据项的X锁之间会产生冲突.因此,我们引入意向锁(想要加某个锁)的概念</p>
-<ul>
-<li>
-<p><strong>Intention-Shared Lock (IS)</strong>: 事务想要在某个数据项上加一个共享锁,那么在这个数据项的父节点上加一个意向共享锁</p>
-</li>
-<li>
-<p><strong>Intention-Exclusive Lock (IX)</strong>: 事务想要在某个数据项上加一个排他锁,那么在这个数据项的父节点上加一个意向排他锁</p>
-</li>
-<li>
-<p><strong>Shared-Intention-Exclusive Lock (SIX)</strong>: S+IX锁,对当前节点有共享锁,且对子节点有排他锁</p>
-<ul>
-<li>SIX锁主要用于这种场景：事务需要读取某个高级节点（如表）的所有数据，同时还需要更新其中的部分低级节点（如记录）。</li>
-</ul>
-</li>
-</ul>
-<p>现在,所有锁的兼容性表是(Y for yes, N for no):</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">请求的锁⬇️  已有的锁➡️</th>
-<th style="text-align: left;">IS</th>
-<th style="text-align: left;">IX</th>
-<th style="text-align: left;">S</th>
-<th style="text-align: left;">SIX</th>
-<th style="text-align: left;">X</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>IS</strong></td>
-<td style="text-align: left;">Y</td>
-<td style="text-align: left;">Y</td>
-<td style="text-align: left;">Y</td>
-<td style="text-align: left;">Y</td>
-<td style="text-align: left;">N</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>IX</strong></td>
-<td style="text-align: left;">Y</td>
-<td style="text-align: left;">Y</td>
-<td style="text-align: left;">N</td>
-<td style="text-align: left;">N</td>
-<td style="text-align: left;">N</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>S</strong></td>
-<td style="text-align: left;">Y</td>
-<td style="text-align: left;">N</td>
-<td style="text-align: left;">Y</td>
-<td style="text-align: left;">N</td>
-<td style="text-align: left;">N</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>SIX</strong></td>
-<td style="text-align: left;">Y</td>
-<td style="text-align: left;">N</td>
-<td style="text-align: left;">N</td>
-<td style="text-align: left;">N</td>
-<td style="text-align: left;">N</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>X</strong></td>
-<td style="text-align: left;">N</td>
-<td style="text-align: left;">N</td>
-<td style="text-align: left;">N</td>
-<td style="text-align: left;">N</td>
-<td style="text-align: left;">N</td>
-</tr>
-</tbody>
-</table>
+</div>
+<div class="tabbed-block">
+<p>如果把 Stern-Gerlach 仪器旋转到 <span class="arithmatex">\(x\)</span> 方向,那么测量结果仍然只有 <span class="arithmatex">\(\pm 1\)</span>。于是可以定义两个新的本征态:</p>
+<div class="arithmatex">\[
+\sigma_x |r\rangle = |r\rangle,\qquad
+\sigma_x |l\rangle = -|l\rangle.
+\]</div>
+<p>实验告诉我们,若先制备出 <span class="arithmatex">\(|r\rangle\)</span> 态,再去沿 <span class="arithmatex">\(z\)</span> 方向测量,会以相等概率分裂成两束。因此在</p>
+<div class="arithmatex">\[
+|r\rangle = \alpha |0\rangle + \beta |1\rangle
+\]</div>
+<p>中必须有</p>
+<div class="arithmatex">\[
+|\alpha|^2 = |\beta|^2 = \frac12.
+\]</div>
+<p>相位可以通过坐标轴选取吸收掉,通常直接取为 <span class="arithmatex">\(0\)</span>,于是</p>
+<div class="arithmatex">\[
+|r\rangle = \frac{1}{\sqrt2}|0\rangle + \frac{1}{\sqrt2}|1\rangle.
+\]</div>
+<p>再利用正交归一条件</p>
+<div class="arithmatex">\[
+\langle r|l\rangle = 0,\qquad \langle l|l\rangle = 1,
+\]</div>
+<p>可以得到</p>
+<div class="arithmatex">\[
+|l\rangle = \frac{1}{\sqrt2}|0\rangle - \frac{1}{\sqrt2}|1\rangle.
+\]</div>
+<p>现在要求 <span class="arithmatex">\(\sigma_x\)</span> 在这两个态上的作用满足</p>
+<div class="arithmatex">\[
+\sigma_x
+\begin{pmatrix}
+1/\sqrt2\\
+1/\sqrt2
+\end{pmatrix}
+=
+\begin{pmatrix}
+1/\sqrt2\\
+1/\sqrt2
+\end{pmatrix},
+\qquad
+\sigma_x
+\begin{pmatrix}
+1/\sqrt2\\
+-1/\sqrt2
+\end{pmatrix}
+=
+-
+\begin{pmatrix}
+1/\sqrt2\\
+-1/\sqrt2
+\end{pmatrix},
+\]</div>
+<p>解出来就是</p>
+<div class="arithmatex">\[
+\sigma_x =
+\begin{pmatrix}
+0 &amp; 1\\
+1 &amp; 0
+\end{pmatrix}.
+\]</div>
+</div>
+<div class="tabbed-block">
+<p>用类似但稍复杂一些的方式,可以得到</p>
+<div class="arithmatex">\[
+\sigma_y =
+\begin{pmatrix}
+0 &amp; -i\\
+i &amp; 0
+\end{pmatrix}.
+\]</div>
+<p>它对应本征值 <span class="arithmatex">\(\pm 1\)</span> 的本征态可以写成</p>
+<div class="arithmatex">\[
+|i\rangle = \frac{1}{\sqrt2}|0\rangle + \frac{i}{\sqrt2}|1\rangle,
+\qquad
+|o\rangle = \frac{1}{\sqrt2}|0\rangle - \frac{i}{\sqrt2}|1\rangle.
+\]</div>
+<p>于是</p>
+<div class="arithmatex">\[
+\sigma_x =
+\begin{pmatrix}
+0 &amp; 1\\
+1 &amp; 0
+\end{pmatrix},
+\qquad
+\sigma_y =
+\begin{pmatrix}
+0 &amp; -i\\
+i &amp; 0
+\end{pmatrix},
+\qquad
+\sigma_z =
+\begin{pmatrix}
+1 &amp; 0\\
+0 &amp; -1
+\end{pmatrix}
+\]</div>
+<p>这三者统称为 <strong>Pauli matrices</strong>。</p>
 <blockquote>
-<p>意向锁更像是一种声明而非真正的锁</p>
+<p>从推导中可以看出,这三个矩阵的基都是基于 <span class="arithmatex">\(\sigma_z\)</span> 的本征态 <span class="arithmatex">\(|0\rangle,|1\rangle\)</span> 构造出来的。</p>
 </blockquote>
-<h2 id="insert-and-delete-operations">Insert and Delete Operations<a class="headerlink" href="#insert-and-delete-operations" title="Permanent link">¶</a></h2>
+</div>
+<div class="tabbed-block">
+<p>由于自旋测量和空间方向有关,可以把三者合起来写成一个三维算子向量</p>
+<div class="arithmatex">\[
+\vec{\sigma} = \sigma_x \hat{x} + \sigma_y \hat{y} + \sigma_z \hat{z}.
+\]</div>
+<p>这里要区分两种“向量”:</p>
 <ul>
-<li>
-<p>If two-phase locking is used :</p>
+<li>我们生活的空间是三维实空间,方向 <span class="arithmatex">\(\hat{x},\hat{y},\hat{z}\)</span> 是空间方向</li>
+<li>量子态 <span class="arithmatex">\(|\psi\rangle\)</span> 属于二维复向量空间,这是态空间</li>
+</ul>
+<p>如果要沿任意方向</p>
+<div class="arithmatex">\[
+\hat{n} = (n_x,n_y,n_z)
+\]</div>
+<p>测量自旋,对应的算子就是</p>
+<div class="arithmatex">\[
+\sigma_n = \vec{\sigma}\cdot\hat{n}
+= \sigma_x n_x + \sigma_y n_y + \sigma_z n_z
+=
+\begin{pmatrix}
+n_z &amp; n_x - i n_y\\
+n_x + i n_y &amp; -n_z
+\end{pmatrix}.
+\]</div>
+<p>可以验证,它的特征值仍然是</p>
+<div class="arithmatex">\[
+\pm 1.
+\]</div>
+</div>
+<div class="tabbed-block">
+<p>任意纯态都可以写成</p>
+<div class="arithmatex">\[
+|\psi\rangle
+=
+\cos\frac{\theta}{2}|+z\rangle
++
+e^{i\phi}\sin\frac{\theta}{2}|-z\rangle.
+\]</div>
+<p>它对应的三维 Bloch 向量为</p>
+<div class="arithmatex">\[
+\vec r =
+(\sin\theta\cos\phi,\ \sin\theta\sin\phi,\ \cos\theta).
+\]</div>
+<p>也就是说:</p>
 <ul>
-<li>
-<p>A delete operation may be performed only if the transaction deleting the tuple has an exclusive lock on the tuple to be deleted.</p>
-</li>
-<li>
-<p>A transaction that inserts a new tuple into the database is given an X-mode lock on the tuple</p>
-</li>
+<li>态空间里的 qubit 可以用 Bloch 球面上的一个点表示</li>
+<li>这个点的方向,正好对应“沿哪个方向测量时更像是自旋向上态”</li>
 </ul>
-</li>
-<li>
-<p>为了避免幽灵问题(比如一个事务在统计表中元组数目,一个事务在插入元组)</p>
-<ul>
-<li>
-<p>可以使用表级的锁</p>
-</li>
-<li>
-<p>可以把元组数目和另一个额外的一个元组联系,读元组数目的事务需要在这个元组上加共享锁,而插入元组的事务需要在这个元组上加排他锁</p>
-</li>
-<li>
-<p>最好的方法是使用Index locking protocols</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="index-locking-protocols">Index Locking Protocols<a class="headerlink" href="#index-locking-protocols" title="Permanent link">¶</a></h3>
-<blockquote>
-<p>通过在索引上加锁来避免幽灵问题</p>
-</blockquote>
-<ol>
-<li>
-<p>Every relation must have at least one index. </p>
-</li>
-<li>
-<p>A transaction can access tuples only after finding them through one or more indices on the relation</p>
-</li>
-<li>
-<p>A transaction <span class="arithmatex">\(T_i\)</span> that performs a lookup must lock all the index leaf nodes that it accesses, in S-mode</p>
-<ul>
-<li>Even if the leaf node does not contain any tuple satisfying the index lookup (e.g. for a range query, no tuple in a leaf is in the range)</li>
-</ul>
-</li>
-<li>
-<p>A transaction <span class="arithmatex">\(T_i\)</span> that inserts, updates or deletes a tuple <span class="arithmatex">\(t_i\)</span> in a relation r </p>
-<ul>
-<li>
-<p>must update all indices to r</p>
-</li>
-<li>
-<p>must obtain exclusive locks on all index leaf nodes affected by the insert/update/delete</p>
-</li>
-</ul>
-</li>
-<li>
-<p>The rules of the two-phase locking protocol must be observed</p>
-</li>
-</ol>
-<h3 id="next-key-locking">Next-Key Locking<a class="headerlink" href="#next-key-locking" title="Permanent link">¶</a></h3>
-<p>上面的做法需要锁住所有的叶子节点,会大大降低并发度,因此还有一种方法:</p>
-<ul>
-<li>
-<p>Lock all values that satisfy index lookup (match lookup value, or fall in lookup range)</p>
-</li>
-<li>
-<p>Also lock next key value in index</p>
-</li>
-<li>
-<p>Lock mode: S for lookups, X for insert/delete/update</p>
-</li>
-</ul>
-<h2 id="multiversion-concurrency-control-schemes">Multiversion Concurrency Control Schemes<a class="headerlink" href="#multiversion-concurrency-control-schemes" title="Permanent link">¶</a></h2>
-<blockquote>
-<p>不考</p>
-</blockquote>
-<p>大概就是像git一样,每次写数据项不是直接覆盖,而是创建一个新的版本,带一个版本号,旧的版本被保留.</p>
-<p>这样,任何读取操作都不需要等待,可以直接进行,只要根据版本号来读取数据项即可</p>
-<p>这样就只有两类操作:</p>
-<ol>
-<li>
-<p>只读事务</p>
-<ul>
-<li>
-<p>Assigned a timestamp by reading the current value of  ts-counter before they start execution.</p>
-</li>
-<li>
-<p>When a read-only transaction <span class="arithmatex">\(T_i\)</span> issues a read(Q), the value returned is the contents of the version whose timestamp is the largest timestamp less than or equal to <span class="arithmatex">\(TS(T_i)\)</span></p>
-</li>
-</ul>
-</li>
-<li>
-<p>更新(读写)事务</p>
-<ul>
-<li>
-<p>Acquire read and write locks</p>
-</li>
-<li>
-<p>Hold all locks up to the end of the transaction. That is , follow rigorous two-phase locking.</p>
-</li>
-<li>
-<p>Each successful write results in the creation of a new version of the data item written.</p>
-</li>
-<li>
-<p>Each version of a data item has a single timestamp whose value is obtained from a counter ts-counter that is incremented during commit processing.</p>
-</li>
-</ul>
-</li>
-</ol>
+<p>因而 Pauli 矩阵、Stern-Gerlach 测量和 Bloch 球三者其实是在描述同一件事的不同侧面。</p>
+</div>
+</div>
+</div>
 
 
 
@@ -5627,7 +5109,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年6月6日 08:40:42 UTC">2025年6月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年3月16日 08:46:38 UTC">2026年3月16日</span>
   </span>
 
     
@@ -5637,7 +5119,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月19日 10:55:15 UTC">2025年5月19日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年3月16日 08:46:38 UTC">2026年3月16日</span>
   </span>
 
     
@@ -5766,7 +5248,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚">
         
           
-          <a href="../ch17/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Chapter 17:事务">
+          <a href="../lec2/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 复向量空间">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -5776,20 +5258,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                Chapter 17:事务
+                复向量空间
               </div>
             </div>
           </a>
         
         
           
-          <a href="../ch19/" class="md-footer__link md-footer__link--next" aria-label="下一页: Chapter 19:恢复">
+          <a href="../../bianyi/" class="md-footer__link md-footer__link--next" aria-label="下一页: 编译原理">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Chapter 19:恢复
+                编译原理
               </div>
             </div>
             <div class="md-footer__button md-icon">
