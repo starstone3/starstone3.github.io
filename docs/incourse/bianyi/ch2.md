@@ -129,7 +129,7 @@ if                                      { return IF; }
 
 ## FA
 
-自动机的内容在[这里](../TOC/ch2#自动机automata)
+自动机的内容在[这里](../TOC/ch2.md#自动机automata)
 
 如下图,之前讨论的正则表达式可以写为如下的DFA:
 
