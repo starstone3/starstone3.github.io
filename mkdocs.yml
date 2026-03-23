@@ -171,6 +171,7 @@ nav :
       - "信息量与熵": incourse/qi/lec1.md
       - "复向量空间": incourse/qi/lec2.md
       - "Spins, Qubits, and Linear Operators for  Measurement": incourse/qi/lec3.md
+      - "多量子比特": incourse/qi/lec4.md
     - "编译原理":
       - incourse/bianyi/index.md
       - "第一章:介绍": incourse/bianyi/ch1.md
