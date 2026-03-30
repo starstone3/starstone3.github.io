@@ -172,6 +172,7 @@ nav :
       - "复向量空间": incourse/qi/lec2.md
       - "Spins, Qubits, and Linear Operators for  Measurement": incourse/qi/lec3.md
       - "多量子比特": incourse/qi/lec4.md
+      - "量子系统的时间演化": incourse/qi/lec5.md
     - "编译原理":
       - incourse/bianyi/index.md
       - "第一章:介绍": incourse/bianyi/ch1.md
