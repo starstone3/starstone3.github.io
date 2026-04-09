@@ -178,6 +178,8 @@ nav :
       - "第一章:介绍": incourse/bianyi/ch1.md
       - "第二章:词法分析": incourse/bianyi/ch2.md
       - "第三章:语法分析": incourse/bianyi/ch3.md
+      - "第四章:抽象语法": incourse/bianyi/ch4.md
+      - "第五章:语义分析": incourse/bianyi/ch5.md
   - "大一课程遗物":
     - incourse/old/index.md
     - "数据结构基础": incourse/old/fds.md
