@@ -174,6 +174,7 @@ nav :
       - "多量子比特": incourse/qi/lec4.md
       - "量子系统的时间演化": incourse/qi/lec5.md
       - "量子电路": incourse/qi/lec6.md
+      - "量子算法": incourse/qi/lec7.md
     - "编译原理":
       - incourse/bianyi/index.md
       - "第一章:介绍": incourse/bianyi/ch1.md
@@ -183,6 +184,8 @@ nav :
       - "第五章:语义分析": incourse/bianyi/ch5.md
       - "第六章:活动记录": incourse/bianyi/ch6.md
       - "第七章:中间代码": incourse/bianyi/ch7.md
+      - "第八章:基本块和轨迹": incourse/bianyi/ch8.md
+      - "第九章:指令选择": incourse/bianyi/ch9.md
 
   - "大一课程遗物":
     - incourse/old/index.md

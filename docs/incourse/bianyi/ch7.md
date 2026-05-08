@@ -175,3 +175,192 @@ x = y op z
 
     === "`LABEL(n)`"
         - 定义一个标签 `n`,作为控制流跳转的目标位置.
+
+## Translation into IR Trees
+
+我们希望将给定的抽象语法树(AST)翻译成 IR 树,以便后续的优化和代码生成.
+
+### Expressions
+
+!!! info "AST -> IR"
+    我们想要将AST中的Exp节点翻译为IR Tree中的节点,分为以下三类:
+
+    === "Ex: 有返回值的表达式"
+        - **对应 IR 中的 `T_exp` 节点**
+        
+        - `a+b`-> `BINOP(PLUS, Ex(a), Ex(b))`
+
+    === "Nx: 无返回值的表达式"
+        - **对应 IR 中的 `T_stm` 节点**
+        
+        - 这类表达式求值后不产生返回值,只执行副作用
+        
+        - `while`-> `SEQ(CJUMP(...), SEQ(...))`
+
+    === "Cx: 条件表达式"
+        - **对应 IR 中的条件跳转 (`CJUMP`)**
+        
+        - 例如 `a < b` 可以翻译成 `CJUMP(LT, Ex(a), Ex(b), trueLabel, falseLabel)`
+
+---
+
+在翻译过程中,有时需要将一种类型的表达式转换为另一种类型的等价表达式.
+
+- 考虑 Tiger 语句: `flag := (a>b | c<d)`
+
+- 右侧 `(a>b | c<d)` 是一个条件表达式,自然翻译为 **Cx** (条件跳转),但赋值语句要求右侧是一个有返回值的表达式 **Ex**,因此需要将 **Cx 转换为 Ex**
+
+在C语言中,这个`to_ex`很好写:
+
+```c
+if(cx) {
+    ex = 1;
+} else {
+    ex = 0;
+}
+```
+
+这段代码对应的IR Tree如下:
+
+```
+SEQ(
+    MOVE(TEMP ex, CONST 1),
+    SEQ(
+        CJUMP(..., trueLabel, falseLabel),
+        SEQ(
+            LABEL falseLabel,
+            MOVE(TEMP ex, CONST 0),
+            LABEL trueLabel 
+        )
+    )
+)
+```
+
+回到上面具体的例子 `flag := (a>b | c<d)`,实际翻译结果为:
+
+```
+MOVE(TEMP r, CONST 1)
+CJUMP(GT, a, b, t, z)
+LABEL z
+CJUMP(LT, c, d, t, f)
+LABEL f
+MOVE(TEMP r, CONST 0)
+LABEL t
+TEMP r
+```
+
+其中:
+
+- `r` 是临时变量,用于存储最终结果
+- `t` 是条件为真时的跳转标签
+- `z` 是第一个条件为假时的中间标签
+- `f` 是两个条件都为假时的标签
+
+
+### Simple Variables
+
+在这一部分,我们想解决的问题是,当原语言里有一个简单变量 `x` 时,我们应该找到它在寄存器或者内存中的位置,并生成相应的 IR Tree 来访问它.
+
+- 变量在内存中:
+
+    - `MEM(BINOP(PLUS, TEMP fp, CONST k))`,它表示访问位于帧指针 `fp` 偏移 `k` 位置的内存内容,也就是访问变量 `x` 的值.
+- 变量在寄存器中:
+
+    - `TEMP t`,它表示访问临时变量 `t`,也就是访问变量 `x` 的值.
+
+---
+
+### Array Variables
+
+不同语言中,数组变量的含义不同,例如C语言中的数组变量 `a` 实际上是一个常量指针,它指向数组的第一个元素.而Pascal语言中的数组变量 `a` 则是一个真正的数组对象,它包含了所有元素的值.
+
+因此,在翻译数组变量时,我们需要根据具体语言的语义来生成相应的 IR Tree.
+
+
+### Structured L-Values
+
+!!! info "L-Values"
+    - L-value 是指可以出现在赋值语句左侧的表达式,它表示一个内存位置或者寄存器位置,可以被赋值.
+
+    - 例如在 `x = 5` 中,`x` 是一个 L-value,它表示一个内存位置或者寄存器位置,可以被赋值为 `5`.
+
+    - 左值同样也可以作为右值
+
+在我们这门课中学的Tiger语言中,只有标量左值,但是C语言中存在结构体这种Structured L-value,它的大小就不再是简单的`WordSize`,而是一个更大的值,因此我们在取地址的时候,需要加上`size`字段.
+
+### Subscripting and Field Selection
+> 没什么好讲的...
+
+一般来说,左值都被优先翻译为地址,例如`a = 2`中的`a`被翻译为要写入的地址,而不是这个地址中存储的值.
+
+当左值需要被当作右值使用的时候,我们就需要用`Mem`来取值,例如`b = a`中的`a`被看作值,我们用`Move(TEMP b, MEM(a))`来实现.
+
+### Conditiional
+
+大概可以写为一堆`CJUMP`,`LABEL`和`SEQ`的组合,没有什么特别的东西.
+
+### While loop
+
+对于一个形如
+
+```
+while condition do body
+```
+
+的while循环,我们可以写为如下格式:
+
+```
+test:
+     if not(condition) goto done 
+     body 
+     goto test 
+done:
+```
+
+### For loop
+> 每一个for循环都可以被翻译成一个while循环
+
+### Function Call
+
+直接用`CALL`节点来表示函数调用,参数列表按照从左到右的顺序求值.
+
+唯一需要注意的就是在上一章学的`static_link`的实现,我们需要在函数调用时传递正确的静态链指针,以便被调用函数能够访问到正确的变量环境.
+
+## Translation of Declarations
+
+### Function Declarations
+
+函数的翻译包含三个部分: **prologue (入口代码)**、**body (函数体)** 和 **epilogue (出口代码)**.
+
+!!! info "Function Translation Structure"
+    === "Prologue (入口代码)"
+        函数入口处需要完成以下工作:
+        
+        - **伪指令**: 标记函数开始
+        
+        - **函数标签**: 定义函数名对应的标签
+        
+        - **栈指针调整**: 调整栈指针以分配新的栈帧
+        
+        - **保存参数**: 
+            - 将"逃逸"的参数 (包括静态链 static link) 保存到栈帧中
+            - 将非逃逸参数移动到新的临时寄存器中
+        
+        - **保存寄存器**: 保存被调用者需要保存的寄存器 (callee-save registers),包括返回地址寄存器
+
+    === "Body (函数体)"
+        - Tiger 函数的函数体是一个表达式
+
+    === "Epilogue (出口代码)"
+        函数出口处需要完成以下工作:
+        
+        - **移动返回值**: 将函数返回值移动到指定的返回值寄存器
+        
+        - **恢复寄存器**: 恢复之前保存的 callee-save 寄存器
+        
+        - **栈指针恢复**: 重置栈指针以释放栈帧
+        
+        - **返回指令**: `JUMP` 到返回地址
+        
+        - **伪指令**: 标记函数结束
+
