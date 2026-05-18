@@ -176,6 +176,7 @@ nav :
       - "量子电路": incourse/qi/lec6.md
       - "量子算法": incourse/qi/lec7.md
       - "Qubit的实现": incourse/qi/lec8.md
+      - "Open Quantum Systems and  Quantum Errors": incourse/qi/lec9.md
     - "编译原理":
       - incourse/bianyi/index.md
       - "第一章:介绍": incourse/bianyi/ch1.md
