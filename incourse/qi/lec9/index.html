@@ -7,13 +7,13 @@
         <meta name="author" content="starstone3">
       
       
-        <link rel="canonical" href="https://starstone3.github.io/incourse/TOC/ch2/">
+        <link rel="canonical" href="https://starstone3.github.io/incourse/qi/lec9/">
       
       
-        <link rel="prev" href="../ch1/">
+        <link rel="prev" href="../lec8/">
       
       
-        <link rel="next" href="../ch3/">
+        <link rel="next" href="../../bianyi/">
       
       
         
@@ -24,7 +24,7 @@
     
     
       
-        <title>Ch2:Regular Language and Automata - Starstone3's bed</title>
+        <title>Open Quantum Systems and Quantum Errors - Starstone3's bed</title>
       
     
     
@@ -178,7 +178,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#自动机automata" class="md-skip">
+        <a href="#open-quantum-systems-and-quantum-errors" class="md-skip">
           跳转至
         </a>
       
@@ -212,7 +212,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ch2:Regular Language and Automata
+              Open Quantum Systems and  Quantum Errors
             
           </span>
         </div>
@@ -2612,8 +2612,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2642,15 +2640,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7">
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../TOC/" class="md-nav__link ">
               
   
   
@@ -2674,7 +2672,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2694,7 +2692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch1/" class="md-nav__link">
+      <a href="../../TOC/ch1/" class="md-nav__link">
         
   
   
@@ -2719,37 +2717,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Ch2:Regular Language and Automata
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../TOC/ch2/" class="md-nav__link">
         
   
   
@@ -2765,187 +2736,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#dfadeterministic-finite-automata" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DFA(Deterministic Finite Automata)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nfanondeterministic-finite-automata" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        NFA(Nondeterministic Finite Automata)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="NFA(Nondeterministic Finite Automata)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#定义" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        定义
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#claim" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Claim
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fa--regular-expression" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FA &amp; Regular Expression
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FA &amp; Regular Expression">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#正则表达式--fa" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        正则表达式 =&gt; FA
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="正则表达式 =&gt; FA">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#union" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Union
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#concatenation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Concatenation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kleene-star" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Kleene Star
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#complementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Complementation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#intersection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Intersection
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fa--正则表达式" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FA =&gt; 正则表达式
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#泵定理" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        泵定理
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2958,7 +2748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch3/" class="md-nav__link">
+      <a href="../../TOC/ch3/" class="md-nav__link">
         
   
   
@@ -2986,7 +2776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch4/" class="md-nav__link">
+      <a href="../../TOC/ch4/" class="md-nav__link">
         
   
   
@@ -3014,7 +2804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch5/" class="md-nav__link">
+      <a href="../../TOC/ch5/" class="md-nav__link">
         
   
   
@@ -3042,7 +2832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prove/" class="md-nav__link">
+      <a href="../../TOC/prove/" class="md-nav__link">
         
   
   
@@ -3611,6 +3401,8 @@
                 
   
   
+    
+  
   
   
     
@@ -3645,15 +3437,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" checked="">
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../qi/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -3677,7 +3469,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3697,7 +3489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../qi/lec1/" class="md-nav__link">
+      <a href="../lec1/" class="md-nav__link">
         
   
   
@@ -3725,7 +3517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../qi/lec2/" class="md-nav__link">
+      <a href="../lec2/" class="md-nav__link">
         
   
   
@@ -3753,7 +3545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../qi/lec3/" class="md-nav__link">
+      <a href="../lec3/" class="md-nav__link">
         
   
   
@@ -3781,7 +3573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../qi/lec4/" class="md-nav__link">
+      <a href="../lec4/" class="md-nav__link">
         
   
   
@@ -3809,7 +3601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../qi/lec5/" class="md-nav__link">
+      <a href="../lec5/" class="md-nav__link">
         
   
   
@@ -3837,7 +3629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../qi/lec6/" class="md-nav__link">
+      <a href="../lec6/" class="md-nav__link">
         
   
   
@@ -3865,7 +3657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../qi/lec7/" class="md-nav__link">
+      <a href="../lec7/" class="md-nav__link">
         
   
   
@@ -3893,7 +3685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../qi/lec8/" class="md-nav__link">
+      <a href="../lec8/" class="md-nav__link">
         
   
   
@@ -3918,10 +3710,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../qi/lec9/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Quantum Systems and  Quantum Errors
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3937,6 +3756,143 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#errors-in-a-circuit-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Errors in a Circuit Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Errors in a Circuit Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#经典噪声" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        经典噪声
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recap-of-reduced-density-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recap of Reduced Density Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operator-sum-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operator-Sum Representation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qubit-decoherence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qubit Decoherence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qubit Decoherence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#amplitude-damping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Amplitude Damping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-damping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase Damping
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-master-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Master Equation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Master Equation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lindblad-方程" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lindblad 方程
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5143,33 +5099,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#dfadeterministic-finite-automata" class="md-nav__link">
+  <a href="#errors-in-a-circuit-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DFA(Deterministic Finite Automata)
+        Errors in a Circuit Model
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nfanondeterministic-finite-automata" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        NFA(Nondeterministic Finite Automata)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="NFA(Nondeterministic Finite Automata)">
+    <nav class="md-nav" aria-label="Errors in a Circuit Model">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#定义" class="md-nav__link">
+  <a href="#经典噪声" class="md-nav__link">
     <span class="md-ellipsis">
       
-        定义
+        经典噪声
       
     </span>
   </a>
@@ -5182,10 +5127,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#claim" class="md-nav__link">
+  <a href="#recap-of-reduced-density-matrix" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Claim
+        Recap of Reduced Density Matrix
       
     </span>
   </a>
@@ -5193,34 +5138,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fa--regular-expression" class="md-nav__link">
+  <a href="#operator-sum-representation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        FA &amp; Regular Expression
+        Operator-Sum Representation
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="FA &amp; Regular Expression">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qubit-decoherence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qubit Decoherence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qubit Decoherence">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#正则表达式--fa" class="md-nav__link">
+  <a href="#amplitude-damping" class="md-nav__link">
     <span class="md-ellipsis">
       
-        正则表达式 =&gt; FA
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="正则表达式 =&gt; FA">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#union" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Union
+        Amplitude Damping
       
     </span>
   </a>
@@ -5228,59 +5172,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#concatenation" class="md-nav__link">
+  <a href="#phase-damping" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Concatenation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kleene-star" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Kleene Star
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#complementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Complementation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#intersection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Intersection
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fa--正则表达式" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FA =&gt; 正则表达式
+        Phase Damping
       
     </span>
   </a>
@@ -5293,13 +5188,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#泵定理" class="md-nav__link">
+  <a href="#the-master-equation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        泵定理
+        The Master Equation
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="The Master Equation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lindblad-方程" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lindblad 方程
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -5323,665 +5235,322 @@
   
 
 
-<h1 id="自动机automata">自动机(Automata)<a class="headerlink" href="#自动机automata" title="Permanent link">¶</a></h1>
+<h1 id="open-quantum-systems-and-quantum-errors">Open Quantum Systems and  Quantum Errors<a class="headerlink" href="#open-quantum-systems-and-quantum-errors" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 5016 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 18 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 25 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 1899 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 9 分钟</p>
 </div>
-<blockquote>
-<p>自动机和数逻里面学过的有限状态机很相似,都有状态,输入,转换等概念.自动机是计算理论的基础,是形式语言的识别器.</p>
-</blockquote>
-<div class="admonition example">
-<p class="admonition-title">面试</p>
-<p>面试官有三种状态：印象深刻(impressed)、中立(neutral)和印象不佳(disappointed)。  </p>
+<h2 id="errors-in-a-circuit-model">Errors in a Circuit Model<a class="headerlink" href="#errors-in-a-circuit-model" title="Permanent link">¶</a></h2>
+<p>在量子电路模型里,误差大致可以分成以下几类:</p>
 <ul>
 <li>
-<p>初始时，面试官处于中立状态。  </p>
+<p><strong>State preparation error</strong>:制备初态时需要与控制线路、谐振腔、测量设备等耦合,快速 reset 不可能完全理想.</p>
 </li>
 <li>
-<p>如果学生说了机智(witty)的话，面试官的印象会变好。  </p>
+<p><strong>Gate imperfection</strong>:微波脉冲的幅度、相位、持续时间不精确,或者量子比特频率发生漂移.</p>
 </li>
 <li>
-<p>如果学生说了愚蠢(stupid)的话，面试官的印象会变差。</p>
+<p><strong>Measurement error</strong>:积分时间有限、测量诱导退相干、放大器和探测器噪声.</p>
+</li>
+<li>
+<p><strong>Qubit decoherence</strong>:环境导致 relaxation、heating、dephasing,以及量子比特之间不希望出现的 crosstalk.</p>
 </li>
 </ul>
-<p></p><div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac117.png" data-desc-position="bottom"><img src="../../../image/mac117.png" width="30%"></a>
-    <br>
-    面试
-</div><p></p>
-</div>
-<h2 id="dfadeterministic-finite-automata">DFA(Deterministic Finite Automata)<a class="headerlink" href="#dfadeterministic-finite-automata" title="Permanent link">¶</a></h2>
-<p>在决定有限自动机的图中,不同的状态有不同的符号:</p>
-<ul>
-<li>
-<p>Initial state(初始状态):有一个箭头指向它,表示自动机的开始状态.</p>
-</li>
-<li>
-<p>State(状态):$ q_0, q_1, q_2 $ ,状态用圆圈表示.</p>
-</li>
-<li>
-<p>Final state(终止状态):,双圈表示终止状态.到达终止状态即被接受.</p>
-</li>
-</ul>
-<p>而状态转移函数可以表达为:</p>
+<h3 id="经典噪声">经典噪声<a class="headerlink" href="#经典噪声" title="Permanent link">¶</a></h3>
+<p>一个经典 bit.假设它原来是 <span class="arithmatex">\(0\)</span> 或 <span class="arithmatex">\(1\)</span>,经过一段时间后有概率 <span class="arithmatex">\(p\)</span> 翻转,概率 <span class="arithmatex">\(1-p\)</span> 保持不变.如果用概率向量描述状态,则</p>
 <div class="arithmatex">\[
-\delta:(q,a) = p
+\begin{bmatrix}
+p(Y=0) \\
+p(Y=1)
+\end{bmatrix}
+=
+\begin{bmatrix}
+1-p &amp; p \\
+p &amp; 1-p
+\end{bmatrix}
+\begin{bmatrix}
+p(X=0) \\
+p(X=1)
+\end{bmatrix}.
 \]</div>
-<p>意思是:在状态q下,输入a,自动机转换到状态p.</p>
-<div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac118.png" data-desc-position="bottom"><img src="../../../image/mac118.png" width="40%"></a>
-    <br>
-    图中q0既是初始状态也是终止状态
-</div>
-
-<div class="admonition definition">
-<p class="admonition-title">自动机(DFA)的定义</p>
-<p>自动机是一个五元组<span class="arithmatex">\((Q, \Sigma, \delta, q_0, F)\)</span>,其中:</p>
-<ul>
-<li>
-<p><span class="arithmatex">\(Q\)</span> 是有限状态集.</p>
-</li>
-<li>
-<p><span class="arithmatex">\(\Sigma\)</span> 是有限输入符号集(字母表).</p>
-</li>
-<li>
-<p><span class="arithmatex">\(\delta\)</span> 是状态转移函数,形式为 <span class="arithmatex">\(\delta: Q \times \Sigma \rightarrow Q\)</span>.</p>
-</li>
-<li>
-<p><span class="arithmatex">\(q_0 \in Q\)</span> 是初始状态.</p>
-</li>
-<li>
-<p><span class="arithmatex">\(F \subseteq Q\)</span> 是终止状态集,包含一个或多个终止状态.</p>
-</li>
-</ul>
-</div>
-<blockquote>
-<p>之所以是确定性的,是因为对于每个状态和输入符号,状态转移函数都唯一地确定了下一个状态.</p>
-</blockquote>
-<div class="admonition tip">
-<p class="admonition-title">自动机的作用</p>
-<p>有限自动机是一种识别装置，它有有限个内部状态。自动机接收输入（通常是一串符号），并根据目前已经读到的输入序列，判断这个序列是否属于某种语言。如果属于该语言，自动机就“接受”输入（回答“yes”）；如果不属于，则“拒绝”输入（回答“no”）。</p>
-<p>换句话说，自动机就是用来判断一个字符串是否符合某种规则（语言）的工具。</p>
-<p>如果一个输入字符串被自动机接受,那么这个字符串就属于该自动机所识别的语言.</p>
-</div>
-<div class="admonition definition">
-<p class="admonition-title">Configuration(配置)</p>
-<p>自动机在某一时刻的配置可以用二元组 <span class="arithmatex">\((q, x)\)</span> 表示，其中：</p>
-<ul>
-<li>
-<p><span class="arithmatex">\(q \in Q\)</span>：当前状态</p>
-</li>
-<li>
-<p><span class="arithmatex">\(x \in \Sigma^*\)</span>：剩余的输入字符串（后缀）</p>
-</li>
-</ul>
-<p>对于自动机 <span class="arithmatex">\(M = (Q, \Sigma, \delta, q_0, F)\)</span>，如果当前配置为 <span class="arithmatex">\((q, x)\)</span>，表示自动机处于状态 <span class="arithmatex">\(q\)</span>，还剩下输入 <span class="arithmatex">\(x\)</span>。</p>
-<details class="tip">
-<summary>M的两个配置之间的二元关系<span class="arithmatex">\(\vdash_M\)</span></summary>
-<p>如果 <span class="arithmatex">\(\delta(q, a) = p\)</span>，那么我们说配置 <span class="arithmatex">\((q, ax)\)</span> 直接产生（yields）配置 <span class="arithmatex">\((p, x)\)</span>，记作：</p>
+<p>也就是</p>
 <div class="arithmatex">\[
-(q, ax) \vdash_M (p, x)
+\vec{p}_Y = E\vec{p}_X.
 \]</div>
-<p>这表示在状态 <span class="arithmatex">\(q\)</span> 下读取输入符号 <span class="arithmatex">\(a\)</span> 后，自动机转移到状态 <span class="arithmatex">\(p\)</span>，并且剩余输入变为 <span class="arithmatex">\(x\)</span>。</p>
-<p>如果存在一系列配置 <span class="arithmatex">\((q_1, x_1), (q_2, x_2), \ldots, (q_n, x_n)\)</span>，使得：</p>
+<p>这里我们称<span class="arithmatex">\(E\)</span>是概率转移矩阵.</p>
+<p>这个例子主要是想说明,对于经典比特的状态,可以用概率向量来说明,噪声是作用在概率向量上的</p>
+<p>而对于量子比特的状态,我们使用其密度矩阵来说明.对于量子比特的噪声,其映射在密度矩阵上</p>
+<h2 id="recap-of-reduced-density-matrix">Recap of Reduced Density Matrix<a class="headerlink" href="#recap-of-reduced-density-matrix" title="Permanent link">¶</a></h2>
+<p>我们之前已经学过,对于一个封闭系统的含时演化,其密度矩阵可以写为:</p>
 <div class="arithmatex">\[
-(q_1, x_1) \vdash_M (q_2, x_2) \vdash_M \ldots \vdash_M (q_n, x_n)
+\mathcal{E}_U(\rho) = U\rho U^\dagger.
 \]</div>
-<p>那么我们说配置 <span class="arithmatex">\((q_1, x_1)\)</span> 产生（yields）配置 <span class="arithmatex">\((q_n, x_n)\)</span>，记作：</p>
+<p>但实际中,系统本身并不一定是封闭的,它可能与环境耦合.因此我们需要一个更一般的框架来描述系统的演化.</p>
+<p>考虑总系统由目标系统 <span class="arithmatex">\(S\)</span> 和环境 <span class="arithmatex">\(E\)</span> 构成,整体密度矩阵为 <span class="arithmatex">\(\rho\)</span>,这可以看作为一个大的封闭系统.如果我们只测量系统 <span class="arithmatex">\(S\)</span> 上的观测量 <span class="arithmatex">\(L_S\)</span>,实际观测量是</p>
 <div class="arithmatex">\[
-(q_1, x_1) \vdash^*_M (q_n, x_n)
+L_S \otimes I_E.
 \]</div>
-<p>这表示从初始配置 <span class="arithmatex">\((q_1, x_1)\)</span> 出发，通过一系列状态转移，最终达到配置 <span class="arithmatex">\((q_n, x_n)\)</span>。</p>
-<blockquote>
-<p>注意: 这里的 <span class="arithmatex">\(\vdash^*_M\)</span> 是 <span class="arithmatex">\(\vdash_M\)</span> 的反复应用，可以是<strong>零次</strong>或多次。</p>
-</blockquote>
-</details>
-</div>
-<p>因此,我们现在可以定义一个字符串被自动机接受的条件:</p>
-<p>对于自动机 <span class="arithmatex">\(M = (Q, \Sigma, \delta, q_0, F)\)</span>，如果存在一个终止状态 <span class="arithmatex">\(q_f \in F\)</span>，使得：</p>
+<p>期望为</p>
 <div class="arithmatex">\[
-(q_0, w) \vdash^*_M (q_f, \epsilon)
+\langle L_S\rangle
+= \operatorname{Tr}\rho(L_S\otimes I_E).
 \]</div>
-<p>那么我们说字符串 <span class="arithmatex">\(w\)</span> 被自动机 <span class="arithmatex">\(M\)</span> 接受。</p>
-<p>这里，<span class="arithmatex">\((q_0, w)\)</span> 是初始配置，表示自动机从初始状态 <span class="arithmatex">\(q_0\)</span> 开始，输入字符串为 <span class="arithmatex">\(w\)</span>；<span class="arithmatex">\((q_f, \epsilon)\)</span> 是终止配置，表示自动机最终到达终止状态 <span class="arithmatex">\(q_f\)</span>，且没有剩余输入（<span class="arithmatex">\(\epsilon\)</span> 表示空字符串）。</p>
-<p>换句话说，如果自动机从初始状态出发，经过一系列状态转移后，能够在读取完整个输入字符串后停在某个终止状态，那么这个输入字符串就被该自动机接受。</p>
-<p>对于<span class="arithmatex">\(\epsilon\)</span>是否被接受,需要看初始状态是否是终止状态.</p>
-<h2 id="nfanondeterministic-finite-automata">NFA(Nondeterministic Finite Automata)<a class="headerlink" href="#nfanondeterministic-finite-automata" title="Permanent link">¶</a></h2>
-<blockquote>
-<p>非确定性有限自动机和确定性有限自动机的区别在于,对于某个状态和输入符号,可能有多个下一个状态.</p>
-</blockquote>
-<p>现在,我们希望实现一个自动机,判别一个字符串是否满足<span class="arithmatex">\((ab \cup aba)^*\)</span>,即字符串由"ab"和"aba"重复组成.</p>
-<p>如果是决定性自动机,需要这样设计:</p>
-<div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac119.png" data-desc-position="bottom"><img src="../../../image/mac119.png" width="60%"></a>
-    <br>
-    DFA for (ab ∪ aba)*
-</div>
-
-<p>现在,我们希望通过非决定性自动机来实现,即允许一个状态和输入符号对应多个下一个状态.</p>
-<hr>
-<h3 id="定义">定义<a class="headerlink" href="#定义" title="Permanent link">¶</a></h3>
-<p>NFA和DFA的定义类似,五元组<span class="arithmatex">\((Q, \Sigma, \delta, q_0, F)\)</span>,其中:</p>
-<ul>
-<li>
-<p><span class="arithmatex">\(Q\)</span> 是有限状态集.</p>
-</li>
-<li>
-<p><span class="arithmatex">\(\Sigma\)</span> 是有限输入符号集(字母表).</p>
-</li>
-<li>
-<p><span class="arithmatex">\(\delta\)</span> 是状态转移关系,是<span class="arithmatex">\(Q \times (\Sigma \cup \{\epsilon\}) \times Q\)</span>的子集</p>
-<ul>
-<li>
-<p>这里的<span class="arithmatex">\(\epsilon\)</span>表示空输入,即不需要输入符号也可以转换状态.</p>
-</li>
-<li>
-<p>由于<span class="arithmatex">\(\delta\)</span>的输出是一个状态集,所以,对于某个状态和输入符号,可能有多个下一个状态.</p>
-</li>
-</ul>
-</li>
-<li>
-<p><span class="arithmatex">\(q_0 \in Q\)</span> 是初始状态.</p>
-</li>
-<li>
-<p><span class="arithmatex">\(F \subseteq Q\)</span> 是终止状态集,包含一个或多个终止状态.</p>
-</li>
-</ul>
-<p>除此之外,Configuration(配置)和接受条件与DFA一致.</p>
-<p>NFA的图在绘制时,有几点不同于DFA:</p>
-<ol>
-<li>
-<p>状态转换箭头上可以标注<span class="arithmatex">\(\epsilon\)</span>,表示不需要输入符号也可以转换状态.</p>
-</li>
-<li>
-<p>对于某个状态和输入符号,可以有多个箭头指向不同的下一个状态.</p>
-</li>
-<li>
-<p>不需要为一个状态的所有可能输入都定义转移,即可以不完整.如果在某个状态下，收到的输入符号没有对应的转移路径，那么这条计算“分支”就会“死亡”并被丢弃。</p>
-</li>
-</ol>
-<hr>
-<div class="admonition info">
-<p class="admonition-title">每一个NFA,都能被转换成一个等价的DFA</p>
-<p>首先,我们必须了解什么是等价的NFA和DFA:如果一个NFA和一个DFA识别同一个语言,那么它们就是等价的.</p>
-<p>其次,NFA与DFA的区别在于两点:</p>
-<ol>
-<li>
-<p>NFA的状态转换可以是非确定性的,即对于某个状态和输入符号,可能有多个下一个状态.</p>
-</li>
-<li>
-<p>NFA允许<span class="arithmatex">\(\epsilon\)</span>转换,即不需要输入符号也可以转换状态.</p>
-</li>
-</ol>
-<p>我们要做的就是抹平这两点差别.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">消除第一点</label><label for="__tabbed_1_2">消除第二点</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><span class="arithmatex">\(M = (Q, \Sigma, \Delta, s, F)\)</span></p>
-<ul>
-<li>
-<p><span class="arithmatex">\(Q = \{q_0, q_1, q_2\}\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(\Sigma = \{a, b\}\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(s = q_0\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(F = \{q_2\}\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(\Delta = \{ (q_0, a, q_1),\ (q_1, b, q_0),\ (q_1, b, q_2),\ (q_2, a, q_0) \}\)</span></p>
-</li>
-</ul>
-<p>NFA的状态转换图如下:</p>
-<p></p><div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac120.png" data-desc-position="bottom"><img src="../../../image/mac120.png" width="40%"></a>
-    <br>
-    NFA
-</div><p></p>
-<p>其中,非确定性的部分在于:</p>
-<p></p><div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac121.png" data-desc-position="bottom"><img src="../../../image/mac121.png" width="40%"></a>
-    <br>
-    非确定性
-</div><p></p>
-<p>这里的非确定性来源于状态<span class="arithmatex">\(q_1\)</span>在输入<span class="arithmatex">\(b\)</span>时,可以转换到状态<span class="arithmatex">\(q_0\)</span>或<span class="arithmatex">\(q_2\)</span>.因此,我们把<span class="arithmatex">\(q_0\)</span>和<span class="arithmatex">\(q_2\)</span>合并成一个新状态<span class="arithmatex">\(q_{0,2}\)</span>,表示可能处于状态<span class="arithmatex">\(q_0\)</span>或<span class="arithmatex">\(q_2\)</span>.这样,我们就消除了非确定性.</p>
-<p></p><div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac122.png" data-desc-position="bottom"><img src="../../../image/mac122.png" width="40%"></a>
-    <br>
-    消除非确定性
-</div><p></p>
-<p>最后是这样:</p>
-<p></p><div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac123.png" data-desc-position="bottom"><img src="../../../image/mac123.png" width="40%"></a>
-    <br>
-    最终结果
-</div><p></p>
-</div>
-<div class="tabbed-block">
-<p>输入一个普通字符,可以看作是输入一个普通字符后面跟了许多空字符</p>
-<p>基于这种思路,我们可以消除<span class="arithmatex">\(\epsilon\)</span>转换.</p>
-<p>定义<span class="arithmatex">\(E(q)\)</span>为从状态<span class="arithmatex">\(q\)</span>出发,通过若干个<span class="arithmatex">\(\epsilon\)</span>转换可以到达的所有状态的集合,包括<span class="arithmatex">\(q\)</span>本身. </p>
-<p></p><div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac124.png" data-desc-position="bottom"><img src="../../../image/mac124.png" width="40%"></a>
-    <br>
-    消除第一步的结果
-</div><p></p>
-<p>实际上,对于<span class="arithmatex">\(\epsilon\)</span>转换,我们应当把转换的两边状态看作是"等势"的,也就是说,它们面对后面输入的反应是一样的.</p>
-<p>现在我们有</p>
-<ul>
-<li>
-<p><span class="arithmatex">\(E(q_0) = \{q_0\}\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(E(q_1) = \{q_1\}\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(E(q_2) = \{q_2\}\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(E(q_3) = \{q_0, q_2, q_3\}\)</span></p>
-</li>
-</ul>
-<p>我们可以认为,<span class="arithmatex">\(q_1\)</span>在输入<span class="arithmatex">\(b\)</span>后,可以变为<span class="arithmatex">\(E(q_3)\)</span>,即<span class="arithmatex">\(\{q_0, q_2, q_3\}\)</span></p>
-<p>而<span class="arithmatex">\(E(q_3)\)</span>在输入<span class="arithmatex">\(a\)</span>后,可以变为<span class="arithmatex">\(q_0,q_1\)</span>,因为它可以走<span class="arithmatex">\(q_3 \rightarrow_{\epsilon} q_0 \rightarrow_a q_1\)</span>或<span class="arithmatex">\(q_3 \rightarrow_{\epsilon} q_2 \rightarrow_a q_0\)</span></p>
-<p>因此,我们要做的就是把这些点合起来</p>
-<p></p><div align="center">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac125.png" data-desc-position="bottom"><img src="../../../image/mac125.png" width="40%"></a>
-    <br>
-    消除第二步的结果
-</div><p></p>
-</div>
-</div>
-</div>
-</div>
-<hr>
-<div class="admonition tip">
-<p class="admonition-title">Make a DFA from an NFA</p>
-<p>对于一个NFA <span class="arithmatex">\(M = (Q, \Sigma, \Delta, s, F)\)</span>，我们可以构造一个等价的DFA <span class="arithmatex">\(M' = (Q', \Sigma, \delta, s', F')\)</span>，其中：</p>
-<ul>
-<li>
-<p><span class="arithmatex">\(Q' = \mathcal{P}(Q)\)</span>：<span class="arithmatex">\(Q\)</span> 的幂集，表示所有可能的状态子集。</p>
-<ul>
-<li>比如,在上面的例子中,<span class="arithmatex">\(Q'\)</span>的状态出现了<span class="arithmatex">\(\{q_0\}, \{q_1\}, \{q_2\}, \{q_0, q_2\}, \{q_0, q_3\}, \{q_2, q_3\}, \{q_0, q_2, q_3\}\)</span>等.</li>
-</ul>
-</li>
-<li>
-<p><span class="arithmatex">\(\delta: Q' \times \Sigma \rightarrow Q'\)</span>：状态转移函数，定义为：
-    对于<span class="arithmatex">\(K \subseteq Q\)</span>和<span class="arithmatex">\(a \in \Sigma\)</span>，有：</p>
+<p>我们使用之前学过的环境的偏迹:</p>
 <div class="arithmatex">\[
-\delta(K, a) = \bigcup_{q \in K} E(\{p \mid (q, a, p) \in \Delta\})
+\rho_S = \operatorname{Tr}_E \rho
+= \sum_j \langle j_E|\rho|j_E\rangle.
 \]</div>
-<ul>
-<li>也就是说,对于<span class="arithmatex">\(K\)</span>中的每个状态<span class="arithmatex">\(q\)</span>,找到所有<span class="arithmatex">\((q, a, p) \in \Delta\)</span>的<span class="arithmatex">\(p\)</span>,然后计算这些<span class="arithmatex">\(p\)</span>的<span class="arithmatex">\(\epsilon\)</span>闭包,最后把这些闭包合并.</li>
-</ul>
-</li>
-<li>
-<p><span class="arithmatex">\(s' = E(\{s\})\)</span>：初始状态是NFA初始状态的<span class="arithmatex">\(\epsilon\)</span>闭包。</p>
-</li>
-<li>
-<p><span class="arithmatex">\(F' = \{K \subseteq Q \mid K \cap F \neq \emptyset\}\)</span>：终止状态集包含所有与NFA终止状态有交集的状态子集。</p>
-</li>
-</ul>
-</div>
-<h2 id="claim">Claim<a class="headerlink" href="#claim" title="Permanent link">¶</a></h2>
-<p>对于任意字符串 <span class="arithmatex">\(w \in \Sigma^*\)</span> 和任意状态 <span class="arithmatex">\(p, q \in Q\)</span>，有：</p>
+<p>于是</p>
 <div class="arithmatex">\[
-(q, w) \vdash^*_M (p, \epsilon) \iff \exists P \ni p,\ (E(q), w) \vdash^*_{M'} (P, \epsilon)
+\langle L_S\rangle = \operatorname{Tr}_S(\rho_S L_S).
 \]</div>
-<p>其中，<span class="arithmatex">\(E(q)\)</span> 表示从状态 <span class="arithmatex">\(q\)</span> 出发通过若干 <span class="arithmatex">\(\epsilon\)</span> 转换可以到达的所有状态的集合（<span class="arithmatex">\(\epsilon\)</span>-闭包），<span class="arithmatex">\(M\)</span> 是原NFA，<span class="arithmatex">\(M'\)</span> 是其等价DFA。</p>
-<p>换句话说：</p>
-<blockquote>
-<p>对于NFA <span class="arithmatex">\(M\)</span> 和其等价DFA <span class="arithmatex">\(M'\)</span>，如果NFA能从状态 <span class="arithmatex">\(q\)</span> 经过输入 <span class="arithmatex">\(w\)</span> 到达状态 <span class="arithmatex">\(p\)</span> 并且输入耗尽，则DFA能从 <span class="arithmatex">\(E(q)\)</span> 经过 <span class="arithmatex">\(w\)</span> 到达某个包含 <span class="arithmatex">\(p\)</span> 的状态集合 <span class="arithmatex">\(P\)</span>，且输入耗尽。</p>
-</blockquote>
-<p>若上面这个Claim成立,那么我们就证明了NFA和DFA是等价的:</p>
-<p>$ \forall w \in \Sigma^*,$</p>
-<div class="arithmatex">\[\begin{align*}
-w \in L(M) &amp;\iff (s, w) \vdash^*_M (f, \epsilon) \text{ for some } f \in F \\
-&amp;\iff (E(s), w) \vdash^*_{M'} (Q, \epsilon) \text{ for some } f \in Q \\
-&amp;\iff (s', w) \vdash^*_{M'} (Q, \epsilon) \text{ with } Q \in F' \\
-&amp;\iff w \in L(M')
-\end{align*}\]</div>
-<p>因此,w如果被NFA接受,那么它也被DFA接受,反之亦然.</p>
-<hr>
-<p>下面我们来证明这个Claim,采用数学归纳法的方法</p>
-<ol>
-<li>
-<p>若<span class="arithmatex">\(|w| = 0\)</span>,即<span class="arithmatex">\(w = \epsilon\)</span>,那么</p>
-<ul>
-<li>
-<p>如果<span class="arithmatex">\((q, \epsilon) \vdash^*_M (p, \epsilon)\)</span>,那么<span class="arithmatex">\(q = p\)</span>,我们想证明</p>
+<h2 id="operator-sum-representation">Operator-Sum Representation<a class="headerlink" href="#operator-sum-representation" title="Permanent link">¶</a></h2>
+<p>设系统和环境初始可分:</p>
 <div class="arithmatex">\[
-(E(q), \epsilon) \vdash^*_{M'} (P, \epsilon)
+\rho(0) = \rho_S(0)\otimes \rho_E(0).
 \]</div>
-<p>因为<span class="arithmatex">\(M'\)</span>是决定性的,也就是说,对于给定的状态与给定的输入,只有一个可能的下一个状态.</p>
-<p>显然<span class="arithmatex">\((E(q), \epsilon) \vdash^*_{M'} (E(q), \epsilon)\)</span>,因此,取<span class="arithmatex">\(P = E(q)\)</span>即可.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>假设对于任意字符串<span class="arithmatex">\(w\)</span>且<span class="arithmatex">\(|w| = k\)</span>,Claim成立,即</p>
+<p>为了简化,先取环境初态为纯态:</p>
 <div class="arithmatex">\[
-(q, w) \vdash^*_M (p, \epsilon) \iff \exists P \ni p,\ (E(q), w) \vdash^*_{M'} (P, \epsilon)
+\rho_E(0)=|e_0\rangle\langle e_0|.
 \]</div>
-</li>
-<li>
-<p>令<span class="arithmatex">\(|w| = k+1\)</span>,<span class="arithmatex">\(w = xa\)</span>,其中<span class="arithmatex">\(a \in \Sigma\)</span>且<span class="arithmatex">\(x \in \Sigma^*\)</span>且<span class="arithmatex">\(|x| = k\)</span>.</p>
-<ul>
-<li>
-<p>"=&gt;":假设<span class="arithmatex">\((q, w) \vdash^*_M (p, \epsilon)\)</span></p>
-<ul>
-<li>
-<p>那么必然存在两个中间状态<span class="arithmatex">\(r_1, r_2 \in Q\)</span>,使得</p>
+<p>并且定义环境的完备正交基:</p>
 <div class="arithmatex">\[
-(q, xa) \vdash^*_M (r_1, a) \vdash^*_M (r_2, \epsilon) \vdash^*_M (p, \epsilon)
+\sum_k |e_k\rangle\langle e_k| = I_E.
 \]</div>
-</li>
-<li>
-<p>由<span class="arithmatex">\((q, xa) \vdash^*_M (r_1, a)\)</span>可以得到<span class="arithmatex">\((q, x) \vdash^*_M (r_1, \epsilon)\)</span>,那么根据之前的归纳假设,我们有</p>
+<p>我们之前学过:</p>
 <div class="arithmatex">\[
-\exists R_1 \ni r_1,\ (E(q), x) \vdash^*_{M'} (R_1, \epsilon)
+U(t)=e^{-iHt/\hbar}.
 \]</div>
-</li>
-<li>
-<p>由<span class="arithmatex">\((r_1, a) \vdash^*_M (r_2, \epsilon)\)</span>可以得到<span class="arithmatex">\((r_1,a,r_2) \in \Delta\)</span>,那么根据上面等价DFA的定义,我们可以说<span class="arithmatex">\(E(r_2) \subseteq \delta(R_1, a)\)</span>,因此,我们有</p>
+<p>我们真正关心的是系统 <span class="arithmatex">\(S\)</span> 的约化密度矩阵:</p>
 <div class="arithmatex">\[
-(E(q), xa) \vdash^*_{M'} (\delta(R_1, a), \epsilon)
+\begin{aligned}
+\rho_S(t)
+&amp;= \operatorname{Tr}_E\left\{
+U(t)\left[\rho_S(0)\otimes |e_0\rangle\langle e_0|\right]U^\dagger(t)
+\right\} \\
+&amp;= \sum_k \langle e_k|U(t)|e_0\rangle
+\rho_S(0)
+\langle e_0|U^\dagger(t)|e_k\rangle.
+\end{aligned}
 \]</div>
-</li>
-<li>
-<p>最后,<span class="arithmatex">\((r_2, \epsilon) \vdash^*_M (p, \epsilon)\)</span>,那么<span class="arithmatex">\(p \in E(r_2)\)</span></p>
-</li>
-</ul>
-<div class="arithmatex">\[\begin{align*}
-&amp;\text{因此，} (E(q), xa) \vdash^*_{M'} (P, \epsilon) \\
-&amp;\text{其中 } P = \delta(R_1, a) \text{ 且 } p \in E(r_2) \subseteq P.
-\end{align*}\]</div>
-</li>
-<li>
-<p>"&lt;=":假设<span class="arithmatex">\(\exists P \ni p,\ (E(q), xa) \vdash^*_{M'} (P, \epsilon)\)</span></p>
-<ul>
-<li>
-<p>一样的,我们可以找到一个中间状态<span class="arithmatex">\(R_1 \in Q'\)</span>,使得</p>
+<p>定义</p>
 <div class="arithmatex">\[
-(E(q), xa) \vdash^*_{M'} (R_1, a) \vdash^*_{M'} (P, \epsilon)
+E_k = \langle e_k|U(t)|e_0\rangle,
 \]</div>
-</li>
-<li>
-<p>显然我们有<span class="arithmatex">\(P = \delta(R_1, a)\)</span>,取<span class="arithmatex">\(p \in P\)</span>,那么根据上面的等价DFA的定义,我们有</p>
+<p>得到 <strong>operator-sum representation</strong>:</p>
 <div class="arithmatex">\[
-\exists r_2 \in Q,\ p \in E(r_2) \text{ 且 } (r_1, a, r_2) \in \Delta \text{ for some } r_1 \in R_1
+\rho_S(t)=\sum_k E_k\rho_S(0)E_k^\dagger.
 \]</div>
-</li>
-<li>
-<p>所以,就可以一连串地推出</p>
+<p>这里的 <span class="arithmatex">\(E_k\)</span> 称为 <strong>Kraus operators</strong>.它们只作用在系统 <span class="arithmatex">\(S\)</span> 上,但已经编码了环境初态和系统-环境耦合的信息.</p>
+<p>如果没有从环境中读取任何过程信息,则 Kraus 算符满足完备性条件:</p>
 <div class="arithmatex">\[
-(E(q), x) \vdash^*_{M'} (R_1, \epsilon) \Rightarrow (q, x) \vdash^*_M (r_1, \epsilon) , (r_1, a) \vdash^*_M (r_2, \epsilon) , (r_2, \epsilon) \vdash^*_M (p, \epsilon)
+\sum_k E_k^\dagger E_k = I.
 \]</div>
-</li>
-<li>
-<p>因此,得到</p>
+<p>这个条件保证</p>
 <div class="arithmatex">\[
-(q, xa) \vdash^*_M (p, \epsilon)
+\operatorname{Tr}\rho_S(t)=1.
 \]</div>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="fa--regular-expression">FA &amp; Regular Expression<a class="headerlink" href="#fa--regular-expression" title="Permanent link">¶</a></h2>
-<p><strong>一个语言是正则的,当且仅当它被某个有限自动机识别.</strong></p>
-<p>我们分成两个方向来进行证明</p>
-<h3 id="正则表达式--fa">正则表达式 =&gt; FA<a class="headerlink" href="#正则表达式--fa" title="Permanent link">¶</a></h3>
-<blockquote>
-<p>给定一个正则表达式,我们可以构造一个NFA来识别它.</p>
-</blockquote>
-<p>我们知道,一个正则语言实际上是由空集<span class="arithmatex">\(\emptyset\)</span>和单个字符<span class="arithmatex">\(a \in \Sigma\)</span>通过正则运算(连接、并、闭包)构造出来的.</p>
-<p>因此,证明的思路就是说明,对于能被一个FA接受的正则语言,在经过正则运算(连接、并、闭包)后,它仍然能被一个FA接受.由于空集和单个字符<span class="arithmatex">\(a \in \Sigma\)</span>显然能被FA接受,因此我们只要证明Union,Concatenation, Kleene Star, complementation, intersection这五种运算在FA下封闭即可.</p>
-<h4 id="union">Union<a class="headerlink" href="#union" title="Permanent link">¶</a></h4>
-<p>假设有两个NFA,分别为<span class="arithmatex">\(M_1 = (Q_1, \Sigma, \Delta_1, s_1, F_1)\)</span>和<span class="arithmatex">\(M_2 = (Q_2, \Sigma, \Delta_2, s_2, F_2)\)</span>,它们分别识别语言<span class="arithmatex">\(L(M_1)\)</span>和<span class="arithmatex">\(L(M_2)\)</span>.</p>
-<p>那么,我们可以构造一个新的NFA,使得它识别语言<span class="arithmatex">\(L(M_1) \cup L(M_2)\)</span>.</p>
-<p>这个新的NFA为<span class="arithmatex">\(M = (Q, \Sigma, \Delta, s, F)\)</span>,其中:</p>
+<p>同时,<span class="arithmatex">\(\rho_S(t)\)</span> 仍然满足:</p>
 <ul>
-<li>
-<p><span class="arithmatex">\(Q = Q_1 \cup Q_2 \cup \{s\}\)</span>,其中<span class="arithmatex">\(s\)</span>是一个新的初始状态.</p>
-</li>
-<li>
-<p><span class="arithmatex">\(\Delta = \Delta_1 \cup \Delta_2 \cup \{(s, \epsilon, s_1), (s, \epsilon, s_2)\}\)</span>.</p>
-</li>
-<li>
-<p><span class="arithmatex">\(F = F_1 \cup F_2\)</span>.</p>
-</li>
+<li>Hermitian</li>
+<li>trace 为 <span class="arithmatex">\(1\)</span></li>
+<li>半正定</li>
 </ul>
-<div style="text-align: center;">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac140.png" data-desc-position="bottom"><img src="../../../image/mac140.png" width="60%"></a>
-    <br>
-    Union
-</div>
-
-<h4 id="concatenation">Concatenation<a class="headerlink" href="#concatenation" title="Permanent link">¶</a></h4>
-<p>假设有两个NFA,分别为<span class="arithmatex">\(M_1 = (Q_1, \Sigma, \Delta_1, s_1, F_1)\)</span>和<span class="arithmatex">\(M_2 = (Q_2, \Sigma, \Delta_2, s_2, F_2)\)</span>,它们分别识别语言<span class="arithmatex">\(L(M_1)\)</span>和<span class="arithmatex">\(L(M_2)\)</span>.</p>
-<p>那么,我们可以构造一个新的NFA,使得它识别语言<span class="arithmatex">\(L(M_1) \cdot L(M_2)\)</span>.</p>
-<p>这个新的NFA为<span class="arithmatex">\(M = (Q, \Sigma, \Delta, s, F)\)</span>,其中:</p>
+<p>但是一般来说,这个演化不是幺正的.偏迹丢掉了环境自由度的信息,所以系统演化可能不可逆,表现出时间箭头.</p>
+<h2 id="qubit-decoherence">Qubit Decoherence<a class="headerlink" href="#qubit-decoherence" title="Permanent link">¶</a></h2>
+<p>量子比特与环境耦合时,环境可以看成对量子比特进行了一种没有被我们读取的测量.</p>
+<p>噪声的主要影响通常分成两类:</p>
 <ul>
-<li>
-<p><span class="arithmatex">\(Q = Q_1 \cup Q_2\)</span>.</p>
-</li>
-<li>
-<p><span class="arithmatex">\(\Delta = \Delta_1 \cup \Delta_2 \cup \{(f, \epsilon, s_2) \mid f \in F_1\}\)</span>.</p>
-</li>
-<li>
-<p><span class="arithmatex">\(s = s_1\)</span>.</p>
-</li>
-<li>
-<p><span class="arithmatex">\(F = F_2\)</span>.</p>
-</li>
+<li><strong>Relaxation</strong>:改变能级占据,例如激发态衰减到基态.</li>
+<li><strong>Dephasing</strong>:不改变能级占据,但随机化相位,导致相干项衰减.</li>
 </ul>
-<div style="text-align: center;">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac141.png" data-desc-position="bottom"><img src="../../../image/mac141.png" width="60%"></a>
-    <br>
-    Concatenation
-</div>
-
-<h4 id="kleene-star">Kleene Star<a class="headerlink" href="#kleene-star" title="Permanent link">¶</a></h4>
-<p>假设有一个NFA,为<span class="arithmatex">\(M_1 = (Q_1, \Sigma, \Delta_1, s_1, F_1)\)</span>,它识别语言<span class="arithmatex">\(L(M_1)\)</span>.</p>
-<p>那么,我们可以构造一个新的NFA,使得它识别语言<span class="arithmatex">\(L(M_1)^*\)</span>.</p>
-<p>这个新的NFA为<span class="arithmatex">\(M = (Q, \Sigma, \Delta, s, F)\)</span>,其中:</p>
-<ul>
-<li>
-<p><span class="arithmatex">\(Q = Q_1 \cup \{s\}\)</span>,其中<span class="arithmatex">\(s\)</span>是一个新的初始状态.</p>
-</li>
-<li>
-<p><span class="arithmatex">\(\Delta = \Delta_1 \cup \{(s, \epsilon, s_1)\} \cup \{(f, \epsilon, s_1) \mid f \in F_1\}\)</span>.</p>
-</li>
-<li>
-<p><span class="arithmatex">\(s = s\)</span>.</p>
-</li>
-<li>
-<p><span class="arithmatex">\(F = F_1 \cup \{s\}\)</span>.</p>
-</li>
-</ul>
-<details class="problem">
-<summary>为什么需要一个新的初始状态?</summary>
-<p>在常规的想法下,我们把原来的初始状态也允许当终止状态,并让每个终止状态无条件地跳回初始状态,似乎就可以了.</p>
-<p>但是,有<strong>反例</strong>:</p>
-<p>令<span class="arithmatex">\(L(M)=a(ba)^*\)</span>,那么<span class="arithmatex">\(L(M)^*= (a(ba)^*)^*\)</span>.如果不引入新的初始状态,那么原来的初始状态是终止状态,因此,字符串<span class="arithmatex">\(ab\)</span>就会被接受,但是<span class="arithmatex">\(ab \notin (a(ba)^*)^*\)</span>.</p>
-</details>
-<h4 id="complementation">Complementation<a class="headerlink" href="#complementation" title="Permanent link">¶</a></h4>
-<p>假设有一个DFA,为<span class="arithmatex">\(M_1 = (Q_1, \Sigma, \delta_1, s_1, F_1)\)</span>,它识别语言<span class="arithmatex">\(L(M_1)\)</span>.</p>
-<p>我们可以构造一个新的DFA,为<span class="arithmatex">\(M_2 = (Q_1, \Sigma, \delta_1, s_1, F_2)\)</span>,只要<span class="arithmatex">\(F_2 = Q_1 - F_1\)</span>,这样,它识别语言<span class="arithmatex">\(L(M_1)^c\)</span>.</p>
-<h4 id="intersection">Intersection<a class="headerlink" href="#intersection" title="Permanent link">¶</a></h4>
-<blockquote>
-<p>交集的思想类似于让两台自动机并行接受输入,只有当两个机器最后都到达终止状态时,输入才被接受.</p>
-</blockquote>
-<p>我们使用<strong>笛卡尔积</strong>.</p>
-<p>假设有两个DFA,分别为<span class="arithmatex">\(M_1 = (Q_1, \Sigma, \delta_1, s_1, F_1)\)</span>和<span class="arithmatex">\(M_2 = (Q_2, \Sigma, \delta_2, s_2, F_2)\)</span>,它们分别识别语言<span class="arithmatex">\(L(M_1)\)</span>和<span class="arithmatex">\(L(M_2)\)</span>.</p>
-<p>那么,我们可以构造一个新的DFA,使得它识别语言<span class="arithmatex">\(L(M_1) \cap L(M_2)\)</span>.</p>
-<p>这个新的DFA为<span class="arithmatex">\(M = (Q, \Sigma, \delta, s, F)\)</span>,其中:</p>
-<ul>
-<li>
-<p><span class="arithmatex">\(Q = Q_1 \times Q_2\)</span>.</p>
-</li>
-<li>
-<p><span class="arithmatex">\(\delta((q_1, q_2), a) = (\delta_1(q_1, a), \delta_2(q_2, a))\)</span>.</p>
-</li>
-<li>
-<p><span class="arithmatex">\(s = (s_1, s_2)\)</span>.</p>
-</li>
-<li>
-<p><span class="arithmatex">\(F = F_1 \times F_2\)</span>.</p>
-</li>
-</ul>
-<h3 id="fa--正则表达式">FA =&gt; 正则表达式<a class="headerlink" href="#fa--正则表达式" title="Permanent link">¶</a></h3>
-<p>首先,我们需要定义广义NFA(Generalized NFA, GNFA):</p>
-<p>一个<strong>广义有限自动机 (Generalized Finite Automaton)</strong> <span class="arithmatex">\(MG = (K_G, \Sigma_G, \Delta_G, s_G, F_G)\)</span> 是对一个 NFA <span class="arithmatex">\(M = (K, \Sigma, \Delta, s, F)\)</span> 的如下泛化：</p>
-<ul>
-<li>
-<p><span class="arithmatex">\(MG\)</span> 拥有<strong>单一的接受状态</strong>。</p>
-</li>
-<li>
-<p>其字母表 <span class="arithmatex">\(\Sigma_G = \Sigma \cup R_0\)</span>，其中 <span class="arithmatex">\(R_0\)</span> 是基于 <span class="arithmatex">\(\Sigma\)</span> 的正则表达式集合 <span class="arithmatex">\(R\)</span> 的一个有限子集。</p>
-</li>
-<li>
-<p><span class="arithmatex">\(MG\)</span> 的<strong>转移</strong>可以由<strong>符号</strong>或<strong>正则表达式</strong>来标记。</p>
-<ul>
-<li>转移函数 <span class="arithmatex">\(\Delta_G \subseteq K_G \times (\Sigma_G \cup \{\epsilon\} \cup R) \times K_G\)</span></li>
-</ul>
-</li>
-<li>
-<p><strong>初始状态</strong>没有任何<strong>入边</strong>（指向它的转移），<strong>接受状态</strong>没有任何<strong>出边</strong>（从它出发的转移）。</p>
-</li>
-</ul>
-<p>那么,把一个FA转换成一个等价的正则表达式,可以分为以下几个步骤:</p>
-<ol>
-<li>
-<p>重命名FA M的状态为<span class="arithmatex">\(q_1, q_2, \ldots, q_{n-2}\)</span></p>
-</li>
-<li>
-<p>拓展M到MG:</p>
-<ul>
-<li>
-<p>增加两个状态<span class="arithmatex">\(q_{n-1}, q_n\)</span>,其中<span class="arithmatex">\(q_{n-1}\)</span>是新的初始状态,<span class="arithmatex">\(q_n\)</span>是新的终止状态.</p>
-</li>
-<li>
-<p><span class="arithmatex">\(\Delta_G = \Delta \cup \{(q_{n-1}, \epsilon, q_1)\} \cup \{(f, \epsilon, q_n) \mid f \in F\}\)</span></p>
-</li>
-</ul>
-<p></p><div style="text-align: center;">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac142.png" data-desc-position="bottom"><img src="../../../image/mac142.png" width="60%"></a>
-    <br>
-    拓展FA到GNFA
-</div><p></p>
-</li>
-<li>
-<p>然后,不断消解中间状态,直到只剩下初始状态和终止状态.</p>
-<ul>
-<li>
-<p>假设我们要消解<span class="arithmatex">\(q_k\)</span>,那么,对于每一对状态<span class="arithmatex">\((q_i, q_j)\)</span>,我们需要找到所有从<span class="arithmatex">\(q_i\)</span>到<span class="arithmatex">\(q_j\)</span>的路径,这些路径可以分为三类:</p>
-<ol>
-<li>
-<p>直接从<span class="arithmatex">\(q_i\)</span>到<span class="arithmatex">\(q_j\)</span>的路径</p>
-</li>
-<li>
-<p>从<span class="arithmatex">\(q_i\)</span>到<span class="arithmatex">\(q_k\)</span>,然后从<span class="arithmatex">\(q_k\)</span>到<span class="arithmatex">\(q_j\)</span>的路径</p>
-</li>
-<li>
-<p>从<span class="arithmatex">\(q_i\)</span>到<span class="arithmatex">\(q_k\)</span>,然后在<span class="arithmatex">\(q_k\)</span>上循环若干次,最后从<span class="arithmatex">\(q_k\)</span>到<span class="arithmatex">\(q_j\)</span>的路径</p>
-</li>
-</ol>
-</li>
-<li>
-<p>假设这些路径分别由正则表达式<span class="arithmatex">\(r_1, r_2, r_3\)</span>表示,那么,我们可以把这些路径合并成一个新的正则表达式<span class="arithmatex">\(r = r_1 \cup r_2 \cup r_3\)</span>,然后把<span class="arithmatex">\(\Delta_G\)</span>中所有与<span class="arithmatex">\(q_k\)</span>相关的转移删除,并增加一个新的转移<span class="arithmatex">\((q_i, r, q_j)\)</span>.</p>
-</li>
-<li>
-<p>重复这个过程,直到只剩下初始状态和终止状态.</p>
-</li>
-</ul>
-<p></p><div style="text-align: center;">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac143.png" data-desc-position="bottom"><img src="../../../image/mac143.png" width="60%"></a>
-    <br>
-    消解中间状态
-</div><p></p>
-</li>
-<li>
-<p>最后,我们得到一个只有两个状态的GNFA,其中唯一的转移标记着一个正则表达式,这个正则表达式就是我们要找的等价正则表达式.</p>
-</li>
-</ol>
-<details class="example">
-<summary>Example</summary>
-<p>令M为FA,识别语言<span class="arithmatex">\(L = \{\, w \in \{a, b\}^* \mid w \text{ 中的 } b \text{ 的个数为 } 3k+1,\, k \in \mathbb{N} \,\}\)</span></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><input id="__tabbed_2_5" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">初始FA</label><label for="__tabbed_2_2">拓展FA到GNFA</label><label for="__tabbed_2_3">消解中间状态q1</label><label for="__tabbed_2_4">消解中间状态q2</label><label for="__tabbed_2_5">消解中间状态q3,得到答案</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p></p><div style="text-align: center;">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac144.png" data-desc-position="bottom"><img src="../../../image/mac144.png" width="40%"></a>
-    <br>
-    初始FA
-</div><p></p>
-</div>
-<div class="tabbed-block">
-<p></p><div style="text-align: center;">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac145.png" data-desc-position="bottom"><img src="../../../image/mac145.png" width="40%"></a>
-    <br>
-    拓展FA到GNFA
-</div><p></p>
-</div>
-<div class="tabbed-block">
-<p></p><div style="text-align: center;">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac146.png" data-desc-position="bottom"><img src="../../../image/mac146.png" width="40%"></a>
-    <br>
-    消解中间状态q1
-</div><p></p>
-</div>
-<div class="tabbed-block">
-<p></p><div style="text-align: center;">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac147.png" data-desc-position="bottom"><img src="../../../image/mac147.png" width="40%"></a>
-    <br>
-    消解中间状态q2
-</div><p></p>
-</div>
-<div class="tabbed-block">
-<p></p><div style="text-align: center;">
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/mac148.png" data-desc-position="bottom"><img src="../../../image/mac148.png" width="40%"></a>
-    <br>
-    消解中间状态q3
-</div><p></p>
-</div>
-</div>
-</div>
-</details>
-<h2 id="泵定理">泵定理<a class="headerlink" href="#泵定理" title="Permanent link">¶</a></h2>
-<blockquote>
-<p>既然我们已经知道正则语言和有限自动机是等价的,那么我们可以用直觉的语言表述,一个语言如果需要“无限的记忆”，那么它就不是正则语言,因为为了表示这无限的记忆,需要无限的状态,而有限自动机只有有限的状态.</p>
-<p>什么是无限的记忆? 比如,语言<span class="arithmatex">\(L = \{a^n b^n \mid n \geq 0\}\)</span>,它要求字符串中'a'和'b'的数量相等.那么,当一个字符串输入的时候,我们需要记住现在有几个'a',每一个数量对应一个状态,以便后面能匹配相等数量的'b'.但是,由于有限自动机的状态是有限的,所以它无法记住任意数量的'a'.因此,这个语言不是正则语言.</p>
-<p>但是,如果要识别有偶数个'a'的字符串,那么我们只需要两个状态:一个表示当前有偶数个'a',另一个表示当前有奇数个'a'.每次输入'a'时,状态在这两个状态之间切换.因此,这个语言是正则语言.</p>
-</blockquote>
-<p>泵定理已经在<a href="../ch1/#泵引理pumping-lemma">之前</a>讲述过.</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">例1</label><label for="__tabbed_3_2">例2</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>证明:<span class="arithmatex">\(L = \{a^n |n是质数\}\)</span>不是正则语言.</p>
-<p>假设<span class="arithmatex">\(L\)</span>是正则语言,那么根据泵定理,存在一个泵长度<span class="arithmatex">\(p\)</span>,使得对于任意字符串<span class="arithmatex">\(s \in L\)</span>且<span class="arithmatex">\(|s| \geq p\)</span>,都可以把<span class="arithmatex">\(s\)</span>分解为<span class="arithmatex">\(s = xyz\)</span>,其中<span class="arithmatex">\(x=a^k, y=a^m, z=a^p\)</span>,<span class="arithmatex">\(k+m+p\text{是质数}\)</span></p>
-<p>那么,<span class="arithmatex">\(xy^iz = a^{k+im+p}\)</span>也必须在<span class="arithmatex">\(L\)</span>中,即<span class="arithmatex">\(k+im+p\)</span>是质数.</p>
-<p>然而,这是不成立的,取<span class="arithmatex">\(i = k + p\)</span>,那么</p>
+<h3 id="amplitude-damping">Amplitude Damping<a class="headerlink" href="#amplitude-damping" title="Permanent link">¶</a></h3>
+<p>Amplitude damping 描述激发态自发辐射衰减到基态的过程.记基态为 <span class="arithmatex">\(|g\rangle\)</span>,激发态为 <span class="arithmatex">\(|e\rangle\)</span>,环境初始为真空态 <span class="arithmatex">\(|0\rangle\)</span>.一段时间后,激发态有概率 <span class="arithmatex">\(p\)</span> 衰减并放出一个光子:</p>
 <div class="arithmatex">\[
-k + (k + p)m + p = (k + p)(m + 1)
+|g\rangle|0\rangle \mapsto |g\rangle|0\rangle,
 \]</div>
-<p>显然,<span class="arithmatex">\((k + p)(m + 1)\)</span>不是质数,与假设矛盾.</p>
+<div class="arithmatex">\[
+|e\rangle|0\rangle
+\mapsto
+\sqrt{1-p}|e\rangle|0\rangle
++ \sqrt{p}|g\rangle|1\rangle.
+\]</div>
+<p>也就是说,整个系统(包括系统与环境)的演化可以写成</p>
+<div class="arithmatex">\[
+\begin{aligned}
+U(\delta t) |g\rangle|0\rangle
+&amp;= |g\rangle|0\rangle, \\
+U(\delta t) |e\rangle|0\rangle
+&amp;= \sqrt{1-p}|e\rangle|0\rangle
++ \sqrt{p}|g\rangle|1\rangle.
+\end{aligned}
+\]</div>
+<p>根据定义得到 Kraus 算符(以系统 <span class="arithmatex">\(S\)</span> 的基态 <span class="arithmatex">\(|g\rangle\)</span> 和激发态 <span class="arithmatex">\(|e\rangle\)</span> 为基):</p>
+<div class="arithmatex">\[
+E_0=
+\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; \sqrt{1-p}
+\end{bmatrix},
+\qquad
+E_1=
+\begin{bmatrix}
+0 &amp; \sqrt{p} \\
+0 &amp; 0
+\end{bmatrix}.
+\]</div>
+<p>若</p>
+<div class="arithmatex">\[
+\rho_S(0)=
+\begin{bmatrix}
+\rho_{gg} &amp; \rho_{ge} \\
+\rho_{eg} &amp; \rho_{ee}
+\end{bmatrix},
+\]</div>
+<p>则</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\rho_S(\delta t)
+&amp;= E_0\rho_S(0)E_0^\dagger + E_1\rho_S(0)E_1^\dagger \\
+&amp;=
+\begin{bmatrix}
+\rho_{gg}+p\rho_{ee} &amp; \sqrt{1-p}\rho_{ge} \\
+\sqrt{1-p}\rho_{eg} &amp; (1-p)\rho_{ee}
+\end{bmatrix}.
+\end{aligned}
+\]</div>
+<p>因此 amplitude damping 的效果是:</p>
+<ul>
+<li>激发态布居 <span class="arithmatex">\(\rho_{ee}\)</span> 逐渐转移到基态布居 <span class="arithmatex">\(\rho_{gg}\)</span>.</li>
+<li>非对角元 <span class="arithmatex">\(\rho_{ge},\rho_{eg}\)</span> 也会衰减.</li>
+</ul>
+<p>如果连续作用 <span class="arithmatex">\(n\)</span> 次,</p>
+<div class="arithmatex">\[
+\rho_{ee}\mapsto (1-p)^n\rho_{ee}.
+\]</div>
+<p>引入弛豫时间 <span class="arithmatex">\(T_1\)</span>,当 <span class="arithmatex">\(\delta t\ll T_1\)</span> 时</p>
+<div class="arithmatex">\[
+p \approx \frac{\delta t}{T_1}
+\approx 1-e^{-\delta t/T_1}.
+\]</div>
+<p>激发态保持到时间 <span class="arithmatex">\(t\)</span> 的概率近似为</p>
+<div class="arithmatex">\[
+P(t)\approx e^{-t/T_1}.
+\]</div>
+<p>长时间极限下</p>
+<div class="arithmatex">\[
+\rho_S(t)\to
+\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 0
+\end{bmatrix},
+\]</div>
+<p>也就是说系统最终落到基态.</p>
+<h3 id="phase-damping">Phase Damping<a class="headerlink" href="#phase-damping" title="Permanent link">¶</a></h3>
+<p>Phase damping 描述能级间相位的随机漂移.它不改变 <span class="arithmatex">\(|g\rangle,|e\rangle\)</span> 的布居,只衰减相干项.</p>
+<p>一个 Kraus 表示为</p>
+<div class="arithmatex">\[
+E_0=
+\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; \sqrt{1-q}
+\end{bmatrix},
+\qquad
+E_1=
+\begin{bmatrix}
+0 &amp; 0 \\
+0 &amp; \sqrt{q}
+\end{bmatrix}.
+\]</div>
+<p>于是</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\rho_S(\delta t)
+&amp;= E_0\rho_S(0)E_0^\dagger + E_1\rho_S(0)E_1^\dagger \\
+&amp;=
+\begin{bmatrix}
+\rho_{gg} &amp; \sqrt{1-q}\rho_{ge} \\
+\sqrt{1-q}\rho_{eg} &amp; \rho_{ee}
+\end{bmatrix}.
+\end{aligned}
+\]</div>
+<p>这说明 phase damping 只衰减非对角元.若定义 pure dephasing time <span class="arithmatex">\(T_\phi\)</span>,则</p>
+<div class="arithmatex">\[
+\sqrt{1-q}=e^{-\delta t/T_\phi}.
+\]</div>
+<p>长时间后,非对角元消失:</p>
+<div class="arithmatex">\[
+\rho_\infty
+= \rho_{gg}|g\rangle\langle g|
++ \rho_{ee}|e\rangle\langle e|.
+\]</div>
+<p>也就是原来的量子叠加变成经典概率混合.</p>
+<div class="admonition note">
+<p class="admonition-title">Relaxation 与 Dephasing 的区别</p>
+<ul>
+<li>Relaxation 会改变基态和激发态的占据概率.</li>
+<li>Dephasing 不改变占据概率,只破坏相干项.</li>
+<li>从计算角度看,relaxation 更严重,因为它直接打乱计算基态.</li>
+</ul>
 </div>
-<div class="tabbed-block">
-<p><span class="arithmatex">\(L = \{w \in \{a, b\}^* | w \text{ 中 } a \text{ 和 } b \text{ 的数量相等}\}\)</span>不是正则语言.</p>
-<p>若<span class="arithmatex">\(L\)</span>是正则语言,那么根据交集的封闭性,我们有<span class="arithmatex">\(L \cap a^* b^* = \{a^n b^n | n \geq 0\}\)</span>也是正则语言.</p>
-<p>但是,我们已经知道<span class="arithmatex">\(\{a^n b^n | n \geq 0\}\)</span>不是正则语言,因此,与假设矛盾.</p>
-</div>
-</div>
-</div>
-</div>
+<p>如果实验中同时存在 relaxation 和 dephasing,记</p>
+<div class="arithmatex">\[
+1-p=e^{-\delta t/T_1},
+\qquad
+\sqrt{1-q}=e^{-\delta t/T_\phi},
+\]</div>
+<p>则总退相干时间满足</p>
+<div class="arithmatex">\[
+\frac{1}{T_2^*}
+=
+\frac{1}{2T_1}
++ \frac{1}{T_\phi}.
+\]</div>
+<h2 id="the-master-equation">The Master Equation<a class="headerlink" href="#the-master-equation" title="Permanent link">¶</a></h2>
+<p>前面的 Kraus 表示描述的是有限时间内的量子操作.如果希望用微分方程描述开放系统演化,需要假设演化近似是 Markovian 的,即 <span class="arithmatex">\(\rho(t+\delta t)\)</span> 只由 <span class="arithmatex">\(\rho(t)\)</span> 决定.</p>
+<p>封闭系统的密度矩阵满足 Liouville equation:</p>
+<div class="arithmatex">\[
+\dot{\rho}=-i[H,\rho],
+\]</div>
+<p>这里取 <span class="arithmatex">\(\hbar=1\)</span>.开放系统的一般形式可以写成</p>
+<div class="arithmatex">\[
+\dot{\rho}=\mathcal{L}[\rho],
+\]</div>
+<p>其中 <span class="arithmatex">\(\mathcal{L}\)</span> 称为 Lindbladian,类似于开放系统中的演化生成元.</p>
+<h3 id="lindblad-方程">Lindblad 方程<a class="headerlink" href="#lindblad-方程" title="Permanent link">¶</a></h3>
+<p>从无穷小时间的 Kraus 表示出发:</p>
+<div class="arithmatex">\[
+\rho(t+\delta t)
+=
+\sum_k E_k(\delta t)\rho(t)E_k^\dagger(\delta t).
+\]</div>
+<p>当 <span class="arithmatex">\(\delta t\)</span> 很小时,一个 Kraus 算符近似为</p>
+<div class="arithmatex">\[
+E_0 = I - i\delta t J + O(\delta t^2),
+\]</div>
+<p>其余 Kraus 算符为</p>
+<div class="arithmatex">\[
+E_{k&gt;0} = \sqrt{\delta t}L_k + O(\delta t).
+\]</div>
+<p>把 <span class="arithmatex">\(J\)</span> 的 Hermitian 部分识别为普通哈密顿量:</p>
+<div class="arithmatex">\[
+H = \frac{J+J^\dagger}{2}.
+\]</div>
+<p>利用完备性条件 <span class="arithmatex">\(\sum_k E_k^\dagger E_k=I\)</span>,并取 <span class="arithmatex">\(\delta t\to 0\)</span>,得到 Lindblad master equation:</p>
+<div class="arithmatex">\[
+\dot{\rho}(t)
+=
+-i[H,\rho(t)]
++
+\sum_{k&gt;0}
+\left[
+L_k\rho(t)L_k^\dagger
+-
+\frac{1}{2}L_k^\dagger L_k\rho(t)
+-
+\frac{1}{2}\rho(t)L_k^\dagger L_k
+\right].
+\]</div>
+<p>其中 <span class="arithmatex">\(L_k\)</span> 是 <strong>Lindblad operators</strong>,用于描述不同的耗散或退相干过程,例如 spin flip、relaxation、dephasing 等.</p>
 
 
 
@@ -6004,7 +5573,7 @@ k + (k + p)m + p = (k + p)(m + 1)
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年1月5日 13:47:36 UTC">2026年1月5日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年5月18日 13:04:48 UTC">2026年5月18日</span>
   </span>
 
     
@@ -6014,7 +5583,7 @@ k + (k + p)m + p = (k + p)(m + 1)
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年10月2日 08:12:22 UTC">2025年10月2日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年5月18日 13:04:48 UTC">2026年5月18日</span>
   </span>
 
     
@@ -6143,7 +5712,7 @@ k + (k + p)m + p = (k + p)(m + 1)
       <nav class="md-footer__inner md-grid" aria-label="页脚">
         
           
-          <a href="../ch1/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Ch1:Sets,Relations and Language">
+          <a href="../lec8/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Qubit的实现">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -6153,20 +5722,20 @@ k + (k + p)m + p = (k + p)(m + 1)
                 上一页
               </span>
               <div class="md-ellipsis">
-                Ch1:Sets,Relations and Language
+                Qubit的实现
               </div>
             </div>
           </a>
         
         
           
-          <a href="../ch3/" class="md-footer__link md-footer__link--next" aria-label="下一页: Ch3:CFL与PDA">
+          <a href="../../bianyi/" class="md-footer__link md-footer__link--next" aria-label="下一页: 编译原理">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Ch3:CFL与PDA
+                编译原理
               </div>
             </div>
             <div class="md-footer__button md-icon">
