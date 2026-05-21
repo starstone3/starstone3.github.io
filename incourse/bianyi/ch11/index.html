@@ -7,31 +7,31 @@
         <meta name="author" content="starstone3">
       
       
-        <link rel="canonical" href="https://starstone3.github.io/incourse/db/">
+        <link rel="canonical" href="https://starstone3.github.io/incourse/bianyi/ch11/">
       
       
-        <link rel="prev" href="../Comcompose/Ch6/">
+        <link rel="prev" href="../ch10/">
       
       
-        <link rel="next" href="ch1/">
+        <link rel="next" href="../../old/">
       
       
         
       
       
-      <link rel="icon" href="../../image/fav1.png">
+      <link rel="icon" href="../../../image/fav1.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>来辣 - Starstone3's bed</title>
+        <title>第十一章:寄存器分配 - Starstone3's bed</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
   
@@ -115,15 +115,15 @@
       
     
     
-      <link rel="stylesheet" href="../../css/extra.css">
+      <link rel="stylesheet" href="../../../css/extra.css">
     
-      <link rel="stylesheet" href="../../css/animations.css">
+      <link rel="stylesheet" href="../../../css/animations.css">
     
-      <link rel="stylesheet" href="../../css/flink.css">
+      <link rel="stylesheet" href="../../../css/flink.css">
     
-      <link rel="stylesheet" href="../../css/homepage.css">
+      <link rel="stylesheet" href="../../../css/homepage.css">
     
-      <link rel="stylesheet" href="../../css/styles.css">
+      <link rel="stylesheet" href="../../../css/styles.css">
     
       <link rel="stylesheet" href="https://jsd.cdn.zzko.cn/npm/katex@0.16.4/dist/katex.min.css">
     
@@ -133,7 +133,7 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -149,7 +149,7 @@
 
     
     
-  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -178,7 +178,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#来辣" class="md-skip">
+        <a href="#register-allocation" class="md-skip">
           跳转至
         </a>
       
@@ -192,7 +192,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="Starstone3's bed" class="md-header__button md-logo" aria-label="Starstone3's bed" data-md-component="logo">
+    <a href="../../.." title="Starstone3's bed" class="md-header__button md-logo" aria-label="Starstone3's bed" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M480 0c14.6 0 28.8 1.6 42.5 4.7 7.4 1.7 13 7.8 13.9 15.4s-3 14.9-9.8 18.3C481.2 61 450 107.9 450 162c0 76.2 61.8 138 138 138 3.7 0 7.4-.1 11.1-.4 7.6-.6 14.7 3.6 17.8 10.6s1.5 15.1-3.9 20.4c-26 25-59.1 42.7-95.9 49.9-11.1-25.3-30.2-46.3-54.1-59.8-7.6-63.4-61.6-112.6-127.1-112.6-11.2 0-22.1 1.5-32.5 4.2-4.8-4.2-9.9-8.2-15.2-11.8-.1-2.8-.2-5.6-.2-8.4 0-106 86-192 192-192zm-.1 431.9c0 44.2-35.8 80-80 80H128c-53 0-96-43-96-96 0-47.6 34.6-87 80-94.6-.4-52.8 42.9-97.3 96-97.3 34.9 0 65.4 18.6 82.2 46.4 13-9.1 28.8-14.4 45.8-14.4 44.2 0 80 35.8 80 80 0 5.9-.6 11.7-1.9 17.2 37.4 6.7 65.8 39.4 65.8 78.7"></path></svg>
@@ -212,7 +212,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              来辣
+              第十一章:寄存器分配
             
           </span>
         </div>
@@ -342,7 +342,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../.." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link">
           
   
   
@@ -366,7 +366,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -388,7 +388,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../old/" class="md-tabs__link">
+        <a href="../../old/" class="md-tabs__link">
           
   
   
@@ -410,7 +410,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../article/" class="md-tabs__link">
+        <a href="../../../article/" class="md-tabs__link">
           
   
   
@@ -432,7 +432,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../tools/" class="md-tabs__link">
+        <a href="../../../tools/" class="md-tabs__link">
           
   
   
@@ -468,7 +468,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Starstone3's bed" class="md-nav__button md-logo" aria-label="Starstone3's bed" data-md-component="logo">
+    <a href="../../.." title="Starstone3's bed" class="md-nav__button md-logo" aria-label="Starstone3's bed" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M480 0c14.6 0 28.8 1.6 42.5 4.7 7.4 1.7 13 7.8 13.9 15.4s-3 14.9-9.8 18.3C481.2 61 450 107.9 450 162c0 76.2 61.8 138 138 138 3.7 0 7.4-.1 11.1-.4 7.6-.6 14.7 3.6 17.8 10.6s1.5 15.1-3.9 20.4c-26 25-59.1 42.7-95.9 49.9-11.1-25.3-30.2-46.3-54.1-59.8-7.6-63.4-61.6-112.6-127.1-112.6-11.2 0-22.1 1.5-32.5 4.2-4.8-4.2-9.9-8.2-15.2-11.8-.1-2.8-.2-5.6-.2-8.4 0-106 86-192 192-192zm-.1 431.9c0 44.2-35.8 80-80 80H128c-53 0-96-43-96-96 0-47.6 34.6-87 80-94.6-.4-52.8 42.9-97.3 96-97.3 34.9 0 65.4 18.6 82.2 46.4 13-9.1 28.8-14.4 45.8-14.4 44.2 0 80 35.8 80 80 0 5.9-.6 11.7-1.9 17.2 37.4 6.7 65.8 39.4 65.8 78.7"></path></svg>
@@ -521,7 +521,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../.." class="md-nav__link ">
+            <a href="../../.." class="md-nav__link ">
               
   
   
@@ -565,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../friends/" class="md-nav__link">
+      <a href="../../../friends/" class="md-nav__link">
         
   
   
@@ -646,7 +646,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -743,7 +743,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../ADS/" class="md-nav__link ">
+            <a href="../../ADS/" class="md-nav__link ">
               
   
   
@@ -787,7 +787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADS/Tree/" class="md-nav__link">
+      <a href="../../ADS/Tree/" class="md-nav__link">
         
   
   
@@ -815,7 +815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADS/amana/" class="md-nav__link">
+      <a href="../../ADS/amana/" class="md-nav__link">
         
   
   
@@ -843,7 +843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADS/fileindex/" class="md-nav__link">
+      <a href="../../ADS/fileindex/" class="md-nav__link">
         
   
   
@@ -871,7 +871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADS/Leandsk/" class="md-nav__link">
+      <a href="../../ADS/Leandsk/" class="md-nav__link">
         
   
   
@@ -899,7 +899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADS/bioquene/" class="md-nav__link">
+      <a href="../../ADS/bioquene/" class="md-nav__link">
         
   
   
@@ -927,7 +927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADS/backtracking/" class="md-nav__link">
+      <a href="../../ADS/backtracking/" class="md-nav__link">
         
   
   
@@ -955,7 +955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADS/divide/" class="md-nav__link">
+      <a href="../../ADS/divide/" class="md-nav__link">
         
   
   
@@ -983,7 +983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADS/dp/" class="md-nav__link">
+      <a href="../../ADS/dp/" class="md-nav__link">
         
   
   
@@ -1011,7 +1011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADS/greedy/" class="md-nav__link">
+      <a href="../../ADS/greedy/" class="md-nav__link">
         
   
   
@@ -1039,7 +1039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADS/np/" class="md-nav__link">
+      <a href="../../ADS/np/" class="md-nav__link">
         
   
   
@@ -1067,7 +1067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADS/Approximation/" class="md-nav__link">
+      <a href="../../ADS/Approximation/" class="md-nav__link">
         
   
   
@@ -1095,7 +1095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADS/localsearch/" class="md-nav__link">
+      <a href="../../ADS/localsearch/" class="md-nav__link">
         
   
   
@@ -1123,7 +1123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADS/Random/" class="md-nav__link">
+      <a href="../../ADS/Random/" class="md-nav__link">
         
   
   
@@ -1151,7 +1151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADS/parall/" class="md-nav__link">
+      <a href="../../ADS/parall/" class="md-nav__link">
         
   
   
@@ -1179,7 +1179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADS/exsort/" class="md-nav__link">
+      <a href="../../ADS/exsort/" class="md-nav__link">
         
   
   
@@ -1207,7 +1207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADS/resource/" class="md-nav__link">
+      <a href="../../ADS/resource/" class="md-nav__link">
         
   
   
@@ -1274,7 +1274,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Comcompose/" class="md-nav__link ">
+            <a href="../../Comcompose/" class="md-nav__link ">
               
   
   
@@ -1318,7 +1318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Comcompose/Ch2/" class="md-nav__link">
+      <a href="../../Comcompose/Ch2/" class="md-nav__link">
         
   
   
@@ -1346,7 +1346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Comcompose/Ch3/" class="md-nav__link">
+      <a href="../../Comcompose/Ch3/" class="md-nav__link">
         
   
   
@@ -1374,7 +1374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Comcompose/Ch4/" class="md-nav__link">
+      <a href="../../Comcompose/Ch4/" class="md-nav__link">
         
   
   
@@ -1402,7 +1402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Comcompose/Ch5/" class="md-nav__link">
+      <a href="../../Comcompose/Ch5/" class="md-nav__link">
         
   
   
@@ -1430,7 +1430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Comcompose/Ch6/" class="md-nav__link">
+      <a href="../../Comcompose/Ch6/" class="md-nav__link">
         
   
   
@@ -1463,8 +1463,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1511,15 +1509,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4">
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../../db/" class="md-nav__link ">
               
   
   
@@ -1537,13 +1535,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1563,7 +1561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ch1/" class="md-nav__link">
+      <a href="../../db/ch1/" class="md-nav__link">
         
   
   
@@ -1591,7 +1589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ch2/" class="md-nav__link">
+      <a href="../../db/ch2/" class="md-nav__link">
         
   
   
@@ -1619,7 +1617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ch3/" class="md-nav__link">
+      <a href="../../db/ch3/" class="md-nav__link">
         
   
   
@@ -1647,7 +1645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ch4/" class="md-nav__link">
+      <a href="../../db/ch4/" class="md-nav__link">
         
   
   
@@ -1675,7 +1673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ch5/" class="md-nav__link">
+      <a href="../../db/ch5/" class="md-nav__link">
         
   
   
@@ -1703,7 +1701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ch6/" class="md-nav__link">
+      <a href="../../db/ch6/" class="md-nav__link">
         
   
   
@@ -1731,7 +1729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ch7/" class="md-nav__link">
+      <a href="../../db/ch7/" class="md-nav__link">
         
   
   
@@ -1759,7 +1757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ch12/" class="md-nav__link">
+      <a href="../../db/ch12/" class="md-nav__link">
         
   
   
@@ -1787,7 +1785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ch13/" class="md-nav__link">
+      <a href="../../db/ch13/" class="md-nav__link">
         
   
   
@@ -1815,7 +1813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ch14/" class="md-nav__link">
+      <a href="../../db/ch14/" class="md-nav__link">
         
   
   
@@ -1843,7 +1841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ch15/" class="md-nav__link">
+      <a href="../../db/ch15/" class="md-nav__link">
         
   
   
@@ -1871,7 +1869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ch16/" class="md-nav__link">
+      <a href="../../db/ch16/" class="md-nav__link">
         
   
   
@@ -1899,7 +1897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ch17/" class="md-nav__link">
+      <a href="../../db/ch17/" class="md-nav__link">
         
   
   
@@ -1927,7 +1925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ch18/" class="md-nav__link">
+      <a href="../../db/ch18/" class="md-nav__link">
         
   
   
@@ -1955,7 +1953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ch19/" class="md-nav__link">
+      <a href="../../db/ch19/" class="md-nav__link">
         
   
   
@@ -2034,7 +2032,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../oop/" class="md-nav__link ">
+            <a href="../../oop/" class="md-nav__link ">
               
   
   
@@ -2078,7 +2076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/intro/" class="md-nav__link">
+      <a href="../../oop/intro/" class="md-nav__link">
         
   
   
@@ -2106,7 +2104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/class/" class="md-nav__link">
+      <a href="../../oop/class/" class="md-nav__link">
         
   
   
@@ -2134,7 +2132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/STL/" class="md-nav__link">
+      <a href="../../oop/STL/" class="md-nav__link">
         
   
   
@@ -2162,7 +2160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/memory/" class="md-nav__link">
+      <a href="../../oop/memory/" class="md-nav__link">
         
   
   
@@ -2190,7 +2188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/design/" class="md-nav__link">
+      <a href="../../oop/design/" class="md-nav__link">
         
   
   
@@ -2218,7 +2216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/copy/" class="md-nav__link">
+      <a href="../../oop/copy/" class="md-nav__link">
         
   
   
@@ -2246,7 +2244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/template/" class="md-nav__link">
+      <a href="../../oop/template/" class="md-nav__link">
         
   
   
@@ -2274,7 +2272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/iterator/" class="md-nav__link">
+      <a href="../../oop/iterator/" class="md-nav__link">
         
   
   
@@ -2302,7 +2300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/exception/" class="md-nav__link">
+      <a href="../../oop/exception/" class="md-nav__link">
         
   
   
@@ -2330,7 +2328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/spointer/" class="md-nav__link">
+      <a href="../../oop/spointer/" class="md-nav__link">
         
   
   
@@ -2358,7 +2356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/misc/" class="md-nav__link">
+      <a href="../../oop/misc/" class="md-nav__link">
         
   
   
@@ -2425,7 +2423,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../CA/" class="md-nav__link ">
+            <a href="../../CA/" class="md-nav__link ">
               
   
   
@@ -2469,7 +2467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CA/Ch1/" class="md-nav__link">
+      <a href="../../CA/Ch1/" class="md-nav__link">
         
   
   
@@ -2497,7 +2495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CA/Ch3/" class="md-nav__link">
+      <a href="../../CA/Ch3/" class="md-nav__link">
         
   
   
@@ -2525,7 +2523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CA/Ch2/" class="md-nav__link">
+      <a href="../../CA/Ch2/" class="md-nav__link">
         
   
   
@@ -2553,7 +2551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CA/Ch4/" class="md-nav__link">
+      <a href="../../CA/Ch4/" class="md-nav__link">
         
   
   
@@ -2581,7 +2579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CA/Ch5/" class="md-nav__link">
+      <a href="../../CA/Ch5/" class="md-nav__link">
         
   
   
@@ -2650,7 +2648,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../TOC/" class="md-nav__link ">
+            <a href="../../TOC/" class="md-nav__link ">
               
   
   
@@ -2694,7 +2692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TOC/ch1/" class="md-nav__link">
+      <a href="../../TOC/ch1/" class="md-nav__link">
         
   
   
@@ -2722,7 +2720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TOC/ch2/" class="md-nav__link">
+      <a href="../../TOC/ch2/" class="md-nav__link">
         
   
   
@@ -2750,7 +2748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TOC/ch3/" class="md-nav__link">
+      <a href="../../TOC/ch3/" class="md-nav__link">
         
   
   
@@ -2778,7 +2776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TOC/ch4/" class="md-nav__link">
+      <a href="../../TOC/ch4/" class="md-nav__link">
         
   
   
@@ -2806,7 +2804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TOC/ch5/" class="md-nav__link">
+      <a href="../../TOC/ch5/" class="md-nav__link">
         
   
   
@@ -2834,7 +2832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TOC/prove/" class="md-nav__link">
+      <a href="../../TOC/prove/" class="md-nav__link">
         
   
   
@@ -2903,7 +2901,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../OS/" class="md-nav__link ">
+            <a href="../../OS/" class="md-nav__link ">
               
   
   
@@ -2947,7 +2945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../OS/ch1/" class="md-nav__link">
+      <a href="../../OS/ch1/" class="md-nav__link">
         
   
   
@@ -2975,7 +2973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../OS/ch2/" class="md-nav__link">
+      <a href="../../OS/ch2/" class="md-nav__link">
         
   
   
@@ -3003,7 +3001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../OS/ch3/" class="md-nav__link">
+      <a href="../../OS/ch3/" class="md-nav__link">
         
   
   
@@ -3031,7 +3029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../OS/bank/" class="md-nav__link">
+      <a href="../../OS/bank/" class="md-nav__link">
         
   
   
@@ -3059,7 +3057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../OS/ch4/" class="md-nav__link">
+      <a href="../../OS/ch4/" class="md-nav__link">
         
   
   
@@ -3087,7 +3085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../OS/ch5/" class="md-nav__link">
+      <a href="../../OS/ch5/" class="md-nav__link">
         
   
   
@@ -3158,7 +3156,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../CN/" class="md-nav__link ">
+            <a href="../../CN/" class="md-nav__link ">
               
   
   
@@ -3202,7 +3200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CN/ch1/" class="md-nav__link">
+      <a href="../../CN/ch1/" class="md-nav__link">
         
   
   
@@ -3230,7 +3228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CN/ch2/" class="md-nav__link">
+      <a href="../../CN/ch2/" class="md-nav__link">
         
   
   
@@ -3258,7 +3256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CN/ch3/" class="md-nav__link">
+      <a href="../../CN/ch3/" class="md-nav__link">
         
   
   
@@ -3286,7 +3284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CN/ch4/" class="md-nav__link">
+      <a href="../../CN/ch4/" class="md-nav__link">
         
   
   
@@ -3314,7 +3312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CN/ch5/" class="md-nav__link">
+      <a href="../../CN/ch5/" class="md-nav__link">
         
   
   
@@ -3342,7 +3340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CN/ch6/" class="md-nav__link">
+      <a href="../../CN/ch6/" class="md-nav__link">
         
   
   
@@ -3370,7 +3368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CN/ch7/" class="md-nav__link">
+      <a href="../../CN/ch7/" class="md-nav__link">
         
   
   
@@ -3445,7 +3443,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../qi/" class="md-nav__link ">
+            <a href="../../qi/" class="md-nav__link ">
               
   
   
@@ -3489,7 +3487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../qi/lec1/" class="md-nav__link">
+      <a href="../../qi/lec1/" class="md-nav__link">
         
   
   
@@ -3517,7 +3515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../qi/lec2/" class="md-nav__link">
+      <a href="../../qi/lec2/" class="md-nav__link">
         
   
   
@@ -3545,7 +3543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../qi/lec3/" class="md-nav__link">
+      <a href="../../qi/lec3/" class="md-nav__link">
         
   
   
@@ -3573,7 +3571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../qi/lec4/" class="md-nav__link">
+      <a href="../../qi/lec4/" class="md-nav__link">
         
   
   
@@ -3601,7 +3599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../qi/lec5/" class="md-nav__link">
+      <a href="../../qi/lec5/" class="md-nav__link">
         
   
   
@@ -3629,7 +3627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../qi/lec6/" class="md-nav__link">
+      <a href="../../qi/lec6/" class="md-nav__link">
         
   
   
@@ -3657,7 +3655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../qi/lec7/" class="md-nav__link">
+      <a href="../../qi/lec7/" class="md-nav__link">
         
   
   
@@ -3685,7 +3683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../qi/lec8/" class="md-nav__link">
+      <a href="../../qi/lec8/" class="md-nav__link">
         
   
   
@@ -3713,7 +3711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../qi/lec9/" class="md-nav__link">
+      <a href="../../qi/lec9/" class="md-nav__link">
         
   
   
@@ -3746,6 +3744,8 @@
                 
   
   
+    
+  
   
   
     
@@ -3784,15 +3784,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" checked="">
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../bianyi/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -3816,7 +3816,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_11">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3836,7 +3836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bianyi/ch1/" class="md-nav__link">
+      <a href="../ch1/" class="md-nav__link">
         
   
   
@@ -3864,7 +3864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bianyi/ch2/" class="md-nav__link">
+      <a href="../ch2/" class="md-nav__link">
         
   
   
@@ -3892,7 +3892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bianyi/ch3/" class="md-nav__link">
+      <a href="../ch3/" class="md-nav__link">
         
   
   
@@ -3920,7 +3920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bianyi/ch4/" class="md-nav__link">
+      <a href="../ch4/" class="md-nav__link">
         
   
   
@@ -3948,7 +3948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bianyi/ch5/" class="md-nav__link">
+      <a href="../ch5/" class="md-nav__link">
         
   
   
@@ -3976,7 +3976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bianyi/ch6/" class="md-nav__link">
+      <a href="../ch6/" class="md-nav__link">
         
   
   
@@ -4004,7 +4004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bianyi/ch7/" class="md-nav__link">
+      <a href="../ch7/" class="md-nav__link">
         
   
   
@@ -4032,7 +4032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bianyi/ch8/" class="md-nav__link">
+      <a href="../ch8/" class="md-nav__link">
         
   
   
@@ -4060,7 +4060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bianyi/ch9/" class="md-nav__link">
+      <a href="../ch9/" class="md-nav__link">
         
   
   
@@ -4088,7 +4088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bianyi/ch10/" class="md-nav__link">
+      <a href="../ch10/" class="md-nav__link">
         
   
   
@@ -4113,10 +4113,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../bianyi/ch11/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十一章:寄存器分配
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4132,6 +4159,109 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#coloring-by-simplification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coloring by Simplification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coloring by Simplification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simplify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simplify
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spill
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Select
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coalescing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coalescing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precolored-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Precolored Nodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4186,7 +4316,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../old/" class="md-nav__link ">
+            <a href="../../old/" class="md-nav__link ">
               
   
   
@@ -4230,7 +4360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../old/fds/" class="md-nav__link">
+      <a href="../../old/fds/" class="md-nav__link">
         
   
   
@@ -4258,7 +4388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../old/digital/" class="md-nav__link">
+      <a href="../../old/digital/" class="md-nav__link">
         
   
   
@@ -4286,7 +4416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../old/mathandphy/" class="md-nav__link">
+      <a href="../../old/mathandphy/" class="md-nav__link">
         
   
   
@@ -4346,7 +4476,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../article/" class="md-nav__link ">
+            <a href="../../../article/" class="md-nav__link ">
               
   
   
@@ -4417,7 +4547,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../article/out/" class="md-nav__link ">
+            <a href="../../../article/out/" class="md-nav__link ">
               
   
   
@@ -4461,7 +4591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../article/out/Transformer/" class="md-nav__link">
+      <a href="../../../article/out/Transformer/" class="md-nav__link">
         
   
   
@@ -4489,7 +4619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../article/out/DP/" class="md-nav__link">
+      <a href="../../../article/out/DP/" class="md-nav__link">
         
   
   
@@ -4517,7 +4647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../article/out/ML/" class="md-nav__link">
+      <a href="../../../article/out/ML/" class="md-nav__link">
         
   
   
@@ -4586,7 +4716,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../article/read/" class="md-nav__link ">
+            <a href="../../../article/read/" class="md-nav__link ">
               
   
   
@@ -4630,7 +4760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../article/read/What%20is%20chatgpt%20doing%20and%20Why%20does%20it%20work/" class="md-nav__link">
+      <a href="../../../article/read/What%20is%20chatgpt%20doing%20and%20Why%20does%20it%20work/" class="md-nav__link">
         
   
   
@@ -4658,7 +4788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../article/read/Instruction%20Tuning%20for%20Large%20Language%20Model%20%20A%20Survey/" class="md-nav__link">
+      <a href="../../../article/read/Instruction%20Tuning%20for%20Large%20Language%20Model%20%20A%20Survey/" class="md-nav__link">
         
   
   
@@ -4686,7 +4816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../article/read/Visual%20Instruction%20Tuning%20and%20Improved%20Baselines%20with%20Visual%20Instruction%20Tuning/" class="md-nav__link">
+      <a href="../../../article/read/Visual%20Instruction%20Tuning%20and%20Improved%20Baselines%20with%20Visual%20Instruction%20Tuning/" class="md-nav__link">
         
   
   
@@ -4714,7 +4844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../article/read/GPT-4%20Technical%20Report/" class="md-nav__link">
+      <a href="../../../article/read/GPT-4%20Technical%20Report/" class="md-nav__link">
         
   
   
@@ -4742,7 +4872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../article/read/CogAgent%20A%20Visual%20Language%20Model%20for%20GUI%20Agents/" class="md-nav__link">
+      <a href="../../../article/read/CogAgent%20A%20Visual%20Language%20Model%20for%20GUI%20Agents/" class="md-nav__link">
         
   
   
@@ -4770,7 +4900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../article/read/Knowledge%20Distillation%20A%20Survey/" class="md-nav__link">
+      <a href="../../../article/read/Knowledge%20Distillation%20A%20Survey/" class="md-nav__link">
         
   
   
@@ -4838,7 +4968,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tools/" class="md-nav__link ">
+            <a href="../../../tools/" class="md-nav__link ">
               
   
   
@@ -4882,7 +5012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/tools/" class="md-nav__link">
+      <a href="../../../tools/tools/" class="md-nav__link">
         
   
   
@@ -4910,7 +5040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/share/" class="md-nav__link">
+      <a href="../../../tools/share/" class="md-nav__link">
         
   
   
@@ -4958,6 +5088,97 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#coloring-by-simplification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coloring by Simplification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coloring by Simplification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simplify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simplify
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spill
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Select
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coalescing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coalescing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precolored-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Precolored Nodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4976,19 +5197,256 @@
   
 
 
-<h1 id="来辣">来辣<a class="headerlink" href="#来辣" title="Permanent link">¶</a></h1>
+<h1 id="register-allocation">Register Allocation<a class="headerlink" href="#register-allocation" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 11 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 1 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间不到 1 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 3181 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 16 分钟</p>
+</div>
+<p>在上一章中,我们成功根据活跃性分析的结果,构造出了冲突图.在这里,我们要学习的就是如何利用冲突图,完成寄存器分配.</p>
+<p>我们知道,寄存器分配实际上是一个图着色问题.这个问题是NPC的,所以我们利用一个近似算法来解决.</p>
+<h2 id="coloring-by-simplification">Coloring by Simplification<a class="headerlink" href="#coloring-by-simplification" title="Permanent link">¶</a></h2>
+<p>该算法分为四步:</p>
+<ol>
+<li>Build</li>
+<li>Simplify</li>
+<li>
+<p>Spill</p>
+</li>
+<li>
+<p>Select</p>
+</li>
+</ol>
+<h3 id="build">Build<a class="headerlink" href="#build" title="Permanent link">¶</a></h3>
+<p>这一步没什么好说的,就是根据活跃度分析构造冲突图</p>
+<h3 id="simplify">Simplify<a class="headerlink" href="#simplify" title="Permanent link">¶</a></h3>
+<p>考虑有<span class="arithmatex">\(k\)</span>个寄存器可用,也就是我们可以用<span class="arithmatex">\(k\)</span>种颜色给冲突图着色.如果图中存在度数小于<span class="arithmatex">\(k\)</span>的节点,那么该节点肯定可以被着色.</p>
+<div class="admonition info">
+<p class="admonition-title">核心原理</p>
+<p>对于任意度数小于 <span class="arithmatex">\(k\)</span> 的节点 <span class="arithmatex">\(v\)</span>：</p>
+<ol>
+<li>
+<p>我们可以安全地将其从冲突图中移除，并推入一个专门的栈（Stack）中。</p>
+</li>
+<li>
+<p>如果剩下的子图 <span class="arithmatex">\(G' = G - \{v\}\)</span> 是可 <span class="arithmatex">\(k\)</span>-着色的，那么当最后把 <span class="arithmatex">\(v\)</span> 从栈中弹出并重建时，由于它在图中的邻居数小于 <span class="arithmatex">\(k\)</span>，即便它的邻居都已经着色完毕，也必然至少剩有一种颜色可以安全地分配给 <span class="arithmatex">\(v\)</span>。</p>
+</li>
+</ol>
 </div>
 <div class="admonition note">
-<p></p><div style="border: 2px solid #F44336; border-radius: 10px; padding: 20px; background-color: #ffebee; text-align: center;">
-    <div style="font-size: 32px; font-weight: bold; margin-bottom: 10px;">
-        <a href="https://git.io/typing-svg"><img alt="Typing SVG" src="https://readme-typing-svg.demolab.com?font=LXGW+WenKai+Screen+GB+Screen&amp;weight=700&amp;size=27&amp;pause=1000&amp;color=c62828&amp;background=00000000&amp;center=true&amp;vCenter=true&amp;width=435&amp;lines=%e4%b8%9c%e8%a5%bf%e6%80%8e%e4%b9%88%e8%bf%99%e4%b9%88%e5%a4%9a"></a>
-    </div>
-    <div style="font-size: 14px; color: #555;">
-        我能赶完这个ddl吗？
-    </div>
-</div><p></p>
+<p class="admonition-title">Simplify 具体步骤</p>
+<p>我们通过以下迭代步骤来不断简化冲突图：</p>
+<ul>
+<li>
+<p><strong>第一步：寻找与压栈</strong><br>
+  在冲突图中寻找一个度数小于 <span class="arithmatex">\(k\)</span> 的节点，将其及其所有关联的边从图中移除，并将该节点压入栈中。</p>
+</li>
+<li>
+<p><strong>第二步：更新邻居度数</strong><br>
+  删除节点后，与其相连的邻居节点的度数均会减 1。这可能会使原本度数 <span class="arithmatex">\(\ge k\)</span> 的节点度数降到 <span class="arithmatex">\(k\)</span> 以下，变成新的可简化节点。</p>
+</li>
+<li>
+<p><strong>第三步：循环至分支点</strong><br>
+  重复上述步骤，直到：</p>
+<ul>
+<li><strong>图被完全简化为空</strong>：说明整个图是可 <span class="arithmatex">\(k\)</span>-着色的，直接进入 <strong>Select</strong> 阶段。</li>
+<li><strong>图未空但所有剩余节点度数均 <span class="arithmatex">\(\ge k\)</span></strong>：无法继续简化，算法被迫进入 <strong>Spill</strong> 阶段。</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="spill">Spill<a class="headerlink" href="#spill" title="Permanent link">¶</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Spill 核心原理</p>
+<p>如果所有剩余节点的度数均 <span class="arithmatex">\(\ge k\)</span>，那么我们必须选择一个节点“牺牲”并移出图，以便继续 Simplify，为其他节点腾出空间。</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">潜在溢出 vs 真实溢出</label><label for="__tabbed_1_2">真实 Spill 的代价与处理</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition warning">
+<p class="admonition-title">关键点：选择 Spill Candidate 不等于最后一定真的 Spill</p>
+<p>这是一种<strong>乐观（Optimistic）</strong>的简化假设。我们现在只是乐观地假定它未来会放到内存中（因此它暂时不占用寄存器），然后将它从冲突图中移除并压栈，以降低其邻居的度数，从而使 Simplify 能够继续进行下去。</p>
+<p>正如 Briggs 改进版算法中的名言所说：</p>
+<blockquote>
+<p><em>Do we really have to do that? Not always.</em></p>
+</blockquote>
+<p>当后续进入反向弹栈（<strong>Select</strong>）阶段真正开始分配寄存器颜色时：</p>
+<ul>
+<li><strong>乐观成功（没有真正 Spill）</strong>：如果该节点被弹出并重建时，由于其邻居节点可能共用了同一种颜色，导致 <span class="arithmatex">\(k\)</span> 个物理寄存器并没有被占满，那么它依然能找到一个可用寄存器，此时<strong>它就免于了真正 Spill 的命运</strong>。</li>
+<li><strong>被迫溢出（真正 Spill）</strong>：只有当它被弹出时，发现所有的 <span class="arithmatex">\(k\)</span> 个寄存器真的都被它的邻居们占满了，它才不得不真正分配到内存里。</li>
+</ul>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="admonition caution">
+<p class="admonition-title">真实溢出的开销</p>
+<p>一旦一个变量最终被迫发生了真实 Spill，编译器必须<strong>改写中间代码</strong>。在原来使用该变量的位置，插入与内存交互的访问指令：</p>
+<ul>
+<li><strong>读取前</strong>：在使用该变量前，先将其从内存 <code>load</code> 到一个临时寄存器中。</li>
+<li><strong>修改后</strong>：在修改该变量的值后，立即 <code>store</code> 写回内存。</li>
+</ul>
+<p>由于内存访问的速度远慢于寄存器，且插入了大量的 <code>load</code> / <code>store</code> 额外指令，因此 Spill 的代价非常高昂。</p>
+</div>
+</div>
+</div>
+</div>
+<h3 id="select">Select<a class="headerlink" href="#select" title="Permanent link">¶</a></h3>
+<p>在这一步中,我们<strong>重建冲突图并为每个节点分配寄存器颜色</strong>,依次将节点从栈中<strong>弹出（Pop）</strong>并放回图中进行染色。</p>
+<div class="admonition info">
+<p class="admonition-title">节点的两种弹出情况</p>
+<p>当节点从栈中被弹出并重新放回冲突图时，根据其在 Simplify 阶段被压栈的缘由，分为两类情况：</p>
+<ul>
+<li><strong>普通的 Simplified 节点</strong><br>
+  如果该节点是因为度数小于 <span class="arithmatex">\(k\)</span> 而被压栈的，那么当它被弹出并重新加入冲突图时，<strong>必定能够为其分配到一个可用的颜色</strong>（。</li>
+<li><strong>潜在溢出的 Spill 候选节点</strong><br>
+  如果是作为度数大于等于 <span class="arithmatex">\(k\)</span> 的潜在溢出节点 <span class="arithmatex">\(n\)</span>（Spill Candidate）被压栈的，当它弹出并被重新放回图里时，<strong>无法保证它一定是可以染色的</strong>。</li>
+</ul>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Spill节点的两种情况</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>对于 Spill 候选节点 <span class="arithmatex">\(n\)</span>，我们需要检查它在图中已被染色的邻居节点：</p>
+<ul>
+<li><strong>结局一：发生实际溢出（Actual Spill）</strong><br>
+  如果 <span class="arithmatex">\(n\)</span> 的邻居已经占用了全部 <span class="arithmatex">\(k\)</span> 种不同的颜色，那么 <span class="arithmatex">\(n\)</span> 将无法被着色。我们将其判定为<strong>实际溢出（Actual Spill）</strong>。在这一步中不为其分配任何颜色，但需要<strong>继续完成 Select 阶段</strong>，以便找出可能存在的其他实际溢出节点。</li>
+<li><strong>结局二：乐观着色成功（Optimistic Coloring）</strong><br>
+  如果 <span class="arithmatex">\(n\)</span> 的邻居所染的不同颜色数量<strong>小于 <span class="arithmatex">\(k\)</span></strong>（即使 <span class="arithmatex">\(n\)</span> 在原图里的度数可能很大，但部分邻居共用了同一种颜色），那么我们依然可以为 <span class="arithmatex">\(n\)</span> 选择一个未被其邻居占用的空闲颜色。此时 <span class="arithmatex">\(n\)</span> 就避免了被真正溢出，这种技术被称为<strong>乐观着色（Optimistic Coloring）</strong>。</li>
+</ul>
+</div>
+</div>
+</div>
+<h2 id="coalescing">Coalescing<a class="headerlink" href="#coalescing" title="Permanent link">¶</a></h2>
+<blockquote>
+<p><strong>Coalescing（寄存器合并 / 节点合并）</strong> 是一种用于消除多余MOVE的关键优化技术。</p>
+</blockquote>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">What is Coalescing?</label><label for="__tabbed_3_2">Union of Edges</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition info">
+<p class="admonition-title">合并的核心原理</p>
+<p>如果一条传送指令（<code>MOVE</code>）的<strong>源操作数（Source）</strong>和<strong>目的操作数（Destination）</strong>在冲突图中<strong>没有冲突边（No edge）</strong>：</p>
+<p>我们可以安全地直接消除这条 <code>MOVE</code> 指令,并将源节点和目的节点合并为一个<strong>新节点</strong>。</p>
+<p>这样两个临时变量将共用同一个物理寄存器，使得原本的传送操作变成了一个自赋值的空操作（如 <code>r &lt;- r</code>），在后续代码生成中被彻底省去，从而减少了指令数量并加快了程序运行速度。</p>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="admonition note">
+<p class="admonition-title">新节点连接规则</p>
+<p>当源节点和目的节点被合并后，它们在冲突图中的表示会融合成一个单一的综合节点。这个新节点的冲突边集合，是原本被替换的两个节点的<strong>冲突边集合的并集（Union）</strong>。</p>
+<div class="arithmatex">\[\text{Edges}(\text{Coalesced Node}) = \text{Edges}(\text{Source}) \cup \text{Edges}(\text{Destination})\]</div>
+<p>这意味着，任何原本与源节点冲突的节点，或者与目的节点冲突的节点，都将与合并后的新节点发生冲突。</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<p>然而,Coalescing听上去很美好,但是reckless的Coalescing可能会导致原来可着色的冲突图反而无法着色.</p>
+<p>因此,我们希望回答一个问题,什么样的Coalescing是safe的呢?</p>
+<p>下面,我们将介绍两个<strong>充分不必要</strong>的条件:</p>
+<ul>
+<li>
+<p>Briggs</p>
+</li>
+<li>
+<p>George</p>
+</li>
+</ul>
+<p>这意味着满足这两个条件中的一个的Coalescing是safe的,但是都不满足的不一定是unsafe的.</p>
+<hr>
+<div class="admonition definition">
+<p class="admonition-title">Briggs</p>
+<p>节点<code>a</code>和<code>b</code>通过move指令形成关联,如果它们合并后的节点有少于<span class="arithmatex">\(K\)</span>个重要节点的邻居,那么它们可以合并</p>
+<p>所谓重要节点(Significant Node),也就是度数大于等于<span class="arithmatex">\(K\)</span>的节点.</p>
+</div>
+<div class="admonition definition">
+<p class="admonition-title">George</p>
+<p><code>a</code>和<code>b</code>可以合并,当对于<code>a</code>的每个邻居<code>t</code>,满足:</p>
+<ul>
+<li>
+<p><code>t</code>同样也是<code>b</code>的邻居</p>
+</li>
+<li>
+<p>或者,<code>t</code>不是重要节点</p>
+</li>
+</ul>
+</div>
+<hr>
+<p>在引入了<code>Coalescing</code>后,我们必须重新介绍图着色的过程.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol>
+<li>
+<p><strong>Build</strong>：
+   构造冲突图，并把节点分为两类：</p>
+<ul>
+<li>
+<p><strong>Move-related</strong>：跟某个 <code>MOVE</code> 指令相关的节点（即是 MOVE 的源或目的操作数）。</p>
+</li>
+<li>
+<p><strong>Non-move-related</strong>：普通的、不涉及任何 <code>MOVE</code> 的节点。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Simplify</strong>：
+   每次挑一个度数 <span class="arithmatex">\(&lt; K\)</span> 的 <strong>Non-move-related</strong> 节点从图里删掉，并压入栈中。<em>（注意：此处不会碰 Move-related 节点，留给后面 Coalesce 去尝试合并。）</em></p>
+</li>
+<li>
+<p><strong>Coalesce</strong>：
+   对 Simplify 之后的图尝试进行<strong>保守合并</strong>。若合并成功，对应的 <code>MOVE</code> 指令被安全消除。
+   合并出的新节点若不再涉及其他 <code>MOVE</code>，它就退化为 Non-move-related 节点，可以重新参与 Simplify。
+   Simplify 和 Coalesce 交替往复运行，直到图里只剩下度数 <span class="arithmatex">\(\ge K\)</span> 的节点或 Move-related 节点。</p>
+</li>
+<li>
+<p><strong>Freeze</strong>：
+   如果 Simplify 和 Coalesce 均无法继续推进（陷入僵局），就寻找一个度数 <span class="arithmatex">\(&lt; K\)</span> 的 <strong>Move-related</strong> 节点，<strong>冻结</strong>所有与之关联的 <code>MOVE</code> 指令（即彻底放弃合并这些 MOVE 的希望）。这些被冻结的节点自此被视为一般的 Non-move-related 节点，随后重新恢复 Simplify 和 Coalesce 的迭代。</p>
+</li>
+<li>
+<p><strong>Spill</strong>：
+   如果图里所有剩余节点度数都 <span class="arithmatex">\(\ge K\)</span>，我们只能挑选一个度数较大的节点作为 <strong>Spill Candidate</strong>，将其移出图并压栈，以此降低其邻居节点的度数，好让 Simplify 能够继续。</p>
+</li>
+<li>
+<p><strong>Select</strong>：
+   按相反顺序弹栈并尝试为节点上色。
+   如果弹出来的 Spill Candidate 在放回图里时，发现其所有邻居已经占满了全部 <span class="arithmatex">\(K\)</span> 种寄存器颜色，则发生 <strong>Actual Spill</strong>。此时不为其分配颜色，但在 Select 阶段结束后改写代码（插入 load/store 内存访问指令），并<strong>重新构建冲突图从头开始跑整个算法</strong>。</p>
+</li>
+</ol>
+</div>
+<h2 id="precolored-nodes">Precolored Nodes<a class="headerlink" href="#precolored-nodes" title="Permanent link">¶</a></h2>
+<p>前面讨论的节点大多是普通临时变量,它们最后染成哪个颜色都可以.但真实机器里有一批寄存器不能这么随便处理:比如参数寄存器、返回值寄存器、栈指针、帧指针等.这些寄存器在调用约定里已经有固定含义,所以在冲突图里会先放入一批已经染好颜色的节点,这就是 <strong>Precolored Nodes</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">预着色节点需要注意的地方</p>
+<p>预着色节点可以理解成“已经分配好的物理寄存器节点”.</p>
+<ul>
+<li>
+<p>每个物理寄存器对应一个预着色节点.</p>
+</li>
+<li>
+<p>不同物理寄存器不能分配成同一个寄存器,所以这些预着色节点之间要两两连边.</p>
+</li>
+<li>
+<p>它们不能被 Simplify 删除,也不能被 Spill 到内存.</p>
+</li>
+<li>
+<p>普通临时变量仍然可以使用这些颜色,前提是它不和对应的预着色节点冲突.</p>
+</li>
+</ul>
+</div>
+<p>因此,Simplify/Coalesce/Spill 实际上是在处理那些尚未确定位置的普通节点.等普通节点都被压栈或处理完之后,图中自然会剩下这些已经固定颜色的预着色节点.</p>
+<p>一个容易出问题的点是:预着色节点不能 spill,所以不能让它们的 live range 变得太长.常见做法是在需要使用特殊寄存器的边界处插入 <code>MOVE</code>,尽快把值搬到普通临时变量里.这样后面的图着色器还有选择空间:</p>
+<ul>
+<li>如果寄存器压力不大,这个普通临时变量可以和对应的预着色节点 Coalesce,<code>MOVE</code> 最后会被消掉.</li>
+<li>如果寄存器压力很大,spill 的会是普通临时变量,而不是机器规定必须存在的物理寄存器.</li>
+</ul>
+<p>例如 <code>r7</code> 是一个 callee-save 寄存器.编译器可能在函数入口生成一个临时变量 <code>t231</code> 来保存 <code>r7</code> 的旧值,在函数出口再把它恢复回去.如果压力小,<code>t231</code> 和 <code>r7</code> 可以合并;如果压力大,真正被拿去 spill 的也只能是 <code>t231</code>,不能是 <code>r7</code> 本身.</p>
+<div class="admonition note">
+<p class="admonition-title">Caller-Save 和 Callee-Save</p>
+<p>对不跨越函数调用的变量,放进 caller-save 寄存器通常更合适.因为调用发生时这个变量已经不活跃了,不需要额外保存.</p>
+<p>对跨越函数调用的变量,更希望放进 callee-save 寄存器.否则每次调用前后都要由 caller 负责保存和恢复,代价会比较高.</p>
+<p>但这也会改变冲突图.假设变量 <span class="arithmatex">\(x\)</span> 在一次函数调用前后都活跃:</p>
+<ol>
+<li><span class="arithmatex">\(x\)</span> 会和所有 caller-save 的预着色节点冲突,因为调用可能破坏这些寄存器.</li>
+<li>如果为了保护 callee-save 寄存器引入了类似 <code>t231</code> 的保存临时变量,<span class="arithmatex">\(x\)</span> 也可能和这些临时变量冲突.</li>
+<li>于是 <span class="arithmatex">\(x\)</span> 的度数会明显变大,更容易被选成 spill candidate.</li>
+</ol>
 </div>
 
 
@@ -5012,7 +5470,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年3月5日 06:17:14 UTC">2026年3月5日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年5月21日 05:53:45 UTC">2026年5月21日</span>
   </span>
 
     
@@ -5022,7 +5480,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2024年9月22日 14:00:35 UTC">2024年9月22日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年5月21日 05:53:45 UTC">2026年5月21日</span>
   </span>
 
     
@@ -5151,7 +5609,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚">
         
           
-          <a href="../Comcompose/Ch6/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Chapter 6:Storage, Networks and Other Peripherals">
+          <a href="../ch10/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 第十章:活跃度分析">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -5161,20 +5619,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                Chapter 6:Storage, Networks and Other Peripherals
+                第十章:活跃度分析
               </div>
             </div>
           </a>
         
         
           
-          <a href="ch1/" class="md-footer__link md-footer__link--next" aria-label="下一页: Chapter 1:Introduction">
+          <a href="../../old/" class="md-footer__link md-footer__link--next" aria-label="下一页: 开始">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Chapter 1:Introduction
+                开始
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -5215,16 +5673,16 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["announce.dismiss", "navigation.instant", "navigation.instant.prefetch", "navigation.tracking", "navigation.tabs", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["announce.dismiss", "navigation.instant", "navigation.instant.prefetch", "navigation.tracking", "navigation.tabs", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../_js/extra.js"></script>
+        <script src="../../../_js/extra.js"></script>
       
-        <script src="../../_js/mathjax.js"></script>
+        <script src="../../../_js/mathjax.js"></script>
       
-        <script src="../../_js/katex.js"></script>
+        <script src="../../../_js/katex.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
