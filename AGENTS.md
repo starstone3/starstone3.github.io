@@ -1,6 +1,6 @@
 # Repository Guidelines
 
-Before compile ,you must use the command "pt" to activate specific python env.
+Before compile ,you must use the command "pt" to activate specific python env.The "pt" is a zsh alias defined in `~/.zshrc` that activates the Python environment.
 
 ## Project Structure & Module Organization
 

@@ -191,6 +191,7 @@ nav :
       - "第九章:指令选择": incourse/bianyi/ch9.md
       - "第十章:活跃度分析": incourse/bianyi/ch10.md
       - "第十一章:寄存器分配": incourse/bianyi/ch11.md
+      - "第十三章:垃圾回收": incourse/bianyi/ch13.md
 
   - "大一课程遗物":
     - incourse/old/index.md
