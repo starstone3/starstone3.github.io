@@ -178,6 +178,7 @@ nav :
       - "Qubit的实现": incourse/qi/lec8.md
       - "Open Quantum Systems and  Quantum Errors": incourse/qi/lec9.md
       - "Principles of Quantum Error  Correction": incourse/qi/lec10.md
+      - "容错量子计算": incourse/qi/lec11.md
     - "编译原理":
       - incourse/bianyi/index.md
       - "第一章:介绍": incourse/bianyi/ch1.md
@@ -192,6 +193,7 @@ nav :
       - "第十章:活跃度分析": incourse/bianyi/ch10.md
       - "第十一章:寄存器分配": incourse/bianyi/ch11.md
       - "第十三章:垃圾回收": incourse/bianyi/ch13.md
+      - "第十四章:面向对象": incourse/bianyi/ch14.md
 
   - "大一课程遗物":
     - incourse/old/index.md

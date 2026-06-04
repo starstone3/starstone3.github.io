@@ -323,7 +323,7 @@ b -> [int]
 
 !!! example "语义分析中的类型检查"
 
-   我们看一个二元表达式的例子
+    我们看一个二元表达式的例子
 
     ```c
     struct expty transExp(S_table venv, S_table tenv, A_exp a) {
@@ -359,7 +359,7 @@ b -> [int]
 
 ### Type-checking Declarations
 
-先解释两个名次
+先解释两个名词:
 
 - `venv`:就是之前讲的符号表,可以理解为知道变量名,就可以查到它的类型
 
