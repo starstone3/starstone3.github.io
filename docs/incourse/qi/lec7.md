@@ -164,7 +164,7 @@ $$
 
     因此,从几何上看,$W$ 就是把向量 $|\psi\rangle$ 关于 $|\phi\rangle$ 所张成的轴做镜像反射.
 
-然后,假设我们最终需要的态是$ |a\rangle$,所有其他态叠加在一起,变成$|a_\perp\rangle$.
+然后,假设我们最终需要的态是$|a\rangle$,所有其他态叠加在一起,变成$|a_\perp\rangle$.
 
 在Grover's Algorithm中,我们需要两个反射变换:
 
