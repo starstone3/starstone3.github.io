@@ -164,7 +164,7 @@ $$
 
     因此,从几何上看,$W$ 就是把向量 $|\psi\rangle$ 关于 $|\phi\rangle$ 所张成的轴做镜像反射.
 
-然后,假设我们最终需要的态是$|a\rangle$,所有其他态叠加在一起,变成$|a_\perp\rangle$.
+然后,假设我们最终需要的态是$|a\rangle$,所有其他态叠加在一起,变成$|a_{perp}\rangle$.
 
 在Grover's Algorithm中,我们需要两个反射变换:
 
@@ -178,7 +178,7 @@ $$
     <img src="../../../image/mac247.png" alt="Grover's Algorithm" width="50%">
 </div>
 
-先把$\phi\rangle$ 翻到$a_prep\rangle$ 下面,然后再以原来的$\phi\rangle$ 作为轴做反射,最终到达了比$原来更接近a\rangle$ 的位置.
+先把$\phi\rangle$ 翻到$a_{prep}\rangle$ 下面,然后再以原来的$\phi\rangle$ 作为轴做反射,最终到达了比$原来更接近a\rangle$ 的位置.
 
 每一次做这两个反射一次,我们就会把状态向 $|a\rangle$ 的方向推进一个角度 $2 \theta$,其中 $\sin(\theta/2) = 1/\sqrt{N}$.
 
