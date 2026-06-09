@@ -24,7 +24,7 @@ $$
 I' = I (\hat{p} \cdot \hat{n})^2
 $$
 
-也就是我们之前学的$ I \propto E^2 $。
+也就是我们之前学的 $I \propto E^2$。
 
 ---
 
