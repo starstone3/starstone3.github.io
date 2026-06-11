@@ -194,6 +194,7 @@ nav :
       - "第十一章:寄存器分配": incourse/bianyi/ch11.md
       - "第十三章:垃圾回收": incourse/bianyi/ch13.md
       - "第十四章:面向对象": incourse/bianyi/ch14.md
+      - "第十五章:循环优化": incourse/bianyi/ch15.md
 
   - "大一课程遗物":
     - incourse/old/index.md
