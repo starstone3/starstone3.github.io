@@ -15,3 +15,9 @@ search:
             计算理论还在追我!
         </div>
     </div>
+
+<center>
+<div text-align="center">
+    <img src="./image.png" alt="dominator" width="80%">
+</div>
+</center>
