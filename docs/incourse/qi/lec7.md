@@ -65,7 +65,6 @@ $$
 |\psi\rangle =
 \begin{cases}
 |1\rangle \dfrac{1}{\sqrt{2}} \left[ |f(0)\rangle - |1 \oplus f(0)\rangle \right], & f(0) = f(1) \\
-
 |0\rangle \dfrac{1}{\sqrt{2}} \left[ |f(0)\rangle - |1 \oplus f(0)\rangle \right], & f(0) \neq f(1)
 \end{cases}
 $$
