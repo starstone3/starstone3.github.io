@@ -47,6 +47,47 @@
         };
     }
 
+    function formatLabelList(labels) {
+        if (labels.length <= 1) {
+            return labels.join("");
+        }
+        if (labels.length === 2) {
+            return `${labels[0]} and ${labels[1]}`;
+        }
+        return `${labels.slice(0, -1).join(", ")}, and ${labels[labels.length - 1]}`;
+    }
+
+    function remapReferencedLabels(text, originalLabel, originalLabels, answerMapping) {
+        const remapLabel = (label) => answerMapping[label.toUpperCase()] || label.toUpperCase();
+        const originalIndex = originalLabels.indexOf(originalLabel);
+        const aboveLabels = originalLabels
+            .slice(0, originalIndex < 0 ? 0 : originalIndex)
+            .map(remapLabel)
+            .sort();
+        const aboveText = formatLabelList(aboveLabels);
+
+        const rewritten = text
+            .replace(/\b([a-d])\s+and\s+([a-d])\b/gi, (_match, left, right) => {
+                return `${remapLabel(left)} and ${remapLabel(right)}`;
+            })
+            .replace(/\b([a-d])\s*,\s*([a-d])\s*,?\s*and\s*([a-d])\b/gi, (_match, first, second, third) => {
+                return formatLabelList([remapLabel(first), remapLabel(second), remapLabel(third)]);
+            })
+            .replace(/\b([a-d])\s*,\s*([a-d])\b/gi, (_match, first, second) => {
+                return `${remapLabel(first)}, ${remapLabel(second)}`;
+            });
+
+        if (!aboveText) {
+            return rewritten;
+        }
+
+        return rewritten
+            .replace(/\ball\s+of\s+the\s+above\b/gi, `all of ${aboveText}`)
+            .replace(/\bnone\s+of\s+the\s+above\b/gi, `none of ${aboveText}`)
+            .replace(/\bany\s+of\s+the\s+above\b/gi, `any of ${aboveText}`)
+            .replace(/\bthe\s+above\b/gi, aboveText);
+    }
+
     function normalizeQuestions(rawQuestions) {
         if (Array.isArray(rawQuestions)) {
             return rawQuestions.map((entry) => {
@@ -67,7 +108,8 @@
             scope: app.querySelector("#se-quiz-scope"),
             startChapter: app.querySelector("#se-quiz-start-chapter"),
             endChapter: app.querySelector("#se-quiz-end-chapter"),
-            count: app.querySelector("#se-quiz-count"),
+            judgeCount: app.querySelector("#se-quiz-judge-count"),
+            choiceCount: app.querySelector("#se-quiz-choice-count"),
             random: app.querySelector("#se-quiz-random"),
             shuffleOptions: app.querySelector("#se-quiz-shuffle-options"),
             start: app.querySelector("#se-quiz-start"),
@@ -126,6 +168,14 @@
         });
     }
 
+    function getVisibleOptions(question) {
+        return question.options.filter((choice) => choice && choice[0].toUpperCase() !== "E");
+    }
+
+    function isJudgeQuestion(question) {
+        return getVisibleOptions(question).length <= 2;
+    }
+
     function syncScopeControls(elements) {
         const scope = elements.scope.value;
         const isAll = scope === "all";
@@ -137,37 +187,90 @@
         elements.endChapter.closest(".se-quiz__field").classList.toggle("is-disabled", isAll || isChapter);
     }
 
-    function prepareSessionQuestions(elements) {
-        const countValue = elements.count.value.trim();
-        const count = countValue === "" ? null : Number(countValue);
-        let pool = buildQuestionPool(elements);
-
-        if (count !== null && (!Number.isInteger(count) || count <= 0)) {
-            throw new Error("题目数量必须是正整数。");
+    function parseQuestionCount(value, label) {
+        const trimmedValue = value.trim();
+        if (trimmedValue === "") {
+            return null;
         }
+
+        const count = Number(trimmedValue);
+        if (!Number.isInteger(count) || count < 0) {
+            throw new Error(`${label}必须是非负整数。`);
+        }
+
+        return count;
+    }
+
+    function prepareSessionQuestions(elements) {
+        const judgeCount = parseQuestionCount(elements.judgeCount.value, "判断题数量");
+        const choiceCount = parseQuestionCount(elements.choiceCount.value, "选择题数量");
+        const pool = buildQuestionPool(elements);
 
         if (pool.length === 0) {
             throw new Error("当前范围内没有题目。");
         }
 
         if (elements.random.checked) {
-            pool = shuffle(pool);
+            const judgeQuestions = shuffle(pool.filter(isJudgeQuestion));
+            const choiceQuestions = shuffle(pool.filter((question) => !isJudgeQuestion(question)));
+            const selectedJudgeQuestions = judgeCount === null ? judgeQuestions : judgeQuestions.slice(0, Math.min(judgeCount, judgeQuestions.length));
+            const selectedChoiceQuestions = choiceCount === null ? choiceQuestions : choiceQuestions.slice(0, Math.min(choiceCount, choiceQuestions.length));
+            const selectedQuestions = shuffle([...selectedJudgeQuestions, ...selectedChoiceQuestions]);
+
+            if (selectedQuestions.length === 0) {
+                throw new Error("当前题量设置下没有题目。");
+            }
+
+            return selectedQuestions;
         }
 
-        return count === null ? pool : pool.slice(0, Math.min(count, pool.length));
+        let remainingJudgeCount = judgeCount;
+        let remainingChoiceCount = choiceCount;
+        const selectedQuestions = [];
+        for (const question of pool) {
+            if (isJudgeQuestion(question)) {
+                if (remainingJudgeCount === null || remainingJudgeCount > 0) {
+                    selectedQuestions.push(question);
+                    if (remainingJudgeCount !== null) {
+                        remainingJudgeCount -= 1;
+                    }
+                }
+            } else if (remainingChoiceCount === null || remainingChoiceCount > 0) {
+                selectedQuestions.push(question);
+                if (remainingChoiceCount !== null) {
+                    remainingChoiceCount -= 1;
+                }
+            }
+        }
+
+        if (selectedQuestions.length === 0) {
+            throw new Error("当前题量设置下没有题目。");
+        }
+
+        return selectedQuestions;
     }
 
     function buildDisplayOptions(question, shouldShuffleOptions) {
-        const visibleOptions = question.options.filter((choice) => choice && choice[0].toUpperCase() !== "E");
+        const visibleOptions = getVisibleOptions(question);
         const optionPool = shouldShuffleOptions ? shuffle(visibleOptions) : visibleOptions;
+        const originalLabels = visibleOptions.map((choice) => splitOption(choice).label);
         const answerMapping = {};
-        const displayOptions = optionPool.map((choice, index) => {
+        const parsedOptions = optionPool.map((choice, index) => {
             const originalOption = splitOption(choice);
             const displayLabel = String.fromCharCode(65 + index);
             answerMapping[originalOption.label] = displayLabel;
             return {
                 label: displayLabel,
-                text: shouldShuffleOptions ? originalOption.text : choice.slice(2).trim(),
+                originalLabel: originalOption.label,
+                originalText: originalOption.text,
+            };
+        });
+        const displayOptions = parsedOptions.map((option) => {
+            return {
+                label: option.label,
+                text: shouldShuffleOptions
+                    ? remapReferencedLabels(option.originalText, option.originalLabel, originalLabels, answerMapping)
+                    : option.originalText,
             };
         });
         const displayAnswer = parseAnswer(question.answer.split("").map((label) => answerMapping[label] || label).join(""));
