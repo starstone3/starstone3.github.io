@@ -10,7 +10,7 @@ comments: true
     <header class="se-quiz__header">
         <div>
             <h2>软件工程客观题</h2>
-            <p>选择章节范围和题量后开始练习，答案提交后立即显示判题结果。</p>
+            <p>选择章节范围、判断题数量和选择题数量后开始练习，答案提交后立即显示判题结果。</p>
         </div>
         <div class="se-quiz__meter">
             <span id="se-quiz-score" class="se-quiz__score">0 / 0</span>
@@ -36,8 +36,12 @@ comments: true
             <input id="se-quiz-end-chapter" type="number" min="1" value="5">
         </div>
         <div class="se-quiz__field">
-            <label for="se-quiz-count">题目数量</label>
-            <input id="se-quiz-count" type="number" min="1" placeholder="全部">
+            <label for="se-quiz-judge-count">判断题数量</label>
+            <input id="se-quiz-judge-count" type="number" min="0" placeholder="全部">
+        </div>
+        <div class="se-quiz__field">
+            <label for="se-quiz-choice-count">选择题数量</label>
+            <input id="se-quiz-choice-count" type="number" min="0" placeholder="全部">
         </div>
         <label class="se-quiz__check">
             <input id="se-quiz-random" type="checkbox" checked>
