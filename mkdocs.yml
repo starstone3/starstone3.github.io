@@ -219,6 +219,7 @@ nav :
   - "妙妙屋":
     - "封面": tools/index.md
     - "妙妙小工具": tools/tools.md
+    - "软件工程刷题": tools/se-quiz.md
     - "分享": tools/share.md
 
 
@@ -319,6 +320,7 @@ extra_css:
   - css/flink.css
   - css/homepage.css
   - css/styles.css
+  - css/se-quiz.css
   # 外部字体和数学公式最后加载
   - https://jsd.cdn.zzko.cn/npm/katex@0.16.4/dist/katex.min.css
   - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
@@ -327,6 +329,7 @@ extra_css:
   # - https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css
 extra_javascript:
   - _js/extra.js
+  - _js/se-quiz.js
   - _js/mathjax.js
   - _js/katex.js
   # - _js/linenumber.js
