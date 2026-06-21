@@ -266,7 +266,8 @@
 
     function buildDisplayOptions(question, shouldShuffleOptions) {
         const visibleOptions = getVisibleOptions(question);
-        const optionPool = shouldShuffleOptions ? shuffle(visibleOptions) : visibleOptions;
+        const canShuffleOptions = shouldShuffleOptions && visibleOptions.length > 2;
+        const optionPool = canShuffleOptions ? shuffle(visibleOptions) : visibleOptions;
         const originalLabels = visibleOptions.map((choice) => splitOption(choice).label);
         const answerMapping = {};
         const parsedOptions = optionPool.map((choice, index) => {
@@ -282,7 +283,7 @@
         const displayOptions = parsedOptions.map((option) => {
             return {
                 label: option.label,
-                text: shouldShuffleOptions
+                text: canShuffleOptions
                     ? remapReferencedLabels(option.originalText, option.originalLabel, originalLabels, answerMapping)
                     : option.originalText,
             };
