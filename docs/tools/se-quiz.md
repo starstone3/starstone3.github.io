@@ -51,6 +51,10 @@ comments: true
             <input id="se-quiz-shuffle-options" type="checkbox">
             <span>打乱选项</span>
         </label>
+        <label class="se-quiz__check">
+            <input id="se-quiz-avoid-correct" type="checkbox">
+            <span>去掉已做对题目</span>
+        </label>
         <button id="se-quiz-start" class="se-quiz__primary" type="button">开始</button>
     </div>
 
