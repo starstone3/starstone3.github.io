@@ -9,6 +9,7 @@
         visibleOptionCount: 0,
         answered: false,
         correctCount: 0,
+        correctQuestionIds: new Set(),
     };
 
     function parseAnswer(value) {
@@ -88,19 +89,27 @@
             .replace(/\bthe\s+above\b/gi, aboveText);
     }
 
+    function buildQuestionId(chapter, question, index) {
+        const topicNumber = String(question.topic || "").match(/^\s*(\d+)\./);
+        return `${chapter}:${topicNumber ? topicNumber[1] : index + 1}`;
+    }
+
     function normalizeQuestions(rawQuestions) {
         if (Array.isArray(rawQuestions)) {
-            return rawQuestions.map((entry) => {
+            return rawQuestions.map((entry, index) => {
                 if (Array.isArray(entry) && entry.length >= 2) {
-                    return { chapter: String(entry[0]), ...entry[1] };
+                    const chapter = String(entry[0]);
+                    return { id: buildQuestionId(chapter, entry[1], index), chapter, ...entry[1] };
                 }
-                return { chapter: "错题", ...entry };
+                return { id: buildQuestionId("错题", entry, index), chapter: "错题", ...entry };
             });
         }
 
         return Object.entries(rawQuestions)
             .sort(([left], [right]) => Number(left) - Number(right))
-            .flatMap(([chapter, list]) => list.map((question) => ({ chapter, ...question })));
+            .flatMap(([chapter, list]) => {
+                return list.map((question, index) => ({ id: buildQuestionId(chapter, question, index), chapter, ...question }));
+            });
     }
 
     function getElements(app) {
@@ -112,6 +121,7 @@
             choiceCount: app.querySelector("#se-quiz-choice-count"),
             random: app.querySelector("#se-quiz-random"),
             shuffleOptions: app.querySelector("#se-quiz-shuffle-options"),
+            avoidCorrect: app.querySelector("#se-quiz-avoid-correct"),
             start: app.querySelector("#se-quiz-start"),
             error: app.querySelector("#se-quiz-error"),
             progressText: app.querySelector("#se-quiz-progress-text"),
@@ -201,6 +211,26 @@
         return count;
     }
 
+    function takeQuestions(questions, count, randomMode, avoidCorrect) {
+        const questionPool = randomMode ? shuffle(questions) : questions.slice();
+        if (!avoidCorrect) {
+            return count === null ? questionPool : questionPool.slice(0, Math.min(count, questionPool.length));
+        }
+
+        const unansweredQuestions = questionPool.filter((question) => !state.correctQuestionIds.has(question.id));
+        const correctQuestions = questionPool.filter((question) => state.correctQuestionIds.has(question.id));
+
+        if (count === null) {
+            return unansweredQuestions;
+        }
+
+        const selectedQuestions = unansweredQuestions.slice(0, Math.min(count, unansweredQuestions.length));
+        if (selectedQuestions.length < count) {
+            selectedQuestions.push(...correctQuestions.slice(0, count - selectedQuestions.length));
+        }
+        return selectedQuestions;
+    }
+
     function prepareSessionQuestions(elements) {
         const judgeCount = parseQuestionCount(elements.judgeCount.value, "判断题数量");
         const choiceCount = parseQuestionCount(elements.choiceCount.value, "选择题数量");
@@ -211,10 +241,8 @@
         }
 
         if (elements.random.checked) {
-            const judgeQuestions = shuffle(pool.filter(isJudgeQuestion));
-            const choiceQuestions = shuffle(pool.filter((question) => !isJudgeQuestion(question)));
-            const selectedJudgeQuestions = judgeCount === null ? judgeQuestions : judgeQuestions.slice(0, Math.min(judgeCount, judgeQuestions.length));
-            const selectedChoiceQuestions = choiceCount === null ? choiceQuestions : choiceQuestions.slice(0, Math.min(choiceCount, choiceQuestions.length));
+            const selectedJudgeQuestions = takeQuestions(pool.filter(isJudgeQuestion), judgeCount, true, elements.avoidCorrect.checked);
+            const selectedChoiceQuestions = takeQuestions(pool.filter((question) => !isJudgeQuestion(question)), choiceCount, true, elements.avoidCorrect.checked);
             const selectedQuestions = shuffle([...selectedJudgeQuestions, ...selectedChoiceQuestions]);
 
             if (selectedQuestions.length === 0) {
@@ -224,24 +252,10 @@
             return selectedQuestions;
         }
 
-        let remainingJudgeCount = judgeCount;
-        let remainingChoiceCount = choiceCount;
-        const selectedQuestions = [];
-        for (const question of pool) {
-            if (isJudgeQuestion(question)) {
-                if (remainingJudgeCount === null || remainingJudgeCount > 0) {
-                    selectedQuestions.push(question);
-                    if (remainingJudgeCount !== null) {
-                        remainingJudgeCount -= 1;
-                    }
-                }
-            } else if (remainingChoiceCount === null || remainingChoiceCount > 0) {
-                selectedQuestions.push(question);
-                if (remainingChoiceCount !== null) {
-                    remainingChoiceCount -= 1;
-                }
-            }
-        }
+        const selectedJudgeQuestions = takeQuestions(pool.filter(isJudgeQuestion), judgeCount, false, elements.avoidCorrect.checked);
+        const selectedChoiceQuestions = takeQuestions(pool.filter((question) => !isJudgeQuestion(question)), choiceCount, false, elements.avoidCorrect.checked);
+        const selectedQuestionIds = new Set([...selectedJudgeQuestions, ...selectedChoiceQuestions].map((question) => question.id));
+        const selectedQuestions = pool.filter((question) => selectedQuestionIds.has(question.id));
 
         if (selectedQuestions.length === 0) {
             throw new Error("当前题量设置下没有题目。");
@@ -369,6 +383,7 @@
         const isCorrect = answer === state.displayAnswer;
         if (isCorrect) {
             state.correctCount += 1;
+            state.correctQuestionIds.add(state.sessionQuestions[state.currentIndex].id);
         }
 
         elements.options.querySelectorAll(".se-quiz__option").forEach((button) => {
