@@ -10,6 +10,7 @@
         answered: false,
         correctCount: 0,
         correctQuestionIds: new Set(),
+        isSessionFinished: false,
     };
 
     function parseAnswer(value) {
@@ -412,6 +413,7 @@
             elements.feedback.className = "se-quiz__feedback is-correct";
             elements.submit.hidden = true;
             elements.next.hidden = true;
+            state.isSessionFinished = true;
             return;
         }
 
@@ -431,6 +433,7 @@
 
         state.currentIndex = 0;
         state.correctCount = 0;
+        state.isSessionFinished = false;
         renderQuestion(elements);
     }
 
@@ -444,7 +447,9 @@
             return;
         }
 
-        if (elements.card.hidden) {
+        if (elements.card.hidden || state.isSessionFinished) {
+            event.preventDefault();
+            startSession(elements);
             return;
         }
 
