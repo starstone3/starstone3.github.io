@@ -438,7 +438,7 @@
     }
 
     function handleKeyboard(event, elements) {
-        if (event.key !== "Enter" || event.isComposing) {
+        if (event.isComposing) {
             return;
         }
 
@@ -447,21 +447,40 @@
             return;
         }
 
-        if (elements.card.hidden || state.isSessionFinished) {
+        if (event.key === "Enter" && (elements.card.hidden || state.isSessionFinished)) {
             event.preventDefault();
             startSession(elements);
             return;
         }
 
-        event.preventDefault();
-        if (state.answered) {
-            if (!elements.next.hidden) {
-                nextQuestion(elements);
+        if (event.key === "Enter") {
+            event.preventDefault();
+            if (state.answered) {
+                if (!elements.next.hidden) {
+                    nextQuestion(elements);
+                }
+                return;
             }
+
+            submitAnswer(elements);
             return;
         }
 
-        submitAnswer(elements);
+        if (/^[1-4]$/.test(event.key) && !elements.card.hidden && !state.answered) {
+            const optionIndex = Number(event.key);
+            if (optionIndex > state.visibleOptionCount) {
+                return;
+            }
+
+            const answerLabel = String.fromCharCode(64 + optionIndex);
+            const optionButton = elements.options.querySelector(`[data-answer="${answerLabel}"]`);
+            if (!optionButton) {
+                return;
+            }
+
+            event.preventDefault();
+            toggleOption(optionButton);
+        }
     }
 
     async function initQuiz(app) {
