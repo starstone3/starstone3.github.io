@@ -434,6 +434,31 @@
         renderQuestion(elements);
     }
 
+    function handleKeyboard(event, elements) {
+        if (event.key !== "Enter" || event.isComposing) {
+            return;
+        }
+
+        const target = event.target;
+        if (target instanceof HTMLInputElement || target instanceof HTMLSelectElement || target instanceof HTMLTextAreaElement) {
+            return;
+        }
+
+        if (elements.card.hidden) {
+            return;
+        }
+
+        event.preventDefault();
+        if (state.answered) {
+            if (!elements.next.hidden) {
+                nextQuestion(elements);
+            }
+            return;
+        }
+
+        submitAnswer(elements);
+    }
+
     async function initQuiz(app) {
         if (app.dataset.ready === "true") {
             return;
@@ -458,6 +483,7 @@
         elements.submit.addEventListener("click", () => submitAnswer(elements));
         elements.next.addEventListener("click", () => nextQuestion(elements));
         elements.scope.addEventListener("change", () => syncScopeControls(elements));
+        app.addEventListener("keydown", (event) => handleKeyboard(event, elements));
         syncScopeControls(elements);
     }
 
