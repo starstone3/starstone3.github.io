@@ -11,6 +11,7 @@
         correctCount: 0,
         correctQuestionIds: new Set(),
         isSessionFinished: false,
+        keyboardHandler: null,
     };
 
     function parseAnswer(value) {
@@ -437,6 +438,15 @@
         renderQuestion(elements);
     }
 
+    function getKeyboardOptionIndex(event) {
+        if (/^[1-4]$/.test(event.key)) {
+            return Number(event.key);
+        }
+
+        const digitMatch = event.code.match(/^(?:Digit|Numpad)([1-4])$/);
+        return digitMatch ? Number(digitMatch[1]) : null;
+    }
+
     function handleKeyboard(event, elements) {
         if (event.isComposing) {
             return;
@@ -444,6 +454,9 @@
 
         const target = event.target;
         if (target instanceof HTMLInputElement || target instanceof HTMLSelectElement || target instanceof HTMLTextAreaElement) {
+            return;
+        }
+        if (target instanceof HTMLElement && target.isContentEditable) {
             return;
         }
 
@@ -466,8 +479,8 @@
             return;
         }
 
-        if (/^[1-4]$/.test(event.key) && !elements.card.hidden && !state.answered) {
-            const optionIndex = Number(event.key);
+        const optionIndex = getKeyboardOptionIndex(event);
+        if (optionIndex !== null && !elements.card.hidden && !state.answered) {
             if (optionIndex > state.visibleOptionCount) {
                 return;
             }
@@ -507,7 +520,11 @@
         elements.submit.addEventListener("click", () => submitAnswer(elements));
         elements.next.addEventListener("click", () => nextQuestion(elements));
         elements.scope.addEventListener("change", () => syncScopeControls(elements));
-        app.addEventListener("keydown", (event) => handleKeyboard(event, elements));
+        if (state.keyboardHandler) {
+            document.removeEventListener("keydown", state.keyboardHandler);
+        }
+        state.keyboardHandler = (event) => handleKeyboard(event, elements);
+        document.addEventListener("keydown", state.keyboardHandler);
         syncScopeControls(elements);
     }
 
