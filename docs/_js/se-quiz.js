@@ -521,10 +521,10 @@
         elements.next.addEventListener("click", () => nextQuestion(elements));
         elements.scope.addEventListener("change", () => syncScopeControls(elements));
         if (state.keyboardHandler) {
-            document.removeEventListener("keydown", state.keyboardHandler);
+            window.removeEventListener("keydown", state.keyboardHandler, true);
         }
         state.keyboardHandler = (event) => handleKeyboard(event, elements);
-        document.addEventListener("keydown", state.keyboardHandler);
+        window.addEventListener("keydown", state.keyboardHandler, true);
         syncScopeControls(elements);
     }
 
