@@ -20,4 +20,7 @@ search:
 <div text-align="center">
     <img src="./image.png" alt="dominator" width="80%">
 </div>
+<caption>实际上是十五道选择,十五道判断,七道大题</caption>
 </center>
+
+<a href="https://starstone3.github.io/smaterials/cpa4.pdf" download="cpa4.pdf">编译原理a4</a>
