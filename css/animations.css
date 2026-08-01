@@ -141,9 +141,9 @@
     display: inline-block;
     width: 20px;
     height: 20px;
-    border: 3px solid rgba(102, 126, 234, 0.3);  
+    border: 3px solid rgba(102, 126, 234, 0.3);
     border-radius: 50%;                          
-    border-top-color: #667eea;                   
+    border-top-color: #667eea;
     animation: spin 1s ease-in-out infinite;     
 }
 
@@ -231,5 +231,5 @@
 /* 深色模式下的加载指示器颜色调整 */
 [data-md-color-scheme="slate"] .loading-indicator {
     border-color: rgba(255, 255, 255, 0.3);  /* 深色模式下使用白色边框 */
-    border-top-color: #667eea;                /* 保持主题色不变 */
+    border-top-color: #667eea;
 }

@@ -1,20 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;700&display=swap');
+:root {
+    --md-text-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    --md-code-font: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+:root,
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color: #119494c9;
+    --md-primary-fg-color--light: #66b2b2;
+    --md-primary-fg-color--dark: #004d4d;
+    --md-accent-fg-color: #03a9f4;
+    --md-accent-fg-color--light: #67c8ff;
+    --md-accent-fg-color--transparent: rgba(3, 169, 244, .1);
+    --md-typeset-a-color: var(--md-accent-fg-color--light);
+}
+
+#reading-progress {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    pointer-events: none;
+    background: linear-gradient(90deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+    transition: width 120ms linear;
+}
+
+.theme-transitioning {
+    transition: color 200ms ease, background-color 200ms ease;
+}
+
+.external-icon {
+    font-size: .8em;
+    opacity: .7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #reading-progress,
+    .theme-transitioning {
+        transition: none;
+    }
+}
 
 h2::before, h3::before, h4::before {
     content: " ";
-}
-
-.md-ellipsis,
-h1,
-.headerlink {
-    font-size: larger;
-    font-family: 'LXGW WenKai Screen', 'ZCOOL XiaoWei', serif;
 }
 
 .md-typeset h5 {
@@ -51,10 +80,6 @@ article a[href^="https://"]::after {
     max-width: 95%;
 } */
 
-body{
-    font-family:'Microsoft YaHei','LiSu','KaiTi','SimHei','SimSun','LXGW WenKai Screen', 'Lexend', 'Noto Sans SC', 'Source Code Pro', -apple-system, Helvetica, Arial, sans-serif;
-}
-
 center,
 p,
 li {
@@ -62,8 +87,17 @@ li {
     /* opacity: .9; */
 }
 
-.md-nav__link {
-    font-size: small;
+.md-sidebar .md-nav__title {
+    font-size: .78rem;
+}
+
+.md-sidebar .md-nav__link {
+    font-size: .60rem;
+    line-height: 1.5;
+}
+
+.md-sidebar--secondary .md-nav__link {
+    font-size: .60rem;
 }
 
 .md-typeset .admonition,
@@ -77,7 +111,7 @@ li {
 
 .md-tabs__link {
     margin-top: .8rem;
-    opacity: .4;
+    opacity: .75;
     font-family: var(--md-text-font-family);
 }
 
@@ -111,117 +145,6 @@ li {
     font-weight: 700;
     padding: .225em 2em;
     transition: color 125ms,background-color 125ms,border-color 125ms;
-}
-
-:root,
-[data-md-color-scheme=default] {
-    --md-default-fg-color: rgba(74, 61, 61, 0.9);
-    --md-default-fg-color--light: rgba(72, 52, 52, .54);
-    --md-default-fg-color--lighter: rgba(72, 52, 52, .32);
-    --md-default-fg-color--lightest: rgba(72, 52, 52, .27);
-    --md-default-bg-color: #ffffff;
-    --md-default-bg-color--light: hsla(0, 0%, 100%, .7);
-    --md-default-bg-color--lighter: hsla(0, 0%, 100%, .3);
-    --md-default-bg-color--lightest: hsla(0, 0%, 100%, .12);
-    --md-primary-fg-color: #119494c9; /* Teal */
-    --md-primary-fg-color--light: #66b2b2; /* Lighter Teal */
-    --md-primary-fg-color--dark: #004d4d; /* Darker Teal */
-    --md-primary-bg-color: #FDF6EC;
-    --md-primary-bg-color--light: hsla(0, 0%, 100%, .7);
-    --md-accent-fg-color: #03a9f4; /* Light Blue */
-    --md-accent-fg-color--light: #67c8ff; /* Lighter Light Blue */
-    --md-accent-fg-color--transparent: rgba(3, 169, 244, .1); /* Transparent Light Blue */
-    --md-accent-bg-color: #fff;
-    --md-accent-bg-color--light: hsla(0, 0%, 100%, .7);
-    --md-code-fg-color: #0f0f0f;
-    --md-code-bg-color: #f9f5f5;
-    --md-code-hl-color: #d7e1c3;
-    --md-code-hl-number-color: #d52a2a;
-    --md-code-hl-special-color: #db1457;
-    --md-code-hl-function-color: #a846b9;
-    --md-code-hl-constant-color: #6e59d9;
-    --md-code-hl-keyword-color: #3f6ec6;
-    --md-code-hl-string-color: #1c7d4d;
-    --md-code-hl-name-color: var(--md-code-fg-color);
-    --md-code-hl-operator-color: var(--md-default-fg-color--light);
-    --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
-    --md-code-hl-comment-color: var(--md-default-fg-color--light);
-    --md-code-hl-generic-color: var(--md-default-fg-color--light);
-    --md-code-hl-variable-color: var(--md-default-fg-color--light);
-    --md-typeset-color: var(--md-default-fg-color);
-    --md-typeset-a-color: var(--md-accent-fg-color--light);
-    --md-typeset-mark-color: rgba(255, 179, 0, 0.5);
-    --md-typeset-del-color: rgba(245, 80, 61, .15);
-    --md-typeset-ins-color: rgba(11, 213, 112, .15);
-    --md-typeset-kbd-color: #fafafa;
-    --md-typeset-kbd-accent-color: #fff;
-    --md-typeset-kbd-border-color: #b8b8b8;
-    --md-typeset-table-color: rgba(0, 0, 0, .12);
-    --md-admonition-fg-color: var(--md-default-fg-color);
-    --md-admonition-bg-color: #fff9f4;
-    --md-footer-fg-color: #fff;
-    --md-footer-fg-color--light: hsla(0, 0%, 100%, .7);
-    --md-footer-fg-color--lighter: hsla(0, 0%, 100%, .3);
-    --md-footer-bg-color: rgba(0, 0, 0, .87);
-    --md-footer-bg-color--dark: rgba(0, 0, 0, .32);
-    --md-shadow-z1: 1px 1px 3px #fff5ee, 1px 1px 5px #e1d0c5;
-    --md-shadow-z2: 1px 1px 3px #fff5ee, 2px 2px 7px #cebeb3;
-    --md-shadow-z3: 1px 1px 3px #fff5ee, 2px 2px 9px #cebeb3;
-}
-
-[data-md-color-scheme=dark] {
-    --md-default-fg-color: rgba(255, 255, 255, .87);
-    --md-default-fg-color--light: rgba(255, 255, 255, .54);
-    --md-default-fg-color--lighter: rgba(255, 255, 255, .32);
-    --md-default-fg-color--lightest: rgba(255, 255, 255, .27);
-    --md-default-bg-color: #121212;
-    --md-default-bg-color--light: hsla(0, 0%, 100%, .7);
-    --md-default-bg-color--lighter: hsla(0, 0%, 100%, .3);
-    --md-default-bg-color--lightest: hsla(0, 0%, 100%, .12);
-    --md-primary-fg-color: #000000; /* Black */
-    --md-primary-fg-color--light: #333333; /* Lighter Black */
-    --md-primary-fg-color--dark: #000000; /* Darker Black */
-    --md-primary-bg-color: #FDF6EC;
-    --md-primary-bg-color--light: hsla(0, 0%, 100%, .7);
-    --md-accent-fg-color: #3f51b5; /* Indigo */
-    --md-accent-fg-color--light: #757de8; /* Lighter Indigo */
-    --md-accent-fg-color--transparent: rgba(63, 81, 181, .1); /* Transparent Indigo */
-    --md-accent-bg-color: #fff;
-    --md-accent-bg-color--light: hsla(0, 0%, 100%, .7);
-    --md-code-fg-color: #66806A;
-    --md-code-bg-color: #FFF3E4;
-    --md-code-hl-color: #d7e1c3;
-    --md-code-hl-number-color: #d52a2a;
-    --md-code-hl-special-color: #db1457;
-    --md-code-hl-function-color: #a846b9;
-    --md-code-hl-constant-color: #6e59d9;
-    --md-code-hl-keyword-color: #3f6ec6;
-    --md-code-hl-string-color: #1c7d4d;
-    --md-code-hl-name-color: var(--md-code-fg-color);
-    --md-code-hl-operator-color: var(--md-default-fg-color--light);
-    --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
-    --md-code-hl-comment-color: var(--md-default-fg-color--light);
-    --md-code-hl-generic-color: var(--md-default-fg-color--light);
-    --md-code-hl-variable-color: var(--md-default-fg-color--light);
-    --md-typeset-color: var(--md-default-fg-color);
-    --md-typeset-a-color: var(--md-accent-fg-color--light);
-    --md-typeset-mark-color: rgba(255, 179, 0, 0.5);
-    --md-typeset-del-color: rgba(245, 80, 61, .15);
-    --md-typeset-ins-color: rgba(11, 213, 112, .15);
-    --md-typeset-kbd-color: #fafafa;
-    --md-typeset-kbd-accent-color: #fff;
-    --md-typeset-kbd-border-color: #b8b8b8;
-    --md-typeset-table-color: rgba(0, 0, 0, .12);
-    --md-admonition-fg-color: var(--md-default-fg-color);
-    --md-admonition-bg-color: #fff9f4;
-    --md-footer-fg-color: #fff;
-    --md-footer-fg-color--light: hsla(0, 0%, 100%, .7);
-    --md-footer-fg-color--lighter: hsla(0, 0%, 100%, .3);
-    --md-footer-bg-color: rgba(0, 0, 0, .87);
-    --md-footer-bg-color--dark: rgba(0, 0, 0, .32);
-    --md-shadow-z1: 1px 1px 3px #fff5ee, 1px 1px 5px #e1d0c5;
-    --md-shadow-z2: 1px 1px 3px #fff5ee, 2px 2px 7px #cebeb3;
-    --md-shadow-z3: 1px 1px 3px #fff5ee, 2px 2px 9px #cebeb3;
 }
 
 ::selection {
@@ -471,29 +394,24 @@ li {
     display: none;
   }
 
-/* Webkit浏览器的滚动条样式 */
+* {
+  scrollbar-color: rgba(100, 126, 231, .55) transparent;
+  scrollbar-width: thin;
+}
+
 *::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 *::-webkit-scrollbar-track {
-  background: #e1e5f4;
-  border-radius: 4px;
+  background: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #647ee7;
-  border-radius: 4px;
+  background: rgba(100, 126, 231, .55);
+  border-radius: 999px;
   min-height: 20px;
-  background-image: linear-gradient(45deg,
-      rgba(255, 255, 255, 0.2) 25%,
-      transparent 25%,
-      transparent 50%,
-      rgba(255, 255, 255, 0.2) 50%,
-      rgba(255, 255, 255, 0.2) 75%,
-      transparent 75%,
-      transparent);
-  background-size: 10px 10px;
 }
   .tabbed-labels > label {
     width: auto;
@@ -594,21 +512,21 @@ li {
 
 /* 覆盖默认的链接颜色 */
 .md-typeset a {
-    color: #667eea !important;                    /* 默认链接颜色 - 蓝紫色 */
+    color: #667eea !important;
     text-decoration: none;                        /* 移除下划线 */
-    transition: all 0.3s ease;                   /* 平滑过渡效果 */
+    transition: color 0.2s ease, transform 0.2s ease;
     position: relative;                           /* 为伪元素定位做准备 */
 }
 
 /* 链接悬停时的颜色变化 */
 .md-typeset a:hover {
-    color: #f093fb !important;                   /* 悬停时的颜色 - 粉紫色 */
+    color: #f093fb !important;
     transform: translateY(-1px);                  /* 轻微上浮效果 */
 }
 
 /* 链接获得焦点时的样式 */
 .md-typeset a:focus {
-    color: #764ba2 !important;                   /* 焦点时的颜色 */
+    color: #764ba2 !important;
 }
 
 /* 为链接添加下划线动画效果 */
@@ -619,7 +537,7 @@ li {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #667eea, #f093fb);  /* 渐变下划线 */
+    background: linear-gradient(90deg, #667eea, #f093fb);
     transition: width 0.3s ease;
 }
 
