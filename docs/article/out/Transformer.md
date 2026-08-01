@@ -4,8 +4,6 @@ hide :
     - feedback
 ---
 
-<script defer src="https://vercount.one/js"></script>
-
 # Transformer
 
 Transformer模型包含两个主要部分：Encoder（编码器）和Decoder（解码器）。

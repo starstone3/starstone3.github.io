@@ -5,8 +5,6 @@ hide:
 ---
 
 
-<script defer src="https://vercount.one/js"></script>
-
 # [What is chatgpt doing and Why does it work](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/)
 
 关于Chatgpt的一篇长文，讲述了Chatgpt生成回答，使用神经网络（nn），ML之类的。

@@ -1,11 +1,12 @@
 site_name: Starstone3's bed
 site_author: starstone3
 site_url: 'https://starstone3.github.io'
+site_description: 'Starstone3 的计算机课程笔记、论文阅读与学习记录。'
 edit_uri: blob/main/docs
 repo_name: 'Starstone3 sleeps here'
 repo_url: 'https://github.com/starstone3/starstone3.github.io'
 theme:
-  favicon: image/fav1.png
+  favicon: image/favicon.png
   name: material 
   language: zh
   icon:
@@ -27,9 +28,7 @@ theme:
       bug: fontawesome/solid/robot
       example: fontawesome/solid/flask
       quote: fontawesome/solid/link
-  font:
-    text:  LXGW WenKai Screen GB Screen #Noto Serif SC  # Share TechSimSun
-    code: JetBrains Mono
+  font: false
   palette:
       - media: "(prefers-color-scheme)"
         toggle:
@@ -37,8 +36,8 @@ theme:
           name: 关闭自动模式
       - media: "(prefers-color-scheme: light)"
         scheme: default # 日间模式
-        primary: deep purple # 更现代的紫色
-        accent: amber # 温暖的黄色强调色
+        primary: deep purple
+        accent: amber
         toggle:
           icon: material/weather-sunny # 太阳图标
           name: 切换至夜间模式
@@ -53,6 +52,7 @@ theme:
     - announce.dismiss #呈现可标记为由用户读取的临时公告，可以包含一个用于取消当前公告的按钮
     - navigation.instant # 即时加载
     - navigation.instant.prefetch # 预加载
+    - navigation.instant.progress # 加载较慢时显示进度条
     #- header.autohide  #自动隐藏
     - navigation.tracking #地址栏中的 URL 将自动更新为在目录中突出显示的活动锚点
     - navigation.tabs #顶级部分将呈现在上面视口标题下方的菜单层中，但在移动设备上保持原样
@@ -226,28 +226,23 @@ nav :
 
 extra:
   generator: true #是否删除页脚显示“使用 MkDocs 材料制造”
-  analytics:
-    provider: google #谷歌分析
-    property:
-
-    # 网页底部反馈
-    feedback:
-      title: 此页面有帮助吗？
-      ratings:
-        - icon: material/thumb-up-outline #图标可自定义
-          name: 这玩意有点用
-          data: 1
-          note: >-
-            谢谢你的反馈！
-        - icon: material/thumb-down-outline
-          name: 这玩意真有用吗
-          data: 0
-          note: >-
-            呜呜呜，别骂了别骂了，请联系我！
-            <a href="mailto:pxxhello@gmail.com">俺的gmail</a>
+  # 网页底部反馈
+  feedback:
+    title: 此页面有帮助吗？
+    ratings:
+      - icon: material/thumb-up-outline #图标可自定义
+        name: 这玩意有点用
+        data: 1
+        note: >-
+          谢谢你的反馈！
+      - icon: material/thumb-down-outline
+        name: 这玩意真有用吗
+        data: 0
+        note: >-
+          呜呜呜，别骂了别骂了，请联系我！
+          <a href="mailto:pxxhello@gmail.com">俺的gmail</a>
 
 plugins:
-
   - statistics:
       words_per_minute: 200
   - search:
@@ -269,6 +264,8 @@ plugins:
         - tools/index.md
         - incourse/index.md
   - minify
+hooks:
+  - overrides/hooks/recent_updates.py
 markdown_extensions:
   - toc:
       permalink: true
@@ -313,28 +310,11 @@ markdown_extensions:
   - pymdownx.tilde
   
 extra_css:
-  # 核心样式优先加载
   - css/extra.css
   - css/animations.css
-  # 功能样式延后加载
-  - css/flink.css
-  - css/homepage.css
   - css/styles.css
-  - css/se-quiz.css
-  # 外部字体和数学公式最后加载
-  - https://jsd.cdn.zzko.cn/npm/katex@0.16.4/dist/katex.min.css
-  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
-  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
-  - https://unpkg.com/katex@0/dist/katex.min.css
-  # - https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css
 extra_javascript:
   - _js/extra.js
-  - _js/se-quiz.js
   - _js/mathjax.js
-  - _js/katex.js
-  # - _js/linenumber.js
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
-  - https://unpkg.com/katex@0/dist/katex.min.js
-  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
-  - //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
+  - https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js
 copyright: 'Copyright &copy 2024 starstone3'

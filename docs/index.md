@@ -1,9 +1,12 @@
 ---
 hide :
   - feedback
+glightbox: false
+page_stylesheets:
+  - css/homepage.css
+page_scripts:
+  - https://vercount.one/js
 ---
-
-<script defer src="https://vercount.one/js"></script>
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=300&&section=header&text=Hey,guys!&fontSize=90&fontAlign=50&fontAlignY=30&desc=I am starstone3.&descAlign=50&descSize=30&descAlignY=60&animation=twinkling" />
@@ -39,6 +42,10 @@ Hello，我是starstone3，目前就读于浙江大学计算机科学与技术�
     <div class="stat-label">独立访客</div>
   </div>
 </div>
+
+## 最近更新
+
+<!-- recent-updates -->
 
 
 <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>

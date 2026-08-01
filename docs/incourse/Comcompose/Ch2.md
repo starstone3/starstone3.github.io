@@ -4,8 +4,6 @@ hide:
     - feedback
 ---
 
-<script defer src="https://vercount.one/js"></script>
-
 # Instructions: Language of the Machine
 
 !!! info "参考"

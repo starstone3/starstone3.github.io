@@ -536,6 +536,8 @@
         initQuiz(app);
     }
 
+    window.initializeSeQuizPage = boot;
+
     if (typeof document$ !== "undefined") {
         document$.subscribe(boot);
     } else {

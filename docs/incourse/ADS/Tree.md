@@ -5,8 +5,6 @@ statistics : true
 ---
 
 
-<script defer src="https://vercount.one/js"></script>
-
 
 # Kinds of Trees：AVL,Splay,B+ and Red Black
 

@@ -4,8 +4,6 @@ hide:
     - feedback
 ---
 
-<script defer src="https://vercount.one/js"></script>
-
 # [Instruction Tuning for Large Language Models: A Survey](https://arxiv.org/abs/2308.10792)
 
 Instruction Tuning优点与数据集:

@@ -5,8 +5,6 @@ comments : true
 <link rel="stylesheet" type="text/css" href="../../../css/styles.css">
 
 
-<script defer src="https://vercount.one/js"></script>
-
 # Leftist Heaps and Skew Heaps
 
 ## Leftist Heaps

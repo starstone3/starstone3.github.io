@@ -1,99 +1,170 @@
+(() => {
+    "use strict";
 
-// MathJax配置
-window.MathJax = {
-    tex: {
-      inlineMath: [["\\(", "\\)"]],
-      displayMath: [["\\[", "\\]"]],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      ignoreHtmlClass: ".*|",
-      processHtmlClass: "arithmatex"
+    let progressFrame = null;
+
+    function resolveAssetUrl(path) {
+        return new URL(path, window.location.href).href;
     }
-};
 
-document$.subscribe(() => { 
-    MathJax.typesetPromise()
-})
-
-
-document.addEventListener('DOMContentLoaded', function() {
-
-        
-        // 点击图片放大
-        // img.addEventListener('click', function() {
-        //     if (this.style.transform === 'scale(1.5)') {
-        //         this.style.transform = 'scale(1)';
-        //         this.style.zIndex = 'auto';
-        //         this.style.position = 'relative';
-        //     } else {
-        //         this.style.transform = 'scale(1.5)';
-        //         this.style.zIndex = '1000';
-        //         this.style.position = 'relative';
-        //         this.style.transition = 'all 0.3s ease';
-        //     }
-        // });
-    
-    const codeBlocks = document.querySelectorAll('pre code');
-    codeBlocks.forEach(block => {
-        block.addEventListener('mouseenter', function() {
-            this.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.15)';
+    function findAsset(selector, url) {
+        return Array.from(document.querySelectorAll(selector)).find((asset) => {
+            const assetUrl = asset.href || asset.src;
+            return assetUrl === url;
         });
-        
-        block.addEventListener('mouseleave', function() {
-            this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
-        });
-    });
-    
-    // 为链接添加外部链接图标
-    const externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="' + window.location.hostname + '"])');
-    externalLinks.forEach(link => {
-        if (!link.querySelector('.external-icon')) {
-            const icon = document.createElement('span');
-            icon.innerHTML = ' ↗';
-            icon.className = 'external-icon';
-            icon.style.fontSize = '0.8em';
-            icon.style.opacity = '0.7';
-            link.appendChild(icon);
+    }
+
+    function loadStylesheet(path) {
+        const url = resolveAssetUrl(path);
+        if (findAsset('link[rel="stylesheet"]', url)) {
+            return;
         }
-    });
-    
-    // 添加阅读进度条
-    const progressBar = document.createElement('div');
-    progressBar.id = 'reading-progress';
-    progressBar.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0%;
-        height: 3px;
-        background: linear-gradient(90deg, #667eea, #764ba2);
-        z-index: 9999;
-        transition: width 0.3s ease;
-    `;
-    document.body.appendChild(progressBar);
-    
-    // 更新阅读进度
-    window.addEventListener('scroll', function() {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        progressBar.style.width = scrolled + '%';
-    });
 
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = url;
+        link.dataset.pageStylesheet = "true";
+        document.head.appendChild(link);
+    }
 
-});
+    function loadScript(path) {
+        const url = resolveAssetUrl(path);
+        if (findAsset("script[src]", url)) {
+            return Promise.resolve();
+        }
 
-// 主题切换动画
-document.addEventListener('DOMContentLoaded', function() {
-    const themeToggle = document.querySelector('[data-md-component="palette"]');
-    if (themeToggle) {
-        themeToggle.addEventListener('change', function() {
-            document.body.style.transition = 'all 0.3s ease';
-            setTimeout(() => {
-                document.body.style.transition = '';
-            }, 300);
+        return new Promise((resolve, reject) => {
+            const script = document.createElement("script");
+            script.src = url;
+            script.async = false;
+            script.dataset.pageScript = "true";
+            script.addEventListener("load", resolve, { once: true });
+            script.addEventListener("error", () => {
+                reject(new Error(`页面脚本加载失败：${url}`));
+            }, { once: true });
+            document.body.appendChild(script);
         });
     }
-});
+
+    async function loadPageAssets() {
+        const marker = document.querySelector("#page-assets");
+        const stylesheetPaths = marker
+            ? Array.from(marker.querySelectorAll("[data-page-stylesheet]"), (item) => item.dataset.pageStylesheet)
+            : [];
+        const scriptPaths = marker
+            ? Array.from(marker.querySelectorAll("[data-page-script]"), (item) => item.dataset.pageScript)
+            : [];
+        const desiredScripts = new Set(scriptPaths.map(resolveAssetUrl));
+
+        document.querySelectorAll("script[data-page-script][src]").forEach((script) => {
+            if (!desiredScripts.has(script.src)) {
+                script.remove();
+            }
+        });
+
+        stylesheetPaths.forEach(loadStylesheet);
+
+        try {
+            await Promise.all(scriptPaths.map(loadScript));
+            if (typeof window.initializeSeQuizPage === "function") {
+                window.initializeSeQuizPage();
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    function addExternalLinkIcons() {
+        document.querySelectorAll('article a[href^="http"]').forEach((link) => {
+            let target;
+            try {
+                target = new URL(link.href, window.location.href);
+            } catch (_error) {
+                return;
+            }
+
+            if (
+                target.origin === window.location.origin ||
+                link.querySelector("img, picture, svg") ||
+                link.querySelector(".external-icon") ||
+                !link.textContent.trim()
+            ) {
+                return;
+            }
+
+            const icon = document.createElement("span");
+            icon.className = "external-icon";
+            icon.setAttribute("aria-hidden", "true");
+            icon.textContent = " ↗";
+            link.appendChild(icon);
+        });
+    }
+
+    function updateReadingProgress() {
+        progressFrame = null;
+        const progressBar = document.querySelector("#reading-progress");
+        if (!progressBar) {
+            return;
+        }
+
+        const root = document.documentElement;
+        const scrollableHeight = root.scrollHeight - root.clientHeight;
+        const progress = scrollableHeight > 0
+            ? Math.min(100, Math.max(0, (root.scrollTop / scrollableHeight) * 100))
+            : 0;
+        progressBar.style.width = `${progress}%`;
+    }
+
+    function scheduleReadingProgressUpdate() {
+        if (progressFrame === null) {
+            progressFrame = window.requestAnimationFrame(updateReadingProgress);
+        }
+    }
+
+    function initializeReadingProgress() {
+        let progressBar = document.querySelector("#reading-progress");
+        if (!progressBar) {
+            progressBar = document.createElement("div");
+            progressBar.id = "reading-progress";
+            progressBar.setAttribute("aria-hidden", "true");
+            document.body.appendChild(progressBar);
+        }
+
+        if (document.documentElement.dataset.readingProgressBound !== "true") {
+            window.addEventListener("scroll", scheduleReadingProgressUpdate, { passive: true });
+            window.addEventListener("resize", scheduleReadingProgressUpdate, { passive: true });
+            document.documentElement.dataset.readingProgressBound = "true";
+        }
+        scheduleReadingProgressUpdate();
+    }
+
+    function initializeThemeTransition() {
+        const themeToggle = document.querySelector('[data-md-component="palette"]');
+        if (!themeToggle || themeToggle.dataset.transitionBound === "true") {
+            return;
+        }
+
+        themeToggle.addEventListener("change", () => {
+            document.body.classList.add("theme-transitioning");
+            window.setTimeout(() => {
+                document.body.classList.remove("theme-transitioning");
+            }, 200);
+        });
+        themeToggle.dataset.transitionBound = "true";
+    }
+
+    function initializePage() {
+        loadPageAssets();
+        addExternalLinkIcons();
+        initializeReadingProgress();
+        initializeThemeTransition();
+    }
+
+    if (typeof document$ !== "undefined") {
+        document$.subscribe(initializePage);
+    } else if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initializePage, { once: true });
+    } else {
+        initializePage();
+    }
+})();

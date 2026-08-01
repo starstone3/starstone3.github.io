@@ -2,8 +2,6 @@
 comments : true
 ---
 
-<script defer src="https://vercount.one/js"></script>
-
 # 妙妙小工具
 
 ## 画图，画树小工具

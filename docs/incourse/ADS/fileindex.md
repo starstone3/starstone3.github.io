@@ -4,8 +4,6 @@ hide :
 comments : true
 ---
 
-<script defer src="https://vercount.one/js"></script>
-
 # Inverted File Index
 
 当我们使用网页搜索时，搜索引擎会快速地从大量网页中找到与查询相关的内容。这是如何做到的呢？

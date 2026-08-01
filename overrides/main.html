@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  {% if page and page.meta and page.meta.page_stylesheets %}
+    {% for path in page.meta.page_stylesheets %}
+      <link rel="stylesheet" href="{{ path | url }}" data-page-stylesheet="true">
+    {% endfor %}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  {% if page and page.meta and (page.meta.page_stylesheets or page.meta.page_scripts) %}
+    <div id="page-assets" hidden data-search-exclude>
+      {% for path in page.meta.page_stylesheets or [] %}
+        <span data-page-stylesheet="{{ path | url }}"></span>
+      {% endfor %}
+      {% for path in page.meta.page_scripts or [] %}
+        <span data-page-script="{{ path | url }}"></span>
+      {% endfor %}
+    </div>
+  {% endif %}
+  {{ super() }}
+{% endblock %}
+
+{% block scripts %}
+  {% if page and page.meta and page.meta.page_scripts %}
+    {% for path in page.meta.page_scripts %}
+      <script src="{{ path | url }}" data-page-script="true" defer></script>
+    {% endfor %}
+  {% endif %}
+  {{ super() }}
+{% endblock %}

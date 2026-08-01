@@ -1,5 +1,9 @@
 ---
 comments: true
+page_stylesheets:
+  - css/se-quiz.css
+page_scripts:
+  - _js/se-quiz.js
 ---
 
 # 软件工程刷题器

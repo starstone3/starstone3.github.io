@@ -3,8 +3,6 @@ comments : true
 ---
 
 
-<script defer src="https://vercount.one/js"></script>
-
 # [CogAgent  A Visual Language Model for GUI Agents](https://arxiv.org/pdf/2312.08914)
 
 !!! info "突破点"
