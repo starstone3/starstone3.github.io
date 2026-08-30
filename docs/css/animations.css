@@ -21,19 +21,6 @@
     }
 }
 
-/* 从右侧滑入动画 - 适用于右侧内容或弹出元素 */
-@keyframes slideInFromRight {
-    0% {
-        opacity: 0;                    /* 初始完全透明 */
-        transform: translateX(30px);   /* 向右偏移30像素 */
-    }
-    100% {
-        opacity: 1;                    /* 最终完全不透明 */
-        transform: translateX(0);      /* 回到原始位置 */
-    }
-}
-
-
 @keyframes fadeInScale {
     0% {
         opacity: 0;           
@@ -132,35 +119,6 @@
     background: linear-gradient(90deg, rgba(102, 126, 234, 0.1), transparent);
 }
 
-/* ========================================
-   加载指示器动画
-   ======================================== */
-
-/* 加载指示器的样式和动画 */
-.loading-indicator {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 3px solid rgba(102, 126, 234, 0.3);
-    border-radius: 50%;                          
-    border-top-color: #667eea;
-    animation: spin 1s ease-in-out infinite;     
-}
-
-/* 旋转动画定义 */
-@keyframes spin {
-    to {
-        transform: rotate(360deg);  /* 完整旋转360度 */
-    }
-}
-
-
-/* 主要内容区域的页面切换动画 */
-.md-main__inner {
-    animation: fadeInScale 0.5s ease-out;
-}
-
-
 /* 为页面切换添加预加载优化 */
 /* .md-main {
     contain: layout style paint;                        
@@ -178,13 +136,6 @@
     transition: opacity 0.2s ease-out;                /* 简化为透明度过渡 */
 }
 
-/* 首次加载后禁用某些动画以提升切换速度 */
-.page-loaded .md-header,
-.page-loaded .md-sidebar,
-.page-loaded .md-content__inner {
-    animation: none;                                   /* 首次加载后不再播放进入动画 */
-}
-
 /* 预加载关键资源的样式 */
 .md-nav__link {
     will-change: auto;                                 /* 避免不必要的GPU层创建 */
@@ -197,10 +148,6 @@
 /* 优化滚动性能 */
 .md-content {
     scroll-behavior: auto;                             /* 在首次加载时禁用平滑滚动 */
-}
-
-.page-loaded .md-content {
-    scroll-behavior: smooth;                           /* 加载完成后启用平滑滚动 */
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -226,10 +173,4 @@
     .md-header {
         animation-duration: 0.3s;  
     }
-}
-
-/* 深色模式下的加载指示器颜色调整 */
-[data-md-color-scheme="slate"] .loading-indicator {
-    border-color: rgba(255, 255, 255, 0.3);  /* 深色模式下使用白色边框 */
-    border-top-color: #667eea;
 }

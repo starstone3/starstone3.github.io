@@ -129,7 +129,7 @@ $$
 
 ---
 
-!!! definition "$"
+!!! definition "输入结束符"
     
     在文法中,我们用 `$` 来表示输入串的结束符(end of input),它不属于文法中的任何一个终结符. 例如,对于上面的文法,我们可以把输入串写成 `id * id + id $`,其中 `$` 表示输入串的结束.
 
@@ -1334,7 +1334,7 @@ LR(0)不看ahead token,因此它的状态转移完全由当前栈顶的状态决
 
     - $A \to \alpha . a \beta$ (shift 项)
 
-    - $B \to \gamma . $ (reduce 项)
+    - $B \to \gamma .$ (reduce 项)
 
     那么在输入符号为 `a` 时,分析器就不知道是应该 shift 还是 reduce.
 

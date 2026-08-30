@@ -239,7 +239,7 @@ B中比这个元素小的个数很简单，就是它的编号，而在A中我们
 
 + $RANK( j, A) = i,   if A(i) < B(j) < A(i + 1), 1 \leq i < n$
 
-+ $RANK( j, A) = 0,  if B(j) < A(1) $
++ $RANK( j, A) = 0,  if B(j) < A(1)$
 
 + $RANK( j, A) = n,  if B(j) > A(n)$
 

@@ -74,11 +74,11 @@ comments: true
 
 奈奎斯特规定,在理想低通(没有噪声、带宽有限)信道中,为了避免码间串扰,码元传输速率不能超过信道带宽的两倍,即:
 
-$$ \text{码元传输速率(波特)} \leq 2 \times \text{信道带宽(Hz)} $$
+$$\text{码元传输速率(波特)} \leq 2 \times \text{信道带宽(Hz)}$$
 
 如果用V表示码元的离散电平数量(即码元的不同状态数),则在理想低通信道中,比特率的最大值为:
 
-$$ 2 \times \log_2 V \times \text{信道带宽(Hz)} $$
+$$2 \times \log_2 V \times \text{信道带宽(Hz)}$$
 
 
 奈氏准则的主要要点如下：
@@ -97,7 +97,7 @@ $$ 2 \times \log_2 V \times \text{信道带宽(Hz)} $$
 
 在带宽为B Hz,信噪比为S/N的有噪声信道中,信道容量C的最大值为:
 
-$$ C = B \times \log_2(1 + \frac{S}{N}) $$
+$$C = B \times \log_2(1 + \frac{S}{N})$$
 
 其中,S是信号功率,N是噪声功率,S/N是信噪比,C的单位是bps。
 
@@ -106,7 +106,7 @@ $$ C = B \times \log_2(1 + \frac{S}{N}) $$
 1. **线性表示法**：直接用S/N表示。
 
 2. **对数表示法**：用分贝(dB)表示,即:
-    $$ \text{SNR(dB)} = 10 \times \log_{10}(\frac{S}{N}) $$
+    $$\text{SNR(dB)} = 10 \times \log_{10}(\frac{S}{N})$$
 
 !!! warning
     在使用香农定理时,必须将信噪比S/N换算成线性表示法。

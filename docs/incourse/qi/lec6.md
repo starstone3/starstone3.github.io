@@ -147,7 +147,7 @@ comments: true
     === "Step1"
         最开始,系统的状态是:
 
-        $$ (a|0\rangle + b|1\rangle) \otimes |0\rangle \otimes |0\rangle $$
+        $$(a|0\rangle + b|1\rangle) \otimes |0\rangle \otimes |0\rangle$$
 
         其中,第一个量子比特是Alice手上的量子比特,第二个量子比特是Alice和Bob纠缠的量子比特,第三个量子比特是Bob手上的量子比特.
 
@@ -155,7 +155,7 @@ comments: true
     
         现在,系统的总状态变成了:
 
-        $$ (a|0\rangle + b|1\rangle) \otimes \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle) = \frac{1}{\sqrt{2}}(a|000\rangle + a|011\rangle + b|100\rangle + b|111\rangle) $$
+        $$(a|0\rangle + b|1\rangle) \otimes \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle) = \frac{1}{\sqrt{2}}(a|000\rangle + a|011\rangle + b|100\rangle + b|111\rangle)$$
 
     === "Step2"
 
@@ -179,16 +179,16 @@ comments: true
         由于 Alice 需要对前两个比特进行测量，为了看清测量后 Bob 的比特状态，我们将上述状态 $|\Psi_4\rangle$ 按 Alice 的前两位测量基进行整理：
 
         *   **前两位是 $|00\rangle$ 的项**：
-            $$ a|000\rangle + b|001\rangle = |00\rangle (a|0\rangle + b|1\rangle) = |00\rangle |\psi\rangle $$
+            $$a|000\rangle + b|001\rangle = |00\rangle (a|0\rangle + b|1\rangle) = |00\rangle |\psi\rangle$$
         *   **前两位是 $|01\rangle$ 的项**：
-            $$ b|010\rangle + a|011\rangle = |01\rangle (b|0\rangle + a|1\rangle) = |01\rangle X|\psi\rangle $$
+            $$b|010\rangle + a|011\rangle = |01\rangle (b|0\rangle + a|1\rangle) = |01\rangle X|\psi\rangle$$
         *   **前两位是 $|10\rangle$ 的项**：
-            $$ a|100\rangle - b|101\rangle = |10\rangle (a|0\rangle - b|1\rangle) = |10\rangle Z|\psi\rangle $$
+            $$a|100\rangle - b|101\rangle = |10\rangle (a|0\rangle - b|1\rangle) = |10\rangle Z|\psi\rangle$$
         *   **前两位是 $|11\rangle$ 的项**：
-            $$ a|111\rangle - b|110\rangle = |11\rangle (a|1\rangle - b|0\rangle) = |11\rangle XZ|\psi\rangle \text{ (忽略整体负号)} $$
+            $$a|111\rangle - b|110\rangle = |11\rangle (a|1\rangle - b|0\rangle) = |11\rangle XZ|\psi\rangle \text{ (忽略整体负号)}$$
 
         **最后得到：**
-        $$ |\Psi_4\rangle = \frac{1}{2} \left( |00\rangle |\psi\rangle + |01\rangle X|\psi\rangle + |10\rangle Z|\psi\rangle + |11\rangle XZ|\psi\rangle \right) $$
+        $$|\Psi_4\rangle = \frac{1}{2} \left( |00\rangle |\psi\rangle + |01\rangle X|\psi\rangle + |10\rangle Z|\psi\rangle + |11\rangle XZ|\psi\rangle \right)$$
 
 !!! abstract "总结"
     根据最后计算出的结果,我们知道,只要Alice把前两位的测量结果告诉Bob,Bob就能施加对应的变换,实现量子态的隐形传态.

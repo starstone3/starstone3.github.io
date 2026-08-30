@@ -115,17 +115,17 @@ $$T(N) = aT(\frac{N}{b}) + f(N)$$
 替代法的思路很简单，我们先通过直觉或者其他什么方法看出可能的时间复杂度是多少，再通过归纳法的手段证明。
 
 !!! example "例子"
-    以下面这个递推式为例：$$ T(N) = 2T(\lfloor N/2 \rfloor) + N $$
+    以下面这个递推式为例：$$T(N) = 2T(\lfloor N/2 \rfloor) + N$$
     === "正确做法"
-        $$ T(N) = 2T(\lfloor N/2 \rfloor) + N $$
+        $$T(N) = 2T(\lfloor N/2 \rfloor) + N$$
 
         **我们猜测**  
-        $$ T(N) = O(N \log N) $$
+        $$T(N) = O(N \log N)$$
 
-        **证明:** 假设对 $\forall m,m < N $成立, 特别是 $ m = \lfloor N/2 \rfloor $.
+        **证明:** 假设对 $\forall m,m < N$成立, 特别是 $m = \lfloor N/2 \rfloor$.
 
-        因此存在常数 $ c > 0 $ 使得  
-        $$ T(\lfloor N/2 \rfloor) \leq c \lfloor N/2 \rfloor \log \lfloor N/2 \rfloor $$.
+        因此存在常数 $c > 0$ 使得
+        $$T(\lfloor N/2 \rfloor) \leq c \lfloor N/2 \rfloor \log \lfloor N/2 \rfloor$$.
 
         代入得：
 
@@ -141,16 +141,16 @@ $$T(N) = aT(\frac{N}{b}) + f(N)$$
         \leq cN(\log N - \log 2) +N
         $$
 
-        因此只要c够大，我们就有上式$ \leq cN\log N$,i.e. $T(N) = O(N \ log N)$
+        因此只要c够大，我们就有上式$\leq cN\log N$,i.e. $T(N) = O(N \ log N)$
     
     === "错误做法"
          **我们猜测**  
-        $$ T(N) = O(N ) $$
+        $$T(N) = O(N )$$
 
-        **证明:** 假设对 $\forall m,m < N $成立, 特别是 $ m = \lfloor N/2 \rfloor $.
+        **证明:** 假设对 $\forall m,m < N$成立, 特别是 $m = \lfloor N/2 \rfloor$.
 
-        因此存在常数 $ c > 0 $ 使得  
-        $$ T(\lfloor N/2 \rfloor) \leq c \lfloor N/2 \rfloor$$.
+        因此存在常数 $c > 0$ 使得
+        $$T(\lfloor N/2 \rfloor) \leq c \lfloor N/2 \rfloor$$.
 
         代入得：
 

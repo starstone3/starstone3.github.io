@@ -510,7 +510,11 @@
             if (!response.ok) {
                 throw new Error(`题库加载失败：HTTP ${response.status}`);
             }
-            state.questions = normalizeQuestions(await response.json());
+            const rawQuestions = await response.json();
+            if (!app.isConnected) {
+                return;
+            }
+            state.questions = normalizeQuestions(rawQuestions);
         } catch (error) {
             showError(elements, error.message);
             return;
@@ -531,6 +535,11 @@
     function boot() {
         const app = document.querySelector("#se-quiz-app");
         if (!app) {
+            if (state.keyboardHandler) {
+                window.removeEventListener("keydown", state.keyboardHandler, true);
+                state.keyboardHandler = null;
+            }
+            state.app = null;
             return;
         }
         initQuiz(app);
@@ -538,9 +547,9 @@
 
     window.initializeSeQuizPage = boot;
 
-    if (typeof document$ !== "undefined") {
-        document$.subscribe(boot);
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", boot, { once: true });
     } else {
-        document.addEventListener("DOMContentLoaded", boot);
+        boot();
     }
 })();

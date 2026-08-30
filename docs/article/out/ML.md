@@ -2,7 +2,6 @@
 comments: true
 ---
 
-<link rel="stylesheet" type="text/css" href="../../../css/styles.css">
 
 # Machine Learning
 
@@ -19,15 +18,22 @@ comments: true
 
 记拟合的平面为$h_{\theta}(x) = \theta_0 +\theta_1 x_2+\theta_2 x_2$
 
-记$\mathbf{x} = \begin{bmatrix}
+记
+
+$$
+\mathbf{x} = \begin{bmatrix}
 1 \\
 x_1 \\
 x_2
-\end{bmatrix}$,$\mathbf{\theta} = \begin{bmatrix}
+\end{bmatrix},\qquad
+\mathbf{\theta} = \begin{bmatrix}
 \theta_0 \\
 \theta_1 \\
 \theta_2
-\end{bmatrix}$,则$h_{\theta}(x)=\theta^T x$
+\end{bmatrix}
+$$
+
+则$h_{\theta}(x)=\theta^T x$
 
 此外，我们还需要定义一个误差项$\epsilon$,因此现在对于每一个我们已知的样本点，如果用y来表示实际值，$y^{(i)}=\theta^T x^{(i)} + \epsilon^{(i)}$ 
 
@@ -38,9 +44,9 @@ x_2
 2. **同分布**：他俩都得去同一家银行 -- 数据服从相同的概率分布，即每个误差项$\epsilon^{(i)}$都来自相同的分布。
 
 3. **标准正态分布**：误差服从均值为0且方差为$\sigma^2$的正态分布，可以表示为：
-   $
+   $$
    x \sim \mathcal{N}(0, \theta^2)
-   $
+   $$
 
 ## 似然函数
 
@@ -70,7 +76,7 @@ $$J(\theta) = \frac{1}{2} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2 = \frac
 
 对$\theta$ 求偏导： 
 
-$$\nabla_\theta J(\theta) = \nabla_\theta \left( \frac{1}{2} (X\theta - y)^T (X\theta - y) \right) $$
+$$\nabla_\theta J(\theta) = \nabla_\theta \left( \frac{1}{2} (X\theta - y)^T (X\theta - y) \right)$$
 
 $$= \nabla_\theta \left( \frac{1}{2} (\theta^T X^T X \theta - \theta^T X^T y - y^T X \theta + y^T y) \right)$$
 

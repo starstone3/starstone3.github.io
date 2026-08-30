@@ -26,7 +26,7 @@ The basic idea is that suppose we have a partial solution ( $x_1$, ... , $x_i$ )
 
     1. $S_i$有8位，每一位数字都是1-8之间的一个。这将答案个数缩减到$8^8$
 
-    2. $x_i \neq x_j $ if $i \neq j$.这是显然的，因为不可能有两个皇后在同一列。答案缩减到$8!$
+    2. $x_i \neq x_j$ if $i \neq j$.这是显然的，因为不可能有两个皇后在同一列。答案缩减到$8!$
 
     3. $\frac{x_i-x_j}{i-j} \neq \pm 1$,这是为了确保对角线上不会攻击。
 

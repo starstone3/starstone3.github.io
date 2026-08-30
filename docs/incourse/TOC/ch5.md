@@ -194,7 +194,7 @@ comments: true
 
 !!! definition "图灵可枚举 (Turing-enumerable)"
     我们称图灵机 $M$ **枚举 (enumerates)** 语言 $L$，当且仅当对于 $M$ 的某个固定状态 $q$，有：
-    $$ L = \{ w \mid (s, \triangleright \sqcup) \vdash_M^* (q, \triangleright \sqcup w) \} $$
+    $$L = \{ w \mid (s, \triangleright \sqcup) \vdash_M^* (q, \triangleright \sqcup w) \}$$
     一个语言是**图灵可枚举的 (Turing-enumerable)**，当且仅当存在一个图灵机枚举它。
 
     !!! info "解释 (Explanation)"
@@ -214,7 +214,7 @@ comments: true
 !!! theorem "递归语言的充要条件"
     语言 $L$ 是**递归的** (Recursive)，当且仅当 $L$ 和它的补集 $\bar{L}$ 都是**递归可枚举的** (Recursively Enumerable, r.e.)。
     
-    $$ L \in \text{Recursive} \iff L \in \text{r.e.} \land \bar{L} \in \text{r.e.} $$
+    $$L \in \text{Recursive} \iff L \in \text{r.e.} \land \bar{L} \in \text{r.e.}$$
 
 !!! proof "证明 (Proof)"
     **1. ($\Rightarrow$) 如果 $L$ 是递归的，那么 $L$ 和 $\bar{L}$ 都是 r.e.**
@@ -244,7 +244,7 @@ comments: true
 
     *   **指标集 (Index Set):** 令 $\mathcal{P}$ 为递归可枚举语言的一个类（即所有满足某种性质的R.E.语言）。指标集 $L_{\mathcal{P}}$ 是所有识别属于 $\mathcal{P}$ 的语言的图灵机编码的集合：
 
-        $$ L_{\mathcal{P}} = \{ \langle M \rangle \mid L(M) \in \mathcal{P} \} $$
+        $$L_{\mathcal{P}} = \{ \langle M \rangle \mid L(M) \in \mathcal{P} \}$$
 
     *   **非平凡 (Non-trivial):** 该性质 $\mathcal{P}$ 既不是空集（$\emptyset$），也不是包含所有递归可枚举语言的全集。即 $\mathcal{P} \neq \emptyset$ 且 $\mathcal{P} \neq \text{all r.e. languages}$ 。这意味着至少有一个语言满足性质 $\mathcal{P}$，也至少有一个语言不满足性质 $\mathcal{P}$ 。
 
@@ -275,7 +275,7 @@ comments: true
 
     
     现在，我们得到了一个等价关系：
-    $$ \langle M, w \rangle \in H \iff L(M') \in \mathcal{P} $$
+    $$\langle M, w \rangle \in H \iff L(M') \in \mathcal{P}$$
 
     如果 $L_{\mathcal{P}}$ 是可判定的（即我们有判别器 $D$），那么我们可以把构造出的 $M'$ 喂给 $D$。
     

@@ -843,7 +843,7 @@ where semester = ’Fall’ and year= 2009 and unique (select course_id from sec
 
 在from语句中,我们可以使用子查询语句,即在from语句中嵌套另一个查询
 
-Find the average instructors’ salaries of those departments where the average salary is greater than $42,000. 
+Find the average instructors’ salaries of those departments where the average salary is greater than \$42,000.
 
 ``` sql
 select dept_name, avg_salary 

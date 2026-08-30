@@ -86,9 +86,9 @@ comments: true
     
     - **判断标准**（至少满足其一）：
 
-        - $ R_1 \cap R_2 \rightarrow R_1 $
+        - $R_1 \cap R_2 \rightarrow R_1$
 
-        - $ R_1 \cap R_2 \rightarrow R_2 $
+        - $R_1 \cap R_2 \rightarrow R_2$
 
         - 即公共属性是一个表的超键
 
@@ -356,18 +356,18 @@ OK,现在我们来给出正则覆盖完整的定义:
 
 ### Decomposing a Schema into BCNF
 
-假设我们有一个关系模式 $ R $，并且存在一个**非平凡依赖** $ \alpha \rightarrow \beta $，它导致违反了 **BCNF（Boyce-Codd范式）**。
+假设我们有一个关系模式 $R$，并且存在一个**非平凡依赖** $\alpha \rightarrow \beta$，它导致违反了 **BCNF（Boyce-Codd范式）**。
 
-我们将 $ R $ 分解为以下两个子关系：
+我们将 $R$ 分解为以下两个子关系：
 
-- $ \alpha \cup \beta $
-- $ R - (\beta - \alpha) $
+- $\alpha \cup \beta$
+- $R - (\beta - \alpha)$
 
 在我们上面的例子中：
 
 - $\alpha = \text{dept_name}$
 
-- $ \beta = \{ \text{building}, \text{budget} \} $
+- $\beta = \{ \text{building}, \text{budget} \}$
 
 因此，关系 `inst_dept` 被替换为：
 
@@ -394,8 +394,8 @@ OK,现在我们来给出正则覆盖完整的定义:
     
     - 或者，原来关系R上的每一个函数依赖，都可以在分解后的单一关系上得到检验或者推导得到。
 
-    设 $ F_i $ 是 $ F^+ $ 中所有**只包含 $ R_i $ 中属性**的函数依赖的集合。  
-    即$ F_i $ 是将 $ F $ 限制在子关系 $ R_i $ 上的结果（称为对 $ R_i $ 的限制 restriction）。
+    设 $F_i$ 是 $F^+$ 中所有**只包含 $R_i$ 中属性**的函数依赖的集合。
+    即$F_i$ 是将 $F$ 限制在子关系 $R_i$ 上的结果（称为对 $R_i$ 的限制 restriction）。
 
     一个分解是**依赖保持的（Dependency Preserving）**，当且仅当：
 

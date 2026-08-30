@@ -26,7 +26,7 @@ comments: true
 
 - Initial state(初始状态):有一个箭头指向它,表示自动机的开始状态.
 
-- State(状态):$ q_0, q_1, q_2 $ ,状态用圆圈表示.
+- State(状态):$q_0, q_1, q_2$ ,状态用圆圈表示.
 
 - Final state(终止状态):,双圈表示终止状态.到达终止状态即被接受.
 
@@ -302,7 +302,7 @@ $$
 
 若上面这个Claim成立,那么我们就证明了NFA和DFA是等价的:
 
-$ \forall w \in \Sigma^*,$
+$\forall w \in \Sigma^*,$
 
 \begin{align*}
 w \in L(M) &\iff (s, w) \vdash^*_M (f, \epsilon) \text{ for some } f \in F \\
@@ -626,4 +626,3 @@ w \in L(M) &\iff (s, w) \vdash^*_M (f, \epsilon) \text{ for some } f \in F \\
         若$L$是正则语言,那么根据交集的封闭性,我们有$L \cap a^* b^* = \{a^n b^n | n \geq 0\}$也是正则语言.
 
         但是,我们已经知道$\{a^n b^n | n \geq 0\}$不是正则语言,因此,与假设矛盾.
-

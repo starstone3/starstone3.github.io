@@ -115,7 +115,7 @@ $$
     
     - 缺点：会增加 `Hit Time`（因为需要访问多个缓存）
 
-    - $ \text{Average Memory Access Time} = \text{L1 Hit Time} + \text{L1 Miss Rate} \times(\text{L2 Hit Time} + \text{L2 Miss Rate} \times \text{L2 Miss Time}) $
+    - $\text{Average Memory Access Time} = \text{L1 Hit Time} + \text{L1 Miss Rate} \times(\text{L2 Hit Time} + \text{L2 Miss Rate} \times \text{L2 Miss Time})$
 
     - **`Inclusion`**：L1 Cache 中的数据必须包含在 L2 Cache 中。
 

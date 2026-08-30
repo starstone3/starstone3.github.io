@@ -3,7 +3,6 @@ comments : true
 
 statistics : true
 ---
-<link rel="stylesheet" type="text/css" href="../../../css/styles.css">
 
 # 贪心算法
 
@@ -132,4 +131,3 @@ $$
                 
                     因此，贪心算法未能找到最优解           
             选C
-            

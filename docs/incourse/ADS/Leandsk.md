@@ -2,7 +2,6 @@
 comments : true
 ---
 
-<link rel="stylesheet" type="text/css" href="../../../css/styles.css">
 
 
 # Leftist Heaps and Skew Heaps
@@ -348,7 +347,7 @@ $\hat{c_i}=c_i+\Phi(D_i)-\Phi(D_{i-1}) <=2(l_1 + l_2)$
 
 那light node尽可能多是多少呢...一个树右路径上的节点受限，联想到之前的左倾树，一颗树有N个节点，最右侧路径上最多有多少节点呢？
 
-<center><span style="font-size: 2em;">**$\log(N)$**</span></center>
+<div style="text-align: center; font-size: 2em;" markdown="1">**$\log(N)$**</div>
 
 至此，我们推出Skew heap merge操作的时间复杂度是$O(\log(N))$,由于其他操作都可以看成是特殊的merge，因此结束推理，Q.E.D
 

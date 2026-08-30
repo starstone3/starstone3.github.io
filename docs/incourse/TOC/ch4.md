@@ -392,7 +392,7 @@ FA只能读取纸带上的内容并转移状态,PDA可以读取纸带上的内�
 !!! definition "非确定性图灵机 (NTM)"
     非确定性图灵机 (NTM) 是一个五元组 $M = (K, \Sigma, \Delta, s, H)$，其中 $K, \Sigma, s, H$ 与标准图灵机定义相同，但 $\Delta$ 是以下集合的一个**子集**：
     
-    $$ (K - H) \times \Sigma \times K \times (\Sigma \cup \{\leftarrow, \rightarrow\}) $$
+    $$(K - H) \times \Sigma \times K \times (\Sigma \cup \{\leftarrow, \rightarrow\})$$
 
     这意味着 $\Delta$ 是一个**关系 (relation)**，而不是一个函数。
 
@@ -408,7 +408,7 @@ FA只能读取纸带上的内容并转移状态,PDA可以读取纸带上的内�
 !!! definition "1. 半判定 (Semidecide)"
     我们说 NTM $M$ **半判定** 语言 $L$，如果对于所有输入 $w$：
     
-    $$ w \in L \iff M \text{ 接受 } w $$
+    $$w \in L \iff M \text{ 接受 } w$$
     
     - **接受 (Accept)**: 只要**存在至少一条**计算路径能到达停机状态，就叫接受。
     - **也就是说**: 只要运气够好，能猜对一条路走通，就算赢。不管其他路是不是死循环。
@@ -564,7 +564,7 @@ NTM 的计算过程可以看作一棵**计算树 (Computation Tree)**，树的�
         
         那么 $g$ 与 $h_1, \dots, h_k$ 的组合是一个 $l$ 元函数 $f$，定义为：
         
-        $$ f(n_1, \dots, n_l) = g(h_1(n_1, \dots, n_l), \dots, h_k(n_1, \dots, n_l)) $$
+        $$f(n_1, \dots, n_l) = g(h_1(n_1, \dots, n_l), \dots, h_k(n_1, \dots, n_l))$$
 
 2.  **原始递归 (Primitive Recursion)**
 
@@ -652,7 +652,7 @@ NTM 的计算过程可以看作一棵**计算树 (Computation Tree)**，树的�
     
     具体来说，一个 $(k+1)$ 元函数 $g$ 是可最小化的，如果它满足以下性质：
     
-    $$ \forall n_1, \dots, n_k \in \mathbb{N}, \exists m \in \mathbb{N} \text{ such that } g(n_1, \dots, n_k, m) = 1 $$
+    $$\forall n_1, \dots, n_k \in \mathbb{N}, \exists m \in \mathbb{N} \text{ such that } g(n_1, \dots, n_k, m) = 1$$
 
     > 感性的说,原始递归函数相当于一个for循环,是有限的;而最小化操作相当于一个while循环,是无限的。
 
@@ -660,7 +660,7 @@ NTM 的计算过程可以看作一棵**计算树 (Computation Tree)**，树的�
 
     利用最小化，我们可以定义对数函数：
     
-    $$ \log(m, n) = \lceil \log_{m+2}(n + 1) \rceil = \mu p [\text{greater-than-or-equal}((m + 2) \uparrow p, n + 1)] $$
+    $$\log(m, n) = \lceil \log_{m+2}(n + 1) \rceil = \mu p [\text{greater-than-or-equal}((m + 2) \uparrow p, n + 1)]$$
     
     -   这里使用 $m+2$ 和 $n+1$ 是为了避免 $m \le 1$ 或 $n=0$ 时的定义域错误
 
