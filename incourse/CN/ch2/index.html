@@ -5675,9 +5675,9 @@
 </div>
 <h4 id="奈奎斯特定理奈氏准则">奈奎斯特定理(奈氏准则)<a class="headerlink" href="#奈奎斯特定理奈氏准则" title="Permanent link">¶</a></h4>
 <p>奈奎斯特规定,在理想低通(没有噪声、带宽有限)信道中,为了避免码间串扰,码元传输速率不能超过信道带宽的两倍,即:</p>
-<div class="arithmatex">\[ \text{码元传输速率(波特)} \leq 2 \times \text{信道带宽(Hz)} \]</div>
+<div class="arithmatex">\[\text{码元传输速率(波特)} \leq 2 \times \text{信道带宽(Hz)}\]</div>
 <p>如果用V表示码元的离散电平数量(即码元的不同状态数),则在理想低通信道中,比特率的最大值为:</p>
-<div class="arithmatex">\[ 2 \times \log_2 V \times \text{信道带宽(Hz)} \]</div>
+<div class="arithmatex">\[2 \times \log_2 V \times \text{信道带宽(Hz)}\]</div>
 <p>奈氏准则的主要要点如下：</p>
 <ol>
 <li>
@@ -5696,7 +5696,7 @@
 <p>奈氏定理只适用于理想低通信道,而实际信道中总是存在噪声,因此香农定理给出了在有噪声信道中,信道容量的极限值。</p>
 </blockquote>
 <p>在带宽为B Hz,信噪比为S/N的有噪声信道中,信道容量C的最大值为:</p>
-<div class="arithmatex">\[ C = B \times \log_2(1 + \frac{S}{N}) \]</div>
+<div class="arithmatex">\[C = B \times \log_2(1 + \frac{S}{N})\]</div>
 <p>其中,S是信号功率,N是噪声功率,S/N是信噪比,C的单位是bps。</p>
 <p>信噪比有两种表示方法:</p>
 <ol>
@@ -5705,7 +5705,7 @@
 </li>
 <li>
 <p><strong>对数表示法</strong>：用分贝(dB)表示,即:
-    $$ \text{SNR(dB)} = 10 \times \log_{10}(\frac{S}{N}) $$</p>
+    $<span class="arithmatex">\(\text{SNR(dB)} = 10 \times \log_{10}(\frac{S}{N})\)</span>$</p>
 </li>
 </ol>
 <div class="admonition warning">
@@ -6089,7 +6089,7 @@ $$</p>
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年10月15日 10:07:16 UTC">2025年10月15日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年8月30日 14:09:48 UTC">2026年8月30日</span>
   </span>
 
     
@@ -6130,9 +6130,9 @@ $$</p>
       giscus.setAttribute("data-theme", theme) 
     }
 
-    // Register event handlers after documented loaded
-    document.addEventListener("DOMContentLoaded", function() {
-      var ref = document.querySelector("[data-md-component=palette]")
+    var ref = document.querySelector("[data-md-component=palette]")
+    if (ref && ref.dataset.giscusThemeBound !== "true") {
+      ref.dataset.giscusThemeBound = "true"
       ref.addEventListener("change", function() {
         var palette = __md_get("__palette")
         if (palette && typeof palette.color === "object") {
@@ -6142,13 +6142,15 @@ $$</p>
 
           // Instruct Giscus to change theme
           var frame = document.querySelector(".giscus-frame")
-          frame.contentWindow.postMessage(
-            { giscus: { setConfig: { theme } } },
-            "https://giscus.app"
-          )
+          if (frame && frame.contentWindow) {
+            frame.contentWindow.postMessage(
+              { giscus: { setConfig: { theme } } },
+              "https://giscus.app"
+            )
+          }
         }
       })
-    })
+    }
   </script>
 
                 

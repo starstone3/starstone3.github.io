@@ -5715,9 +5715,9 @@ P(\mu_k) = \langle\psi| k \rangle \langle k|\psi\rangle = \langle\psi| P_k |\psi
       giscus.setAttribute("data-theme", theme) 
     }
 
-    // Register event handlers after documented loaded
-    document.addEventListener("DOMContentLoaded", function() {
-      var ref = document.querySelector("[data-md-component=palette]")
+    var ref = document.querySelector("[data-md-component=palette]")
+    if (ref && ref.dataset.giscusThemeBound !== "true") {
+      ref.dataset.giscusThemeBound = "true"
       ref.addEventListener("change", function() {
         var palette = __md_get("__palette")
         if (palette && typeof palette.color === "object") {
@@ -5727,13 +5727,15 @@ P(\mu_k) = \langle\psi| k \rangle \langle k|\psi\rangle = \langle\psi| P_k |\psi
 
           // Instruct Giscus to change theme
           var frame = document.querySelector(".giscus-frame")
-          frame.contentWindow.postMessage(
-            { giscus: { setConfig: { theme } } },
-            "https://giscus.app"
-          )
+          if (frame && frame.contentWindow) {
+            frame.contentWindow.postMessage(
+              { giscus: { setConfig: { theme } } },
+              "https://giscus.app"
+            )
+          }
         }
       })
-    })
+    }
   </script>
 
                 

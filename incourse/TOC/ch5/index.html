@@ -5498,7 +5498,7 @@
 <div class="admonition definition">
 <p class="admonition-title">图灵可枚举 (Turing-enumerable)</p>
 <p>我们称图灵机 <span class="arithmatex">\(M\)</span> <strong>枚举 (enumerates)</strong> 语言 <span class="arithmatex">\(L\)</span>，当且仅当对于 <span class="arithmatex">\(M\)</span> 的某个固定状态 <span class="arithmatex">\(q\)</span>，有：
-$$ L = { w \mid (s, \triangleright \sqcup) \vdash_M^* (q, \triangleright \sqcup w) } $$
+$<span class="arithmatex">\(L = \{ w \mid (s, \triangleright \sqcup) \vdash_M^* (q, \triangleright \sqcup w) \}\)</span>$
 一个语言是<strong>图灵可枚举的 (Turing-enumerable)</strong>，当且仅当存在一个图灵机枚举它。</p>
 <div class="admonition info">
 <p class="admonition-title">解释 (Explanation)</p>
@@ -5526,7 +5526,7 @@ $$ L = { w \mid (s, \triangleright \sqcup) \vdash_M^* (q, \triangleright \sqcup 
 <div class="admonition theorem">
 <p class="admonition-title">递归语言的充要条件</p>
 <p>语言 <span class="arithmatex">\(L\)</span> 是<strong>递归的</strong> (Recursive)，当且仅当 <span class="arithmatex">\(L\)</span> 和它的补集 <span class="arithmatex">\(\bar{L}\)</span> 都是<strong>递归可枚举的</strong> (Recursively Enumerable, r.e.)。</p>
-<div class="arithmatex">\[ L \in \text{Recursive} \iff L \in \text{r.e.} \land \bar{L} \in \text{r.e.} \]</div>
+<div class="arithmatex">\[L \in \text{Recursive} \iff L \in \text{r.e.} \land \bar{L} \in \text{r.e.}\]</div>
 </div>
 <div class="admonition proof">
 <p class="admonition-title">证明 (Proof)</p>
@@ -5556,7 +5556,7 @@ $$ L = { w \mid (s, \triangleright \sqcup) \vdash_M^* (q, \triangleright \sqcup 
 <ul>
 <li>
 <p><strong>指标集 (Index Set):</strong> 令 <span class="arithmatex">\(\mathcal{P}\)</span> 为递归可枚举语言的一个类（即所有满足某种性质的R.E.语言）。指标集 <span class="arithmatex">\(L_{\mathcal{P}}\)</span> 是所有识别属于 <span class="arithmatex">\(\mathcal{P}\)</span> 的语言的图灵机编码的集合：</p>
-<div class="arithmatex">\[ L_{\mathcal{P}} = \{ \langle M \rangle \mid L(M) \in \mathcal{P} \} \]</div>
+<div class="arithmatex">\[L_{\mathcal{P}} = \{ \langle M \rangle \mid L(M) \in \mathcal{P} \}\]</div>
 </li>
 <li>
 <p><strong>非平凡 (Non-trivial):</strong> 该性质 <span class="arithmatex">\(\mathcal{P}\)</span> 既不是空集（<span class="arithmatex">\(\emptyset\)</span>），也不是包含所有递归可枚举语言的全集。即 <span class="arithmatex">\(\mathcal{P} \neq \emptyset\)</span> 且 <span class="arithmatex">\(\mathcal{P} \neq \text{all r.e. languages}\)</span> 。这意味着至少有一个语言满足性质 <span class="arithmatex">\(\mathcal{P}\)</span>，也至少有一个语言不满足性质 <span class="arithmatex">\(\mathcal{P}\)</span> 。</p>
@@ -5595,7 +5595,7 @@ $$ L = { w \mid (s, \triangleright \sqcup) \vdash_M^* (q, \triangleright \sqcup 
 <li><strong>若 <span class="arithmatex">\(M\)</span> 在 <span class="arithmatex">\(w\)</span> 上不停机</strong>: <span class="arithmatex">\(M'\)</span> 永远卡在模拟阶段，不接受任何串。因此，<span class="arithmatex">\(L(M') = \emptyset \notin \mathcal{P}\)</span>。</li>
 </ol>
 <p>现在，我们得到了一个等价关系：
-$$ \langle M, w \rangle \in H \iff L(M') \in \mathcal{P} $$</p>
+$<span class="arithmatex">\(\langle M, w \rangle \in H \iff L(M') \in \mathcal{P}\)</span>$</p>
 <p>如果 <span class="arithmatex">\(L_{\mathcal{P}}\)</span> 是可判定的（即我们有判别器 <span class="arithmatex">\(D\)</span>），那么我们可以把构造出的 <span class="arithmatex">\(M'\)</span> 喂给 <span class="arithmatex">\(D\)</span>。</p>
 <ul>
 <li>如果 <span class="arithmatex">\(D\)</span> 接受 <span class="arithmatex">\(M'\)</span>，那么 <span class="arithmatex">\(M\)</span> 在 <span class="arithmatex">\(w\)</span> 上停机。</li>
@@ -5634,7 +5634,7 @@ $$ \langle M, w \rangle \in H \iff L(M') \in \mathcal{P} $$</p>
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年12月22日 06:34:11 UTC">2025年12月22日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年8月30日 14:09:48 UTC">2026年8月30日</span>
   </span>
 
     
@@ -5675,9 +5675,9 @@ $$ \langle M, w \rangle \in H \iff L(M') \in \mathcal{P} $$</p>
       giscus.setAttribute("data-theme", theme) 
     }
 
-    // Register event handlers after documented loaded
-    document.addEventListener("DOMContentLoaded", function() {
-      var ref = document.querySelector("[data-md-component=palette]")
+    var ref = document.querySelector("[data-md-component=palette]")
+    if (ref && ref.dataset.giscusThemeBound !== "true") {
+      ref.dataset.giscusThemeBound = "true"
       ref.addEventListener("change", function() {
         var palette = __md_get("__palette")
         if (palette && typeof palette.color === "object") {
@@ -5687,13 +5687,15 @@ $$ \langle M, w \rangle \in H \iff L(M') \in \mathcal{P} $$</p>
 
           // Instruct Giscus to change theme
           var frame = document.querySelector(".giscus-frame")
-          frame.contentWindow.postMessage(
-            { giscus: { setConfig: { theme } } },
-            "https://giscus.app"
-          )
+          if (frame && frame.contentWindow) {
+            frame.contentWindow.postMessage(
+              { giscus: { setConfig: { theme } } },
+              "https://giscus.app"
+            )
+          }
         }
       })
-    })
+    }
   </script>
 
                 

@@ -5343,11 +5343,11 @@ CNOT =
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>最开始,系统的状态是:</p>
-<div class="arithmatex">\[ (a|0\rangle + b|1\rangle) \otimes |0\rangle \otimes |0\rangle \]</div>
+<div class="arithmatex">\[(a|0\rangle + b|1\rangle) \otimes |0\rangle \otimes |0\rangle\]</div>
 <p>其中,第一个量子比特是Alice手上的量子比特,第二个量子比特是Alice和Bob纠缠的量子比特,第三个量子比特是Bob手上的量子比特.</p>
 <p>这两个<span class="arithmatex">\(|0\rangle\)</span>先由一个H门和一个CNOT(两个输入的X)门制备成纠缠对: <span class="arithmatex">\(\frac{1}{\sqrt{2}}(|00\rangle + |11\rangle)\)</span></p>
 <p>现在,系统的总状态变成了:</p>
-<div class="arithmatex">\[ (a|0\rangle + b|1\rangle) \otimes \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle) = \frac{1}{\sqrt{2}}(a|000\rangle + a|011\rangle + b|100\rangle + b|111\rangle) \]</div>
+<div class="arithmatex">\[(a|0\rangle + b|1\rangle) \otimes \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle) = \frac{1}{\sqrt{2}}(a|000\rangle + a|011\rangle + b|100\rangle + b|111\rangle)\]</div>
 </div>
 <div class="tabbed-block">
 <p>然后,看上方那个X门.它以<span class="arithmatex">\(|\psi\rangle\)</span>作为控制位,把第二个比特当目标位</p>
@@ -5366,16 +5366,16 @@ CNOT =
 <p>由于 Alice 需要对前两个比特进行测量，为了看清测量后 Bob 的比特状态，我们将上述状态 <span class="arithmatex">\(|\Psi_4\rangle\)</span> 按 Alice 的前两位测量基进行整理：</p>
 <ul>
 <li><strong>前两位是 <span class="arithmatex">\(|00\rangle\)</span> 的项</strong>：
-    $$ a|000\rangle + b|001\rangle = |00\rangle (a|0\rangle + b|1\rangle) = |00\rangle |\psi\rangle $$</li>
+    $<span class="arithmatex">\(a|000\rangle + b|001\rangle = |00\rangle (a|0\rangle + b|1\rangle) = |00\rangle |\psi\rangle\)</span>$</li>
 <li><strong>前两位是 <span class="arithmatex">\(|01\rangle\)</span> 的项</strong>：
-    $$ b|010\rangle + a|011\rangle = |01\rangle (b|0\rangle + a|1\rangle) = |01\rangle X|\psi\rangle $$</li>
+    $<span class="arithmatex">\(b|010\rangle + a|011\rangle = |01\rangle (b|0\rangle + a|1\rangle) = |01\rangle X|\psi\rangle\)</span>$</li>
 <li><strong>前两位是 <span class="arithmatex">\(|10\rangle\)</span> 的项</strong>：
-    $$ a|100\rangle - b|101\rangle = |10\rangle (a|0\rangle - b|1\rangle) = |10\rangle Z|\psi\rangle $$</li>
+    $<span class="arithmatex">\(a|100\rangle - b|101\rangle = |10\rangle (a|0\rangle - b|1\rangle) = |10\rangle Z|\psi\rangle\)</span>$</li>
 <li><strong>前两位是 <span class="arithmatex">\(|11\rangle\)</span> 的项</strong>：
-    $$ a|111\rangle - b|110\rangle = |11\rangle (a|1\rangle - b|0\rangle) = |11\rangle XZ|\psi\rangle \text{ (忽略整体负号)} $$</li>
+    $<span class="arithmatex">\(a|111\rangle - b|110\rangle = |11\rangle (a|1\rangle - b|0\rangle) = |11\rangle XZ|\psi\rangle \text{ (忽略整体负号)}\)</span>$</li>
 </ul>
 <p><strong>最后得到：</strong>
-$$ |\Psi_4\rangle = \frac{1}{2} \left( |00\rangle |\psi\rangle + |01\rangle X|\psi\rangle + |10\rangle Z|\psi\rangle + |11\rangle XZ|\psi\rangle \right) $$</p>
+$<span class="arithmatex">\(|\Psi_4\rangle = \frac{1}{2} \left( |00\rangle |\psi\rangle + |01\rangle X|\psi\rangle + |10\rangle Z|\psi\rangle + |11\rangle XZ|\psi\rangle \right)\)</span>$</p>
 </div>
 </div>
 </div>
@@ -5407,7 +5407,7 @@ $$ |\Psi_4\rangle = \frac{1}{2} \left( |00\rangle |\psi\rangle + |01\rangle X|\p
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年4月13日 08:33:57 UTC">2026年4月13日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年8月30日 14:09:48 UTC">2026年8月30日</span>
   </span>
 
     
@@ -5448,9 +5448,9 @@ $$ |\Psi_4\rangle = \frac{1}{2} \left( |00\rangle |\psi\rangle + |01\rangle X|\p
       giscus.setAttribute("data-theme", theme) 
     }
 
-    // Register event handlers after documented loaded
-    document.addEventListener("DOMContentLoaded", function() {
-      var ref = document.querySelector("[data-md-component=palette]")
+    var ref = document.querySelector("[data-md-component=palette]")
+    if (ref && ref.dataset.giscusThemeBound !== "true") {
+      ref.dataset.giscusThemeBound = "true"
       ref.addEventListener("change", function() {
         var palette = __md_get("__palette")
         if (palette && typeof palette.color === "object") {
@@ -5460,13 +5460,15 @@ $$ |\Psi_4\rangle = \frac{1}{2} \left( |00\rangle |\psi\rangle + |01\rangle X|\p
 
           // Instruct Giscus to change theme
           var frame = document.querySelector(".giscus-frame")
-          frame.contentWindow.postMessage(
-            { giscus: { setConfig: { theme } } },
-            "https://giscus.app"
-          )
+          if (frame && frame.contentWindow) {
+            frame.contentWindow.postMessage(
+              { giscus: { setConfig: { theme } } },
+              "https://giscus.app"
+            )
+          }
         }
       })
-    })
+    }
   </script>
 
                 

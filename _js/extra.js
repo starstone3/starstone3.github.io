@@ -14,19 +14,6 @@
         });
     }
 
-    function loadStylesheet(path) {
-        const url = resolveAssetUrl(path);
-        if (findAsset('link[rel="stylesheet"]', url)) {
-            return;
-        }
-
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = url;
-        link.dataset.pageStylesheet = "true";
-        document.head.appendChild(link);
-    }
-
     function loadScript(path) {
         const url = resolveAssetUrl(path);
         if (findAsset("script[src]", url)) {
@@ -48,9 +35,6 @@
 
     async function loadPageAssets() {
         const marker = document.querySelector("#page-assets");
-        const stylesheetPaths = marker
-            ? Array.from(marker.querySelectorAll("[data-page-stylesheet]"), (item) => item.dataset.pageStylesheet)
-            : [];
         const scriptPaths = marker
             ? Array.from(marker.querySelectorAll("[data-page-script]"), (item) => item.dataset.pageScript)
             : [];
@@ -62,15 +46,16 @@
             }
         });
 
-        stylesheetPaths.forEach(loadStylesheet);
-
         try {
             await Promise.all(scriptPaths.map(loadScript));
-            if (typeof window.initializeSeQuizPage === "function") {
-                window.initializeSeQuizPage();
-            }
         } catch (error) {
             console.error(error);
+        }
+        if (typeof window.initializeSeQuizPage === "function") {
+            window.initializeSeQuizPage();
+        }
+        if (typeof window.initializeRlLabsPage === "function") {
+            window.initializeRlLabsPage();
         }
     }
 

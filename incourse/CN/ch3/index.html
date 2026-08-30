@@ -6366,7 +6366,7 @@
 <p>当发送方发送完一个数据帧后，它必须在发送缓存中保留该数据帧的副本。只有在明确收到了对方发来的、对应正确序列号的确认帧（ACK）后，发送方才能清空缓存中的这个副本，准备发送下一帧。</p>
 </div>
 <p>若假设传输数据的时间是<code>Tt</code>，往返时间是<code>RTT</code>，发送<code>ACK</code>的时间忽略不计，则信道利用率为:</p>
-<div class="arithmatex">\[ U = \frac{Tt}{Tt + RTT} \]</div>
+<div class="arithmatex">\[U = \frac{Tt}{Tt + RTT}\]</div>
 <p><code>RTT</code>考虑了信号从发送方到接收方的传播时间以及确认信号从接收方返回发送方的传播时间。</p>
 <p>在<code>Tt</code>远小于<code>RTT</code>的情况下，信道利用率会非常低。这是停止-等待协议的一个主要缺点。</p>
 <h4 id="后退n帧协议go-back-n-gbn">后退N帧协议(Go-Back-N, GBN)<a class="headerlink" href="#后退n帧协议go-back-n-gbn" title="Permanent link">¶</a></h4>
@@ -6454,7 +6454,7 @@
     序列号取值范围
 </div><p></p>
 <p>为了避免序列号重复带来的歧义,发送窗口的最大尺寸N必须满足:
-$$ 1 &lt; N \leq 2^{n-1} $$</p>
+$<span class="arithmatex">\(1 &lt; N \leq 2^{n-1}\)</span>$</p>
 <p>这是因为,如果发送窗口的大小N超过了2^(n-1),那么在发送完N个帧后,序列号就会回绕到之前已经使用过的值,从而导致接收方无法区分这些帧是新的还是旧的.</p>
 <p>例如,发送方一次性发送了8个帧(假设n=3,N=8),序列号从0到7.接受方每接受到一个帧,就发送一个确认(ACK).在全部成功接受后,接受方的窗口已经滑动到了8(即0).</p>
 <p>但如果ACK全部在传输的过程中丢失了,发送方在超时后,会重传从0开始的8个帧.此时,接受方无法区分这些帧是新的(8-15)还是旧的(0-7),从而导致错误.</p>
@@ -6464,12 +6464,12 @@ $$ 1 &lt; N \leq 2^{n-1} $$</p>
 <li>
 <p><span class="arithmatex">\(n T_t &lt; T_t +RTT + T_{ack}\)</span></p>
 <p>这种情况下,发送方在发送完<span class="arithmatex">\(n\)</span>个帧后,还没有收到第一个帧的确认(ACK).此时,信道利用率为:</p>
-<div class="arithmatex">\[ U = \frac{n T_t}{RTT + T_t + T_{ack}} \]</div>
+<div class="arithmatex">\[U = \frac{n T_t}{RTT + T_t + T_{ack}}\]</div>
 </li>
 <li>
 <p><span class="arithmatex">\(n T_t \geq T_t +RTT + T_{ack}\)</span></p>
 <p>这种情况下,发送方在发送完<span class="arithmatex">\(n\)</span>个帧前,已经收到了第一个帧的确认(ACK),这时发送窗口已经向后滑动.此时,信道利用率为:</p>
-<div class="arithmatex">\[ U = 1 \]</div>
+<div class="arithmatex">\[U = 1\]</div>
 </li>
 </ol>
 <h4 id="选择重传协议selective-repeat-sr">选择重传协议(Selective Repeat, SR)<a class="headerlink" href="#选择重传协议selective-repeat-sr" title="Permanent link">¶</a></h4>
@@ -6788,7 +6788,7 @@ W_r + W_s &amp;\leq 2^n
 <p>总结一下,一个站点从发送帧开始,需要等待<span class="arithmatex">\(2\tau\)</span>时间来确认是否发生碰撞.如果在这段时间内没有检测到碰撞,则说明帧发送成功.</p>
 <hr>
 <p>10MB/s的以太网中,争用期为51.2微秒,即512比特的发送时间.那么单程传播实验就是<span class="arithmatex">\(25.6 \mu s\)</span>.假设信号传播速度为光速的2/3,即<span class="arithmatex">\(2*10^8m/s\)</span>,则最大电缆长度为:</p>
-<div class="arithmatex">\[ d = v * t = 2*10^8 * 25.6 * 10^{-6} = 5120 m \]</div>
+<div class="arithmatex">\[d = v * t = 2*10^8 * 25.6 * 10^{-6} = 5120 m\]</div>
 <h4 id="最小帧长与最大帧长">最小帧长与最大帧长<a class="headerlink" href="#最小帧长与最大帧长" title="Permanent link">¶</a></h4>
 <p>最小帧长的限制来源于争用期的要求.由于帧在发送完之后,站点就不再监听信道,所以为了确保在争用期内能够检测到碰撞,帧的发送时间必须至少等于争用期.</p>
 <p>对于10MB/s的以太网,争用期为512比特的发送时间,因此最小帧长为512比特,即64字节.换句话说,最小帧长也意味着一个帧如果在前64字节内没有发生碰撞,则说明帧发送成功.</p>
@@ -6835,7 +6835,7 @@ W_r + W_s &amp;\leq 2^n
 <p><strong>计算退避时间</strong>：</p>
 <ul>
 <li>站点需要等待的退避时间为 <code>r</code> 倍的时隙长度，即：
-    $$ \text{退避时间} = r \times (2\tau) $$</li>
+$<span class="arithmatex">\(\text{退避时间} = r \times (2\tau)\)</span>$</li>
 </ul>
 </li>
 <li>
@@ -6876,8 +6876,8 @@ W_r + W_s &amp;\leq 2^n
 </li>
 </ol>
 <p>那么,信道利用率为:</p>
-<div class="arithmatex">\[ U = \frac{T_0}{T_0 + \tau} = \frac{1}{1 + a} \]</div>
-<div class="arithmatex">\[ a = \frac{\tau}{T_0} \]</div>
+<div class="arithmatex">\[U = \frac{T_0}{T_0 + \tau} = \frac{1}{1 + a}\]</div>
+<div class="arithmatex">\[a = \frac{\tau}{T_0}\]</div>
 <p>为了使用率更高,我们希望<span class="arithmatex">\(a\)</span>更小,也即,<span class="arithmatex">\(T_0\)</span>更大,<span class="arithmatex">\(\tau\)</span>更小.也就是说,我们希望发送更长的帧,并且希望网络的传播时延更小.</p>
 <h3 id="集线器">集线器<a class="headerlink" href="#集线器" title="Permanent link">¶</a></h3>
 <p><strong>集线器 (Hub)</strong> 是一种工作在<strong>物理层 (Physical Layer, OSI 模型的第一层)</strong> 的网络连接设备。它的主要功能是将多个以太网设备连接在一起，形成一个单一的网络段（Segment）。</p>
@@ -7298,7 +7298,7 @@ W_r + W_s &amp;\leq 2^n
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年1月1日 13:57:48 UTC">2026年1月1日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年8月30日 14:09:48 UTC">2026年8月30日</span>
   </span>
 
     
@@ -7339,9 +7339,9 @@ W_r + W_s &amp;\leq 2^n
       giscus.setAttribute("data-theme", theme) 
     }
 
-    // Register event handlers after documented loaded
-    document.addEventListener("DOMContentLoaded", function() {
-      var ref = document.querySelector("[data-md-component=palette]")
+    var ref = document.querySelector("[data-md-component=palette]")
+    if (ref && ref.dataset.giscusThemeBound !== "true") {
+      ref.dataset.giscusThemeBound = "true"
       ref.addEventListener("change", function() {
         var palette = __md_get("__palette")
         if (palette && typeof palette.color === "object") {
@@ -7351,13 +7351,15 @@ W_r + W_s &amp;\leq 2^n
 
           // Instruct Giscus to change theme
           var frame = document.querySelector(".giscus-frame")
-          frame.contentWindow.postMessage(
-            { giscus: { setConfig: { theme } } },
-            "https://giscus.app"
-          )
+          if (frame && frame.contentWindow) {
+            frame.contentWindow.postMessage(
+              { giscus: { setConfig: { theme } } },
+              "https://giscus.app"
+            )
+          }
         }
       })
-    })
+    }
   </script>
 
                 
