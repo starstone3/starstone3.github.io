@@ -11,7 +11,7 @@ comments : true
 
 ## 关系
 
-给定集合 \\(D_1, D_2, \dots, D_n\\)，一个关系 \\(r\\) 是 \\(D_1 \times D_2 \times \dots \times D_n\\) 的子集。因此，一个关系是由 \\(n\\) 元组 \\((a_1, a_2, \dots, a_n)\\) 所组成的集合，其中每个 \\(a_i \in D_i\\)。
+给定集合 $D_1, D_2, \dots, D_n$，一个关系 $r$ 是 $D_1 \times D_2 \times \dots \times D_n$ 的子集。因此，一个关系是由 $n$ 元组 $(a_1, a_2, \dots, a_n)$ 所组成的集合，其中每个 $a_i \in D_i$。
 
 而所谓 Relation Schema, 是关系的模式，它定义了关系的名称以及每个属性的名称和类型。例如：
 

@@ -35,17 +35,23 @@ comments: true
     假设存在一个理想的克隆算符 $U_c$。它作用于初始纯态为 $|\psi\rangle$ 的量子比特、一个辅助量子比特 $|0\rangle$ 以及一个初始态为 $|a_0\rangle$ 的辅助系统 (ancilla)。
 
     假设理想克隆对两个非正交的输入态 $|\psi\rangle$ 和 $|\phi\rangle$ 均有效，则克隆变换满足：
+
     $$
     U_c(|\psi\rangle|0\rangle|a_0\rangle) = |\psi\rangle|\psi\rangle|a_\psi\rangle
     $$
+
     $$
     U_c(|\phi\rangle|0\rangle|a_0\rangle) = |\phi\rangle|\phi\rangle|a_\phi\rangle
     $$
+
     其中 $|a_\psi\rangle$ 和 $|a_\phi\rangle$ 是辅助系统的输出态。根据酉变换保持内积不变的性质：
+
     $$
     \langle \psi|\phi \rangle = (\langle \psi|\phi \rangle)^2 \langle a_\psi|a_\phi \rangle
     $$
+
     整理得：
+
     $$
     \langle \psi|\phi \rangle (1 - \langle \psi|\phi \rangle \langle a_\psi|a_\phi \rangle) = 0
     $$

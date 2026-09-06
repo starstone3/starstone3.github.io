@@ -84,6 +84,7 @@ M_1 \, [10 \times 20] \times (M_2 \, [20 \times 50] \times (M_3 \, [50 \times 1]
 令 \( M_{ij} = M_i \cdots M_j \)。那么 \( M_{1n} = M_1 \cdots M_n = M_{1i} \cdot M_{i+1 \, n} \)
 
 因此，
+
 $$
 b_n = \sum_{i=1}^{n-1} b_i b_{n-i} \quad \text{当} \, n > 1 \, \text{且} \, b_1 = 1
 $$

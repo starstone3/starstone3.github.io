@@ -374,34 +374,46 @@ comments : true
     **归纳步骤 (Induction Step):**
 
     - 考虑一个长度为 $n+1$ 的最左推导：
-      $$
-      S = u_0 \Rightarrow_{lm} u_1 \Rightarrow_{lm} \dots \Rightarrow_{lm} u_n \Rightarrow_{lm} u_{n+1} = w\alpha
-      $$
+
+        $$
+        S = u_0 \Rightarrow_{lm} u_1 \Rightarrow_{lm} \dots \Rightarrow_{lm} u_n \Rightarrow_{lm} u_{n+1} = w\alpha
+        $$
+
     - 设 $u_n = xA\beta$，其中 $A$ 是 $u_n$ 中最左边的非终结符，$x \in \Sigma^*$。
     - 那么，推导的最后一步必然是应用了某个产生式 $A \rightarrow \gamma$，使得 $u_{n+1} = x\gamma\beta$。
     - 此时，我们有了一个长度为 $n$ 的最左推导：$S \Rightarrow_{lm}^* u_n = xA\beta$。
     - 根据归纳假设，我们可以得出：
-      $$
-      (q, x, S) \vdash_M^* (q, \epsilon, A\beta) \quad \cdots \quad (1)
-      $$
+
+        $$
+        (q, x, S) \vdash_M^* (q, \epsilon, A\beta) \quad \cdots \quad (1)
+        $$
+
     - 根据 PDA 的构造规则，由于存在产生式 $A \rightarrow \gamma$，PDA 中必然有转移规则 $(q, \epsilon, A) \rightarrow (q, \gamma)$。这使得 PDA 可以进行如下计算：
-      $$
-      (q, \epsilon, A\beta) \vdash_M (q, \epsilon, \gamma\beta) \quad \cdots \quad (2)
-      $$
+
+        $$
+        (q, \epsilon, A\beta) \vdash_M (q, \epsilon, \gamma\beta) \quad \cdots \quad (2)
+        $$
+
     - 结合 (1) 和 (2)，我们得到：
-      $$
-      (q, x, S) \vdash_M^* (q, \epsilon, \gamma\beta)
-      $$
+
+        $$
+        (q, x, S) \vdash_M^* (q, \epsilon, \gamma\beta)
+        $$
+
     - 由于 $u_{n+1} = x\gamma\beta = w\alpha$，且 $x$ 是 $w$ 的前缀，我们可以设 $w = xy$，其中 $y \in \Sigma^*$。
     - 那么，$\gamma\beta$ 必然等于 $y\alpha$。
     - 我们可以将上面的 PDA 计算过程重写为：
-      $$
-      (q, w, S) = (q, xy, S) \vdash_M^* (q, y, \gamma\beta) = (q, y, y\alpha) \quad \cdots \quad (3)
-      $$
+
+        $$
+        (q, w, S) = (q, xy, S) \vdash_M^* (q, y, \gamma\beta) = (q, y, y\alpha) \quad \cdots \quad (3)
+        $$
+
     - PDA 在读取完 $y$ 之后，会到达配置 $(q, \epsilon, \alpha)$：
-      $$
-      (q, y, y\alpha) \vdash_M^* (q, \epsilon, \alpha) \quad \cdots \quad (4)
-      $$
+
+        $$
+        (q, y, y\alpha) \vdash_M^* (q, \epsilon, \alpha) \quad \cdots \quad (4)
+        $$
+
     - 结合 (3) 和 (4)，我们最终得到 $(q, w, S) \vdash_M^* (q, \epsilon, \alpha)$。
     - 归纳步骤完成。
 
@@ -443,10 +455,13 @@ comments : true
 
             - 步骤 1：修复“弹出过多”（pop > 1）  
               若存在一次弹出多个符号的规则
+
               $$
               (q, a, B_1\cdots B_n)\to(p,\gamma),
               $$
+
               则将其拆为逐个弹出的链式规则
+
               $$
               \begin{aligned}
               (q, \varepsilon, B_1) &\to (q_1, \varepsilon)\\
@@ -458,10 +473,13 @@ comments : true
 
             - 步骤 2：修复“压入过多”（push > 2）  
               若存在一次压入 $m>2$ 个符号的规则
+
               $$
               (q, a, B)\to(p, C_1C_2\cdots C_m),
               $$
+
               则分解为每步最多压入两个符号：
+
               $$
               \begin{aligned}
               (q, a, B) &\to (r_1, C_1C_2)\\
@@ -470,17 +488,22 @@ comments : true
               (r_{m-2}, \varepsilon, \varepsilon) &\to (p, C_m).
               \end{aligned}
               $$
+
               注意：这里临时引入了“弹出 0”的规则，下一步统一修复。
 
             - 步骤 3：修复“弹出为零”（pop = 0）  
               若存在不弹出栈符号的规则
+
               $$
               (q, a, \varepsilon)\to(p,\gamma),
               $$
+
               则对每一个栈符号 $A$（包括栈底符号 $Z$）用等效的“先弹后压”形式替换：
+
               $$
               (q, a, A)\to(p, \gamma A), \qquad \forall\, A\in \Gamma \cup \{Z\}.
               $$
+
               这样其净效应等价于在栈顶符号 $A$ 上方压入 $\gamma$，同时形式上满足“弹出 1、压入 $\le 2$”的简单规则要求。
 
     === "从简单 PDA 构造等价的 CFG"

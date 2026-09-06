@@ -120,35 +120,48 @@ L_{FeaD} \left( f_t (x), f_s(x) \right) = L_F \left( \Phi_t ( f_t (x)), \Phi_s( 
 ## Relation-Based Knowledge Distillation
 
 关系蒸馏的核心思想是通过保持教师模型和学生模型之间的关系来进行知识蒸馏。我们可以使用以下损失函数来实现关系蒸馏：
+
 $$
 L_{Rel} = \sum_{i=1}^{N} \left\| R(f_t(x_i)) - R(f_s(x_i)) \right\|_2^2
 $$
+
 其中，$R(\cdot)$是一个函数，用于计算特征之间的关系。常用的关系包括欧几里得距离、余弦相似度等。
 
 ## 一些损失函数
 
 !!! tip
     === "欧几里得距离(L2 Loss)"
+
         $$
         L_{2} = \left\| f_t(x) - f_s(x) \right\|^2
         $$
+
     === "余弦相似度(Cosine Similarity)"
+
         $$
         L_{cos} = 1 - \frac{f_t(x) \cdot f_s(x)}{\left\| f_t(x) \right\| \left\| f_s(x) \right\|}
         $$
+
     === "最大均值差异(MMD)"
+
         $$
         L_{MMD} = \left\| \frac{1}{N^2} \sum_{i=1}^{N} f_t(x_i) f_t(x_i)^T - \frac{1}{N^2} \sum_{i=1}^{N} f_s(x_i) f_s(x_i)^T \right\|^2
         $$
+
     === "KL 散度(KL Divergence)"
+
         $$
         L_{KL} = \sum_{i=1}^{N} p_i \log \frac{p_i}{q_i}
         $$
+
     === "交叉熵损失(Cross Entropy Loss)"
+
         $$
         L_{CE} = -\sum_{i=1}^{N} y_i \log(p_i)
         $$
+
     === "L1 损失(L1 Loss)"
+
         $$
         L_{1} = \left\| f_t(x) - f_s(x) \right\|
         $$

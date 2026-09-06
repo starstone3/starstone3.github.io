@@ -80,6 +80,7 @@ comments: true
     </div>
 
     - **无损条件**：
+
                     $$
                     \pi_{R_1}(r) \bowtie \pi_{R_2}(r) = r
                     $$
@@ -146,6 +147,7 @@ $$
 $$
 
 那么我们称函数依赖
+
 $$
 \alpha \rightarrow \beta
 $$

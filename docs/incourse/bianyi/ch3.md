@@ -1413,29 +1413,29 @@ LR(1)的一个item在LR(0) item的基础上,还多了一个lookahead符号. 例�
     - 重复执行下面过程,直到项目集不再增大
     - 如果 $I$ 中有某个项目
 
-      $$
-      A \to \alpha . X \beta,\ z
-      $$
+        $$
+        A \to \alpha . X \beta,\ z
+        $$
 
       并且 $X$ 是非终结符
 
     - 那么对于每个产生式
 
-      $$
-      X \to \gamma
-      $$
+        $$
+        X \to \gamma
+        $$
 
     - 以及每个
 
-      $$
-      w \in First(\beta z)
-      $$
+        $$
+        w \in First(\beta z)
+        $$
 
       都把项目
 
-      $$
-      X \to .\gamma,\ w
-      $$
+        $$
+        X \to .\gamma,\ w
+        $$
 
       加入到 $I$ 中
 

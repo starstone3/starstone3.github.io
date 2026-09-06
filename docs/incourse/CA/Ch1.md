@@ -174,13 +174,13 @@ RISC-V是32位的，有32个通用寄存器，使用load/store指令访问内存
 
 $$
 \text{Cost of integrated circuit}=\frac{\text{Cost of die} + \text{Cost of testing die} + \text{Cost of packaging and final test}}{\text{Final test yield}}
-​$$
+$$
 
 每个晶片(die)的成本为:
 
 $$
 \text{Cost of die}=\frac{\text{Cost of wafer}}{\text{Dies per wafer}\times\text{Die yield}}
-​$$
+$$
 
 而一个晶圆(wafer)上的晶片数目为:
 
@@ -238,16 +238,19 @@ $$
 
 SPECRatio是SPEC基准测试的结果,用于衡量计算机性能.它是通过将计算机的执行时间与参考计算机的执行时间进行比较来计算的.
 SPECRatio的计算公式为:
+
 $$
 SPECRatio = \frac{Execution time of reference computer}{Execution time of computer under test}
 $$
 
 那么在比较两个计算机的性能时,公式如下:
+
 $$
 \frac{\text{SPECRatio of computer A}}{\text{SPECRatio of computer B}} = \frac{\text{Execution time of computer B}}{\text{Execution time of computer A}}
 $$
 
 由于SPEC是一个比值,在计算平均值时,我们使用几何平均数,而不是算术平均数.所以,我们使用如下公式来计算平均值:
+
 $$
 SPECRatio_{geometric} = \sqrt[n]{SPECRatio_1 \times SPECRatio_2 \times ... \times SPECRatio_n}
 $$
@@ -257,17 +260,21 @@ $$
 ## Quantitative Principles
 
 Amdahl's Law:阿姆达尔定律,用于衡量计算机性能的提升与程序的并行化程度之间的关系.它的公式为:
+
 $$
 \text{New Execution Time} = \text{Old Execution Time} \times (1 - P) + \frac{\text{Old Execution Time} \times P}{N}
 $$
+
 其中,P是程序中可以并行化的部分,而N是并行化的程度.当P=1时,Speedup=N,即完全并行化.当P=0时,Speedup=1,即完全串行化.
 
 对此的加速比为
+
 $$
 Speedup = \frac{1}{(1 - P) + \frac{P}{N}}
 $$
 
 因此,如果我们只能加速整个任务中占比为P的部分,加速比最多为
+
 $$
 Speedup = \frac{1}{(1 - P)}
 $$

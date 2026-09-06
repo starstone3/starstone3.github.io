@@ -214,6 +214,7 @@ $$
     正如作业中学过的,我们可以通过适当选择 $|y\rangle$ 的初始状态来实现 $V$ 的效果.
 
     选择$y = H|1\rangle = \frac{1}{\sqrt{2}}(|0\rangle - |1\rangle)$,我们有:
+
     $$
     \begin{aligned}
     U_f |x\rangle H|1\rangle

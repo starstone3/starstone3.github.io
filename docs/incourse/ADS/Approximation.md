@@ -141,6 +141,7 @@ $$\frac{11M}{9} + \frac{6}{9}$$
     - $P_\text{greedy}$: 贪心算法得到的解的总利润
 
     近似比 $\rho$ 定义为:
+
     $$
     \rho = \max(\frac{P_\text{optimal}}{P_\text{greedy}}, \frac{P_\text{greedy}}{P_\text{optimal}})
     $$
