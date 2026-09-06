@@ -5945,10 +5945,10 @@
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">from</span><span class="w"> </span><span class="n">instructor</span><span class="w"> </span><span class="k">natural</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="p">(</span><span class="n">teaches</span><span class="w"> </span><span class="k">natural</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">course</span><span class="p">)</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">where</span><span class="w"> </span><span class="n">dept_name</span><span class="o">=</span><span class="err">‘</span><span class="n">Music</span><span class="err">’</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="k">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2009</span><span class="p">;</span><span class="w"> </span>
 </code></pre></div><p></p>
-<p>用关系代数来表达就是:
-$$
-\pi_{name,title}(\sigma_{dept_name=‘Music’ \land year=2009}(instructor \bowtie (teaches \bowtie course)))
-$$</p>
+<p>用关系代数来表达就是:</p>
+<div class="arithmatex">\[
+\pi_{name,title}(\sigma_{dept\_name=‘Music’ \land year=2009}(instructor \bowtie (teaches \bowtie course)))
+\]</div>
 <p>优化前与优化后的表达树为:</p>
 <p></p><div align="center">
     <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/i248.png" data-desc-position="bottom"><img src="../../../image/i248.png" width="100%"></a></div><p></p>
@@ -5995,9 +5995,9 @@ $$</p>
 <p>number of seeks,与之相配的是<span class="arithmatex">\(t_S\)</span> – time to perform one seek</p>
 </li>
 <li>
-<p>对于b次块传输和s次寻道，代价为：
-    $$
-    C = b \cdot t_T + s \cdot t_S$$</p>
+<p>对于b次块传输和s次寻道，代价为：</p>
+<div class="arithmatex">\[
+C = b \cdot t_T + s \cdot t_S\]</div>
 </li>
 </ol>
 <blockquote>
@@ -6042,7 +6042,8 @@ $$</p>
 
 <p>Cost:</p>
 <div class="arithmatex">\[
-C = (t_S + t_T) \cdot (h + 1)\]</div>
+C = (t_S + t_T) \cdot (h + 1)
+\]</div>
 <ul>
 <li>
 <p><span class="arithmatex">\(h\)</span>是树的高度</p>
@@ -6076,7 +6077,8 @@ C = (t_S + t_T) \cdot (h + 1)\]</div>
 
 <p>Cost:</p>
 <div class="arithmatex">\[
-C = (t_S + t_T) \cdot h + t_S+ b \cdot t_T\]</div>
+C = (t_S + t_T) \cdot h + t_S+ b \cdot t_T
+\]</div>
 <h4 id="a4">A4<a class="headerlink" href="#a4" title="Permanent link">¶</a></h4>
 <p>A4 (secondary B+-tree index , equality on key)</p>
 <ul>
@@ -6113,7 +6115,6 @@ C = (t_S + t_T) \cdot h + t_S+ b \cdot t_T\]</div>
 </blockquote>
 <div align="center">
     <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../image/i253.png" data-desc-position="bottom"><img src="../../../image/i253.png" width="100%"></a></div>
-
 <div class="arithmatex">\[
 Cost = (t_S + t_T) \cdot (h + m + n)
 \]</div>
@@ -6357,7 +6358,7 @@ Cost = (t_S + t_T) \cdot (h + m + n)
 </li>
 <li>
 <p>所以，总的Block Transfers为:</p>
-<div class="arithmatex">\[ 
+<div class="arithmatex">\[
 \begin{align}
 &amp;2b_r( \lceil \log_{M-1} {b_r / M} \rceil-1) &amp;\text{(中间 Pass 的读写)}\\ 
 &amp;+ b_r &amp;\text{(最后 Pass 的读取)}\\ 
@@ -6577,11 +6578,11 @@ C = 2b_r \lceil \log_{\lfloor \frac{M}{b_b} \rfloor-1} {b_r / M} \rceil + b_r
 </li>
 </ul>
 <p>一个数学问题:如果内存有M块，如何分配给两个关系的块？</p>
-<p>答案是:
-$$
-x_r = \sqrt{b_r} \times \frac{M}{\sqrt{b_r} + \sqrt{b_s}}, \
+<p>答案是:</p>
+<div class="arithmatex">\[
+x_r = \sqrt{b_r} \times \frac{M}{\sqrt{b_r} + \sqrt{b_s}}, \\
 x_s = \sqrt{b_s} \times \frac{M}{\sqrt{b_r} + \sqrt{b_s}}
-$$</p>
+\]</div>
 <h3 id="hash-join">Hash-Join<a class="headerlink" href="#hash-join" title="Permanent link">¶</a></h3>
 <p>我们使用一个哈希函数，把元组分块，这样，由于哈希函数的特点，能够连接的属性的值一定在同一块中，反之不然。</p>
 <div align="center">
@@ -6746,7 +6747,7 @@ $$</p>
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年8月30日 14:09:48 UTC">2026年8月30日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年9月6日 14:08:42 UTC">2026年9月6日</span>
   </span>
 
     

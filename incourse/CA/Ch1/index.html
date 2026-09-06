@@ -5877,11 +5877,11 @@ Power_{dynamic} \propto Capacitive load \times Voltage^2 \times \frac{1}{2} \tim
 <p>集成电路的成本计算公式为：</p>
 <div class="arithmatex">\[
 \text{Cost&nbsp;of&nbsp;integrated&nbsp;circuit}=\frac{\text{Cost&nbsp;of&nbsp;die}&nbsp;+&nbsp;\text{Cost&nbsp;of&nbsp;testing&nbsp;die}&nbsp;+&nbsp;\text{Cost&nbsp;of&nbsp;packaging&nbsp;and&nbsp;final&nbsp;test}}{\text{Final&nbsp;test&nbsp;yield}}
-​\]</div>
+\]</div>
 <p>每个晶片(die)的成本为:</p>
 <div class="arithmatex">\[
 \text{Cost&nbsp;of&nbsp;die}=\frac{\text{Cost&nbsp;of&nbsp;wafer}}{\text{Dies&nbsp;per&nbsp;wafer}\times\text{Die&nbsp;yield}}
-​\]</div>
+\]</div>
 <p>而一个晶圆(wafer)上的晶片数目为:</p>
 <div class="arithmatex">\[
 \text{Dies&nbsp;per&nbsp;wafer}=\frac{\pi\times(\frac{\text{Wafer&nbsp;diameter}}{2})^2}{\text{Die&nbsp;area}}−\frac{\pi\times\text{Wafer&nbsp;diameter}}{\sqrt{2\times\text{Die&nbsp;area}}}​
@@ -5946,33 +5946,33 @@ Power_{dynamic} \propto Capacitive load \times Voltage^2 \times \frac{1}{2} \tim
 <p><strike>感觉不会考,不记了</strike></p>
 <h2 id="specratio">SPECRatio<a class="headerlink" href="#specratio" title="Permanent link">¶</a></h2>
 <p>SPECRatio是SPEC基准测试的结果,用于衡量计算机性能.它是通过将计算机的执行时间与参考计算机的执行时间进行比较来计算的.
-SPECRatio的计算公式为:
-$$
+SPECRatio的计算公式为:</p>
+<div class="arithmatex">\[
 SPECRatio = \frac{Execution time of reference computer}{Execution time of computer under test}
-$$</p>
-<p>那么在比较两个计算机的性能时,公式如下:
-$$
+\]</div>
+<p>那么在比较两个计算机的性能时,公式如下:</p>
+<div class="arithmatex">\[
 \frac{\text{SPECRatio of computer A}}{\text{SPECRatio of computer B}} = \frac{\text{Execution time of computer B}}{\text{Execution time of computer A}}
-$$</p>
-<p>由于SPEC是一个比值,在计算平均值时,我们使用几何平均数,而不是算术平均数.所以,我们使用如下公式来计算平均值:
-$$
+\]</div>
+<p>由于SPEC是一个比值,在计算平均值时,我们使用几何平均数,而不是算术平均数.所以,我们使用如下公式来计算平均值:</p>
+<div class="arithmatex">\[
 SPECRatio_{geometric} = \sqrt[n]{SPECRatio_1 \times SPECRatio_2 \times ... \times SPECRatio_n}
-$$</p>
+\]</div>
 <hr>
 <h2 id="quantitative-principles">Quantitative Principles<a class="headerlink" href="#quantitative-principles" title="Permanent link">¶</a></h2>
-<p>Amdahl's Law:阿姆达尔定律,用于衡量计算机性能的提升与程序的并行化程度之间的关系.它的公式为:
-$$
+<p>Amdahl's Law:阿姆达尔定律,用于衡量计算机性能的提升与程序的并行化程度之间的关系.它的公式为:</p>
+<div class="arithmatex">\[
 \text{New Execution Time} = \text{Old Execution Time} \times (1 - P) + \frac{\text{Old Execution Time} \times P}{N}
-$$
-其中,P是程序中可以并行化的部分,而N是并行化的程度.当P=1时,Speedup=N,即完全并行化.当P=0时,Speedup=1,即完全串行化.</p>
-<p>对此的加速比为
-$$
+\]</div>
+<p>其中,P是程序中可以并行化的部分,而N是并行化的程度.当P=1时,Speedup=N,即完全并行化.当P=0时,Speedup=1,即完全串行化.</p>
+<p>对此的加速比为</p>
+<div class="arithmatex">\[
 Speedup = \frac{1}{(1 - P) + \frac{P}{N}}
-$$</p>
-<p>因此,如果我们只能加速整个任务中占比为P的部分,加速比最多为
-$$
+\]</div>
+<p>因此,如果我们只能加速整个任务中占比为P的部分,加速比最多为</p>
+<div class="arithmatex">\[
 Speedup = \frac{1}{(1 - P)}
-$$</p>
+\]</div>
 
 
 
@@ -5995,7 +5995,7 @@ $$</p>
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月6日 11:40:59 UTC">2025年3月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年9月6日 14:08:42 UTC">2026年9月6日</span>
   </span>
 
     
