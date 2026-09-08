@@ -106,7 +106,10 @@ $$C = B \times \log_2(1 + \frac{S}{N})$$
 1. **线性表示法**：直接用S/N表示。
 
 2. **对数表示法**：用分贝(dB)表示,即:
-    $$\text{SNR(dB)} = 10 \times \log_{10}(\frac{S}{N})$$
+
+    $$
+    \text{SNR(dB)} = 10 \times \log_{10}(\frac{S}{N})
+    $$
 
 !!! warning
     在使用香农定理时,必须将信噪比S/N换算成线性表示法。

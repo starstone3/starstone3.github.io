@@ -202,7 +202,9 @@ $$
 c_{i j} = \min_{i<l\leq j} \left( w_{i j} + c_{i, l-1} + c_{l+1, j} \right)
 $$
 
-  $$i < l \leq j$$
+$$
+i < l \leq j
+$$
 
 ## All-Pairs Shortest Path
 

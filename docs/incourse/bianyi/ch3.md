@@ -1111,20 +1111,20 @@ LR(0)不看ahead token,因此它的状态转移完全由当前栈顶的状态决
 
             - 读到 `)`:
 
-              $$
-              I_6=\mathrm{goto}(I_5,\texttt{)})=\{S \to (L).\}
-              $$
+                $$
+                I_6=\mathrm{goto}(I_5,\texttt{)})=\{S \to (L).\}
+                $$
 
             - 读到 `,`:
 
-              $$
-              \begin{aligned}
-              I_8=\mathrm{goto}(I_5,\texttt{,}):\quad
-              L &\to L,.S \\
-              S &\to .(L) \\
-              S &\to .x
-              \end{aligned}
-              $$
+                $$
+                \begin{aligned}
+                I_8=\mathrm{goto}(I_5,\texttt{,}):\quad
+                L &\to L,.S \\
+                S &\to .(L) \\
+                S &\to .x
+                \end{aligned}
+                $$
 
             再从 $I_8$ 出发:
 
@@ -1453,23 +1453,23 @@ LR(1)的一个item在LR(0) item的基础上,还多了一个lookahead符号. 例�
     - 先令 $J=\emptyset$
     - 对于 $I$ 中每个项目
 
-      $$
-      A \to \alpha . X \beta,\ z
-      $$
+        $$
+        A \to \alpha . X \beta,\ z
+        $$
 
       把
 
-      $$
-      A \to \alpha X . \beta,\ z
-      $$
+        $$
+        A \to \alpha X . \beta,\ z
+        $$
 
       加入到 $J$
 
     - 最后返回
 
-      $$
-      closure(J)
-      $$
+        $$
+        closure(J)
+        $$
 
     也就是说,`goto` 只是把点向右移动一格,lookahead 本身不会在这一步改变; 真正会产生新的 lookahead 的地方是在 `closure`.
 

@@ -456,53 +456,53 @@ comments : true
             - 步骤 1：修复“弹出过多”（pop > 1）  
               若存在一次弹出多个符号的规则
 
-              $$
-              (q, a, B_1\cdots B_n)\to(p,\gamma),
-              $$
+                $$
+                (q, a, B_1\cdots B_n)\to(p,\gamma),
+                $$
 
               则将其拆为逐个弹出的链式规则
 
-              $$
-              \begin{aligned}
-              (q, \varepsilon, B_1) &\to (q_1, \varepsilon)\\
-              (q_1, \varepsilon, B_2) &\to (q_2, \varepsilon)\\
-              &\ \ \vdots \\
-              (q_{n-1}, a, B_n) &\to (p, \gamma).
-              \end{aligned}
-              $$
+                $$
+                \begin{aligned}
+                (q, \varepsilon, B_1) &\to (q_1, \varepsilon)\\
+                (q_1, \varepsilon, B_2) &\to (q_2, \varepsilon)\\
+                &\ \ \vdots \\
+                (q_{n-1}, a, B_n) &\to (p, \gamma).
+                \end{aligned}
+                $$
 
             - 步骤 2：修复“压入过多”（push > 2）  
               若存在一次压入 $m>2$ 个符号的规则
 
-              $$
-              (q, a, B)\to(p, C_1C_2\cdots C_m),
-              $$
+                $$
+                (q, a, B)\to(p, C_1C_2\cdots C_m),
+                $$
 
               则分解为每步最多压入两个符号：
 
-              $$
-              \begin{aligned}
-              (q, a, B) &\to (r_1, C_1C_2)\\
-              (r_1, \varepsilon, \varepsilon) &\to (r_2, C_3)\\
-              &\ \ \vdots \\
-              (r_{m-2}, \varepsilon, \varepsilon) &\to (p, C_m).
-              \end{aligned}
-              $$
+                $$
+                \begin{aligned}
+                (q, a, B) &\to (r_1, C_1C_2)\\
+                (r_1, \varepsilon, \varepsilon) &\to (r_2, C_3)\\
+                &\ \ \vdots \\
+                (r_{m-2}, \varepsilon, \varepsilon) &\to (p, C_m).
+                \end{aligned}
+                $$
 
               注意：这里临时引入了“弹出 0”的规则，下一步统一修复。
 
             - 步骤 3：修复“弹出为零”（pop = 0）  
               若存在不弹出栈符号的规则
 
-              $$
-              (q, a, \varepsilon)\to(p,\gamma),
-              $$
+                $$
+                (q, a, \varepsilon)\to(p,\gamma),
+                $$
 
               则对每一个栈符号 $A$（包括栈底符号 $Z$）用等效的“先弹后压”形式替换：
 
-              $$
-              (q, a, A)\to(p, \gamma A), \qquad \forall\, A\in \Gamma \cup \{Z\}.
-              $$
+                $$
+                (q, a, A)\to(p, \gamma A), \qquad \forall\, A\in \Gamma \cup \{Z\}.
+                $$
 
               这样其净效应等价于在栈顶符号 $A$ 上方压入 $\gamma$，同时形式上满足“弹出 1、压入 $\le 2$”的简单规则要求。
 

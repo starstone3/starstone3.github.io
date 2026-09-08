@@ -196,7 +196,11 @@ comments: true
 
 !!! definition "图灵可枚举 (Turing-enumerable)"
     我们称图灵机 $M$ **枚举 (enumerates)** 语言 $L$，当且仅当对于 $M$ 的某个固定状态 $q$，有：
-    $$L = \{ w \mid (s, \triangleright \sqcup) \vdash_M^* (q, \triangleright \sqcup w) \}$$
+
+    $$
+    L = \{ w \mid (s, \triangleright \sqcup) \vdash_M^* (q, \triangleright \sqcup w) \}
+    $$
+
     一个语言是**图灵可枚举的 (Turing-enumerable)**，当且仅当存在一个图灵机枚举它。
 
     !!! info "解释 (Explanation)"
@@ -277,7 +281,10 @@ comments: true
 
     
     现在，我们得到了一个等价关系：
-    $$\langle M, w \rangle \in H \iff L(M') \in \mathcal{P}$$
+
+    $$
+    \langle M, w \rangle \in H \iff L(M') \in \mathcal{P}
+    $$
 
     如果 $L_{\mathcal{P}}$ 是可判定的（即我们有判别器 $D$），那么我们可以把构造出的 $M'$ 喂给 $D$。
     
