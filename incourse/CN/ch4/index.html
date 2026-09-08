@@ -6322,30 +6322,41 @@
 <p class="admonition-title">子网划分示例</p>
 <p>假设有一个B类网络 <code>145.13.0.0</code>，其默认子网掩码为 <code>255.255.0.0</code>。现在需要将其划分为多个子网，每个子网最多容纳约500台主机。</p>
 <ol>
-<li><strong>确定主机位数</strong>：
-    为了容纳500台主机，我们需要确定主机号所需的位数 <code>n</code>。</li>
-</ol>
-</div>
-<p>$<span class="arithmatex">\(2^n - 2 \ge 500\)</span>$
-        计算可知，<span class="arithmatex">\(2^9 - 2 = 510\)</span>，满足条件。因此，主机号需要9位。</p>
-<div class="highlight"><pre><span></span><code>2.  **确定子网位数**：
+<li>
+<p><strong>确定主机位数</strong>：
+    为了容纳500台主机，我们需要确定主机号所需的位数 <code>n</code>。</p>
+<div class="arithmatex">\[
+2^n - 2 \ge 500
+\]</div>
+<p>计算可知，<span class="arithmatex">\(2^9 - 2 = 510\)</span>，满足条件。因此，主机号需要9位。</p>
+</li>
+<li>
+<p><strong>确定子网位数</strong>：
     B类地址的主机号部分有16位。借走一部分给子网号后，还剩9位给主机号。
-    因此，子网号的位数为：$16 - 9 = 7$ 位。
-
-3.  **计算子网掩码**：
-    新的子网掩码在默认B类掩码的基础上，将原主机号部分的前7位置为1。
-
-    -   默认B类掩码：`11111111.11111111.00000000.00000000`
-
-    -   新的子网掩码：`11111111.11111111.11111110.00000000`
-
-    -   转换为十进制：`255.255.254.0`
-
-4.  **计算子网数量**：
-    子网号有7位，因此可以划分出 $2^7 = 128$ 个子网。
-
-通过这种方式，原有的一个B类网络被成功地划分成了128个更小的子网，每个子网可以容纳510台主机，极大地提高了IP地址的利用率。
-</code></pre></div>
+    因此，子网号的位数为：<span class="arithmatex">\(16 - 9 = 7\)</span> 位。</p>
+</li>
+<li>
+<p><strong>计算子网掩码</strong>：
+    新的子网掩码在默认B类掩码的基础上，将原主机号部分的前7位置为1。</p>
+<ul>
+<li>
+<p>默认B类掩码：<code>11111111.11111111.00000000.00000000</code></p>
+</li>
+<li>
+<p>新的子网掩码：<code>11111111.11111111.11111110.00000000</code></p>
+</li>
+<li>
+<p>转换为十进制：<code>255.255.254.0</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>计算子网数量</strong>：
+    子网号有7位，因此可以划分出 <span class="arithmatex">\(2^7 = 128\)</span> 个子网。</p>
+</li>
+</ol>
+<p>通过这种方式，原有的一个B类网络被成功地划分成了128个更小的子网，每个子网可以容纳510台主机，极大地提高了IP地址的利用率。</p>
+</div>
 <h3 id="无分类编址cidrclassless-inter-domain-routing">无分类编址CIDR(Classless Inter-Domain Routing)<a class="headerlink" href="#无分类编址cidrclassless-inter-domain-routing" title="Permanent link">¶</a></h3>
 <p>随着互联网的发展，分类编址的局限性愈发明显，即使有子网划分，地址浪费和路由表庞大的问题依然存在。为此，IETF提出了<strong>无分类域间路由（CIDR）</strong>。</p>
 <p>CIDR消除了传统的A、B、C类地址和子网划分的概念，将32位的IP地址划分为两部分：<strong>网络前缀</strong>和<strong>主机号</strong>.</p>
@@ -6557,17 +6568,22 @@
 <p>假设网络拓扑为 <strong>N --- R1 --- R2</strong>。初始状态下，R1 到 N 的距离为 4，R2 到 N 的距离为 5（经过 R1）。</p>
 <p>某时刻 R1 的某个端口检测到“到N更短的链路”(距离由4变为1).</p>
 <ol>
-<li>R1 计算其到N的最新距离:</li>
+<li>
+<p>R1 计算其到N的最新距离:</p>
+<div class="arithmatex">\[
+\text{dist} = \min{(1, 1 + \text{dist}(R2 \to N))} = \min{(1, 1+5)} = 1
+\]</div>
+<p>R1 更新路由表并通知邻居.</p>
+</li>
+<li>
+<p>R2 收到通知后, 更新其到N的距离为2, 并通知邻居.</p>
+</li>
+<li>
+<p>R1 收到通知后, 发现距离未变, 不再发送通知.</p>
+</li>
 </ol>
+<p>算法进入静止状态. 可见, R2到N的距离减少的好消息通过RIP得到了迅速传播.</p>
 </div>
-<p>$<span class="arithmatex">\(\text{dist} = \min{(1, 1 + \text{dist}(R2 \to N))} = \min{(1, 1+5)} = 1\)</span>$
-        R1 更新路由表并通知邻居.</p>
-<div class="highlight"><pre><span></span><code>2.  R2 收到通知后, 更新其到N的距离为2, 并通知邻居.
-
-3.  R1 收到通知后, 发现距离未变, 不再发送通知.
-
-算法进入静止状态. 可见, R2到N的距离减少的好消息通过RIP得到了迅速传播.
-</code></pre></div>
 </li>
 <li>
 <p>坏消息传播得慢(路由环路问题)</p>
@@ -6577,20 +6593,27 @@
 <p>同样假设初始状态下 R1 到 N 的距离为 4，R2 到 N 的距离为 5。</p>
 <p>某时刻 R1 的某个端口检测到“N不可达”(距离变为16).</p>
 <ol>
-<li>R1 计算其到N的最新距离:</li>
+<li>
+<p>R1 计算其到N的最新距离:</p>
+<div class="arithmatex">\[
+\text{dist} = \min{(16, 1 + \text{dist}(R2 \to N))} = \min{(16, 1+5)} = 6
+\]</div>
+<p><strong>注意</strong>: 从网络全局视角看, 经过R2的这个新距离显然是错误的(因为R2到N其实也要经过R1).
+R1 更新路由表并通知邻居.</p>
+</li>
+<li>
+<p>R2 收到通知后, 更新其到N的距离为7, 并通知邻居.</p>
+</li>
+<li>
+<p>R1 收到通知后, 重新计算距离:</p>
+<div class="arithmatex">\[
+\text{dist} = \min{(16, 1 + 7)} = 8
+\]</div>
+<p>R1 继续通知邻居...</p>
+</li>
 </ol>
+<p>如此循环, 直到R2最终算出它经由R1到达N的距离为16为止. 可见, RIP关于链路故障或距离增加的坏消息传播得很慢.</p>
 </div>
-<p>$<span class="arithmatex">\(\text{dist} = \min{(16, 1 + \text{dist}(R2 \to N))} = \min{(16, 1+5)} = 6\)</span>$
-        <strong>注意</strong>: 从网络全局视角看, 经过R2的这个新距离显然是错误的(因为R2到N其实也要经过R1).
-        R1 更新路由表并通知邻居.</p>
-<div class="highlight"><pre><span></span><code>2.  R2 收到通知后, 更新其到N的距离为7, 并通知邻居.
-
-3.  R1 收到通知后, 重新计算距离:
-</code></pre></div>
-<p>$<span class="arithmatex">\(\text{dist} = \min{(16, 1 + 7)} = 8\)</span>$
-        R1 继续通知邻居...</p>
-<div class="highlight"><pre><span></span><code>如此循环, 直到R2最终算出它经由R1到达N的距离为16为止. 可见, RIP关于链路故障或距离增加的坏消息传播得很慢.
-</code></pre></div>
 </li>
 </ol>
 <p>为了解决这个问题, RIP采取了一些措施:</p>
@@ -7349,7 +7372,7 @@ IPv6基本首部 -&gt; 逐跳选项 -&gt; 路由 -&gt; 分片 -&gt; 鉴别 -&gt;
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年8月30日 14:09:48 UTC">2026年8月30日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年9月8日 14:09:05 UTC">2026年9月8日</span>
   </span>
 
     

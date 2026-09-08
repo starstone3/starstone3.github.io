@@ -6008,49 +6008,58 @@ S = u_0 \Rightarrow_{lm} u_1 \Rightarrow_{lm} \dots \Rightarrow_{lm} u_n \Righta
 <li>
 <p>将一般转移规约为“简单”格式</p>
 <ul>
-<li>步骤 1：修复“弹出过多”（pop &gt; 1）<br>
-  若存在一次弹出多个符号的规则</li>
+<li>
+<p>步骤 1：修复“弹出过多”（pop &gt; 1）<br>
+  若存在一次弹出多个符号的规则</p>
+<div class="arithmatex">\[
+(q, a, B_1\cdots B_n)\to(p,\gamma),
+\]</div>
+</li>
 </ul>
-<p>$$
-  (q, a, B_1\cdots B_n)\to(p,\gamma),
-  $$</p>
 <p>则将其拆为逐个弹出的链式规则</p>
-<p>$$
-  \begin{aligned}
-  (q, \varepsilon, B_1) &amp;\to (q_1, \varepsilon)\
-  (q_1, \varepsilon, B_2) &amp;\to (q_2, \varepsilon)\
-  &amp;  \vdots \
-  (q_{n-1}, a, B_n) &amp;\to (p, \gamma).
-  \end{aligned}
-  $$</p>
+<div class="highlight"><pre><span></span><code>$$
+\begin{aligned}
+(q, \varepsilon, B_1) &amp;\to (q_1, \varepsilon)\\
+(q_1, \varepsilon, B_2) &amp;\to (q_2, \varepsilon)\\
+&amp;\ \ \vdots \\
+(q_{n-1}, a, B_n) &amp;\to (p, \gamma).
+\end{aligned}
+$$
+</code></pre></div>
 <ul>
-<li>步骤 2：修复“压入过多”（push &gt; 2）<br>
-  若存在一次压入 <span class="arithmatex">\(m&gt;2\)</span> 个符号的规则</li>
+<li>
+<p>步骤 2：修复“压入过多”（push &gt; 2）<br>
+  若存在一次压入 <span class="arithmatex">\(m&gt;2\)</span> 个符号的规则</p>
+<div class="arithmatex">\[
+(q, a, B)\to(p, C_1C_2\cdots C_m),
+\]</div>
+</li>
 </ul>
-<p>$$
-  (q, a, B)\to(p, C_1C_2\cdots C_m),
-  $$</p>
 <p>则分解为每步最多压入两个符号：</p>
-<p>$$
-  \begin{aligned}
-  (q, a, B) &amp;\to (r_1, C_1C_2)\
-  (r_1, \varepsilon, \varepsilon) &amp;\to (r_2, C_3)\
-  &amp;  \vdots \
-  (r_{m-2}, \varepsilon, \varepsilon) &amp;\to (p, C_m).
-  \end{aligned}
-  $$</p>
+<div class="highlight"><pre><span></span><code>$$
+\begin{aligned}
+(q, a, B) &amp;\to (r_1, C_1C_2)\\
+(r_1, \varepsilon, \varepsilon) &amp;\to (r_2, C_3)\\
+&amp;\ \ \vdots \\
+(r_{m-2}, \varepsilon, \varepsilon) &amp;\to (p, C_m).
+\end{aligned}
+$$
+</code></pre></div>
 <p>注意：这里临时引入了“弹出 0”的规则，下一步统一修复。</p>
 <ul>
-<li>步骤 3：修复“弹出为零”（pop = 0）<br>
-  若存在不弹出栈符号的规则</li>
+<li>
+<p>步骤 3：修复“弹出为零”（pop = 0）<br>
+  若存在不弹出栈符号的规则</p>
+<div class="arithmatex">\[
+(q, a, \varepsilon)\to(p,\gamma),
+\]</div>
+</li>
 </ul>
-<p>$$
-  (q, a, \varepsilon)\to(p,\gamma),
-  $$</p>
 <p>则对每一个栈符号 <span class="arithmatex">\(A\)</span>（包括栈底符号 <span class="arithmatex">\(Z\)</span>）用等效的“先弹后压”形式替换：</p>
-<p>$$
-  (q, a, A)\to(p, \gamma A), \qquad \forall\, A\in \Gamma \cup {Z}.
-  $$</p>
+<div class="highlight"><pre><span></span><code>$$
+(q, a, A)\to(p, \gamma A), \qquad \forall\, A\in \Gamma \cup \{Z\}.
+$$
+</code></pre></div>
 <p>这样其净效应等价于在栈顶符号 <span class="arithmatex">\(A\)</span> 上方压入 <span class="arithmatex">\(\gamma\)</span>，同时形式上满足“弹出 1、压入 <span class="arithmatex">\(\le 2\)</span>”的简单规则要求。</p>
 </li>
 </ol>
@@ -6247,7 +6256,7 @@ S \to \langle s, Z, f' \rangle
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年9月6日 14:08:42 UTC">2026年9月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年9月8日 14:09:05 UTC">2026年9月8日</span>
   </span>
 
     
