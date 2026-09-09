@@ -1431,13 +1431,13 @@ LR(1)的一个item在LR(0) item的基础上,还多了一个lookahead符号. 例�
         w \in First(\beta z)
         $$
 
-      都把项目
+    都把项目
 
-        $$
-        X \to .\gamma,\ w
-        $$
+    $$
+    X \to .\gamma,\ w
+    $$
 
-      加入到 $I$ 中
+    加入到 $I$ 中
 
     最后返回得到的项目集.
 
